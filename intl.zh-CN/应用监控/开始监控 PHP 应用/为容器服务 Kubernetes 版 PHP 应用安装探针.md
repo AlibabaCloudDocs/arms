@@ -3,7 +3,7 @@
 只需安装 ARMS 应用监控组件（探针），即可对部署在容器服务 Kubernetes 版中的 PHP 应用进行监控，查看应用拓扑、接口调用、异常事务和慢事务等方面的监控数据。本文介绍如何为容器服务 Kubernetes 版 PHP 应用安装探针。
 
 -   [创建Kubernetes 集群](../../../../../intl.zh-CN/用户指南/Kubernetes集群/集群管理/创建Kubernetes 集群.md#)
--   [创建命名空间](../../../../../intl.zh-CN/用户指南/Kubernetes集群/命名空间管理/创建命名空间.md#)：本文示例中的命名空间名称为 arms-demo
+-   [创建命名空间](../../../../../intl.zh-CN/Kubernetes集群用户指南/命名空间管理/创建命名空间.md#)：本文示例中的命名空间名称为 arms-demo
 
 ## 安装 ARMS 应用监控组件 {#section_9xu_c60_25t .section}
 
@@ -20,11 +20,11 @@
 1.  使用主账号登录[容器服务 Kubernetes 版控制台](https://cs.console.aliyun.com/#/k8s/overview)。
 2.  在左侧导航栏选择**集群** \> **集群**，在目标集群右侧**操作**列单击**管理**。 
 
-    ![Manage Cluster](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156438333453701_zh-CN.png)
+    ![Manage Cluster](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156454842053701_zh-CN.png)
 
 3.  在目标集群的基本信息页面上，单击**集群资源**区域的 Worker RAM 角色链接。 
 
-    ![Worker RAM Link](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156438333453704_zh-CN.png)
+    ![Worker RAM Link](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156454842053704_zh-CN.png)
 
 4.  在 RAM 访问控制控制台的 RAM 角色管理页面上，单击**权限管理**页签上的目标权限策略名称链接。
 5.  在**策略内容**页签上单击**修改策略内容**，并在右侧的修改策略内容面板将以下内容添加到**策略内容**中，最后单击**确认**。 
@@ -37,7 +37,7 @@
     }
     ```
 
-    ![Modify RAM Authorization](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156438333453703_zh-CN.png)
+    ![Modify RAM Authorization](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156454842053703_zh-CN.png)
 
 
 ## 为 PHP 应用开启 ARMS 应用监控 {#section_qfx_dbs_xcf .section}
@@ -66,10 +66,14 @@
 5.  挂载 arms-php.ini ConfigMap 项到 php.ini 文件 spec \> template \> spec \> containers 下，将 mountPath 设置为您的 php.ini 文件路径。 
 
     ``` {#d7e429}
-    - name: php-ini
+    volumeMounts:
+            - name: php-ini
               mountPath: /etc/php/7.2/fpm/php.ini
               subPath: php.ini
-          volumes:
+    ```
+
+    ``` {#d7e432}
+    volumes:
           - name: php-ini
             configMap:
               name: arms-php.ini
@@ -86,7 +90,7 @@
 
     **说明：** 请将 <your-deployment-name\> 替换为您的应用名称。
 
-    ``` {#d7e516}
+    ``` {#d7e519}
     annotations:
       armsPilotAutoEnable: "on"
       armsPilotCreateAppName: "<your-deployment-name>"
@@ -95,11 +99,15 @@
 
 4.  挂载 arms-php.ini ConfigMap 项到 php.ini 文件 spec \> template \> spec \> containers 下，将 mountPath 设置为您的 php.ini 文件路径。 
 
-    ``` {#d7e542}
-    - name: php-ini
+    ``` {#d7e545}
+    volumeMounts:
+            - name: php-ini
               mountPath: /etc/php/7.2/fpm/php.ini
               subPath: php.ini
-          volumes:
+    ```
+
+    ``` {#d7e548}
+    volumes:
           - name: php-ini
             configMap:
               name: arms-php.ini
@@ -108,13 +116,13 @@
 
 在无状态（Deployment）或有状态（StatefulSet）页面上，目标应用的**操作**列将出现 **ARMS 控制台**按钮。
 
-![ARMS Console Button](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156438333453712_zh-CN.png)
+![ARMS Console Button](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156454842053712_zh-CN.png)
 
 **说明：** 若**操作**列没有出现 **ARMS 控制台**，请检查您是否已授权容器服务访问 ARMS 资源。
 
 [创建Kubernetes 集群](../../../../../intl.zh-CN/用户指南/Kubernetes集群/集群管理/创建Kubernetes 集群.md#)
 
-[创建命名空间](../../../../../intl.zh-CN/用户指南/Kubernetes集群/命名空间管理/创建命名空间.md#)
+[创建命名空间](../../../../../intl.zh-CN/Kubernetes集群用户指南/命名空间管理/创建命名空间.md#)
 
 [为容器服务 Kubernetes 版 Java 应用安装探针](intl.zh-CN/应用监控/开始监控 Java 应用/以普通方式安装探针/为容器服务 Kubernetes 版 Java 应用安装探针.md#)
 
