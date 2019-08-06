@@ -22,11 +22,11 @@
 1.  使用主账号登录[容器服务 Kubernetes 版控制台](https://cs.console.aliyun.com/#/k8s/overview)。
 2.  在左侧导航栏选择**集群** \> **集群**，在目标集群右侧**操作**列单击**管理**。 
 
-    ![Manage Cluster](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156507647153701_zh-CN.png)
+    ![Manage Cluster](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156507718753701_zh-CN.png)
 
 3.  在目标集群的基本信息页面上，单击**集群资源**区域的 Worker RAM 角色链接。 
 
-    ![Worker RAM Link](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156507647153704_zh-CN.png)
+    ![Worker RAM Link](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156507718753704_zh-CN.png)
 
 4.  在 RAM 访问控制控制台的 RAM 角色管理页面上，单击**权限管理**页签上的目标权限策略名称链接。
 5.  在**策略内容**页签上单击**修改策略内容**，并在右侧的修改策略内容面板将以下内容添加到**策略内容**中，最后单击**确认**。 
@@ -39,7 +39,7 @@
     }
     ```
 
-    ![Modify RAM Authorization](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156507647153703_zh-CN.png)
+    ![Modify RAM Authorization](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156507718753703_zh-CN.png)
 
 
 ## 为 PHP 应用开启 ARMS 应用监控 {#section_qfx_dbs_xcf .section}
@@ -118,7 +118,7 @@
 
 在无状态（Deployment）或有状态（StatefulSet）页面上，目标应用的**操作**列将出现 **ARMS 控制台**按钮。
 
-![ARMS Console Button](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156507647153712_zh-CN.png)
+![ARMS Console Button](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156507718753712_zh-CN.png)
 
 **说明：** 若**操作**列没有出现 **ARMS 控制台**，请检查您是否已授权容器服务访问 ARMS 资源。
 
