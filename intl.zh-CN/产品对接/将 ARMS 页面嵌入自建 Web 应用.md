@@ -7,7 +7,7 @@
 -   如需添加 ARMS 的完整权限，则添加 AliyunARMSFullAccess。
 -   如需添加 ARMS 的只读权限，则添加 AliyunARMSReadOnlyAccess。
 
-为了快速入门，您可以下载并使用[示例代码](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/arms/embedPage.zip)。
+为了快速入门，您可以下载并使用[示例代码](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/demo/ARMS/embedPage.zip)。
 
 ## 教程概述 {#section_9yd_9lb_77u .section}
 
@@ -23,7 +23,7 @@
 
 使用本教程所述方法访问 ARMS 控制台页面的流程如图所示。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1227554/156507289654445_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1227554/156507622054445_zh-CN.png)
 
 ## 准备工作：创建 RAM 用户并添加权限 {#section_56j_qp2_kgp .section}
 
@@ -32,7 +32,7 @@
 1.  登录 [RAM 控制台](http://ram.console.aliyun.com)，在左侧导航栏中选择**人员管理** \> **用户**，并在用户页面上单击**新建用户**。
 2.  在新建用户页面的**用户账号信息**区域框中，输入**登录名称**和**显示名称**。在**访问方式**区域框中，勾选**编程访问**，并单击**确认**。 
 
-    ![Create RAM User](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156507289654440_zh-CN.png)
+    ![Create RAM User](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156507622154440_zh-CN.png)
 
     **说明：** RAM 会自动为 RAM 用户创建 AccessKey（API 访问密钥）。出于安全考虑，RAM 控制台只提供一次查看或下载 AccessKeySecret 的机会，即创建 AccessKey 时，因此请务必将 AccessKeySecret 记录到安全的地方。
 
@@ -40,7 +40,7 @@
 4.  在用户页面上找到创建好的用户，单击**操作**列中的**添加权限**。
 5.  在**添加权限**面板的**选择权限**区域框中，通过关键字搜索需要添加的权限策略 AliyunSTSAssumeRoleAccess，并单击权限策略将其添加至右侧的**已选择**列表中，然后单击**确定**。 
 
-    ![Add Permission For User](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156507289654441_zh-CN.png)
+    ![Add Permission For User](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156507622154441_zh-CN.png)
 
 6.  在**添加权限**的**授权结果**页面上，查看授权信息摘要，并单击**完成**。
 
@@ -59,28 +59,28 @@
 
 4.  在**添加权限**面板的**授权结果**页面上，查看授权信息摘要，并单击**完成**。
 
-## 步骤一：获取临时 AccessKey 和 Token {#section_kq4_dae_aqn .section}
+## 步骤一：获取临时 AccessKey 和 Token {#section_eao_2ds_hfu .section}
 
-登录自建 Web 后，在 Web 服务端调用 STS [AssumeRole](../intl.zh-CN/API 参考（STS）/操作接口/AssumeRole.md#) 接口获取临时 AccessKey 和 Token，即临时身份。请选择一种方式调用该接口：
+登录自建 Web 后，在 Web 服务端调用 STS [AssumeRole](../../../../../intl.zh-CN/API 参考（STS）/操作接口/AssumeRole.md#) 接口获取临时 AccessKey 和 Token，即临时身份。请选择一种方式调用该接口：
 
 -   通过 [OpenAPI](https://api.aliyun.com/#/?product=Sts&api=AssumeRole) 在线调用。
--   通过 [Java SDK](../intl.zh-CN/SDK参考/SDK参考（RAM）/Java SDK.md#) 调用。
+-   通过 [Java SDK](../../../../../intl.zh-CN/SDK参考/SDK参考（RAM）/Java SDK.md#) 调用。
 
 请注意，在示例代码中，您首先需要将以下参数替换为真实的值。
 
-``` {#d7e836}
-String akId = "<accessKeyId>";
-String ak = "<accessKeySecret>";
-String roleArn = "<roleArn>";
+``` {#codeblock_8ph_vbm_tu1}
+String accessKey = "xxxxxx";
+String accessSecret = "xxxxx";
+String roleArn = "acs:ram::xxxxxx:role/xxxxxx";
 ```
 
-其中，<accessKeyId\> 和 <accessKeySecret\> 是准备工作中创建的 RAM 用户的 AccessKeyId 和 AccessKeySecret。
+其中，accessKey 和 accessSecret 是准备工作中创建的 RAM 用户的 AccessKeyId 和 AccessKeySecret。
 
-![Example AccessKey](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156507289654442_zh-CN.png)
+![Example AccessKey](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156507622154442_zh-CN.png)
 
-<roleArn\> 是准备工作中创建的 RAM 角色的标识 ARN，可在 RAM 控制台的 RAM 角色基本信息页面获取。
+roleArn 是准备工作中创建的 RAM 角色的标识 ARN，可在 RAM 控制台的 RAM 角色基本信息页面获取。
 
-![Example ARN](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156507289654443_zh-CN.png)
+![Example ARN](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156507622154443_zh-CN.png)
 
 ## 步骤二：获取登录 Token {#section_q6b_i3y_tpi .section}
 
@@ -124,5 +124,5 @@ http://signin.aliyun.com/federation?Action=GetSigninToken
 
 本教程的示例代码基于 Java SDK，以嵌入 ARMS 控制台的应用列表为例。
 
-[获取示例代码](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/arms/embedPage.zip)
+[获取示例代码](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/demo/ARMS/embedPage.zip)
 
