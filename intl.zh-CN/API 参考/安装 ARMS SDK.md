@@ -11,7 +11,7 @@ ARMS 提供 Java、Python 和 PHP 的 SDK，本文介绍安装方法。
     <dependency>
        <groupId>com.aliyun</groupId>
        <artifactId>aliyun-java-sdk-arms</artifactId>
-       <version>2.5.1</version>
+       <version>2.5.2</version>
     </dependency>
     <dependency>
         <groupId>com.aliyun</groupId>
@@ -39,5 +39,5 @@ pip install aliyun-python-sdk-arms
     git clone https://github.com/aliyun/aliyun-openapi-php-sdk
     ```
 
-2.  将 aliyun-openapi-php-sdk 下的 aliyun-php-sdk-arms 和 aliyun-php-sdk-core 文件夹复制到您的 PHP 项目目录，目录结构如下图所示。 ![PHP Directory](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152342/156593103043309_zh-CN.png) 
+2.  将 aliyun-openapi-php-sdk 下的 aliyun-php-sdk-arms 和 aliyun-php-sdk-core 文件夹复制到您的 PHP 项目目录，目录结构如下图所示。 ![PHP Directory](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152342/156647424143309_zh-CN.png) 
 
