@@ -17,22 +17,22 @@
 
 -   可登录您的自有系统并浏览嵌入的应用列表、应用详情、调用查询等页面。
 -   可隐藏 ARMS 控制台页面的顶部导航栏和左侧导航栏。
--   可通过访问控制 RAM 系统控制操作权限，例如将完整权限改为只读权限等。
+-   可通过访问控制 RAM 控制操作权限，例如将完整权限改为只读权限等。
 
 **访问流程**
 
 使用本教程所述方法访问 ARMS 控制台页面的流程如图所示。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1227554/156507622054445_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1227554/156687576454445_zh-CN.png)
 
-## 准备工作：创建 RAM 用户并添加权限 {#section_56j_qp2_kgp .section}
+## 准备工作：创建 RAM 用户并添加权限 {#sc_step_1 .section}
 
 首先使用阿里云账号（主账号）创建 RAM 用户并为其添加调用 STS 服务扮演 RAM 角色的权限。
 
 1.  登录 [RAM 控制台](http://ram.console.aliyun.com)，在左侧导航栏中选择**人员管理** \> **用户**，并在用户页面上单击**新建用户**。
 2.  在新建用户页面的**用户账号信息**区域框中，输入**登录名称**和**显示名称**。在**访问方式**区域框中，勾选**编程访问**，并单击**确认**。 
 
-    ![Create RAM User](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156507622154440_zh-CN.png)
+    ![Create RAM User](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156687576654440_zh-CN.png)
 
     **说明：** RAM 会自动为 RAM 用户创建 AccessKey（API 访问密钥）。出于安全考虑，RAM 控制台只提供一次查看或下载 AccessKeySecret 的机会，即创建 AccessKey 时，因此请务必将 AccessKeySecret 记录到安全的地方。
 
@@ -40,7 +40,7 @@
 4.  在用户页面上找到创建好的用户，单击**操作**列中的**添加权限**。
 5.  在**添加权限**面板的**选择权限**区域框中，通过关键字搜索需要添加的权限策略 AliyunSTSAssumeRoleAccess，并单击权限策略将其添加至右侧的**已选择**列表中，然后单击**确定**。 
 
-    ![Add Permission For User](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156507622154441_zh-CN.png)
+    ![Add Permission For User](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156687576754441_zh-CN.png)
 
 6.  在**添加权限**的**授权结果**页面上，查看授权信息摘要，并单击**完成**。
 
@@ -61,28 +61,28 @@
 
 ## 步骤一：获取临时 AccessKey 和 Token {#section_eao_2ds_hfu .section}
 
-登录自建 Web 后，在 Web 服务端调用 STS [AssumeRole](../../../../../intl.zh-CN/API 参考（STS）/操作接口/AssumeRole.md#) 接口获取临时 AccessKey 和 Token，即临时身份。请选择一种方式调用该接口：
+登录自建 Web 应用后，在 Web 服务端调用 STS [AssumeRole](../../../../../intl.zh-CN/API 参考（STS）/操作接口/AssumeRole.md#) 接口获取临时 AccessKey 和 Token，即临时身份。请选择一种方式调用该接口：
 
 -   通过 [OpenAPI](https://api.aliyun.com/#/?product=Sts&api=AssumeRole) 在线调用。
 -   通过 [Java SDK](../../../../../intl.zh-CN/SDK参考/SDK参考（RAM）/Java SDK.md#) 调用。
 
-请注意，在示例代码中，您首先需要将以下参数替换为真实的值。
+本文以通过 Java SDK 调用的方式为例。请注意，在[示例代码](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/demo/ARMS/embedPage.zip)中，您首先需要将以下参数替换为真实的值。
 
 ``` {#codeblock_8ph_vbm_tu1}
-String accessKey = "xxxxxx";
-String accessSecret = "xxxxx";
-String roleArn = "acs:ram::xxxxxx:role/xxxxxx";
+String accessKey = "xxxxxx"; //准备工作中创建的 RAM 用户的 AccessKeyId
+String accessSecret = "xxxxx"; //准备工作中创建的 RAM 用户的 AccessKeySecret
+String roleArn = "acs:ram::xxxxxx:role/xxxxxx"; //准备工作中创建的 RAM 角色的标识 ARN
 ```
 
 其中，accessKey 和 accessSecret 是准备工作中创建的 RAM 用户的 AccessKeyId 和 AccessKeySecret。
 
-![Example AccessKey](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156507622154442_zh-CN.png)
+![Example AccessKey](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156687576854442_zh-CN.png)
 
 roleArn 是准备工作中创建的 RAM 角色的标识 ARN，可在 RAM 控制台的 RAM 角色基本信息页面获取。
 
-![Example ARN](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156507622154443_zh-CN.png)
+![Example ARN](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156687576854443_zh-CN.png)
 
-## 步骤二：获取登录 Token {#section_q6b_i3y_tpi .section}
+## 步骤二：获取登录 Token {#sc_step_2 .section}
 
 在通过 STS AssumeRole 接口获取临时 AccessKey 和 Token 后，调用登录服务接口获取登录 Token。
 
@@ -98,7 +98,7 @@ http://signin.aliyun.com/federation?Action=GetSigninToken
     &TicketType=mini
 ```
 
-## 步骤三：生成免登录链接 {#section_vhx_2w5_ww4 .section}
+## 步骤三：生成免登录链接 {#sc_step_3 .section}
 
 利用获取到的登录 Token 与待嵌入的 ARMS 控制台页面链接生成免登录访问链接，以最终实现在自建 Web 中免登录访问 ARMS 控制台页面的目的。
 
@@ -112,7 +112,7 @@ http://signin.aliyun.com/federation?Action=GetSigninToken
 
     **说明：** 将 hideTopbar 设为 true 表示隐藏顶部导航栏，将 hideSidebar 设为 true 表示隐藏左侧导航栏。
 
-2.  利用步骤二中获取到的登录 Token 与 ARMS 控制台页面链接生成免登录访问链接。 请求样例： 
+2.  利用[步骤二](#sc_step_2)中获取到的登录 Token 与 ARMS 控制台页面链接生成免登录访问链接。 请求样例： 
 
     ``` {#codeblock_wxo_dxy_09j}
     http://signin.aliyun.com/federation?Action=Login
