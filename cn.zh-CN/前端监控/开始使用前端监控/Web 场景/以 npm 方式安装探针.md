@@ -70,11 +70,11 @@ const __bl = BrowserLogger.singleton({
 const __bl = BrowerLogger.singleton();
 ```
 
-关于 `__bl` 的其他 API 使用方式，请参考 [API 使用指南](intl.zh-CN/前端监控/高级选项/API 使用指南.md#)。
+关于 `__bl` 的其他 API 使用方式，请参考 [API 使用指南](cn.zh-CN/前端监控/高级选项/API 使用指南.md#)。
 
 **Config 配置**
 
-Config 配置与 CDN 引入配置相同。请参考[前端监控 SDK 配置项](intl.zh-CN/前端监控/高级选项/前端监控 SDK 配置项.md#)。
+Config 配置与 CDN 引入配置相同。请参考[前端监控 SDK 配置项](cn.zh-CN/前端监控/高级选项/前端监控 SDK 配置项.md#)。
 
 **预上报**
 
