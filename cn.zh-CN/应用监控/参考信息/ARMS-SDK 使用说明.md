@@ -4,11 +4,11 @@
 
 ## 前提条件 {#section_eb3_bsw_fgb .section}
 
--   您已在 ARMS 控制台上创建应用监控，并已在 Java 程序中挂载和启动应用监控的 Agent。详情请参考[为 Java 应用安装探针](intl.zh-CN/应用监控/开始监控 Java 应用/以普通方式安装探针/为 Java 应用安装探针.md#)中关于安装 Java 探针的步骤。
+-   您已在 ARMS 控制台上创建应用监控，并已在 Java 程序中挂载和启动应“”用监控的 Agent。详情请参考[为 Java 应用安装探针](intl.zh-CN/应用监控/开始监控 Java 应用/以普通方式安装探针/为 Java 应用安装探针.md#)中关于安装 Java 探针的步骤。
 
 -   程序中已引入 arms-sdk-1.7.1.jar。
 
-    ```
+    ``` {#codeblock_opb_ghs_40w}
      <dependency>
     <groupId>com.alibaba.arms.apm</groupId>
     <artifactId>arms-sdk</artifactId>
@@ -23,7 +23,7 @@
 
 满足前提条件后，即可通过以下代码获取上下文的 TraceId 与 RpcId。
 
-```
+``` {#codeblock_9yf_i8n_0ys}
 Span span = Tracer.builder().getSpan();
 String traceId = span.getTraceId();
 String rpcId = span.getRpcId();
@@ -31,11 +31,11 @@ String rpcId = span.getRpcId();
 
 ## 透传业务自定义标签 {#section_djy_gsw_fgb .section}
 
-要透传业务自定义标签，需要完整添加自定义标签和获取自定义标签的步骤。
+要透传业务自定义标签，需要在代码中写入添加和获取自定义标签的步骤。
 
 1.  在业务代码中添加自定义标签（baggage）。
 
-    ```
+    ``` {#codeblock_4mt_pns_90h}
     Map<String, String> baggage = new HashMap<String, String>();
     baggage.put("key-01", "value-01");
     baggage.put("key-02", "value-02");
@@ -46,7 +46,7 @@ String rpcId = span.getRpcId();
 
 2.  在业务代码中获取自定义标签（baggage）。
 
-    ```
+    ``` {#codeblock_5w1_zqi_117}
     Span span = Tracer.builder().getSpan();
     Map<String, String> baggage = span.baggageItems();
     ```
