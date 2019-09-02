@@ -20,14 +20,14 @@
 1.  使用主账号登录[容器服务 Kubernetes 版控制台](https://cs.console.aliyun.com/#/k8s/overview)。
 2.  在左侧导航栏选择**集群** \> **集群**，在目标集群右侧**操作**列单击**管理**。 
 
-    ![Manage Cluster](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156655926753701_zh-CN.png)
+    ![Manage Cluster](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156741156953701_zh-CN.png)
 
 3.  在目标集群的基本信息页面上，单击**集群资源**区域的 Worker RAM 角色链接。 
 
-    ![Worker RAM Link](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156655926953704_zh-CN.png)
+    ![Worker RAM Link](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156741156953704_zh-CN.png)
 
 4.  在 RAM 访问控制控制台的 RAM 角色管理页面上，单击**权限管理**页签上的目标权限策略名称链接。
-5.  在**策略内容**页签上单击**修改策略内容**，并在右侧的修改策略内容面板将以下内容添加到**策略内容**中，最后单击**确认**。 
+5.  在**策略内容**页签上单击**修改策略内容**，并在右侧的修改策略内容面板将以下内容添加到**策略内容**中，最后单击**确定**。 
 
     ``` {#d7e144}
     {
@@ -37,43 +37,43 @@
     }
     ```
 
-    ![Modify RAM Authorization](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156655927153703_zh-CN.png)
+    ![Modify RAM Authorization](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156741157053703_zh-CN.png)
 
 
 ## 为 Java 应用开启 ARMS 应用监控 {#section_qfx_dbs_xcf .section}
 
 以下步骤分别对应创建新应用和已有应用这两种情况。
 
-如需在创建新应用的同时开启 ARMS 应用监控，请按以下步骤操作。
+如需在创建新应用的同时开启 ARMS 应用监控，请按以下步骤操作：
 
-1.  在容器服务管理控制台左侧导航栏选择**应用** \> **无状态**
+1.  在[容器服务 Kubernetes 版控制台](https://cs.console.aliyun.com/#/k8s/overview)左侧导航栏选择**应用** \> **无状态**。
 2.  在无状态（Deployment）页面右上角单击**使用模板创建**。
 3.  在使用模板创建页面上选择**集群**、**命名空间**和**示例模板**，并在**模板**（YAML 格式）中将以下 `annotations` 添加到 spec \> template \> metadata 层级下。 
 
     **说明：** 请将 <your-deployment-name\> 替换为您的应用名称。
 
-    ``` {#d7e218}
+    ``` {#d7e222}
     annotations:
       armsPilotAutoEnable: "on"
       armsPilotCreateAppName: "<your-deployment-name>"                                
     ```
 
-    ![YAML Example](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156655928053707_zh-CN.png)
+    ![YAML Example](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156741157053707_zh-CN.png)
 
     创建一个无状态（Deployment）应用并开启 ARMS 应用监控的完整 YAML 示例模板如下：
 
 
-如需为现有应用开启 ARMS 应用监控，请按以下步骤操作。
+如需为现有应用开启 ARMS 应用监控，请按以下步骤操作：
 
-1.  在容器服务管理控制台左侧导航栏选择**应用** \> **无状态**或**应用** \> **有状态**。
-2.  在无状态（Deployment）或有状态（StatefulSet）页面上，选择**集群**和**命名空间**，并在目标应用右侧**操作**列中选择**更多** \> **查看 Yaml**。 ![View YAML](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152230/156655928143106_zh-CN.png)
+1.  在[容器服务 Kubernetes 版控制台](https://cs.console.aliyun.com/#/k8s/overview)左侧导航栏选择**应用** \> **无状态**或**应用** \> **有状态**。
+2.  在无状态（Deployment）或有状态（StatefulSet）页面上，选择**集群**和**命名空间**，并在目标应用右侧**操作**列中选择**更多** \> **查看 Yaml**。 ![View YAML](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152230/156741157043106_zh-CN.png)
 
 
 3.  在编辑 YAML 对话框中将以下 `annotations` 添加到 spec \> template \> metadata 层级下，并单击**更新**。 
 
     **说明：** 请将 <your-deployment-name\> 替换为您的应用名称。
 
-    ``` {#d7e307}
+    ``` {#d7e314}
     annotations:
       armsPilotAutoEnable: "on"
       armsPilotCreateAppName: "<your-deployment-name>"                                
@@ -82,7 +82,7 @@
 
 在无状态（Deployment）或有状态（StatefulSet）页面上，目标应用的**操作**列将出现 **ARMS 控制台**按钮。
 
-![ARMS Console Button](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156655928153712_zh-CN.png)
+![ARMS Console Button](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1135134/156741157053712_zh-CN.png)
 
 **说明：** 若**操作**列没有出现 **ARMS 控制台**，请检查您是否已授权容器服务访问 ARMS 资源。
 
