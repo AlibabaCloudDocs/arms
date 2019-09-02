@@ -74,7 +74,7 @@ const __bl = BrowerLogger.singleton();
 
 **Config 配置**
 
-Config 配置与 cdn 引入配置相同。请参考[前端监控 SDK 配置项](intl.zh-CN/前端监控/高级选项/前端监控 SDK 配置项.md#)。
+Config 配置与 CDN 引入配置相同。请参考[前端监控 SDK 配置项](intl.zh-CN/前端监控/高级选项/前端监控 SDK 配置项.md#)。
 
 **预上报**
 
