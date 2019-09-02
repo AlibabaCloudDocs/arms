@@ -20,7 +20,7 @@
 
 3.  在新应用接入页面选择使用语言为 **Java**，选择使用环境为**默认**，选择接入方式为**手动接入**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152228/156655922344353_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152228/156741137744353_zh-CN.png)
 
 4.  采用以下方法之一下载探针，然后在控制台下载探针页签中单击**下一步**。
 
@@ -55,9 +55,9 @@
 
 6.  在控制台安装探针页签中查看并保存 LicenseKey。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152228/156655922442270_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152228/156741137742270_zh-CN.png)
 
-7.  采用以下方法之一添加 `AppName` 以及 `LicenseKey` 参数。
+7.  采用以下方法之一添加 AppName 以及 LicenseKey 参数。
 
     -   方法一：根据您的应用运行环境修改 JVM 参数。
 
@@ -99,7 +99,7 @@
             java -javaagent:/{user.workspace}/ArmsAgent/arms-bootstrap-1.7.0-SNAPSHOT.jar -Darms.licenseKey=<LicenseKey> -Darms.appName=<AppName> -jar demoApp.jar 
             ```
 
-            **说明：** demoApp.jar 为原应用 Jar 包名称，请根据实际情况替换。
+            **说明：** demoApp.jar 为原应用 JAR 包名称，请根据实际情况替换。
 
         -   Resin 运行环境
 
@@ -117,7 +117,7 @@
 
         -   Windows 运行环境
 
-            在 Windows 环境下启动 Java 进程时，请在挂载探针路径中使用**反斜杠**作为分隔符。
+            在 Windows 环境下启动 Java 进程时，请在挂载探针路径中使用反斜杠作为分隔符。
 
             ``` {#codeblock_crd_tly_swi}
             {CMD}> java -javaagent:{user.workspace}ArmsAgentarms-bootstrap-1.7.0-SNAPSHOT.jar -Darms.licenseKey=<LicenseKey> -Darms.appName=<AppName> -jar {user.workspace}demoApp.jar 
@@ -134,7 +134,7 @@
 
     -   方法二：
 
-        1.  修改 arms-agent.config 文件。将 `<LicenseKey>` 替换成您的 LicenseKey；将 `<AppName>` 替换成您的应用名称，应用名暂不支持中文。
+        1.  修改 arms-agent.config 文件。将 <LicenseKey\> 替换成您的 LicenseKey；将 <AppName\> 替换成您的应用名称，应用名暂不支持中文字符。
 
             ``` {#codeblock_k8g_iib_1ew}
             arms.licenseKey=<LicenseKey> arms.appName=<AppName>
@@ -146,7 +146,7 @@
             -javaagent:/{user.workspace}/ArmsAgent/arms-bootstrap-1.7.0-SNAPSHOT.jar 
             ```
 
-            **说明：** 将\{user.workspace\} 替换成实际探针解压的目录。
+            **说明：** 将 \{user.workspace\} 替换成实际探针解压的目录。
 
 8.  重启 Java 应用。
 
@@ -157,7 +157,7 @@
 
 ## 卸载 Java 探针 {#uninstall .section}
 
-1.  删除[第 7 步](#codeph_mzu_zln_tg7)中添加的 `AppName`、`LicenseKey` 相关的所有参数。
+1.  删除[第 7 步](#codeph_mzu_zln_tg7)中添加的 AppName、LicenseKey 相关的所有参数。
 2.  重启 Java 应用。
 
 ## 快速更改应用名称 {#section_4og_31l_fqp .section}
