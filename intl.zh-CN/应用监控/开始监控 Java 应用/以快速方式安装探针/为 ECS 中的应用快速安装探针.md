@@ -12,38 +12,38 @@
 2.  在应用列表页面右上角单击**新接入应用**。
 3.  在新接入应用页面选择使用语言为 **Java**，选择使用环境为**云服务器 ECS**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152235/156655934844390_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152235/156750360644390_zh-CN.png)
 
 4.  首次接入时需要先进行 ARMS 访问 ECS 授权，请使用主账号完成授权。
 
     1.  在弹出的提示框中单击**进入 RAM 进行授权**。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152235/156655934943119_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152235/156750360643119_zh-CN.png)
 
     2.  在云资源访问授权页面选中 **AliyunARMSAccessingECSRole** 权限后单击**同意授权**。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152235/156655935043120_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152235/156750360643120_zh-CN.png)
 
     3.  在同步 ECS 页面单击**确定同步**。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152235/156655935146413_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152235/156750360646413_zh-CN.png)
 
     4.  关闭同步 ECS页面，完成授权。
     授权成功后，新接入应用页面中将显示此账号下所有 ECS 实例。
 
-5.  在请选择您需要安装探针的应用区域单击目标 ECS 实例**操作**列的**安装探针**，并在弹出的**提示**对话中单击**确认**。
+5.  在请选择您要安装探针的应用区域单击目标 ECS 实例**操作**列的**安装探针**，并在弹出的**提示**对话中单击**确认**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152235/156655935143121_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152235/156750360643121_zh-CN.png)
 
     在 ECS 上安装探针成功后，ARMS 将获取此 ECS 上的所有进程信息并显示在目标 ECS 实例下方的进程列表中。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152235/156655935343122_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152235/156750360643122_zh-CN.png)
 
     **说明：** 若成功安装探针后，ECS 进程信息不准确，请单击 ECS 实例左侧的 **-** 号然后单击 **+** 号刷新信息。若探针安装失败请参见[常见问题](#section_wqk_sxc_zgb)进行处理。
 
-6.  探针安装成功后，在下方的弹框中编辑目标进程的**应用名称**，然后单击**操作**列的**启动应用监控**。
+6.  探针安装成功后，在下方的弹框中编辑目标进程的**应用名称**，然后单击**操作**列的**启用应用监控**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152235/156655935643123_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152235/156750360743123_zh-CN.png)
 
     **说明：** 当多个进程的应用名称相同时，表现为一个监控任务下的多个实例。
 
@@ -58,7 +58,7 @@
 
     本示例中，对应的进程号为：62857。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152233/156655935743111_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152233/156750360743111_zh-CN.png)
 
 2.  执行命令 `kill -9 进程号`。例如：`kill -9 62857`。
 
@@ -98,16 +98,16 @@
     ```
 
 3.  登录 [ECS 控制台](https://ecs.console.aliyun.com/#/home)，并完成以下检查工作。
-    1.  在左侧导航栏中选择**云助手**。
-    2.  在云助手页面的搜索框中选择命令输入 `InstallJavaAgent` 命令。
+    1.  在左侧导航栏中选择**运维与监控** \> **云助手**。
+    2.  在云助手页面的搜索框中选择**命令名称**，并输入 InstallJavaAgent。
 
-        若查找结果不存在，请联系 ARMS 服务账号。
+        若查找结果不存在，请联系 ARMS 钉钉服务账号 arms160804。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152235/156655935843124_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152235/156750360743124_zh-CN.png)
 
-    3.  在云助手页面的**执行记录**区域的搜索栏中输入 `InstallJavaAgent` 命令对应的 id，在查找结果中单击该记录右侧**操作**列的**查看结果**，查看 `InstallJavaAgent` 命令是否执行成功。若未执行成功，根据细执行结果排查问题（如 ECS 磁盘满、未安装 Java Agent 等问题，可以通过清理磁盘或安装 Java Agent 解决），若不能解决请将详细执行结果反馈给 ARMS 服务账号。
+    3.  在云助手页面的**执行记录**页签的搜索框中输入 `InstallJavaAgent` 命令对应的 ID，在查找结果中单击该记录右侧**操作**列的**查看结果**，查看 `InstallJavaAgent` 命令是否执行成功。若未执行成功，根据详细执行结果排查问题（如 ECS 磁盘满、未安装 Java Agent 等问题，可以通过清理磁盘或安装 Java Agent 解决），若不能解决请将详细执行结果反馈给 ARMS 钉钉服务账号 arms160804。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152235/156655935943125_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152235/156750360743125_zh-CN.png)
 
 
 ## 快速更改应用名称 {#section_k8u_2kh_k5n .section}
@@ -116,5 +116,5 @@
 
 ## 相关文档 {#section_gr2_ds2_zgb .section}
 
--   [为 ECS 中的应用快速安装探针的常见问题](../../../../intl.zh-CN/常见问题/应用监控常见问题/为 ECS 中的应用快速安装探针的常见问题.md#)
+ [为 ECS 中的应用快速安装探针的常见问题](../../../../intl.zh-CN/常见问题/应用监控常见问题/为 ECS 中的应用快速安装探针的常见问题.md#)
 
