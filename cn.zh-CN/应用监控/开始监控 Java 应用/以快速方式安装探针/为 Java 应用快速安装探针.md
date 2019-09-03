@@ -16,7 +16,7 @@ ARMS 提供一键接入方式为 Java 应用安装探针，操作简单，安装
 2.  在应用列表页面右上角单击**新接入应用**。
 3.  在新接入应用页面选择使用语言为 **Java**，选择使用环境为**默认环境**，选择接入方式为**一键接入**。 然后查看并保存 LicenseKey。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152233/156741139944367_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152233/156750358144367_zh-CN.png)
 
 4.  运行您所在地域对应的安装脚本。
 
@@ -53,13 +53,13 @@ ARMS 提供一键接入方式为 Java 应用安装探针，操作简单，安装
 
 ## 卸载探针 {#section_xkw_j3m_lgb .section}
 
-当您不需要 ARMS 探针采集数据时，可按照以下步骤卸载探针。
+当您不需要 ARMS 探针采集数据时，可按照以下步骤卸载探针：
 
 1.  执行 `jps -l` 命令，并在执行结果中找到 `com.alibaba.mw.arms.apm.supervisor.daemon.Daemon` 对应的进程号。
 
     在本示例中，`com.alibaba.mw.arms.apm.supervisor.daemon.Daemon` 对应的进程号为：62857。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152233/156741140043111_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152233/156750358143111_zh-CN.png)
 
 2.  执行命令 `kill -9 进程号`。例如：`kill -9 62857`。
 3.  重新启动您的应用。
