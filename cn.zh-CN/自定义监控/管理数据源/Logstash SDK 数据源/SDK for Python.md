@@ -23,7 +23,7 @@ Python SDK 依赖于一组第三方的 Python 库。在使用该 SDK 前必须�
 
 -   Google Protocol Buffer：Python SDK 依赖于 Protocol Buffer 协议向服务端写入日志。执行以下命令进行安装：
 
-    ```
+    ``` {#codeblock_v1o_ace_oq6}
     sudo pip install protobuf==2.5.0
     ```
 
@@ -31,13 +31,13 @@ Python SDK 依赖于一组第三方的 Python 库。在使用该 SDK 前必须�
 
 -   Python-Requests：Python SDK 依赖于 Python-Requests 类进行 HTTP 通信。执行以下命令进行安装：
 
-```
+``` {#codeblock_dh9_qfa_kus}
 sudo pip install requests
 ```
 
 -   SimpleJson：Python SDK 依赖于 SimpleJson 处理 API 的 JSON 格式返回结果。执行以下命令进行安装：
 
-    ```
+    ``` {#codeblock_nuz_85i_ix7}
     sudo pip install simplejson
     ```
 
@@ -50,14 +50,14 @@ sudo pip install requests
 2.  解压完整下载的包到指定目录。
 3.  在解压后的目录运行以下命令安装 Python SDK。
 
-    ```
+    ``` {#codeblock_ndw_dir_jtu}
     python setup.py install
     ```
 
 
 ## 开始一个 Python 程序 {#section_lh4_15s_gfb .section}
 
-```
+``` {#codeblock_rku_8jf_xxp}
 #!/usr/bin/env python
 #encoding: utf-8
 import datetime
@@ -70,10 +70,10 @@ def main():
     #accessKeyId,accessKeySecret: 构成访问密钥
     #注意: 请用户根据实际情况填写
     endpoint = "cn-hangzhou.log.aliyuncs.com"
-    project = "proj-arms-7dd6ecb06d21e02aed9eeb56b79e9f"
-    logstore = "logstore-56f96ec5546fb6555ef97dd057acb4e9"
-    accessKeyId = "utmxiro7BYtTLLxL"
-    accessKeySecret = "PyjsffdlggBoYcrgpr69w023b9UcBH"
+    project = "proj-arms-7dd6ecb06d21e02aed9eeb56b7****"
+    logstore = "logstore-56f96ec5546fb6555ef97dd057ac****"
+    accessKeyId = "utmxiro7BYtT****"
+    accessKeySecret = "PyjsffdlggBoYcrgpr69w023b9****"
     logGroupSize = 10
     examples = []
     examples.append('|c0a895e114526786450161001d1ed9|9|EADS|BIZ-MONITOR|0|类目=男装&区域=杭州&eventTeyp=1&性别=1&价格=2140|')
@@ -99,11 +99,11 @@ if __name__ == '__main__':
     main()
 ```
 
-## 重要参数说明 { .section}
+## 重要参数说明 {#section_ol9_o1z_8s7 .section}
 
 |参数|说明|
 |--|--|
-|endpoint|数据写入区域（[表 1](cn.zh-CN/自定义监控/管理数据源/Logstash SDK 数据源/SDK 数据源概述.md#table_ow2_prs_gfb)）|
+|endpoint|数据写入区域（[表 1](intl.zh-CN/自定义监控/管理数据源/Logstash SDK 数据源/SDK 数据源概述.md#table_ow2_prs_gfb)）|
 |accessKeyId|写入数据时的密钥 ID|
 |accessKeySecret|写入数据时的密钥密码|
 |project|写入数据的 Project ID|
@@ -111,7 +111,7 @@ if __name__ == '__main__':
 
 **说明：** 
 
--   ARMS 颁发的 accessKeyId、accessKeySecret 非阿里云 AK/SK，需要从 ARMS 获取，详情参见[SDK 数据源概述](cn.zh-CN/自定义监控/管理数据源/Logstash SDK 数据源/SDK 数据源概述.md#)。
+-   ARMS 颁发的 accessKeyId、accessKeySecret 非阿里云 AK/SK，需要从 ARMS 获取，详情参见[SDK 数据源概述](intl.zh-CN/自定义监控/管理数据源/Logstash SDK 数据源/SDK 数据源概述.md#)。
 
 -   Project ID 和 Logstore ID 标识一个唯一的数据源。
 
