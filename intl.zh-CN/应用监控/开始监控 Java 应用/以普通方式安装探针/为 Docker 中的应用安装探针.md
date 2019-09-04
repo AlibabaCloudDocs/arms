@@ -71,7 +71,7 @@
         2.  在应用列表页面右上角单击**新接入应用**。
         3.  在新接入应用页面顶部单击 License Key 右侧的复制图标。
 
-            ![Section LicenseKey](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152532/156741482045312_zh-CN.png)
+            ![Section LicenseKey](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152532/156756495945312_zh-CN.png)
 
 2.  运行 docker build 命令来构建镜像。示例如下：
 
