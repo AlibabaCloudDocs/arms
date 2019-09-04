@@ -20,7 +20,7 @@
 
 3.  在新应用接入页面选择使用语言为 **Java**，选择使用环境为**默认**，选择接入方式为**手动接入**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152228/156741137744353_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152228/156756323844353_zh-CN.png)
 
 4.  采用以下方法之一下载探针，然后在控制台下载探针页签中单击**下一步**。
 
@@ -55,7 +55,7 @@
 
 6.  在控制台安装探针页签中查看并保存 LicenseKey。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152228/156741137742270_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152228/156756323942270_zh-CN.png)
 
 7.  采用以下方法之一添加 AppName 以及 LicenseKey 参数。
 
