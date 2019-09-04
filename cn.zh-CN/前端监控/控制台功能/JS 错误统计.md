@@ -14,7 +14,7 @@ JS 错误率 = 指定时间内发生 JS 错误的 PV / 总 PV
 
 在左侧的错误率排行标签页上，列出的是站点内错误率最高或最低的前 100 个页面，可以按照错误率升序或降序排列。右侧的 **JS 错误率**图表展示的是左侧列表选中页面在指定时间范围内的 JS 错误率曲线和 PV。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152274/156756644543633_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152274/156757440043633_zh-CN.png)
 
 **说明：** 由于错误率排行榜仅会展示错误率最高或最低的前 100 个页面，当站点的页面总数超过 200 个时，错误率不属于这两个区间的页面始终不会显示在排行中。例如，假设站点共有 220 个页面，那么无论选择按错误率升序还是降序排列，都会有 20 个页面不会显示在排行中。
 
@@ -22,19 +22,19 @@ JS 错误率 = 指定时间内发生 JS 错误的 PV / 总 PV
 
 在左侧的错误聚类排行标签页上，列出的是每种错误信息的发生次数排行。右侧的 JS 错误调用页面展示的是出现左侧列表选中错误的页面，按错误次数降序排列。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152274/156756644543634_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152274/156757440043634_zh-CN.png)
 
 ## 地理分布 {#section_uw2_2mn_f7h .section}
 
 在**地理分布**模块，您可以查看上述统计信息的地理分布情况。地理分布又分为中国和世界两个维度，中国维度的单位为省，世界维度的单位为国家/地区。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152274/156756644543635_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152274/156757440043635_zh-CN.png)
 
 ## 终端分布 {#section_tcs_xci_n4q .section}
 
 在**终端分布**模块中，您可以查看上述统计信息的终端分布情况。终端分布又细分为浏览器、操作系统、设备、分辨率等维度。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152274/156756644543638_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152274/156757440043638_zh-CN.png)
 
 ## 通用操作 {#section_bcn_oms_it3 .section}
 
@@ -55,11 +55,11 @@ JS 错误率 = 指定时间内发生 JS 错误的 PV / 总 PV
 3.  在应用列表的左侧导航栏中选择**应用** \> **JS 错误率**。
 4.  在JS 错误率标签页选择需排查的对象，并单击**JS 错误类聚**区域的**明细**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152274/156756644543646_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152274/156757440043646_zh-CN.png)
 
     JS 错误详情页面打开。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152274/156756644543647_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152274/156757440043647_zh-CN.png)
 
     **说明：** 若信息过长显示不完整，将鼠标移到错误信息外即可显示全部信息。
 
@@ -102,7 +102,7 @@ JS 错误详情页还提供了错误搜索功能，搜索条件包括：
 2.  在**设置报警规则**区域单击**新建报警**。
 3.  在新建报警对话框中，按照下图输入各项参数。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152274/156756644543651_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152221/156757440043505_zh-CN.png)
 
 
 ## 如何上报资源加载失败的情况（例如 404）？ {#section_1vn_bk9_phu .section}
@@ -134,6 +134,4 @@ SDK 监控的 JS 错误仅限脚本相关错误，不包括资源加载错误（
 
 
 关于因跨域资源共享导致的 Script Error，请参考 [“Script error.”的产生原因和解决办法](../intl.zh-CN/常见问题/前端监控常见问题/“Script error.”的产生原因和解决办法.md#)。
-
- 
 
