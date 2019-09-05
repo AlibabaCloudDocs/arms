@@ -2,7 +2,13 @@
 
 使用 ARMS 监控 Java 应用时，如果因为某些原因希望更改应用名称，例如忘记将示例应用名称 Java-Demo 修改为自定义名称，您可以按照本文的说明，在不重启应用、不重装探针的情况下更改应用名称。
 
-探针版本为 2.5.8.1 或以上。您可以在探针目录的 Version 文件中查看探针版本。例如，`2.5.8_cf020486_20190816150025` 表示探针版本为 2.5.8，探针发布时间为 2019 年 8 月 16 日。探针目录的位置因安装探针的方式而异，详见以下内容。
+探针版本为 2.5.8.1 或以上。您可以在探针目录的 Version 文件中查看探针版本。例如，`2.5.8_cf020486_20190816150025` 表示探针版本为 2.5.8，探针发布时间为 2019 年 8 月 16 日。探针目录的位置因安装探针的方式而异，详情请参见下文内容。
+
+如果您的探针版本低于 2.5.8.1，请先按照卸载流程重新安装（在此过程重命名应用名称即可），2019 年 8 月 20 日之后下载的探针默认都支持该功能。
+
+-   手动安装卸载，详情请参见[为 Java 应用安装探针](../../../../intl.zh-CN/应用监控/开始监控 Java 应用/以普通方式安装探针/为 Java 应用安装探针.md#)。
+-   ECS自动安装，详情请参见[为 ECS 中的应用快速安装探针](../../../../intl.zh-CN/应用监控/开始监控 Java 应用/以快速方式安装探针/为 ECS 中的应用快速安装探针.md#)。
+-   一键接入，详情请参见[为 Java 应用快速安装探针](../../../../intl.zh-CN/应用监控/开始监控 Java 应用/以快速方式安装探针/为 Java 应用快速安装探针.md#)。
 
 ## 普通 Java 应用（以普通方式安装探针时） {#section_czl_pxe_z9v .section}
 
@@ -42,7 +48,7 @@
 
 如果应用的标准输出打印以下日志，则说明应用名称更改成功。
 
-![Name Change Success](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1463780/156680779957403_zh-CN.png)
+![Name Change Success](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1463780/156765238657403_zh-CN.png)
 
 ## 普通 Java 应用（以快速方式安装探针时） {#section_j8u_9a8_b5t .section}
 
@@ -70,7 +76,7 @@
 
 如果应用的标准输出打印以下日志，则说明应用名称更改成功。
 
-![Name Change Success](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1463780/156680779957403_zh-CN.png)
+![Name Change Success](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1463780/156765238657403_zh-CN.png)
 
 ## 部署在 ECS 中的 Java 应用（以快速方式安装探针时） {#section_zs3_iqg_tlj .section}
 
@@ -94,7 +100,7 @@
 
 如果应用的标准输出打印以下日志，则说明应用名称更改成功。
 
-![Name Change Success](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1463780/156680779957403_zh-CN.png)
+![Name Change Success](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1463780/156765238657403_zh-CN.png)
 
 ## 部署在容器服务 K8s 集群中的 Java 应用 {#section_iw6_l4v_c66 .section}
 
