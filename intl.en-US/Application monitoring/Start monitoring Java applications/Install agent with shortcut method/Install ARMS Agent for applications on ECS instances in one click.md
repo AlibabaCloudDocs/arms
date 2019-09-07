@@ -17,7 +17,7 @@ You can use ARMS to monitor the topology, API requests, abnormal and slow transa
     2.  On the Cloud Resource Access Authorization page, select **AliyunARMSAccessingECSRole** and then click **Confirm Authorization Policy**.
     3.  On the Sync ECS page, click Close.
 
-        **Note:** If you want to access ECS applications through a custom monitoring job, synchronize the ECS instance according to the document [ECS management and ARMS Agent deployment](http://~~42906~~).
+        **Note:** If you want to access ECS applications through a custom monitoring job, synchronize the ECS instance according to [Manage ECS Data Source](https://www.alibabacloud.com/help/doc-detail/42906.htm).
 
     After performing authorization, go to the Batch Install for ECS tab page. All ECS instances under this primary account are displayed on the ECS Batch Install tab page.
 
@@ -42,7 +42,7 @@ When you no longer need to monitor applications on an ECS instance, you can unin
 
     In this example, the process number is 62857.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152233/156654971743111_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152233/156783525443111_en-US.png)
 
 2.  Run the command `kill -9 process number`, for example, `kill -9 62857`.
 
