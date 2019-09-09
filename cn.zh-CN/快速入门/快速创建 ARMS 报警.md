@@ -30,7 +30,7 @@
 
     6.  勾选通知方式。例如：勾选邮件。
     7.  设置通知对象。在**全部联系组**框中单击联系人分组的名称，该联系人分组出现**在已选联系组**框中，则设置成功。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152221/156742567943504_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152221/156799711343504_zh-CN.png)
 
 
 ## 创建一个前端监控报警 {#section_ml2_5nh_mfb .section}
@@ -53,7 +53,7 @@
         3.  单击报警规则右侧的 **＋** 号，编辑第二条报警规则，例如：N = 10 时 JS 错误数的的总和大于等于 20 时则报警。
     6.  勾选通知方式，例如：勾选短信和邮件。
     7.  设置通知对象。在**全部联系组**中单击联系人分组的名称，该联系人分组出现**在已选联系组**中，则设置成功。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152221/156742567943505_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152221/156799711343505_zh-CN.png)
 
 
 ## 创建一个自定义监控报警 {#section_hc2_mrh_mfb .section}
@@ -80,6 +80,6 @@
 
 5.  勾选通知方式，例如：勾选邮件。
 6.  设置通知对象。在**全部联系组**中单击联系人分组的名称，该联系人分组出现**在已选联系组**中，即设置成功。
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152221/156742568043507_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152221/156799711343507_zh-CN.png)
 
 
