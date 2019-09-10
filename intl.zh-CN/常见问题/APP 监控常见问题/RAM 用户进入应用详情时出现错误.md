@@ -1,8 +1,6 @@
-# RAM 用户进入应用详情时出现错误 {#concept_2118453 .concept}
+# RAM 用户进入应用详情时出现错误 {#concept_137425_zh .concept}
 
 本文介绍了当 RAM 用户进入应用详情，出现如下错误“对不起，你没有权限执行操作”时的解决办法。
-
-请参见
 
 ## 背景信息 {#section_1w1_wka_c5d .section}
 
@@ -29,7 +27,7 @@
         }
         ```
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1681336/156810316059948_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1681336/156810601659948_zh-CN.png)
 
     -   策略内容：管理权限
 
@@ -46,14 +44,14 @@
         }
         ```
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1681336/156810316059950_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1681336/156810601759950_zh-CN.png)
 
 5.  在左侧菜单栏中选择**人员管理** \> **用户**，跳转至用户页面。在页面左侧**用户登录名称**输入框中输入需要添加权限的用户名称，单击搜索图标搜索到用户后，在页面右侧的**操作**列单击**添加权限**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1681336/156810316059951_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1681336/156810601759951_zh-CN.png)
 
 6.  在**添加权限**弹出窗口中，在**选择权限**列表中选择**自定义权限策略**，并且在**权限策略**输入框中输入刚才添加的权限策略名称，单击搜索图标。从左侧**权限策略名称**列表选中搜索到的权限策略后，显示在右侧的**已选择**列表中，单击**确定**成功添加权限策略。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1681336/156810316059952_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1681336/156810601759952_zh-CN.png)
 
 
