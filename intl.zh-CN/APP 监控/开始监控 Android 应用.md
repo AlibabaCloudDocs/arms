@@ -2,15 +2,15 @@
 
 本文适用于 Andriod 应用的接入。APP 监控提供了完备的客户端崩溃分析监控，具体包括 JAVA Crash 监控、Native Crash 监控和 ANR 监控等。
 
-1.  登录 [ARMS 控制台](https://arms-ap-southeast-1.console.aliyun.com/#/home)，在左侧导航栏中选择 **APP 监控** 。
+1.  登录 [ARMS 控制台](https://arms.console.aliyun.com/#/home)，在左侧导航栏中选择 **APP 监控** 。
 2.  在 APP 监控页面，单击右上角的**添加 APP 监控**。
 3.  在弹出的添加 APP 监控对话框的填写应用信息页签输入应用名称和 Android 应用的 PackageName，并选择 **Android** 平台，单击**创建应用**。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1680661/156810140059954_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1680661/156810225159954_zh-CN.png)
 
 4.  在查看配置页签复制 AppKey 和 AppSecret 的值，单击**下一步**。 
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1680661/156810140059955_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1680661/156810225259955_zh-CN.png)
 
 5.  添加 Android SDK。此内容适用于使用 Gradle 管理依赖的 Android Studio 项目。 
     1.  在程序中引入阿里云 Maven 仓库依赖。 
@@ -87,5 +87,5 @@
         ```
 
 
-在完成上述步骤之后，您可以对您的 APP 进行测试，并登录 [ARMS 控制台](https://arms-intl.console.aliyun.com/#/home)查看数据报表。
+在完成上述步骤之后，您可以对您的 APP 进行测试，并登录 [ARMS 控制台](https://arms.console.aliyun.com/#/home)查看数据报表。
 
