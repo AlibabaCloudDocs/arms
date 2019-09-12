@@ -8,7 +8,7 @@
 
 ## 如何为容器服务应用更新探针？ {#section_xoa_mp5_j4v .section}
 
-要为容器服务应用更新 Java 探针版本，重启 Pod 即可。
+要为容器服务应用更新 Java 探针版本，重启应用 Pod 即可。
 
 ## 如何为其他类型的应用更新探针？ {#section_sz3_odg_foz .section}
 
@@ -22,7 +22,7 @@
 
         本示例中，对应的进程号为：62857。
 
-        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152233/156376370143111_zh-CN.png)
+        ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152233/156825223743111_zh-CN.png)
 
     2.  执行命令 `kill -9 进程号`。例如：`kill -9 62857`。
 
