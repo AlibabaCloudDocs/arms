@@ -8,7 +8,7 @@
 
     **说明：** ARMS 不仅可接入阿里云 ECS 上的应用，还能接入其他能访问公网的服务器上的应用。
 
--   确保您的应用使用的第三方组件或框架在应用监控兼容性列表范围内，请参见[应用监控兼容性列表](intl.zh-CN/应用监控/参考信息/应用监控兼容性列表.md#)。
+-   确保您的应用使用的第三方组件或框架在应用监控兼容性列表范围内，请参见[应用监控兼容性列表](intl.zh-CN/应用监控/参考信息/应用组件和框架支持列表.md#)。
 
 
 ## 接入 PHP 探针 {#section_ndm_0ma_dvl .section}
@@ -18,7 +18,7 @@
 
 3.  在新接入应用页面选择使用语言为 **PHP**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152237/156750362444408_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152237/156879649844408_zh-CN.png)
 
 4.  采用以下任意一种方法下载 PHP 探针，完成后单击**下一步**。
 
@@ -38,6 +38,9 @@
     
     # 北京地域
     wget "http://arms-apm-beijing.oss-cn-beijing.aliyuncs.com/arms-php-agent.zip" -O arms-php-agent.zip
+    
+    # 张家口地域
+    wget "http://arms-apm-zhangjiakou.oss-cn-zhangjiakou.aliyuncs.com/arms-php-agent.zip" -O arms-php-agent.zip
     
     # 深圳地域
     wget "http://arms-apm-shenzhen.oss-cn-shenzhen.aliyuncs.com/arms-php-agent.zip" -O arms-php-agent.zip
@@ -60,7 +63,7 @@
 
 6.  在安装探针页签查看并保存 LicenseKey。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152237/156750362443126_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152237/156879649843126_zh-CN.png)
 
 7.  采用以下方法之一安装和配置探针。
 
