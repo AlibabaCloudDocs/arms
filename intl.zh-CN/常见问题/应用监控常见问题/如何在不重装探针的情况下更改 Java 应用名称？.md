@@ -6,9 +6,9 @@
 
 如果您的探针版本低于 2.5.8.1，请先按照卸载流程重新安装（在此过程重命名应用名称即可），2019 年 8 月 20 日之后下载的探针默认都支持该功能。
 
--   手动安装卸载，详情请参见[为 Java 应用安装探针](../../../../intl.zh-CN/应用监控/开始监控 Java 应用/以普通方式安装探针/为 Java 应用安装探针.md#)。
--   ECS自动安装，详情请参见[为 ECS 中的应用快速安装探针](../../../../intl.zh-CN/应用监控/开始监控 Java 应用/以快速方式安装探针/为 ECS 中的应用快速安装探针.md#)。
--   一键接入，详情请参见[为 Java 应用快速安装探针](../../../../intl.zh-CN/应用监控/开始监控 Java 应用/以快速方式安装探针/为 Java 应用快速安装探针.md#)。
+-   手动安装卸载，详情请参见[为 Java 应用安装探针](../../../../intl.zh-CN/应用监控/开始监控 Java 应用/开始监控部署在其他环境（如自建 IDC）中的应用/为 Java 应用手动安装探针.md#)。
+-   ECS自动安装，详情请参见[为 ECS 中的应用快速安装探针](../../../../intl.zh-CN/应用监控/开始监控 Java 应用/开始监控部署在 ECS 实例中的应用/为 ECS 中的应用快速安装探针.md#)。
+-   一键接入，详情请参见[为 Java 应用快速安装探针](../../../../intl.zh-CN/应用监控/开始监控 Java 应用/开始监控部署在其他环境（如自建 IDC）中的应用/使用脚本为 Java 应用快速安装探针.md#)。
 
 ## 普通 Java 应用（以普通方式安装探针时） {#section_czl_pxe_z9v .section}
 
@@ -48,7 +48,7 @@
 
 如果应用的标准输出打印以下日志，则说明应用名称更改成功。
 
-![Name Change Success](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1463780/156765238657403_zh-CN.png)
+![Name Change Success](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1463780/156878653057403_zh-CN.png)
 
 ## 普通 Java 应用（以快速方式安装探针时） {#section_j8u_9a8_b5t .section}
 
@@ -71,12 +71,12 @@
 
 3.  打开 ~/.arms/attach.info 文件，将需要修改的旧应用名称修改为新应用名称并保存文件。 
 
-    **警告：** 修改文件时切勿多加空格等内容。
+    **警告：** 修改文件时切勿多加空格等内容，否则会因为与前述步骤中修改的新应用名称不符而导致修改失败。
 
 
 如果应用的标准输出打印以下日志，则说明应用名称更改成功。
 
-![Name Change Success](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1463780/156765238657403_zh-CN.png)
+![Name Change Success](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1463780/156878653057403_zh-CN.png)
 
 ## 部署在 ECS 中的 Java 应用（以快速方式安装探针时） {#section_zs3_iqg_tlj .section}
 
@@ -95,28 +95,28 @@
     -   <LicenseKey\>：ARMS 应用监控中应用的 LicenseKey，可从控制台获取。
 2.  打开 ~/.arms/attach.info 文件，将需要修改的旧应用名称修改为新应用名称并保存文件。 
 
-    **警告：** 修改文件时切勿多加空格等内容。
+    **警告：** 修改文件时切勿多加空格等内容，否则会因为与前述步骤中修改的新应用名称不符而导致修改失败。
 
 
 如果应用的标准输出打印以下日志，则说明应用名称更改成功。
 
-![Name Change Success](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1463780/156765238657403_zh-CN.png)
+![Name Change Success](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/1463780/156878653057403_zh-CN.png)
 
 ## 部署在容器服务 K8s 集群中的 Java 应用 {#section_iw6_l4v_c66 .section}
 
-如果是部署在容器服务 K8s 集群中的 Java 应用，修改 Deployment 内的 armsPilotCreateAppName 参数并重启 Pod 即可。
+修改 Deployment 内的 armsPilotCreateAppName 参数并重启 Pod 即可。
 
 ## 部署在 EDAS 上的 Java 应用 {#section_25m_0la_1y1 .section}
 
-目前无法为部署在 EDAS 上的 Java 应用更改应用名称。
+目前不支持为部署在 EDAS 上的 Java 应用更改应用名称。
 
 应用名称更改成功后稍等片刻，旧名称的应用下将不再有监控数据上报，且新名称的应用下将有监控数据上报。
 
-[为 Java 应用安装探针](../../../../intl.zh-CN/应用监控/开始监控 Java 应用/以普通方式安装探针/为 Java 应用安装探针.md#)
+[为 Java 应用手动安装探针](../../../../intl.zh-CN/应用监控/开始监控 Java 应用/开始监控部署在其他环境（如自建 IDC）中的应用/为 Java 应用手动安装探针.md#)
 
-[为 Java 应用快速安装探针](../../../../intl.zh-CN/应用监控/开始监控 Java 应用/以快速方式安装探针/为 Java 应用快速安装探针.md#)
+[使用脚本为 Java 应用快速安装探针](../../../../intl.zh-CN/应用监控/开始监控 Java 应用/开始监控部署在其他环境（如自建 IDC）中的应用/使用脚本为 Java 应用快速安装探针.md#)
 
-[为 ECS 中的应用快速安装探针](../../../../intl.zh-CN/应用监控/开始监控 Java 应用/以快速方式安装探针/为 ECS 中的应用快速安装探针.md#)
+[为 ECS 中的应用快速安装探针](../../../../intl.zh-CN/应用监控/开始监控 Java 应用/开始监控部署在 ECS 实例中的应用/为 ECS 中的应用快速安装探针.md#)
 
-[为容器服务 Kubernetes 版 Java 应用安装探针](../../../../intl.zh-CN/应用监控/开始监控 Java 应用/以普通方式安装探针/为容器服务 Kubernetes 版 Java 应用安装探针.md#)
+[为容器服务 Kubernetes 版 Java 应用安装探针](../../../../intl.zh-CN/应用监控/开始监控 Java 应用/开始监控部署在阿里云容器服务 K8s 集群中的应用/为容器服务 Kubernetes 版 Java 应用安装探针.md#)
 
