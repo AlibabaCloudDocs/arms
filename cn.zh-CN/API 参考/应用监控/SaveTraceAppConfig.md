@@ -1,6 +1,6 @@
 # SaveTraceAppConfig
 
-调用SaveTraceAppConfig接口自定义设置应用调用链路相关参数。
+调用SaveTraceAppConfig接口进行应用监控的自定义设置（如调用链采样设置、Agent开关等）。
 
 ## 调试
 
@@ -84,7 +84,7 @@
 |convergence.enable|收敛URL|-   true
 -   false |
 |convergence.minServerSize|收敛阈值|大于此阈值即进行收敛。|
-|convergence.pattern|收敛规则正则|可使用正则表达式设置收敛规则，多个正则表达式之间以英文逗号分隔，直接填写URL原文表示不收敛此URL，示例：/service/\(.\*?\)/demo。|
+|convergence.pattern|收敛规则正则|可使用正则表达式设置收敛规则，多个正则表达式之间以英文逗号（,）分隔，直接填写URL原文表示不收敛此URL，示例：/service/\(.\*?\)/demo。|
 
 **业务日志关联字段说明**
 
