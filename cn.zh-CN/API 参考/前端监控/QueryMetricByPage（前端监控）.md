@@ -13,20 +13,26 @@
 |Action|String|是|QueryMetricByPage|系统规定参数，取值为`QueryMetricByPage`。 |
 |EndTime|Long|是|1596183532000|结束时间的时间戳，精确到毫秒。 |
 |IntervalInSec|Integer|是|60000|数据片的时间间隔，单位为毫秒，最小值为60000。 |
-|Measures.N|RepeatList|是|pv|指标对应的测量数据，详情请参见[可查询的前端监控指标](https://help.aliyun.com/document_detail/93792.html#title-laj-sra-p1l)。最多可添加5个。 |
-|Metric|String|是|webstat.index|需要查询的指标，不可自定义输入，详情请参见[可查询的前端监控指标](https://help.aliyun.com/document_detail/93792.html#title-laj-sra-p1l)。 |
+|Measures.N|RepeatList|是|pv|指标对应的测量数据，详情请参见[可查询的前端监控指标](#section_2wv_zz8_zw7)。最多可添加5个。 |
+|Metric|String|是|webstat.index|需要查询的指标，不可自定义输入，详情请参见[可查询的前端监控指标](#section_2wv_zz8_zw7)。 |
 |StartTime|Long|是|1595319532000|起始时间的时间戳，精确到毫秒。 |
 |OrderBy|String|否|rpc|排序依据，可设为任一测量数据。 |
-|Filters.N.Key|String|否|pid|筛选条件组合，必须添加`pid`和`regionId`条件，`pid`获取方式请参见[如何获取前端应用PID](https://help.aliyun.com/document_detail/93792.html#title-mu3-xcc-wdl)。 |
-|Filters.N.Value|String|否|xxx@74xxx|筛选条件组合，必须添加`pid`和`regionId`条件，`pid`获取方式请参见[如何获取前端应用PID](https://help.aliyun.com/document_detail/93792.html#title-mu3-xcc-wdl)。 |
-|Dimensions.N|RepeatList|否|\["detector\_browser","detector\_device"\]|指标对应的维度，详情请参见[可查询的前端监控指标](https://help.aliyun.com/document_detail/93792.html#title-laj-sra-p1l)。最多可添加5个。 |
+|Filters.N.Key|String|否|pid|筛选条件组合，必须添加`pid`和`regionId`条件，`pid`获取方式请参见[如何获取前端应用pid](#section_n8m_h9o_ebe)。 |
+|Filters.N.Value|String|否|xxx@74xxx|筛选条件组合，必须添加`pid`和`regionId`条件，`pid`获取方式请参见[如何获取前端应用pid](#section_n8m_h9o_ebe)。 |
+|Dimensions.N|RepeatList|否|\["detector\_browser","detector\_device"\]|指标对应的维度，详情请参见[可查询的前端监控指标](#section_2wv_zz8_zw7)。最多可添加5个。 |
 |Order|String|否|ASC|排序标准：
 
- -   `ASC`：升序
+-   `ASC`：升序
 -   `DESC`：降序 |
 |RegionId|String|否|cn-hangzhou|地域ID。 |
 |CurrentPage|Integer|否|1|查询结果的页码。非必填参数，如果不填写则默认为`1`。 |
 |PageSize|Integer|否|10|查询结果的每页项目数量。 |
+
+## 如何获取前端应用pid
+
+登录[ARMS控制台](https://arms.console.aliyun.com/#/home)，在控制台左侧导航栏单击**前端监控**，然后在**前端监控**页面单击目标前端应用名称，以进入该前端应用的总览页面。
+
+此时浏览器地址栏中的URL即包含前端应用的pid，格式为`pid=xxx`。由于浏览器进行了编码，前端应用需要对pid稍作修改。例如，如果URL中包含的pid为`xxx%4074xxx`，则需要将`%40`替换为`@`，即：`xxx@74xxx`。
 
 ## 返回数据
 
@@ -34,7 +40,7 @@
 |--|--|---|--|
 |Code|String|200|接口状态，取值说明如下：
 
- -   2XX：成功
+-   2XX：成功
 -   3XX：重定向
 -   4XX：请求错误
 -   5XX：服务器错误 |
@@ -47,8 +53,287 @@
 |RequestId|String|626037F5-FDEB-45B0-804C-B3C92797\*\*\*\*|请求ID |
 |Success|Boolean|true|查询是否成功：
 
- -   `true`：成功
+-   `true`：成功
 -   `false`：失败 |
+
+## 可查询的前端监控指标
+
+您可以使用QueryMetric接口查询前端监控的以下指标。
+
+**说明：** 已知具体的查询条件时，应将值传入Filters参数中，用于限定查询结果的范围。如果不知道具体的查询条件，可以将下表中的维度传入dimensions参数，从而获得该维度所有可能值的列表。
+
+|指标（Metric）|描述|维度（Dimensions）|测量数据（Measures）|
+|----------|--|--------------|--------------|
+|webstat.api|API成功率|-   api（API请求地址，不带参数）
+-   detector\_app\_version（客户端版本）
+-   detector\_browser（浏览器）
+-   detector\_device（设备）
+-   detector\_os（操作系统）
+-   ip\_country\_id（中国省市ID）
+-   ip\_region\_id（国家ID或区域ID）
+-   release（版本号）
+-   sr（屏幕分辨率）
+
+|-   count（请求次数）
+-   rate（API成功率）
+-   avg\_time（平均耗时） |
+|webstat.api.detail|API详情|-   api（API请求地址，不带参数）
+-   ct（网络制式）
+-   detector\_browser（浏览器）
+-   detector\_device（设备）
+-   detector\_os（操作系统）
+-   domain（域名）
+-   ip\_country\_id（中国省市ID）
+-   ip\_isp（运营商）
+-   ip\_region\_id（国家ID或区域ID）
+-   msg（返回信息）
+-   page（页面地址）
+-   sr（屏幕分辨率）
+
+|-   count（请求次数）
+-   fail\_count（失败次数）
+-   fail\_time（失败耗时）
+-   fail\_uv（失败影响用户数）
+-   success\_count（成功次数）
+-   success\_rate（成功率）
+-   success\_time（成功耗时） |
+|webstat.apicost|API成功耗时|-   api（API请求地址，不带参数）
+-   code（返回状态码）
+-   detector\_app\_version（客户端版本）
+-   detector\_browser（浏览器）
+-   detector\_device（设备）
+-   detector\_os（操作系统）
+-   ip\_country\_id（中国省市ID）
+-   ip\_region\_id（国家ID或区域ID）
+-   release（版本号）
+-   sr（屏幕分辨率）
+
+|-   count（成功次数）
+-   avg\_time（成功耗时均值） |
+|webstat.apifailtime|API失败耗时|-   api（API请求地址，不带参数）
+-   code（返回状态码）
+-   detector\_app\_version（客户端版本）
+-   detector\_browser（浏览器）
+-   detector\_device（设备）
+-   detector\_os（操作系统）
+-   ip\_country\_id（中国省市ID）
+-   ip\_region\_id（国家ID或区域ID）
+-   release（版本号）
+-   sr（屏幕分辨率）
+
+|-   count（错误次数）
+-   avg\_time（失败耗时均值） |
+|webstat.apimsg|API消息聚类|-   code（返回状态码）
+-   detector\_app\_version（客户端版本）
+-   detector\_browser（浏览器）
+-   detector\_device（设备）
+-   detector\_os（操作系统）
+-   ip\_country\_id（中国省市ID）
+-   ip\_region\_id（国家ID或区域ID）
+-   msg（错误信息）
+-   release（版本号）
+-   sr（屏幕分辨率）
+-   success（1表示请求成功，0表示请求失败）
+
+|count（请求次数） |
+|webstat.avg|自定义统计：均值统计|-   detector\_browser（浏览器）
+-   detector\_device（设备）
+-   detector\_os（操作系统）
+-   ip\_country\_id（中国省市ID）
+-   ip\_region\_id（国家ID或区域ID）
+-   key（自定义Key）
+-   sr（屏幕分辨率）
+
+|-   count（总次数）
+-   pv（页面浏览量）
+-   uv
+-   avg\_val（平均值） |
+|webstat.errcate|错误聚类排行|-   detector\_app\_version（客户端版本）
+-   detector\_browser（浏览器）
+-   detector\_device（设备）
+-   detector\_os（操作系统）
+-   ip\_country\_id（中国省市ID）
+-   ip\_region\_id（国家ID或区域ID）
+-   msg（错误信息）
+-   page（页面地址）
+-   release（版本号）
+-   sr（屏幕分辨率）
+
+|count（错误次数） |
+|webstat.index|总览（访问量）|-   ct（网络制式）
+-   detector\_browser（浏览器）
+-   detector\_device（设备）
+-   detector\_os（操作系统）
+-   ip\_country\_id（中国省市ID）
+-   ip\_isp（运营商）
+-   ip\_region\_id（国家ID或区域ID）
+-   page（页面地址）
+-   sr（屏幕分辨率）
+
+|-   pv（页面浏览量）
+-   uv（独立访客） |
+|webstat.msg.top|页面高频错误|-   msg（错误信息）
+-   page（页面地址）
+
+|-   count（错误次数）
+-   error\_uv（影响用户数）
+-   影响用户率（影响用户数÷总UV） |
+|webstat.perf.bucket|对应ARMS前端监控控制台的**访问速度**页面上的性能样本分层图。|-   detector\_browser（浏览器）
+-   detector\_device（设备）
+-   detector\_os（操作系统）
+-   ip\_country\_id（中国省市ID）
+-   ip\_region\_id（国家ID或区域ID）
+-   page（页面地址）
+-   sr（屏幕分辨率）
+
+|-   cfpt（自定义首屏）
+-   ctti（自定义首次可交互）
+-   dns（DNS查询耗时）
+-   dom（DOM解析耗时）
+-   fmp（首屏时间）
+-   fpt（首次渲染时间）
+-   load（页面完全加载时间）
+-   ready（DOM Ready时间）
+-   res（资源加载耗时）
+-   ssl（SSL安全连接耗时）
+-   t1~t10（自定义性能指标）
+-   tcp（TCP连接耗时）
+-   trans（内容传输耗时）
+-   ttfb（请求响应耗时）
+-   tti（首次可交互时间） |
+|webstat.perf.distribution|对应ARMS前端监控控制台的**访问速度**页面上的性能分层图。|-   detector\_browser（浏览器）
+-   detector\_device（设备）
+-   detector\_os（操作系统）
+-   ip\_country\_id（中国省市ID）
+-   ip\_region\_id（国家ID或区域ID）
+-   page（页面地址）
+-   sr（屏幕分辨率）
+
+|-   cfpt（自定义首屏）
+-   ctti（自定义首次可交互）
+-   dns（DNS查询耗时）
+-   dom（DOM解析耗时）
+-   fmp（首屏时间）
+-   fpt（首次渲染时间）
+-   load（页面完全加载时间）
+-   ready（DOM Ready时间）
+-   res（资源加载耗时）
+-   ssl（SSL安全连接耗时）
+-   t1~t10（自定义性能指标）
+-   tcp（TCP连接耗时）
+-   trans（内容传输耗时）
+-   ttfb（请求响应耗时）
+-   tti（首次可交互时间） |
+|webstat.resource|资源错误排行|-   ct（网络制式）
+-   detector\_browser（浏览器）
+-   detector\_device（设备）
+-   detector\_os（操作系统）
+-   ip\_country\_id（中国省市ID）
+-   ip\_isp（运营商）
+-   ip\_region\_id（国家ID或区域ID）
+-   node\_name（错误类型）
+-   page（页面地址）
+-   sr（屏幕分辨率）
+-   src（资源信息）
+
+|count（资源错误数）|
+|webstat.resource|对应ARMS前端监控控制台的**总览**页面的资源弹层。|-   ct（网络制式）
+-   detector\_browser（浏览器）
+-   detector\_device（设备）
+-   detector\_os（操作系统）
+-   ip\_country\_id（中国省市ID）
+-   ip\_isp（运营商）
+-   ip\_region\_id（国家ID或区域ID）
+-   node\_name（错误类型）
+-   page（页面地址）
+-   sr（屏幕分辨率）
+-   src（资源信息）
+
+|count（错误次数）|
+|webstat.satisfy|满意度|-   detector\_browser（浏览器）
+-   detector\_device（设备）
+-   detector\_os（操作系统）
+-   ip\_country\_id（中国省市ID）
+-   ip\_region\_id（国家ID或区域ID）
+-   page（页面地址）
+-   sr（屏幕分辨率）
+
+|-   bad（不满意：fpt\>8000）
+-   good（满意：fpt<2000）
+-   neutral（可容忍：fpt\>2000且fpt<8000）
+-   satisfy（满意指数） |
+|webstat.session|慢加载追踪|无|-   browser\_version（浏览器版本）
+-   browser（浏览器）
+-   date（开始时间）
+-   dom（DOM解析耗时）
+-   ip\_country\_id（中国省市ID）
+-   ip\_country（中国省市）
+-   ip\_region\_id（国家ID或区域ID）
+-   ip\_region（国家或区域）
+-   load（页面完全加载）
+-   page（页面地址）
+-   sid（会话ID） |
+|webstat.speed|访问速度|-   detector\_browser（浏览器）
+-   detector\_device（设备）
+-   detector\_os（操作系统）
+-   ip\_country\_id（中国省市ID）
+-   ip\_region\_id（国家ID或区域ID）
+-   release（版本号）
+-   sr（屏幕分辨率）
+-   page（页面地址）
+-   environment（环境）
+
+|-   avg\_cfpt（自定义首屏）
+-   count（样本量）
+-   avg\_ctti（自定义首次可交互）
+-   avg\_dns（DNS查询耗时）
+-   avg\_dom（DOM解析耗时）
+-   avg\_fmp（首屏时间）
+-   avg\_fpt（首次渲染时间）
+-   avg\_load（页面完全加载时间）
+-   avg\_ready（DOM Ready时间）
+-   avg\_res（资源加载耗时）
+-   avg\_ssl（SSL安全连接耗时）
+-   avg\_t1~t10（自定义性能指标）
+-   avg\_tcp（TCP连接耗时）
+-   avg\_trans（内容传输耗时）
+-   avg\_ttfb（请求响应耗时）
+-   avg\_tti（首次可交互时间） |
+|webstat.stable|错误率排行|-   detector\_app\_version（客户端版本）
+-   detector\_browser（浏览器）
+-   detector\_device（设备）
+-   detector\_os（操作系统）
+-   ip\_country\_id（中国省市ID）
+-   ip\_region\_id（国家ID或区域ID）
+-   release（版本号）
+-   sr（屏幕分辨率）
+
+|-   count（样本量）
+-   error\_pv（错误样本量）
+-   rate（JS错误率） |
+|webstat.sum|自定义统计：求和统计|-   detector\_browser（浏览器）
+-   detector\_device（设备）
+-   detector\_os（操作系统）
+-   ip\_country\_id（中国省市ID）
+-   ip\_region\_id（国家ID或区域ID）
+-   key（自定义key）
+-   sr（屏幕分辨率）
+
+|-   count（总次数）
+-   pv（页面浏览量）
+-   sum\_val（总和）
+-   uv（独立访客） |
+|webstat.url|访问的URL|-   detector\_browser（浏览器）
+-   detector\_device（设备）
+-   detector\_os（操作系统）
+-   ip\_country\_id（中国省市ID）
+-   ip\_region\_id（国家ID或区域ID）
+-   sr（屏幕分辨率）
+-   uid
+-   username（用户名）
+
+|-   pv（页面浏览量）
+-   uv（独立访客） |
 
 ## 示例
 
