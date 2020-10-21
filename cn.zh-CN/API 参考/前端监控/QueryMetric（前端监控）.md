@@ -33,7 +33,7 @@ QueryMetric接口可用于查询应用监控和前端监控的相关监控指标
 |Metric|String|setMetric|是|webstat.index|需查询的指标，不可自定义输入，详情请参见[可查询的前端监控指标](#section_jtc_apg_9ii)。|
 |Measures|List\[String\]|setMesures|是|\["pv","uv"\]|指标对应的测量数据，详情请参见[可查询的前端监控指标](#section_jtc_apg_9ii)。最多可添加5个。|
 |Dimensions|List\[String\]|setDimensionss|否|\["detector\_browser","detector\_device"\]|指标对应的维度，详情请参见[可查询的前端监控指标](#section_jtc_apg_9ii)。最多可添加5个。|
-|Filters|List\[Filter\]|setFilters|是|\[\{key:pid,value:xxx@74xxx\},\{key:regionId,value:cn-hangzhou\}\]|筛选条件组合，必须添加pid和regionId条件，pid获取方式请参见[如何获取应用pid](#p_xyi_tr6_2w5)。|
+|Filters|List\[Filter\]|setFilters|是|\[\{key:pid,value:xxx@74xxx\},\{key:regionId,value:cn-hangzhou\}\]|筛选条件组合，必须添加pid和regionId条件，pid获取方式请参见[如何获取应用pid](#sc_pid)。|
 |IntervalInSec|Integer|setIntervalInSec|否|100,000|数据片的时间间隔，单位为毫秒，最小值为60,000。**说明：** 如需不限制时间范围，则将该参数设为2147483647。 |
 |OrderBy|String|setOrderBy|否|count|排序依据，可设为任一测量数据。|
 |Limit|Integer|setLimit|否|100|自定义的返回结果数量限制。**说明：** 因为POP网关的限制，超出10,000条的数据将被去除。 |
