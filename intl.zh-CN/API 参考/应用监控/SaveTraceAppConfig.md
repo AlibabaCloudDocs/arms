@@ -10,7 +10,7 @@
 
 |字段名称|字段类型|是否必选|示例值|描述|
 |----|----|----|---|--|
-|Pid|String|是|xxx@74xxx|应用的ID标识串。获取方式请参见[如何获取应用PID](https://www.alibabacloud.com/help/doc-detail/146244.htm#p-xyi-tr6-2w5)。 |
+|Pid|String|是|xxx@74xxx|应用的ID标识串。获取方式请参见[如何获取应用pid](/intl.zh-CN/API 参考/应用监控/QueryMetricByPage（应用监控）.md)。 |
 |Settings.N.Key|String|否|sampling.enable|选择需要自定义的设置。-   [调用链路采样相关](#table_6hs_0c7_i8n)
 -   [总开关设置](#table_qib_r15_hya)
 -   [阈值设置](#table_2fd_pb3_j50)
