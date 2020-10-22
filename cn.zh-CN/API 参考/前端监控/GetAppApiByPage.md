@@ -13,7 +13,7 @@
 |Action|String|是|GetAppApiByPage|系统规定参数。取值：`GetAppApiByPage`。 |
 |CurrentPage|Integer|是|1|查询结果的页码。 |
 |EndTime|Long|是|1600066800000|结束时间的时间戳，精确到毫秒。 |
-|PId|String|是|xxx@74xxx|应用的唯一识别码。`pid`获取方式请参见[如何获取前端应用PID](https://help.aliyun.com/document_detail/93792.html#title-mu3-xcc-wdl)。 |
+|PId|String|是|xxx@74xxx|应用的唯一识别码。`pid`获取方式请参见[如何获取前端应用PID](https://help.aliyun.com/document_detail/186822.html?spm=a2c4g.11186623.6.802.f22a29d7XCDrHf#title-ref-s31-44g)。 |
 |RegionId|String|是|cn-hangzhou|地域ID。 |
 |StartTime|Long|是|1600063200000|开始时间的时间戳，精确到毫秒。 |
 |PageSize|Integer|否|10|查询结果的每页项目数量。 |
