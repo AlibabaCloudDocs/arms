@@ -11,7 +11,7 @@
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
 |Action|String|是|GetTraceApp|系统规定参数。取值：`GetTraceApp`。 |
-|Pid|String|是|xxx@74xxx|应用的ID标识串。获取方式请参见[如何获取应用PID](https://www.alibabacloud.com/help/doc-detail/146244.htm#p-xyi-tr6-2w5)。 |
+|Pid|String|是|xxx@74xxx|应用的ID标识串。获取方式请参见[如何获取应用PID](https://www.alibabacloud.com/help/zh/doc-detail/186100.htm?spm=a2cdw.13409063.0.0.7a72281f0bkTfx#title-imy-7gj-qhr)。 |
 |RegionId|String|是|cn-hangzhou|地域ID。 |
 
 ## 返回数据
