@@ -38,5 +38,5 @@ ARMS Agent安装成功，控制台上仍无监控数据。
         -   [华北2（北京）](https://arms-apm-beijing.oss-cn-beijing.aliyuncs.com/2.7.2/ArmsAgent.tar.gz)
         -   [华北3（张家口）](https://arms-apm-zhangjiakou.oss-cn-zhangjiakou.aliyuncs.com/2.7.2/ArmsAgent.tar.gz)
         -   [华南1（深圳）](https://arms-apm-shenzhen.oss-cn-shenzhen.aliyuncs.com/2.7.2/ArmsAgent.tar.gz)
-        -   [中国香港](https://arms-apm-hongkong.oss-cn-hongkong.aliyuncs.com/2.7.2/ArmsAgent.tar.gz)
+        -   [中国（香港）](https://arms-apm-hongkong.oss-cn-hongkong.aliyuncs.com/2.7.2/ArmsAgent.tar.gz)
 
