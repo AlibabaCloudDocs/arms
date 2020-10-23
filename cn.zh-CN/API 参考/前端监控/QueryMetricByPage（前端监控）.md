@@ -400,8 +400,8 @@ http(s)://[Endpoint]/?Action=QueryMetricByPage
     -   请检查时间间隔是否设置过小，intervalInSec需要大于或等于60,000。
     -   请检查regionId是否设置正确，该regionId是根据日志接收的服务端划分的地域，而不是用户所在的地域，您可以根据项目的上报日志地址来区分regionId：
         -   华东1（杭州）地域前端监控上报日志地址：`https://arms-retcode.aliyuncs.com/r.png?`。
-        -   新加坡（新加坡）地域前端监控上报日志地址：`https://arms-ap-southeast-1.console.aliyun.com/r.png?`。
-        -   美国（硅谷）地域前端监控上报日志地址：`http://arms-us-west-1.console.aliyun.com/r.png?`。
+        -   新加坡（新加坡）地域前端监控上报日志地址：`https://arms-retcode-sg.aliyuncs.com/r.png?`。
+        -   美国（硅谷）地域前端监控上报日志地址： `https://retcode-us-west-1.arms.aliyuncs.com/r.png?`。
 -   在调用模拟器或代码接口时为什么会报错？
 
     -   请检查regionId是否已填写，filters中是否已添加pid。
@@ -432,8 +432,8 @@ http(s)://[Endpoint]/?Action=QueryMetricByPage
         请检查regionId是否设置正确，该regionId是根据日志接收的服务端划分的地域，而不是用户所在的地域，您可以根据项目的上报日志地址来区分regionId：
 
         -   华东1（杭州）地域前端监控上报日志地址：`https://arms-retcode.aliyuncs.com/r.png?`。
-        -   新加坡（新加坡）地域前端监控上报日志地址：`https://arms-ap-southeast-1.console.aliyun.com/r.png?`。
-        -   美国（硅谷）地域前端监控上报日志地址： `http://arms-us-west-1.console.aliyun.com/r.png?`。
+        -   新加坡（新加坡）地域前端监控上报日志地址：`https://arms-retcode-sg.aliyuncs.com/r.png?`。
+        -   美国（硅谷）地域前端监控上报日志地址： `https://retcode-us-west-1.arms.aliyuncs.com/r.png?`。
 -   为什么数据集中会缺失一些 measures或dimensions参数？
 
     因为最多可设置5个measures和dimensions，如果超过5个，将导致参数无法返回。
