@@ -71,7 +71,7 @@ API详情页提供指定时间段内应用中所有API请求的成功率、平�
 ![API ask](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/1620404061/p177860.png)
 
 -   单击列表首行中的属性右侧的图标，可对列表进行排序。
--   将鼠标悬浮于**API**列的API别名上，单击![edit](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/1397593061/p177320.png)，可以修改API别名，修改后，所有API将会以别名展示。单击**设置为搜索值**，可以将该API设置为筛选项。
+-   将鼠标悬浮于**API**列的API别名上，单击![edit](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/1397593061/p177320.png)图标，可以修改API别名，修改后，所有API将会以别名展示。单击**设置为搜索值**，可以将该API设置为筛选项。
 -   单击**错误次数**列的数字，可以查看指定时间段内错误请求详情和错误分布情况。 单击请求详情区域的**查看会话**，可以查看错误请求的会话追踪详情。
 
     ![error details](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/6039683061/p111587.png)
