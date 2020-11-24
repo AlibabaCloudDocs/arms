@@ -2,7 +2,7 @@
 
 JVM监控功能用于监控重要的JVM指标，包括堆内存指标、非堆内存指标、直接缓冲区指标、内存映射缓冲区指标、GC（Garbage Collection）累计详情和JVM线程数等。本文介绍JVM监控功能和查看JVM监控指标的操作步骤。
 
-![JVM监控](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/8169248951/p143547.png)
+![JVM监控-arms](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/7005026061/p143547.png)
 
 ## 功能介绍
 
