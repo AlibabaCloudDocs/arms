@@ -13,13 +13,13 @@
 |Action|String|是|QueryMetricByPage|系统规定参数，取值为`QueryMetricByPage`。 |
 |EndTime|Long|是|1596183532000|结束时间的时间戳，精确到毫秒。 |
 |IntervalInSec|Integer|是|60000|数据片的时间间隔，单位为毫秒，最小值为60000。 |
-|Measures.N|RepeatList|是|pv|指标对应的测量数据，详情请参见[可查询的前端监控指标](#section_2wv_zz8_zw7)。最多可添加5个。 |
-|Metric|String|是|webstat.index|需要查询的指标，不可自定义输入，详情请参见[可查询的前端监控指标](#section_2wv_zz8_zw7)。 |
+|Measures.N|RepeatList|是|pv|指标对应的测量数据，请参见[可查询的前端监控指标](#section_2wv_zz8_zw7)。最多可添加5个。 |
+|Metric|String|是|webstat.index|需要查询的指标，不可自定义输入，请参见[可查询的前端监控指标](#section_2wv_zz8_zw7)。 |
 |StartTime|Long|是|1595319532000|起始时间的时间戳，精确到毫秒。 |
 |OrderBy|String|否|rpc|排序依据，可设为任一测量数据。 |
-|Filters.N.Key|String|否|pid|筛选条件组合，必须添加`pid`和`regionId`条件，`pid`获取方式请参见[如何获取前端应用pid](#section_n8m_h9o_ebe)。 |
-|Filters.N.Value|String|否|xxx@74xxx|筛选条件组合，必须添加`pid`和`regionId`条件，`pid`获取方式请参见[如何获取前端应用pid](#section_n8m_h9o_ebe)。 |
-|Dimensions.N|RepeatList|否|\["detector\_browser","detector\_device"\]|指标对应的维度，详情请参见[可查询的前端监控指标](#section_2wv_zz8_zw7)。最多可添加5个。 |
+|Filters.N.Key|String|是|pid|筛选条件组合，必须添加`pid`和`regionId`条件，`pid`获取方式请参见[如何获取前端应用pid](#section_n8m_h9o_ebe)。 |
+|Filters.N.Value|String|是|xxx@74xxx|筛选条件组合，必须添加`pid`和`regionId`条件，`pid`获取方式请参见[如何获取前端应用pid](#section_n8m_h9o_ebe)。 |
+|Dimensions.N|RepeatList|否|\["detector\_browser","detector\_device"\]|指标对应的维度，请参见[可查询的前端监控指标](#section_2wv_zz8_zw7)。最多可添加5个。 |
 |Order|String|否|ASC|排序标准：
 
 -   `ASC`：升序
@@ -60,7 +60,10 @@
 
 您可以使用QueryMetric接口查询前端监控的以下指标。
 
-**说明：** 已知具体的查询条件时，应将值传入Filters参数中，用于限定查询结果的范围。如果不知道具体的查询条件，可以将下表中的维度传入dimensions参数，从而获得该维度所有可能值的列表。
+**说明：**
+
+-   filters参数必须添加`pid`和`regionId`条件。
+-   已知具体的查询条件时，应将值传入Filters参数中，用于限定查询结果的范围。如果不知道具体的查询条件，可以将下表中的维度传入dimensions参数，从而获得该维度所有可能值的列表。
 
 |指标（Metric）|描述|维度（Dimensions）|测量数据（Measures）|
 |----------|--|--------------|--------------|
@@ -146,7 +149,7 @@
 
 |-   count（总次数）
 -   pv（页面浏览量）
--   uv
+-   uv（用户访问量）
 -   avg\_val（平均值） |
 |webstat.errcate|错误聚类排行|-   detector\_app\_version（客户端版本）
 -   detector\_browser（浏览器）
@@ -389,7 +392,7 @@ http(s)://[Endpoint]/?Action=QueryMetricByPage
 
 -   调用时为什么会出现RAM的权限问题？
 
-    这可能是由于该RAM角色没有权限，您可以为用户添加权限，详情请参见[借助RAM角色实现跨云账号访问资源](/intl.zh-CN/访问控制/借助RAM角色实现跨云账号访问资源.md)。
+    这可能是由于该RAM角色没有权限，您可以为用户添加权限，请参见[借助RAM角色实现跨云账号访问资源](/intl.zh-CN/访问控制/借助RAM角色实现跨云账号访问资源.md)。
 
 -   怎么拉取列表数据（不考虑时间粒度）？
 
@@ -400,12 +403,12 @@ http(s)://[Endpoint]/?Action=QueryMetricByPage
     -   请检查时间间隔是否设置过小，intervalInSec需要大于或等于60,000。
     -   请检查regionId是否设置正确，该regionId是根据日志接收的服务端划分的地域，而不是用户所在的地域，您可以根据项目的上报日志地址来区分regionId：
         -   华东1（杭州）地域前端监控上报日志地址：`https://arms-retcode.aliyuncs.com/r.png?`。
-        -   新加坡（新加坡）地域前端监控上报日志地址：`https://arms-ap-southeast-1.console.aliyun.com/r.png?`。
-        -   美国（硅谷）地域前端监控上报日志地址：`http://arms-us-west-1.console.aliyun.com/r.png?`。
+        -   新加坡（新加坡）地域前端监控上报日志地址：`https://arms-retcode-sg.aliyuncs.com/r.png?`。
+        -   美国（硅谷）地域前端监控上报日志地址： `https://retcode-us-west-1.arms.aliyuncs.com/r.png?`。
 -   在调用模拟器或代码接口时为什么会报错？
 
     -   请检查regionId是否已填写，filters中是否已添加pid。
-    -   查看对应指标的measures或dimensions是否正确，详情请参见[可查询的前端监控指标](#section_2wv_zz8_zw7)。
+    -   查看对应指标的measures或dimensions是否正确，请参见[可查询的前端监控指标](#section_2wv_zz8_zw7)。
 -   报错信息以及对应解决方案
 
     -   **Metric查询错误，请联系管理员。**
@@ -432,8 +435,8 @@ http(s)://[Endpoint]/?Action=QueryMetricByPage
         请检查regionId是否设置正确，该regionId是根据日志接收的服务端划分的地域，而不是用户所在的地域，您可以根据项目的上报日志地址来区分regionId：
 
         -   华东1（杭州）地域前端监控上报日志地址：`https://arms-retcode.aliyuncs.com/r.png?`。
-        -   新加坡（新加坡）地域前端监控上报日志地址：`https://arms-ap-southeast-1.console.aliyun.com/r.png?`。
-        -   美国（硅谷）地域前端监控上报日志地址： `http://arms-us-west-1.console.aliyun.com/r.png?`。
+        -   新加坡（新加坡）地域前端监控上报日志地址：`https://arms-retcode-sg.aliyuncs.com/r.png?`。
+        -   美国（硅谷）地域前端监控上报日志地址： `https://retcode-us-west-1.arms.aliyuncs.com/r.png?`。
 -   为什么数据集中会缺失一些 measures或dimensions参数？
 
     因为最多可设置5个measures和dimensions，如果超过5个，将导致参数无法返回。
