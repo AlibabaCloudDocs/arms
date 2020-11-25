@@ -13,13 +13,13 @@
 |Action|String|是|QueryMetricByPage|系统规定参数，取值为`QueryMetricByPage`。 |
 |EndTime|Long|是|1596183532000|结束时间的时间戳，精确到毫秒。 |
 |IntervalInSec|Integer|是|60000|数据片的时间间隔，单位为毫秒，最小值为60000。 |
-|Measures.N|RepeatList|是|pv|指标对应的测量数据，详情请参考[可查询的应用监控指标](#section_tq8_ysr_srb)。最多可添加5个。|
-|Metric|String|是|webstat.index|需要查询的指标，不可自定义输入，详情请参考[可查询的应用监控指标](#section_tq8_ysr_srb)。|
+|Measures.N|RepeatList|是|pv|指标对应的测量数据，请参见[可查询的应用监控指标](#section_tq8_ysr_srb)。最多可添加5个。|
+|Metric|String|是|webstat.index|需要查询的指标，不可自定义输入，请参见[可查询的应用监控指标](#section_tq8_ysr_srb)。|
 |StartTime|Long|是|1595319532000|起始时间的时间戳，精确到毫秒。 |
 |OrderBy|String|否|rpc|排序依据，可设为任一测量数据。 |
-|Filters.N.Key|String|否|pid|筛选条件组合，必须添加`pid`和`regionId`条件，`pid`获取方式请参考[如何获取应用pid](#section_bkl_3j6_ezg)。|
-|Filters.N.Value|String|否|xxx@74xxx|筛选条件组合，必须添加`pid`和`regionId`条件，`pid`获取方式请参考[如何获取应用pid](#section_bkl_3j6_ezg)。|
-|Dimensions.N|RepeatList|否|\["detector\_browser","detector\_device"\]|指标对应的维度，详情请参考[可查询的应用监控指标](#section_tq8_ysr_srb)。最多可添加5个。|
+|Filters.N.Key|String|是|pid|筛选条件组合，必须添加`pid`和`regionId`条件，`pid`获取方式，请参见[如何获取应用pid](#section_bkl_3j6_ezg)。|
+|Filters.N.Value|String|是|xxx@74xxx|筛选条件组合，必须添加`pid`和`regionId`条件，`pid`获取方式，请参见[如何获取应用pid](#section_bkl_3j6_ezg)。|
+|Dimensions.N|RepeatList|否|\["detector\_browser","detector\_device"\]|指标对应的维度，请参见[可查询的应用监控指标](#section_tq8_ysr_srb)。最多可添加5个。|
 |Order|String|否|ASC|排序标准：
 
 -   `ASC`：升序
@@ -30,7 +30,7 @@
 
 ## 如何获取应用pid
 
-在[ARMS控制台](https://arms-intl.console.aliyun.com/#/home)左侧导航栏中单击**应用监控** \> **应用列表**，然后在**应用列表**页面单击目标应用名称，进入该应用的总览页面。
+在[ARMS控制台](https://arms-intl.console.aliyun.com/#/home)左侧导航栏中单击**应用监控** \> **应用列表**，并在顶部菜单栏选择目标地域，然后在**应用列表**页面单击目标应用名称，进入该应用总览页面。
 
 此时浏览器地址栏中的URL即包含应用的pid，格式为`pid=xxx`。由于浏览器进行了编码，除EDAS应用之外的其他应用需要对pid稍作修改。例如，如果URL中包含的pid为`xxx%4074xxx`，则需要将`%40`替换为`@`，即：`xxx@74xxx`。
 
@@ -58,24 +58,27 @@
 
 ## 可查询的应用监控指标
 
-您可以使用QueryMetric接口查询应用监控的以下指标。
+您可以使用QueryMetricByPage接口查询应用监控的以下指标。
 
-**说明：** 已知具体的查询条件时，应将值传入filters参数中，用于限定查询结果的范围。如果不知道具体的查询条件，可以将下表中的维度传入dimensions参数，从而获得该维度所有可能值的列表。
+**说明：**
+
+-   filters参数必须添加`pid`和`regionId`条件。
+-   已知具体的查询条件时，应将值传入filters参数中，用于限定查询结果的范围。如果不知道具体的查询条件，可以将下表中的维度传入dimensions参数，从而获得该维度所有可能值的列表。
 
 |指标集（Metric）|描述（Description）|维度（Dimensions）|测量数据（Measures）|
 |-----------|---------------|--------------|--------------|
 |appstat.vm|通用指标，对应应用详情下的JVM监控图表，包括GC指标、堆内存和非堆内存详情以及线程数。|-   pid
 -   rootIp
 
-|GC指标： -   youngGcCount // JVM监控Young GC次数
--   oldGcCount // JVM监控Full GC次数
--   youngGcTime // JVM监控Young GC耗时
--   oldGcTime // JVM监控Full GC耗时
+|GC指标： -   youngGcCount //JVM监控Young GC次数
+-   oldGcCount //JVM监控Full GC次数
+-   youngGcTime //JVM监控Young GC耗时
+-   oldGcTime //JVM监控Full GC耗时
 -   youngGcCountInstant //JVM监控Young GC次数瞬时值
 -   oldGcCountInstant //JVM监控Full GC次数瞬时值
 -   youngGcTimeInstant //JVM监控Young GC耗时瞬时值
 -   oldGcTimeInstant //JVM监控Full GC耗时瞬时值 |
-|堆内存和非堆内存详情： -   edenSpace //年轻代-eden区
+|堆内存和非堆内存详情：-   edenSpace //年轻代-eden区
 -   oldGen //老年代
 -   survivorSpace //年轻代-survivor区
 -   metaSpace
@@ -97,7 +100,7 @@
 -   rootIp
 
 |实例数： -   instanceCount |
-|CPU： -   systemCpuIdle //页面未展示 - CPU空等待
+|CPU： -   systemCpuIdle //页面未展示-CPU空等待
 -   systemCpuSystem
 -   systemCpuUser
 -   systemCpuIoWait |
@@ -108,7 +111,7 @@
 -   systemMemCached //页面缓存 |
 |磁盘： -   systemDiskFree
 -   systemDiskUsed
--   systemDiskTotal // 公共云控制台页面未展示 |
+-   systemDiskTotal //公共云控制台页面未展示 |
 |负载： -   systemLoad |
 |网络： -   systemNetInPackets
 -   systemNetOutPackets
@@ -118,20 +121,20 @@
 -   systemNetOutBytes |
 |appstat.database|数据库调用。|-   pid
 -   rpcType //调用类型
--   endpoint // 数据库地址：`localhost: 3306`
--   destId // 库名：`arms`
+-   endpoint //数据库地址：`localhost: 3306`
+-   destId //库名：`arms`
 
-|-   rt // 响应时间
--   count // 请求数
--   error // 错误数 |
+|-   rt //响应时间
+-   count //请求数
+-   error //错误数 |
 |appstat.txn|接口调用。|-   pid
 -   rpcType
--   rpc// 接口：`/demo/oracleTwo`
+-   rpc //接口：`/demo/oracleTwo`
 
 |-   rt
 -   count
 -   error
--   errRate // 错误率 |
+-   errRate //错误率 |
 |appstat.incall|应用详情。|-   pid
 -   rpcType
 -   rootIp
