@@ -2,7 +2,7 @@
 
 借助ARMS应用监控，您可以对开源Kubernetes环境的应用进行应用拓扑、接口调用、异常事务和慢事务监控、SQL分析等监控。本文将帮助您将开源Kubernetes环境中的应用接入ARMS应用监控。
 
--   [开通ARMS服务](/cn.zh-CN/快速入门/开通ARMS.md)。
+-   [开通ARMS服务](/cn.zh-CN/快速入门/开通和升级ARMS.md)。
 -   [安装Helm](https://helm.sh/docs/intro/install/)。
 -   确保您的Kubernetes api-server组件接口版本在1.10及以上。
 -   确保您的集群连通公网。
@@ -42,7 +42,7 @@ ARMS应用监控目前仅支持无状态（Deployment）和有状态（StatefulS
 
 3.  在接入应用页面顶部单击License Key右侧的复制图标。
 
-    ![Section LicenseKey](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/4166600061/p45312.png)
+    ![Section LicenseKey](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/4166600061/p45312.png)
 
 
 ## 步骤三：修改应用的YAML文件
@@ -50,21 +50,19 @@ ARMS应用监控目前仅支持无状态（Deployment）和有状态（StatefulS
 1.  执行以下命令查看目标无状态（Deployment）应用的配置。
 
     ```
-    ### 查看指定无状态（Deployment）类型应用的配置
-    kubectl get deployment {deployment名称} -o yaml                            
+    ### 查看指定无状态（Deployment）类型应用的配置kubectl get deployment {deployment名称} -o yaml                            
     ```
 
     **说明：** 若您不清楚`{deployment名称}`，请先执行以下命令查看所有无状态（Deployment）应用，在执行结果中找到目标无状态（Deployment）应用，再查看目标无状态（Deployment）应用的配置。
 
     ```
-    ### 查看所有无状态（Deployment）类型应用的配置
-    kubectl get deployments --all-namespace                
+    ### 查看所有无状态（Deployment）类型应用的配置kubectl get deployments --all-namespace                
     ```
 
 2.  启动编辑目标无状态（Deployment）应用的YAML文件。
 
     ```
-    kubectl edit deployment {deployment名} -o yaml                        
+    kubectl edit deployment {Deployment名称} -o yaml                        
     ```
 
 3.  在YAML文件中的spec -\> template -\> metadata -\> labels层级下加入以下内容。
@@ -154,7 +152,6 @@ ARMS应用监控目前仅支持无状态（Deployment）和有状态（StatefulS
       selector:
         app: mysql
     ---
-                            
     ```
 
 4.  保存配置后，应用将自动重启，以上配置生效。
