@@ -2,8 +2,10 @@
 
 为Docker中的Java应用安装ARMS Agent后，ARMS即可开始监控Java应用，且ARMS将自动适配该应用运行的环境，不需要针对Tomcat、Jetty或Spring Boot等应用单独配置运行环境。本文介绍如何为Docker中的Java应用安装Agent。
 
--   您已开通ARMS，具体操作，请参见[开通和升级ARMS](/intl.zh-CN/快速入门/开通ARMS.md)。
+-   您已开通ARMS，具体操作，请参见[开通和升级ARMS](/intl.zh-CN/快速入门/开通和升级ARMS.md)。
 -   您已在Docker中部署Java应用。
+-   如果JDK版本为1.8.0\_25或者1.8.0\_31，可能会出现无法安装探针的情况，请升级至1.8.X最新版本。
+
 
 对于Java应用镜像\{original-docker-image:tag\}，可以通过编辑Dockerfile文件来集成已有镜像，然后构建和启动新的镜像，即可将Java应用接入ARMS应用监控。
 
