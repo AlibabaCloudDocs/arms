@@ -10,14 +10,20 @@ keyword: [ARMS, 应用监控, Java, 组件, 框架, Filter]
 
 |组件|JDK 1.7|JDK 1.8|
 |--|-------|-------|
+|Active MQ|5.13.X+|5.13.X+|
+|Aliware MQ|4.1.X+|4.1.X+|
+|Druid|不支持|1.0.X+|
+|DSF（Daojia Service Framework）|不支持|2.1.X+|
 |Dubbo|2.5.X+|2.5.X+|
 |Feign|不支持|9.X+|
 |Google HTTP Client|1.10.X+|1.10.X+|
 |GRPC-Java|1.15+|1.15+|
+|Ali-HSF（High Speed Framework）|2.2.4.6-TLS+|2.2.4.6-TLS+|
 |HttpClient 3|3.X+|3.X+|
 |HttpClient 4|4.X+|4.X+|
 |Hystrix|1.5.X+|1.5.X+|
 |JDK HTTP|1.7.X+|1.7.X+|
+|Jedis|2.4.X+|2.4.X+|
 |Jetty|8.X+|8.X+|
 |Lettuce|4.0+|4.0+|
 |MariaDB|1.3+|1.3+|
@@ -27,7 +33,9 @@ keyword: [ARMS, 应用监控, Java, 组件, 框架, Filter]
 |MySQL JDBC|5.0.X+|5.0.X+|
 |OKHttp|2.X+|2.X+|
 |Oracle JDBC|10.2.X+|10.2.X+|
+|Play Framework|不支持|1.4.X|
 |PostgreSql JDBC|9.4+|9.4+|
+|Rabbit MQ|不支持|2.1.X+|
 |Reactor|不支持|3.X+|
 |Reactor Netty|不支持|0.9+|
 |Redis|2.X+|2.X+|
@@ -36,7 +44,8 @@ keyword: [ARMS, 应用监控, Java, 组件, 框架, Filter]
 |Spring|4.X+|4.X+|
 |Spring Boot|1.3.X+|1.3.X+|
 |Spring Cloud Gateway|不支持|5.0.0.RELEASE+|
-|Spring WebFlux|不支持|5.0.0.RELEASE+5.0.0.RELEASE+|
+|Spring WebMVC|不支持|5.0.6.RELEASE+|
+|Spring WebFlux|不支持|5.0.0.RELEASE+|
 |SQLServer JDBC|6.4+|6.4+|
 |Thrift|0.8+|0.8+|
 |Tomcat|7.X+|7.X+|
