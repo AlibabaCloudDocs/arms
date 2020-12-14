@@ -151,16 +151,17 @@
 -   pv（页面浏览量）
 -   uv（用户访问量）
 -   avg\_val（平均值） |
-|webstat.errcate|错误聚类排行|-   detector\_app\_version（客户端版本）
+|webstat.errcate|错误聚类排行|-   msg（错误信息）
+-   ip\_country\_id（中国省市ID）
+-   ip\_region\_id（国家ID或区域ID）
 -   detector\_browser（浏览器）
 -   detector\_device（设备）
 -   detector\_os（操作系统）
--   ip\_country\_id（中国省市ID）
--   ip\_region\_id（国家ID或区域ID）
--   msg（错误信息）
--   page（页面地址）
--   release（版本号）
 -   sr（屏幕分辨率）
+-   release（版本号）
+-   environment（环境）
+-   detector\_app\_version（客户端版本）
+-   detector\_app（客户端App）
 
 |count（错误次数） |
 |webstat.index|总览（访问量）|-   ct（网络制式）
@@ -302,14 +303,18 @@
 -   avg\_trans（内容传输耗时）
 -   avg\_ttfb（请求响应耗时）
 -   avg\_tti（首次可交互时间） |
-|webstat.stable|错误率排行|-   detector\_app\_version（客户端版本）
+|webstat.stable|错误率排行|-   page（页面地址）
+-   ip\_country\_id（中国省市ID）
+-   ip\_region\_id（国家ID或区域ID）
 -   detector\_browser（浏览器）
 -   detector\_device（设备）
 -   detector\_os（操作系统）
--   ip\_country\_id（中国省市ID）
--   ip\_region\_id（国家ID或区域ID）
--   release（版本号）
 -   sr（屏幕分辨率）
+-   msg（错误信息）
+-   release（版本号）
+-   environment（环境）
+-   detector\_app\_version（客户端版本）
+-   detector\_app（客户端App）
 
 |-   count（样本量）
 -   error\_pv（错误样本量）
