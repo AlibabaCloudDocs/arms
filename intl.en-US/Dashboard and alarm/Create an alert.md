@@ -44,6 +44,8 @@ To create an alert for an application monitoring job on Java Virtual Machine-Gar
 
     7.  Set Notification Receiver. In the **Contact Groups** box, click the name of a contact group. If the contact group appears in the **Selected Groups** box, the setting is successful.
 
+    ![Application Monitoring Alert](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/4667828061/p43504.png)
+
 
 ## Create a browser monitoring alert
 
