@@ -39,13 +39,6 @@ ARMS提供应用监控、前端监控、Prometheus监控、自定义监控和报
 |[GetPrometheusApiToken](/intl.zh-CN/API 参考/Prometheus监控/GetPrometheusApiToken.md)|获取集成ARMS Prometheus监控所需的Token。|
 |[ListDashboards](/intl.zh-CN/API 参考/Prometheus监控/ListDashboards.md)|获取集群的Grafana大盘的列表。|
 
-## 自定义监控
-
-|API|描述|
-|---|--|
-|[QueryDataset（通用数据集）]()|查询通用数据集中的数据。|
-|[QueryDataset（下钻数据集）]()|查询下钻数据集中的数据。|
-
 ## 报警
 
 |API|描述|
