@@ -1,54 +1,53 @@
 # JVM monitoring
 
-The application monitoring function of Application Real-Time Monitoring Service \(ARMS\) provides the Java Virtual Machine \(JVM\) monitoring function. It monitors heap metrics, non-heap metrics, direct buffer metrics, memory-mapped buffer metrics, garbage collection \(GC\) details, and the number of JVM threads. This topic describes the JVM monitoring feature and how to monitor JVM metrics.
+The Java Virtual Machine \(JVM\) monitoring feature is used to monitor important JVM metrics, such as heap memory, non-heap memory, direct buffer, memory-mapped buffer, garbage collection \(GC\) details, and the number of JVM threads. This topic describes the JVM monitoring feature and how to monitor JVM metrics.
 
 ## Features
 
-ARMS' JVM monitoring feature can help you monitor the following metrics.
+The JVM monitoring feature can help you monitor the following metrics:
 
--   Heap memory
-    -   heap\_init: initial bytes of the heap memory
-    -   heap\_max: maximum bytes of the heap memory
-    -   heap\_commited: submitted bytes of the heap memory
-    -   heap\_used: used bytes of the heap memory
--   Non-heap memory
-    -   non\_heap\_init: initial bytes of the non-heap memory
-    -   non\_heap\_max: maximum bytes of the non-heap memory
-    -   non\_heap\_commited: submitted bytes of the non-heap memory
-    -   non\_heap\_used: used bytes of the non-heap memory
--   Direct buffer
-    -   direct\_capacity: total size of direct buffer \(in bytes\)
-    -   direct\_used: used size of the direct buffer \(in bytes\)
--   Memory-mapped buffer
-    -   mapped\_capacity: total size of memory-mapped buffer \(in bytes\)
-    -   mapped\_used: used size of memory-mapped buffer \(in bytes\)
--   GC details
-    -   GcPsMarkSweepCount: GC Parallel Scavenge MarkSweep amount
-    -   GcPsScavengeCount: GC Parallel Scavenge amount
-    -   GcPsMarkSweepTime: GC Parallel Scavenge MarkSweep time
-    -   GcPsScavengeTime: GC Parallel Scavenge time
--   Number of JVM threads
-    -   ThreadCount: total number of threads
-    -   ThreadDeadLockCount: number of deadlocked threads
-    -   ThreadNewCount: number of new threads
-    -   ThreadBlockedCount: number of blocked threads
-    -   ThreadRunnableCount: number of treads that can run
-    -   ThreadTerminatedCount: number of terminated threads
-    -   ThreadTimedWaitCount: number of threads in timed waiting
-    -   ThreadWaitCount: number of waiting threads
+-   Instantaneous and accumulated GC statistics
+    -   FullGC Count
+    -   YoungGC Count
+    -   FullGC Duration
+    -   YoungGC Duration
+-   Heap Memory Details
+    -   Total
+    -   Old Generation
+    -   Survivor Space of Young Generation
+    -   Eden Space of Young Generation
+-   Non-Heap Memory
+    -   Non Heap Committed
+    -   Non Heap Init
+    -   Non Heap Max
+-   Metaspace Details
+    -   Metaspace
+-   Direct Buffer
+    -   Direct Capacity
+    -   Direct Used
+-   JVM Threads
+    -   Thread Count
+    -   Thread Dead Lock Count
+    -   Thread New Count
+    -   Thread Blocked Count
+    -   Thread Runnable Count
+    -   Thread Terminated Count
+    -   Thread Time Wait Count
+    -   Thread Wait Count
 
-## Procedure
+![Application Monitoring > Application Details > JVM Monitoring](../images/p43130.png "JVM monitoring")
 
-1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home). In the left-side navigation pane, choose **Application Monitoring** \> **Applications**.
-2.  On the Applications page, click the name of the target application.
+## View JVM metrics
 
-3.  On the Application Details page, select the target node and click the **JVM Monitoring** tab on the right side of the page.
+1.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**.
+2.  On the Applications page, click the application that you want to view.
+3.  In the left-side navigation pane, choose Application Monitoring \> Application Details. On the page that appears, click the node that you want to view, and then click the **JVM Monitoring** tab on the right side.
 
-    The JVM Monitoring tab shows the time sequence curves of the instantaneous times of GC, instantaneous time consumption of GC, heap memory details, non-heap memory details, and number of JVM threads.
+    On the JVM Monitoring tab, view the time sequence curves of the instantaneous GC count, instantaneous GC duration, heap memory details, non-heap memory details, and number of JVM threads.
 
-    -   Click **Instantaneous** and **Accumulated** in the upper-right corner of **Instantaneous Count/Min** and **Instantaneous Duration/Min** panels. You can alternatively view the time sequence curves of the instantaneous or accumulated times and time consumption of GC. By default, the instantaneous values are displayed.
-    -   Click a metric name \(for example, the number of instantaneous GC times\) on each monitoring panel to enable or disable the visibility of this metric in the chart.
+    -   Click **Instantaneous** and **Accumulated** in the upper-right corner of the **Instantaneous Count / 1 Min** and **Instantaneous Duration / 1 Min** panels to view the time sequence curves of the instantaneous and accumulated GC times and GC duration. By default, the instantaneous GC times and duration are displayed.
+    -   Click a metric name such as FullGC Count or YoungGC Count on a monitoring panel to enable or disable the visibility of this metric.
 
-        **Note:** Each chart must have at least one visible metric.
+        **Note:** Each chart must contain at least one visible metric. When there is only one metric in the chart, you cannot turn off its visibility.
 
 
