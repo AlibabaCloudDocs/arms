@@ -17,9 +17,6 @@ You can use the application monitoring function of Application Real-Time Monitor
 ## Enable ARMS application monitoring in EDAS
 
 1.  Log on to the [EDAS console](https://edas.console.aliyun.com/#/home). In the left-side navigation pane, choose **Application Management** \> **Applications**. Click the application name for which you want to enable ARMS application monitoring.
-
-    ![](../images/p43114.png)
-
 2.  Choose **Application Monitoring** \> **Advanced Monitoring**, and click **Enable ARMS Application Monitoring**.
 
     ![](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8994122951/p43115.png)
