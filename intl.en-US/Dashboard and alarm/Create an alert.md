@@ -117,7 +117,7 @@ To create an alert for a Prometheus monitoring job, for example, an alert on net
 
 The following table describes the basic fields of the **Create Alert** dialog box.
 
-![ARMS-Create Alert dialog box](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/4667828061/p43306.png)
+![创建报警对话框](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/6128828061/p174562.png)
 
 |Field|Description|Remarks|
 |-----|-----------|-------|
