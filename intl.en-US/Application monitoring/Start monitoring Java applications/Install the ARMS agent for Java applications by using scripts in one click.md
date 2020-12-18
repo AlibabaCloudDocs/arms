@@ -17,7 +17,7 @@ Application Real-Time Monitoring Service \(ARMS\)'s one-click agent installation
 
 3.  On the Create Application page, select **Java**, **Default Environment**, and **One-Click Access**. Then view and save the LicenseKey.
 
-    ![Access the agent](../images/p44367.png)
+    ![pg_接入应用_en](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7619728061/p203193.png)
 
 4.  Run the installation script corresponding to your region.
 
