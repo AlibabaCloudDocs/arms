@@ -16,8 +16,6 @@ After installing the Application Real-Time Monitoring Service \(ARMS\) agent, yo
 
 3.  On the Create Application page, select **Java**, **Default Environment**, and **Manual Access**.
 
-    ![Access the agent](../images/p44353.png)
-
 4.  Use either of the following methods to download the ARMS agent, and click **Next** on the Download Probe tab of the console.
 
     -   Method 1: Manually download the ARMS agent. On the Download Probe tab, click **Download Probe** to download the latest .zip file.
@@ -51,8 +49,6 @@ After installing the Application Real-Time Monitoring Service \(ARMS\) agent, yo
     **Note:** \{user.workspace\} is an example of the directory.
 
 6.  On the Install Probe tab, view and save the LicenseKey.
-
-    ![Install the agent](../images/p42270.png)
 
 7.  Use either of the following methods to add AppName and LicenseKey.
 
