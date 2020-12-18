@@ -23,7 +23,7 @@
 
 使用本教程所述方法访问ARMS控制台页面的流程如图所示。
 
-![](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/0012768951/p54445.png)
+![](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/0012768951/p54445.png)
 
 ## 准备工作：创建RAM用户并添加权限
 
@@ -33,7 +33,7 @@
 
 2.  在新建用户页面的**用户账号信息**区域框中，输入**登录名称**和**显示名称**。在**访问方式**区域框中，勾选**编程访问**，并单击**确认**。
 
-    ![Create RAM User](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/0012768951/p54440.png)
+    ![Create RAM User](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/0012768951/p54440.png)
 
     **说明：** RAM会自动为RAM用户创建AccessKey（API访问密钥）。出于安全考虑，RAM控制台只提供一次查看或下载AccessKeySecret的机会，即创建AccessKey时，因此请务必将AccessKeySecret记录到安全的地方。
 
@@ -43,7 +43,7 @@
 
 5.  在**添加权限**面板的**选择权限**区域框中，通过关键字搜索需要添加的权限策略AliyunSTSAssumeRoleAccess，并单击权限策略将其添加至右侧的**已选择**列表中，然后单击**确定**。
 
-    ![Add Permission For User](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/0012768951/p54441.png)
+    ![Add Permission For User](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/0012768951/p54441.png)
 
 6.  在**添加权限**的**授权结果**页面上，查看授权信息摘要，并单击**完成**。
 
@@ -71,7 +71,7 @@
 
 ## 步骤一：获取临时AccessKey和Token
 
-登录自建Web后，在Web服务端调用STS[AssumeRole](/cn.zh-CN/API 参考（STS）/操作接口/AssumeRole.md)接口获取临时AccessKey和Token，即临时身份。请选择一种方式调用该接口：
+登录自建Web后，在Web服务端调用STS[AssumeRole](/cn.zh-CN/API参考/API 参考（STS）/操作接口/AssumeRole.md)接口获取临时AccessKey和Token，即临时身份。请选择一种方式调用该接口：
 
 -   通过[OpenAPI](https://api.aliyun.com/#/?product=Sts&api=AssumeRole)在线调用。
 -   通过[Java示例](/cn.zh-CN/SDK参考/SDK参考（RAM）/Java示例.md)调用。
@@ -94,7 +94,7 @@ String roleArn = "<roleArn>"; //准备工作中创建的RAM角色的标识ARN
 
 其中，`<accessKeyId>`和`<accessKeySecret>`是准备工作中创建的RAM用户的AccessKeyId和AccessKeySecret。
 
-![Example AccessKey](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/0012768951/p54442.png)
+![Example AccessKey](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/0012768951/p54442.png)
 
 `<roleArn>`是准备工作中创建的RAM角色的标识ARN，可通过以下步骤获取ARN：
 
@@ -102,11 +102,11 @@ String roleArn = "<roleArn>"; //准备工作中创建的RAM角色的标识ARN
 
 2.  在左侧导航栏单击**RAM角色管理**。
 
-3.  在RAM角色管理页面下方的RAM角色列表中，单击[创建RAM角色并添加权限](#d7e1354)步骤创建的RAM角色名称。
+3.  在RAM角色管理页面下方的RAM角色列表中，单击[创建RAM角色并添加权限](https://help.aliyun.com/document_detail/128573.html?spm=a2c4g.11186623.6.795.42c2a4caouQMwr#d7e1355)步骤创建的RAM角色名称。
 
 4.  在RAM角色详情页面的**基本信息**区域复制**ARN**信息。
 
-    ![Example ARN](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/0012768951/p54443.png)
+    ![Example ARN](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/0012768951/p54443.png)
 
 
 ## 步骤二：获取登录Token
