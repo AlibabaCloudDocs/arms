@@ -44,7 +44,7 @@ To create an alert for an application monitoring job on Java Virtual Machine-Gar
 
     7.  Set Notification Receiver. In the **Contact Groups** box, click the name of a contact group. If the contact group appears in the **Selected Groups** box, the setting is successful.
 
-    ![Application Monitoring Alert](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/4667828061/p43504.png)
+    ![Application Monitoring Alarm](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3608828061/p174561.png)
 
 
 ## Create a browser monitoring alert
@@ -75,38 +75,6 @@ To create a page metric alert on the JS error rate and JS error count, perform t
     7.  Set Notification Receiver. In the **Contact Groups** box, click the name of a contact group. If the contact group appears in the **Selected Groups** box, the setting succeeds.
 
     ![Browser Monitoring Alert](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1667828061/p43505.png)
-
-
-## Create a custom monitoring alert
-
-To create a user access alert for a custom monitoring job, perform the following steps:
-
-1.  In the left-side navigation pane, choose **Alerts** \> **Alert Policies**.
-
-2.  On the Alert Policies page, choose **Create Alert** \> **Custom Monitoring Alert** in the upper-right corner.
-
-3.  In the **Create Alert** dialog box, enter all required information and click **Save**.
-
-    1.  Enter Alert Name, for example, user access notification.
-
-    2.  Set Type to **Create Alert Based On Existing Drilled-down Dataset**.
-
-    3.  Set Alert Variable Definition. Select a dataset for variable a and set Drill-down Dimension to Traverse.
-
-        **Note:** To define another alert variable, click **+** on the right of **Alert Variable Definition**. In the dialog box that appears, define variable b.
-
-    4.  Set alert rules.
-
-        1.  Select **Meet All of the Following Criteria**.
-        2.  Edit the alert rule. For example, an alert is triggered when the value of N is 3 and the average number of agents that you created is at least 0.
-
-            **Note:** You can also include a simple composite metric in the alert rule. For example, an alert is triggered when the value of N is 3 and the average value of dataset A divided by dataset B is at least 5.
-
-    5.  Set Notification Mode. For example, select Email.
-
-    6.  Set Notification Receiver. In the **Contact Groups** box, click the name of a contact group. If the contact group appears in the **Selected Groups** box, the setting is successful.
-
-    ![Custom Monitoring Alert](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1667828061/p43507.png)
 
 
 ## Create a Prometheus monitoring alert
@@ -142,7 +110,7 @@ To create an alert for a Prometheus monitoring job, for example, an alert on net
 
     7.  Set Notification Receiver. In the **Contact Groups** box, click the name of a contact group. If the contact group appears in the **Selected Groups** box, the setting is successful.
 
-    ![Prometheus Monitoring Alert](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1667828061/p61774.png)
+    ![Prometheus Monitoring Alert](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3608828061/p61774.png)
 
 
 ## Description of basic fields
