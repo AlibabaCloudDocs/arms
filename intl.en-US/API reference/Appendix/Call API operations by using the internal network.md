@@ -16,7 +16,7 @@ Application Real-Time Monitoring Service \(ARMS\) provides public network endpoi
     |China \(Shanghai\)|cn-shanghai|popunify-vpc.cn-shanghai.aliyuncs.com|arms.cn-shanghai.aliyuncs.com|
     |China \(Qingdao\)|cn-qingdao|popunify-vpc.cn-qingdao.aliyuncs.com|arms.cn-qingdao.aliyuncs.com|
     |China \(Beijing\)|cn-beijing|popunify-vpc.cn-beijing.aliyuncs.com|arms.cn-beijing.aliyuncs.com|
-    |China \(Shenzhen\)|cn-shenzhen |popunify-vpc.cn-shenzhen.aliyuncs.com|arms.cn-shenzhen.aliyuncs.com|
+    |China \(Shenzhen\)|cn-shenzhen|popunify-vpc.cn-shenzhen.aliyuncs.com|arms.cn-shenzhen.aliyuncs.com|
     |China \(Zhangjiakou\)|cn-zhangjiakou|popunify-vpc.cn-zhangjiakou.aliyuncs.com|arms.cn-zhangjiakou.aliyuncs.com|
     |China \(Hong Kong\)|cn-hongkong|popunify-vpc.cn-hongkong.aliyuncs.com|arms.cn-hongkong.aliyuncs.com|
     |Singapore \(Singapore\)|ap-southeast-1|popunify-vpc.ap-southeast-1.aliyuncs.com|arms.ap-southeast-1.aliyuncs.com|
@@ -50,7 +50,7 @@ Application Real-Time Monitoring Service \(ARMS\) provides public network endpoi
 
 8.  In the Bind VPC dialog box, select the same region as the created private zone, select the VPC where your ECS instance is located, and then click **OK**. You can select multiple VPCs.
 
-    ![Bind VPC](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1609158061/p68406.png)
+    ![Bind VPC](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1669758061/p68406.png)
 
 
 ## Results
