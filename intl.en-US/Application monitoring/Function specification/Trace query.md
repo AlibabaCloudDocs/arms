@@ -39,7 +39,7 @@ You can query a trace by specifying the trace ID or using multiple filtering cri
 
 Go to the Distributed Invocation Trace page by clicking the trace ID of the trace you want to view.
 
-![](http://icms-static-translation.oss-cn-hangzhou.aliyuncs.com/SP_177/DNARMS19100476/images/43192_zh-CN.png?Expires=1569140441&OSSAccessKeyId=LTAIJfoPL6wmrirR&Signature=NhHxsQPXRwfTInNrUV9ZcIBgy7M%3D)
+![调用链聚合分析](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7596358061/p187132.png)
 
 ## Field description
 
@@ -56,7 +56,7 @@ Go to the Distributed Invocation Trace page by clicking the trace ID of the trac
 
 On the Invocation Trace page, click the magnifier icon in the **Method Stack** column to go to the Method Stack page.
 
-![](http://icms-static-translation.oss-cn-hangzhou.aliyuncs.com/SP_177/DNARMS19100476/images/42284_zh-CN.png?Expires=1569140441&OSSAccessKeyId=LTAIJfoPL6wmrirR&Signature=cx4nhq7UzxRluim79EGZ%2FhTUrNg%3D)
+![方法栈](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7596358061/p42284.png)
 
 ## Field description
 
