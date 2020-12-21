@@ -18,7 +18,7 @@ You can use scripts to install the Application Real-Time Monitoring Service \(AR
 
     3.  Select **Install with Script** as the method to install the ARMS agent.
 
-    ![Access Agent](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/2914548061/p44367.png)
+    ![Access Agent](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/4445658061/p44367.png)
 
 4.  Copy the license key at the top of the Add Application page.
 
