@@ -6,7 +6,7 @@ ARMS提供一键接入方式为Java应用安装探针，安装成功后无需重
 
     **说明：** ARMS不仅可接入阿里云ECS上的应用，还能接入其他能访问公网的服务器上的应用。
 
--   确保您使用的第三方组件或框架在应用监控兼容性列表范围内，请参见[应用监控兼容性列表](/cn.zh-CN/应用监控/参考信息/ARMS 应用监控支持的 Java 组件和框架.md)。
+-   确保您使用的第三方组件或框架在应用监控兼容性列表范围内，请参见[应用监控兼容性列表](/cn.zh-CN/应用监控/参考信息/ARMS应用监控支持的Java组件和框架.md)。
 -   若您的应用已经按照手动接入方式接入ARMS应用监控，则需先卸载探针才能正常使用一键接入方式，请参见[卸载探针](/cn.zh-CN/应用监控/开始监控 Java 应用/为Java应用手动安装Agent.md)。
 -   如果JDK版本为1.8.0\_25或者1.8.0\_31，可能会出现无法安装探针的情况，请升级至1.8.X最新版本。
 
@@ -27,7 +27,7 @@ ARMS提供一键接入方式为Java应用安装探针，安装成功后无需重
 
     3.  在请选择以下接入方式区域选择**脚本安装**。
 
-    ![Access Agent](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/2675600061/p44367.png)
+    ![Access Agent](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/9184928061/p44367.png)
 
 5.  在接入应用页面顶部复制License Key。
 
