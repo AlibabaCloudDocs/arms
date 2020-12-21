@@ -11,24 +11,14 @@ In addition to the default alert templates provided by ARMS, you can create cust
 2.  On the Alert Template Management page, click **Create Alert Template** in the upper-right corner.
 
     -   Click **Browser Monitoring Alert Template**. In the Create Alert Template dialog box, set all required parameters, and then click **Save**. For more information about the fields, see [Description of basic fields](#section_x9s_jul_7zb).
-
-        ![db_alarm_retcode_template](../images/p84317.png)
-
     -   Click **Application Monitoring Alert Template**. In the Create Alert Template dialog box, set all required parameters, and then click **Save**. For more information about the fields, see [Description of basic fields](#section_x9s_jul_7zb).
-
-        ![db_alarm_am_template](../images/p84323.png)
-
 3.  Select the alert template you created in the alert template list. In the **Actions** column, click **Create Alert**. In the Create Alert dialog box, set all required parameters and click **Save**.
-
-    ![db_alarm_single_alarm](../images/p84329.png)
 
     Choose **Alerts** \> **Alert Policies**. On the Alert Policies page, click the Alert Rules tab. The alert rule you created appears in the alert list, indicating that you have created the alert rule by using the alert template you created.
 
 4.  Select the alert template you created in the alert template list. In the **Actions** column, click **Batch Create Alerts**.
 
 5.  In the Batch Create Alerts dialog box, click multiple applications in the **Unselected** section to add them to the **Selected** section. Click **Save**. In the Note dialog box, click **OK**.
-
-    ![db_alarm_batch_alarm](../images/p84338.png)
 
     Choose **Alerts** \> **Alert Policies**. On the Alert Policies page, click the Alert Rules tab. The alert rules you created in batches appear in the alert list, indicating that you have created the alert rules in batches by using the alert template you created.
 
