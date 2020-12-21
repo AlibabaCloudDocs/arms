@@ -14,7 +14,7 @@ The Synthetic Monitoring module uses the globally distributed monitoring network
     -   To create a network task, set Task Type to Network.
 3.  In the Monitoring Points step, add monitoring points and then click **Next**.
 
-    Set **Adding Method** to Recommended Monitoring Point Group or Custom, select one or more groups in the left list, click ![right_arrow](../images/p179404.png) to add the groups to the right Added list. You can add up to 50 monitoring points for a task. If you add more than 50 monitoring points, only the first 50 monitoring points are valid.
+    Set **Adding Method** to Recommended Monitoring Point Group or Custom, select one or more groups in the left list, click ![right_arrow](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9595758061/p179404.png) to add the groups to the right Added list. You can add up to 50 monitoring points for a task. If you add more than 50 monitoring points, only the first 50 monitoring points are valid.
 
 4.  In the Monitoring Parameters step, configure the parameters and then click **Next**.
 
