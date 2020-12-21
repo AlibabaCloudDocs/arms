@@ -26,7 +26,7 @@ When you create an alert rule, you can specify a contact group as the receiver o
 -   To edit a contact group, click the ![pencil_01](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/6573758061/p181704.png) icon to the right of the contact group. In the Edit Contact Group dialog box, edit the contact group and click **OK**.
 -   To view the contacts in a contact group, click the ![Down arrow](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/6573758061/p181703.png) icon to the left of the contact group to show the group.
 
-    ![Contact Group](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/6016905061/p43297.png)
+    ![Contact Group](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/2217758061/p43297.png)
 
     **Note:** You can remove one or more contacts from a contact group in shown mode. To remove a contact, find the alert contact and click **Remove** in the **Operation** column.
 
