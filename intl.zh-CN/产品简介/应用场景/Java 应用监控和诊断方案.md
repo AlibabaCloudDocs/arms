@@ -1,4 +1,4 @@
-# Java 应用监控和诊断方案 {#concept_64886_zh .concept}
+# Java 应用监控和诊断方案
 
 在这个应用场景案例中，我们采用基于 ARMS 的应用监控方案来解决分布式 Java 应用监控中的业务痛点。
 
@@ -19,7 +19,7 @@
     在业务逻辑变得逐渐复杂以后，很难从代码层面去梳理某个应用依赖了哪些下游服务（数据库、HTTP API、缓存），以及被哪些外部调用所依赖。业务逻辑的梳理、架构的治理和容量的规划（例如“双十一”促销活动的准备过程中，需要为每个应用准备多少台机器）也变得更加困难。
 
 
-## 基于 ARMS 的应用监控方案 {#section_zi8_r00_fcz .section}
+## 基于 ARMS 的应用监控方案
 
 ARMS 提供的**应用监控**功能，脱胎于阿里巴巴内部的分布式跟踪与监控系统（内部称为“鹰眼系统”），可以在不修改任何现有代码的情况下帮助网站开发人员和运维人员解决上述问题。
 
@@ -27,19 +27,19 @@ ARMS 提供的**应用监控**功能，脱胎于阿里巴巴内部的分布式�
 
 您可以在 ARMS 中看到应用的调用关系拓扑图，例如应用被哪些服务依赖、依赖了哪些下游服务等。如图所示，我们可以清楚地看到未知应用对被监控应用的调用是瓶颈所在，其平均耗时超过 3000 ms。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152203/156741121043318_zh-CN.png)
+![](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/8641934751/p43318.png)
 
 **慢服务/SQL 报表**
 
 进入该应用的 SQL 分析报表，可以清楚地定位到具体的慢 SQL、慢服务。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152224/156741121042273_zh-CN.png)
+![](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/8641934751/p42273.png)
 
 **分布式调用链查询**
 
 点击慢 SQL 的接口快照，可以找到一条包含该 SQL 调用的请求，并能看到该方法的调用堆栈，进而定位到代码级别的问题。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152203/156741121043319_zh-CN.png)
+![](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/8641934751/p43319.png)
 
 无论从全局视角还是单个调用视角，ARMS 能够全方位解决您在分布式 Java 应用监控领域的痛点。ARMS 的应用监控可搭配前端监控、业务监控使用，从业务关键指标到用户体验，再到应用性能，为您的站点全方位保驾护航。
 
