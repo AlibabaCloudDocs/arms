@@ -15,13 +15,11 @@ In the **Error Overview** section, the statistics and trends of JS errors within
 -   **JS Error Rate**: the number of page views \(PVs\) with JS errors to the total PVs within the selected period of time.
 -   **Affected Users**: the quantity and percentage of users that are affected by JS errors.
 
-![Error Overview](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/arms/pg_bm_js_error_diag_overview.png "Application-specific error overview")
+![应用层面的错误总览](../images/p187064.png "Application-specific error overview")
 
 In the **Error Overview** section, perform the following operations:
 
 -   Place the pointer over the curve. The number of errors, error rate, and number of affected users at the time point corresponding to the curve turning point appear in a floating manner.
-
-    ![JS Error Turning Point](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/arms/sc_bm_js_error_turning_point.png)
 
 -   Place the pointer over the turning point of the curve. When the pointer changes to a hand shape, click the turning point. The **Exception Insight** dialog box appears. For more information, see [Source map file](#sc_js_error_insight).
 
@@ -30,7 +28,7 @@ In the **Error Overview** section, perform the following operations:
 
 **Note:** On the JS Error Diagnosis page, the **Error Overview** section displays the application-specific error overview. On the **Page Ranked by Error Rate** or **Page Error Rate Top 5** tab, click **Analyze**. The overview information of the corresponding tab appears.
 
-![JS Error Overview of App](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/arms/pg_bm_js_error_diag_overview_for_page.png "Page-specific error overview")
+![页面层面的错误总览](../images/p187065.png "Page-specific error overview")
 
 ## View pages ranked by error rate
 
@@ -40,7 +38,7 @@ On the **Page Ranked by Error Rate** tab, pages are ranked by JS error rate with
 -   **JS Error Rate**: the number of PVs with JS errors on the page to the total PVs within the selected period of time.
 -   **Page View**: the number of views of the page.
 
-![Page Ranking](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/arms/pg_bm_js_error_diag_overview_page_ranking.png "Page ranked by error rate")
+![页面层面的错误总览](../images/p187065.png "Page ranked by error rate")
 
 On the **Page Ranked by Error Rate** tab, you can perform the following operations:
 
@@ -56,7 +54,7 @@ In the **Exception Insight** dialog box, information about the JS errors at a sp
 -   **Frequent Errors Top 5**: the top 5 JS errors that occur the most frequently at the specific time point, including the information about the JS errors, the number of errors, and the number of affected users that are captured by ARMS.
 -   **Page Error Rate Top 5**: the top 5 pages with the highest JS error rate at the specific time point, including the names of the pages with JS errors, the JS error rates of the pages, and the number of page views.
 
-![Exception Insight](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/arms/db_exception_insight.png)
+![JS错误异常洞察](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/5190458061/p187070.png)
 
 In the **Exception Insight** dialog box, you can perform the following operations:
 
@@ -98,17 +96,13 @@ The following information is displayed on the **Error Detail** tab:
 -   **Stack Info**: the information related to the location of the JS error
 -   **User Behavior Trace**: the user behavior trace, which is used to backtrack the error
 
-![Error Details](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/arms/pg_bm_js_error_diag_details_basic.png "JS error details page")
+![JS错误详情页面](../images/p203704.png "JS error details page")
 
 On the **Error Details** tab, you can perform the following operations:
 
 -   To specify the exact location of the JS error, click the triangle icon to the left of a stack in the **Stack Info** section to expand the row. Click **Choose Sourcemap**. In the Sourcemap File dialog box, select an existing source map file or upload a new source map file, and then click **OK**.
 
-    ![Select Source Map](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/arms/db_source_map_select.png)
-
     ARMS uses the source map file to retrieve the exact location of the JS error.
-
-    ![Stack Mapped](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/arms/sc_bm_js_error_diag_details_stack_mapped.png)
 
 -   To view the user behavior trace, see the [Backtrack user behavior](#sc_behavior) section.
 -   To view the distribution of the JS error, click the **Error View** tab.
@@ -117,6 +111,8 @@ On the **Error Details** tab, you can perform the following operations:
 ## Backtrack user behavior
 
 On the **Error View** tab, the **User Behavior Trace** section displays the user behavior trace, helping to backtrack the error.
+
+![Section Behavior](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/5190458061/p60498.png)
 
 ## View error distribution
 
@@ -128,7 +124,7 @@ On the **Error View** tab of the JS Error Diagnosis page, the distribution of a 
 -   **Device**.
 -   **Geographical View**: Statistics are collected by province, municipality, or autonomous region in China View, and are collected by country or region in World View.
 
-![Distribution Basic](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/arms/pg_bm_js_error_diag_distribution_basic.png "JS error view page")
+![JS错误分布页面](../images/p203745.png "JS error view page")
 
 On the **Error View** tab, you can perform the following operations:
 
@@ -136,7 +132,7 @@ On the **Error View** tab, you can perform the following operations:
 
 -   On the **China View** or **World View** tab in the **Geographical View** section, click the **Errors** column name in the table on the right to switch the sorting order between ascending and descending.
 
-    ![Distribution Geo China](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/arms/sc_bm_js_error_distribution_geo_china.png)
+    ![JS错误分布-地理](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/5190458061/p203750.png)
 
 
 ## FAQ
