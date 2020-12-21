@@ -173,17 +173,8 @@ The following table describes the basic fields of the **Create Alarm** dialog bo
 ## Description of complex general fields: period-on-period and period-for-period
 
 -   Minute-on-minute comparison: Assume that β is the data \(optionally average, sum, maximum, or minimum\) in the last N minutes, and α is the data generated between the Nth and 2Nth minute. The minute-on-minute comparison is the percentage increase or decrease when β is compared with α.
-
-    ![Day-on-day Growth or Decline](../images/p174583.png)
-
 -   Minute-for-minute hourly comparison: Assume that β is the data \(optionally average, sum, maximum or minimum\) in the last N minutes, and α is the data generated during the last N minutes in the last hour. The minute-for-minute hourly comparison is the percentage increase or decrease when β is compared with α.
-
-    ![Growth or Decline](../images/p174585.png)
-
 -   Minute-for-minute daily comparison: Assume that β is the data \(optionally average, sum, maximum or minimum\) in the last N minutes, and α is the data generated during the last N minutes at the same time yesterday. The minute-for-minute daily comparison is the percentage increase or decrease when β is compared with α.
-
-    ![Growth or Decline](../images/p174586.png)
-
 
 ## Description of complex general fields: Alert Data Revision Strategy
 
