@@ -12,13 +12,11 @@ Except for the default emergency alarm rules, ARMS alarm rules detect and judge 
 
 1.  In the left-side navigation pane, choose**Alarm Management** \> **Alarm policy management**, InAlarm rulesOn the tab page, enter the name of the alert you want to view in the search box, and click**Search**To view the right**Status**The column status.
 
-    ![Tab_alarm_rule](../images/p81473.png)
+    ![Tab_alarm_rule](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8868758061/p81473.png)
 
     -   If the status is**Stopped**, Click the right**Operation**Column**Start**, And inOKDialog box, click**Start**. If you still cannot receive alarm messages after you restart the alarm rule, go to the next step.[3](#step_aaw_2q7_f27).
     -   If the status is**Running**, Perform the step[3](#step_aaw_2q7_f27).
 2.  Click right**Operation**Column**Alarm history**, InAlarm historyTab,Alarm event historyTab,**Trigger Status**View the trigger status of an alert event.
-
-    ![Tab_alarm_history](../images/p81476.png)
 
     **Note:** If**Trigger Status**If the triggering status of the column is green, it indicates that the alarm is not triggered. If the value is red, it indicates that the alarm has been triggered.
 
@@ -26,8 +24,6 @@ Except for the default emergency alarm rules, ARMS alarm rules detect and judge 
     -   If the trigger status is triggered, perform the step[4](#step_ppz_b91_d1f).
     -   If no alarm event history is recorded, perform step[6](#step_dvb_363_m10).
 3.  InAlarm historyTabAlarm sending HistoryTab to check whether there are alarm sending history records.
-
-    ![Tab_alarm_send_history](../images/p81477.png)
 
     -   If there is a record of alarm sending history but no alarm message is received, it may be restricted by the SMS operator: each mobile phone contact can receive up to 200 messages per day. After more than 200 messages, no alarm messages can be received.
     -   If no alarm sending history is recorded, the alarm may be in a silent period. Proceed with the step[5](#step_dql_in0_dfx).
