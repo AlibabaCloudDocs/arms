@@ -2,8 +2,6 @@
 
 Application Real-Time Monitoring Service \(ARMS\) provides a free trial for application monitoring, browser monitoring, and Prometheus Service. This topic describes the usage notes for the Trial Edition of ARMS.
 
-For more information about the comparison between the Trial Edition and Pro Edition, see [Edition comparison](/intl.en-US/Pricing/Edition comparison.md).
-
 -   Trial Edition of application monitoring: The trial is valid until 00:00 on the 15th day after ARMS is activated. During this period, ARMS provides a free quota of 240 hours for agents per day. For example, 10 agents are deployed and each agent can run for 24 hours free of charge.
 
     **Note:** Each agent can monitor one application, such as a Tomcat instance or a Java process.
