@@ -6,7 +6,7 @@ keyword: [business transaction, custom parameter, trace]
 
 The built-in query fields supported by the ARMS trace query feature are not business-related and cannot meet the query requirements of specific business scenarios. You can use the business transaction feature to configure extraction rules for the custom parameters of your application. Then, the business transaction feature can obtain the corresponding parameters and add them to traces. You can query the traces based on the custom parameters.
 
-You have access to the ARMS business transaction feature. For more information, see [Preparations](/intl.en-US/Business Monitoring/Access notes for Java applications/Preparations.md).
+You have access to the ARMS business transaction feature. For more information, see [Preparations]().
 
 **Note:** Make sure that you have upgraded your agent to version 2.7.1 or later.
 
@@ -33,8 +33,6 @@ Before you can query traces based on custom parameters, you must configure extra
 3.  On the **Application Settings** page, click the **Custom parameters** tab and click **Add custom parameter** in the upper-right corner.
 
 4.  In the **Add custom parameter** dialog box, configure the following parameters and click **OK**.
-
-    ![bzm_db_add_custom_parms](../images/p137041.png)
 
     |Parameter|Description|Required|Example|
     |---------|-----------|--------|-------|
@@ -64,15 +62,11 @@ After you configure extraction rules for custom parameters, you can query traces
     |http.parameters.brand|Example: `SIEMENS`.|
     |http.parameters.account|Example: `123456`.|
 
-    Query results are displayed as shown in the following figure.
-
-    ![pg_trace_query_with_custom_params](../images/p137270.png)
-
 3.  Click the ID of a trace. For example, you can click the ID of a trace that is time-consuming.
 
 4.  On the **Traces** tab, view the details of the trace and troubleshoot issues based on the information. The following table describes the displayed parameters.
 
-    ![ex_tab_trace_bzm_with_custom_params](../images/p137314.png)
+    ![Method Stack](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7596358061/p42284.png)
 
     |Parameter|Description|
     |---------|-----------|
@@ -90,7 +84,7 @@ After you configure extraction rules for custom parameters, you can query traces
         -   SQL: the SQL statement used to call the database.
         -   Exception: the error information.
     -   Timeline \(ms\): the time distribution of each method call of the local trace. |
-    |Thread Profiling|The statistics on the CPU time consumption per thread and the number of each type of threads. For more information, see [Thread profiling]().|
+    |Thread Profiling|The statistics on the CPU time consumption per thread and the number of each type of threads. For more information, see [Thread profiling](/intl.en-US/Application monitoring/Features provided by the console/Application diagnosis/Thread profiling.md).|
     |Timeline \(ms\)|The time consumption of each inter-service trace and its distribution relative to that of the entire trace.|
 
 
@@ -101,9 +95,5 @@ You can perform the following steps to verify whether the custom parameter extra
 1.  On the **Traces** tab, move the pointer over a service name in the **Service** column.
 
 2.  Check whether a custom parameter is displayed in the **Tags** section.
-
-    ![ex_overlay_trace_tags](../images/p137589.png)
-
-    If a custom parameter is displayed, the custom parameter extraction rule takes effect.
 
 
