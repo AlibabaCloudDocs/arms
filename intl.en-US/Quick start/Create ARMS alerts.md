@@ -20,7 +20,7 @@ To create a Java Virtual Machine-Garbage Collection \(JVM-GC\) alert for an appl
 
     Set the following parameters:
 
-    ![Create an alert](../images/p127257.png)
+    ![Create an alert](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3605658061/p127257.png)
 
     1.  Enter an alert name, for example, JVM-GC\_Comparison.
     2.  In the **Application Site** field, select the monitoring job you created.
@@ -47,7 +47,7 @@ To create a Page\_Metric alert to monitor JS\_Error\_Rate and JS\_Error\_Count f
 
     Set the following parameters:
 
-    ![Create a browser monitoring alert](../images/p127262.png)
+    ![Browser Monitoring Alarm](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1667828061/p43505.png)
 
     1.  Enter an alert name, for example, Page\_Metric.
     2.  In the **Application Site** field, select the monitoring job you created.
@@ -72,7 +72,7 @@ To create an alert on network receiving pressure for a Prometheus monitoring job
 
 Set the following parameters:
 
-![Create a Prometheus monitoring alert](../images/p127264.png)
+![Prometheus Monitoring Alarm](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3608828061/p61774.png)
 
 1.  Enter an alert name, for example, Received\_Bytes.
 2.  Select the **cluster** of the Prometheus monitoring job.
