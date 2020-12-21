@@ -1,41 +1,38 @@
 # Create an application monitoring job
 
-Application monitoring of Application Real-Time Monitoring Service \(ARMS\) can automatically discover application topologies, discover and monitor application interfaces, and capture abnormal and slow transactions. To start monitoring applications, you need to first create an application monitoring job.
+Application Real-Time Monitoring Service \(ARMS\) provides application monitoring features such as application trace analysis, local stack diagnosis, and business log troubleshooting. To monitor an application by using ARMS, you must create an application monitoring job.
 
-## Background
+## Background information
 
-Application monitoring of ARMS can monitor Java and PHP applications that run in multiple environments. This topic describes how to create an application monitoring job for a Java application that runs on an Elastic Compute Service \(ECS\) instance in Tomcat environment. In different application running environments, ARMS allows you to manually install the ARMS agent, install the ARMS agent with one click by using scripts, or automatically install the ARMS agent. However, to help you understand the general steps for creating an application monitoring job, this topic describes the procedure for manually installing the ARMS agent.
+ARMS can monitor Java and PHP applications that run in various environments. This topic describes how to create an application monitoring job for a Java application that runs on an Elastic Compute Service \(ECS\) instance in the Tomcat environment. To ensure that you can monitor applications in different environments, ARMS allows you to install the ARMS agent manually or using scripts. However, to help you understand the general steps for creating an application monitoring job, this topic describes how to manually install the ARMS agent.
 
 ## Prerequisites
 
--   [Activate and upgrade ARMS](/intl.en-US/Quick start/Activate ARMS.md)
--   Ports 8442, 8443, and 8883 in the security group of your server have enabled outbound access on the public network over TCP. This operation is not required within a Virtual Private Cloud \(VPC\). For more information about how to set security group rules, see [Add security group rules](/intl.en-US/Security/Security groups/Add security group rules.md).
+-   [Activate and upgrade ARMS](/intl.en-US/Quick start/Activate and upgrade ARMS.md)
+
+## Step 1: Obtain the license key
+
+Perform the following steps to obtain the license key:
+
+1.  Log on to the [ARMS console](https://arms-intl.console.aliyun.com/).
+2.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**.
+3.  On the Applications page, select a region in the top navigation bar, and click **Add Application** in the upper-right corner.
+4.  Copy the license key at the top of the Add Application page.
+
+    ![Download Agent](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9854658061/p44353.png)
 
 
-## Step 1: Obtain licenseKey.
+## Step 2: Configure the Tomcat runtime environment
 
-Perform the following steps to obtain licenseKey, which will be used subsequently:
-
-1.  In the left-side navigation pane, choose **Application Monitoring** \> **Monitoring Jobs**.
-2.  On top of the Monitoring Jobs page, select the target region, and click **Create Application** in the upper-right corner.
-3.  On the Create Application page, select the following items:
-    -   **Java**
-    -   **Default**
-    -   **Install Manually**
-4.  On the **Download Probe** tab, click **Next**.
-5.  On the Install Probe tab, copy the value of LicenseKey.
-
-## Step 2: Configure the Tomcat running environment
-
-Perform the following steps to configure the Tomcat running environment and set required parameters in the configuration file:
+Perform the following steps to configure the Tomcat runtime environment and set the required parameters in the configuration file:
 
 1.  Open the \{TOMCAT\_HOME\}/bin/catalina.sh configuration file.
 
-    **Note:** If your Tomcat version does not have the catalina.sh configuration file, find and open the \{TOMCAT\_HOME\}/bin/setenv.sh configuration file.
+    **Note:** If your Tomcat does not contain the catalina.sh configuration file, find and open the \{TOMCAT\_HOME\}/bin/setenv.sh configuration file.
 
-2.  Add the following configuration to the configuration file:
+2.  Append the following configurations to the configuration file:
 
-    **Note:** In the following sample code, replace <licenseKey\> with your LicenseKey, and <appName\> with your application name.
+    **Note:** Replace <licenseKey\> in the following sample code with the license key that you obtained in Step 1. Replace <appName\> with the name of your application.
 
     ```
     JAVA_OPTS="$JAVA_OPTS -javaagent:/workspace/ArmsAgent/arms-bootstrap-1.7.0-SNAPSHOT.jar -Darms.licenseKey=<licenseKey> -Darms.appName=<appName>"
@@ -43,30 +40,29 @@ Perform the following steps to configure the Tomcat running environment and set 
     ```
 
 
-**Sample code: Configure the Tomcat running environment**
+The following sample code shows how to configure the Tomcat runtime environment:
 
 ## Step 3: Install the ARMS agent for Java applications
 
-Perform the following steps to install the ARMS agent for a Java application and collect the monitored data that you need:
+Perform the following steps to install the ARMS agent for Java applications and collect the monitoring data that you need:
 
 1.  Run the wget command to download the compressed package of the ARMS agent for Java applications.
 
-    **Note:** The China \(Hangzhou\) region is used in this example. For the compressed package download links of the ARMS agent for Java applications in other regions, see [Install the ARMS agent for Java applications](https://www.alibabacloud.com/help/doc-detail/63797.htm).
+    **Note:** The China \(Hangzhou\) region is used in this example. For the download links of the ARMS agent for Java applications in other regions, see [Procedure](/intl.en-US/Application monitoring/Start monitoring Java applications/Manually install the ARMS agent for a Java application.md).
 
     ```
     # China (Hangzhou)
     wget "http://arms-apm-hangzhou.oss-cn-hangzhou.aliyuncs.com/ArmsAgent.zip" -O ArmsAgent.zip
     ```
 
-2.  Decompress the package of the ARMS agent for Java applications to the working directory. In this example, the working directory is workspace.
+2.  Decompress the package of the ARMS agent for Java applications to a working directory. In this example, the working directory is workspace.
 
     ```
     unzip ArmsAgent.zip -d /workspace/
-                        
     ```
 
 
-**Sample code: Install the ARMS agent for Java applications**
+The following sample code shows how to install the ARMS agent for Java applications:
 
 ## Step 4: Restart Tomcat
 
@@ -78,15 +74,32 @@ Perform the following steps to install the ARMS agent for a Java application and
     ```
 
 
-**Sample code: Restart Tomcat**
+The following sample code shows how to restart Tomcat:
 
-## Verification
+## Verify the result
 
-After two or three minutes, log on to the ARMS console. In the left-side navigation pane, choose **Application Monitoring** \> **Monitoring Jobs**. If your application named <appName\> appears on the Monitoring Jobs page, the application monitoring job is successfully created.
+After 2 to 3 minutes, log on to the [ARMS console](https://arms-intl.console.aliyun.com/). In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. If your application \(specified by the <appName\> parameter\) appears on the Applications page, it indicates that the application monitoring job is created.
 
-## More information
+**Related topics**  
 
--   [Manually install the ARMS agent for a Java application](/intl.en-US/Application monitoring/Start monitoring Java applications/Manually install the ARMS agent for Java applications.md)
--   [Install the ARMS agent for a Java application by using scripts](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for Java applications by using scripts in one click.md)
--   [FAQ about updating the ARMS agent for Java applications](/intl.en-US/Application monitoring/FAQ about updating the ARMS agent for Java applications.md)
+
+[Manually install the ARMS agent for a Java application](/intl.en-US/Application monitoring/Start monitoring Java applications/Manually install the ARMS agent for a Java application.md)
+
+[Enable ARMS to monitor an EDAS application](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for applications in EDAS in one click.md)
+
+[Install the ARMS agent for a Java application deployed in Container Service for Kubernetes](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for Java applications in Container Service for Kubernetes.md)
+
+[Install the ARMS agent for an application deployed in an open source Kubernetes environment](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for applications in open-source Kubernetes environments.md)
+
+[Install the ARMS agent for a Java application deployed in a Docker cluster](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for applications in Docker.md)
+
+[Install the ARMS agent for a Java application by using scripts](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for a Java application by using scripts.md)
+
+[FAQ](/intl.en-US/Application monitoring/Application monitoring FAQ.md)
+
+[Install the ARMS agent for a PHP application](/intl.en-US/Application monitoring/Monitor PHP applications/Install the ARMS agent for common PHP applications.md)
+
+[Install the ARMS agent for PHP applications deployed on multiple servers in standalone mode](/intl.en-US/Application monitoring/Monitor PHP applications/Install the arms agent for multi-site and standalone PHP applications.md)
+
+[Install the ARMS agent for PHP applications in Container Service for Kubernetes](/intl.en-US/Application monitoring/Monitor PHP applications/Install the ARMS agent for PHP applications in Container Service for Kubernetes.md)
 
