@@ -17,7 +17,7 @@ The business transaction feature provided by ARMS allows you to define business 
 
 ## Install the ARMS agent for Java applications deployed on EDAS
 
-If you are using the business transaction feature for the first time and have not used the application monitoring feature, you must install the latest version of the ARMS agent. For more information, see [Enable ARMS to monitor an EDAS application](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for applications in EDAS in one click.md).
+If you are using the business transaction feature for the first time and have not used the application monitoring feature, you must install the latest version of the ARMS agent. For more information, see [Enable ARMS to monitor an EDAS application](/intl.en-US/Application monitoring/Start monitoring Java applications/Enable ARMS to monitor an EDAS application.md).
 
 ## Upgrade the ARMS agent for Java applications deployed on ECS clusters in EDAS
 
@@ -62,13 +62,9 @@ If you are using the business transaction feature for the first time and have us
 
 6.  On the Application Overview page, click **Deploy Application** or **Deploy Historical Version** in the upper-right corner to deploy the application. For more information, see [Batch release \(applicable to Kubernetes clusters\)]() or [Canary release \(Kubernetes clusters\)]().
 
-    ![tab_business_deployment_detail_k8s](../images/p91082.png)
-
     After the application is deployed, the ARMS agent is automatically updated.
 
 7.  In the **Pod Information** section of the Application Overview page, click **Terminal** section and run the `cat /home/admin/.opt/ArmsAgent/version` command to check the version of the ARMS agent.
-
-    ![tab_business_deployment_detail_k8s_pod](../images/p91084.png)
 
     If the version number starts with 2.6.2, the ARMS agent has been upgraded to V2.6.2 or later. You can create a business transaction task to monitor your applications.
 
@@ -76,5 +72,5 @@ If you are using the business transaction feature for the first time and have us
 **Related topics**  
 
 
-[Enable ARMS to monitor an EDAS application](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for applications in EDAS in one click.md)
+[Enable ARMS to monitor an EDAS application](/intl.en-US/Application monitoring/Start monitoring Java applications/Enable ARMS to monitor an EDAS application.md)
 
