@@ -16,23 +16,23 @@ Tracing Analysis provides a set of tools for distributed application development
 
 Check documents based on the language of your application.
 
--   [t1134109.md\#](/intl.en-US/Setup/Integrate Go Application/Integrate your application with Tracing Analysis - Go.md)
+-   [Integrate your application with Tracing Analysis - Go](/intl.en-US/Setup/Integrate Go Application/Integrate your application with Tracing Analysis - Go.md)
 -   [Report Go application data through Zipkin](/intl.en-US/Setup/Integrate Go Application/Report Go application data through Zipkin.md)
--   [t1134112.md\#]()
+-   [Integrate your application with Tracing Analysis - Python]()
 -   [Instrument Node. js applications](/intl.en-US/Setup/Start monitoring Node.js applications/Instrument Node. js applications.md)
 -   [Use Jaeger to report .NET application data](/intl.en-US/Setup/Start monitoring .NET applications/Use Jaeger to report .NET application data.md)
 -   [Use Zipkin to report .NET application data](/intl.en-US/Setup/Start monitoring .NET applications/Use Zipkin to report .NET application data.md)
--   [t1134119.md\#]()
+-   [Integrate your application with Tracing Analysis - C++]()
 
 ## What to do next
 
 After you complete the preparations, you can use the following features of Tracing Analysis:
 
--   View the key metrics of an application, such as the health score, number of requests today, and number of errors today. For more information, see [t1134121.md\#](/intl.en-US/Use the console/Application management/View application list.md).
--   View the key performance metrics and topology of an application. For more information, see [t1134122.md\#](/intl.en-US/Use the console/Application management/View application performance metrics and topology.md).
--   View the key performance metrics, call topology, and traces of an application on each host where the application is deployed. For more information, see [t1134123.md\#](/intl.en-US/Use the console/Application management/View application details.md).
--   View the API calls of an application. For more information, see [t1134124.md\#](/intl.en-US/Use the console/Application management/View interface invocation information.md).
--   Query traces by using the multi-dimensional query feature. For more information, see [t1134126.md\#](/intl.en-US/Use the console/Application management/Query invocation traces.md).
+-   View the key metrics of an application, such as the health score, number of requests today, and number of errors today. For more information, see [View application list](/intl.en-US/Use the console/Application management/View application list.md).
+-   View the key performance metrics and topology of an application. For more information, see [View application performance metrics and topology](/intl.en-US/Use the console/Application management/View application performance metrics and topology.md).
+-   View the key performance metrics, call topology, and traces of an application on each host where the application is deployed. For more information, see [View application details](/intl.en-US/Use the console/Application management/View application details.md).
+-   View the API calls of an application. For more information, see [View interface invocation information](/intl.en-US/Use the console/Application management/View interface invocation information.md).
+-   Query traces by using the multi-dimensional query feature. For more information, see [Query invocation traces](/intl.en-US/Use the console/Application management/Query invocation traces.md).
 -   View the application traces, trace topologies, real-time aggregate trace tables, and waterfall plots of traces. For more information, see [Analyze traces](/intl.en-US/Use the console/Application management/Analyze traces.md).
 -   Specify whether to display the host name and whether to collect application data, manage custom tags of an application, and delete an application. For more information, see [Manage applications and tags](/intl.en-US/Use the console/Application management/Manage applications and tags.md).
 
