@@ -23,7 +23,21 @@ Alibaba Cloud Prometheus provides the RemoteWrite feature. You can use this feat
 
     ```
     global:
-    
+      scrape_interval:     15s
+      evaluation_interval: 15s
+    scrape_configs:
+      - job_name: 'prometheus'
+        static_configs:
+        - targets: ['localhost:9090']
+    remote_write:
+      - url: "http://${regionId}-intranet.arms.aliyuncs.com/prometheus/${password}/${userId}/${promCluster}/${regionId}/api/v3/write"
+        basic_auth:   
+          //username和password需要遵循AK/SK的限制，且AK/SK需要能够调用[GetPrometheusApiToken](/intl.en-US/API reference/Prometheus监控/GetPrometheusApiToken.md)。
+          username: access-key-id
+          password: access-key-secret
+    remote_read:
+      - url: "http://${regionId}-intranet.arms.aliyuncs.com/prometheus/${password}/${userId}/${promCluster}/${regionId}/api/v3/read"
+        read_recent: true            
     ```
 
 
