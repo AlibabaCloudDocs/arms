@@ -2,7 +2,7 @@
 
 After installing the Application Real-Time Monitoring Service \(ARMS\) agent, you can use it to monitor Java applications in Docker. For example, you can view the monitoring data of application topology, traces, abnormal transactions, and slow transactions, and conduct SQL analysis.
 
--   [Activate ARMS](/intl.en-US/Quick start/Activate ARMS.md)
+-   [Activate and upgrade ARMS](/intl.en-US/Quick start/Activate ARMS.md)
 -   You have deployed Java applications in Docker.
 
 -   [Docker](https://docs.docker.com/) is a set of platform-as-a-service \(PaaS\) products that use Linux OS-level virtualization to automatically deploy applications in packages called containers. Docker creates independent containers by using resource separation mechanisms, such as cgroups and namespace in Linux cores.
