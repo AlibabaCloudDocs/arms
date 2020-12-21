@@ -17,19 +17,19 @@ The business transaction feature provided by ARMS allows you to define business 
 
 ## Manually install the ARMS agent for Java applications
 
-If you are using the business transaction feature for the first time and have not used the application monitoring feature, you must install the latest version of the ARMS agent. For more information, see [Manually install the ARMS agent for a Java application](/intl.en-US/Application monitoring/Start monitoring Java applications/Manually install the ARMS agent for Java applications.md).
+If you are using the business transaction feature for the first time and have not used the application monitoring feature, you must install the latest version of the ARMS agent. For more information, see [Manually install the ARMS agent for a Java application](/intl.en-US/Application monitoring/Start monitoring Java applications/Manually install the ARMS agent for a Java application.md).
 
 ## Upgrade the ARMS agent for Java applications
 
 If you are using the business transaction feature for the first time and have used the application monitoring feature, you must upgrade the ARMS agent to V2.6.2 or later. To upgrade the ARMS agent, you must uninstall the existing ARMS agent and install a new one.
 
-1.  Uninstall the existing ARMS agent. For more information, see [Uninstall the ARMS agent](/intl.en-US/Application monitoring/Start monitoring Java applications/Manually install the ARMS agent for Java applications.md).
+1.  Uninstall the existing ARMS agent. For more information, see [Uninstall the ARMS agent](/intl.en-US/Application monitoring/Start monitoring Java applications/Manually install the ARMS agent for a Java application.md).
 
-2.  Install a new ARMS agent. For more information, see [Manually install the ARMS agent for a Java application](/intl.en-US/Application monitoring/Start monitoring Java applications/Manually install the ARMS agent for Java applications.md).
+2.  Install a new ARMS agent. For more information, see [Manually install the ARMS agent for a Java application](/intl.en-US/Application monitoring/Start monitoring Java applications/Manually install the ARMS agent for a Java application.md).
 
 
 **Related topics**  
 
 
-[Before you begin](/intl.en-US/Application monitoring/Before you begin.md)
+[Before you begin]()
 
