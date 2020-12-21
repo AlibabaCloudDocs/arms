@@ -4,7 +4,7 @@ You can use multidimensional reports to analyze the performance of synthetic mon
 
 ## Prerequisites
 
-[Create a task]()
+[Create a task](/intl.en-US/Synthetic monitoring/Quick start/Create a task.md)
 
 ## Procedure
 
