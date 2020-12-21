@@ -44,7 +44,7 @@ ARMS应用监控目前仅支持无状态（Deployment）和有状态（StatefulS
 
 3.  在接入应用页面顶部单击License Key右侧的复制图标。
 
-    ![Section LicenseKey](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/4166600061/p45312.png)
+    ![Section LicenseKey](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/9141208061/p45312.png)
 
 
 ## 步骤三：修改应用的YAML文件
