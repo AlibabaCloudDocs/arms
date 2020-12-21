@@ -41,7 +41,7 @@ pip install aliyun-python-sdk-arms
 
 2.  将aliyun-openapi-php-sdk下的aliyun-php-sdk-arms和aliyun-php-sdk-core文件夹复制到您的PHP项目目录，目录结构如下图所示。
 
-    ![PHP Directory](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/3562034061/p43309.png)
+    ![PHP Directory](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/3562034061/p43309.png)
 
 
 **相关文档**  
