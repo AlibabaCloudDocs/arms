@@ -17,8 +17,6 @@ In the middle end-based architecture of an e-commerce company, the transaction c
 
 In this scenario, you can use ARMS to configure commodity category-specific business transaction at the ordering portal of the transaction center. For example, after you group the women's clothing and home appliance categories, on this page, you can monitor the transactions of either category and quickly find out the transaction links of a category.
 
-![dg_business_typical_case](../images/p94338.png)
-
 ## Limits
 
 -   The business transaction feature only can monitor Java applications.
@@ -40,12 +38,12 @@ In this scenario, you can use ARMS to configure commodity category-specific busi
 
 3.  In the Create Business Transaction dialog box, configure the parameters in the Basic Information section.
 
-    ![dg_business_create_btask](../images/p94339.png)
+    ![dg_business_create_btask](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1662758061/p94339.png)
 
     |Parameter|Description|Example|
     |---------|-----------|-------|
     |**Business Name**|Required. The name of the business monitoring task.|Order portal|
-    |**Entry application**|Required. The **Entry application** drop-down list displays all Java applications that have application agents installed. After you select an application, ARMS automatically detects the version of the application agent. **Note:** You can use the business monitoring feature only when you upgrade the application agent to version 2.6.2 or later. If the version of the application agent is earlier than 2.6.2, you must upgrade the application agent first. For more information, see [Preparations]().
+    |**Entry application**|Required. The **Entry application** drop-down list displays all Java applications that have application agents installed. After you select an application, ARMS automatically detects the version of the application agent. **Note:** You can use the business monitoring feature only when you upgrade the application agent to version 2.6.2 or later. If the version of the application agent is earlier than 2.6.2, you must upgrade the application agent first. For more information, see [Preparations](/intl.en-US/Business Monitoring/Access notes for Java applications/Preparations.md).
 
 |arms-k8s-demo|
     |**Service type**|The type of the service.    -   **HTTP entry**: suitable for scenarios where business links are colored based on HTTP traffic characteristics.
@@ -76,7 +74,7 @@ Only a single **grouping rule** can be added. This rule can be configured togeth
 
 4.  Click **Advanced Settings**. In the Advanced Settings section, configure the parameters and click **Save**.
 
-    ![Advanced Settings section](../images/p190117.png)
+    ![Advanced Settings section](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1662758061/p190117.png)
 
     |Parameter|Description|
     |---------|-----------|
@@ -95,7 +93,7 @@ Only a single **grouping rule** can be added. This rule can be configured togeth
 
 4.  On the Business transaction details page, view the detailed API call topology of the application. You can also filter the results by specifying **Application Name**,**API**, and **Condition**.
 
-    ![dg_business_detail_overview](../images/p94811.png)
+    ![dg_business_detail_overview](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1662758061/p94811.png)
 
     -   Click the SQL analysis tab to view the SQL request list. On this tab, you can discover which SQL request caused the long response time of a service. You can also click an **interface snapshot** of an SQL request to view the complete trace where the corresponding SQL statement is executed.
     -   Click the Exception analysis tab to view the Java exceptions caused by the application. You can also click an **interface snapshot** of an exception to view the complete trace where the exception stack is located.
@@ -124,7 +122,7 @@ Only a single **grouping rule** can be added. This rule can be configured togeth
 
 4.  In the **Business Transaction** section, turn off the **Business transaction** switch.
 
-    ![sc_business_close_switch](../images/p128882.png)
+    ![sc_business_close_switch](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1662758061/p128882.png)
 
 
 ## Delete a business transaction task
@@ -140,5 +138,5 @@ Only a single **grouping rule** can be added. This rule can be configured togeth
     **Note:** All data of the current business transaction task is deleted and cannot be restored.
 
 
-[Preparations]()
+[Preparations](/intl.en-US/Business Monitoring/Access notes for Java applications/Preparations.md)
 
