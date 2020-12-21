@@ -4,7 +4,7 @@ After you create a scheduled browse task, you can view the overall performance o
 
 ## Prerequisites
 
-[Create a task]()
+[Create a task](/intl.en-US/Synthetic monitoring/Quick start/Create a task.md)
 
 ## Procedure
 
@@ -12,8 +12,6 @@ After you create a scheduled browse task, you can view the overall performance o
 2.  On the Scheduled dial test page, click the name of the task that you want to check or click **Details** in the rightmost column corresponding to the task.
 
     The Task Overview page appears. You can specify a time range in the section below the task name.
-
-    ![Task overview](../images/p179521.png)
 
 
 ## Metrics
@@ -76,8 +74,6 @@ After you create a scheduled browse task, you can view the overall performance o
 
 In the Synthetic Peer Details panel, you can view the basic information, network information, system environment, resource usage, all elements, and visualized reports of a carrier.
 
-![Browse dial test details](../images/p179963.png)
-
 The following table describes the metrics in the All Elements section.
 
 |Category|Metric|Description|Performance indicator|
@@ -125,8 +121,6 @@ In the Visualized Reports section, you can view [Element Domain Name Pie Chart](
 
 On the Element Domain Name Pie Chart page, you can view the basic information, network information, system environment, resource usage, performance distribution, throughput distribution, and domain name list of a carrier.
 
-![Element Domain Pie Chart](../images/p179985.png)
-
 -   Performance distribution: the pie chart that visualizes the proportions of loading time for the pages corresponding to domain names. Labels outside pie slices describe domain names and proportions. You can also move the pointer over a slice to view a domain name and a proportion. Below the pie chart, the legend section annotates domain names in different colors. Each legend is linked to a slice. You can click a legend to hide or show a slice that represents a domain name. If a slice is hidden, the legend that is linked to the slice is displayed in gray.
 -   Throughput distribution: the pie chart that visualizes the proportions of throughput for the pages corresponding to domain names. Labels outside pie slices describe domain names and proportions. You can also move the pointer over a slice to view a domain name and a proportion. Below the pie chart, the legend section annotates domain names in different colors. Each legend is linked to a slice. You can click a legend to hide or show a slice that represents a domain name. If a slice is hidden, the legend that is linked to the slice is displayed in gray.
 -   Domain name list: the list that describes the details of domain names. The following table describes the metrics in the list.
@@ -145,8 +139,6 @@ On the Element Domain Name Pie Chart page, you can view the basic information, n
 ## Element Type Pie Chart
 
 On the Element Type Pie Chart page, you can view the basic information, network information, system environment, resource usage, performance distribution, throughput distribution, and element type list of a carrier.
-
-![Element type pie chart](../images/p179989.png)
 
 -   Performance distribution: the pie chart that visualizes the proportions of loading time for the elements of different types. Labels outside pie slices describe element types and proportions. You can also move the pointer over a slice to view the corresponding element type and proportion. Below the pie chart, the legend section annotates element types in different colors. Each legend is linked to a slice. You can click a legend to hide or show a slice that represents an element type. If a slice is hidden, the legend that is linked to the slice is displayed in gray.
 -   Throughput distribution: the pie chart that visualizes the proportions of throughput for the elements of different types. Labels outside pie slices describe element types and proportions. You can also move the pointer over a slice to view the corresponding element type and proportion. Below the pie chart, the legend section annotates element types in different colors. Each legend is linked to a slice. You can click a legend to hide or show a slice that represents an element type. If a slice is hidden, the legend that is linked to the slice is displayed in gray.
