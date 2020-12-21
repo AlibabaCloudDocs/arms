@@ -8,7 +8,7 @@ ARMS Agent安装成功，控制台上仍无监控数据。
 
 应用无持续的外部请求访问、应用所属地域和ARMS Agent所属地域不一致、或者ARMS Agent安装目录权限不正确等原因都有可能导致控制台无监控数据。
 
-1.  如果Agent日志中出现“send agent metrics. no metrics.”，请确认您的应用是否有持续的外部请求访问，包括HTTP请求、HSF请求和Dubbo请求，并确认开发框架是否在ArmsAgent的支持范围内。关于ARMS应用监控对第三方组件和框架的支持情况，请参见[ARMS 应用监控支持的 Java 组件和框架](/intl.zh-CN/应用监控/参考信息/ARMS 应用监控支持的 Java 组件和框架.md)和[ARMS 应用监控支持的 PHP 组件和框架](/intl.zh-CN/应用监控/参考信息/ARMS 应用监控支持的 PHP 组件和框架.md)。
+1.  如果Agent日志中出现“send agent metrics. no metrics.”，请确认您的应用是否有持续的外部请求访问，包括HTTP请求、HSF请求和Dubbo请求，并确认开发框架是否在ArmsAgent的支持范围内。关于ARMS应用监控对第三方组件和框架的支持情况，请参见[ARMS应用监控支持的Java组件和框架](/intl.zh-CN/应用监控/参考信息/ARMS应用监控支持的Java组件和框架.md)和[ARMS应用监控支持的PHP组件和框架](/intl.zh-CN/应用监控/参考信息/ARMS应用监控支持的PHP组件和框架.md)。
 
 2.  确认选择的查询时间范围是否正确。请您将查询时间条件设为最近15分钟，然后再次确认是否有监控数据。
 
@@ -24,7 +24,7 @@ ARMS Agent安装成功，控制台上仍无监控数据。
 
 6.  若应用启动时出现以下报错，请您检查arms-bootstrap-1.7.0-SNAPSHOT.jar软件包及相应权限是否正确。
 
-    ![Application Start Error](https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/3970348951/p43213.png)
+    ![Application Start Error](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/3970348951/p43213.png)
 
 7.  如果仍无监控数据，请打包Java探针日志（路径：ArmsAgent/log），并联系钉钉服务账号`arms160804`解决问题。
 
