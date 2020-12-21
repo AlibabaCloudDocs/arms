@@ -17,7 +17,7 @@ The business transaction feature provided by ARMS allows you to define business 
 
 ## Install the ARMS agent for Java applications in Alibaba Cloud Container Service for Kubernetes
 
-If you are using the business transaction feature for the first time and have not used the application monitoring feature, you must install the latest version of the ARMS agent. For more information, see [Install the ARMS agent for a Java application deployed in Container Service for Kubernetes](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for Java applications in Container Service for Kubernetes.md).
+If you are using the business transaction feature for the first time and have not used the application monitoring feature, you must install the latest version of the ARMS agent. For more information, see [Install the ARMS agent for a Java application deployed in Container Service for Kubernetes](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for a Java application deployed in Container Service for Kubernetes.md).
 
 ## Upgrade the ARMS agent for Java applications in Alibaba Cloud Container Service for Kubernetes
 
@@ -25,7 +25,7 @@ If you are using the business transaction feature for the first time and have us
 
 1.  Log on to the[Container Service for Kubernetes console](https://partners-intl.console.aliyun.com/#/cs). In the left-side navigation bar, choose **Applications** \> **Releases**. Click the Helm tab to view the update time of the ack-arms-pilot component.
 
-    ![tab_business_helm](../images/p93070.png)
+    ![tab_business_helm](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3583758061/p93070.png)
 
     -   If the update time is earlier than December 2019, you must upgrade the ack-arms-pilot components before you can upgrade the ARMS agent. Perform [Step 3](#step_zth_q9r_1kt)[2](#step_zth_q9r_1kt).
     -   If the update time is later than December, 2019 \(inclusive\), perform [Step 4](#step_ud6_l2w_izu)[4](#step_ud6_l2w_izu) directly.
