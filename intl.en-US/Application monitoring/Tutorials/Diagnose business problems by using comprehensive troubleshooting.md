@@ -73,8 +73,6 @@ In this example, the business log shows the user trajectory. The corresponding a
     1.  In the left-side navigation pane, choose **Application Monitoring** \> **Traces and Events**, and access the Traces and Events tab of the Instances page.
     2.  Enter the date range as the **Date** value on the tab. In the **Parameter Name** drop-down list, select **Business Primary Key**. Enter the value \(in this case Username: kevin.yang\) of the business primary key in the **Parameter Value** field on the right. Then click **Query**. All traces within the specified time range are displayed in the search results.
 
-        ![](../images/p44159.png)
-
     3.  In the search results, click the TraceId of the abnormal trace, and then click the **Business Trace** tab. All business events of this TraceId appear. Locate the causes for the exception.
 
 -   Method 2: Query comprehensive troubleshooting events
@@ -83,8 +81,6 @@ In this example, the business log shows the user trajectory. The corresponding a
 2.  In the left-side navigation pane, click **Multi-Dimensional Query**, and click the Query Holographic Troubleshooting Events tab.
 
 3.  Enter a date range in the **Date** field. In the drop-down list **Holographic Troubleshooting Event Set**, select the previously configured event set, and click **Query**. All traces within the specified time range are displayed in the search results.
-
-    ![](../images/p44160.png)
 
 4.  In the search results, click **Trace Query**, and then click the Business Trace tab. All business events of this TraceId appear, and causes for the exception are located.
 
