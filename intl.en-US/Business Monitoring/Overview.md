@@ -28,15 +28,23 @@ Typically, business information such as the order amount, username, user attribu
 
 You can click Scenario-based Traces in the ARMS console and define the mappings between specific business information and URLs or RPC APIs in the graphical interface to correlate business with service calls. The mappings include the information to be matched and the dimensions on which information is split.
 
-![Custom business transaction rules](../images/p111631.png)
+![Custom business transaction rules](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9012758061/p111631.png)
 
 The preceding figure illustrates how the transaction order creation business is configured based on the following rules:
 
+
+
 * Select Start equal from the Service name drop-down list and start the service name with `/api`.
+
+  
 
 * Select Header from the Filter rules drop-down list, enter **action** as the key value, and then set the threshold to **order** .
 
+  
+
 * Select Parameter from the Grouping Rules drop-down list and enter **name** as the key value.
+
+  
 
 
 
@@ -46,7 +54,7 @@ Abundant business-specific performance metrics and diagnostic capabilities
 
 On the Business monitoring details page, you can view the business topology and three key metrics of the business, including the throughput, response time, and error rate. You can also correlate the business with the corresponding database requests, exceptions, and traces at all levels.
 
-![Business scenario traces](../images/p111634.png)
+![Business scenario traces](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9012758061/p111634.png)
 
 The preceding figure shows the application topology of the transaction order creation business, and metrics such as the request volumes of different products, response time, and errors.
 
@@ -55,4 +63,5 @@ Request for trial
 
 ARMS provides a 15-day free trial edition. After you activate the service, you can use features such as scenario-based tracing, application monitoring, browser monitoring, and Prometheus monitoring. You can click [here](https://common-buy.aliyun.com/?commodityCode=arms#/open) to activate the trial.
 **Note** Scan the following QR code to join the DingTalk group.
+
 ![dg__business_dingding](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7037258061/p92785.png)
