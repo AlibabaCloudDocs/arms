@@ -30,8 +30,6 @@ Disadvantages:
 
 Processes:
 
-![Processes](../images/p199016.png)
-
 1.  An Alibaba Cloud Prometheus HPA collector runs in a container with only one replica.
 2.  If the size of data to be collected is too large, the collector continually runs out of buffer space and restarts.
 3.  Each time the collector is restarted, the cause of the restart is detected. If the collector is OOM killed, a request for auto scaling is sent to the ARMS console.
