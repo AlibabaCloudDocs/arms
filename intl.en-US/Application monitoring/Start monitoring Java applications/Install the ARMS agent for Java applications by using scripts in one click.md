@@ -6,7 +6,7 @@ Application Real-Time Monitoring Service \(ARMS\)'s one-click agent installation
 
     **Note:** In addition to applications on Alibaba Cloud ECS instances, applications on public network servers can also access ARMS.
 
--   Make sure the third-party components or frameworks that your application uses are supported by ARMS. For more information about the compatibility list, see [Supported components and frameworks](/intl.en-US/Application monitoring/Reference/Supported components and frameworks.md).
+-   Make sure the third-party components or frameworks that your application uses are supported by ARMS. For more information about the compatibility list, see [Supported components and frameworks](/intl.en-US/Application monitoring/Reference/Java components and frameworks supported by ARMS.md).
 -   If your application is manually connected to ARMS application monitoring, you need to uninstall the ARMS agent before you can use the one-click method. For more information, see [Uninstall the ARMS agent](/intl.en-US/Application monitoring/Start monitoring Java applications/Manually install the ARMS agent for Java applications.md).
 
 ## Procedure
