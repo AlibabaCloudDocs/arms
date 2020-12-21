@@ -6,7 +6,7 @@ keyword: [custom policy, fine-grained permission management, RAM]
 
 You can create custom permission policies related to Application Real-Time Monitoring Service \(ARMS\) and grant Resource Access Management \(RAM\) users the read and write permissions on some applications monitored by ARMS. In addition, you can implement fine-grained permission management based on application names.
 
--   [Activate ARMS](/intl.en-US/Quick start/Activate ARMS.md)
+-   [Activate and upgrade ARMS](/intl.en-US/Quick start/Activate and upgrade ARMS.md)
 -   [Enable RAM](/intl.en-US/Pricing/Billing.md)
 -   [Create a RAM user](/intl.en-US/RAM User Management/Create a RAM user.md)
 
@@ -73,7 +73,7 @@ ARMS provides the following system permission policies:
 **Related topics**  
 
 
-[Access control overview](/intl.en-US/Access control/Access control overview.md)
+[Overview](/intl.en-US/Access control/Overview.md)
 
 [What is RAM?](/intl.en-US/Product Introduction/What is RAM?.md)
 
