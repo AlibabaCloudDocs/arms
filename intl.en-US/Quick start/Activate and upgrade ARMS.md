@@ -6,18 +6,6 @@ After you activate the Trial Edition of Application Real-Time Monitoring Service
 
 An Alibaba Cloud account is created and real-name verification is passed. For more information, see [t12832.md\#]().
 
-## Activation process
-
-ARMS is a monitoring service designed for distributed applications and containers. ARMS can be used to monitor the frontend, the backend, the infrastructure layer, and the application layer. ARMS provides multiple sub-services.
-
--   Application Monitoring \(Basic Edition and Pro Edition\)
--   Browser Monitoring \(Basic Edition and Pro Edition\)
--   Prometheus Monitoring \(Pro Edition\)
-
-The following figure shows the process of activating each sub-service.
-
-![Activate ARMS - International site](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0403548061/p139177.png)
-
 ## Activate ARMS for free
 
 If you use ARMS for the first time, perform the following steps to activate ARMS for free.
@@ -54,7 +42,7 @@ After you activate ARMS, read the following topics to get started with the monit
 -   Browser Monitoring: [Install the browser monitoring probe by using CDN](/intl.en-US/Browser monitoring/Get started with Browser Monitoring/For Web applications/Install the ARMS agent through CDN.md)
 -   Prometheus Monitoring: [Get started with Prometheus Service]()
 -   Dashboards: [Create a dashboard for an application monitoring job](/intl.en-US/Quick start/Create a dashboard for an application monitoring job.md)
--   Alerts: [Create ARMS alerts](/intl.en-US/Quick start/Quickly create ARMS alerts.md)
+-   Alerts: [Create ARMS alerts](/intl.en-US/Quick start/Create ARMS alerts.md)
 
 **Related topics**  
 
