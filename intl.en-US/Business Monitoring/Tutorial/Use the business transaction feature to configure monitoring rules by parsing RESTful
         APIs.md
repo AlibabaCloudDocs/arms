@@ -6,7 +6,7 @@ keyword: [business transaction, parse RESTful APIs]
 
 The business transaction feature allows you to parse RESTful APIs. When you configure business monitoring rules, you can parse HTTP methods and Uniform Resource Identifier \(URI\) paths.
 
-Your application has access to the business transaction feature. For more information, see [Preparations](/intl.en-US/Business Monitoring/Access notes for Java applications/Preparations.md).
+Your application has access to the business transaction feature. For more information, see [Preparations]().
 
 REST uses URIs to represent resources and uses HTTP methods such as GET, POST, PUT, and DELETE to describe operations on resources. RESTful APIs are APIs that follow the REST architectural style. As the REST architectural style gains popularity, more and more Internet applications are using RESTful APIs.
 
@@ -50,14 +50,14 @@ The business transaction feature allows you to parse HTTP methods such as GET, P
 
     -   If you select **Method** from the **Filter rules** drop-down list, you can enter common HTTP methods such as GET, POST, PUT, DELETE, and PATCH \(all in uppercase\) in the **Threshold** field. This indicates that data is filtered based on the specified method.
     -   If you select **Method** from the **Grouping Rules** drop-down list, data displayed is grouped based on the specified method.
-    ![pg_business_create_task_http](../images/p127993.png)
+    ![pg_business_create_task_http](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8564758061/p127993.png)
 
     The following table describes the configurations of other parameters.
 
     |Parameter|Description|Example|
     |---------|-----------|-------|
     |**Business Name**|Required. The name of the business monitoring task.|Order portal|
-    |**Entry application**|Required. The **Entry application** drop-down list displays all Java applications that have application agents installed. After you select an application, ARMS automatically detects the version of the application agent. **Note:** You can use the business monitoring feature only when you upgrade the application agent to version 2.6.2 or later. If the version of the application agent is earlier than 2.6.2, you must upgrade the application agent first. For more information, see [Preparations](/intl.en-US/Business Monitoring/Access notes for Java applications/Preparations.md).
+    |**Entry application**|Required. The **Entry application** drop-down list displays all Java applications that have application agents installed. After you select an application, ARMS automatically detects the version of the application agent. **Note:** You can use the business monitoring feature only when you upgrade the application agent to version 2.6.2 or later. If the version of the application agent is earlier than 2.6.2, you must upgrade the application agent first. For more information, see [Preparations]().
 
 |arms-k8s-demo|
     |**Service type**|The type of the service.    -   **HTTP entry**: suitable for scenarios where business links are colored based on HTTP traffic characteristics.
@@ -88,12 +88,6 @@ Only a single **grouping rule** can be added. This rule can be configured togeth
 
 4.  Click **Save**.
 
-5.  In the left-side navigation pane, choose **Scenario-based Traces** \> **Application Metric**. On the **Application Metric** page, click the name of the created monitoring task.
-
-    On the Business monitoring details page, you can view the metrics of the monitoring task.
-
-    ![sc_business_detail_metric](../images/p127998.png)
-
 
 ## Use the business transaction feature to configure monitoring rules by parsing URI paths
 
@@ -118,21 +112,15 @@ For dynamic URI paths, you cannot match the URIs accurately by using the **Equal
     -   When you select **PathVariable** from the **Filter rules** drop-down list, the system parses the path variables and present them in a drop-down list format in the **key value** field. After you select a specific path variable and enter the path parameter in the **Threshold** field, data is filtered based on the specified path variable.
     -   When you select **PathVariable** from the **Grouping Rules** drop-down list, the system parses the path variables and presents them in a drop-down list format in the **key value** field. After you select a specific path variable, data displayed is grouped based on the specified path variable.
     -   For more information about configurations of other parameters, see the [parameter table](#table_6v9_nfa_z0p) in the preceding section.
-    ![pg_business_create_task_uri](../images/p128432.png)
+    ![pg_business_create_task_uri](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8564758061/p128432.png)
 
 4.  Click **Save**.
-
-5.  In the left-side navigation pane, choose **Scenario-based Traces** \> **Application Metric**. On the **Application Metric** page, click the name of the created monitoring task.
-
-    On the Business monitoring details page, you can view the metrics of the monitoring task.
-
-    ![sc_business_detail_metric_uri](../images/p128433.png)
 
 
 **Related topics**  
 
 
-[Preparations](/intl.en-US/Business Monitoring/Access notes for Java applications/Preparations.md)
+[Preparations]()
 
 [Get started with business transaction](/intl.en-US/Business Monitoring/Quick Start/Get started with business transaction.md)
 
