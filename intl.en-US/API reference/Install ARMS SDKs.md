@@ -41,6 +41,6 @@ Follow these steps to install the ARMS PHP SDK.
 
 2.  Copy folders aliyun-php-sdk-arms and aliyun-php-sdk-core under aliyun-openapi-php-sdk to your PHP project directory. The directory structure is as follows:
 
-    ![PHP directory](http://icms-static-translation.oss-cn-hangzhou.aliyuncs.com/SP_177/DNARMS19100480/images/43309_zh-CN.png?Expires=1569140666&OSSAccessKeyId=LTAIJfoPL6wmrirR&Signature=Vxsr6kjl01myTKKoddth4O5CyFE%3D)
+    ![PHP Directory](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/152342/156509060743309_en-US.png)
 
 
