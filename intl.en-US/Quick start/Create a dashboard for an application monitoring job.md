@@ -4,7 +4,7 @@ Application Real-Time Monitoring Service \(ARMS\) provides the Application Monit
 
 ## Prerequisites
 
-An application monitoring job is created in the ARMS console. For more information, see [Create an application monitoring job](/intl.en-US/Quick start/Create an application monitoring job.md) and [Before you begin](/intl.en-US/Application monitoring/Preparations.md).
+An application monitoring job is created in the ARMS console. For more information, see [Create an application monitoring job](/intl.en-US/Quick start/Create an application monitoring job.md) and [Before you begin](/intl.en-US/Application monitoring/Before you begin.md).
 
 ## Procedure
 
@@ -36,13 +36,11 @@ An application monitoring job is created in the ARMS console. For more informati
 
     **Note:** To switch to the dark theme, click Edit Mode and choose **Theme** \> **Dark** in the upper-right corner of the page.
 
-    ![App Dashboard](../images/p43486.png)
-
 
 ## References
 
 -   [Create an application monitoring job](/intl.en-US/Quick start/Create an application monitoring job.md)
--   [Manually install the ARMS agent for a Java application](/intl.en-US/Application monitoring/Start monitoring Java applications/Manually install the ARMS agent for Java applications.md)
+-   [Manually install the ARMS agent for a Java application](/intl.en-US/Application monitoring/Start monitoring Java applications/Manually install the ARMS agent for a Java application.md)
 -   [Create a dashboard](/intl.en-US/Dashboard and alerting/Create an interactive dashboard.md)
 -   [Manage a dashboard](/intl.en-US/Dashboard and alerting/Manage a dashboard.md)
 
