@@ -6,7 +6,7 @@ keyword: [PHP, application monitoring, performance monitoring]
 
 After you install the Application Real-Time Monitoring Service \(ARMS\) agent for a PHP application, ARMS starts to monitor the PHP application. You can view the monitoring data of application topology, API requests, abnormal transactions, slow transactions, and SQL analysis. The performance of the latest ARMS agent is optimized. The CPU and memory usage of the agent is reduced to around 5%.
 
-## Procedure
+## Install the ARMS agent
 
 1.  Run the **wget** command to download the installation package. Download the installation package based on your region.
 
