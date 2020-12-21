@@ -4,7 +4,7 @@ After a synthetic monitoring network task is created, you can view the overall p
 
 ## Prerequisites
 
-[Create a task]()
+[Create a task](/intl.en-US/Synthetic monitoring/Quick start/Create a task.md)
 
 ## Procedure
 
@@ -12,8 +12,6 @@ After a synthetic monitoring network task is created, you can view the overall p
 2.  On the Scheduled Synthetic Monitoring page, find a task and click the name of the task or **Details** in the rightmost column.
 
     The Task Overview page appears. You can select a time range in the upper part of the page.
-
-    ![Network task overview](../images/p182201.png)
 
 
 ## Metrics
@@ -60,8 +58,6 @@ After a synthetic monitoring network task is created, you can view the overall p
 
 On the Synthetic Monitoring Details page, you can view the basic information, network information, DNS request analysis, Ping monitoring analysis, and Tracert monitoring analysis of a carrier.
 
-![dns request analysis](../images/p182209.png)
-
 You can view the following parameters in the DNS request analysis section:
 
 -   A record: specifies the IP address record mapped to the host name \(or domain name\).
@@ -71,9 +67,5 @@ You can view the following parameters in the DNS request analysis section:
 
 The PING monitoring analysis area displays the process analysis for pinging target IP addresses.
 
-![PING monitoring analysis](../images/p182211.png)
-
 The TRACERT monitoring analysis area displays the IP address and time used during the Tracert tracing process.
-
-![TRACERT monitoring analysis](../images/p182212.png)
 
