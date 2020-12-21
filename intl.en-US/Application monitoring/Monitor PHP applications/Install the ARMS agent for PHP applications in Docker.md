@@ -152,7 +152,7 @@ wget "http://arms-apm-gov.oss-cn-north-2-gov-1-internal.aliyuncs.com/arms-php-ag
 **Related topics**  
 
 
-[Before you begin](/intl.en-US/Application monitoring/Preparations.md)
+[Before you begin](/intl.en-US/Application monitoring/Before you begin.md)
 
 [Install the ARMS agent for a PHP application](/intl.en-US/Application monitoring/Monitor PHP applications/Install the ARMS agent for common PHP applications.md)
 
