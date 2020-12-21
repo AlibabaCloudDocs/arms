@@ -55,5 +55,5 @@ The host monitoring feature can monitor the following metrics:
 
     -   You can click the line chart icon in the upper-right corner to view the metrics by range or compare the metrics.
     -   You can click the View API icon in the upper-right corner to view the detailed information about the API operations related to the metric.
-    -   You can click the or icon in the upper-right corner of the monitoring panel to create an alert or view the existing alert points. For more information about how to create an alert, see[Create an alert](https://www.alibabacloud.com/help/doc-detail/94833.htm).
+    -   You can click the or icon in the upper-right corner of the monitoring panel to create an alert or view the existing alert points. For more information about how to create an alert, see [Create an alert](https://www.alibabacloud.com/help/doc-detail/94833.htm).
 
