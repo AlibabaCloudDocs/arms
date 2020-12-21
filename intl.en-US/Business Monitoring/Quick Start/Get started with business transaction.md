@@ -22,14 +22,6 @@ In this scenario, you can use ARMS to configure commodity category-specific busi
 -   The business transaction feature only can monitor Java applications.
 -   Only the ARMS agent V2.6.2 or later supports the business transaction feature.
 
-## Procedure
-
-![dg_business_workflow](../images/p103004.png)
-
-**Note:** Scan the following QR code to join the DingTalk group.
-
-![dg__business_dingding](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7037258061/p92785.png)
-
 ## Create a business transaction task
 
 1.  In the left-side navigation pane, choose Business Transaction \> Application Metric. In the top navigation bar of the Application Metric page, select the region.
