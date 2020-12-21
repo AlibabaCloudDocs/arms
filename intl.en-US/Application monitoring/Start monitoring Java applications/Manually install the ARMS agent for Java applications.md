@@ -6,7 +6,7 @@ After installing the Application Real-Time Monitoring Service \(ARMS\) agent, yo
 
     **Note:** In addition to applications on Alibaba Cloud ECS instances, applications on public network servers can also access ARMS.
 
--   Make sure the third-party components or frameworks that your application uses are supported by ARMS. For more information about the compatibility list, see [Supported components and frameworks](/intl.en-US/Application monitoring/Reference/Supported components and frameworks.md).
+-   Make sure the third-party components or frameworks that your application uses are supported by ARMS. For more information about the compatibility list, see [Supported components and frameworks](/intl.en-US/Application monitoring/Reference/Java components and frameworks supported by ARMS.md).
 
 ## Procedure
 
