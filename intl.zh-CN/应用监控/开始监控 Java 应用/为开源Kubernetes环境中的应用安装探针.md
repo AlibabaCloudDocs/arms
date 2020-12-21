@@ -6,6 +6,8 @@
 -   [安装Helm](https://helm.sh/docs/intro/install/)。
 -   确保您的Kubernetes api-server组件接口版本在1.10及以上。
 -   确保您的集群连通公网。
+-   如果JDK版本为1.8.0\_25或者1.8.0\_31，可能会出现无法安装探针的情况，请升级至1.8.X最新版本。
+
 
 ## 步骤一：安装探针
 
@@ -42,7 +44,7 @@ ARMS应用监控目前仅支持无状态（Deployment）和有状态（StatefulS
 
 3.  在接入应用页面顶部单击License Key右侧的复制图标。
 
-    ![Section LicenseKey](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/4166600061/p45312.png)
+    ![Section LicenseKey](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/9141208061/p45312.png)
 
 
 ## 步骤三：修改应用的YAML文件
