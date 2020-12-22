@@ -18,5 +18,5 @@ Click the button below to go to the buy page of ARMS.
 -   [Overview of browse tasks](/intl.en-US/Synthetic monitoring/Features of the console/Task overview/Overview of browse tasks.md)
 -   [Overview of network tasks](/intl.en-US/Synthetic monitoring/Features of the console/Task overview/Overview of network tasks.md)
 -   [Multidimensional reports of browse tasks](/intl.en-US/Synthetic monitoring/Features of the console/Multidimensional reports/Multidimensional reports of browse tasks.md)
--   [Multidimensional reports of network tasks]()
+-   [Multidimensional reports of network tasks](/intl.en-US/Synthetic monitoring/Features of the console/Multidimensional reports/Multidimensional reports of network tasks.md)
 
