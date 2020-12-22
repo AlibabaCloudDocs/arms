@@ -118,7 +118,7 @@ The following table lists the common parameters that are used for initializing t
 |pageShow|\{\}|Report the PV data.|
 |pageHide|\{\}|Report the health data.|
 |error|String/Object|Report error logs.|
-|api|See also [t152281.md\#section\_k3o\_jn0\_k38](/intl.en-US/Browser monitoring/Methods user guide.md)|Report the API request logs.|
+|api|See also [t152281.md\#section\_k3o\_jn0\_k38](/intl.en-US/Browser monitoring/API reference.md)|Report the API request logs.|
 |sum/avg|String|Report the custom sum and average logs.|
 
 ## Advanced scenarios
