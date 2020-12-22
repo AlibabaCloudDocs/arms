@@ -8,12 +8,13 @@ You can use multidimensional reports to analyze the performance of synthetic mon
 
 ## Procedure
 
-1.  In the left-side navigation pane, click **Cloud Dial Test**.
-2.  On the Scheduled dial test page, click the name of the task that you want to check or click **Details** in the rightmost column corresponding to the task.
+1.  Log on to the [ARMS console](https://arms-intl.console.aliyun.com/).
+2.  In the left-side navigation pane, click **Cloud Dial Test**.
+3.  On the Scheduled dial test page, click the name of the task that you want to check or click **Details** in the rightmost column corresponding to the task.
 
     The Task Overview page appears.
 
-3.  In the left-side navigation pane, click **Multidimensional Reports**.
+4.  In the left-side navigation pane, click **Multidimensional Reports**.
 
     The Multidimensional Reports page appears. You can specify filters such as time range, domain name, and performance metrics in the section below the task name.
 
