@@ -10,9 +10,10 @@ The API monitoring feature is used to monitor the details of API calls of an app
 
 To go to the Interface Invocation page, perform the following steps:
 
-1.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. In the top navigation bar, select a region.
-2.  On the Applications page, click the application that you want to view.
-3.  In the left-side navigation pane, click **Interface Invocation**.
+1.  Log on to the [ARMS console](https://arms-intl.console.aliyun.com/).
+2.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. In the top navigation bar, select a region.
+3.  On the Applications page, click the application that you want to view.
+4.  In the left-side navigation pane, click **Interface Invocation**.
 
 ## Framework
 
