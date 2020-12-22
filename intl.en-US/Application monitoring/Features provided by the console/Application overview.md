@@ -4,8 +4,9 @@ On the Application Overview page, you can view the health metrics of an applicat
 
 ## Procedure
 
-1.  In the left-side navigation pane, choose **Application Monitoring** \> **Application**, and select a region in the top navigation bar.
-2.  On the Applications page, click the application that you want to view to go to the Application Overview page.
+1.  Log on to the [ARMS console](https://arms-intl.console.aliyun.com/).
+2.  In the left-side navigation pane, choose **Application Monitoring** \> **Application**, and select a region in the top navigation bar.
+3.  On the Applications page, click the application that you want to view to go to the Application Overview page.
 
     On the Application Overview page, view information on the **Overview**, **Topology**, and **3D Topology \(Beta\)** tabs.
 
