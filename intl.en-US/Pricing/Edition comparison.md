@@ -87,13 +87,13 @@ Displays the statistics of metrics, such as the number of external requests, res
 
 Displays the status of the topic publishing and subscription of Message Queue for Apache RocketMQ.|❌|✔️|
 |Application diagnosis|
-|[Real-time diagnostics](/intl.en-US/Application monitoring/Features provided by the console/Application diagnosis/Real-time diagnosis.md)
+|[Real-time diagnostics](/intl.en-US/Application monitoring/Features provided by the console/Application diagnosis/Real-time diagnostics.md)
 
 After the real-time diagnosis feature is enabled, Application Monitoring continuously monitors the application for 5 minutes. Then, it provides reports for all trace data during this period.|❌|✔️|
 |Exception diagnosis
 
 Displays the number of times, name, interface, and summary of all exceptions in an aggregated manner.|✔️|✔️|
-|[Thread profiling]()
+|[Thread profiling](/intl.en-US/Application monitoring/Features provided by the console/Application diagnosis/Thread profiling.md)
 
 Displays the statistics of CPU time consumption by thread and the number of threads for each type. This feature records and aggregates method stacks of threads every 5 minutes to simulate the code execution process.|❌|✔️|
 |Application settings|
@@ -155,7 +155,7 @@ Displays the satisfaction trend \(APDEX trend\) by time and page.|❌|✔️|
 Displays the page speed by time and page.|✔️**Note:** The Basic Edition does not support Slow Page Session Trace \(TOP20\).
 
 |✔️|
-|[Session tracing]()
+|[Session tracing](/intl.en-US/Browser monitoring/Console functions/Session tracing.md)
 
 Performs end-to-end tracing by username or user ID. It can also be used to trace the user behavior.|❌|✔️|
 |[JS error diagnosis](/intl.en-US/Browser monitoring/Console functions/JS error diagnosis.md)
@@ -163,10 +163,10 @@ Performs end-to-end tracing by username or user ID. It can also be used to trace
 Displays the JS stability metrics, such as Page Ranked by Error Rate, Frequent Errors, and Error View.|✔️**Note:** The Basic Edition does not support View Session.
 
 |✔️|
-|[API request](/intl.en-US/Browser monitoring/Console functions/API request monitoring.md)
+|[API request](/intl.en-US/Browser monitoring/Console functions/API request.md)
 
 Displays the API request metrics, such as the API success rate, API response time, and API response information.|✔️|✔️|
-|[API details]()
+|[API details](/intl.en-US/Browser monitoring/Console functions/API details.md)
 
 Displays all the API request statistics of the application in a specified period. The statistics include the success rate, average success response time, average failure response time, number of slow responses, and number of errors.|✔️**Note:** The Basic Edition does not support View Session.
 
@@ -217,14 +217,14 @@ Displays raw access logs that are reported by all agents.|✔️|✔️|
 |Open datasets
 
 Allows you to call the datasets of raw access logs.|✔️|✔️|
-|[API reference](/intl.en-US/Browser monitoring/Methods user guide.md)
+|[API reference](/intl.en-US/Browser monitoring/API reference.md)
 
 You can query the statistical results of all browser monitoring datasets by calling related API operations.|✔️|✔️|
 |Alerts and dashboards|
 |[Create an alert](/intl.en-US/Quick start/Create ARMS alerts.md)
 
 You can configure alert rules based on the metrics of application monitoring.|❌|✔️|
-|[Create a dashboard](/intl.en-US/Dashboard and alerting/Create an interactive dashboard.md)
+|[Create a dashboard](/intl.en-US/Dashboard and alerting/Create a dashboard.md)
 
 You can configure dashboards based on specific requirements for application monitoring.|❌|✔️|
 |Page views \(PVs\) of websites|
