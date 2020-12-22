@@ -32,13 +32,15 @@ The following figure shows how fixed-rate sampling works.
 
 You can perform the following steps to configure fixed-rate sampling:
 
-1.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications** and select a region in the top navigation bar.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  On the Applications page, click the name of the application.
+2.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications** and select a region in the top navigation bar.
 
-3.  In the left-side navigation pane, click **Application Settings**. On the page that appears, click the **Custom Configuration** tab.
+3.  On the Applications page, click the name of the application.
 
-4.  In the **Invocation Trace Sampling Settings** section, turn on or turn off the switch of trace sampling and specify a sample rate. In the **Sampling Rate Settings** field, you need only to enter the number of the percentile. For example, if you enter 10, the sample rate is 10%.
+4.  In the left-side navigation pane, click **Application Settings**. On the page that appears, click the **Custom Configuration** tab.
+
+5.  In the **Invocation Trace Sampling Settings** section, turn on or turn off the switch of trace sampling and specify a sample rate. In the **Sampling Rate Settings** field, you need only to enter the number of the percentile. For example, if you enter 10, the sample rate is 10%.
 
     **Note:** The modification takes effect immediately. You do not need to restart the application. If sampling is turned off, the trace data is not captured. Proceed with caution.
 
@@ -58,13 +60,15 @@ The following figure shows how sampling based on thread profiling for slow calls
 
 You can perform the following steps to configure sampling based on thread profiling for slow calls:
 
-1.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications** and select a region in the top navigation bar.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  On the Applications page, click the name of the application.
+2.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications** and select a region in the top navigation bar.
 
-3.  In the left-side navigation pane, click **Application Settings**. On the page that appears, click the **Custom Configuration** tab.
+3.  On the Applications page, click the name of the application.
 
-4.  In the **Thread settings** section, turn on or turn off the switch of the thread diagnostics method stack and the master switch of thread profiling. Specify a threshold to trigger slow call listening.
+4.  In the left-side navigation pane, click **Application Settings**. On the page that appears, click the **Custom Configuration** tab.
+
+5.  In the **Thread settings** section, turn on or turn off the switch of the thread diagnostics method stack and the master switch of thread profiling. Specify a threshold to trigger slow call listening.
 
     ![Thread Settings](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/2652458061/p43185.png)
 
@@ -85,7 +89,9 @@ The following figure shows how business feature-based sampling works.
 
 You can perform the following steps to configure sampling based on business features:
 
-1.  In the Basic information section on the New business monitoring page, specify the following information. Click **Advanced Settings**. In the Advanced Settings section, specify the following information. Then, click **Save**.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
+
+2.  In the Basic information section on the New business monitoring page, specify the following information. Click **Advanced Settings**. In the Advanced Settings section, specify the following information. Then, click **Save**.
 
     ![pg_business](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0649558061/p200646.png)
 
@@ -126,7 +132,9 @@ The following figure shows how O&M feature-based sampling works.
 
 You can perform the following steps to configure O&M feature-based sampling:
 
-1.  In the Basic information section on the New business monitoring page, specify the following information. Click **Advanced Settings**. In the Advanced Settings section, specify the following information. Then, click **Save**.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
+
+2.  In the Basic information section on the New business monitoring page, specify the following information. Click **Advanced Settings**. In the Advanced Settings section, specify the following information. Then, click **Save**.
 
     ![pg_k8s](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0649558061/p200636.png)
 
@@ -156,11 +164,13 @@ The following figure shows how time feature-based sampling works.
 
 You can perform the following steps to configure time feature-based sampling:
 
-1.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications** and select a region in the top navigation bar.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  On the Applications page, click the name of the application.
+2.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications** and select a region in the top navigation bar.
 
-3.  In the left-side navigation pane, choose **Application Diagnosis** \> **Real-time Diagnosis**.
+3.  On the Applications page, click the name of the application.
+
+4.  In the left-side navigation pane, choose **Application Diagnosis** \> **Real-time Diagnosis**.
 
     The first time you go to the Real-time Diagnosis page, real-time diagnosis is automatically enabled by default. To enable real-time diagnosis in other cases, click **Activate Real-time Diagnosis** in the upper-right corner of the page.
 
