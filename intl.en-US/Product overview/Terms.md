@@ -78,6 +78,6 @@ This topic lists the terms of Application Real-Time Monitoring Service \(ARMS\).
 
 ## Links to other terms
 
--   [Terms of application monitoring](/intl.en-US/Application monitoring/Reference/Key statistical metrics.md)
+-   [Terms of application monitoring](/intl.en-US/Application monitoring/References/Key statistical metrics.md)
 -   [Terms of browser monitoring](/intl.en-US/Browser monitoring/Statistical metrics.md)
 
