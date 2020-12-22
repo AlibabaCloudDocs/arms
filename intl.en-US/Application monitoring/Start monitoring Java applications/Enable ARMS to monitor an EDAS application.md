@@ -4,6 +4,8 @@ You can use Application Real-Time Monitoring Service \(ARMS\) to monitor applica
 
 ## Prerequisites
 
+If the JDK Version is 1.8.0\_25 or 1.8.0\_31, you may fail to install the arms Agent. In this case, upgrade the JDK to the latest version in 1.8.X.
+
 ## Enable ARMS to monitor an application in the EDAS console
 
 1.  Log on to the [EDAS console](https://edas-intl.console.aliyun.com).
