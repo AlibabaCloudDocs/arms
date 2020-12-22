@@ -250,19 +250,21 @@ On the ECS instance, check whether the `/root/.arms/supervisor/logs/arms-supervi
 
 ## Why is there no data displayed in Application Monitoring after the ARMS agent is installed on a Java application in an ACK cluster?
 
-1.  In the left-side navigation pane, choose **Clusters**. On the Clusters page, click **Applications** in the Actions column corresponding to the cluster in which the Java application is deployed.
+1.  Log on to the [Alibaba Cloud Container Service for Kubernetes console](https://cs.console.aliyun.com/#/k8s/overview).
 
-2.  At the top of the Pods tab, select the namespace in which your application resides. Click **Edit** next to the application.
+2.  In the left-side navigation pane, choose **Clusters**. On the Clusters page, click **Applications** in the Actions column corresponding to the cluster in which the Java application is deployed.
 
-3.  In the Edit YAML dialog box, check whether the YAML file contains initContainers.
+3.  At the top of the Pods tab, select the namespace in which your application resides. Click **Edit** next to the application.
+
+4.  In the Edit YAML dialog box, check whether the YAML file contains initContainers.
 
     -   If initContainers is not contained in the YAML file, the pod has not been injected to arms-init-container. Perform [Step 5](#step_3y6_ddh_qfm).
     -   If initContainers is contained in the YAML file, the pod has been injected to arms-init-container. Perform [Step 8](#step_2xg_hy4_0h8).
-4.  At the top of the Pods tab, set Namespace to **arms-pilot**. Check whether any pods whose names contain the **arms-pilot** prefix exist in the Pod list.
+5.  At the top of the Pods tab, set Namespace to **arms-pilot**. Check whether any pods whose names contain the **arms-pilot** prefix exist in the Pod list.
 
     -   If pods whose names contain the prefix exist, perform [Step 6](#step_w3r_w45_eav).
     -   If pods whose names contain the prefix do not exist, install arms-pilot from the application market. For more information, see [Install the ARMS agent for Java applications in Container Service for Kubernetes](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for a Java application deployed in Container Service for Kubernetes.md).
-5.  On the Deployments or StatefulSets tab, choose **More** \> **View in YAML** in the Actions column. In the Edit YAML dialog box, check whether the YAML file contains the following annotations.
+6.  On the Deployments or StatefulSets tab, choose **More** \> **View in YAML** in the Actions column. In the Edit YAML dialog box, check whether the YAML file contains the following annotations.
 
     ```
     annotations:
@@ -272,11 +274,11 @@ On the ECS instance, check whether the `/root/.arms/supervisor/logs/arms-supervi
 
     -   If the YAML file contains the annotations, perform [Step 7](#step_nah_s9j_wrd).
     -   If the YAML file does not contain the annotations, add the preceding annotations to the spec \> template \> metadata section in the Edit YAML dialog box, replace `<your-deployment-name>` with your application name. Then, click **Update**.
-6.  On the Pods tab, click **Logs** next to the required pod to check whether the pod logs of arms-pilot reports an STS error in the `"Message":"STS error"` format.
+7.  On the Pods tab, click **Logs** next to the required pod to check whether the pod logs of arms-pilot reports an STS error in the `"Message":"STS error"` format.
 
     -   If the error is reported, authorize the cluster of the application and restart the pod of the application. For more information, see [Install the ARMS agent for Java applications in Container Service for Kubernetes](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for a Java application deployed in Container Service for Kubernetes.md).
     -   If the error is not reported, contact the DingTalk account arms160804 for support.
-7.  On the Pods tab, click **Edit** next to the required pod. In the Edit YAML dialog box, check whether the YAML file contains the following javaagent parameter:
+8.  On the Pods tab, click **Edit** next to the required pod. In the Edit YAML dialog box, check whether the YAML file contains the following javaagent parameter:
 
     ```
     -javaagent:/home/admin/.opt/ArmsAgent/arms-bootstrap-1.7.0-SNAPSHOT.jar
@@ -487,15 +489,17 @@ For more information about how to install the ARMS agent with one click, see [In
 
 If you no longer want to use ARMS to monitor your Java applications in an ACK cluster, perform the following steps to uninstall the ARMS agent:
 
-1.  In the left-side navigation pane, click **Clusters**. On the **Clusters** page, click **Applications** in the **Actions** column corresponding to the cluster that contains the Java application from which you want to uninstall the ARMS agent.
+1.  Log on to the [Alibaba Cloud Container Service for Kubernetes console](https://cs.console.aliyun.com/#/k8s/overview).
 
-2.  In the left-side navigation pane, select Releases.
+2.  In the left-side navigation pane, click **Clusters**. On the **Clusters** page, click **Applications** in the **Actions** column corresponding to the cluster that contains the Java application from which you want to uninstall the ARMS agent.
 
-3.  On the Helm tab, select the release name **arms-pilot** of the ARMS agent, and click **Delete** in the **Actions** column.
+3.  In the left-side navigation pane, select Releases.
 
-4.  In the Delete dialog box, click **OK**.
+4.  On the Helm tab, select the release name **arms-pilot** of the ARMS agent, and click **Delete** in the **Actions** column.
 
-5.  Restart your business pod.
+5.  In the Delete dialog box, click **OK**.
+
+6.  Restart your business pod.
 
 
 [\[Back to the top\]](#sc_toc)
@@ -546,15 +550,17 @@ If you no longer want to use ARMS to monitor your PHP applications that are not 
 
 If you no longer want to use ARMS to monitor your PHP applications that are deployed in an ACK cluster, perform the following steps to uninstall the ARMS agent:
 
-1.  In the left-side navigation pane, click **Clusters**. On the **Clusters** page, click **Applications** in the **Actions** column corresponding to the cluster that contains the Java application from which you want to uninstall the ARMS agent.
+1.  Log on to the [Alibaba Cloud Container Service for Kubernetes console](https://cs.console.aliyun.com/#/k8s/overview).
 
-2.  In the left-side navigation pane, select Releases.
+2.  In the left-side navigation pane, click **Clusters**. On the **Clusters** page, click **Applications** in the **Actions** column corresponding to the cluster that contains the Java application from which you want to uninstall the ARMS agent.
 
-3.  On the Helm tab, select the release name **arms-pilot** of the ARMS agent, and click **Delete** in the **Actions** column.
+3.  In the left-side navigation pane, select Releases.
 
-4.  In the Delete dialog box, click **OK**.
+4.  On the Helm tab, select the release name **arms-pilot** of the ARMS agent, and click **Delete** in the **Actions** column.
 
-5.  Restart your business pod.
+5.  In the Delete dialog box, click **OK**.
+
+6.  Restart your business pod.
 
 
 [\[Back to the top\]](#sc_toc)
