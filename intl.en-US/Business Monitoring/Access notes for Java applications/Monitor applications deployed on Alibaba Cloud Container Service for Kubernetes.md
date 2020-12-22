@@ -7,14 +7,6 @@ The business transaction feature provided by ARMS allows you to define business 
 -   The business transaction feature only can monitor Java applications.
 -   Only the ARMS agent V2.6.2 or later supports the business transaction feature.
 
-## Procedure
-
-![dg_business_workflow](../images/p103004.png)
-
-**Note:** Scan the following QR code to join the DingTalk group.
-
-![dg__business_dingding](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7037258061/p92785.png)
-
 ## Install the ARMS agent for Java applications in Alibaba Cloud Container Service for Kubernetes
 
 If you are using the business transaction feature for the first time and have not used the application monitoring feature, you must install the latest version of the ARMS agent. For more information, see [Install the ARMS agent for a Java application deployed in Container Service for Kubernetes](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for a Java application deployed in Container Service for Kubernetes.md).
