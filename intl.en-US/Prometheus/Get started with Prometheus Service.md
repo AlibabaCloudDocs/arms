@@ -90,9 +90,6 @@ To disable Prometheus monitoring for the ACK cluster, perform the following step
     -   If the `arms-prom-***` record is not displayed on the **Releases** page, the Prometheus agent is uninstalled. You do not need to perform further operations.
     -   If the `arms-prom-***` record is displayed on the **Releases** page, click **Delete** in the **Actions** column.
 
-        ![ack_pg_release](../images/p143010.png)
-
-
 **Related topics**  
 
 
