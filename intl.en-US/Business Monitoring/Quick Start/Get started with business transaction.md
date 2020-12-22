@@ -140,5 +140,3 @@ Only a single **grouping rule** can be added. This rule can be configured togeth
     **Note:** All data of the current business transaction task is deleted and cannot be restored.
 
 
-[Preparations]()
-
