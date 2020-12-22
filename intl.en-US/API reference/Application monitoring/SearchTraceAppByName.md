@@ -1,128 +1,69 @@
 # SearchTraceAppByName
 
-You can call this operation to query the application monitoring job list.
+You can call this operation to query SearchTraceAppByName tasks by Application Monitoring name.
+
+****
 
 ## Debugging
 
-[Alibaba Cloud provides OpenAPI Explorer to simplify API usage. You can use OpenAPI Explorer to search for APIs, call APIs, and dynamically generate SDK example code.](https://api.aliyun.com/#product=ARMS&api=SearchTraceAppByName&type=RPC&version=2019-08-08)
+[OpenAPI Explorer automatically calculates the signature value. For your convenience, we recommend that you call this operation in OpenAPI Explorer. You can use OpenAPI Explorer to search for API operations, call API operations, and dynamically generate SDK sample code.](https://api.aliyun.com/#product=ARMS&api=SearchTraceAppByName&type=RPC&version=2019-08-08)
 
 ## Request parameters
 
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
-|Action|String|Yes|SearchTraceAppByName|The operation that you want to perform. Set this value to `SearchTraceAppByName`. |
+|Action|String|Yes|SearchTraceAppByName|The parameter specified by the system. Valid values: `SearchTraceAppByName` . |
 |RegionId|String|Yes|cn-hangzhou|The ID of the region. |
-|TraceAppName|String|Yes|demo|The name of the application for which you want query the application monitoring jobs. |
+|TraceAppName|String|Yes|test-app|The name of the application. |
 
 ## Response parameters
 
 |Parameter|Type|Example|Description|
 |---------|----|-------|-----------|
-|RequestId|String|514078F3-3DA0-4180-95A0-D8F300CB71D2|The ID of the region. |
-|TraceApps| | |The application monitoring information returned. |
-|AppId|Long|6549|The ID of the application monitored. |
-|AppName|String|3123-docker-demo|The name of the application monitored. |
-|CreateTime|Long|1531291867000|The time when the application monitoring job was created. |
-|Pid|String|xxxxxxxxxxxxxxxx|The PID. |
+|RequestId|String|F7781D4A-2818-41E7-B7BB-79D809E9\*\*\*\*|The ID of the request. |
+|TraceApps|Array| |Application Monitoring Task information |
+|AppId|Long|123|The ID of the application. |
+|AppName|String|test-app|The name of the application monitored. |
+|CreateTime|Long|1593486786000|The timestamp when the instance was created. |
+|Labels|List|prod|The tag of the application. |
+|Pid|String|atc889zkcf@d8deedfa9bf\*\*\*\*|The PID of the application. |
 |RegionId|String|cn-hangzhou|The ID of the region. |
-|Type|String|TRACE|The monitoring type. |
-|UpdateTime|Long|1531291867000|The time when the application monitoring job was updated. |
-|UserId|String|xxxxxxxxxxx|The ID of the user. |
+|Show|Boolean|true|Indicates whether to display the following content:
+
+ -   `true` : Display
+-   `false` : not displayed |
+|Type|String|TRACE|The type of the monitoring task. Valid values:
+
+ -   `TRACE` : Application Monitoring
+-   `RETCODE` : browser monitoring |
+|UpdateTime|Long|1593486786000|The timestamp when the instance was updated. |
+|UserId|String|113197164949\*\*\*\*|The ID of the user. |
 
 ## Examples
 
-Sample request
+Sample requests
 
 ```
 
-http://arms.cn-hangzhou.aliyun-inc.com:8099/trace/SearchTraceAppByName.json?RegionId=cn-hangzhou
-&TraceAppName=demo
-
+     http(s)://[Endpoint]/? Action=SearchTraceAppByName &RegionId=cn-hangzhou &TraceAppName=test-app &<common request parameters> 
+   
 ```
 
-Sample success response
+Sample success responses
 
 `XML` format
 
 ```
-<SearchTraceAppByName>
-       <requestId>514078F3-3DA0-4180-95A0-D8F300CB71D2</requestId>
-       <traceApps>
-              <traceApp>
-                     <appId>6549</appId>
-                     <appName>3123-docker-demo</appName>
-                     <createTime>1531291867000</createTime>
-                     <pid>xxxxxxxxxxxxxxxxxxxxxx</pid>
-                     <regionId>cn-hangzhou</regionId>
-                     <type>TRACE</type>
-                     <updateTime>1531291867000</updateTime>
-                     <userId>xxxxxxxxxxx</userId>
-              </traceApp>
-              <traceApp>
-                     <appId>10198</appId>
-                     <appName>13312-demo</appName>
-                     <createTime>1540189384000</createTime>
-                     <pid>xxxxxxxxxxxxxxxx</pid>
-                     <regionId>cn-hangzhou</regionId>
-                     <type>tRACE</type>
-                     <updateTime>1540189384000</updateTime>
-                     <userId>xxxxxxxxxxx</userId>
-              </traceApp>
-              <traceApp>
-                     <appId>128985</appId>
-                     <appName>dubboDemoConsumer</appName>
-                     <createTime>1565147950000</createTime>
-                     <pid>xxxxxxxxxxxxxxxx</pid>
-                     <regionId>cn-hangzhou</regionId>
-                     <type>tRACE</type>
-                     <updateTime>1565147950000</updateTime>
-                     <userId>xxxxxxxxxxxx</userId>
-              </traceApp>
-       </traceApps>
-</SearchTraceAppByName>
+
+     <SearchTraceAppByNameResponse> <TraceApps> <Type>TRACE</Type> <AppId>123</AppId> <UserId>113197164949****</UserId> <CreateTime>1593486786000</CreateTime> <UpdateTime>1593486786000</UpdateTime> <Pid>b590lhguqs@b071c539188****</Pid> <Show>true</Show> <RegionId>cn-hangzhou</RegionId> <AppName>test-app</AppName> </TraceApps> <TraceApps> <Type>TRACE</Type> <AppId>234</AppId> <UserId>113197164949****</UserId> <CreateTime>1594370374000</CreateTime> <UpdateTime>1594370374000</UpdateTime> <Pid>b590lhguqs@bcef83db34b****</Pid> <Show>true</Show> <RegionId>cn-hangzhou</RegionId> <AppName>test-app2</AppName> </TraceApps> <RequestId>F7781D4A-2818-41E7-B7BB-79D809E9****</RequestId> </SearchTraceAppByNameResponse> 
+   
 ```
 
-`JSON` format
+`JSON`
 
 ```
-{
-	"traceApps":[
-		{
-			"appName":"3123-docker-demo",
-			"createTime":1531291867000,
-			"appId":6549,
-			"updateTime":1531291867000,
-			"userId":"xxxxxxxxxxx",
-			"pid":"xxxxxxxxxxxxxxxxxxxxxx",
-			"type":"TRACE",
-			"regionId":"cn-hangzhou"
-		},
-		{
-			"appName":"13312-demo",
-			"createTime":1540189384000,
-			"appId":10198,
-			"updateTime":1540189384000,
-			"userId":"xxxxxxxxxxx",
-			"pid":"xxxxxxxxxxxxxxxx",
-			"type":"TRACE",
-			"regionId":"cn-hangzhou"
-		},
-		{
-			"appName":"dubboDemoConsumer",
-			"createTime":1565147950000,
-			"appId":128985,
-			"updateTime":1565147950000,
-			"userId":"xxxxxxxxxxxx",
-			"pid":"xxxxxxxxxxxxxxxx",
-			"type":"TRACE",
-			"regionId":"cn-hangzhou"
-		}
-	],
-	"requestId":"514078F3-3DA0-4180-95A0-D8F300CB71D2"
-}
+
+     { "TraceApps": [ { "Type": "TRACE", "AppId": 123, "UserId": "113197164949****", "CreateTime": 1593486786000, "UpdateTime": 1593486786000, "Pid": "b590lhguqs@b071c539188****", "Show": true, "RegionId": "cn-hangzhou", "AppName": "test-app" }, { "Type": "TRACE", "AppId": 234, "UserId": "113197164949****", "CreateTime": 1594370374000, "UpdateTime": 1594370374000, "Pid": "b590lhguqs@bcef83db34b****", "Show": true, "RegionId": "cn-hangzhou", "AppName": "test-app2" } ], "RequestId": "F7781D4A-2818-41E7-B7BB-79D809E9****" } 
+   
 ```
-
-## Error codes
-
-The operation returns only common errors. For more information about errors that are common to all operations, see [API Error Center](https://error-center.alibabacloud.com/status/product/ARMS).
 
