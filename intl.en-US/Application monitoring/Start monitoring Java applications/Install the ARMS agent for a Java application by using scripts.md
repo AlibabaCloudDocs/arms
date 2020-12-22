@@ -2,15 +2,24 @@
 
 You can use scripts to install the Application Real-Time Monitoring Service \(ARMS\) agent for a Java application. To monitor the application, you do not need to restart the application. We recommend that you choose this installation method if you are using ARMS for the first time. If you restart the Java application, ARMS automatically loads the ARMS agent and monitors the application.
 
+-   Ports 8442, 8443, and 8883 in the security group have been opened for TCP outbound access. For more information about how to grant outbound permissions to ECS, see [Add security group rules](/intl.en-US/Security/Security groups/Add security group rules.md).
+
+    **Note:** In addition to applications on Alibaba Cloud ECS instances, applications on public network servers can also access ARMS.
+
+-   Make sure your third-party components or frameworks are within the application monitoring compatibility list. For more information about the compatibility list, see [application monitoring compatibility list](/intl.en-US/Application monitoring/References/Java components and frameworks supported by ARMS.md).
 -   If you have manually installed the ARMS agent for the Java application, you must uninstall the ARMS agent before you can use scripts to install the ARMS agent. For more information, see [Manually install the ARMS agent for a Java application](/intl.en-US/Application monitoring/Start monitoring Java applications/Manually install the ARMS agent for a Java application.md).
+-   If the JDK Version is 1.8.0\_25 or 1.8.0\_31, you may fail to install the arms Agent. In this case, upgrade the JDK to the latest version in 1.8.X.
+
 
 ## Procedure
 
-1.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  On the Applications page, select a region in the top navigation bar, and click **Add Application** in the upper-right corner.
+2.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**.
 
-3.  On the Add Application page, perform the following operations:
+3.  On the Applications page, select a region in the top navigation bar, and click **Add Application** in the upper-right corner.
+
+4.  On the Add Application page, perform the following operations:
 
     1.  Select **Java** as the programming language of your application.
 
@@ -20,9 +29,9 @@ You can use scripts to install the Application Real-Time Monitoring Service \(AR
 
     ![Access Agent](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/4445658061/p44367.png)
 
-4.  Copy the license key at the top of the Add Application page.
+5.  Copy the license key at the top of the Add Application page.
 
-5.  Run the installation script that corresponds to your region.
+6.  Run the installation script that corresponds to your region.
 
     |Region|Installation script|
     |------|-------------------|
@@ -87,7 +96,7 @@ After about 1 minute, if your application is displayed in the application list a
 
 ## Change the application name
 
-If you forget to change the sample name Java-Demo to a custom name, you can change the application name by performing a few operations. You do not need to restart the application or reinstall the ARMS agent. For more information, see [How can I change the name of a Java application after I use scripts to install the ARMS agent?](/intl.en-US/Application monitoring/Application monitoring FAQ.mdsection_dv7_df9_oz2)
+If you forget to change the sample name Java-Demo to a custom name, you can change the application name by performing a few operations. You do not need to restart the application or reinstall the ARMS agent. For more information, see [How can I change the name of a Java application after I use scripts to install the ARMS agent?](/intl.en-US/Application monitoring/FAQ.mdsection_dv7_df9_oz2)
 
 ## FAQ
 
@@ -107,5 +116,5 @@ If you forget to change the sample name Java-Demo to a custom name, you can chan
 **Related topics**  
 
 
-[FAQ](/intl.en-US/Application monitoring/Application monitoring FAQ.md)
+[FAQ](/intl.en-US/Application monitoring/FAQ.md)
 
