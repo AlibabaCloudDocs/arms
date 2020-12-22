@@ -40,10 +40,6 @@ The following is an example of a troubleshooting policy.
 
 3.  In**Page loading time details**Region and**Page loading waterfall chart**Check whether the key performance metrics are abnormal.
 
-    ![Page Load Time Details](../images/p67850.png "Page loading time details")
-
-    ![Page Load Waterfall Plot](../images/p69793.png "Page loading waterfall chart")
-
     1.  If the first rendering time is too high, or the time consumed by DNS query, TCP connection, and SSL connection is too high, it means that the slow page opening may be caused by network reasons, so you need to check your network problems.
 
     2.  If the DOM Ready time is too high, or the request response and content transmission time is too high, the reason for slow page opening may be that the API request is slow, then you need to perform the step[4](#step_3wg_h3c_tuk)For troubleshooting.
@@ -54,17 +50,11 @@ The following is an example of a troubleshooting policy.
 
     1.  In**API request list**Region and click an API**Slow Times**The number of columns.
 
-        ![API Request List](../images/p69895.png)
-
     2.  In the API slow count details dialog box that appears, click**Network request information**In the upper-right corner of the area,**Redirect call link**To view the overall RT of the browser monitoring and the call sequence diagram of the backend application.
-
-        ![Trace](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/5700362851/p43709.png)
 
         -   If the backend application processing time is short but the overall time consumption is long, it indicates that the network transmission of API requests from sending to the server and from returning data from the server to the browser is long. In the left-side navigation pane, choose**Application** \> **Access details**, And then click**API logs**, Set the preceding API to the search value, and then click**Search**To view the network, region, browser, device, and operating system of this access.
         -   If the backend application takes a long time to process, the backend processing performance is poor. Click**Method stack**Click the magnifier icon.**Local method stack**In the dialog box, check which part of the backend link is time-consuming and locate the problem.
 5.  In**Slow session tracking \(top 20\)**Area and click the page name of a slow session.
-
-    ![](../images/p69897.png)
 
     InSession DetailsPage, you can**Page resource loading waterfall chart**To view the details of resources that slow down the page.
 
