@@ -2,24 +2,125 @@
 
 This topic provides the release notes of Application Real-Time Monitoring Service \(ARMS\) and new features of each version.
 
-## V2.6.1
+## V2.7.8
+
+**Release date: November 8, 2020**
+
+**New features:**
+
+-   SLO
+    -   SLO is supported.
+
+## V2.7.7.1
+
+**Release date: November 3, 2020**
+
+**New features:**
+
+-   Synthetic monitoring
+    -   Synthetic monitoring recorder is supported.
+    -   Recording script via the Chrome browser is supported.
+
+## V2.7.7
+
+**Release date: October 15, 2020**
+
+**New features:**
+
+-   Synthetic monitoring
+    -   Synthetic monitoring v0.1 is supported.
+    -   Scheduled synthetic monitoring by city, carrier, and network is supported.
+
+## V2.7.6.2
+
+**Release date: September 15, 2020**
+
+**New features:**
+
+-   Dashboard and alarm
+    -   Metrics support dynamic baseline.
+
+## V2.7.5.3
+
+**Release date: August 20, 2020**
+
+**New features:**
+
+-   Application monitoring
+    -   Node.js monitoring is supported.
+
+## V2.7.4.1
+
+**Release date: August 3, 2020**
+
+**New features:**
+
+-   Application monitoring
+    -   AIOps automatic diagnosis supports business impact evaluation.
+
+## V2.7.3
+
+**Release date: July 9, 2020**
+
+**New features:**
+
+-   Prometheus monitoring
+    -   Function Compute monitoring is supported.
+
+## V2.7.2
+
+**Release date: June 5, 2020**
+
+**New features:**
+
+-   Prometheus monitoring
+    -   Self-host Kubernetes monitoring is supported.
+
+## V2.7.1
+
+**Release date: May 15, 2020**
+
+**New features:**
+
+-   Prometheus monitoring
+    -   Blackbox-based VPC inspection is supported.
+
+## V2.7.0
+
+**Release date: April 2, 2020**
+
+**New features:**
+
+-   Application monitoring
+    -   Automatic analysis of trace performance problem is supported.
+
+## V2.6.5
+
+**Release date: March 5, 2020**
+
+**New features:**
+
+-   Browser monitoring
+    -   Multi-dimensional query of performance metrics is supported.
+
+## V2.6.2
 
 **Release date: February 14, 2020**
 
 **New features:**
 
 -   Application monitoring
-    -   Metadata of microservices can be obtained.
+    -   Business transaction is supported.
+    -   The WebFlux and Gateway components of Spring Cloud are supported.
 
-## V2.6.2
+## V2.6.1
 
 **Release date: February 11, 2020**
 
 **New features:**
 
 -   Application monitoring
-    -   Business transaction is supported.
-    -   The WebFlux and Gateway components of Spring Cloud are supported.
+    -   Metadata of microservices can be obtained.
 
 ## V2.6.0.2
 
@@ -158,7 +259,7 @@ This topic provides the release notes of Application Real-Time Monitoring Servic
 **New features:**
 
 -   Application monitoring
-    -   Applications deployed on Container Service for Kubernetes \(ACK\) or in open source Kubernetes can be monitored. For more information, see [Install the ARMS agent for a Java application deployed in Container Service for Kubernetes](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for Java applications in Container Service for Kubernetes.md) and [Install the ARMS agent for an application deployed in an open source Kubernetes environment](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for applications in open-source Kubernetes environments.md).
+    -   Applications deployed on Container Service for Kubernetes \(ACK\) or in open source Kubernetes can be monitored. For more information, see [Install the ARMS agent for a Java application deployed in Container Service for Kubernetes](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for a Java application deployed in Container Service for Kubernetes.md) and [Install the ARMS agent for an application deployed in an open source Kubernetes environment](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for an application deployed in an open source Kubernetes environment.md).
 -   Browser monitoring
     -   DingTalk, Alipay, WeChat, and other mini programs can be monitored. For more information, see [Monitor DingTalk mini programs](/intl.en-US/Browser monitoring/Get started with Browser Monitoring/For mini programs/Monitor DingTalk mini programs.md), [Monitor Alipay mini programs](/intl.en-US/Browser monitoring/Get started with Browser Monitoring/For mini programs/Monitor Alipay mini programs.md), [Monitor WeChat mini programs](/intl.en-US/Browser monitoring/Get started with Browser Monitoring/For mini programs/Monitor WeChat mini programs.md), and [Monitor other mini programs](/intl.en-US/Browser monitoring/Get started with Browser Monitoring/For mini programs/Monitor other mini programs.md).
 
@@ -193,15 +294,15 @@ This topic provides the release notes of Application Real-Time Monitoring Servic
 **New features:**
 
 -   Application monitoring
-    -   Monitoring of Java applications can be enabled by using scripts in one step. For more information, see [Install the ARMS agent for a Java application by using scripts](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for Java applications by using scripts in one click.md).
-    -   PHP applications can be monitored. For more information, see [Install the ARMS agent for a PHP application](/intl.en-US/Application monitoring/Start monitoring PHP applications/Install the ARMS agent for common PHP applications.md).
+    -   Monitoring of Java applications can be enabled by using scripts in one step. For more information, see [Install the ARMS agent for a Java application by using scripts](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for a Java application by using scripts.md).
+    -   PHP applications can be monitored. For more information, see [Install the ARMS agent for a PHP application](/intl.en-US/Application monitoring/Monitor PHP applications/Install the ARMS agent for a PHP application.md).
 
 **Optimized features:**
 
 -   Application monitoring
-    -   The traditional method used to enable the monitoring of Java applications is optimized. For more information, see [Manually install the ARMS agent for a Java application](/intl.en-US/Application monitoring/Start monitoring Java applications/Manually install the ARMS agent for Java applications.md).
+    -   The traditional method used to enable the monitoring of Java applications is optimized. For more information, see [Manually install the ARMS agent for a Java application](/intl.en-US/Application monitoring/Start monitoring Java applications/Manually install the ARMS agent for a Java application.md).
 -   Browser monitoring
-    -   Troubleshooting of JavaScript errors is optimized. Online JavaScript code is compressed into one line. An error cannot be identified based on the error line number reported from browser. Browser monitoring can identify the error by using source maps. For more information, see [Diagnose JS errors by using ARMS browser monitoring](/intl.en-US/Browser monitoring/Tutorials/Diagnose JS errors with ARMS browser monitoring.md).
+    -   Troubleshooting of JavaScript errors is optimized. Online JavaScript code is compressed into one line. An error cannot be identified based on the error line number reported from browser. Browser monitoring can identify the error by using source maps. For more information, see [Diagnose JS errors by using ARMS browser monitoring](/intl.en-US/Browser monitoring/Tutorials/Diagnose JS errors by using ARMS browser monitoring.md).
 
 ## V2.4.6
 
@@ -230,7 +331,7 @@ This topic provides the release notes of Application Real-Time Monitoring Servic
 
 -   Application monitoring:
 
-    -   Thread profiling is supported. When the request of a thread times out, you can locate the time consumption of all internal stacks. For more information, see [Analyze errors in code by using ARMS thread profiling](/intl.en-US/Application monitoring/Tutorials/Use ARMS TProf to analyze code problems.md).
+    -   Thread profiling is supported. When the request of a thread times out, you can locate the time consumption of all internal stacks. For more information, see [Analyze errors in code by using ARMS thread profiling](/intl.en-US/Application monitoring/Tutorials/Analyze errors in code by using ARMS thread profiling.md).
 -   Browser monitoring:
 
     -   Resource loading details are supported. You can locate all slowly loaded resources on the page, such as images, JS, CSS, and APIs. For more information, see [Slow session tracing](/intl.en-US/Browser monitoring/Tutorials/Slow session tracing.md).
@@ -284,7 +385,7 @@ This topic provides the release notes of Application Real-Time Monitoring Servic
     -   Custom configuration is supported. This allows you to modify configurations on the user interface, such as trace sampling, agent switch setting, and threshold setting. For more information, see [t152246.md\#](/intl.en-US/Application monitoring/Features provided by the console/Application Settings/Custom configuration.md).
 -   Browser monitoring:
 
-    -   The sample reporting feature is supported. This reduces reports and workloads of server by using random sample reporting. For more information, see [SDK reference](/intl.en-US/Browser monitoring/Configuration items of the browser monitoring SDK.md).
+    -   The sample reporting feature is supported. This reduces reports and workloads of server by using random sample reporting. For more information, see [SDK reference](/intl.en-US/Browser monitoring/SDK reference.md).
 
 ## V2.4.1
 
@@ -316,7 +417,7 @@ This topic provides the release notes of Application Real-Time Monitoring Servic
 
 **New features:**
 
--   Monitoring of EDAS applications can be enabled by using scripts in one step. For more information, see [Enable ARMS to monitor an EDAS application](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for applications in EDAS in one click.md).
+-   Monitoring of EDAS applications can be enabled by using scripts in one step. For more information, see [Enable ARMS to monitor an EDAS application](/intl.en-US/Application monitoring/Start monitoring Java applications/Enable ARMS to monitor an EDAS application.md).
 
 ## V2.3.3
 
