@@ -6,6 +6,8 @@ keyword: [PHP, application monitoring, performance monitoring]
 
 After you install the Application Real-Time Monitoring Service \(ARMS\) agent for a PHP application, ARMS starts to monitor the PHP application. You can view the monitoring data of application topology, API requests, abnormal transactions, slow transactions, and SQL analysis. The performance of the latest ARMS agent is optimized. The CPU and memory usage of the agent is reduced to around 5%.
 
+**Note:** If you want to use the PHP Agent of the latest version, activate [ARMS trial](https://common-buy.aliyun.com/?&commodityCode=arms#/open) now. For the trial period of the new version of the PHP Agent, visit the ARMS console announcement. If you have other questions, you can join our DingTalk Q&A Group: 23328286.
+
 ## Install the ARMS agent
 
 1.  Run the **wget** command to download the installation package. Download the installation package based on your region.
@@ -70,13 +72,15 @@ wget "http://arms-apm-hongkong.oss-cn-hongkong-internal.aliyuncs.com/arms-php-ag
     mv arms-php-agent /usr/local/arms/arms-php-agent
     ```
 
-3.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. In the top navigation bar, select a region.
+3.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-4.  On the Applications page, click **Add Application** in the upper-right corner.
+4.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. In the top navigation bar, select a region.
 
-5.  Copy the license key at the top of the Add Application page.
+5.  On the Applications page, click **Add Application** in the upper-right corner.
 
-6.  Add the following code to the php.ini configuration file.
+6.  Copy the license key at the top of the Add Application page.
+
+7.  Add the following code to the php.ini configuration file.
 
     ```
     extension=/usr/local/arms/arms-php-agent/arms-x.x.so
@@ -93,7 +97,7 @@ wget "http://arms-apm-hongkong.oss-cn-hongkong-internal.aliyuncs.com/arms-php-ag
     -   Set `<yourAppName>` to a custom name. The name is displayed as your PHP application name in the ARMS console.
     -   Replace `<yourLicenseKey>` with the license key that you obtained in [Step 6](#step_uz0_rqc_n3i).
     -   If `with-config-file-scan-dir` is configured for the version of your PHP application, you can create the arms.ini file in the /etc/php/7.2/php-fpm/conf.d directory. The content of this file is the same as that you added to the php.ini file.
-7.  Run the following command to start the Hercules service to transfer the data of your PHP application:
+8.  Run the following command to start the Hercules service to transfer the data of your PHP application:
 
     ```
     cd /usr/local/arms/arms-php-agent/
@@ -101,10 +105,12 @@ wget "http://arms-apm-hongkong.oss-cn-hongkong-internal.aliyuncs.com/arms-php-ag
     sudo ./hercules service start
     ```
 
-8.  Restart the service.
+9.  Restart the service.
 
     -   If you are using an NGINX server, restart the PHP-FPM service.
     -   If you are using an Apache server, restart the Apache2 service.
+    Wait for about 1 minute. In the [ARMS console](https://arms-intl.console.aliyun.com/), choose **Application Monitoring** \> **Applications** If your application \(with a custom name\) appears on the page, <yourAppName\> you have successfully installed the arms agent.
+
 
 ## Uninstall the ARMS agent
 
@@ -133,5 +139,6 @@ wget "http://arms-apm-hongkong.oss-cn-hongkong-internal.aliyuncs.com/arms-php-ag
 **Related topics**  
 
 
-[Install the ARMS agent for PHP applications deployed on multiple servers in standalone mode](/intl.en-US/Application monitoring/Monitor PHP applications/Install the arms agent for multi-site and standalone PHP applications.md)
+[Install the ARMS agent for PHP applications deployed on multiple servers in standalone mode](/intl.en-US/Application monitoring/Monitor PHP applications/Install the ARMS agent for PHP applications deployed on multiple servers in standalone
+         mode.md)
 
