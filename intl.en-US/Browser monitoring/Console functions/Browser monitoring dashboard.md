@@ -58,7 +58,7 @@ The dashboard of ARMS browser monitoring includes the following parameters.
 
 [JS error diagnosis](/intl.en-US/Browser monitoring/Console functions/JS error diagnosis.md)
 
-[API request](/intl.en-US/Browser monitoring/Console functions/API request monitoring.md)
+[API request](/intl.en-US/Browser monitoring/Console functions/API request.md)
 
 [Create ARMS alerts](/intl.en-US/Quick start/Create ARMS alerts.md)
 
