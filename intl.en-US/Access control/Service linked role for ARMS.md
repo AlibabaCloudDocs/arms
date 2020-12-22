@@ -14,7 +14,7 @@ When ARMS Prometheus Monitoring needs to access other Alibaba Cloud resources su
 
 ## Delete the AliyunServiceRoleForARMS role
 
-After you have enabled ARMS Prometheus Monitoring, if you need to delete the AliyunServiceRoleForARMS role for security purposes, make sure that you understand the impact of deleting the role. After the AliyunServiceRoleForARMS role is deleted, the Kubernetes cluster under the current account cannot be synchronized to the Kubernetes cluster list in , and the ARMS console stops obtaining and writing relevant monitoring data.
+After you have enabled ARMS Prometheus Monitoring, if you need to delete the AliyunServiceRoleForARMS role for security purposes, make sure that you understand the impact of deleting the role. After the AliyunServiceRoleForARMS role is deleted, the Kubernetes cluster under the current account cannot be synchronized to the Kubernetes cluster list in [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home), and the ARMS console stops obtaining and writing relevant monitoring data.
 
 To delete the AliyunServiceRoleForARMS role, perform the following steps:
 
