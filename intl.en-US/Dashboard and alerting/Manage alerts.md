@@ -6,13 +6,15 @@ On the Alert Policies page, you can manage all the alert rules within your Aliba
 
 On the Alert Policies page, the alert rules that you created in Application Monitoring, Browser Monitoring, and Custom Monitoring are displayed. You can start, stop, edit, and delete the alert rules. You can also view alert details. For more information about how to create alert rules, see [Create ARMS alerts](/intl.en-US/Quick start/Create ARMS alerts.md).
 
-1.  In the left-side navigation pane, choose **Alerts** \> **Alert Policies**.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  On the **Alert Policies** page, enter the alert name in the search box and click **Search**.
+2.  In the left-side navigation pane, choose **Alerts** \> **Alert Policies**.
+
+3.  On the **Alert Policies** page, enter the alert name in the search box and click **Search**.
 
     **Note:** You can enter part of an alert name in the search box to perform a fuzzy search.
 
-3.  You can perform the following operations on an alert rule in the **Actions** column based on your business requirements:
+4.  You can perform the following operations on an alert rule in the **Actions** column based on your business requirements:
 
     -   To edit an alert rule, click **Edit** in the Actions column. In the Edit Alarm dialog box, edit the alert rule and click **Save**.
     -   To delete an alert rule, click **Delete** in the Actions column. In the Delete dialog box, click **Delete**.
