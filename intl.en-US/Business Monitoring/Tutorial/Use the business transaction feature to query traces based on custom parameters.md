@@ -26,13 +26,15 @@ Compared with the holographic troubleshooting feature and the grouping rules fea
 
 Before you can query traces based on custom parameters, you must configure extraction rules for the custom parameters of your application.
 
-1.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications** and select a region from the drop-down list in the upper-left corner.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  On the **Applications** page, click **Settings** in the right-side **Actions** column corresponding to the application.
+2.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications** and select a region from the drop-down list in the upper-left corner.
 
-3.  On the **Application Settings** page, click the **Custom parameters** tab and click **Add custom parameter** in the upper-right corner.
+3.  On the **Applications** page, click **Settings** in the right-side **Actions** column corresponding to the application.
 
-4.  In the **Add custom parameter** dialog box, configure the following parameters and click **OK**.
+4.  On the **Application Settings** page, click the **Custom parameters** tab and click **Add custom parameter** in the upper-right corner.
+
+5.  In the **Add custom parameter** dialog box, configure the following parameters and click **OK**.
 
     |Parameter|Description|Required|Example|
     |---------|-----------|--------|-------|
