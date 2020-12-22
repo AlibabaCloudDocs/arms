@@ -4,11 +4,13 @@ A diagnostic report summarizes the data collected by browser monitoring during a
 
 ## Enter the page for the feature
 
-1.  In the left-side navigation pane, click **Browser Monitoring**. On the **Browser Monitoring** page, click the name of the application that you want to view.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  In the upper-right corner of the page, click **One-click diagnosis**.
+2.  In the left-side navigation pane, click **Browser Monitoring**. On the **Browser Monitoring** page, click the name of the application that you want to view.
 
-3.  On the **Diagnostic Report** page, view the diagnostic report.
+3.  In the upper-right corner of the page, click **One-click diagnosis**.
+
+4.  On the **Diagnostic Report** page, view the diagnostic report.
 
 
 ## JS error logs
