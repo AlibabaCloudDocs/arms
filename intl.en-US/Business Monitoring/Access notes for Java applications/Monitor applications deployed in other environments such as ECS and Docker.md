@@ -40,8 +40,3 @@ The business transaction feature provided by ARMS allows you to define business 
     2.  Install a new ARMS agent. For more information, see [Install the ARMS agent for a Java application by using scripts](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for a Java application by using scripts.md).
 
 
-**Related topics**  
-
-
-[Before you begin]()
-
