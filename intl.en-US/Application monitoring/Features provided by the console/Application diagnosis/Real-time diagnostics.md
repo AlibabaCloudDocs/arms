@@ -10,11 +10,13 @@ If you want to monitor the performance of an application for a short period of t
 
 ## Procedure
 
-1.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. In the top navigation bar, select a region.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  On the Applications page, click the name of the application.
+2.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. In the top navigation bar, select a region.
 
-3.  In the left-side navigation pane, choose **Application Diagnosis** \> **Real-time Diagnosis**.
+3.  On the Applications page, click the name of the application.
+
+4.  In the left-side navigation pane, choose **Application Diagnosis** \> **Real-time Diagnosis**.
 
 
 ## Enable and disable real-time diagnostics
