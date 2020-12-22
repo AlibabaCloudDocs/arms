@@ -15,17 +15,19 @@ If you are using the business transaction feature for the first time and have no
 
 If you are using the business transaction feature for the first time and have used the application monitoring feature, you must upgrade the ARMS agent to V2.6.2 or later. To upgrade the ARMS agent for Java applications deployed on ECS clusters in EDAS, perform the following steps:
 
-1.  In the left-side navigation pane, choose **Application Management** \> **Applications**. Click the application for which you want to enable the business transaction feature of ARMS.
+1.  Log on to the [EDAS console](https://edas-intl.console.aliyun.com).
+
+2.  In the left-side navigation pane, choose **Application Management** \> **Applications**. Click the application for which you want to enable the business transaction feature of ARMS.
 
     The Application Details page appears.
 
-2.  In the left-side navigation pane, click **Basic Information**. On the Basic Information page, click **Deploy Application** in the upper-right corner to deploy the application. For more information, see [t1838948.md\#section\_d2h\_972\_4zb]().
+3.  In the left-side navigation pane, click **Basic Information**. On the Basic Information page, click **Deploy Application** in the upper-right corner to deploy the application. For more information, see [t1838948.md\#section\_d2h\_972\_4zb]().
 
     ![tab_business_deployment_detail](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3827258061/p88780.png)
 
     After the application is deployed, the ARMS agent is automatically updated.
 
-3.  Connect to the ECS instance and log on to it. For more information, see [OverviewGuidelines on instance connection](/intl.en-US/Instance/Connect to instances/Overview.md). Run the `cat /home/admin/.opt/ArmsAgent/version` command to check the version of the ARMS agent.
+4.  Connect to the ECS instance and log on to it. For more information, see [OverviewGuidelines on instance connection](/intl.en-US/Instance/Connect to instances/Overview.md). Run the `cat /home/admin/.opt/ArmsAgent/version` command to check the version of the ARMS agent.
 
     If the version number starts with 2.6.2, the ARMS agent has been upgraded to V2.6.2 or later. You can create a business transaction task to monitor your applications.
 
