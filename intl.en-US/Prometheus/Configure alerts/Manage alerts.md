@@ -6,15 +6,17 @@ Alibaba Cloud Prometheus Service provides out-of-the-box alert rules. On the ale
 
 You can enable, disable, and edit alert rules.
 
-1.  In the top navigation bar, select a region. Then, click the name of the Kubernetes cluster that you want to manage.
+1.  Log on to the [Prometheus console](https://prometheus.console.aliyun.com/#/home).
 
-2.  In the left-side navigation pane, click **Alarm configuration beta**.
+2.  In the top navigation bar, select a region. Then, click the name of the Kubernetes cluster that you want to manage.
 
-3.  On the **Alarm configuration beta** page, set the filter conditions or enter an alert name in the search box, and then click the **Search** icon.
+3.  In the left-side navigation pane, click **Alarm configuration beta**.
+
+4.  On the **Alarm configuration beta** page, set the filter conditions or enter an alert name in the search box, and then click the **Search** icon.
 
     **Note:** You can enter part of an alert name in the search box to perform a fuzzy search.
 
-4.  In the **Actions** column, you can perform the following operations on the filtered alert rules:
+5.  In the **Actions** column, you can perform the following operations on the filtered alert rules:
 
     -   To edit an alert rule, click **Editing**. In the Edit alarm dialog box, edit the alert rule, and then click **OK**.
 
