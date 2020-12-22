@@ -37,7 +37,7 @@ This topic provides the release notes of Application Real-Time Monitoring Servic
 
 **New features:**
 
--   Dashboard and alarm
+-   Dashboard and alerting
     -   Metrics support dynamic baseline.
 
 ## V2.7.5.3
