@@ -8,17 +8,18 @@ JVM monitoring can display multiple memory metrics within a specified period of 
 
 ## Create memory snapshot
 
-1.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. In the top navigation bar, select a region.
-2.  On the Applications page, click the name of the application that you want to manage.
-3.  In the left-side navigation pane, click **Application Details**, and click **JVM Monitoring** tab on the right side.
+1.  Log on to the [ARMS console](https://arms-intl.console.aliyun.com/).
+2.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. In the top navigation bar, select a region.
+3.  On the Applications page, click the name of the application that you want to manage.
+4.  In the left-side navigation pane, click **Application Details**, and click **JVM Monitoring** tab on the right side.
 
     ![jvm_1](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/4312658061/p203846.png)
 
-4.  In the upper-right corner of the JVM Monitoring tab, click **Create Memory Snapshot**.
+5.  In the upper-right corner of the JVM Monitoring tab, click **Create Memory Snapshot**.
 
     **Note:** When you click **Create Memory Snapshot**, if the previous snapshot task is still running, an error message is prompted. Wait until the previous snapshot task is finished. You can only create memory snapshots for the Linux system.
 
-5.  In the Create Memory Snapshot dialog box, select an IP address and click **Save**.
+6.  In the Create Memory Snapshot dialog box, select an IP address and click **Save**.
 
     **Warning:** The running time of a snapshot task varies from a few minutes to half an hour. The application stops responding during a dump. Proceed with caution.
 
