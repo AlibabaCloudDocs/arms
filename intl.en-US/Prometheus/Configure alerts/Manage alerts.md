@@ -24,8 +24,6 @@ You can enable, disable, and edit alert rules.
 
     -   To enable an alert rule that is not enabled, click **Enable**, and then view the Status column to check whether the rule is enabled.
     -   To disable an alert rule, click **Closed**, and then view the Status column to check whether the rule is disabled.
-    ![Alarm History](../images/p43290.png)
-
 
 ## Delete an alert rule
 
