@@ -2,23 +2,36 @@
 
 Application Real-Time Monitoring Service \(ARMS\) provides alert templates that allow you to create alerts in batches, improving efficiency in configuring alert rules.
 
+ARMS comes with the following alert templates:
+
+-   Application monitoring
+    -   DefaultAPM-DB-Alert: This template is used to generate alerts for long database response time and database call errors.
+    -   DefaultAPM-Exception-Alert: This template is used to generate alerts for call timeout and call errors.
+    -   DefaultAPM-Host-Alert: This template is used to generate alerts for high CPU usage and insufficient disk space.
+    -   DefaultAPM-Process-Alert: This template is used to generate alerts for process status.
+    -   DefaultAPM-GC-Alert: This template is used to generate alerts for excessive full garbage collection \(GC\) events, long full GC duration, and long young GC duration.
+-   Browser monitoring
+    -   DefaultRetcodeAlert: This template is used to generate alerts for a high JavaScript \(JS\) error rate and excessive JS errors.
+
 ## Create alert templates
 
 In addition to the default alert templates provided by ARMS, you can create custom alert templates as needed. ARMS allows you to create only two types of alert templates: browser monitoring and application monitoring.
 
-1.  In the left-side navigation pane, choose **Alerts** \> **Alert Template Management**.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  On the Alert Template Management page, click **Create Alert Template** in the upper-right corner.
+2.  In the left-side navigation pane, choose **Alerts** \> **Alert Template Management**.
+
+3.  On the Alert Template Management page, click **Create Alert Template** in the upper-right corner.
 
     -   Click **Browser Monitoring Alert Template**. In the Create Alert Template dialog box, set all required parameters, and then click **Save**. For more information about the fields, see [Description of basic fields](#section_x9s_jul_7zb).
     -   Click **Application Monitoring Alert Template**. In the Create Alert Template dialog box, set all required parameters, and then click **Save**. For more information about the fields, see [Description of basic fields](#section_x9s_jul_7zb).
-3.  Select the alert template you created in the alert template list. In the **Actions** column, click **Create Alert**. In the Create Alert dialog box, set all required parameters and click **Save**.
+4.  Select the alert template you created in the alert template list. In the **Actions** column, click **Create Alert**. In the Create Alert dialog box, set all required parameters and click **Save**.
 
     Choose **Alerts** \> **Alert Policies**. On the Alert Policies page, click the Alert Rules tab. The alert rule you created appears in the alert list, indicating that you have created the alert rule by using the alert template you created.
 
-4.  Select the alert template you created in the alert template list. In the **Actions** column, click **Batch Create Alerts**.
+5.  Select the alert template you created in the alert template list. In the **Actions** column, click **Batch Create Alerts**.
 
-5.  In the Batch Create Alerts dialog box, click multiple applications in the **Unselected** section to add them to the **Selected** section. Click **Save**. In the Note dialog box, click **OK**.
+6.  In the Batch Create Alerts dialog box, click multiple applications in the **Unselected** section to add them to the **Selected** section. Click **Save**. In the Note dialog box, click **OK**.
 
     Choose **Alerts** \> **Alert Policies**. On the Alert Policies page, click the Alert Rules tab. The alert rules you created in batches appear in the alert list, indicating that you have created the alert rules in batches by using the alert template you created.
 
@@ -27,9 +40,11 @@ In addition to the default alert templates provided by ARMS, you can create cust
 
 You can enable or disable the Auto-Generation feature of an alert template, as well as edit, delete, and copy the alert template.
 
-1.  In the left-side navigation pane, choose **Alerts** \> **Alert Template Management**.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  Find the target alert template in the alert template list, and click the buttons in the **Actions** column as needed.
+2.  In the left-side navigation pane, choose **Alerts** \> **Alert Template Management**.
+
+3.  Find the target alert template in the alert template list, and click the buttons in the **Actions** column as needed.
 
     -   To automatically create alert rules for a new application, click **Enable Auto-Generation**. In the Stop dialog box, click **OK**. If you do not need to automatically create alert rules for the new application, click **Disable Auto-Generation**. In the Stop dialog box, click **OK**.
 
@@ -64,5 +79,5 @@ The following table describes the basic fields of the **Create Alarm** dialog bo
 
 [Create an alert](/intl.en-US/Dashboard and alerting/Create an alert.md)
 
-[t1861482.md\#](/intl.en-US/Dashboard and alerting/Tutorials/Create common alarm rules.md)
+[Create common alert rules](/intl.en-US/Dashboard and alerting/Tutorials/Create common alert rules.md)
 
