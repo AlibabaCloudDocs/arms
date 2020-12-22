@@ -15,7 +15,9 @@ ARMS comes with the following alert templates:
 
 ## Procedure
 
-1.  In the left-side navigation pane, choose **Alerts** \> **Alert Template Management** to go to the Alert Template Management page.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
+
+2.  In the left-side navigation pane, choose **Alerts** \> **Alert Template Management** to go to the Alert Template Management page.
 
 
 ## Create alert rules for application monitoring by using the DefaultAPM-DB-Alert template
