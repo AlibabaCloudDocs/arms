@@ -7,11 +7,13 @@ Alibaba Cloud Prometheus Service provides out-of-the-box alert rules. You can al
 
 ## Procedure
 
-1.  In the top navigation bar, select a region. Then, click the name of the Kubernetes cluster that you want to manage.
+1.  Log on to the [Prometheus console](https://prometheus.console.aliyun.com/#/home).
 
-2.  In the left-side navigation pane, choose **Alarm configuration beta**, and then click **Create Alert** in the upper-right corner.
+2.  In the top navigation bar, select a region. Then, click the name of the Kubernetes cluster that you want to manage.
 
-3.  In the **Create Alert** dialog box, set the following parameters, and then click **OK**.
+3.  In the left-side navigation pane, choose **Alarm configuration beta**, and then click **Create Alert** in the upper-right corner.
+
+4.  In the **Create Alert** dialog box, set the following parameters, and then click **OK**.
 
     **Note:** The **Time** parameter is not supported.
 
