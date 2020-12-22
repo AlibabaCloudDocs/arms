@@ -17,7 +17,7 @@ The business transaction feature provided by ARMS allows you to define business 
 
 ## Install the ARMS agent for applications in open source Kubernetes environments
 
-If you are using the business transaction feature for the first time and have not used the application monitoring feature, you must install the latest version of the ARMS agent. For more information, see [Install the ARMS agent for an application deployed in an open source Kubernetes environment](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for applications in open-source Kubernetes environments.md).
+If you are using the business transaction feature for the first time and have not used the application monitoring feature, you must install the latest version of the ARMS agent. For more information, see [Install the ARMS agent for an application deployed in an open source Kubernetes environment](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for an application deployed in an open source Kubernetes environment.md).
 
 ## Upgrade the ARMS agent for applications in open source Kubernetes environments
 
@@ -25,9 +25,9 @@ If you are using the business transaction feature for the first time and have us
 
 Perform the following steps:
 
-1.  Uninstall the existing ARMS agent. For more information, see [Uninstall the ARMS agent](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for applications in open-source Kubernetes environments.mdsection_anc_ksu_mmw).
+1.  Uninstall the existing ARMS agent. For more information, see [Uninstall the ARMS agent](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for an application deployed in an open source Kubernetes environment.mdsection_anc_ksu_mmw).
 
-2.  Install a new ARMS agent. For more information, see [Install the ARMS agent for an application deployed in an open source Kubernetes environment](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for applications in open-source Kubernetes environments.md).
+2.  Install a new ARMS agent. For more information, see [Install the ARMS agent for an application deployed in an open source Kubernetes environment](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for an application deployed in an open source Kubernetes environment.md).
 
 3.  Restart your business pod.
 
