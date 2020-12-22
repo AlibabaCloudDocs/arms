@@ -23,31 +23,21 @@ You can use multidimensional reports to analyze the performance of synthetic mon
 
 
 
-![Cloud dial test_map](../images/p179613.png)
-
 -   The Map tab provides a colored map that visualizes the overall performance data of each province. Move the pointer over a province on the map to view the performance metric data of the province.
 -   The Statistical Data section provides the overall performance metric data of monitoring locations. For more information about metrics, see the [Metrics](#section_7yl_0t8_81a) section.
 -   The Detailed Data section provides the detailed performance metric data of monitoring locations. For more information about metrics, see the [Metrics](#section_7yl_0t8_81a) section.
-
-![Cloud dial test analysis diagram](../images/p179680.png)
 
 -   The Analysis Chart tab provides a horizontal bar chart that visualizes performance metric data of carriers. Move the pointer over a horizontal bar to view the data of specific performance metrics.
 -   The Statistical Data section provides the overall performance metric data of monitoring locations. For more information about metrics, see the [Metrics](#section_7yl_0t8_81a) section.
 -   The Detailed Data section provides the detailed performance metric data of monitoring locations. For more information about metrics, see the [Metrics](#section_7yl_0t8_81a) section.
 
-![Cloud dial test trend graph](../images/p179681.png)
-
 -   The Trend Chart tab provides a line chart that visualizes performance metric data of carriers. Move the pointer over a point along the line to view the data of specific performance metrics.
 -   The Statistical Data section provides the overall performance metric data of monitoring locations. For more information about metrics, see the [Metrics](#section_7yl_0t8_81a) section.
 -   The Detailed Data section provides the detailed performance metric data of monitoring locations. For more information about metrics, see the [Metrics](#section_7yl_0t8_81a) section.
 
-![Cloud dial survey area map](../images/p179684.png)
-
 -   The Region Chart tab provides a horizontal bar chart that visualizes performance metric data of carriers. Move the pointer over a horizontal bar to view the data of specific performance metrics.
 -   The Statistical Data section provides the overall performance metric data of monitoring locations. For more information about metrics, see the [Metrics](#section_7yl_0t8_81a) section.
 -   The Detailed Data section provides the detailed performance metric data of monitoring locations. For more information about metrics, see the [Metrics](#section_7yl_0t8_81a) section.
-
-![Cloud dial test scatter plot](../images/p179685.png)
 
 -   The Scatter Chart tab provides a scatter chart that visualizes performance metric data of carriers. Move the pointer over a point in the scatter chart to view the data of specific performance metrics.
 -   The Statistical Data section provides the overall performance metric data of monitoring locations. For more information about metrics, see the [Metrics](#section_7yl_0t8_81a) section.
