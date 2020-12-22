@@ -14,9 +14,11 @@ Some optional parameters such as PID, IP, ClusterId, and PodName can also be ass
 
 ## Go to the event center
 
-1.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. In the top navigation bar, select a region and then click the application name.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  In the left-side navigation pane, click **Event Center**.
+2.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. In the top navigation bar, select a region and then click the application name.
+
+3.  In the left-side navigation pane, click **Event Center**.
 
 
 ## Features
