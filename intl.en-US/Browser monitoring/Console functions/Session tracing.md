@@ -4,9 +4,11 @@ If you want to reproduce the situation where an error occurred based on the cont
 
 ## Procedure
 
-1.  In the left-side navigation pane, click **Browser Monitoring**. On the **Browser Monitoring** page, click the name of the application.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  In the left-side navigation pane, choose **Application** \> **Session Traces**.
+2.  In the left-side navigation pane, click **Browser Monitoring**. On the **Browser Monitoring** page, click the name of the application.
+
+3.  In the left-side navigation pane, choose **Application** \> **Session Traces**.
 
 
 ## View session details
