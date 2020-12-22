@@ -10,8 +10,6 @@ Synthetic monitoring provides data analysis models combining multiple dimensions
 
 You can create browse tasks for web pages and network tasks for network links.
 
-![yunboce_chanpingjiagou](../images/p184240.png "Architecture")
-
 |Feature|Description|
 |-------|-----------|
 |Task management|Allows you to create, view, modify, and delete tasks. You can also click **Details** in the rightmost column corresponding to a task to go to the Overview page. Tasks are displayed in a list and include browse tasks and network tasks.|
