@@ -4,10 +4,11 @@ The MQ monitoring page in application monitoring of Application Real-Time Monito
 
 ## Procedure
 
-1.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. In the top navigation bar, select a region.
-2.  On the Applications page, click the name of the application.
-3.  In the left-side navigation pane, click **MQ Monitoring**.
-4.  Click a search result link on the right of the page.
+1.  Log on to the [ARMS console](https://arms-intl.console.aliyun.com/).
+2.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. In the top navigation bar, select a region.
+3.  On the Applications page, click the name of the application.
+4.  In the left-side navigation pane, click **MQ Monitoring**.
+5.  Click a search result link on the right of the page.
 
 ## Features
 
