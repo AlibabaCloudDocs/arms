@@ -4,11 +4,13 @@ You can use the external call feature of Application Real-Time Monitoring Servic
 
 ## Procedure
 
-1.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. In the top navigation bar, select a region.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  On the Applications page, click the name of the application you want to monitor.
+2.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. In the top navigation bar, select a region.
 
-3.  In the left-side navigation pane, click **External Calls**.
+3.  On the Applications page, click the name of the application you want to monitor.
+
+4.  In the left-side navigation pane, click **External Calls**.
 
     All external calls of the application are listed on the left of the External Calls page. You can sort the calls by response time, request count, error count, or exception count.
 
