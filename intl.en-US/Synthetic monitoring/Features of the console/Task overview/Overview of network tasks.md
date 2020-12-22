@@ -8,8 +8,9 @@ After a synthetic monitoring network task is created, you can view the overall p
 
 ## Procedure
 
-1.  In the left-side navigation pane, click **Synthetic Monitoring**.
-2.  On the Scheduled Synthetic Monitoring page, find a task and click the name of the task or **Details** in the rightmost column.
+1.  Log on to the [ARMS console](https://arms-intl.console.aliyun.com/).
+2.  In the left-side navigation pane, click **Synthetic Monitoring**.
+3.  On the Scheduled Synthetic Monitoring page, find a task and click the name of the task or **Details** in the rightmost column.
 
     The Task Overview page appears. You can select a time range in the upper part of the page.
 
