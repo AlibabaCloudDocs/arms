@@ -9,6 +9,10 @@ ARMS can monitor Java and PHP applications that run in various environments. Thi
 ## Prerequisites
 
 -   [Activate and upgrade ARMS](/intl.en-US/Quick start/Activate and upgrade ARMS.md)
+-   Ports 8442, 8443, and 8883 in the security group have been opened for TCP outbound access. For more information about how to grant outbound permissions to ECS, see [Add security group rules](/intl.en-US/Security/Security groups/Add security group rules.md).
+
+    **Note:** In addition to applications on Alibaba Cloud ECS instances, applications on public network servers can also access ARMS.
+
 
 ## Step 1: Obtain the license key
 
@@ -85,21 +89,22 @@ After 2 to 3 minutes, log on to the [ARMS console](https://arms-intl.console.ali
 
 [Manually install the ARMS agent for a Java application](/intl.en-US/Application monitoring/Start monitoring Java applications/Manually install the ARMS agent for a Java application.md)
 
-[Enable ARMS to monitor an EDAS application](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for applications in EDAS in one click.md)
+[Enable ARMS to monitor an EDAS application](/intl.en-US/Application monitoring/Start monitoring Java applications/Enable ARMS to monitor an EDAS application.md)
 
-[Install the ARMS agent for a Java application deployed in Container Service for Kubernetes](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for Java applications in Container Service for Kubernetes.md)
+[Install the ARMS agent for a Java application deployed in Container Service for Kubernetes](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for a Java application deployed in Container Service for Kubernetes.md)
 
-[Install the ARMS agent for an application deployed in an open source Kubernetes environment](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for applications in open-source Kubernetes environments.md)
+[Install the ARMS agent for an application deployed in an open source Kubernetes environment](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for an application deployed in an open source Kubernetes environment.md)
 
-[Install the ARMS agent for a Java application deployed in a Docker cluster](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for applications in Docker.md)
+[Install the ARMS agent for a Java application deployed in a Docker cluster](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for a Java application deployed in a Docker cluster.md)
 
 [Install the ARMS agent for a Java application by using scripts](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for a Java application by using scripts.md)
 
-[FAQ](/intl.en-US/Application monitoring/Application monitoring FAQ.md)
+[FAQ](/intl.en-US/Application monitoring/FAQ.md)
 
-[Install the ARMS agent for a PHP application](/intl.en-US/Application monitoring/Monitor PHP applications/Install the ARMS agent for common PHP applications.md)
+[Install the ARMS agent for a PHP application](/intl.en-US/Application monitoring/Monitor PHP applications/Install the ARMS agent for a PHP application.md)
 
-[Install the ARMS agent for PHP applications deployed on multiple servers in standalone mode](/intl.en-US/Application monitoring/Monitor PHP applications/Install the arms agent for multi-site and standalone PHP applications.md)
+[Install the ARMS agent for PHP applications deployed on multiple servers in standalone mode](/intl.en-US/Application monitoring/Monitor PHP applications/Install the ARMS agent for PHP applications deployed on multiple servers in standalone
+         mode.md)
 
-[Install the ARMS agent for PHP applications in Container Service for Kubernetes](/intl.en-US/Application monitoring/Monitor PHP applications/Install the ARMS agent for PHP applications in Container Service for Kubernetes.md)
+[Install the ARMS agent for PHP applications in Container Service for Kubernetes](/intl.en-US/Application monitoring/Monitor PHP applications/Install the ARMS agent for a PHP application deployed in Container Service for Kubernetes.md)
 
