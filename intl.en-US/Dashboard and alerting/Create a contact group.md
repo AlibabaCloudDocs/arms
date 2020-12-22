@@ -6,11 +6,13 @@ When you create an alert rule, you can specify a contact group as the receiver o
 
 ## Procedure
 
-1.  In the left-side navigation pane, choose **Alerts** \> **Contacts**.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  On the Contact Group tab, click **Create a contact group** in the upper-right corner.
+2.  In the left-side navigation pane, choose **Alerts** \> **Contacts**.
 
-3.  In the Create a contact group dialog box, enter a group name in the **Group Name** field, select alert contacts in the **Alarm contact** list, and then click **OK**.
+3.  On the Contact Group tab, click **Create a contact group** in the upper-right corner.
+
+4.  In the Create a contact group dialog box, enter a group name in the **Group Name** field, select alert contacts in the **Alarm contact** list, and then click **OK**.
 
     **Note:** If no alert contacts are displayed in the **Alarm contact** list, you must first create an alert contact. For more information, see [Create contacts](/intl.en-US/Dashboard and alerting/Create contacts.md).
 
