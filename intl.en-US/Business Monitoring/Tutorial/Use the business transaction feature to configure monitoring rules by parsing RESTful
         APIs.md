@@ -126,6 +126,12 @@ For dynamic URI paths, you cannot match the URIs accurately by using the **Equal
 
 5.  Click **Save**.
 
+6.  In the left-side navigation pane, choose **Scenario-based Traces** \> **Application Metric**. On the **Application Metric** page, click the name of the created monitoring task.
+
+    On the Business monitoring details page, you can view the metrics of the monitoring task.
+
+    ![sc_business_detail_metric_uri](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/5173468061/p128433.png)
+
 
 **Related topics**  
 
