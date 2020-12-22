@@ -139,7 +139,7 @@ On the **Error View** tab, you can perform the following operations:
 
 -   How can I enable or disable user behavior backtracking?
 
-    This feature is enabled by default. To disable the feature, add the behavior: false SDK configuration item to config. For more information about the SDK configuration items, see [Configuration items of the browser monitoring SDK](/intl.en-US/Browser monitoring/Configuration items of the browser monitoring SDK.md).
+    This feature is enabled by default. To disable the feature, add the behavior: false SDK configuration item to config. For more information about the SDK configuration items, see [SDK reference](/intl.en-US/Browser monitoring/SDK reference.md).
 
 -   After user behavior backtracking is enabled, the error in the ARMS SDK code bl.js rather than the source code is located based on the printed information in console.log. How can I solve the problem?
 
@@ -175,5 +175,5 @@ On the **Error View** tab, you can perform the following operations:
 **Related topics**  
 
 
-[Configuration items of the browser monitoring SDK](/intl.en-US/Browser monitoring/Configuration items of the browser monitoring SDK.md)
+[SDK reference](/intl.en-US/Browser monitoring/SDK reference.md)
 
