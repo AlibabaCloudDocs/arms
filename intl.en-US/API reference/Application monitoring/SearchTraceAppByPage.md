@@ -1,126 +1,73 @@
 # SearchTraceAppByPage
 
-You can call this operation to query application monitoring jobs by page.
+You can call this operation to query SearchTraceAppByPage application monitoring tasks by page.
 
 ## Debugging
 
-[Alibaba Cloud provides OpenAPI Explorer to simplify API usage. You can use OpenAPI Explorer to search for APIs, call APIs, and dynamically generate SDK example code.](https://api.aliyun.com/#product=ARMS&api=SearchTraceAppByPage&type=RPC&version=2019-08-08)
+[OpenAPI Explorer automatically calculates the signature value. For your convenience, we recommend that you call this operation in OpenAPI Explorer. You can use OpenAPI Explorer to search for API operations, call API operations, and dynamically generate SDK sample code.](https://api.aliyun.com/#product=ARMS&api=SearchTraceAppByPage&type=RPC&version=2019-08-08)
 
 ## Request parameters
 
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
-|Action|String|Yes|SearchTraceAppByPage|The operation that you want to perform. Set this value to `SearchTraceAppByPage`. |
-|PageNumber|Integer|Yes|1|The number of the page to return. |
-|PageSize|Integer|Yes|2|The number of entries to return on each page. |
+|Action|String|Yes|SearchTraceAppByPage|The parameter specified by the system. Valid values: `SearchTraceAppByPage` . |
+|PageNumber|Integer|Yes|1|The number of the page to return. Optional. The parameter value. If you do not set this parameter, the default value is `1` . |
+|PageSize|Integer|Yes|10|The number of entries to return on each page. Optional. The parameter value. If you do not set this parameter, the default value is `10` . |
 |RegionId|String|Yes|cn-hangzhou|The ID of the region. |
-|TraceAppName|String|Yes|Demo|The name of application for which you want to query the application monitoring jobs. |
+|TraceAppName|String|Yes|test-app|The name of the application. Optional. |
 
 ## Response parameters
 
 |Parameter|Type|Example|Description|
 |---------|----|-------|-----------|
-|PageBean| | |The information returned on the page that you queried. |
-|PageNumber|Integer|1|The number of the page returned. |
-|PageSize|Integer|2|The number of entries returned on each page. |
-|TotalCount|Integer|22|The total number of entries returned. |
-|TraceApps| | |The information about the application monitoring jobs. |
-|AppId|Long|6549|The ID of the application monitored. |
-|AppName|String|4123-docker-demo|The name of the application monitored. |
-|CreateTime|Long|1531291867000|The time when the application monitoring job was created. |
-|Pid|String|xxxxxxxxxxxxxxx|The PID. |
+|PageBean|Struct| |The returned page information. |
+|PageNumber|Integer|1|The page number of the returned page. |
+|PageSize|Integer|10|The number of entries returned per page. |
+|TotalCount|Integer|3|The sum of queries. |
+|TraceApps|Array| |Application Monitoring Task information |
+|AppId|Long|123|The ID of the application. |
+|AppName|String|test-app|The name of the application monitored. |
+|CreateTime|Long|1531291867000|The timestamp when the application was created. |
+|Labels|List|prod|The tag of the application. |
+|Pid|String|atc889zkcf@d8deedfa9bf\*\*\*\*|The PID of the application. |
 |RegionId|String|cn-hangzhou|The ID of the region. |
-|Type|String|TRACE|The monitoring type. |
-|UpdateTime|Long|1531291867000|The time when the application monitoring job was updated. |
-|UserId|String|xxxxxxxxxxxx|The ID of the user. |
-|RequestId|String|18B01385-A3B9-4BCF-988A-2064D77CF2C7|The ID of the request. |
+|Show|Boolean|true|Indicates whether to display the following content:
+
+ -   `true` : Display
+-   `false` : not displayed |
+|Type|String|TRACE|The type of the monitoring task. Valid values:
+
+ -   `TRACE` : Application Monitoring
+-   `RETCODE` : browser monitoring |
+|UpdateTime|Long|1531291867000|The timestamp when the instance was updated. |
+|UserId|String|113197164949\*\*\*\*|The ID of the user. |
+|RequestId|String|4B446DF2-3DDD-4B5B-8E3F-D5225120\*\*\*\*|The ID of the request. |
 
 ## Examples
 
-Sample request
+Sample requests
 
 ```
 
-http://arms.cn-hangzhou.aliyun-inc.com:8099/trace/SearchTraceAppByPage.json?PageNumber=1
-&PageSize=2
-&RegionId=cn-hangzhou
-&TraceAppName=Demo
-
+     http(s)://[Endpoint]/? Action=SearchTraceAppByPage &PageNumber=1 &PageSize=10 &RegionId=cn-hangzhou &<common request parameters> 
+   
 ```
 
-Sample success response
+Sample success responses
 
 `XML` format
 
 ```
-<SearchTraceAppByPage>
-       <RequestId>18B01385-A3B9-4BCF-988A-2064D77CF2C7</RequestId>
-       <PageBean>
-              <PageNumber>1</PageNumber>
-              <PageSize>2</PageSize>
-              <TotalCount>22</TotalCount>
-              <TraceApps>
-                     <TraceApp>
-                            <AppId>6549</AppId>
-                            <AppName>4123-docker-demo</AppName>
-                            <CreateTime>1531291867000</CreateTime>
-                            <Pid>xxxxxxxxxxxxxxxxxx</Pid>
-                            <RegionId>cn-hangzhou</RegionId>
-                            <Type>TRACE</Type>
-                            <UpdateTime>1531291867000</UpdateTime>
-                            <UserId>xxxxxxxxxxxx</UserId>
-                     </TraceApp>
-                     <TraceApp>
-                            <AppId>10198</AppId>
-                            <AppName>132-k8s-demo</AppName>
-                            <CreateTime>1540189384000</CreateTime>
-                            <Pid>xxxxxxxxxxxxxxxxxxxxx</Pid>
-                            <RegionId>cn-hangzhou</RegionId>
-                            <Type>TRACE</Type>
-                            <UpdateTime>1540189384000</UpdateTime>
-                            <UserId>xxxxxxxxxxxx</UserId>
-                     </TraceApp>
-              </TraceApps>
-       </PageBean>
-</SearchTraceAppByPage>
+
+     <SearchTraceAppByPageResponse> <PageBean> <TotalCount>3</TotalCount> <TraceApps> <Type>TRACE</Type> <AppId>123</AppId> <UserId>113197164949****</UserId> <CreateTime>1571865746000</CreateTime> <UpdateTime>1571865746000</UpdateTime> <Pid>b590lhguqs@50e2179afeb****</Pid> <Show>true</Show> <RegionId>cn-hangzhou</RegionId> <AppName>test-app</AppName> </TraceApps> <TraceApps> <Type>TRACE</Type> <AppId>234</AppId> <UserId>113197164949****</UserId> <CreateTime>1572401289000</CreateTime> <UpdateTime>1572401289000</UpdateTime> <Pid>b590lhguqs@b0175fb5bda****</Pid> <Show>true</Show> <RegionId>cn-hangzhou</RegionId> <AppName>test-app2</AppName> </TraceApps> <TraceApps> <Type>TRACE</Type> <AppId>345</AppId> <UserId>113197164949****</UserId> <CreateTime>1576338375000</CreateTime> <UpdateTime>1576338375000</UpdateTime> <Pid>b590lhguqs@3afb9343a31****</Pid> <Show>true</Show> <RegionId>cn-hangzhou</RegionId> <AppName>test-app3</AppName> </TraceApps> <PageSize>10</PageSize> <PageNumber>1</PageNumber> </PageBean> <RequestId>4B446DF2-3DDD-4B5B-8E3F-D5225120****</RequestId> </SearchTraceAppByPageResponse> 
+   
 ```
 
-`JSON` format
+`JSON`
 
 ```
-{
-	"pageBean":{
-		"traceApps":[
-			{
-				"appName":"4123-docker-demo",
-				"createTime":1531291867000,
-				"appId":6549,
-				"updateTime":1531291867000,
-				"userId":"xxxxxxxxxxxx",
-				"pid":"xxxxxxxxxxxxxxxxxx",
-				"type":"TRACE",
-				"regionId":"cn-hangzhou",
-			},
-			{
-				"appName":"132-k8s-demo",
-				"createTime":1540189384000,
-				"appId":10198,
-				"updateTime":1540189384000,
-				"userId":"xxxxxxxxxxxx",
-				"pid":"xxxxxxxxxxxxxxxxxxxxx",
-				"type":"TRACE",
-				"regionId":"cn-hangzhou"
-			}
-		],
-		"totalCount":22,
-		"pageSize":2,
-		"pageNumber":1
-	},
-	"requestId":"18B01385-A3B9-4BCF-988A-2064D77CF2C7"
-}
+
+     { "PageBean": { "TotalCount": 3, "TraceApps": [ { "Type": "TRACE", "AppId": 123, "UserId": "113197164949****", "CreateTime": 1571865746000, "UpdateTime": 1571865746000, "Pid": "b590lhguqs@50e2179afeb****", "Show": true, "RegionId": "cn-hangzhou", "AppName": "test-app" }, { "Type": "TRACE", "AppId": 234, "UserId": "113197164949****", "CreateTime": 1572401289000, "UpdateTime": 1572401289000, "Pid": "b590lhguqs@b0175fb5bda****", "Show": true, "RegionId": "cn-hangzhou", "AppName": "test-app2" }, { "Type": "TRACE", "AppId": 345, "UserId": "113197164949****", "CreateTime": 1576338375000, "UpdateTime": 1576338375000, "Pid": "b590lhguqs@3afb9343a31****", "Show": true, "RegionId": "cn-hangzhou", "AppName": "test-app3" } ], "PageSize": 10, "PageNumber": 1 }, "RequestId": "4B446DF2-3DDD-4B5B-8E3F-D5225120****" } 
+   
 ```
-
-## Error codes
-
-The operation returns only common errors. For more information about errors that are common to all operations, see [API Error Center](https://error-center.alibabacloud.com/status/product/ARMS).
 
