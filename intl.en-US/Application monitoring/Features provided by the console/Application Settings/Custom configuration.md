@@ -6,13 +6,15 @@ Some common settings of application monitoring, such as the sampling rate of tra
 
 ## Procedure
 
-1.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications** and select a region in the top navigation bar.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  On the Applications page, click the name of the application.
+2.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications** and select a region in the top navigation bar.
 
-3.  In the left-side navigation pane, click **Application Settings**. On the page that appears, click the **Custom Configuration** tab.
+3.  On the Applications page, click the name of the application.
 
-4.  Configure the custom parameters and click **Save** in the lower part of the page.
+4.  In the left-side navigation pane, click **Application Settings**. On the page that appears, click the **Custom Configuration** tab.
+
+5.  Configure the custom parameters and click **Save** in the lower part of the page.
 
 
 ## Configure trace sampling settings
@@ -55,7 +57,7 @@ In the **Advanced Settings** section, you can set the interface to be filtered a
 -   **Trace Compression**: Specifies whether to simplify duplicated calls such as for loops. This parameter takes effect without restarting the application.
 -   **Maximum Request Parameter Length**: Default value: 512. Maximum value: 2048. Unit: character.
 -   **Show Percentiles**: Specifies whether to turn on quantile statistics.
--   **Enable application emergency alert**: Specifies whether to enable alerts for emergencies such as thread deadlocks and out-of-memory \(OOM\). The [agent version](/intl.en-US/Application monitoring/Reference/Versions of the ARMS agent.md) must be 2.5.8 or later.
+-   **Enable application emergency alert**: Specifies whether to enable alerts for emergencies such as thread deadlocks and out-of-memory \(OOM\). The [agent version](/intl.en-US/Application monitoring/References/Versions of the ARMS agents.md) must be 2.5.8 or later.
 -   **RabbitMQ Consumer**: Specify the class name of a consumer or the name of the class that contains an anonymous internal consumer. You can then view the trace of the customer. Separate multiple names with commas \(,\).
 
 ## Configure thread settings
@@ -74,7 +76,7 @@ In the **Memory Snapshot Settings** section, you can enable or disable memory sn
 
 ## Associate a business log with the trace ID
 
-In the **Business Log Association Settings** section, you can set whether to associate the business log of an application with the trace ID. For more information, see [Associate the trace ID of a trace with business logs]().
+In the **Business Log Association Settings** section, you can set whether to associate the business log of an application with the trace ID. For more information, see [Associate the trace ID of a trace with business logs](/intl.en-US/Application monitoring/Tutorials/Associate trace IDs with business logs.md).
 
 ![Business log](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/5762658061/p22045.png)
 
@@ -97,7 +99,7 @@ In the **Business Monitoring Settings** section, you can enable or disable busin
 
 [API monitoring](/intl.en-US/Application monitoring/Features provided by the console/API monitoring.md)
 
-[Analyze errors in code by using ARMS thread profiling](/intl.en-US/Application monitoring/Tutorials/Use ARMS TProf to analyze code problems.md)
+[Analyze errors in code by using ARMS thread profiling](/intl.en-US/Application monitoring/Tutorials/Analyze errors in code by using ARMS thread profiling.md)
 
 [Memory snapshot](/intl.en-US/Application monitoring/Features provided by the console/Application details/Memory snapshot.md)
 
