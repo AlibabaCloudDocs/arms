@@ -65,8 +65,3 @@ If you are using the business transaction feature for the first time and have us
     If the version number starts with 2.6.2, the ARMS agent has been upgraded to V2.6.2 or later. You can create a business transaction task to monitor your applications.
 
 
-**Related topics**  
-
-
-[Enable ARMS to monitor an EDAS application](/intl.en-US/Application monitoring/Start monitoring Java applications/Enable ARMS to monitor an EDAS application.md)
-
