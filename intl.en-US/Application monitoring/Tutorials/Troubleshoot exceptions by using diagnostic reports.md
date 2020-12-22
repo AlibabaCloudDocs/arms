@@ -25,7 +25,7 @@ The installed ARMS agent collects and shows the metrics of applications such as 
 
 3.  On the Applications page, move the pointer over the row of the application. The **An exception is detected. Click to view details** message appears. Click the red dot to load the diagnostic report. After the diagnostic report is loaded, move the pointer over the red dot and click **Diagnostic Report** to go to the Diagnostic Report page.
 
-    ![Health status of the application](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8654068061/p48937.png)
+    ![Health status of the application](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/6116268061/p48937.png)
 
     You can also click the name of the application on the Applications page to go to the Application Overview page. Move the pointer over the ![health](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7518168061/p180537.png) icon on the right of **Application Health Overview**. If the ![health](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7518168061/p180537.png)**An exception is detected. Click to view details** message appears, click the ![health](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7518168061/p180537.png) icon to load the diagnostic report. After the diagnostic report is loaded, click the ![health](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7518168061/p180537.png) icon again to go to the Diagnostic Report page.
 
