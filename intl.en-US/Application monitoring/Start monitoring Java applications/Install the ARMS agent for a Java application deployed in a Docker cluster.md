@@ -4,16 +4,20 @@ After you install the Application Real-Time Monitoring Service \(ARMS\) agent fo
 
 -   ARMS is activated. For more information, see [Activate and upgrade ARMS](/intl.en-US/Quick start/Activate and upgrade ARMS.md).
 -   A Java application is deployed in a Docker cluster.
+-   If the JDK Version is 1.8.0\_25 or 1.8.0\_31, you may fail to install the arms Agent. In this case, upgrade the JDK to the latest version in 1.8.X.
+
 
 ARMS Application Monitoring allows you to monitor Java applications by using the \{original-docker-image:tag\} image. To do so, edit the Dockerfile file to integrate an existing image. Then, build and start a new image.
 
 ## Step 1: Obtain the license key
 
-1.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. In the top navigation bar, select a region.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  On the Applications page, click **Add Application** in the upper-right corner.
+2.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. In the top navigation bar, select a region.
 
-3.  Copy the license key at the top of the **Add Application** page.
+3.  On the Applications page, click **Add Application** in the upper-right corner.
+
+4.  Copy the license key at the top of the **Add Application** page.
 
     ![License key for Application Monitoring](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8283548061/p132858.png)
 
@@ -53,6 +57,155 @@ Replace the example values in the preceding configuration file based on the foll
 
 -   Replace `{original-docker-image:tag}` with your own image address. If you do not have a custom image, use a system image instead.
 -   Replace the link for downloading the ARMS agent based on your region.
+
+    **Note:** Use the public endpoint. If the download fails, use the VPC endpoint.
+
+    |Region list|Public endpoint|VPC endpoint|
+    |-----------|---------------|------------|
+    |China \(Hangzhou\)|    ```
+
+          wget "http://arms-apm-hangzhou.oss-cn-hangzhou.aliyuncs.com/ArmsAgent.zip" -O ArmsAgent.zip 
+        
+    ```
+
+|    ```
+
+          wget "http://arms-apm-hangzhou.oss-cn-hangzhou-internal.aliyuncs.com/ArmsAgent.zip" -O ArmsAgent.zip 
+        
+    ``` |
+    |China \(Shanghai\)|    ```
+
+          wget "http://arms-apm-shanghai.oss-cn-shanghai.aliyuncs.com/ArmsAgent.zip" -O ArmsAgent.zip 
+        
+    ```
+
+|    ```
+
+          wget "http://arms-apm-shanghai.oss-cn-shanghai-internal.aliyuncs.com/ArmsAgent.zip" -O ArmsAgent.zip 
+        
+    ``` |
+    |China \(Qingdao\)|    ```
+
+          wget "http://arms-apm-qingdao.oss-cn-qingdao.aliyuncs.com/ArmsAgent.zip" -O ArmsAgent.zip 
+        
+    ```
+
+|    ```
+
+          wget "http://arms-apm-qingdao.oss-cn-qingdao-internal.aliyuncs.com/ArmsAgent.zip" -O ArmsAgent.zip 
+        
+    ``` |
+    |China \(Beijing\)|    ```
+
+          wget "http://arms-apm-beijing.oss-cn-beijing.aliyuncs.com/ArmsAgent.zip" -O ArmsAgent.zip 
+        
+    ```
+
+|    ```
+
+          wget "http://arms-apm-beijing.oss-cn-beijing-internal.aliyuncs.com/ArmsAgent.zip" -O ArmsAgent.zip 
+        
+    ``` |
+    |China \(Zhangjiakou\)|    ```
+
+          wget "http://arms-apm-zhangjiakou.oss-cn-zhangjiakou.aliyuncs.com/ArmsAgent.zip" -O ArmsAgent.zip 
+        
+    ```
+
+|    ```
+
+          wget "http://arms-apm-zhangjiakou.oss-cn-zhangjiakou-internal.aliyuncs.com/ArmsAgent.zip" -O ArmsAgent.zip 
+        
+    ``` |
+    |China \(Shenzhen\)|    ```
+
+          wget "http://arms-apm-shenzhen.oss-cn-shenzhen.aliyuncs.com/ArmsAgent.zip" -O ArmsAgent.zip 
+        
+    ```
+
+|    ```
+
+          wget "http://arms-apm-shenzhen.oss-cn-shenzhen-internal.aliyuncs.com/ArmsAgent.zip" -O ArmsAgent.zip 
+        
+    ``` |
+    |China \(Hong Kong\)|    ```
+
+          wget "http://arms-apm-hongkong.oss-cn-hongkong.aliyuncs.com/ArmsAgent.zip" -O ArmsAgent.zip 
+        
+    ```
+
+|    ```
+
+          wget "http://arms-apm-hongkong.oss-cn-hongkong-internal.aliyuncs.com/ArmsAgent.zip" -O ArmsAgent.zip 
+        
+    ``` |
+    |Singapore|    ```
+
+          wget "http://arms-apm-ap-southeast.oss-ap-southeast-1.aliyuncs.com/cloud_ap-southeast-1/ArmsAgent.zip" -O ArmsAgent.zip 
+        
+    ```
+
+|    ```
+
+          wget "http://arms-apm-ap-southeast.oss-ap-southeast-1-internal.aliyuncs.com/cloud_ap-southeast-1/ArmsAgent.zip" -O ArmsAgent.zip 
+        
+    ``` |
+    |Japan \(Tokyo\)|    ```
+
+          wget "http://arms-apm-japan.oss-ap-northeast-1.aliyuncs.com/ArmsAgent.zip" -O ArmsAgent.zip 
+        
+    ```
+
+|    ```
+
+          wget "http://arms-apm-japan.oss-ap-northeast-1-internal.aliyuncs.com/ArmsAgent.zip" -O ArmsAgent.zip 
+        
+    ``` |
+    |US \(Silicon Valley\)|    ```
+
+          wget "http://arms-apm-usw.oss-us-west-1.aliyuncs.com/ArmsAgent.zip" -O ArmsAgent.zip 
+        
+    ```
+
+|    ```
+
+          wget "http://arms-apm-usw.oss-us-west-1-internal.aliyuncs.com/ArmsAgent.zip" -O ArmsAgent.zip 
+        
+    ``` |
+    |China East 1 Finance|    ```
+
+          wget "http://arms-apm-hangzhou.oss-cn-hangzhou.aliyuncs.com/finance/ArmsAgent.zip" -O ArmsAgent.zip 
+        
+    ```
+
+|    ```
+
+          wget "http://arms-apm-hangzhou.oss-cn-hangzhou-internal.aliyuncs.com/finance/ArmsAgent.zip" -O ArmsAgent.zip 
+        
+    ``` |
+    |China East 2 Finance|    ```
+
+          wget "http://arms-apm-sh-finance-1.oss-cn-shanghai-finance-1.aliyuncs.com/ArmsAgent.zip" -O ArmsAgent.zip 
+        
+    ```
+
+|    ```
+
+          wget "http://arms-apm-sh-finance-1.oss-cn-shanghai-finance-1-internal.aliyuncs.com/ArmsAgent.zip" -O ArmsAgent.zip 
+        
+    ``` |
+    |China South 1 Finance|    ```
+
+          wget "http://arms-apm-sz-finance.oss-cn-shenzhen-finance-1.aliyuncs.com/ArmsAgent.zip" -O ArmsAgent.zip 
+        
+    ```
+
+|    ```
+
+          wget "https://arms-apm-sz-finance.oss-cn-shenzhen-finance-1-internal.aliyuncs.com/ArmsAgent.zip" -O ArmsAgent.zip 
+        
+    ``` |
+
 -   Replace `{LicenseKey}` with your license key. Replace `{AppName}` with the name of your application. The application name cannot contain Chinese characters.
 
 ## Step 3: Build and start a new image
@@ -92,5 +245,5 @@ If you no longer need to monitor the Java application in the Docker cluster, per
 **Related topics**  
 
 
-[FAQ](/intl.en-US/Application monitoring/Application monitoring FAQ.md)
+[FAQ](/intl.en-US/Application monitoring/FAQ.md)
 
