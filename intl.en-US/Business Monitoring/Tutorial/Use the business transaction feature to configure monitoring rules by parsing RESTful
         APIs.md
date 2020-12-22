@@ -40,11 +40,13 @@ Compared with traditional APIs, RESTful APIs that separate operations from resou
 
 The business transaction feature allows you to parse HTTP methods such as GET, POST, PUT, DELETE, and PATCH. Perform the following steps to use the feature:
 
-1.  In the left-side navigation pane, choose **Scenario-based Traces** \> **Application Metric**.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  On the **Application Metric** page, click **Create Business monitoring** in the upper-right corner.
+2.  In the left-side navigation pane, choose **Scenario-based Traces** \> **Application Metric**.
 
-3.  On the New business monitoring page, set **Service type** to **HTTP entry** and select **Method** from the **Filter rules** or **Grouping Rules** drop-down list.
+3.  On the **Application Metric** page, click **Create Business monitoring** in the upper-right corner.
+
+4.  On the New business monitoring page, set **Service type** to **HTTP entry** and select **Method** from the **Filter rules** or **Grouping Rules** drop-down list.
 
     **Note:**
 
@@ -86,7 +88,7 @@ Only a single **grouping rule** can be added. This rule can be configured togeth
 
 |If your application provides the /api/buy? brand=\*\*\* URL and you want to monitor the API calls of the /api/buy URL by brand, you can set **Service name** to **Equal** /api/buy, and **Grouping Rules** to **Parameter** brand.|
 
-4.  Click **Save**.
+5.  Click **Save**.
 
 
 ## Use the business transaction feature to configure monitoring rules by parsing URI paths
@@ -100,11 +102,13 @@ For dynamic URI paths, you cannot match the URIs accurately by using the **Equal
 |\*\*|Matches none or multiple directories in a path.|com/\*\*/test.jsp: indicates that com/test.jsp, com/foo/test.jsp, or com/foo/bar/test.jsp is matched. This means that all test.jsp files under the com directory are matched.|
 |\{example:\[a-z\]+\}|Matches characters that match the regular expression \[a-z\]+ and names the corresponding path variable as example. The colon \(:\) and the regular expression are optional.|com/\{filename:\\w+\}.jsp: indicates that com/test.jsp is matched and test is assigned to the path variable, which is filename in the example.|
 
-1.  In the left-side navigation pane, choose **Scenario-based Traces** \> **Application Metric**.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  On the **Application Metric** page, click **Create Business monitoring** in the upper-right corner.
+2.  In the left-side navigation pane, choose **Scenario-based Traces** \> **Application Metric**.
 
-3.  On the New business monitoring page, select **Pattern matching** from the **Service name** drop-down list. In the **Service name** field, enter a string that matches an Ant-style path pattern.
+3.  On the **Application Metric** page, click **Create Business monitoring** in the upper-right corner.
+
+4.  On the New business monitoring page, select **Pattern matching** from the **Service name** drop-down list. In the **Service name** field, enter a string that matches an Ant-style path pattern.
 
     **Note:**
 
@@ -114,7 +118,7 @@ For dynamic URI paths, you cannot match the URIs accurately by using the **Equal
     -   For more information about configurations of other parameters, see the [parameter table](#table_6v9_nfa_z0p) in the preceding section.
     ![pg_business_create_task_uri](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8564758061/p128432.png)
 
-4.  Click **Save**.
+5.  Click **Save**.
 
 
 **Related topics**  
