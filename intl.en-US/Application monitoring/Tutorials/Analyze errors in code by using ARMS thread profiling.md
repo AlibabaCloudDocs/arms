@@ -22,7 +22,7 @@ Application Real-Time Monitoring Service \(ARMS\) thread profiling is a code-lev
 
     -   We recommend that you set the threshold to the 99th percentile of the call response time. For example, if 100 calls are listed in ascending order by response time, the time consumed by the 99th one is the 99th percentile.
 
-    ![Thread settings](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7563658061/p42294.png)
+    ![Thread settings](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/5331468061/p42294.png)
 
 
 ## View thread profiling details by using interface snapshots
