@@ -8,13 +8,53 @@ After you install the Application Real-Time Monitoring Service \(ARMS\) agent fo
 
 ## Obtain the license key
 
-1.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. In the top navigation bar, select a region.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  On the Applications page, click **Add Application** in the upper-right corner.
+2.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. In the top navigation bar, select a region.
 
-3.  Copy the license key at the top of the **Add Application** page.
+3.  On the Applications page, click **Add Application** in the upper-right corner.
+
+4.  Copy the license key at the top of the **Add Application** page.
 
     ![Obtain the license key](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8283548061/p132858.png)
+
+
+## Install the ARMS application monitoring agent
+
+Install ARMS application monitoring components ack-arms-pilot.
+
+1.  Log on to the [Alibaba Cloud Container Service for Kubernetes console](https://cs.console.aliyun.com/#/k8s/overview).
+
+2.  In the left-side navigation pane, choose **Market** \> **Application catalog** On the right of the page, click **ack-arms-pilot**.
+
+3.  On the app catalog-ack-arms-pilot page, select the target cluster in the create pane, and click **create**.
+
+
+## Authorize Alibaba Cloud Container Service for Kubernetes
+
+Use the following steps to authorize Alibaba Cloud Container Service for Kubernetes to access ARMS resources.
+
+1.  Log on to the [container service console](https://cs.console.aliyun.com).
+
+2.  In the left-side navigation pane, choose **clusters**. On the **clusters** page, find the target cluster, and click **actions** in the **details** column.
+
+    ![Manage Cluster](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9546658061/p53701.png)
+
+3.  On the cluster information page of the target cluster, click the **cluster resources** tab. Click the link on the right of the **Worker RAM role**.
+
+    ![Worker RAM Link](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/2092658061/p53704.png)
+
+4.  On the RAM roles page of the RAM console, click the policy name on the **permissions** tab.
+
+5.  On the **policy document** tab, click **modify policy document**, add the following content to the **policy document** section, and then click **OK**.
+
+    ```
+    
+            { "Action": "arms:*", "Resource": "*", "Effect": "Allow" } 
+          
+    ```
+
+    ![Modify RAM Authorization](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/2092658061/p53703.png)
 
 
 ## Install the Hercules Deploy component to transfer the data of the PHP application
