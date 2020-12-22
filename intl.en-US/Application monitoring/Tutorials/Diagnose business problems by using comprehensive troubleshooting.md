@@ -4,7 +4,7 @@ Comprehensive troubleshooting is used to quickly locate the problem link by usin
 
 ## Prerequisites
 
--   An application monitoring task is created. For more information, see [Manually install the ARMS agent for a Java application](/intl.en-US/Application monitoring/Start monitoring Java applications/Manually install the ARMS agent for Java applications.md).
+-   An application monitoring task is created. For more information, see [Manually install the ARMS agent for a Java application](/intl.en-US/Application monitoring/Start monitoring Java applications/Manually install the ARMS agent for a Java application.md).
 
 -   The following dependencies are added to the pom.xml file:
 
@@ -45,7 +45,7 @@ Each of the preceding business logs represents a user trajectory.
 
 ## Configure a comprehensive troubleshooting event set
 
-The preceding sample business logs are used as the data source. Create a custom monitoring task and split logs according to the following scheme. For more information, see [Create a custom monitoring job]().
+The preceding sample business logs are used as the data source. Create a custom monitoring task and split logs according to the following scheme. For more information, see [Create a custom monitoring job](/intl.en-US/Quick start/Create a custom monitoring job.md).
 
 ![](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0107358061/p42297.png)
 
