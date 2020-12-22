@@ -6,6 +6,8 @@ You can use Application Real-Time Monitoring Service \(ARMS\) to monitor applica
 -   Helm is installed. For more information, see [Installing Helm](https://helm.sh/docs/intro/install/).
 -   The version of your Kubernetes api-server is V1.10 or later.
 -   Your cluster is accessible over the Internet.
+-   If the JDK Version is 1.8.0\_25 or 1.8.0\_31, you may fail to install the arms Agent. In this case, upgrade the JDK to the latest version in 1.8.X.
+
 
 ## Step 1: Install the ARMS agent
 
@@ -173,5 +175,5 @@ ARMS can monitor only the following two types of applications: Deployment and St
 **Related topics**  
 
 
-[FAQ](/intl.en-US/Application monitoring/Application monitoring FAQ.md)
+[FAQ](/intl.en-US/Application monitoring/FAQ.md)
 
