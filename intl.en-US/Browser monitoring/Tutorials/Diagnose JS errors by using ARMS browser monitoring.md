@@ -23,9 +23,11 @@ To comprehensively monitor frontend applications, you must install the ARMS agen
 
 ## Step 2: View the error overview
 
-1.  On the Browser Monitoring page, click the name of the application that you want to manage.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  In the left-side navigation pane, click **JS Error Diagnosis**.
+2.  On the Browser Monitoring page, click the name of the application that you want to manage.
+
+3.  In the left-side navigation pane, click **JS Error Diagnosis**.
 
     ![JS Error Diagnosis](../images/p60924.png)
 
