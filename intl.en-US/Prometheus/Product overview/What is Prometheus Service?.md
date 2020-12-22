@@ -61,11 +61,11 @@ Compared with the open source Prometheus, Alibaba Cloud Prometheus Service has t
 
 -   Alibaba Cloud Prometheus Service supports the default Kubernetes monitoring. After you install the default Kubernetes monitoring, Alibaba Cloud Prometheus Service automatically creates exporters, collection rules, Grafana dashboards, and ARMS alerts. Compared with the open source Prometheus, Alibaba Cloud Prometheus Service reduces your time cost from about 3 days to about 10 minutes.
 
-    ![Dashboard 1](../images/p103080.png)
+    ![Dashboard 1](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8885468061/p103080.png)
 
 -   Alibaba Cloud Prometheus Service supports the monitoring of open source components. You only need to enter the AccessKey ID and AccessKey secret of your Alibaba Cloud account, and the accounts and passwords of the RDS and Redis components. Alibaba Cloud Prometheus Service creates exporters and dashboards for these components. Compared with the open source Prometheus, Alibaba Cloud Prometheus Service reduces your time cost from about 7 days to about 3 minutes.
 
-    ![Dashboard 2](../images/p103081.png)
+    ![Dashboard 2](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8885468061/p103081.png)
 
 -   Alibaba Cloud Prometheus Service supports easy installation and removal. You can debug the service by performing health checks. Compared with the open source Prometheus, Alibaba Cloud Prometheus Service reduces your time cost from about 1 day to about 3 minutes.
 
