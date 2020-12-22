@@ -90,6 +90,12 @@ Only a single **grouping rule** can be added. This rule can be configured togeth
 
 5.  Click **Save**.
 
+6.  In the left-side navigation pane, choose **Scenario-based Traces** \> **Application Metric**. On the **Application Metric** page, click the name of the created monitoring task.
+
+    On the Business monitoring details page, you can view the metrics of the monitoring task.
+
+    ![sc_business_detail_metric](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1363468061/p127998.png)
+
 
 ## Use the business transaction feature to configure monitoring rules by parsing URI paths
 
