@@ -42,10 +42,11 @@ The host monitoring feature can monitor the following metrics:
 
 ## View host monitoring metrics
 
-1.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. In the top navigation bar, select a region.
-2.  On the Applications page, click the application that you want to monitor.
-3.  In the left-side navigation pane, click **Application Details**.
-4.  On the Application Details page, click the node that you want to view, and then click the **HOST Monitoring** tab on the right side.
+1.  Log on to the [ARMS console](https://arms-intl.console.aliyun.com/).
+2.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. In the top navigation bar, select a region.
+3.  On the Applications page, click the application that you want to monitor.
+4.  In the left-side navigation pane, click **Application Details**.
+5.  On the Application Details page, click the node that you want to view, and then click the **HOST Monitoring** tab on the right side.
 
     On the HOST Monitoring tab, you can view the time sequence curves of metrics including CPU, memory, disk, load, network traffic, and network packets.
 
