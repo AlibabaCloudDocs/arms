@@ -26,12 +26,12 @@ In ARMS, trace IDs can be associated with business logs of an application based 
 
     **Note:** For information about how to obtain \{EagleEye-TraceID\} from the business code, see [ARMS SDK](/intl.en-US/Application monitoring/References/ARMS SDK.md).
 
-    ![dg_am__layout_pattern](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7919658061/p94145.png)
+    ![dg_am__layout_pattern](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8381468061/p94145.png)
 
 6.  Restart the application.
 
     If trace IDs are displayed in the business logs of the application, the business logs are associated with the trace IDs, as shown in the following figure.
 
-    ![dg_am_log_traceid](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7919658061/p94151.png)
+    ![dg_am_log_traceid](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8381468061/p94151.png)
 
 
