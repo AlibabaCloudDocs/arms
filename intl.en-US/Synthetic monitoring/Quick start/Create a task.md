@@ -6,17 +6,19 @@ The Synthetic Monitoring module uses the globally distributed monitoring network
 
 ## Procedure
 
-1.  In the left-side navigation pane, choose **Synthetic Monitoring**. On the Scheduled Synthetic Monitoring page, click **Create a scheduled task** in the upper-right corner.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  In the Basic Information step, set Task Name, Task Address, and Task Type, and then click **Next**.
+2.  In the left-side navigation pane, choose **Synthetic Monitoring**. On the Scheduled Synthetic Monitoring page, click **Create a scheduled task** in the upper-right corner.
+
+3.  In the Basic Information step, set Task Name, Task Address, and Task Type, and then click **Next**.
 
     -   To create a browse task, set Task Type to Browse - IE Full Elements or Browse - Chrome Full Elements \(HTTP 1.1/2.0\).
     -   To create a network task, set Task Type to Network.
-3.  In the Monitoring Points step, add monitoring points and then click **Next**.
+4.  In the Monitoring Points step, add monitoring points and then click **Next**.
 
     Set **Adding Method** to Recommended Monitoring Point Group or Custom, select one or more groups in the left list, click ![right_arrow](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9595758061/p179404.png) to add the groups to the right Added list. You can add up to 50 monitoring points for a task. If you add more than 50 monitoring points, only the first 50 monitoring points are valid.
 
-4.  In the Monitoring Parameters step, configure the parameters and then click **Next**.
+5.  In the Monitoring Parameters step, configure the parameters and then click **Next**.
 
     A browse task have different monitoring parameters from those of a network task.
 
@@ -94,9 +96,9 @@ Custom Host Format: You can add multiple fields. Separate multiple fields with v
     |Start Execution Time|N/A|The time when monitoring starts. It is valid for low-frequency tasks. The start time cannot be greater than the task frequency.|
     |Evenly Distribute Monitoring Samples|N/A|Offset = Number of minutes/Number of carriers. The earliest delivery time of each carrier is the start execution time plus the offset.|
 
-5.  In the Monitoring Cycle step, set Monitoring Cycle and Monitoring Frequency, and then click **Next**.
+6.  In the Monitoring Cycle step, set Monitoring Cycle and Monitoring Frequency, and then click **Next**.
 
-6.  In the Preview & Publish step, confirm the parameters and click **Complete**.
+7.  In the Preview & Publish step, confirm the parameters and click **Complete**.
 
     Then, you are redirected to the Scheduled Synthetic Monitoring page.
 
