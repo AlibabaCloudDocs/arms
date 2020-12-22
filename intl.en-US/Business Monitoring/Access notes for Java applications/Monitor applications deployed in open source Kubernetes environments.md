@@ -30,8 +30,3 @@ Perform the following steps:
     If the version number starts with 2.6.2, the ARMS agent has been upgraded to V2.6.2 or later. You can create a business transaction task to monitor your applications.
 
 
-**Related topics**  
-
-
-[Preparations]()
-
