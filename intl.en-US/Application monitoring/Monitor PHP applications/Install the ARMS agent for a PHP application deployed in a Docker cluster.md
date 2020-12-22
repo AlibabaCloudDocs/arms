@@ -6,6 +6,8 @@ keyword: [PHP, application monitoring, Docker]
 
 After you install the Application Real-Time Monitoring Service \(ARMS\) agent for a PHP application that is deployed in a Docker cluster, ARMS starts to monitor the PHP application. You can view the monitoring data of application topology, API requests, abnormal transactions, slow transactions, and SQL analysis. This topic describes how to install the ARMS agent for a PHP application that is deployed in a Docker cluster.
 
+**Note:** If you want to use the PHP Agent of the latest version, activate [ARMS trial](https://common-buy.aliyun.com/?&commodityCode=arms#/open) now. For the trial period of the new version of the PHP Agent, visit the ARMS console announcement. If you have other questions, you can join our DingTalk Q&A Group: 23328286.
+
 ## Install the ARMS agent for a PHP application deployed in a Docker cluster
 
 1.  Run a Docker container on the host where the ARMS agent needs to be installed.
@@ -121,13 +123,15 @@ wget "http://arms-apm-gov.oss-cn-north-2-gov-1-internal.aliyuncs.com/arms-php-ag
     mv arms-php-agent /usr/local/arms/arms-php-agent
     ```
 
-4.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. In the top navigation bar, select a region.
+4.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-5.  On the Applications page, click **Add Application** in the upper-right corner.
+5.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. In the top navigation bar, select a region.
 
-6.  Copy the license key at the top of the Add Application page.
+6.  On the Applications page, click **Add Application** in the upper-right corner.
 
-7.  Add the following code to the php.ini configuration file:
+7.  Copy the license key at the top of the Add Application page.
+
+8.  Add the following code to the php.ini configuration file:
 
     ```
     extension=/usr/local/arms/arms-php-agent/arms-x.x.so
@@ -148,9 +152,9 @@ wget "http://arms-apm-gov.oss-cn-north-2-gov-1-internal.aliyuncs.com/arms-php-ag
     -   Replace <yourLicenseKey\> with the license key that you obtained in [Step 7](#step_2le_9mc_ckc).
     -   <host\> and <port\> indicate the IP address and port number that are used by the container to access the host. The default port number is 11234. If you update the port number in [Step 1](#step_lyt_uog_s4p), you must also update it in this step.
     -   If `with-config-file-scan-dir` is configured for the version of your PHP application, you can create the arms.ini file in the /etc/php/7.2/php-fpm/conf.d directory. The content of this file is the same as that you added to the php.ini file.
-8.  Add the commands in [Step 2](#step_k2r_2sb_m0r) to Step 8 to the dockerfile file for auto running.
+9.  Add the commands in [Step 2](#step_k2r_2sb_m0r) to Step 8 to the dockerfile file for auto running.
 
-9.  Restart your PHP application.
+10. Restart your PHP application.
 
 
 **Related topics**  
