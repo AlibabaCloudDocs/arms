@@ -4,12 +4,12 @@ The browser monitoring feature of Application Real-Time Monitoring Service \(ARM
 
 ## Web scenarios
 
--   [Install the browser monitoring probe by using CDN](/intl.en-US/Browser monitoring/Get started with Browser Monitoring/For Web applications/Install the ARMS agent through CDN.md)
--   [Implement browser monitoring by using npm](/intl.en-US/Browser monitoring/Get started with Browser Monitoring/For Web applications/Install the ARMS agent through npm.md)
+-   [Install the browser monitoring probe by using CDN](/intl.en-US/Browser monitoring/Get started with Browser Monitoring/For Web applications/Install the browser monitoring probe by using CDN.md)
+-   [Implement browser monitoring by using npm](/intl.en-US/Browser monitoring/Get started with Browser Monitoring/For Web applications/Implement browser monitoring by using npm.md)
 
 ## Weex scenarios
 
-[Implement browser monitoring in the Weex environment](/intl.en-US/Browser monitoring/Get started with Browser Monitoring/For Weex/Perform browser monitoring in the Weex environment.md)
+[Implement browser monitoring in the Weex environment](/intl.en-US/Browser monitoring/Get started with Browser Monitoring/For Weex/Implement browser monitoring in the Weex environment.md)
 
 ## Mini-program scenarios
 
