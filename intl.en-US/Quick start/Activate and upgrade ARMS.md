@@ -39,7 +39,7 @@ After you activate ARMS, you can get a free trial of 15 days. During this period
 After you activate ARMS, read the following topics to get started with the monitoring features of ARMS:
 
 -   Application Monitoring: [Create an application monitoring job](/intl.en-US/Quick start/Create an application monitoring job.md)
--   Browser Monitoring: [Install the browser monitoring probe by using CDN](/intl.en-US/Browser monitoring/Get started with Browser Monitoring/For Web applications/Install the ARMS agent through CDN.md)
+-   Browser Monitoring: [Install the browser monitoring probe by using CDN](/intl.en-US/Browser monitoring/Get started with Browser Monitoring/For Web applications/Install the browser monitoring probe by using CDN.md)
 -   Prometheus Monitoring: [Get started with Prometheus Service]()
 -   Dashboards: [Create a dashboard for an application monitoring job](/intl.en-US/Quick start/Create a dashboard for an application monitoring job.md)
 -   Alerts: [Create ARMS alerts](/intl.en-US/Quick start/Create ARMS alerts.md)
