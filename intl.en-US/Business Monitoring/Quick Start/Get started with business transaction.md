@@ -24,18 +24,20 @@ In this scenario, you can use ARMS to configure commodity category-specific busi
 
 ## Create a business transaction task
 
-1.  In the left-side navigation pane, choose Business Transaction \> Application Metric. In the top navigation bar of the Application Metric page, select the region.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  On the Application Metric page, click **Create Business Transaction** in the upper-right corner.
+2.  In the left-side navigation pane, choose Business Transaction \> Application Metric. In the top navigation bar of the Application Metric page, select the region.
 
-3.  In the Create Business Transaction dialog box, configure the parameters in the Basic Information section.
+3.  On the Application Metric page, click **Create Business Transaction** in the upper-right corner.
+
+4.  In the Create Business Transaction dialog box, configure the parameters in the Basic Information section.
 
     ![dg_business_create_btask](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1662758061/p94339.png)
 
     |Parameter|Description|Example|
     |---------|-----------|-------|
     |**Business Name**|Required. The name of the business monitoring task.|Order portal|
-    |**Entry application**|Required. The **Entry application** drop-down list displays all Java applications that have application agents installed. After you select an application, ARMS automatically detects the version of the application agent. **Note:** You can use the business monitoring feature only when you upgrade the application agent to version 2.6.2 or later. If the version of the application agent is earlier than 2.6.2, you must upgrade the application agent first. For more information, see [Preparations](/intl.en-US/Business Monitoring/Access notes for Java applications/Preparations.md).
+    |**Entry application**|Required. The **Entry application** drop-down list displays all Java applications that have application agents installed. After you select an application, ARMS automatically detects the version of the application agent. **Note:** You can use the business monitoring feature only when you upgrade the application agent to version 2.6.2 or later. If the version of the application agent is earlier than 2.6.2, you must upgrade the application agent first. For more information, see [Preparations]().
 
 |arms-k8s-demo|
     |**Service type**|The type of the service.    -   **HTTP entry**: suitable for scenarios where business links are colored based on HTTP traffic characteristics.
@@ -64,7 +66,7 @@ Only a single **grouping rule** can be added. This rule can be configured togeth
 
 |If your application provides the /api/buy? brand=\*\*\* URL and you want to monitor the API calls of the /api/buy URL by brand, you can set **Service name** to **Equal** /api/buy, and **Grouping Rules** to **Parameter** brand.|
 
-4.  Click **Advanced Settings**. In the Advanced Settings section, configure the parameters and click **Save**.
+5.  Click **Advanced Settings**. In the Advanced Settings section, configure the parameters and click **Save**.
 
     ![Advanced Settings section](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1662758061/p190117.png)
 
@@ -77,13 +79,15 @@ Only a single **grouping rule** can be added. This rule can be configured togeth
 
 ## View business transaction data
 
-1.  In the left-side navigation pane, choose Business Transaction \> Application Metric. In the top navigation bar of the Application Metric page, select the region.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  On the Application Metric page, click the line of the task in the business transaction task list. View the time sequence charts of **Response Time**, **Requests**, and **Errors** of the application.
+2.  In the left-side navigation pane, choose Business Transaction \> Application Metric. In the top navigation bar of the Application Metric page, select the region.
 
-3.  On the Application Metric page, click the name of the task in the business transaction task list.
+3.  On the Application Metric page, click the line of the task in the business transaction task list. View the time sequence charts of **Response Time**, **Requests**, and **Errors** of the application.
 
-4.  On the Business transaction details page, view the detailed API call topology of the application. You can also filter the results by specifying **Application Name**,**API**, and **Condition**.
+4.  On the Application Metric page, click the name of the task in the business transaction task list.
+
+5.  On the Business transaction details page, view the detailed API call topology of the application. You can also filter the results by specifying **Application Name**,**API**, and **Condition**.
 
     ![dg_business_detail_overview](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1662758061/p94811.png)
 
@@ -95,40 +99,46 @@ Only a single **grouping rule** can be added. This rule can be configured togeth
 
 ## Modify a business transaction task
 
-1.  In the left-side navigation pane, choose Business Transaction \> Application Metric. In the top navigation bar of the Application Metric page, select the region.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  On the Application Metric page, click the name of the task in the business transaction task list.
+2.  In the left-side navigation pane, choose Business Transaction \> Application Metric. In the top navigation bar of the Application Metric page, select the region.
 
-3.  In the left-side navigation pane, click Business Transaction Settings.
+3.  On the Application Metric page, click the name of the task in the business transaction task list.
 
-4.  Click the Rule Configuration tab. Modify the business transaction parameters and then click **Save**.
+4.  In the left-side navigation pane, click Business Transaction Settings.
+
+5.  Click the Rule Configuration tab. Modify the business transaction parameters and then click **Save**.
 
 
 ## Disable business transaction
 
-1.  In the left-side navigation pane, choose Application Monitoring \> Applications. In the top navigation bar of the Applications page, select the region.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  On the Applications page, find the application and click **Settings** in the **Actions** column.
+2.  In the left-side navigation pane, choose Application Monitoring \> Applications. In the top navigation bar of the Applications page, select the region.
 
-3.  On the Settings page, click the Custom configuration tab.
+3.  On the Applications page, find the application and click **Settings** in the **Actions** column.
 
-4.  In the **Business Transaction** section, turn off the **Business transaction** switch.
+4.  On the Settings page, click the Custom configuration tab.
+
+5.  In the **Business Transaction** section, turn off the **Business transaction** switch.
 
     ![sc_business_close_switch](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1662758061/p128882.png)
 
 
 ## Delete a business transaction task
 
-1.  In the left-side navigation pane, choose Business Transaction \> Application Metric. In the top navigation bar of the Application Metric page, select the region.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  On the Application Metric page, click the name of the task in the business transaction task list.
+2.  In the left-side navigation pane, choose Business Transaction \> Application Metric. In the top navigation bar of the Application Metric page, select the region.
 
-3.  In the left-side navigation pane, click Business Transaction Settings. On the page that appears, click **Delete**.
+3.  On the Application Metric page, click the name of the task in the business transaction task list.
 
-4.  On the Delete tab, click **Delete**. In the Prompt message, click **OK**.
+4.  In the left-side navigation pane, click Business Transaction Settings. On the page that appears, click **Delete**.
+
+5.  On the Delete tab, click **Delete**. In the Prompt message, click **OK**.
 
     **Note:** All data of the current business transaction task is deleted and cannot be restored.
 
 
-[Preparations](/intl.en-US/Business Monitoring/Access notes for Java applications/Preparations.md)
+[Preparations]()
 
