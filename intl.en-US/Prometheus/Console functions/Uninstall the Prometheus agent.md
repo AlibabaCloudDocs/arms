@@ -21,6 +21,3 @@ To disable Prometheus monitoring for a Kubernetes cluster, you can perform the f
     -   If no `arms-prom-****` record is displayed on the **Releases** page, the monitoring agent is uninstalled. You do not need to perform other operations.
     -   If the `arms-prom-****` record is displayed on the **Releases** page, click **Delete** in the **Actions** column.
 
-        ![ack_pg_release](../images/p143010.png)
-
-
