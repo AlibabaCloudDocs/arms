@@ -18,11 +18,12 @@ After you install an ARMS agent, ARMS can conduct all-around monitoring of your 
 
 The installed ARMS agent collects and shows the metrics of applications such as Total Requests, Average Response Time, Errors, Real Time Instance Count, Full GC, Slow SQL, Exceptions, and Thread Profiling within the selected period of time. ARMS allows you to view the diagnostic report of troubleshooting metrics. You can also view the diagnostic report of a single metric on the Application Overview page.
 
-1.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. In the top navigation bar, select a region.
+1.  Log on to the [ARMS console](https://arms-intl.console.aliyun.com/).
+2.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. In the top navigation bar, select a region.
 
     On the Applications page, if the application has an exception, the **Status** column is displayed in red.
 
-2.  On the Applications page, move the pointer over the row of the application. The **An exception is detected. Click to view details** message appears. Click the red dot to load the diagnostic report. After the diagnostic report is loaded, move the pointer over the red dot and click **Diagnostic Report** to go to the Diagnostic Report page.
+3.  On the Applications page, move the pointer over the row of the application. The **An exception is detected. Click to view details** message appears. Click the red dot to load the diagnostic report. After the diagnostic report is loaded, move the pointer over the red dot and click **Diagnostic Report** to go to the Diagnostic Report page.
 
     ![Health status of the application](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8654068061/p48937.png)
 
@@ -30,7 +31,7 @@ The installed ARMS agent collects and shows the metrics of applications such as 
 
     ![App health overview](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8654068061/p180538.png)
 
-3.  On the Diagnostic Report page, view the application name, diagnostic time, symptom, error demarcation, root cause analysis, and detection results of metrics.
+4.  On the Diagnostic Report page, view the application name, diagnostic time, symptom, error demarcation, root cause analysis, and detection results of metrics.
 
     ![Key application events](../images/p48939.png "Diagnostic report")
 
