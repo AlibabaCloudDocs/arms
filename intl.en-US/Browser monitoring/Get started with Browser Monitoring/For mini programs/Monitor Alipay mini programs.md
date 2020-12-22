@@ -1,42 +1,39 @@
 # Monitor Alipay mini programs
 
-This topic describes how to use the browser monitoring feature of Application Real-Time Monitoring Service \(ARMS\) to monitor Alipay mini programs and introduces the common SDK configurations, API operations, and advanced scenarios of the browser monitoring feature.
-
-## Background information
-
-For more information, see [https://docs.alipay.com/mini/developer/getting-started](https://docs.alipay.com/mini/developer/getting-started)
+This topic describes how to use the browser monitoring function of Application Real-Time Monitoring Service \(ARMS\) to monitor [Alipay mini programs](https://docs.alipay.com/mini/developer/getting-started). It also demonstrates the general configurations, methods, and advanced scenarios.
 
 ## Basic usage
 
-To monitor mini programs, you must perform the following operations to introduce and initialize the npm package, report logs, and set security domain names.
+To monitor the mini programs, you must perform at least the three steps: introducing and initializing the npm \(Node Package Manager\) package, reporting logs, and setting security domains.
 
 1.  Introduce and initialize the npm package.
 
-    1.  In your mini program project, introduce the npm package named `alife-logger` to facilitate log reporting.
+    1.  Introduce the npm package named `alife-logger` in the Alipay mini program project to facilitate log reporting.
 
         ```
         npm install alife-logger
+        							
         ```
 
-    2.  Add the following information to the monitor.js file in the /utils directory to initialize the package.
+    2.  Add the following information to the monitor.js file in the /utils directory to initialize the npm package.
 
-        **Note:** You can specify the name and storage path of the JavaScript \(JS\) file.
+        **Note:** You can specify the name and storage path of the JS file.
 
         ```
         import AlipayLogger from 'alife-logger/alipay';
         const Monitor = AlipayLogger.init({
             pid: 'xxx',
-            region: 'cn', // The region where the application is deployed. Set region to cn if the application is deployed in China and set region to sg if the application is deployed outside China.
+            region: "cn", // The region where the application is deployed. Set it to cn if the application is deployed in China and to sg if the application is deployed outside China.
         });
         
         export default Monitor;              
         ```
 
-        **Note:** For more information about parameter settings, see [Common parameters of SDK](#section_vo9_hoe_9w4).
+        **Note:** For more information about parameter configurations, see [Common parameters](#Configuration).
 
-2.  Use the following methods to automatically collect the PV, error, API, performance, and health data of the Alipay mini program:
+2.  Call the following methods to automatically collect the page view \(PV\), error, API request, performance, and health data.
 
-    1.  In the app.js file, call the **Monitor.hookApp\(options\)** method to automatically capture error logs. The **options** parameter is the app-specific object.
+    1.  In app.js, call **Monitor.hookApp\(options\)** to automatically capture error logs. The **options** parameter is the app-specific object.
 
         ```
         import Monitor from '/util/monitor';
@@ -54,19 +51,20 @@ To monitor mini programs, you must perform the following operations to introduce
           onHide() {
           }
         }));
+        							
         ```
 
-    2.  In page.js, call **Monitor.hookPage\(options\)** to automatically report the API, PV, and health data of the Alipay mini program.
+    2.  In page.js, call **Monitor.hookPage\(options\)** to automatically report the API request, PV, and health data.
 
         ```
         import Monitor from '/util/monitor';
-        // After the hookPage method is called, API lifecycle management automatically tracks.
+        // After hookPage is called, the lifecycle API automatically starts instrumentation.
         Page(Monitor.hookPage({
            data: {},
             onLoad(query) {
             },
             onReady() {
-            // The page is loaded.
+            // Page loaded.
             },
             onShow() {
         
@@ -81,53 +79,70 @@ To monitor mini programs, you must perform the following operations to introduce
         
             }     
         }));
+        							
         ```
 
-3.  Set security domain names.
+3.  Set security domains.
 
-    -   If **region** is set to `cn`, add arms-retcode.aliyuncs.com to the HTTP security domain.
+    -   If the **region** is set to `cn`, add arms-retcode.aliyuncs.com to the HTTP security domain of the request.
 
-    -   If **region** is set to `sg`, add arms-retcode-sg.aliyuncs.com to the HTTP security domain.
+    -   If the **region** is set to `sg`, add arms-retcode-sg.aliyuncs.com to the HTTP security domain of the request.
 
 
-## Basic API methods for automatic tracking
+## Common parameters
 
-|Method|Parameter|Description|Scenario|
-|------|---------|-----------|--------|
-|hookApp|\{\}|Enter the parameters of the application.|API lifecycle management automatically tracks the application.|
-|hookPage|\{\}|Enter the parameters of the page.|API lifecycle management automatically tracks the page.|
+The following table lists the common parameters that are used for initializing the npm package.
 
-**Note:** If you want to call the hookApp or hookPage method to track and monitor mini programs, the code must conform to the app and page specifications of standard mini programs. The **onError** method must be included in the code of the application. The **onShow**, **onHide**, and **onUnload** methods must be included in the code of the page. For more information, see [Basic usage](#section_upb_2q2_jhb).
+|Parameter|Type|Description|Required|Default value|
+|---------|----|-----------|--------|-------------|
+|pid|String|The ID of the site.|Yes|null|
+|uid|String|The ID of the user, which is used to collect the unique visitor \(UV\) data.|No|Storage setting|
+|tag|String|The input tag. Each log carries a tag.|No|None|
+|disabled|Boolean|Specifies whether the log reporting function is disabled.|No|false|
+|sample|Integer|The log sampling rate. Valid values: 1, 10, and 100. Performance logs and successful API request logs are reported in a 1/number of samples ratio.|No|1|
+|enableLinkTrace|Boolean|Specifies whether front-to-back tracing is supported.|No|false|
+|disableHook|Boolean|Specifies whether to disable monitoring my.httpRequest. By default, the request is monitored, and the API request success rate is reported.|No|false|
+|sendRequest|Function|The method for sending logs. If this parameter is not configured, the default value my.httpRequest is used.|No|my.httpRequest|
+|getCurrentPage|Function|The method for obtaining the current page.|No|getCurrentPage|
 
-## Other API methods
+## Basic methods for automatic instrumentation
 
-|Method|Parameter|Description|
-|------|---------|-----------|
+|Method|Parameter|Remarks|Scenario|
+|------|---------|-------|--------|
+|hookApp|\{\}|Enter the source app parameters.|The app lifecycle API automatically starts instrumentation.|
+|hookPage|\{\}|Enter the source page parameters.|The page lifecycle API automatically starts instrumentation.|
+
+**Note:** If the lifecycle API calls the hookApp or hookPage method for instrumentation in mini program monitoring projects, the projects must conform to the app and page regulations of standard mini programs. In other words, the projects must support **onError** under App, and **onShow**, **onHide**, and **onUnload** under Page. For usage examples, see [Basic usage](#section_upb_2q2_jhb).
+
+## Methods for other settings
+
+|Method|Parameter|Remarks|
+|------|---------|-------|
 |setCommonInfo|\{\[key: string\]: string;\}|Set basic log fields for the scenarios such as phased release.|
-|setConfig|\{\[key: string\]: string;\}| |
-|pageShow|\{\}|Report PV data.|
-|pageHide|\{\}|Report health data.|
+|setConfig|\{\[key: string\]: string;\}|Set the config field.|
+|pageShow|\{\}|Report the PV data.|
+|pageHide|\{\}|Report the health data.|
 |error|String/Object|Report error logs.|
-|api|For more information, see [API reference](/intl.en-US/Browser monitoring/Methods user guide.md).|Report API logs.|
-|sum/avg|String|Report custom sum and average logs.|
+|api|See also [t152281.md\#section\_k3o\_jn0\_k38](/intl.en-US/Browser monitoring/API reference.md)|Report the API request logs.|
+|sum/avg|String|Report the custom sum and average logs.|
 
 ## Advanced scenarios
 
-If the basic usage cannot meet your requirements, refer to the following advanced scenarios:
+When the basic usage cannot meet your needs, see the following advanced scenarios.
 
--   Manually report the API request results.
+-   Manually report the API request results \(automatic reporting is disabled\).
 
-    1.  Set **disableHook** to `true`. The logs of **my.httpRequest** are not automatically reported.
+    1.  Set **disableHook** to `true`. The logs of the **my.httpRequest** request are not reported automatically.
 
-    2.  Manually call the **api\(\)** method to report the API operations.
+    2.  Manually call **api\(\)** to report the API request results.
 
--   Disable automatic reporting and enable manual tracking.
+-   Disable automatic reporting and enable manual instrumentation.
 
-    1.  Do not use the hookApp and hookPage methods in the app.js and page.js files.
+    1.  No longer use the hookApp and hookPage methods in the app.js and page.js files.
 
-    2.  To send the PV data of the page, call the **pageShow\(\)** method in the **onShow** method.
+    2.  To send the PV data of the current page, call **pageShow\(\)** under **onShow** of Page.
 
-        **Note:** We recommend that you do not call the pageShow\(\) method together with the **hookPage\(\)** method. Otherwise, the PV logs are repeatedly reported.
+        **Note:** Do not call pageShow\(\) together with **hookPage\(\)**. Otherwise, the PV logs are reported repeatedly.
 
         ```
         import Monitor from '/util/monitor';
@@ -136,11 +151,12 @@ If the basic usage cannot meet your requirements, refer to the following advance
                 Monitor.pageShow();
             }
         })
+        							
         ```
 
-    3.  To send the health data \(health and browsing time\) of the page, call the **pageHide\(\)** method in the **onHide** and **onUnload** methods.
+    3.  To send the health data \(health and browsing time\) of the current page, call **pageHide\(\)** under **onHide** and **onUnload** of Page.
 
-        **Note:** We recommend that you do not call the pageHide\(\) method together with the **hookPage\(\)** method. Otherwise, the logs are repeatedly reported.
+        **Note:** Do not call pageHide\(\) together with **hookPage\(\)**. Otherwise, the logs are reported repeatedly.
 
         ```
         import Monitor from '/util/monitor';
@@ -154,28 +170,14 @@ If the basic usage cannot meet your requirements, refer to the following advance
               }
               ... 
           })
+        							
         ```
 
 
-## Common parameters of SDK
+## More information
 
-ARMS browser monitoring provides a series of SDK parameters. You can configure the parameters to meet additional requirements. The following table describes the common parameters suitable for the scenarios described in this topic. |
-| |
-| |
-| |
-| |
-|
-
-ARMS browser monitoring also provides other SDK parameters. For more information, see [SDK reference](/intl.en-US/Browser monitoring/Configuration items of the browser monitoring SDK.md).
-
-**Related topics**  
-
-
-[Access overview of browser monitoring](/intl.en-US/Browser monitoring/Get started with Browser Monitoring/Access overview of browser monitoring.md)
-
-[Monitor DingTalk mini programs](/intl.en-US/Browser monitoring/Get started with Browser Monitoring/For mini programs/Monitor DingTalk mini programs.md)
-
-[Monitor WeChat mini programs](/intl.en-US/Browser monitoring/Get started with Browser Monitoring/For mini programs/Monitor WeChat mini programs.md)
-
-[Monitor other mini programs](/intl.en-US/Browser monitoring/Get started with Browser Monitoring/For mini programs/Monitor other mini programs.md)
+-   [Access overview of browser monitoring](/intl.en-US/Browser monitoring/Get started with Browser Monitoring/Access overview of browser monitoring.md)
+-   [Monitor DingTalk mini programs](/intl.en-US/Browser monitoring/Get started with Browser Monitoring/For mini programs/Monitor DingTalk mini programs.md)
+-   [Monitor WeChat mini programs](/intl.en-US/Browser monitoring/Get started with Browser Monitoring/For mini programs/Monitor WeChat mini programs.md)
+-   [Monitor other mini programs](/intl.en-US/Browser monitoring/Get started with Browser Monitoring/For mini programs/Monitor other mini programs.md)
 
