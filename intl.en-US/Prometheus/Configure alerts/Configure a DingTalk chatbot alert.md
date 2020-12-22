@@ -38,5 +38,3 @@ Perform the following steps to add a custom DingTalk chatbot and obtain the webh
 
 A DingTalk chatbot alert is configured. If the alert is triggered, you will receive an alert notification in the specified DingTalk group. The following figure shows an alert notification.
 
-![Alert](../images/p43305.png)
-
