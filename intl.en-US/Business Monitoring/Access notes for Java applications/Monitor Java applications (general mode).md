@@ -20,8 +20,3 @@ If you are using the business transaction feature for the first time and have us
 2.  Install a new ARMS agent. For more information, see [Manually install the ARMS agent for a Java application](/intl.en-US/Application monitoring/Start monitoring Java applications/Manually install the ARMS agent for a Java application.md).
 
 
-**Related topics**  
-
-
-[Before you begin]()
-
