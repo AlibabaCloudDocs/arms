@@ -6,6 +6,8 @@ keyword: [PHP, application monitoring, applications deployed on multiple servers
 
 After you install the Application Real-Time Monitoring Service \(ARMS\) agent for PHP applications, ARMS starts to monitor the PHP applications. You can view the monitoring data of application topology, API requests, abnormal transactions, slow transactions, and SQL analysis. This topic describes how to install the ARMS agent for PHP applications that are deployed on multiple servers in standalone mode.
 
+**Note:** If you want to use the PHP Agent of the latest version, activate [ARMS trial](https://common-buy.aliyun.com/?&commodityCode=arms#/open) now. For the trial period of the new version of the PHP Agent, visit the ARMS console announcement. If you have other questions, you can join our DingTalk Q&A Group: 23328286.
+
 ## Install the ARMS agent
 
 1.  Install the ARMS agent. For more information, see [Install the ARMS agent for a PHP application](/intl.en-US/Application monitoring/Monitor PHP applications/Install the ARMS agent for a PHP application.md).
@@ -78,6 +80,8 @@ After you install the Application Real-Time Monitoring Service \(ARMS\) agent fo
                 }
             }
         ```
+
+    Wait for about 1 minute. In the [ARMS console](https://arms-intl.console.aliyun.com/), choose **Application Monitoring** \> **Applications** If your application \(with a custom name\) appears on the page, <yourAppName\> you have successfully installed the arms agent.
 
 
 ## Uninstall the ARMS agent
