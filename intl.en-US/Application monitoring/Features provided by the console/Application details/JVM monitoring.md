@@ -39,13 +39,15 @@ The JVM monitoring feature allows you to monitor the following metrics:
 
 ## View JVM metrics
 
-1.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. At the top of the Applications page, select a region.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  On the Applications page, click the application that you want to view.
+2.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. At the top of the Applications page, select a region.
 
-3.  In the left-side navigation pane, click **Application Details**.
+3.  On the Applications page, click the application that you want to view.
 
-4.  On the **Application Details** page, select the node and click **JVM monitoring** tab on the right side of the page.
+4.  In the left-side navigation pane, click **Application Details**.
+
+5.  On the **Application Details** page, select the node and click **JVM monitoring** tab on the right side of the page.
 
     On the **JVM monitoring** tab, the time sequence curves of the instantaneous GC count, instantaneous GC duration, heap memory details, metadata details, non-heap memory details, direct buffer, and JVM threads are displayed.
 
