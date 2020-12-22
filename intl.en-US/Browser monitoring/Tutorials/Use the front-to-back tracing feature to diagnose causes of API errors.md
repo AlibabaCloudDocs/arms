@@ -64,7 +64,7 @@ The API and the domain name of the application do not have the same origin.
             }
     ```
 
-3.  Configure the Ignore method. For more information, see [.](/intl.en-US/Browser monitoring/Configuration items of the browser monitoring SDK.md) The following sample code shows how to configure the Ignore method:
+3.  Configure the Ignore method. For more information, see [.](/intl.en-US/Browser monitoring/SDK reference.md) The following sample code shows how to configure the Ignore method:
 
     ```
     let whitelist = ['api.xxx','source3']; // The whitelist.
@@ -101,23 +101,25 @@ If a request takes a longer time than expected, you can determine whether the ca
 
 -   Locate the error if the API returns an error code or a business logic error occurs.
 
-    1.  In the left-side navigation pane, click **Browser Monitoring**. On the **Browser Monitoring** page, click the name of the application. In the left-side navigation pane, click **API Request**.
-    2.  On the **API Failure List** tab of the **API Link Trace\(Top20\)** section, find the API or trace ID, and click **Link Trace**. You can then view the overall response time of browser monitoring and the call sequence chart of the backend application.
+    1.  Log on to the [ARMS console](https://arms-intl.console.aliyun.com/).
+    2.  In the left-side navigation pane, click **Browser Monitoring**. On the **Browser Monitoring** page, click the name of the application. In the left-side navigation pane, click **API Request**.
+    3.  On the **API Failure List** tab of the **API Link Trace\(Top20\)** section, find the API or trace ID, and click **Link Trace**. You can then view the overall response time of browser monitoring and the call sequence chart of the backend application.
 
         ![API failure list](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/5700362851/p43709.png)
 
-    3.  Determine whether the network transmission or backend call process takes a longer time based on the call timeline.
+    4.  Determine whether the network transmission or backend call process takes a longer time based on the call timeline.
 
-    4.  Click the Magnifier icon in the **Method Stack** column of the backend application to view the overall backend trace of the request. You can then locate the cause of the API error based on the business.
+    5.  Click the Magnifier icon in the **Method Stack** column of the backend application to view the overall backend trace of the request. You can then locate the cause of the API error based on the business.
 
         ![ application-Invocation-trace](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8092576751/p43710.png)
 
 -   Locate the error if the response time of the API is longer than expected.
 
-    1.  In the left-side navigation pane, click **Browser Monitoring**. On the **Browser Monitoring** page, click the name of the application. In the left-side navigation pane, click **API Request**.
-    2.  In the **API Link Trace\(Top20\)** section, the APIs are sorted in descending order by response time. or trace ID. You can find the API or trace ID whose response time is longer than expected,
+    1.  Log on to the [ARMS console](https://arms-intl.console.aliyun.com/).
+    2.  In the left-side navigation pane, click **Browser Monitoring**. On the **Browser Monitoring** page, click the name of the application. In the left-side navigation pane, click **API Request**.
+    3.  In the **API Link Trace\(Top20\)** section, the APIs are sorted in descending order by response time. or trace ID. You can find the API or trace ID whose response time is longer than expected,
 
-    3.  and click **Link Trace**. You can then view the overall response time of browser monitoring and the call sequence chart of the backend application.
+    4.  and click **Link Trace**. You can then view the overall response time of browser monitoring and the call sequence chart of the backend application.
 
         -   If the processing time of the backend application is short but the overall response time is long, the network transmission takes a longer time. Click **View Details**. On the details page, view the network, region, browser, device, and operating system of the access request.
         -   If the backend application takes a long time to process the access request, the backend processing performance is poor. Click the Magnifier icon in the **Method Stack** column. In the dialog box that appears, check which part of backend tracing is time-consuming to locate the problem.
