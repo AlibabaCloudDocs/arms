@@ -4,10 +4,6 @@ With the Java bytecode injection technology, many Java-based frameworks can impl
 
 You have enabled link tracking through SkyWalking. For more information, see [Reporting Java application data by SkyWalking](/intl.en-US/Preparations/Start monitoring Java applications/Reporting Java application data by SkyWalking.md).
 
-The following figure shows the workflow for SkyWalking to collect slow request data.
-
-![dg_skywalking_slow_request_analysis_how_it_works](../images/p139682.png)
-
 **Note:** Only SkyWalking 7.0 and higher versions have the slow request analysis feature.
 
 ## Create a slow request collection task
@@ -19,8 +15,6 @@ The following figure shows the workflow for SkyWalking to collect slow request d
 3.  In the left-side navigation pane, click **slow request analysis**, and then click **create task**.
 
 4.  In the **create task** dialog box, set the following parameters, and click **OK**.
-
-    ![Create a slow request analysis task](../images/p139671.png)
 
     |Parameter|Description|Required|Example|
     |---------|-----------|--------|-------|
@@ -40,8 +34,6 @@ After the specified monitoring duration starts with the monitoring time you set,
 
 1.  On the **slow request analysis** page, click the target task in the **tasks** section.
 
-    ![Enable slow query log analysis](../images/p139677.png)
-
     The spans with time consumption exceeding the threshold are displayed in the **SampledTraces** area.
 
 2.  In the **SampledTraces** area, click the target Span, and observe the **thread stacks** area on the right side of the page.
@@ -56,8 +48,6 @@ If no thread stack is sampled after the monitoring duration ends, perform the fo
 1.  On the **slow request analysis** page, find the target task in the **tasks** list and click **view task details** in the actions column.
 
 2.  View the detailed information in the **task details** section of the **logs** dialog box.
-
-    ![db_slow_request_analysis_job_details](../images/p139680.png)
 
     -   If the IP address of the Agent is displayed at the end of the **instance** field and the **action type** is `EXECUTION_FINISHED` or `EXECUTION_NOTIFY`, the network connection is normal because no such Span has exceeded the threshold.
     -   If it does not meet the above description, there is a problem with the network connection. Please try again later.
