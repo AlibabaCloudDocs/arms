@@ -2,6 +2,8 @@
 
 The Java Virtual Machine \(JVM\) monitoring feature allows you to monitor critical JVM metrics. The critical metrics include heap metrics, non-heap metrics, direct buffer metrics, memory-mapped buffer metrics, garbage collection \(GC\) details, and JVM thread count. This topic describes the JVM monitoring feature and how to monitor JVM metrics.
 
+![JVM monitoring-ARMS](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9617078061/p143547.png)
+
 ## Features
 
 The JVM monitoring feature allows you to monitor the following metrics:
