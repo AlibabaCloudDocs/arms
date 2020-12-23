@@ -6,7 +6,7 @@ After you install the Application Real-Time Monitoring Service \(ARMS\) agent, y
 
 ## Obtain a License Key
 
-1.  Log on to the[ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home). In the left-side navigation pane, choose **Application Monitoring** \> **Applications**.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home). In the left-side navigation pane, choose **Application Monitoring** \> **Applications**.
 2.  On the Applications page, select the destination region in the top navigation bar, and click **Add Application** in the upper-right corner.
 3.  At the top of the Add Application page, click the copy icon to the right of the License Key and save the Key.
 
@@ -28,7 +28,7 @@ After you install the Application Real-Time Monitoring Service \(ARMS\) agent, y
 
 ## Verify the result
 
-1.  Log on to the[ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home). In the left-side navigation pane, choose **Application Monitoring** \> **Applications**.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home). In the left-side navigation pane, choose **Application Monitoring** \> **Applications**.
 2.  At the top of the Applications page, select the destination region.
 
 If your Java application is displayed in the application list and data is imported after you call the function multiple times in the [Function Compute console](https://fc.console.aliyun.com), the Java application is connected to ARMS.
