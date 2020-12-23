@@ -9,7 +9,7 @@ This topic provides answers to commonly asked questions about browser monitoring
 -   [TraceId is not found in the API logs, and as a result, the system cannot redirect me to the application monitoring page. Why?](#section_wxb_s5c_b6a)
 -   [Why is the Source Map file error displayed when I am troubleshooting JS errors?](#section_aqp_vqy_svi)
 -   [What are the differences between console setting and SetConfig?](#section_9i9_3y6_bdo)
--   [What is the relationship between resource consumption and charged traffic shown in the resource consumption chart?](#section_h09_obl_u88)
+-   [\#section\_h09\_obl\_u88](#section_h09_obl_u88)
 -   [How do I configure the environment and version in an SDK?](#section_qrc_oud_6hf)
 -   [How do I view the version number of the configuration?](#section_gi2_19f_0ez)
 -   [How do I view the time on page \(TP\) of a user for a page?](#section_ad7_a2u_1q5)
@@ -53,15 +53,17 @@ This is because your application is a single-page application \(SPA\), and the S
 
 ## TraceId is not found in the API logs, and as a result, the system cannot redirect me to the application monitoring page. Why?
 
-1.  In the left-side navigation pane, click **Browser Monitoring**. On the **Browser Monitoring** page, click the name of the target application.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  In the left-side navigation pane, choose **Settings** \> **Application Settings**.
+2.  In the left-side navigation pane, click **Browser Monitoring**. On the **Browser Monitoring** page, click the name of the target application.
 
-3.  On the Precondition tab, check whether **Associate with Application Monitoring** is selected for the ARMS agent configuration items. If Associate with Application Monitoring is not selected, select it. Then, connect the ARMS agent to the frontend application again.
+3.  In the left-side navigation pane, choose **Settings** \> **Application Settings**.
+
+4.  On the Precondition tab, check whether **Associate with Application Monitoring** is selected for the ARMS agent configuration items. If Associate with Application Monitoring is not selected, select it. Then, connect the ARMS agent to the frontend application again.
 
     Check whether the TraceId parameter is generated in the API logs. If no TraceId is generated, perform the operations described in [this](#step_thx_955_m4j) section.
 
-4.  Check whether the domain name used in your page request is the same as the domain name used in your API request. If the domain name used in your page request is different from the domain name in your API request, this is a cross-domain access. In this case, TraceId cannot be generated to prevent API request failure caused by cross-domain authentication.
+5.  Check whether the domain name used in your page request is the same as the domain name used in your API request. If the domain name used in your page request is different from the domain name in your API request, this is a cross-domain access. In this case, TraceId cannot be generated to prevent API request failure caused by cross-domain authentication.
 
     For information about how to solve this problem, see [Front-to-back tracing](/intl.en-US/Browser monitoring/Tutorials/Use the front-to-back tracing feature to diagnose causes of API errors.md).
 
@@ -85,12 +87,6 @@ In addition, console setting is valid only when a project is connected to SDK co
 
 [\[Back to the top\]](#sc_index)
 
-## What is the relationship between resource consumption and charged traffic shown in the resource consumption chart?
-
-The resource consumption chart shows the actual resource consumption. You can also configure only the actual consumption limit. For more information, see [设置消费限制](). You are charged for only part of the actual consumed traffic.
-
-[\[Back to the top\]](#sc_index)
-
 ## How do I configure the environment and version in an SDK?
 
 You can set the release parameter to compare versions. For more information, see [release](/intl.en-US/Browser monitoring/SDK reference.md). You can also set environment to distinguish different environments. For more information, see [.](/intl.en-US/Browser monitoring/SDK reference.md)
@@ -105,37 +101,43 @@ You can set the release parameter to compare versions. For more information, see
 
 ## How do I view the version number of the configuration?
 
-1.  In the left-side navigation pane, click **Browser Monitoring**. On the **Browser Monitoring** page, click the name of the target application.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  In the left-side navigation pane, choose **Application** \> **View Details**.
+2.  In the left-side navigation pane, click **Browser Monitoring**. On the **Browser Monitoring** page, click the name of the target application.
+
+3.  In the left-side navigation pane, choose **Application** \> **View Details**.
 
     The version number of a log is displayed in the **Version Number** column in the **Log List** section.
 
-3.  You can also filter logs by environment and version in the menu bar.**** You can filter logs only after PV logs are set with the version number.
+4.  You can also filter logs by environment and version in the menu bar.**** You can filter logs only after PV logs are set with the version number.
 
 
 [\[Back to the top\]](#sc_index)
 
 ## How do I view the time on page \(TP\) of a user for a page?
 
-1.  In the left-side navigation pane, click **Browser Monitoring**. On the **Browser Monitoring** page, click the name of the target application.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  In the left-side navigation pane, choose **Application** \> **Session Traces**.
+2.  In the left-side navigation pane, click **Browser Monitoring**. On the **Browser Monitoring** page, click the name of the target application.
 
-3.  In the Session List section, find the target session and click its ID in the **Session ID** column. The Session Details page appears.
+3.  In the left-side navigation pane, choose **Application** \> **Session Traces**.
 
-4.  Move the pointer over the **Timeline** area in the Visit Timeline column to view the time on page of a user for a page.
+4.  In the Session List section, find the target session and click its ID in the **Session ID** column. The Session Details page appears.
+
+5.  Move the pointer over the **Timeline** area in the Visit Timeline column to view the time on page of a user for a page.
 
 
 [\[Back to the top\]](#sc_index)
 
 ## How do I view the browser custom performance metrics of ARMS?
 
-1.  In the left-side navigation pane, click **Browser Monitoring**. On the **Browser Monitoring** page, click the name of the target application.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  In the left-side navigation pane, choose **Application** \> **Page Speed**.
+2.  In the left-side navigation pane, click **Browser Monitoring**. On the **Browser Monitoring** page, click the name of the target application.
 
-3.  Custom performance metrics are displayed in the **Page Speed** section.
+3.  In the left-side navigation pane, choose **Application** \> **Page Speed**.
+
+4.  Custom performance metrics are displayed in the **Page Speed** section.
 
 
 [\[Back to the top\]](#sc_index)
