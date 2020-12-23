@@ -4,7 +4,7 @@ Application Real-Time Monitoring Service \(ARMS\) provides the Application Monit
 
 ## Prerequisites
 
-An application monitoring job is created in the ARMS console. For more information, see [Create an application monitoring job](/intl.en-US/Quick start/Create an application monitoring job.md) and [Before you begin]().
+An application monitoring job is created in the ARMS console. For more information, see [Create an application monitoring job](/intl.en-US/Quick start/Create an application monitoring job.md).
 
 ## Procedure
 
