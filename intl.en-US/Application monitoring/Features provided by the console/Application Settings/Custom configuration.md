@@ -64,7 +64,7 @@ In the **Advanced Settings** section, you can set the interface to be filtered a
 
 In the **Thread Settings** section, you can enable or disable thread diagnosis method stack and thread profiling master. You can also set the trigger threshold of the slow call listener.
 
-![Thread Settings](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/2652458061/p43185.png)
+![Thread Settings](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8137378061/p43185.png)
 
 **Note:** The listener is started only when the service call response time exceeds the threshold \(1,000 ms by default\) and lasts until the call ends or the consumed time exceeds 15 seconds. We recommend that you set the threshold to the 99th percentile of the call response time. For example, if 100 calls are listed in ascending order by response time, the time consumed by the 99th one is the 99th percentile.
 
