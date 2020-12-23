@@ -26,8 +26,6 @@ Follow these steps to enter the application list page.
 
 2.  In the left-side navigation pane, choose **application list**, and select the target region at the top of the application list page.
 
-    ![Page Applications](../images/p53837.png "Applications page")
-
 
 ## Sorting application
 
@@ -46,16 +44,12 @@ After you set custom tags for an application, you can use these tags to filter t
 
 2.  In the manage account labels dialog box, enter custom labels in the **add labels** field and click **add**. Click one or more labels at the top, and click **OK**.
 
-    ![Manage Tabs](../images/p53838.png)
-
     **Note:** If you delete an existing tag in the manage account tags dialog box, the app that previously added the tag will lose it.
 
 
 ## Filter applications by tag
 
 In the **select tags** section, click one or more tags to filter all applications that have at least one tag.
-
-![Example of Tags](../images/p53839.png)
 
 **Related topics**  
 
