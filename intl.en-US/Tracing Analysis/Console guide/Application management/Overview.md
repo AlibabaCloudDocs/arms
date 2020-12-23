@@ -4,7 +4,8 @@ On the overview page, you can view the overall metrics of your application, incl
 
 ## Procedure
 
-1.  In the left-side navigation pane, click **Overview**. On the top of the page, click the **Overview analysis** tab.
+1.  Log on [Tracing Analysis console](https://tracing-sg.console.aliyun.com/).
+2.  In the left-side navigation pane, click **Overview**. On the top of the page, click the **Overview analysis** tab.
 
 ## Overview
 
