@@ -8,7 +8,7 @@ A monitoring job and a contact group are created. For more information, see the 
 
 -   [Create an application monitoring job](/intl.en-US/Quick start/Create an application monitoring job.md)
 -   [Create a contact](/intl.en-US/Dashboard and alerting/Create contacts.md)
--   [t1918101.md\#]()
+-   [Create a contact group](/intl.en-US/Dashboard and alerting/Create a contact group.md)
 
 ## Create an application monitoring alert
 
