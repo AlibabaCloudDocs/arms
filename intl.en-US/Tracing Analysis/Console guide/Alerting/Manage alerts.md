@@ -1,56 +1,47 @@
 # Manage alerts
 
-You can manage all alert rules under your account and query alert events and alert notification records through the alert management module in the tracing analysis console.
+On the alert Policies page, you can manage all the alert rules under your account and query the history of alert events and alert posts.
 
-## Manage an alert rule
+## Manage alert rules
 
-The created alarm rule is displayed on the alarm rules and history page. You can start, stop, edit, and delete the alert rules. You can also view alert details.
+The alert rules that you create in Application Monitoring, Browser Monitoring, and Custom Monitoring all appear on the Alert Policies page. You can take actions to the alert rules, including start, stop, edit, delete alert rules, and view alert details. For more information about how to create alert rules, see [Create ARMS alerts](/intl.en-US/Quick start/Create ARMS alerts.md).
 
-1.  Log on [Tracing Analysis console](https://tracing-sg.console.aliyun.com/).
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  In the left-side navigation pane, choose **Alarm management** \> **Alarm rules**.
+2.  In the left-side navigation pane, choose**Alerts** \> **Alert Policies**.
 
-3.  On the **alarm rules and history** tab page, enter an alarm name in the search box and then click **search**.
+3.  On the **Alert Rules** tab, enter the alert name in the search box, then click **Search**.
 
     **Note:** You can enter part of an alert name in the search box to perform a fuzzy search.
 
-4.  In the search results list of **operation** column, on-demand target alarm rule to take the following actions:
+4.  In the **Actions** column, you may take actions on the filtered alert rules, as needed:
 
-    ![Page Alerts](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152335/156136928043290_zh-CN.png)
+    -   To edit an alert rule, click **Edit**. In the Edit Alert dialog box, edit the alert rule, and click **Save**.
+    -   To delete an alert rule, click **Delete**. In the Delete dialog box, click **Delete**.
+    -   To start a stopped alert rule, click **Start**, and in OK dialog box, click **Start**.
+    -   To stop a running alert rule, click **Stop**, and then click **OK** in the Stop dialog box.
+    -   To view the alert event history and alert post history, click **View Alert Detail**, and view related records on the **Alert Event History** tab.
 
-    -   To edit an alarm rule, click **edit**. In the edit alarm dialog box, edit the alarm rule and click **save**.
-    -   To delete an alarm rule, click **delete**. In the delete dialog box, click **delete**.
-    -   To start a stopped alert rule, click **start**. In the start dialog box, click **OK**.
-    -   To stop the started alarm rule, click **stop**. In the stop dialog box, click **OK**.
-    -   To view the alert event history and alert notification history, click **view alert details** and view the **alert history** records on the alert history query tab.
+## Query alert history
 
-## Query the alert history
+You can view historical records about when and why an alert rule was triggered, and about the alert notification records sent to specified alert contacts on the **Alert History** tab.
 
-You can **click alarm history** to search for historical records about when an alarm rule is triggered and the alarm notifications sent to specific alarm contacts after the rule is triggered.
+1.  On the Alert Policies page, click the **Alert History** tab.
 
-1.  Log on [Tracing Analysis console](https://tracing-sg.console.aliyun.com/).
-
-2.  In the left-side navigation pane, choose **Alarm management** \> **Alarm rules**.
-
-3.  On the alarm rules and history page, click the **alarm history** tab.
-
-4.  On the **alarm history** tab, select or enter the alarm **type**, **event trigger status**, and **alarm name**. Then click **search**.
+2.  On the **Alert History** tab, select or enter the **Alert Type**, **Trigger State** and **Alert Name**, and then click **Search**.
 
     The line charts and bar charts on the tab show the relationship between alert data and alert trigger events, also the alert trigger details. The line chart represents the alert data and the bar chart represents the alert events.
 
-    ![Tab Alert History](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152335/156136928143291_zh-CN.png)
+3.  Scroll down to the bottom, view the history of alert events on the Alert Event History tab.
 
-5.  Click the alarm event history tab at the bottom to view the history of alarm events.
+    **Note:** Alert notifications are sent only when the trigger state is **triggered**. \(**Trigger** column contains a red dot.\)
 
-    **Note:** An alarm notification is sent only when the **triggering status** is **triggered** \(red dot in the triggering status column\).
-
-    ![Tab Alert Event History](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/152335/156136928143292_zh-CN.png)
-
-6.  Click the alarm sending History tab to view the records of alarm notifications \(by SMS, email, or other means\) that have triggered alarms.
+4.  Click the Alert Post History tab to view the records of alert notifications \(such as SMS and email\) that were sent for triggered alerts.
 
 
-**Related topics**  
+[Create ARMS alerts](/intl.en-US/Quick start/Create ARMS alerts.md)
 
+[Create contacts](/intl.en-US/Dashboard and alerting/Create contacts.md)
 
-[Create an alert contact](/intl.en-US/Console guide/Alerting/Create an alert contact.md)
+[Create a contact group](/intl.en-US/Dashboard and alerting/Create a contact group.md)
 
