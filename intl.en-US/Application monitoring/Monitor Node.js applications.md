@@ -4,7 +4,7 @@ You can use Application Real-Time Monitoring Service \(ARMS\) to monitor the top
 
 ## Step 1: Obtain the License Key
 
-1.  Log on to the[ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home). In the left-side navigation pane, choose **Application Monitoring** \> **Applications**.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home). In the left-side navigation pane, choose **Application Monitoring** \> **Applications**.
 2.  On the Applications page, select the destination region in the top navigation bar, and click **Add Application** in the upper-right corner.
 3.  At the top of the Add Application page, click the copy icon to the right of the License Key and save the Key.
 
