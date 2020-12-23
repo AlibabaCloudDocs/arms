@@ -4,7 +4,7 @@ After you activate the Trial Edition of Application Real-Time Monitoring Service
 
 ## Prerequisites
 
-An Alibaba Cloud account is created and real-name verification is passed. For more information, see [t12832.md\#]().
+An Alibaba Cloud account is created and real-name verification is passed.
 
 ## Activate ARMS for free
 
