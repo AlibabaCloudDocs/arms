@@ -29,7 +29,7 @@ To comprehensively monitor frontend applications, you must install the ARMS agen
 
 3.  In the left-side navigation pane, click **JS Error Diagnosis**.
 
-    ![JS Error Diagnosis](../images/p60924.png)
+    ![JS Error Diagnosis](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3227278061/p60924.png)
 
     -   View the total number of errors, error rate, number of affected users, and percentage of affected users in **Error Overview**.
     -   Determine the JS error trend based on the line chart.
@@ -45,12 +45,16 @@ After you have determined any global errors, you must troubleshoot specific erro
 
 1.  When you find that the error rate at a specific time point on the error chart suddenly increases, place the pointer over the turning point of the curve. When the pointer is displayed as a hand shape, click the turning point to display the Exception Insight dialog box for that time point. For more information, see [JS error diagnosis](/intl.en-US/Browser monitoring/Console functions/JS error diagnosis.md).
 
+    ![Exception Insight](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3227278061/p60925.png)
+
 2.  Click the **Frequent Errors Top 5** tab. On the tab that appears, select an error and click **Diagnose** in the **Actions** column. The JS Error Diagnosis page appears.
 
 
 ## Step 4: View error details
 
-Onsite JS error information includes the first occurrence time, first occurrence version \(optional\), error name, error type, device, operating system, browser, and the page, file, row, and column where the error resides. As shown in [\#fig\_2hx\_7ul\_nvx](#fig_2hx_7ul_nvx), the map module on the real-time dashboard reported an invalid data error during the update, and the error occurred in line 1 and column 79585.
+Onsite JS error information includes the first occurrence time, first occurrence version \(optional\), error name, error type, device, operating system, browser, and the page, file, row, and column where the error resides. As shown in [Figure 1](#fig_2hx_7ul_nvx), the map module on the real-time dashboard reported an invalid data error during the update, and the error occurred in line 1 and column 79585.
+
+![Error Details](../images/p60929.png "Error details page")
 
 ## Step 5: Locate the error code
 
