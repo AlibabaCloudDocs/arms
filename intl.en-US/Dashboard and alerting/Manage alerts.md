@@ -44,5 +44,5 @@ On the **Alert History** tab, you can view historical records that indicate when
 
 [Create a contact](/intl.en-US/Dashboard and alerting/Create contacts.md)
 
-[t1918101.md\#]()
+[Create a contact group](/intl.en-US/Dashboard and alerting/Create a contact group.md)
 
