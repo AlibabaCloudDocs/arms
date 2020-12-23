@@ -8,10 +8,6 @@ In the link Tracing Analysis console, when you need to display the IP address of
 
 **Note:** Only the data that is generated after the setting takes effect is affected. For example, if the **display machine name** switch is turned on and saved, the machine name will only be displayed in the new data generated thereafter, and the IP address will still be displayed in the previously generated data.
 
-![Machine IP](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/xtrace/ex_machine_ip.png "Example: Display the IP address of the machine")
-
-![Machine Name](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/xtrace/ex_machine_name.png "Example: Display Machine name")
-
 To stop billing for an application, disable data collection.
 
 On the application settings page, you can also configure whether to use all tags for the current application and manage all tags under your account. You can delete an application when you no longer need it.
@@ -71,8 +67,6 @@ To manage all tags under an account, such as adding tags for all applications or
 2.  Under **apply tags**, click **manage account tags**.
 
 3.  In the manage account tags dialog box, perform the following operations as needed.
-
-    ![Manage Tags Dialog Box](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/xtrace/db_manage_tags_setting.png "Manage account labels dialog box")
 
     -   To create a new tag, click the plus icon and enter a tag in the text box.
     -   To delete an existing tag, move the pointer over the tag and click the X icon on the left.
