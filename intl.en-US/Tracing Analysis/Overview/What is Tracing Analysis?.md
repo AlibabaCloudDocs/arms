@@ -4,10 +4,6 @@ Tracing Analysis provides a variety of tools for distributed applications, inclu
 
 ## Architecture
 
-The following figure shows the product architecture of link tracing.
-
-![Tracing Analysis Workflow](http://aliware-images.oss-cn-hangzhou.aliyuncs.com/arms/xtrace_dg_workflow.png "Product Architecture of tracing analysis")
-
 The main work process is as follows:
 
 -   The customer application reports service calls through the integrated tracing analysis SDK. Tracing analysis supports SDKs from various open source communities and the OpenTracing standard.
