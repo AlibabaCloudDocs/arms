@@ -4,8 +4,6 @@ The API Details page of Application Real-Time Monitoring Service \(ARMS\) Browse
 
 ## Portal
 
-
-
 1.  Log on to the[ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 2.  In the left-side navigation pane, click **Browser Monitoring**.
 3.  On the **Browser Monitoring** page, click the name of the required application.
@@ -60,7 +58,7 @@ Error Number: The number of all API errors within a specified period of time is 
 
 Select **API Requests** in the section ③ to view the requests of each API within a specified period of time.
 
--   Click theicon to the right of a property in the first row of the list to sort the APIs.
+-   Click the![icon_up_down](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1654078061/p204946.png) icon to the right of a property in the first row of the list to sort the APIs.
 -   Move the pointer over an API alias in the **API** column. Click the ![edit](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3313758061/p177320.png) icon to modify the alias of the API. All APIs are displayed by alias. Click **Set To Search Value** to set the API to a filter.
 -   Click a number in the **Error Number** column to view the details and distribution of errors within a specified period of time. In the Request Details section, click **Show Invocation Trace** to view the call and business traces of failed requests. Click **View Session** to view the session trace of failed requests.
 -   Click a number in the **Slow Responses** column to display the details and distribution of slow responses within a specified period of time. In the Request Details section, click **Show Invocation Trace** to view the call and business traces of slow responses. Click **View Session** to view the session trace of slow responses.
@@ -74,7 +72,7 @@ Select **API Requests** in the section ③ to view the requests of each API with
 
 Select **Responses** in the section ③ to view all response information of each API.
 
--   Click theicon to the right of a property in the first row of the list to sort the APIs.
+-   Click the![icon_up_down](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1654078061/p204946.png) icon to the right of a property in the first row of the list to sort the APIs.
 -   Move the pointer over a response in the **Responses** column. Click **Set To Search Value** to set the response to a filter.
 -   Click a number in the **Slow Responses** column to display the details and distribution of slow responses within a specified period of time. In the Request Details section, click **Show Invocation Trace** to view the call and business traces of slow responses. Click **View Session** to view the session trace of slow responses.
 -   Click **Analyze** in the **Operation** column to view the API details, API error details, API slow loading details, and distribution.
@@ -87,7 +85,7 @@ Select **Responses** in the section ③ to view all response information of each
 
 Select an **HTTP Status Code** in section ③ to view all HTTP status codes.
 
--   Click theicon to the right of a property in the first row of the list to sort the APIs.
+-   Click the![icon_up_down](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1654078061/p204946.png) icon to the right of a property in the first row of the list to sort the APIs.
 -   Move the pointer over an HTTP status code in the **HTTP Status Code** column. Click **Set To Search Value** to set the HTTP status code to a filter.
 -   Click a number in the **Slow Responses** column to display the details and distribution of slow responses within a specified period of time. In the Request Details section, click **Show Invocation Trace** to view the call and business traces of slow responses. Click **View Session** to view the session trace of slow responses.
 -   Click **Analyze** in the **Operation** column to view the API details, API error details, API slow loading details, and distribution.
