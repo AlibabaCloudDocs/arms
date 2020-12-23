@@ -18,13 +18,9 @@ If your application resides in the same region, add a tag in the Token field to 
 
 Assume that an application name is `demo` and the tags `_prod` and `_test` are added to the end of the Token parameter. Then, after the data is successfully reported, the following results are displayed:
 
-![Token and Label](../images/p53868.png)
-
 **Note:** You can modify or delete tags on the application management page. For more information, see [Manage apps and tags](/intl.en-US/Console guide/Application management/Manage applications and tags.md).
 
 A Token is a red character in the access point information displayed on the overview page of the Tracing Analysis console.
-
-![Token Example](../images/p53870.png)
 
 The following example shows how to add the `test` tag to the access Token field:
 
