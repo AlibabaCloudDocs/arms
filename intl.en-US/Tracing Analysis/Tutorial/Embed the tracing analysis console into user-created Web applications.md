@@ -12,12 +12,6 @@ After you perform the operations in this topic, you can obtain the following res
 -   You can hide the top navigation bar and the left-side navigation pane on the tracing analysis page.
 -   You can use RAM to control operation permissions. For example, you can change full permissions to read-only permissions.
 
-**Procedure**
-
-The following figure shows the procedure for accessing the tracing page by using the method described in this tutorial.
-
-![Tracing Analysis Embedding Digram](../images/p53905.png)
-
 ## Preparation: creating a RAM user and adding permissions
 
 Use an Alibaba Cloud account to create a RAM user and authorize the RAM user to call STS.
@@ -26,8 +20,6 @@ Use an Alibaba Cloud account to create a RAM user and authorize the RAM user to 
 
 2.  On the create user page, enter a logon **user account information** name in the **logon name** and **display name** columns. In the **access mode** section, select **programmatic access**, and click **OK**.
 
-    ![Create RAM User](../images/p53906.png)
-
     **Note:** RAM automatically creates an AccessKey pair for the RAM user. For security reasons, the RAM console allows you to view or download the AccessKey secret only once. Therefore, when creating an AccessKey pair, record the AccessKey secret safely.
 
 3.  Click phone verification in the **get verification** dialog box, enter the received verification code, and then click **OK**. The created RAM user is displayed on the users page but does not have any permissions.
@@ -35,8 +27,6 @@ Use an Alibaba Cloud account to create a RAM user and authorize the RAM user to 
 4.  On the userspage, find the created user and click **actions**column in The **add permissions**
 
 5.  On the **add permissions** page, in the **select permissions** section, enter keywords to search for the policy AliyunSTSAssumeRoleAccess. Then click the policy to add it to the **selected** list on the right, and click **OK**.
-
-    ![Add Permission for User](../images/p53907.png)
 
 6.  On the **permissions** page, view the **authorization result**, and click **complete**.
 
@@ -56,8 +46,6 @@ Next, create a RAM role and grant it the permission to access the tracing analys
     3.  On the **created** page, click **authorize role**.
 
 3.  On the **add permissions** tab, **select permissions** from the select permissions section. Enter keywords to search for the policy to be added. Click the policy to add the policy to the **selected** list on the right. Then click **OK**.
-
-    ![Add Permission for Role](../images/p53909.png)
 
     -   To have the full tracing permission, create AliyunTracingAnalysisFullAccess.
     -   To add the read-only permission for tracing analysis, add AliyunTracingAnalysisReadOnlyAccess.
@@ -81,11 +69,7 @@ Note that in the \[sample code\] \( https://arms-apm.oss-cn-hangzhou.aliyuncs.co
 
 Wherein the <accessKeyId\>and <accessKeySecret\>is that you created in preparations with the RAM user's AccessKeyId and AccessKeySecret.
 
-![Example AccessKey](../images/p53911.png)
-
 <roleArn\> isThe ARN of the RAM role created in the preparations. You can find the ARN on the basic information page of the RAM role in the RAM console.
-
-![Example ARN](../images/p53915.png)
 
 ## Step 2: obtain a logon Token
 
@@ -127,8 +111,6 @@ Use the obtained logon Token and the link to be embedded in the tracing analysis
 
 
 Log on to the user-created Web application. The following figure shows the tracing analysis page that appears:
-
-![Example Result of Embedding](../images/p53916.png)
 
 The sample code of this topic is based on the Java SDK. The following takes the application list in the tracing analysis console as an example.
 
