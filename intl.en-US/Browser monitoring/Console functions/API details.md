@@ -26,6 +26,8 @@ To delete a filter, move the pointer over the filter and click the ![delete](htt
 
 In the API Request section, select **API Success Rate** to view the success rate, successful requests, error number, and users with API errors.
 
+![success](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0071378061/p177857.png)
+
 -   Success rate: The success rate of all API requests to the specified application within a specified period of time is displayed in a line chart, which corresponds to the y-axis on the right side.
 -   Successful requests: The number of calls per hour within a specified period of time is displayed in a blue bar chart, which corresponds to the y-axis on the left side.
 -   Error number: The number of calls per hour within a specified period of time is displayed in a yellow bar chart, which corresponds to the y-axis on the left side.
@@ -35,6 +37,8 @@ Move the pointer over the bar chart to view the success rate, successful request
 ## Success RT or failure RT
 
 In the API Request section, select **Success RT** or **Failure RT** to view the average RT of successful calls, average RT of failure calls, count of calls whose RT is smaller than or equal to 1,000ms, and count of calls whose RT is greater than 1,000ms.
+
+![time](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0071378061/p177858.png)
 
 -   Success Avg RT or failure Avg RT: The average success RT or failure RT of all API calls in an application within a specified period of time is displayed in a line chart, which corresponds to the y-axis on the right side.
 -   Calls <= 1000ms: The total number of successful calls or failed calls smaller than or equal to 1000 ms per hour is displayed in a blue bar chart, which corresponds to the y-axis on the left side.
@@ -46,11 +50,15 @@ In the API Request section, select **Success RT** or **Failure RT** to view the 
 
 In the API Request section, select **Slow Responses** to view the slow responses.
 
+![slow](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0071378061/p177859.png)
+
 Slow responses: The number of all API requests within a specified period of time is displayed in a bar chart, which corresponds to the y-axis on the left side.
 
 ## Error number
 
 In the API Request section, select **Error Number** to view the number of failed requests.
+
+![error](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0071378061/p177880.png)
 
 Error Number: The number of all API errors within a specified period of time is displayed in a bar chart, which corresponds to the y-axis on the left side.
 
@@ -58,11 +66,22 @@ Error Number: The number of all API errors within a specified period of time is 
 
 Select **API Requests** in the section ③ to view the requests of each API within a specified period of time.
 
+![API ask](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0071378061/p177860.png)
+
 -   Click the![icon_up_down](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1654078061/p204946.png) icon to the right of a property in the first row of the list to sort the APIs.
 -   Move the pointer over an API alias in the **API** column. Click the ![edit](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3313758061/p177320.png) icon to modify the alias of the API. All APIs are displayed by alias. Click **Set To Search Value** to set the API to a filter.
 -   Click a number in the **Error Number** column to view the details and distribution of errors within a specified period of time. In the Request Details section, click **Show Invocation Trace** to view the call and business traces of failed requests. Click **View Session** to view the session trace of failed requests.
+
+    ![error details](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1071378061/p111587.png)
+
 -   Click a number in the **Slow Responses** column to display the details and distribution of slow responses within a specified period of time. In the Request Details section, click **Show Invocation Trace** to view the call and business traces of slow responses. Click **View Session** to view the session trace of slow responses.
+
+    ![error details](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1071378061/p111588.png)
+
 -   Click **Analyze** in the **Operation** column to view the API details, API error details, API slow loading details, and distribution.
+
+    ![analysis](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1071378061/p177862.png)
+
     -   On the API details page, you can view the API success rate and request details. In the Request Details section, click **Show Invocation Trace** to view the call and business traces of the API. Click **View Session**, you can view the session trace of the API.
     -   On the API Error Details page, you can view the distribution of the error number and request details.
     -   On the API Slow Loading Details page, you can view the response time distribution and network request information.
@@ -72,9 +91,14 @@ Select **API Requests** in the section ③ to view the requests of each API with
 
 Select **Responses** in the section ③ to view all response information of each API.
 
+![reback](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1071378061/p177186.png)
+
 -   Click the![icon_up_down](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1654078061/p204946.png) icon to the right of a property in the first row of the list to sort the APIs.
 -   Move the pointer over a response in the **Responses** column. Click **Set To Search Value** to set the response to a filter.
 -   Click a number in the **Slow Responses** column to display the details and distribution of slow responses within a specified period of time. In the Request Details section, click **Show Invocation Trace** to view the call and business traces of slow responses. Click **View Session** to view the session trace of slow responses.
+
+    ![Slow times](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1071378061/p177282.png)
+
 -   Click **Analyze** in the **Operation** column to view the API details, API error details, API slow loading details, and distribution.
     -   On the API details page, you can view the API success rate and request details. In the Request Details section, click **Show Invocation Trace** to view the call and business traces of the API. Click **View Session**, you can view the session trace of the API.
     -   On the API Error Details page, you can view the distribution of the error number and request details.
