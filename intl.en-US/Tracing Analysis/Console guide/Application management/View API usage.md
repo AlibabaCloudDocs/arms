@@ -22,8 +22,6 @@ The **interface invocation** page lists all the interfaces \(spans\) involved in
 
 The **upstream** interface and **downstream** interface tabs display the interfaces of the upstream application that calls the selected application and downstream application that calls the specified application and their performance metrics, including the number of requests, response time, and latency.
 
-![Downstream Spans](../images/p53842.png " Downstream link  tab")
-
 On the **upstream** and **downstream** tabs, you can perform the following operations as needed:
 
 -   At the top of the tab, click **show /hide** all.
@@ -33,8 +31,6 @@ On the **upstream** and **downstream** tabs, you can perform the following opera
 ## View traces
 
 The **Call link**
-
-![Tab Traces](../images/p53826.png "Trace tab")
 
 **Note:** **Status** The green icon in the column indicates that the time consumed is less than 500 milliseconds, the yellow icon indicates that the time consumed is between 500 milliseconds and 1000 milliseconds, the red icon indicates that the time consumed is greater than 1000 milliseconds, or the Tag Key is`Error`.
 
