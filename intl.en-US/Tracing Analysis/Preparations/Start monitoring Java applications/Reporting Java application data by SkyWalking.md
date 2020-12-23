@@ -98,9 +98,7 @@ To report Java application data to the link tracking console by using SkyWalking
 
 Q: Why cannot I create an application after I connect to the server through SkyWalking?
 
-A: It may be because the tracing data has not been reported. You must check whether tracing data has been reported. For more information, see configure skywalking agent pathname/logs/skywalking-api.log. If data is reported, the output is as follows:
-
-![pg_xtrace_skywalking](../images/p89094.png)
+A: It may be because the tracing data has not been reported. You must check whether tracing data has been reported. For more information, see configure skywalking agent pathname/logs/skywalking-api.log.
 
 If no data is reported, the possible cause is that sampling is enabled, filtering is configured, or the link tracing request is not generated.
 
