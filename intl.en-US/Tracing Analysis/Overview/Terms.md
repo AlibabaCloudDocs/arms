@@ -84,3 +84,13 @@ You can call this operation to create tracers \( startSpan\), Extract \( Extract
         ```
 
 
+## How is the data reported?
+
+The following figure shows how data is reported without an Agent.
+
+![1](../images/p205549.png "Data Reporting")
+
+The following figure shows how the data is reported by an Agent.
+
+![2](../images/p205550.png "Report data through Agent")
+
