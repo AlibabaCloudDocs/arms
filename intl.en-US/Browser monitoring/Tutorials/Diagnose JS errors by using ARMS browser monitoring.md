@@ -62,16 +62,18 @@ The information acquired from the JS error details is insufficient for problem d
 
 1.  In the **Stack Info** section, click the triangle icon on the left of a stack to expand the row, and click **Choose Sourcemap**.
 
-2.  ARMS browser monitoring uses the source map to locate the exact JS error location. If the selected source map matches the error in the source code, the original error location is marked in red in the **Source Code** section. As shown in [\#fig\_5ax\_bqw\_ui0](#fig_5ax_bqw_ui0), you can easily locate the error occurred in line 51 in the geog-map.js file. In addition, you can use a source map for source code mapping for each line in the error stack.
+2.  In the Sourcemap File dialog box, select an existing source map or upload a new one, and click **OK**.
+
+3.  ARMS browser monitoring uses the source map to locate the exact JS error location. If the selected source map matches the error in the source code, the original error location is marked in red in the **Source Code** section.
 
 
 ## Step 6: View the backtracked user behaviors
 
-As shown in [\#fig\_5ax\_bqw\_ui0](#fig_5ax_bqw_ui0), the source code error occurred when invalid data was loaded during the creation of the map component. However, invalid data may appear in a variety of forms. Null judgment and fault tolerance have been performed for data in the preceding code, but the invalid data exception is still triggered. If a snapshot of the data at the time of the error can be taken, you can locate the problem more accurately. However, onsite data is usually unavailable in global exception capture, and troubleshooting depends on only the data information reported with the exception.
+The source code error occurred when invalid data was loaded during the creation of the map component. However, invalid data may appear in a variety of forms. Null judgment and fault tolerance have been performed for data in the preceding code, but the invalid data exception is still triggered. If a snapshot of the data at the time of the error can be taken, you can locate the problem more accurately. However, onsite data is usually unavailable in global exception capture, and troubleshooting depends on only the data information reported with the exception.
 
 Is there any other way available to help troubleshooting? The best way is to replicate the problem. ARMS browser monitoring defines each event node on the page as user behavior, such as page loading, route jumps, page clicks, API requests, and console output. User behavior is connected in chronological order to form a behavior link. Behavior backtracking upon the error can help developers replicate the problem.
 
-As shown in [\#fig\_jkr\_1e8\_zea](#fig_jkr_1e8_zea), the user behavior backtracking upon the error shows that there is an API request before the error. This API request tries to request real-time update of the map module. However, the returned data is ConsoleNeedLogin, indicating logout from the page. This is the root cause of invalid data.
+The user behavior backtracking upon the error shows that there is an API request before the error. This API request tries to request real-time update of the map module. However, the returned data is ConsoleNeedLogin, indicating logout from the page. This is the root cause of invalid data.
 
 **Related topics**  
 
