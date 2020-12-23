@@ -13,13 +13,13 @@ Queries the metrics of Browser Monitoring.
 |Action|String|Yes|QueryMetricByPage|The operation that you want to perform. Set the value to `QueryMetricByPage`. |
 |EndTime|Long|Yes|1596183532000|The end of the time range to query. Unit: milliseconds. |
 |IntervalInSec|Integer|Yes|60000|The time interval between the data shards to be queried. Unit: milliseconds. Minimum value: 60,000. |
-|Measures.N|RepeatList|Yes|pv|The measurement data of the metric. For more information, see [Queryable Application Monitoring metrics](#section_jtc_apg_9ii). You can add a maximum of five measurement data entries. |
-|Metric|String|Yes|webstat.index|The metrics that you want to query. You cannot query custom metrics. For more information, see [Queryable Application Monitoring metrics](#section_jtc_apg_9ii). |
+|Measures.N|RepeatList|Yes|pv|The measurement data of the metric. For more information, see [Queryable Application Monitoring metrics](#section_2wv_zz8_zw7). You can add a maximum of five measurement data entries. |
+|Metric|String|Yes|webstat.index|The metrics that you want to query. You cannot query custom metrics. For more information, see [Queryable Application Monitoring metrics](#section_2wv_zz8_zw7). |
 |StartTime|Long|Yes|1595319532000|The beginning of the time range to query. Unit: milliseconds. |
 |OrderBy|String|No|rpc|The measurement data entry by which metrics are sorted You can set this parameter to a type of measurement data. |
 |Filters.N.Key|String|Yes|pid|The filtering condition for the query. The `pid` and `regionId` parameters are required. For information about how to obtain the `pid`, see [Obtain the PID of an application](#section_n8m_h9o_ebe). |
 |Filters.N.Value|String|Yes|xxx@74xxx|The filtering condition for the query. The `pid` and `regionId` parameters are required. For information about how to obtain the `pid`, see [Obtain the PID of an application](#section_n8m_h9o_ebe). |
-|Dimensions.N|RepeatList|No|\["detector\_browser","detector\_device"\]|The dimension by which metrics are queried. For more information, see [Queryable Application Monitoring metrics](#section_jtc_apg_9ii). You can add a maximum of five measurement data entries. |
+|Dimensions.N|RepeatList|No|\["detector\_browser","detector\_device"\]|The dimension by which metrics are queried. For more information, see [Queryable Application Monitoring metrics](#section_2wv_zz8_zw7). You can add a maximum of five measurement data entries. |
 |Order|String|No|ASC|The measurement data entry by which metrics are sorted. Valid values:
 
 -   `ASC`: ascending order
@@ -360,62 +360,4 @@ http(s)://[Endpoint]/? Action=QueryMetricByPage
 ```
 {     "RequestId": "626037F5-FDEB-45B0-804C-B3C92797****",     "Message": "message",     "Data": {         "PageSize": 10,         "Total": 0,         "Page": 1,         "Items": "[]"     },     "Code": 200,     "Success": true }
 ```
-
-## 常见问题
-
--   调用时为什么会出现RAM的权限问题？
-
-    这可能是由于该RAM角色没有权限，您可以为用户添加权限，请参见[Use a RAM role to access resources across Alibaba Cloud accounts](/intl.en-US/Access control/Use RAM roles to access resources across Alibaba cloud accounts.md)。
-
--   怎么拉取列表数据（不考虑时间粒度）？
-
-    将intervalInSec设置为2147483647。
-
--   为什么返回的数据值都为0？
-
-    -   请检查时间间隔是否设置过小，intervalInSec需要大于或等于60,000。
-    -   请检查regionId是否设置正确，该regionId是根据日志接收的服务端划分的地域，而不是用户所在的地域，您可以根据项目的上报日志地址来区分regionId：
-        -   华东1（杭州）地域前端监控上报日志地址：`https://arms-retcode.aliyuncs.com/r.png?`。
-        -   新加坡（新加坡）地域前端监控上报日志地址：`https://arms-retcode-sg.aliyuncs.com/r.png?`。
-        -   美国（硅谷）地域前端监控上报日志地址： `https://retcode-us-west-1.arms.aliyuncs.com/r.png?`。
--   在调用模拟器或代码接口时为什么会报错？
-
-    -   请检查regionId是否已填写，filters中是否已添加pid。
-    -   查看对应指标的measures或dimensions是否正确，请参见[可查询的前端监控指标](#section_2wv_zz8_zw7)。
--   报错信息以及对应解决方案
-
-    -   **Metric查询错误，请联系管理员。**
-        -   请检查Metric字段是否正确。
-        -   请检查measures或dimensions是否正确。
-        -   请检查filters中是否已添加pid。
-    -   **InvalidIntervalInSec**
-
-        请检查intervalInSec是否超过最大值（2147483647）。
-
-    -   **MissingMeasures**
-
-        请检查measures是否已填写。
-
-    -   **NonsequenceParameter.Dimensions**
-        -   请检查dimensions是否已填写正确。
-        -   请检查模拟器dimensions是否有多余的空格。
-    -   **ServiceUnavailable**
-
-        请检查regionId是否正确。
-
-    -   **前端监控地域不合法**
-
-        请检查regionId是否设置正确，该regionId是根据日志接收的服务端划分的地域，而不是用户所在的地域，您可以根据项目的上报日志地址来区分regionId：
-
-        -   华东1（杭州）地域前端监控上报日志地址：`https://arms-retcode.aliyuncs.com/r.png?`。
-        -   新加坡（新加坡）地域前端监控上报日志地址：`https://arms-retcode-sg.aliyuncs.com/r.png?`。
-        -   美国（硅谷）地域前端监控上报日志地址： `https://retcode-us-west-1.arms.aliyuncs.com/r.png?`。
--   为什么数据集中会缺失一些 measures或dimensions参数？
-
-    因为最多可设置5个measures和dimensions，如果超过5个，将导致参数无法返回。
-
--   为什么一些指标的总数在聚合后明显少于未聚合时？ 例如：webstat.index聚合后求和的pv总数比未聚合时得到的pv总数少。
-
-    因为POP网关的限制，超出10,000条的数据将被去除，所以当聚合造成数据量超过限制时，返回的数据量比实际的量小，因此指标求和的总数会明显减少。 您需要将每次请求后返回的数据量控制在10,000条以内，以获得准确的数据。
-
 
