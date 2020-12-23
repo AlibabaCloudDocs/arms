@@ -18,8 +18,6 @@ When the microservice of Nginx proxy experiences fake death, it cannot evaluate 
 
 5.  In the access point information column, click the duplicate icon.
 
-    ![Access point information-zipkin](../images/p188458.png)
-
     **Note:** If the application is deployed in the Alibaba Cloud production environment, select an endpoint. Otherwise, select a public endpoint.
 
 
