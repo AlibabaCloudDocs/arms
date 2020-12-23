@@ -70,7 +70,7 @@ You can perform the following steps to configure sampling based on thread profil
 
 5.  In the **Thread settings** section, turn on or turn off the switch of the thread diagnostics method stack and the master switch of thread profiling. Specify a threshold to trigger slow call listening.
 
-    ![Thread Settings](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/2652458061/p43185.png)
+    ![Thread Settings](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8137378061/p43185.png)
 
     **Note:** The listener is started only when the service call response time exceeds the threshold \(1,000 ms by default\) and lasts until the call ends or the consumed time exceeds 15 seconds. We recommend that you set the threshold to the 99th percentile of the call response time. For example, if 100 calls are listed in ascending order by response time, the time consumed by the 99th one is the 99th percentile.
 
@@ -98,7 +98,7 @@ You can perform the following steps to configure sampling based on business feat
     |Parameter|Description|Example|
     |---------|-----------|-------|
     |**Business Name**|The name of the business monitoring job. This parameter is required.|Business feature test.|
-    |**Entry application**|In the **Entry application** list, all the Java applications that have application monitoring agents installed appear. This parameter is required. After you select the required application, ARMS automatically detects the version number of the application agent. **Note:** You can use the business monitoring feature only after you upgrade the application agent to a version later than 2.6.2. If the detected agent version is not later than 2.6.2, upgrade the agent first. For more information, see [Preparations]().
+    |**Entry application**|In the **Entry application** list, all the Java applications that have application monitoring agents installed appear. This parameter is required. After you select the required application, ARMS automatically detects the version number of the application agent. **Note:** You can use the business monitoring feature only after you upgrade the application agent to a version later than 2.6.2. If the detected agent version is not later than 2.6.2, upgrade the agent first. For more information, see [FAQ about updating the ARMS agent for Java applications](/intl.en-US/Application monitoring/FAQ about updating the ARMS agent for Java applications.md).
 
 |mall-center.|
     |**Service type**|Set the service type. This parameter is required. ARMS supports only **HTTP entry**. This service type is suitable for scenarios where business traces are dyed based on HTTP traffic features.|**HTTP entry**.|
@@ -141,7 +141,7 @@ You can perform the following steps to configure O&M feature-based sampling:
     |Parameter|Description|Example|
     |---------|-----------|-------|
     |**Business Name**|The name of the business monitoring job. This parameter is required.|O&M feature test.|
-    |**Entry application**|In the **Entry application** list, all the Java applications that have application monitoring agents installed appear. This parameter is required. After you select the required application, ARMS automatically detects the version number of the application agent. **Note:** You can use the business monitoring feature only after you upgrade the application agent to a version later than 2.6.2. If the detected agent version is not later than 2.6.2, upgrade the agent first. For more information, see [Preparations]().
+    |**Entry application**|In the **Entry application** list, all the Java applications that have application monitoring agents installed appear. This parameter is required. After you select the required application, ARMS automatically detects the version number of the application agent. **Note:** You can use the business monitoring feature only after you upgrade the application agent to a version later than 2.6.2. If the detected agent version is not later than 2.6.2, upgrade the agent first. For more information, see [FAQ about updating the ARMS agent for Java applications](/intl.en-US/Application monitoring/FAQ about updating the ARMS agent for Java applications.md).
 
 |product-center.|
     |**Service type**|Set the service type. This parameter is required. ARMS supports only **Kubernetes Pod Metadata**. This service type is suitable for scenarios where business traces are dyed based on the environment characteristics of Kubernetes pods.|**Kubernetes Pod Metadata**.|
