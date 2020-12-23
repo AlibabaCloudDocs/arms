@@ -6,11 +6,13 @@ To add a DingTalk chatbot as a contact, you must obtain its webhook URL first. F
 
 ## Procedure
 
-1.  In the left-side navigation pane of the console, choose **Alerts** \> **Contacts**.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  On the **Contacts** tab, click **New contact** in the upper-right corner.
+2.  In the left-side navigation pane of the console, choose **Alerts** \> **Contacts**.
 
-3.  In the **New contact** dialog box, edit the contact information, specify whether to receive system notifications, and click **OK**.
+3.  On the **Contacts** tab, click **New contact** in the upper-right corner.
+
+4.  In the **New contact** dialog box, edit the contact information, specify whether to receive system notifications, and click **OK**.
 
     -   To add a contact, specify the **Name**, **Mobile phone number** and **Mailbox** fields.
 
@@ -33,7 +35,7 @@ To add a DingTalk chatbot as a contact, you must obtain its webhook URL first. F
 **Related topics**  
 
 
-[t1918101.md\#]()
+[Create a contact group](/intl.en-US/Dashboard and alerting/Create a contact group.md)
 
 [Enable DingTalk chatbot alert](/intl.en-US/Dashboard and alerting/Enable DingTalk chatbot alert.md)
 
