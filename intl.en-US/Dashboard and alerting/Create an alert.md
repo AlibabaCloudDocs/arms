@@ -79,40 +79,6 @@ To create a page metric alert on the JS error rate and JS error count, perform t
     ![Browser Monitoring Alarm](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1667828061/p43505.png)
 
 
-## Create a custom monitoring alert
-
-To create a user access alert for a custom monitoring job, perform the following operations:
-
-1.  In the left-side navigation pane, choose **Alerts** \> **Alert Policies**.
-
-2.  On the Alert Policies page, choose **Create Alarm** \> **Custom Monitoring Alarm** in the upper-right corner.
-
-3.  In the **Create Alarm** dialog box, enter all required information and click **Save**.
-
-    1.  Enter Alarm Name such as user access notification.
-
-    2.  Set Type to **Create Alert Based On Existing Drilled-down Dataset**.
-
-    3.  Set Alarm Variable Definition. Select a dataset for variable a and set Drill-down Dimension to Traverse.
-
-        **Note:**
-
-        -   To define another alert variable, click **+** on the right side of **Alarm Variable Definition**. In the dialog box that appears, define variable b.
-        -   For more information about how to create a dataset, see [t152304.md\#]().
-    4.  Set Alarm Rules.
-
-        1.  Select **Meet All of the Following Criteria**.
-        2.  Edit the alert rule. For example, an alert is triggered when the value of N is 3 and the average number of agents that you created is at least 0.
-
-            **Note:** You can also include a simple composite metric in the alert rule. For example, an alert is triggered when the value of N is 3 and the average value of dataset A divided by dataset B is at least 5.
-
-    5.  Set Notification Mode. For example, select Email.
-
-    6.  Set Notification Receiver. In the **Contact Groups** section, click the name of a contact group. If the contact group appears in the **Selected Groups** section, the setting is successful.
-
-    ![Custom Monitoring Alarm](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1667828061/p43507.png)
-
-
 ## Create a Prometheus monitoring alert
 
 To create an alert for a Prometheus monitoring job such as an alert on network receiving pressure, perform the following operations:
