@@ -21,8 +21,6 @@ On the details page of an application in the Tracing Analysis console, you can v
 
 The **Call link**
 
-![Tab Traces](../images/p53826.png "Trace tab")
-
 **Note:** **Status** The green icon in the column indicates that the time consumed is less than 500 milliseconds, the yellow icon indicates that the time consumed is between 500 milliseconds and 1000 milliseconds, the red icon indicates that the time consumed is greater than 1000 milliseconds, or the Tag Key is`Error`.
 
 On the **Call link** tab page, you can perform the following operations as needed:
