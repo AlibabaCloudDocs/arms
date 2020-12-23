@@ -4,15 +4,19 @@ Alibaba Cloud Prometheus provides the RemoteWrite feature. You can use this feat
 
 ## Step 1: Configure RemoteWrite and obtain the read and write URL
 
-1.  Select the destination region in the upper-left corner of the page. On the Prometheus Monitoring page, click **Access Prometheus monitoring**.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  On the Access Prometheus monitoring page, click **Remote Write Prometheus**.
+2.  In the left-side navigation pane, click **Prometheus Monitoring**.
 
-3.  In Step 1 of the wizard, specify the **RemoteWrite Name** parameter and click **Next**.
+3.  Select the destination region in the upper-left corner of the page. On the Prometheus Monitoring page, click **Access Prometheus monitoring**.
 
-4.  In Step 2, copy and save the generated value of the Prometheus Remote Write Url parameter, and then click **Next**.
+4.  On the Access Prometheus monitoring page, click **Remote Write Prometheus**.
 
-5.  In Step 3, copy and save the generated value of the Prometheus Remote Read Url parameter, and then close the wizard.
+5.  In Step 1 of the wizard, specify the **RemoteWrite Name** parameter and click **Next**.
+
+6.  In Step 2, copy and save the generated value of the Prometheus Remote Write Url parameter, and then click **Next**.
+
+7.  In Step 3, copy and save the generated value of the Prometheus Remote Read Url parameter, and then close the wizard.
 
 
 ## Step 2: Configure Prometheus
@@ -32,7 +36,6 @@ Alibaba Cloud Prometheus provides the RemoteWrite feature. You can use this feat
     remote_write:
       - url: "http://${regionId}-intranet.arms.aliyuncs.com/prometheus/${password}/${userId}/${promCluster}/${regionId}/api/v3/write"
         basic_auth:   
-          //username和password需要遵循AK/SK的限制，且AK/SK需要能够调用[GetPrometheusApiToken](/intl.en-US/API reference/Prometheus监控/GetPrometheusApiToken.md)。
           username: access-key-id
           password: access-key-secret
     remote_read:
