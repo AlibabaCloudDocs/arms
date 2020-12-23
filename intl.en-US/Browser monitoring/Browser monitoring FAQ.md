@@ -25,6 +25,8 @@ This topic provides answers to commonly asked questions about browser monitoring
 
 The page statistics of Application Real-Time Monitoring Service \(ARMS\) browser monitoring are retrieved based on actual page URLs and calculated by dimension. The asterisks \(\*\) included in the names of monitored pages or API operations are not a part of the page URLs. The asterisks \(\*\) indicate the result of URL convergence. Therefore, a name that includes an asterisk \(\*\) is not a specific URL, but a group of similar URLs.
 
+![Satisfaction Trend](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/6189278061/p111353.png)
+
 How URL convergence works
 
 -   Problem: Variables make it difficult to monitor or analyze similar URLs.
@@ -34,6 +36,8 @@ How URL convergence works
     -   Variable identification: Extract the variables from the URLs in the same group, and replace the variables with asterisks \(\*\).
 
 The following figure shows the URL convergence process.
+
+![Convergence Process](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/6189278061/p111355.png)
 
 Solution
 
@@ -60,6 +64,8 @@ This is because your application is a single-page application \(SPA\), and the S
 
 4.  On the Precondition tab, check whether **Associate with Application Monitoring** is selected for the ARMS agent configuration items. If Associate with Application Monitoring is not selected, select it. Then, connect the ARMS agent to the frontend application again.
 
+    ![tab_retcode_settings_precondition](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/6189278061/p111356.png)
+
     Check whether the TraceId parameter is generated in the API logs. If no TraceId is generated, perform the operations described in [this](#step_thx_955_m4j) section.
 
 5.  Check whether the domain name used in your page request is the same as the domain name used in your API request. If the domain name used in your page request is different from the domain name in your API request, this is a cross-domain access. In this case, TraceId cannot be generated to prevent API request failure caused by cross-domain authentication.
@@ -81,6 +87,8 @@ This is because your application is a single-page application \(SPA\), and the S
 ## What are the differences between console setting and SetConfig?
 
 Console setting can accelerate only the generation of configuration code, and the generated code takes effect only after the code is published. However, modifications to SetConfig immediately take effect.
+
+![Generate code in the ARMS console](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/6189278061/p125266.png)
 
 In addition, console setting is valid only when a project is connected to SDK code. After the project is connected to SDK code, you must use SetConfig to modify configurations.
 
@@ -108,7 +116,11 @@ You can set the release parameter to compare versions. For more information, see
 
     The version number of a log is displayed in the **Version Number** column in the **Log List** section.
 
-4.  You can also filter logs by environment and version in the menu bar.**** You can filter logs only after PV logs are set with the version number.
+    ![View the version number](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/6189278061/p125276.png)
+
+4.  You can also filter logs by environment and version in the menu bar. You can filter logs only after PV logs are set with the version number.
+
+    ![Filter logs by environment or version](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/6189278061/p125274.png)
 
 
 [\[Back to the top\]](#sc_index)
