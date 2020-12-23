@@ -3,7 +3,7 @@
 Alibaba Cloud Prometheus Service provides out-of-the-box alert rules. You can also customize alert rules for specific monitored objects. If a rule is triggered, the system will send alert messages to the specified contact group by using a specified notification method. This way, contacts can resolve issues at the earliest opportunity.
 
 -   A monitoring job is created. For more information, see [Get started with Prometheus Service]().
--   Contacts are created. For more information, see [Create a contact](/intl.en-US/Dashboard and alerting/Create contacts.md).
+-   Contacts are created. For more information, see [Create contacts](/intl.en-US/Dashboard and alerting/Create contacts.md).
 
 ## Procedure
 
@@ -46,10 +46,6 @@ Alibaba Cloud Prometheus Service provides out-of-the-box alert rules. You can al
             |\_aliyun\_arms\_involvedObject\_id|The ID of the associated object.|
             |\_aliyun\_arms\_involvedObject\_name|The name of the associated object.|
 
-    ![Prometheus-Create alarm](../images/p182018.png)
+    ![Prometheus-Create alarm](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/2026378061/p182018.png)
 
-
-## What to do next
-
-On the Dispatch policy page, you can specify the dispatch rule, notification method, and contacts. For more information, see [Configure an alert dispatch policy]().
 
