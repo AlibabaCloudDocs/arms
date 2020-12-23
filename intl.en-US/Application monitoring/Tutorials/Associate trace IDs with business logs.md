@@ -21,7 +21,6 @@ In ARMS, trace IDs can be associated with business logs of an application based 
     **Note:**
 
     -   If Link Business Logs with TraceId is turned on, trace IDs are automatically generated in the business logs.
-    -   If you want to bind a project and a Logstore to precisely identify errors, see [t1949734.md\#]().
 5.  Add `%X{EagleEye-TraceID}` to the pattern property of the business log layout. The following figure shows how to add this configuration for the Logback component.
 
     **Note:** For information about how to obtain \{EagleEye-TraceID\} from the business code, see [ARMS SDK](/intl.en-US/Application monitoring/References/ARMS SDK.md).
