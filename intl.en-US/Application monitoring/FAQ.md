@@ -230,6 +230,8 @@ http://arms-apm-ap-southeast.oss-ap-southeast-1.aliyuncs.com/cloud_ap-southeast-
     1.  In the left-side navigation pane, choose **Maintenance & Monitoring** \> **ECS Cloud Assistant**.
     2.  On the **Cloud Assistant** page, click the Commands tab, select **Command Name** in the search box, enter `InstallJavaAgent`, and press the Enter key.
 
+        ![Cloud Assistant-commands](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3565278061/p43214.png)
+
         **Note:** If no result is returned for the search, contact the DingTalk account `arms160804`.
 
     3.  On the **Cloud Assistant** page, click the **Command Execution Result** tab and enter the ID of the `InstallJavaAgent`. In the search results, click **View** in the **Actions** column corresponding to the command and check whether the `command` is successfully executed. If the command is not successfully executed, troubleshoot the errors based on the execution results. For example, if the problems occur because the disk of the ECS instance is full or the ARMS agent is not installed, you can clear the disk or install the ARMS agent. If the errors cannot be resolved, send the execution results to the DingTalk account `arms160804` for support.
@@ -356,6 +358,8 @@ You can check the version of the ARMS agent by viewing the Version file in the d
     -   <LicenseKey\>: the license key of the application monitored by ARMS, which can be obtained from the ARMS console.
 
 If the standard output shown in the following figure is displayed, it indicates that the application name is modified.
+
+![Name Change Success](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3565278061/p57403.png)
 
 [\[Back to the top\]](#sc_toc)
 
