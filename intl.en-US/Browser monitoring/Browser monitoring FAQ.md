@@ -9,7 +9,6 @@ This topic provides answers to commonly asked questions about browser monitoring
 -   [TraceId is not found in the API logs, and as a result, the system cannot redirect me to the application monitoring page. Why?](#section_wxb_s5c_b6a)
 -   [Why is the Source Map file error displayed when I am troubleshooting JS errors?](#section_aqp_vqy_svi)
 -   [What are the differences between console setting and SetConfig?](#section_9i9_3y6_bdo)
--   [\#section\_h09\_obl\_u88](#section_h09_obl_u88)
 -   [How do I configure the environment and version in an SDK?](#section_qrc_oud_6hf)
 -   [How do I view the version number of the configuration?](#section_gi2_19f_0ez)
 -   [How do I view the time on page \(TP\) of a user for a page?](#section_ad7_a2u_1q5)
