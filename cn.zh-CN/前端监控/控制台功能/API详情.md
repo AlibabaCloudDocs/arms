@@ -4,8 +4,6 @@ API详情页提供指定时间段内应用中所有API请求的成功率、平�
 
 ## 功能入口
 
-
-
 1.  登录[ARMS控制台](https://arms.console.aliyun.com/#/home)。
 2.  在左侧导航栏单击**前端监控**。
 3.  在**前端监控**页面的应用列表中单击目标应用。
@@ -20,7 +18,7 @@ API详情页提供指定时间段内应用中所有API请求的成功率、平�
 
 通过设置不同维度的筛选条件，查看相应的API信息。可筛选的维度包括**API**、**返回信息**、**HTTP状态码**、**页面**、**地域**、**操作系统**、**域名**、**网络制式**、**设备**、**浏览器**。
 
-将鼠标悬浮于一个筛选框中，单击右侧的![delete](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/3267633061/p175853.png)，可删除该条件的选择。单击最右侧的重置，可清除所有筛选条件。
+将鼠标悬浮于一个筛选框中，单击右侧的![delete](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/1923758061/p175853.png)，可删除该条件的选择。单击最右侧的重置，可清除所有筛选条件。
 
 ![API details filter](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/2228683061/p111568.png)
 
@@ -70,8 +68,8 @@ API详情页提供指定时间段内应用中所有API请求的成功率、平�
 
 ![API ask](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/1620404061/p177860.png)
 
--   单击列表首行中的属性右侧的图标，可对列表进行排序。
--   将鼠标悬浮于**API**列的API别名上，单击![edit](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/1397593061/p177320.png)图标，可以修改API别名，修改后，所有API将会以别名展示。单击**设置为搜索值**，可以将该API设置为筛选项。
+-   单击列表首行中的属性右侧的![icon_up_down](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/7034078061/p204946.png)图标，可对列表进行排序。
+-   将鼠标悬浮于**API**列的API别名上，单击![edit](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/2923758061/p177320.png)图标，可以修改API别名，修改后，所有API将会以别名展示。单击**设置为搜索值**，可以将该API设置为筛选项。
 -   单击**错误次数**列的数字，可以查看指定时间段内错误详情和错误分布情况。 在请求详情区域，单击**查看调用链**，可以查看错误请求的调用链路和业务轨迹。单击**查看会话**，可以查看错误请求的会话追踪详情。
 
     ![error details](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/2828607061/p111587.png)
@@ -95,7 +93,7 @@ API详情页提供指定时间段内应用中所有API请求的成功率、平�
 
 ![reback](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/1397593061/p177186.png)
 
--   单击列表首行中的属性右侧的图标，可对列表进行排序。
+-   单击列表首行中的属性右侧的![icon_up_down](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/7034078061/p204946.png)图标，可对列表进行排序。
 -   将鼠标悬浮于**返回信息**列的返回信息上，单击**设置为搜索值**，可以将该返回信息设置为筛选项。
 -   单击**缓慢次数**列的数字，显示指定时间段内缓慢请求详情和缓慢请求分布情况。 在请求详情区域，单击**查看调用链**，可以查看缓慢请求的调用链路和业务轨迹。单击**查看会话**，可以查看缓慢请求的会话追踪详情。
 
@@ -116,7 +114,7 @@ API详情页提供指定时间段内应用中所有API请求的成功率、平�
 
 ![HTTP](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/1397593061/p177332.png)
 
--   单击列表首行中的属性右侧的图标，可对列表进行排序。
+-   单击列表首行中的属性右侧的![icon_up_down](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/7034078061/p204946.png)图标，可对列表进行排序。
 -   将鼠标悬浮于**HTTP状态码**列的HTTP状态码上，单击**设置为搜索值**，可以将该HTTP状态码设置为筛选项。
 -   单击**缓慢次数**列的数字，显示指定时间段内缓慢请求详情和缓慢请求分布情况。 在请求详情区域，单击**查看调用链**，可以查看缓慢请求的调用链路和业务轨迹。单击**查看会话**，可以查看缓慢请求的会话追踪详情。
 
