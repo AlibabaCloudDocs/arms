@@ -112,9 +112,14 @@ Select **Responses** in the section ③ to view all response information of each
 
 Select an **HTTP Status Code** in section ③ to view all HTTP status codes.
 
+![HTTP](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0860978061/p177332.png)
+
 -   Click the![icon_up_down](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1654078061/p204946.png) icon to the right of a property in the first row of the list to sort the APIs.
 -   Move the pointer over an HTTP status code in the **HTTP Status Code** column. Click **Set To Search Value** to set the HTTP status code to a filter.
 -   Click a number in the **Slow Responses** column to display the details and distribution of slow responses within a specified period of time. In the Request Details section, click **Show Invocation Trace** to view the call and business traces of slow responses. Click **View Session** to view the session trace of slow responses.
+
+    ![Slow times](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8979878061/p177282.png)
+
 -   Click **Analyze** in the **Operation** column to view the API details, API error details, API slow loading details, and distribution.
     -   On the API details page, you can view the API success rate and request details. In the Request Details section, click **Show Invocation Trace** to view the call and business traces of the API. Click **View Session**, you can view the session trace of the API.
     -   On the API Error Details page, you can view the distribution of the error number and request details.
@@ -129,4 +134,6 @@ Select **Distribution** in the section ③. You can view the return message, HTT
 
 -   Versions numbers can be displayed only by OS or browser.
 -   The pie chart of OS, browser, device, and connection type displays only the dimensional distribution of the first five items. You can click Toggle View in the upper-right corner of each section to view the proportion of all filters in this dimension.
+
+![distributed](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0860978061/p177360.png)
 
