@@ -1,6 +1,6 @@
 # API details
 
-The API Details page of Application Real-Time Monitoring Service \(ARMS\) Browser Monitoring shows the success rate of all API requests, average response time \(RT\) of successful calls, average RT of failed calls, number of slow responses, and number of errors in a specified period. This page also shows statistics for API requests initiated in five dimensions such as regions, domain names, and networks.
+The API details page of Application Real-Time Monitoring Service \(ARMS\) Browser Monitoring shows the success rate of all API requests, average response time \(RT\) of successful calls, average RT of failed calls, number of slow responses, and number of errors in a specified period. This page also shows statistics for API requests initiated in five dimensions such as regions, domain names, and networks.
 
 ## Portal
 
