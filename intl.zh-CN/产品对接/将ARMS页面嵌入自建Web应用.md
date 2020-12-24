@@ -102,7 +102,7 @@ String roleArn = "<roleArn>"; //准备工作中创建的RAM角色的标识ARN
 
 2.  在左侧导航栏单击**RAM角色管理**。
 
-3.  在RAM角色管理页面下方的RAM角色列表中，单击[创建RAM角色并添加权限](https://help.aliyun.com/document_detail/128573.html?spm=a2c4g.11186623.6.795.42c2a4caouQMwr#d7e1355)步骤创建的RAM角色名称。
+3.  在RAM角色管理页面下方的RAM角色列表中，单击[创建RAM角色并添加权限](https://www.alibabacloud.com/help/zh/doc-detail/128573.htm?spm=a2o1z.12531199.0.0.13477e2c01mvaw#d7e1352)步骤创建的RAM角色名称。
 
 4.  在RAM角色详情页面的**基本信息**区域复制**ARN**信息。
 
