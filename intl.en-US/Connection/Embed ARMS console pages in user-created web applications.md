@@ -104,9 +104,11 @@ After obtaining the temporary AccessKey and Token through the STS AssumeRole int
 Sample request:
 
 ```
-
-     http://signin.aliyun.com/federation?Action=GetSigninToken &AccessKeyId= <STS返回的临时AccessKeyId> &AccessKeySecret= <STS返回的临时AccessKeySecret> &SecurityToken= <STS返回的安全Token> &TicketType=mini 
-   
+http://signin.aliyun.com/federation?Action=GetSigninToken
+    &AccessKeyId=<Temporary AccessKeyId returned by TS>
+    &AccessKeySecret=<Temporary AccessKeySecret returned by STS>
+    &SecurityToken=<Temporary Token returned by STS>
+    &TicketType=mini
 ```
 
 ## Step 3: Generate a logon-free URL
