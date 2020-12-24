@@ -21,6 +21,8 @@ On the Alert Policies page, the alert rules that you created in Application Moni
     -   To start a stopped alert rule, click **Start** in the Actions column. In the OK dialog box, click **Start**.
     -   To stop a running alert rule, click **Stop** in the Actions column. In the Stop dialog box, click **OK**.
     -   To view the alert event history and alert sending history, click the **Alert History** tab. You can then click the **Alert Event History** and **Alarm Post History** tabs to view the history.
+    ![Alarm History](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7913978061/p43290.png)
+
 
 ## Query the alert history
 
@@ -42,7 +44,7 @@ On the **Alert History** tab, you can view historical records that indicate when
 
 [Create ARMS alerts](/intl.en-US/Quick start/Create ARMS alerts.md)
 
-[Create a contact](/intl.en-US/Dashboard and alerting/Create contacts.md)
+[Create contacts](/intl.en-US/Dashboard and alerting/Create contacts.md)
 
 [Create a contact group](/intl.en-US/Dashboard and alerting/Create a contact group.md)
 
