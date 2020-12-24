@@ -71,7 +71,7 @@ This topic lists the terms of Application Real-Time Monitoring Service \(ARMS\).
 
 -   **Custom monitoring job**
 
-    A custom monitoring job is a process in which ARMS captures, processes, and stores data, and then presents and exports the results. Custom monitoring jobs are divided into the following categories:
+    A custom monitoring job is a process in which ARMS captures, processes, and stores data, and then presents and exports the results.
 
 
 [\[Back to the top\]](#top)
