@@ -4,7 +4,7 @@ The API details page of Application Real-Time Monitoring Service \(ARMS\) Browse
 
 ## Portal
 
-1.  Log on to the[ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 2.  In the left-side navigation pane, click **Browser Monitoring**.
 3.  On the **Browser Monitoring** page, click the name of the required application.
 4.  In the left-side navigation pane, choose **Application** \> **API Details** to go to the API Details page.
@@ -91,19 +91,22 @@ Select **API Requests** in the section ③ to view the requests of each API with
 
 Select **Responses** in the section ③ to view all response information of each API.
 
-![reback](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1071378061/p177186.png)
+![reback](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8979878061/p177186.png)
 
 -   Click the![icon_up_down](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1654078061/p204946.png) icon to the right of a property in the first row of the list to sort the APIs.
 -   Move the pointer over a response in the **Responses** column. Click **Set To Search Value** to set the response to a filter.
 -   Click a number in the **Slow Responses** column to display the details and distribution of slow responses within a specified period of time. In the Request Details section, click **Show Invocation Trace** to view the call and business traces of slow responses. Click **View Session** to view the session trace of slow responses.
 
-    ![Slow times](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1071378061/p177282.png)
+    ![Slow times](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8979878061/p177282.png)
 
 -   Click **Analyze** in the **Operation** column to view the API details, API error details, API slow loading details, and distribution.
     -   On the API details page, you can view the API success rate and request details. In the Request Details section, click **Show Invocation Trace** to view the call and business traces of the API. Click **View Session**, you can view the session trace of the API.
     -   On the API Error Details page, you can view the distribution of the error number and request details.
     -   On the API Slow Loading Details page, you can view the response time distribution and network request information.
     -   On the Distribution page, you can view the return message, HTTP status code, page, domain name, and geography. You can also view the proportions of the OS, browser, device, and connection type.
+
+        ![distributed](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9979878061/p177958.png)
+
 
 ## HTTP status code
 
