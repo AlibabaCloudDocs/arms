@@ -34,7 +34,7 @@ Queries alert contact groups.
 |Phone|String|1381111\*\*\*\*\*|The phone number of the alert contact. |
 |SystemNoc|Boolean|false|Specifies whether to receive system notifications. Valid values:
 
- -   true: System notifications are received.
+-   true: System notifications are received.
 -   false: System notifications are not received. |
 |UpdateTime|Long|1580258717000|The timestamp when the alert contact group was updated. |
 |UserId|String|113197164949\*\*\*\*|The ID of the user. |
@@ -49,20 +49,24 @@ Sample requests
 
 ```
 http(s)://[Endpoint]/? Action=SearchAlertContactGroup
-
+            
 ```
 
 正常返回示例
 
-`XML` 格式
+`XML` format
 
 ```
-<SearchAlertContactGroupResponse> 	  <ContactGroups> 		    <ContactGroupId>746</ContactGroupId> 		    <ContactGroupName>TestGroup</ContactGroupName> 		    <UserId>113197164949****</UserId> 		    <CreateTime>1529668855000</CreateTime> 		    <UpdateTime>1529668855000</UpdateTime> 	  </ContactGroups> 	  <ContactGroups> 		    <ContactGroupId>747</ContactGroupId> 		    <ContactGroupName>TestGroup2</ContactGroupName> 		    <UserId>113197164949****</UserId> 		    <CreateTime>1595383179000</CreateTime> 		    <UpdateTime>1595383179000</UpdateTime> 	  </ContactGroups> 	  <RequestId>4D6C358A-A58B-4F4B-94CE-F5AAF023****</RequestId> </SearchAlertContactGroupResponse>
+<SearchAlertContactGroupResponse>       <ContactGroups>             <ContactGroupId>746</ContactGroupId>             <ContactGroupName>TestGroup</ContactGroupName>             <UserId>113197164949****</UserId>             <CreateTime>1529668855000</CreateTime>             <UpdateTime>1529668855000</UpdateTime>       </ContactGroups>       <ContactGroups>             <ContactGroupId>747</ContactGroupId>             <ContactGroupName>TestGroup2</ContactGroupName>             <UserId>113197164949****</UserId>             <CreateTime>1595383179000</CreateTime>             <UpdateTime>1595383179000</UpdateTime>       </ContactGroups>       <RequestId>4D6C358A-A58B-4F4B-94CE-F5AAF023****</RequestId> </SearchAlertContactGroupResponse>
 ```
 
-`JSON` 格式
+`JSON` format
 
 ```
-{ 	"ContactGroups": [ 		{ 			"ContactGroupId": 746, 			"ContactGroupName": "TestGroup", 			"UserId": "113197164949****", 			"CreateTime": 1529668855000, 			"UpdateTime": 1529668855000 		}, 		{ 			"ContactGroupId": 747, 			"ContactGroupName": "TestGroup2", 			"UserId": "113197164949****", 			"CreateTime": 1595383179000, 			"UpdateTime": 1595383179000 		} 	], 	"RequestId": "4D6C358A-A58B-4F4B-94CE-F5AAF023****" }
+{     "ContactGroups": [         {             "ContactGroupId": 746,             "ContactGroupName": "TestGroup",             "UserId": "113197164949****",             "CreateTime": 1529668855000,             "UpdateTime": 1529668855000         },         {             "ContactGroupId": 747,             "ContactGroupName": "TestGroup2",             "UserId": "113197164949****",             "CreateTime": 1595383179000,             "UpdateTime": 1595383179000         }     ],     "RequestId": "4D6C358A-A58B-4F4B-94CE-F5AAF023****" }
 ```
+
+## Error codes
+
+The operation returns only common errors. For more information about errors that are common to all operations, see [API Error Center](https://error-center.alibabacloud.com/status/product/ARMS).
 
