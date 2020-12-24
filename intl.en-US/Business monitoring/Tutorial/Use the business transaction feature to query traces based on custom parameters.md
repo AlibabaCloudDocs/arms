@@ -86,7 +86,7 @@ After you configure extraction rules for custom parameters, you can query traces
         -   SQL: the SQL statement used to call the database.
         -   Exception: the error information.
     -   Timeline \(ms\): the time distribution of each method call of the local trace. |
-    |Thread Profiling|The statistics on the CPU time consumption per thread and the number of each type of threads. For more information, see [Thread profiling](/intl.en-US/Application monitoring/Features provided by the console/Application diagnosis/Thread profiling.md).|
+    |Thread Profiling|The statistics on the CPU time consumption per thread and the number of each type of threads. For more information, see [Thread profiling](/intl.en-US/Application monitoring/Console functions/Application diagnosis/Thread profiling.md).|
     |Timeline \(ms\)|The time consumption of each inter-service trace and its distribution relative to that of the entire trace.|
 
 
