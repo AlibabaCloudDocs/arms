@@ -347,15 +347,15 @@ http(s)://[Endpoint]/? Action=QueryMetricByPage
             
 ```
 
-正常返回示例
+Sample success responses
 
-`XML` 格式
+`XML` format
 
 ```
 <QueryMetricByPageResponse>       <RequestId>626037F5-FDEB-45B0-804C-B3C92797****</RequestId>       <Message>message</Message>       <Data>             <PageSize>10</PageSize>             <Total>0</Total>             <Page>1</Page>             <Items>[]</Items>       </Data>       <Code>200</Code>       <Success>true</Success> </QueryMetricByPageResponse>
 ```
 
-`JSON` 格式
+`JSON` format
 
 ```
 {     "RequestId": "626037F5-FDEB-45B0-804C-B3C92797****",     "Message": "message",     "Data": {         "PageSize": 10,         "Total": 0,         "Page": 1,         "Items": "[]"     },     "Code": 200,     "Success": true }
