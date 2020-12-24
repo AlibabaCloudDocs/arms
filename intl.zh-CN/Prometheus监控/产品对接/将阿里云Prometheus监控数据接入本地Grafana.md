@@ -13,13 +13,15 @@ keyword: [Prometheus, Grafana, 本地]
 
 该专用API接口是连接Prometheus和本地Grafana的纽带。请按照以下步骤获取该接口：
 
-1.  登录[Prometheus控制台](https://prometheus.console.aliyun.com/#/home)。
+1.  登录[ARMS控制台](https://arms-ap-southeast-1.console.aliyun.com/#/home)。
 
-2.  在**Prometheus监控**页面左上角选择容器服务K8s集群所在的地域，并在目标集群右侧的**操作**列单击**设置**。
+2.  在左侧导航栏单击**Prometheus监控**。
 
-3.  在**设置**页面顶部单击**Agent设置**。
+3.  在**Prometheus监控**页面左上角选择容器服务K8s集群所在的地域，并在目标集群右侧的**操作**列单击**设置**。
 
-4.  在**Agent设置**页签上，复制**步骤2：API接口地址**后的地址。
+4.  在**设置**页面顶部单击**Agent设置**。
+
+5.  在**Agent设置**页签上，复制**步骤2：API接口地址**后的地址。
 
     ![pg_pm_settings_tab_agent_settings](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/4584298951/p103094.png)
 
