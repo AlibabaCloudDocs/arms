@@ -52,7 +52,7 @@ http(s)://[Endpoint]/? Action=SearchAlertContactGroup
             
 ```
 
-正常返回示例
+Sample success responses
 
 `XML` format
 
