@@ -160,7 +160,5 @@ wget "http://arms-apm-gov.oss-cn-north-2-gov-1-internal.aliyuncs.com/arms-php-ag
 **相关文档**  
 
 
-[准备工作概述](/intl.zh-CN/应用监控/准备工作概述.md)
-
 [为普通PHP应用安装探针](/intl.zh-CN/应用监控/开始监控 PHP 应用/为普通PHP应用安装探针.md)
 
