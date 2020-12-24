@@ -261,7 +261,10 @@ Example of setConfig\(\): Modify the disableHook value to disable automatic API 
 
 ```
 __bl.setConfig({
-    disableHook: true
+    disableHook: true,
+    setUserGroup:function () {
+        return 'YourUserGroup'
+    }
 });            
 ```
 
