@@ -57,6 +57,14 @@ ARMS前端监控提供一系列SDK配置项，让您能够通过设置参数来�
 |-   Weex场景：无
 -   其他场景：由SDK自动生成 |
 
+示例：调用setConfig方法修改SDK配置项。
+
+```
+__bl.setConfig({
+    uid: 12345
+});        
+```
+
 [\[回到顶部\]](#sc_index)
 
 ## tag
@@ -85,10 +93,9 @@ ARMS前端监控提供一系列SDK配置项，让您能够通过设置参数来�
 
 **说明：** 若页面加载初期暂时无法获取用户名，则可设置返回Null，但不要设置返回一个临时用户名。因为SDK发送日志时会再次调用setUsername方法获取用户名，如果之前设置了返回临时用户名，则会一直沿用最初设置的用户名，不再重新获取。
 
-示例：
+示例：调用setConfig方法修改SDK配置项。
 
 ```
-// 调用setConfig方法修改SDK配置项。
 __bl.setConfig({
     setUsername: function () {
         return "username_xxx";
