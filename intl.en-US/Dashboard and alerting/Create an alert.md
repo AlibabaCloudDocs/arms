@@ -2,7 +2,7 @@
 
 By creating alerts, you can set alert rules for specific monitored objects. When a rule is triggered, the system sends an alert notification to the specified contact group in the specified alerting mode. This reminds you to take necessary actions to solve the problem.
 
--   A monitoring job is created. For more information, see [Create an application monitoring job](/intl.en-US/Quick start/Create an application monitoring job.md) and [Create a custom monitoring job](/intl.en-US/Quick start/Create a custom monitoring job.md).
+-   A monitoring job is created. For more information, see [Create an application monitoring job](/intl.en-US/Quick start/Create an application monitoring job.md) and [Create a custom monitoring job]().
 -   Contacts are created. Only contact groups can be set for the notification receiver of an alert.
 
 Default behaviors of alert notifications:
