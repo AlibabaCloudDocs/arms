@@ -100,7 +100,7 @@ Alibaba Cloud Prometheus Service provides the RemoteWrite feature. You can use t
         "net/http"
         "time"
     
-        _ "net/http/pprof" // Troubleshoot issues. shichun.fsc 20190712
+        _ "net/http/pprof"
     )
     
     func InitMeter(app string, push bool) error {
