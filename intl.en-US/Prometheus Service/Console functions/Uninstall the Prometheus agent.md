@@ -10,7 +10,7 @@ To disable Prometheus monitoring for a Kubernetes cluster, you can perform the f
 
     After you uninstall the agent, no dashboard is displayed in the **Installed Dashboards** column. Then, you must go to the Container Service for Kubernetes \(ACK\) console to check whether the uninstallation is successful.
 
-3.  Log on to the [ACK console](https://cs.console.aliyun.com).
+3.  Log on to the [Container Service for Kubernetes \(ACK\) console](https://cs.console.aliyun.com).
 
 4.  In the left-side navigation pane, click **Clusters**, and then click the name of the cluster that you want to stop monitoring.
 
