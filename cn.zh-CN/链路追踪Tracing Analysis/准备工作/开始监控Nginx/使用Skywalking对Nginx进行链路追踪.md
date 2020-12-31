@@ -1,10 +1,10 @@
 # 使用Skywalking对Nginx进行链路追踪
 
-在使用链路追踪控制台追踪Nginx的链路数据之前，需要将链路数据上报至链路追踪服务台。本文介绍如何通过Nginx LUA module上报Nginx的链路追踪数据。
+在使用链路追踪控制台追踪Nginx的链路数据之前，需要将链路数据上报至链路追踪服务台。本文介绍如何通过SkyWalking Nginx LUA module上报Nginx的链路追踪数据。
 
 SkyWalking是一款广受欢迎的国产应用性能监控APM（Application Performance Monitoring）产品，主要针对微服务、Cloud Native和容器化（Docker、Kubernetes、Mesos）架构的应用。SkyWalking的核心是一个分布式追踪系统，且目前是Apache基金会的顶级项目。
 
-要通过SkyWalking将Java应用数据上报至链路追踪控制台，首先需要完成埋点工作。SkyWalking既支持自动探针（Dubbo、gRPC、JDBC、OkHttp、Spring、Tomcat、Struts、Jedis等），也支持手动埋点（OpenTracing）。本文介绍自动埋点方法。
+要通过SkyWalking将Java应用数据上报至链路追踪控制台，首先需要完成埋点工作。SkyWalking既支持自动埋点（Dubbo、gRPC、JDBC、OkHttp、Spring、Tomcat、Struts、Jedis等），也支持手动埋点（OpenTracing）。本文介绍自动埋点方法。
 
 ## 准备工作
 
@@ -14,16 +14,18 @@ SkyWalking是一款广受欢迎的国产应用性能监控APM（Application Perf
 
 3.  在集群配置页面上单击**接入点信息**页签，在集群信息区域打开**显示Token**开关。
 
-4.  在客户端采集工具区域单击**Skywalking**。
+4.  在客户端采集工具区域单击**SkyWalking**。
 
 5.  在下方表格的相关信息列中，单击接入点信息末尾的复制图标。
 
-    ![Skywalking接入点信息](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/0500329061/p207267.png)
+    ![Skywalking接入点信息](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/6357049061/p207267.png)
 
-    **说明：** 如果应用部署于阿里云生产环境，则选择私网接入点，否则选择公网接入点。
+    **说明：** 如果应用部署于阿里云生产环境，则选择阿里云vpc网络接入点，否则选择公网接入点。
 
 
-## 快速开始
+## 通过Docker镜像快速配置skywalking-nginx-lua
+
+使用打包好的Docker配置skywalking-nginx-lua。
 
 1.  从Registry中拉取镜像。
 
@@ -47,26 +49,26 @@ SkyWalking是一款广受欢迎的国产应用性能监控APM（Application Perf
 
 3.  访问Nginx页面。
 
-    在浏览器上访问`localhost/nginx.conf`或者`curl "localhost/nginx.conf`"。
+    -   在浏览器上访问`localhost/nginx.conf`。
+    -   执行命令`curl "localhost/nginx.conf"`。
 
-4.  查看Nginx链路数据。
+## 通过Dockerfile配置skywalking-nginx-lua
 
-    登录[链路追踪Tracing Analysis控制台](https://tracing.console.aliyun.com/)可以查看应用SkyNginx的链路数据。
-
-
-## 在Docker上配置skywalking-nginx-lua
-
-1.  下载Dockerfile并编译部署。
+1.  下载Dockerfile。
 
     ```
     wget https://arms-apm.oss-cn-hangzhou.aliyuncs.com/demo/nginx-skywalking-docker.tgz
     tar -xzvf nginx-skywalking-docker.tgz
     cd nginx-lua
-    // 编译Docker
+    ```
+
+2.  编译Docker。
+
+    ```
     docker build --rm --tag skywalking-nginx-lua:0.2 .
     ```
 
-2.  运行Docker。
+3.  运行Docker。
 
     ```
     docker run --rm  -p 80:80 -e "BACKEND_URL=$skywalking-nginx-lua"  -d skywalking-nginx-lua:0.2
@@ -80,14 +82,10 @@ SkyWalking是一款广受欢迎的国产应用性能监控APM（Application Perf
     docker run --rm  -p 80:80 -e "BACKEND_URL=http://tracing-analysis-dc-hz.aliyuncs.com/adapt_123@abc_456@efg"  -d skywalking-nginx-lua:0.2
     ```
 
-3.  访问Nginx页面。
+4.  访问Nginx页面。
 
-    在浏览器上访问localhost/nginx.conf或者curl "localhost/nginx.conf"。
-
-4.  查看Nginx链路数据。
-
-    登录[链路追踪Tracing Analysis控制台](https://tracing.console.aliyun.com/)可以查看应用SkyNginx的链路数据。
-
+    -   在浏览器上访问`localhost/nginx.conf`。
+    -   执行命令`curl "localhost/nginx.conf"`。
 
 ## 在ECS上配置skywalking-nginx-lua
 
@@ -129,7 +127,6 @@ SkyWalking是一款广受欢迎的国产应用性能监控APM（Application Perf
         ```
         export LUA_HOME=/data/software/lua_install/lua_5.3.5
         export LUALOCKS_HOME=/data/software/lua_install/luarocks_2.2.2
-        ​
         PATH=$PATH:$HOME/bin:$LUALOCKS_HOME/bin:$LUA_HOME/bin
         export PATH
         export LUA_PATH="$LUALOCKS_HOME/share/lua/5.3/?.lua;?.lua;;"
@@ -166,7 +163,6 @@ SkyWalking是一款广受欢迎的国产应用性能监控APM（Application Perf
     tar -zxvf openresty-1.15.8.1rc2.tar.gz
     cd openresty-1.15.8.1rc2
     ./configure --prefix=/usr/local/openresty/ --with-http_stub_status_module --with-luajit --without-http_redis2_module --with-http_iconv_module --with-http_postgres_module --with-stream && gmake && gmake install
-    
     export PATH=/usr/local/openresty/nginx/sbin:$PATH
     ```
 
@@ -180,7 +176,7 @@ SkyWalking是一款广受欢迎的国产应用性能监控APM（Application Perf
         tar -xzvf skywalking-nginx-lua-0.3.0-src.tgz
         ```
 
-    2.  修改nginx.conf文件中lua\_package\_path和startBackendTimer。
+    2.  修改nginx.conf文件中的lua\_package\_path和startBackendTimer。
 
         例如：
 
