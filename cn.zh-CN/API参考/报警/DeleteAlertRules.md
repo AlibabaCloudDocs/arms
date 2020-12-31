@@ -13,8 +13,9 @@
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
 |Action|String|是|DeleteAlertRules|系统规定参数，取值为`DeleteAlertRules`。 |
-|AlertIds|String|是|\[123, 234\]|要删除的报警规则ID列表。格式为JSONArray，例如：`[123, 234]`。可调用SearchAlertRules接口获取报警规则ID（对应返回参数中的`Id`），详情请参见[SearchAlertRules](175825.htm?#h2-url-2)。 |
+|AlertIds|String|是|\[123, 234\]|要删除的报警规则ID列表。格式为JSONArray，例如：`[123, 234]`。可调用SearchAlertRules接口获取报警规则ID（对应返回参数中的`Id`），详情请参见[SearchAlertRules](~~175825~~)。 |
 |RegionId|String|是|cn-hangzhou|地域ID。默认为`cn-hangzhou`。 |
+|ProxyUserId|String|否|123412\*\*|内部参数。 |
 
 ## 返回数据
 
