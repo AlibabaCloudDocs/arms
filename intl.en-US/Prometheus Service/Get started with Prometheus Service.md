@@ -11,11 +11,11 @@ You can enable ARMS Prometheus monitoring by using the following three methods:
 
 **Configure cluster parameters.**
 
-1.  Log on to the [ACK console](https://cs.console.aliyun.com).
+1.  Log on to the [Container Service for Kubernetes \(ACK\) console](https://cs.console.aliyun.com).
 
 2.  In the left-side navigation pane, click **Clusters**.
 
-3.  On the Clusters page, click **Create Kubernetes Cluster** in the upper-right corner of the page.
+3.  In the upper-right corner of the Clusters page, click **Create Kubernetes cluster**.
 
 4.  Select the cluster template that you want to use and configure parameters for the new cluster. On the **Component Configurations**page, select **Enable Prometheus Monitoring**.
 
@@ -28,11 +28,11 @@ You can enable ARMS Prometheus monitoring by using the following three methods:
 
 **Enable the feature on the Prometheus Monitoring page in the ACK console.**
 
-1.  Log on to the [ACK console](https://cs.console.aliyun.com).
+1.  Log on to the [Container Service for Kubernetes \(ACK\) console](https://cs.console.aliyun.com).
 
 2.  In the left-side navigation pane, click **Clusters**.
 
-3.  On the Clusters page, click the name of a cluster or click **Details** in the **Actions** column. The details page of the cluster appears.
+3.  On the Clusters page, find the cluster that you want to manage and click **Details** in the **Actions** column.
 
 4.  In the left-side navigation pane of the cluster management page, choose **Operations** \> **Prometheus Monitoring**.
 
@@ -41,7 +41,7 @@ You can enable ARMS Prometheus monitoring by using the following three methods:
 
 **Enable the feature on the App Catalog page in the ACK console.**
 
-1.  Log on to the [ACK console](https://cs.console.aliyun.com).
+1.  Log on to the [Container Service for Kubernetes \(ACK\) console](https://cs.console.aliyun.com).
 
 2.  In the left-side navigation pane, choose **Marketplace** \> **App Catalog**.
 
@@ -79,7 +79,7 @@ To disable Prometheus monitoring for the ACK cluster, perform the following step
 
     After you uninstall the agent, the dashboards are no longer displayed in the **Installed Dashboards** column. Go to the Container Service for Kubernetes console to check whether the uninstallation is successful.
 
-4.  Log on to the [ACK console](https://cs.console.aliyun.com).
+4.  Log on to the [Container Service for Kubernetes \(ACK\) console](https://cs.console.aliyun.com).
 
 5.  In the left-side navigation pane, click **Clusters**, and then click the name of the cluster for which you want to disable Prometheus monitoring.
 
