@@ -1,10 +1,10 @@
 # Get started with Tracing Analysis
 
-This topic uses a Java application as an example to describe how to connect the Java application to tracing analysis, from activating tracing analysis, granting necessary permissions on ECS instances, and connecting the application to tracing analysis, helping you quickly get started with tracing analysis.
+This topic shows you how to activate Tracing Analysis and dependent services, grant permissions, and report application data to Tracing Analysis. This helps you get started with Tracing Analysis. In the example demonstrated in this topic, a Java application is used.
 
--   Enable link tracking
--   Activate log service
--   Activate access control
+-   Tracing Analysis is activated.
+-   Log Service is activated.
+-   Resource Access Management \(RAM\) is activated.
 
 ## Authorize Tracinng Analysis to read and write your log service data
 
@@ -17,11 +17,11 @@ This topic uses a Java application as an example to describe how to connect the 
     ![Accessing Log Role](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1436676951/p53825.png)
 
 
-## Use the Jaeger client to report Java application data
+## Use Jaeger to report data of a Java application
 
-This topic describes how to use the Jaeger client to report data to a Java application as an example. For more information about how to use other clients to report data and applications using other languages, see the documentation at the end of this topic.
+In the following example, Jaeger is used to report data of a Java application. For more information about how to use other clients to report data and how to report data of applications that are developed in other languages, see the references at the end of this topic.
 
-1.  [Download the Demo project](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/demo/jaegerTracingDemo.zip), go to the manualDemo directory, and run the program following the instructions in Readme.
+1.  Download the [demo project](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/demo/jaegerTracingDemo.zip). Go to the manualDemo directory and run the program as instructed in the README.md file.
 
 2.  Open the pom. xml file and add the dependency on the Jaeger client.
 
@@ -33,16 +33,21 @@ This topic describes how to use the Jaeger client to report data to a Java appli
     </dependency>
     ```
 
-3.  Configure initialization parameters and create a Tracer object.
+3.  Set initialization parameters and create a tracer.
 
-    A Tracer object can be used to create spans to record distributed operation times, transparently transmit data across machines using the Extract/Inject method, or set the current Span. The Tracer object is also configured with data such as the gateway address, local IP address, sample rate, and service name. You can adjust the sample rate to reduce the overhead due to upstream data.
+    A tracer can be used to create spans to record distributed operation time, transmit data across servers in pass-through mode by using the Extract or Inject method, or set the current span. The tracer also contains data such as the endpoint used for data reporting, local IP address, sample rate, and service name. You can adjust the sample rate to reduce the overhead that is caused by data reporting.
 
-    **Note:** I should be grateful if you would have `<endpoint>`replaces the link trace console cluster setup page of the respective client and region of the access point.
+    **Note:** Replace `<endpoint>` with the endpoint for your client and region. You can log on to the Tracing Analysis console and obtain the endpoint on the Access point information tab of the Cluster Configurations page.
 
     ```
-    
-            // Replace manualDemo with the name of your application io.jaegertracing.Configuration config = new io.jaegertracing.Configuration("manualDemo"); io.jaegertracing.Configuration.SenderConfiguration sender = new io.jaegertracing.Configuration.SenderConfiguration(); // replace manualDemo with the <endpoint> name of the application that is sent by the access point of the corresponding client and region on the overview page of the console. withEndpoint("<endpoint>"); config.withSampler(new io.jaegertracing.Configuration.SamplerConfiguration().withType("const").withParam(1)); config.withReporter(new io.jaegertracing.Configuration.ReporterConfiguration().withSender(sender).withMaxQueueSize(10000)); GlobalTracer.register(config.getTracer()); 
-          
+    // Replace manualDemo with your application name.
+    io.jaegertracing.Configuration config = new io.jaegertracing.Configuration("manualDemo");
+    io.jaegertracing.Configuration.SenderConfiguration sender = new io.jaegertracing.Configuration.SenderConfiguration();
+    // Replace <endpoint> with the endpoint for your client and region. You can log on to the Tracing Analysis console and obtain the endpoint on the Access point information tab of the Cluster Configurations page.
+    sender.withEndpoint("<endpoint>");
+    config.withSampler(new io.jaegertracing.Configuration.SamplerConfiguration().withType("const").withParam(1));
+    config.withReporter(new io.jaegertracing.Configuration.ReporterConfiguration().withSender(sender).withMaxQueueSize(10000));
+    GlobalTracer.register(config.getTracer());
     ```
 
 4.  Record request data.
@@ -58,10 +63,10 @@ This topic describes how to use the Jaeger client to report data to a Java appli
     span.finish();
     ```
 
-5.  After two to three minutes, log on to the . [Tracing Analysis console](https://tracing-sg.console.aliyun.com/). View the reported Tracing data on the applications page.
+5.  Wait for 2 to 3 minutes. Then, log on to the [Tracing Analysis console](https://tracing-sg.console.aliyun.com/) and view the trace data that has been reported on the Applications page.
 
 
-After reporting application data to the tracing analysis console, you can perform the following operations:
+After the application data is reported to Tracing Analysis, you can perform the following operations in the Tracing Analysis console:
 
 -   [View key application performance metrics and topology](/intl.en-US/Console guide/Application management/View key application performance metrics and topology.md)
 -   [View application details](/intl.en-US/Console guide/Application management/View application details.md)
