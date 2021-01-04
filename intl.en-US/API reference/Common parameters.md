@@ -1,32 +1,42 @@
 # Common parameters
 
-This topic lists the common parameters for Application Real-Time Monitoring Service \(ARMS\) API operations and supported regions.
+This topic lists the common parameters of Application Real-Time Monitoring Service \(ARMS\) API operations and ARMS endpoints.
 
-**Note:** The pctowap open platform \(POP\) gateway provides services through the public network. Therefore, to use the API operations, you must be able to access the public network. Otherwise, a service connection failure occurs.
+**Note:** The POP gateway provides services by using the Internet. If you cannot use the Internet, you cannot access the services.
 
 ## Common request parameters
 
 |Parameter|Description|
 |---------|-----------|
-|region|The region of the API gateway. For more information about supported regions, see [Regions supported by ARMS](#section_m38_3x3_jky).|
-|accessKeyId/accessKeySecret|-   If you use an Alibaba Cloud primary account or a RAM user to call an API operation, this parameter is the accessKeyId/accessKeySecret of the Alibaba Cloud primary account or the RAM user.
--   If you use a RAM role to call an API operation, this parameter is the accessKeyId/accessKeySecret in the Security Token Service \(STS\) token that you obtained. For more information, see [Access control overview](https://www.alibabacloud.com/help/doc-detail/74783.htm). |
-|endpoint|The endpoint name must be consistent with the region, for example "cn-hangzhou".|
-|productName|The product name. Set this value to ARMS.|
-|domain|Set this value to arms.\[region\].aliyuncs.com. For example, the region China \(Hangzhou\) is arms.cn-hangzhou.aliyuncs.com.|
+|region|The region of the API gateway. For information about supported regions, see [Endpoints](#section_m38_3x3_jky).|
+|accessKeyId/accessKeySecret|-   If you use an Alibaba Cloud account or a RAM user to call an API operation, this parameter is the AccessKey pair of the account.
+-   If you use a RAM role to call an API operation, this parameter is the AccessKey pair in the Security Token Service \(STS\) token that you obtained. For more information, see [Overview](/intl.en-US/Access control/Overview.md). |
+|endpoint|The ID of the region. The region ID must be consistent with the region that is specified by the region parameter. Example: cn-hangzhou.|
+|productName|The name of the product. Set the value to ARMS.|
+|domain|The endpoint. Example: arms.\[region\].aliyuncs.com. For example, the endpoint of the China \(Hangzhou\) region is arms.cn-hangzhou.aliyuncs.com. For more information, see [Endpoints](#section_m38_3x3_jky).|
 
-## Regions supported by ARMS
+## Endpoints
 
-|Region|ID|
-|------|--|
-|China \(Hangzhou\)|cn-hangzhou|
-|China \(Shanghai\)|cn-shanghai|
-|China \(Qingdao\)|cn-qingdao|
-|China \(Beijing\)|cn-beijing|
-|China \(Shenzhen\)|cn-shenzhen|
-|China \(Zhangjiakou\)|cn-zhangjiakou|
-|China \(Hong Kong\)|cn-hongkong|
-|Singapore|ap-southeast-1|
+To reduce network latency, we recommend that you specify the endpoint based on the region where you initiate API requests. The following table describes the endpoints of the ARMS API.
 
-**Note:** A single IP address can call API operations up to 100 times per second.
+|Region|Endpoint|
+|------|--------|
+|China \(Hangzhou\)|arms.cn-hangzhou.aliyuncs.com|
+|China \(Shanghai\)|arms.cn-shanghai.aliyuncs.com|
+|China \(Qingdao\)|arms.cn-qingdao.aliyuncs.com|
+|China \(Beijing\)|arms.cn-beijing.aliyuncs.com|
+|China \(Shenzhen\)|arms.cn-shenzhen.aliyuncs.com|
+|China \(Zhangjiakou\)|arms.cn-zhangjiakou.aliyuncs.com|
+|China \(Hong Kong\)|arms.cn-hongkong.aliyuncs.com|
+|Singapore \(Singapore\)|arms.ap-southeast-1.aliyuncs.com|
+
+**Note:**
+
+-   A maximum of 100 API requests can be initiated per second for a single IP address.
+-   ARMS provides Internet endpoints. If your ECS instance does not have a public bandwidth package or a public IP address, you cannot initiate API requests by using tools such as Alibaba Cloud CLI or SDKs. For information about how to initiate requests from an ECS instance in a VPC that is not accessible to the Internet, see [Call API operations by using the internal network](/intl.en-US/API reference/Appendix/Call API operations by using the internal network.md).
+
+**Related topics**  
+
+
+[Overview](/intl.en-US/Access control/Overview.md)
 
