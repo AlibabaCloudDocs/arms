@@ -1,18 +1,20 @@
 # Use ARMS Prometheus Monitoring to monitor Go applications
 
-Prometheus Monitoring of Application Real-Time Monitoring Service \(ARMS\) allows you to monitor the running status of Go applications deployed in Alibaba Cloud Container Service Kubernetes clusters, view various monitoring data on the dashboard, and configure monitoring jobs and alerts. This tutorial describes how to expose data by using instrumentation points in Go applications, capture data by using ARMS Prometheus Monitoring, and display data on the ARMS Prometheus Grafana dashboard, to ultimately monitor Go applications with ARMS Prometheus Monitoring.
+Prometheus Monitoring of Application Real-Time Monitoring Service \(ARMS\) allows you to monitor the running status of Go applications deployed in Container Service for Kubernetes clusters, view various monitoring data on a dashboard, and configure alerts. This topic describes how to use ARMS Prometheus Monitoring to monitor a Go application. For monitoring purposes, you must instrument a Go application to expose the data to ARMS Prometheus Monitoring, configure ARMS Prometheus Monitoring to capture data of the Go application, and then customize an ARMS Prometheus Grafana dashboard to display the data.
 
-Ensure that you have completed the following operations:
+Before you begin, make sure that the following requirements are met:
 
--   Download the [demo project](https://github.com/liguozhong/prometheus-arms-aliyun-go-demo)
--   [Create a managed Kubernetes cluster](/intl.en-US/Quick Start/Basic operations/Create a managed Kubernetes cluster.md)
--   [Create an application from a private image repository](/intl.en-US/Quick Start/Advanced operations/Create an application from a private image repository.md)
+-   A demo project is downloaded. Download link: [prometheus-arms-aliyun-go-demo](https://github.com/liguozhong/prometheus-arms-aliyun-go-demo).
+-   A managed ACK cluster is created. For more information, see [Create a managed Kubernetes cluster](/intl.en-US/Quick Start/Basic operations/Create a managed Kubernetes cluster.md).
+-   An application from a private image repository is created. For more information, see [Create an application from a private image repository](/intl.en-US/Quick Start/Advanced operations/Create an application from a private image repository.md).
 
-## Step 1: Expose application data by instrumentation points in Go applications
+The following figure shows the workflow.
 
-Use Prometheus Exporter in Go applications to expose application data.
+![How It Works](../images/p63208.png)
 
-1.  Import the monitoring package to your Go application.
+## Step 1: Instrument a Go application to expose the data to ARMS Prometheus Monitoring
+
+1.  Import the monitoring package to the Go application.
 
     ```
     import (
@@ -23,24 +25,22 @@ Use Prometheus Exporter in Go applications to expose application data.
     )
     ```
 
-2.  Bind the monitoring interface to promhttp.Handler\(\).
+2.  Associate the HTTP endpoint of Prometheus Monitoring with promhttp.Handler\(\).
 
     ```
-    http.Handle(path, promhttp.Handler()) //Initializes an HTTP handler.
+    http.Handle(path, promhttp.Handler()) //Initialize an HTTP handler.
     ```
 
 
-## Step 2: Deploy the application to the Container Service Kubernetes cluster
+## Step 2: Deploy the Go application to a Container Service for Kubernetes \(ACK\) cluster
 
-Deploy the application to the Container Service Kubernetes cluster so that ARMS Prometheus Monitoring can monitor and capture the application data.
-
-1.  Run the following commands in the buildDockerImage.sh file by row:
+1.  Run the following commands in the buildDockerImage.sh file line by line to create a Docker image named promethues-arms-aliyun-go-demo and push the image to Alibaba Cloud Docker Registry:
 
     ```
     mvn clean install -DskipTests
-    docker build -t <name of the local temporary Docker image>:<version of the local temporary Docker image> . --no-cache
-    sudo docker tag <name of the local temporary Docker image>:<version of the local temporary Docker image> <registry domain name>/<namespace>/<image name>:<image version>
-    sudo docker push <registry domain name>/<namespace>/<image name>:<image version>
+    docker build -t <Name of the local temporary Docker image>:<Version of the local temporary Docker image> . --no-cache
+    sudo docker tag <Name of the local temporary Docker image>:<Version of the local temporary Docker image> <Registry domain name>/<Namespace>/<Image name>:<Image version>
+    sudo docker push <Registry domain name>/<Namespace>/<Image name>:<Image version>
     ```
 
     Example:
@@ -48,19 +48,19 @@ Deploy the application to the Container Service Kubernetes cluster so that ARMS 
     ```
     mvn clean install -DskipTests
     docker build -t promethues-arms-aliyun-go-demo:v0.1 . --no-cache
-    sudo docker tag promethues-arms-aliyun-go-demo:v0.1 registry.cn-hangzhou.aliyuncs.com/fuling/prometheus-arms-aliyun-go-demo-amd64:dev-v0.1
-    sudo docker push registry.cn-hangzhou.aliyuncs.com/fuling/promethues-demo:v0.1
+    sudo docker tag promethues-arms-aliyun-go-demo:v0.1 registry.cn-hangzhou.aliyuncs.com/testnamespace/prometheus-arms-aliyun-go-demo-amd64:dev-v0.1
+    sudo docker push registry.cn-hangzhou.aliyuncs.com/testnamespace/promethues-demo:v0.1
     ```
-
-    In this step, a Docker image named promethues-arms-aliyun-go-demo is created, and the image is pushed to Alibaba Cloud Docker Registry.
 
 2.  Log on to the [Alibaba Cloud Container Service for Kubernetes console](https://cs.console.aliyun.com/#/k8s/overview).
 
-3.  In the left-side navigation pane, choose **Clusters** \> **Clusters**. On the Clusters page, find the target cluster, and click **Dashboard** in the **Actions** column.
+3.  In the left-side navigation pane, click **Clusters**. On the Clusters page, find the cluster in which you want to deploy the application and click **Applications** in the **Actions** column.
 
-    ![Kubernetes cluster console button](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9273229061/p61754.png)
+    ![K8s Cluster Console Button](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9273229061/p61754.png)
 
-4.  In the left-side navigation pane, choose **Workloads** \> **Deployments**. In the upper-right corner, click **CREATE**, and enter the following information in the **CREATE FROM TEXT INPUT** section:
+4.  On the **Workloads** page, click the **Deployments** tab. On the **Deployments** tab, click **Create from Template**.
+
+5.  On the **Create from Template** tab, select Custom from the Sample Template drop-down list. In the Template text editor, enter the following text. Then, click **Create** to deploy the Docker image that was created in [1](#step_20d_hjh_aor) to the ACK cluster.
 
     ```
     apiVersion: extensions/v1beta1
@@ -83,9 +83,9 @@ Deploy the application to the Container Service Kubernetes cluster so that ARMS 
               name: arms-go-demo
     ```
 
-    In this step, the Docker image created in [1](#step_20d_hjh_aor) is deployed to the Container Service Kubernetes cluster.
+6.  In the left-side navigation pane, choose Services and Ingresses \> **Services**. In the upper-right corner of the Services page, click **Create Resources in YAML**.
 
-5.  In the left-side navigation pane, choose **Discovery and Load Balancing** \> **Services**. In the upper-right corner, click **CREATE**, and enter the following information in the **CREATE FROM TEXT INPUT** section:
+7.  In the Template text editor, enter the following text. In the lower part of the page, click **Create**.
 
     ```
     apiVersion: v1
@@ -106,19 +106,19 @@ Deploy the application to the Container Service Kubernetes cluster so that ARMS 
     ```
 
 
-## Step 3: Configure ARMS Prometheus Monitoring to capture the data of Go applications
+## Step 3: Configure ARMS Prometheus Monitoring to capture data of the Go application
 
-Configure ARMS Prometheus Monitoring in the ARMS console to capture the data of Go applications.
+1.  Log on to the [Alibaba Cloud Container Service for Kubernetes console](https://cs.console.aliyun.com/#/k8s/overview).
 
-1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
+2.  Enable ARMS Prometheus Monitoring for the ACK cluster. For more information, see [Get started with Prometheus Service]().
 
-2.  In the left-side navigation pane, click **Prometheus Monitoring**.
+3.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-3.  On the top of the **Prometheus monitoring** page, select the region where the Container Service Kubernetes cluster is located. Find the target cluster, and click **Installation** in the **Actions** column.
+4.  In the left-side navigation pane, click **Prometheus Monitoring**.
 
-4.  After the ARMS Prometheus agent is installed, find the target cluster, and click **Settings** in the **Actions** column.
+5.  In the upper-left corner of the **Prometheus Monitoring** page, select the region where the ACK cluster is deployed. Find the cluster and click **Settings** in the **Actions** column.
 
-5.  On the **Details** tab, click **Add ServiceMonitor**. In the **Add ServiceMonitor** dialog box, enter the following information:
+6.  On the page that appears, click the **Service Discovery** tab. On the **Service Discovery** tab, click **Add ServiceMonitor**. In the **Add ServiceMonitor** dialog box, enter the following content and click **OK**:****
 
     ```
     apiVersion: monitoring.coreos.com/v1
@@ -126,7 +126,7 @@ Configure ARMS Prometheus Monitoring in the ARMS console to capture the data of 
     metadata:
       # Enter a unique name.
       name: promethues-arms-aliyun-go-demo
-      # Enter the target namespace.
+      # Enter the desired namespace.
       namespace: default
     spec:
       endpoints:
@@ -137,73 +137,84 @@ Configure ARMS Prometheus Monitoring in the ARMS console to capture the data of 
         path: /metrics
       namespaceSelector:
         any: true
-        # The namespace of the NGINX Demo.
-      selector:
+        # Demo namespace selector:
         matchLabels:
           app: promethues-arms-aliyun-go-demo
     ```
 
 
-## Step 4: Display the data of Go applications on the Grafana dashboard
+## Step 4: Present data of the Go application on the Grafana dashboard
 
-Import the Grafana dashboard template in the ARMS console and specify the Container Service Kubernetes cluster where the Prometheus data source is located.
+Import the Grafana dashboard template and specify the ACK cluster where the Prometheus data source is located.
 
-1.  Go to [Host Dashboard](http://grafana.console.aliyun.com/).
+1.  Go to the homepage of [ARMS Prometheus Grafana](http://g.console.aliyun.com/).
 
-2.  In the left-side navigation pane, choose **+** \> **Import**, enter 6671 in the **Grafana.com Dashboard** field, and click **Load**.
+2.  In the left-side navigation pane, choose **+** \> **Import**, enter 6671 in the **Import via grafana.com** field, and then click **Load**.
 
-    ![Import Grafana dashboard](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/6969283851/p61709.png)
+    ![Import Grafana Dashboard](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/6969283851/p61709.png)
 
-3.  On the Import page, set the following information and click **Import**.
+3.  On the Import page, configure the following parameters and click **Import**:
 
-    ![Import Grafana dashboard with options](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0128468061/p63196.png)
+    ![Import Grafana Dashboard with Options](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0128468061/p63196.png)
 
     1.  Enter a custom dashboard name in the **Name** field.
 
-    2.  Select your Container Service Kubernetes cluster from the **Folder** drop-down list.
+    2.  Select your ACK cluster from the **Folder** drop-down list.
 
-    3.  Select your Container Service Kubernetes cluster from the **prometheus-apl** drop-down list.
+    3.  Select your ACK cluster from the **prometheus-apl** drop-down list.
 
-    After the configuration is complete, the ARMS Prometheus Grafana Go dashboard appears, as shown in the following figure.
+    After the parameters are configured, the Prometheus Grafana Go dashboard appears, as shown in the following figure.
 
     ![ARMS Prometheus Grafana Go](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1128468061/p63054.png)
 
 
-## Step 5: Create an alert
+## Step 5: Create a Prometheus Monitoring alert
 
-1.  You can select one of the two available methods to go to the Create Alarm page.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-    -   On the [Prometheus Grafana dashboard](http://grafana.console.aliyun.com/) page of the NewDashBoard, click And jump to the Prometheus create alarm dialog box.
-    -   In the left-side navigation pane of the arms console, choose **Alarm management** \> **Alert policy management** On the alert policies page. Click **Create alarms** \> **Prometheus**.
-2.  In the **create alarm** dialog box, enter all required information and click **save**.
+2.  In the left-side navigation pane, click **Prometheus Monitoring**.
 
-    1.  Enter an alert name, for example, Received\_Bytes.
+3.  In the top navigation bar, select a region. Then, click the name of the required Kubernetes cluster.
 
-    2.  Select the **cluster** for which you want to create an alert.
+4.  In the left-side navigation pane, choose **Alarm configuration beta**. Then, click **Create Alert** in the upper-right corner.
 
-    3.  Select **type** as the **grafana**.
+5.  In the **Create Alert** dialog box, configure the following parameters, and then click **OK**.
 
-    4.  Select a specific **dashboard** and **chart** to be monitored.
+    **Note:** The **Time** parameter is not supported.
 
-    5.  Configure an alert rule.
+    1.  Enter a name in the **Rule Name** field. Example: alerts for inbound traffic.
 
-        1.  Select **meet the following rules**.
-        2.  Edit the alert rule. For example, an alert is triggered when the value of N is 5 and the average value of network receiving bytes \(MB\) is at least 3.
+    2.  Enter an expression that uses a PromQL statement. Example: `(sum(rate(kube_state_metrics_list_total{job="kube-state-metrics",result="error"}[5m])) / sum(rate(kube_state_metrics_list_total{job="kube-state-metrics"}[5m]))) > 0.01`.
 
-            **Note:** A Grafana chart may contain data of Curve A, Curve B, and Curve C. You can select one of them to monitor.
+        **Note:** An error may be reported if a PromQL statement contains a dollar sign \(`$`\). You must remove the equal sign \(`=`\) and the parameters on both sides of the equal sign \(`=`\) from the statement that contains the dollar sign \($\). For example, change `sum (rate (container_network_receive_bytes_total{instance=~"^$HostIp.*"}[1m]))` to `sum (rate (container_network_receive_bytes_total[1m]))`.
 
-        3.  Edit or re-enter the PromQL statement in the **PromQL** input box.
+    3.  In the Labels section, click **Create Tag** to specify alert tags. The specified tags can be used as options for a dispatch rule.
 
-            **Note:** An error may be reported if a PromQL statement contains a dollar sign \($\). You must delete the equal sign \(=\) and the parameters on both sides of the dollar sign \($\) from the statement that contains the dollar sign \($\). For example, to change a `folder` to a `folder`
+    4.  In the Annotations section, specify a template for alert messages. Click **Create Annotation**. Set Key to message and Value to \{\{variable name\}\} alert message. The specified annotation is in the format of message:\{\{variable name\}\} alert notification. Example: message:\{\{$labels.pod\_name\}\} restart.
 
-    6.  Set Notification Mode. For example, select SMS.
+        You can customize a variable name or select an existing tag as the variable name. Existing tags:
 
-    7.  Select the notification receivers. In the **all contact groups** box, click the name of a contact group. If the contact group appears in the **selected groups** box, the setting succeeds.
+        -   The tags that are carried in the metrics of an alert rule expression.
+        -   The tags that are created when you create an alert rule. For more information, see [Create an alert]().
+        -   The default tags provided by ARMS. The following table describes the default tags.
 
-    ![Prometheus Monitoring Alarm](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3608828061/p61774.png)
+            |Tag|Description|
+            |---|-----------|
+            |alertname|The name of the alert. The format is <Alert name\>\_<Cluster name\>.|
+            |\_aliyun\_arms\_alert\_level|The level of the alert.|
+            |\_aliyun\_arms\_alert\_type|The type of the alert.|
+            |\_aliyun\_arms\_alert\_rule\_id|The ID of the alert rule.|
+            |\_aliyun\_arms\_region\_id|The ID of the region.|
+            |\_aliyun\_arms\_userid|The ID of the user.|
+            |\_aliyun\_arms\_involvedObject\_type|The subtype of the associated object, for example, ManagedKubernetes or ServerlessKubernetes.|
+            |\_aliyun\_arms\_involvedObject\_kind|The type of the associated object, for example, app or cluster.|
+            |\_aliyun\_arms\_involvedObject\_id|The ID of the associated object.|
+            |\_aliyun\_arms\_involvedObject\_name|The name of the associated object.|
+
+    ![Prometheus-Create alarm](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/2026378061/p182018.png)
 
 
-After the ARMS Prometheus Grafana Go dashboard is configured, you can view Prometheus Monitoring metrics and customize the dashboard. For more information, see the following documents.
+After the ARMS Prometheus Grafana Go dashboard is configured, you can view Prometheus Monitoring metrics and customize the dashboard. For more information, see the following topics:
 
 [View Prometheus Monitoring metrics]()
 
