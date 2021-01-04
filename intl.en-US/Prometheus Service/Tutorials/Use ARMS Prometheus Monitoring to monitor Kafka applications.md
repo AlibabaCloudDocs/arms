@@ -1,10 +1,14 @@
 # Use ARMS Prometheus Monitoring to monitor Kafka applications
 
-This tutorial describes how to expose data by using instrumentation points in Kafka applications, capture data by using Prometheus Monitoring of Application Real-Time Monitoring Service \(ARMS\), and display data on the ARMS Prometheus Grafana dashboard, to ultimately monitor Kafka applications with ARMS Prometheus Monitoring.
+This topic describes how to expose data by using instrumentation points in Kafka applications, capture data by using Prometheus Monitoring of Application Real-Time Monitoring Service \(ARMS\), and display data on the Prometheus Grafana dashboard to monitor Kafka applications.
+
+The following figure shows the procedure.
+
+![How It Works](../images/p64446.png)
 
 ## Step 1: Start the JMX service
 
-Enable the Java Management Extensions \(JMX\) service in Kafka applications to acquire resource information.
+Enable the Java Management Extensions \(JMX\) service in Kafka applications to obtain resource information.
 
 1.  Add `export JMX_PORT="9999"` to the first line in the /opt/kafka/kafka\_2.11-0.8.2.1/bin/kafka-server-start.sh file.
 
@@ -13,11 +17,13 @@ Enable the Java Management Extensions \(JMX\) service in Kafka applications to a
 
 ## Step 2: Start jmx\_exporter
 
-Start jmx\_exporter to allow access to JMX information through HTTP so that ARMS Prometheus Monitoring can capture data.
+Start jmx\_exporter to allow access to JMX information by using HTTP so that ARMS Prometheus Monitoring can capture data.
 
 1.  Download the [kafka.yml](https://raw.githubusercontent.com/prometheus/jmx_exporter/master/example_configs/kafka-0-8-2.yml) file to the /opt/exporter\_kafka/ directory.
 
-2.  Modify the downloaded file /opt/exporter\_kafka/kafka-0.8.2.yml by adding `hostPort: localhost:9999` to the first line in the file to expose the running port of the JMX service to jmx\_exporter.
+2.  Modify the downloaded file /opt/exporter\_kafka/kafka-0.8.2.yml
+
+    by adding `hostPort: localhost:9999` to the first line in the file to expose the running port of the JMX service to jmx\_exporter.
 
 3.  Download the [executable file](https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_httpserver/0.12.0/jmx_prometheus_httpserver-0.12.0-jar-with-dependencies.jar) of jmx\_exporter to the /opt/exporter\_kafka/ directory.
 
@@ -31,10 +37,10 @@ Start jmx\_exporter to allow access to JMX information through HTTP so that ARMS
     io.prometheus.jmx.WebServer 9997 /opt/exporter_kafka/kafka-0-8-2.yml &
     ```
 
-    The application configuration is complete. You can run the following command to check whether jmx\_exporter is running properly:
+    After you perform the preceding operations, the application configuration is complete. You can run the following command to check whether jmx\_exporter is running properly:
 
     ```
-    curl http://<IP address of the server where jmx_exporter is located>:9997/metrics
+    curl http://<IP address of the server where jmx_exporter is deployed>:9997/metrics
     ```
 
     For more information about Kafka metrics, see [Monitoring Kafka](https://docs.confluent.io/current/kafka/monitoring.html).
@@ -42,17 +48,15 @@ Start jmx\_exporter to allow access to JMX information through HTTP so that ARMS
 
 ## Step 3: Configure ARMS Prometheus Monitoring to capture the data of Kafka applications
 
-Configure ARMS Prometheus Monitoring in the ARMS console to capture the data of Kafka applications.
-
 1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
 2.  In the left-side navigation pane, click **Prometheus Monitoring**.
 
-3.  On the top of the **Prometheus monitoring** page, select the region where the Container Service Kubernetes cluster is located, and click the name of the target cluster.
+3.  In the upper-left corner of the **Prometheus Monitoring** page, select the region where your Container Service for Kubernetes \(ACK\) clusters are deployed. Click **Settings** in the **Actions** column corresponding to a cluster.
 
-4.  On the page that appears, click the **Details** tab and then click **Edit prometheus.yaml**.
+4.  On the page that appears, click the **Prometheus Settings** tab.
 
-5.  Paste the following code to the file.
+5.  On the **Prometheus Settings** tab, enter the following code and click **Save**:
 
     ```
       global:
@@ -67,64 +71,76 @@ Configure ARMS Prometheus Monitoring in the ARMS console to capture the data of 
 
 ## Step 4: Display the data of Kafka applications on the Grafana dashboard
 
-Import the Grafana dashboard template in the ARMS console and specify the Container Service Kubernetes cluster where the Prometheus data source is located.
+Import the Grafana dashboard template on the Prometheus Monitoring page and specify the cluster where the Prometheus data source is deployed.
 
 1.  Go to [Host Dashboard](http://grafana.console.aliyun.com/).
 
-2.  In the left-side navigation pane, choose **+** \> **Import**, enter 10973 in the **Grafana.com Dashboard** field, and click **Load**.
+2.  In the left-side navigation pane, choose **+** \> **Import**. On the Import page, enter 10973 in the **Grafana.com Dashboard** field and click **Load**.
 
-    ![Import Grafana dashboard](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/6969283851/p61709.png)
+    ![Import Grafana Dashboard](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/6969283851/p61709.png)
 
-3.  On the Import page, set the following information and click **Import**.
+3.  On the Import page, enter the following information and click **Import**.
 
-    ![Import Grafana dashboard with options](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0128468061/p63196.png)
+    ![Import Grafana Dashboard with Options](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0128468061/p63196.png)
 
     1.  Enter a custom dashboard name in the **Name** field.
 
-    2.  Select your Container Service Kubernetes cluster from the **Folder** drop-down list.
+    2.  Select the cluster from the **Folder** drop-down list.
 
-    3.  Select your Container Service Kubernetes cluster from the **prometheus-apl** drop-down list.
+    3.  Select the cluster from the **Select a Prometheus data source** drop-down list.
 
-    After the configuration is complete, the ARMS Prometheus Grafana Kafka dashboard appears, as shown in the following figure.
+    After the configuration is complete, the Prometheus Grafana Kafka dashboard appears, as shown in the following figure.
 
     ![prometheus_kafka_grafana](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7088468061/p63693.png)
 
 
-## Step 5: Create an alert
+## Step 5: Create an ARMS Prometheus Monitoring alert
 
-1.  You can select one of the two available methods to go to the Create Alarm page.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-    -   On the [Prometheus Grafana dashboard](http://grafana.console.aliyun.com/) page of the NewDashBoard, click And jump to the Prometheus create alarm dialog box.
-    -   In the left-side navigation pane of the arms console, choose **Alarm management** \> **Alert policy management** On the alert policies page. Click **Create alarms** \> **Prometheus**.
-2.  In the **create alarm** dialog box, enter all required information and click **save**.
+2.  In the left-side navigation pane, click **Prometheus Monitoring**.
 
-    1.  Enter an alert name, for example, Received\_Bytes.
+3.  In the top navigation bar, select a region. Then, click the name of the required Kubernetes cluster.
 
-    2.  Select the **cluster** for which you want to create an alert.
+4.  In the left-side navigation pane, choose **Alarm configuration beta**. Then, click **Create Alert** in the upper-right corner.
 
-    3.  Select **type** as the **grafana**.
+5.  In the **Create Alert** dialog box, configure the following parameters, and then click **OK**.
 
-    4.  Select a specific **dashboard** and **chart** to be monitored.
+    **Note:** The **Time** parameter is not supported.
 
-    5.  Configure an alert rule.
+    1.  Enter a name in the **Rule Name** field. Example: alerts for inbound traffic.
 
-        1.  Select **meet the following rules**.
-        2.  Edit the alert rule. For example, an alert is triggered when the value of N is 5 and the average value of network receiving bytes \(MB\) is at least 3.
+    2.  Enter an expression that uses a PromQL statement. Example: `(sum(rate(kube_state_metrics_list_total{job="kube-state-metrics",result="error"}[5m])) / sum(rate(kube_state_metrics_list_total{job="kube-state-metrics"}[5m]))) > 0.01`.
 
-            **Note:** A Grafana chart may contain data of Curve A, Curve B, and Curve C. You can select one of them to monitor.
+        **Note:** An error may be reported if a PromQL statement contains a dollar sign \(`$`\). You must remove the equal sign \(`=`\) and the parameters on both sides of the equal sign \(`=`\) from the statement that contains the dollar sign \($\). For example, change `sum (rate (container_network_receive_bytes_total{instance=~"^$HostIp.*"}[1m]))` to `sum (rate (container_network_receive_bytes_total[1m]))`.
 
-        3.  Edit or re-enter the PromQL statement in the **PromQL** input box.
+    3.  In the Labels section, click **Create Tag** to specify alert tags. The specified tags can be used as options for a dispatch rule.
 
-            **Note:** An error may be reported if a PromQL statement contains a dollar sign \($\). You must delete the equal sign \(=\) and the parameters on both sides of the dollar sign \($\) from the statement that contains the dollar sign \($\). For example, to change a `folder` to a `folder`
+    4.  In the Annotations section, specify a template for alert messages. Click **Create Annotation**. Set Key to message and Value to \{\{variable name\}\} alert message. The specified annotation is in the format of message:\{\{variable name\}\} alert notification. Example: message:\{\{$labels.pod\_name\}\} restart.
 
-    6.  Set Notification Mode. For example, select SMS.
+        You can customize a variable name or select an existing tag as the variable name. Existing tags:
 
-    7.  Select the notification receivers. In the **all contact groups** box, click the name of a contact group. If the contact group appears in the **selected groups** box, the setting succeeds.
+        -   The tags that are carried in the metrics of an alert rule expression.
+        -   The tags that are created when you create an alert rule. For more information, see [Create an alert]().
+        -   The default tags provided by ARMS. The following table describes the default tags.
 
-    ![Prometheus Monitoring Alarm](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3608828061/p61774.png)
+            |Tag|Description|
+            |---|-----------|
+            |alertname|The name of the alert. The format is <Alert name\>\_<Cluster name\>.|
+            |\_aliyun\_arms\_alert\_level|The level of the alert.|
+            |\_aliyun\_arms\_alert\_type|The type of the alert.|
+            |\_aliyun\_arms\_alert\_rule\_id|The ID of the alert rule.|
+            |\_aliyun\_arms\_region\_id|The ID of the region.|
+            |\_aliyun\_arms\_userid|The ID of the user.|
+            |\_aliyun\_arms\_involvedObject\_type|The subtype of the associated object, for example, ManagedKubernetes or ServerlessKubernetes.|
+            |\_aliyun\_arms\_involvedObject\_kind|The type of the associated object, for example, app or cluster.|
+            |\_aliyun\_arms\_involvedObject\_id|The ID of the associated object.|
+            |\_aliyun\_arms\_involvedObject\_name|The name of the associated object.|
+
+    ![Prometheus-Create alarm](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/2026378061/p182018.png)
 
 
-After the ARMS Prometheus Grafana Kafka dashboard is configured, you can view Prometheus Monitoring metrics and customize the dashboard. For more information, see the following documents.
+After the Prometheus Grafana Kafka dashboard is configured, you can view ARMS Prometheus Monitoring metrics and customize the dashboard. For more information, see the following references:
 
 [View Prometheus Monitoring metrics]()
 
