@@ -1,96 +1,131 @@
 # Terms
 
-This topic describes basic concepts before using tracing analysis, including the role of the distributed tracing system, what a call chain is, the OpenTracing data model that tracing links depend on, and how data is reported to the tracing system.
+This topic describes the terms that you must understand before you use Tracing Analysis. This topic helps you understand the purpose of a distributed tracing system, what a trace is, the OpenTracing data model on which Tracing Analysis depends, and how data is reported to Tracing Analysis.
 
 ## Why is a distributed tracing system needed?
 
-In order to cope with various complex business, development engineers began to adopt Agile development, continuous integration and other development methods. The system architecture has evolved from a stand-alone software system to a microservices model. Microservices are built on different sets of software, which may be developed by different teams, implemented in different programming languages, or released on multiple servers. Therefore, if a service error occurs, it may cause service exceptions in dozens of applications.
+To cope with various complex business requirements, developers adopt development methods such as agile development and continuous integration. The system architecture has evolved from standalone large-scale software to a microservice-based architecture. Microservices are built on different software sets. These software sets may be developed by different teams, implemented in different programming languages, or released on multiple servers. Therefore, if an error occurs in a service, dozens of applications may encounter service exceptions.
 
-The distributed tracing system can record request information, such as the execution process and time consumption of a remote method call. It is an important tool for troubleshooting system problems and system performance.
+A distributed tracing system can record request information, such as the execution process and time consumption of a remote method call. A distributed tracing system is an important tool for troubleshooting system issues and system performance.
 
-## What is a Trace?
+## What is a trace?
 
-Broadly speaking, a trace of call represents the execution process of a transaction or process in a \(distributed\) system. In the OpenTracing standard, a call chain is a Directed Acyclic Graph \(Directed Acyclic Graph\) composed of multiple spans. Each Span represents a named and timed continuous execution segment in the call chain.
+Generally, a trace represents the execution process of a transaction or process in a distributed system. In the OpenTracing standard, a trace is a directed acyclic graph \(DAG\) that consists of multiple spans. Each span represents a named and timed segment that is continuously run in the trace.
 
-The following example shows a distributed call. When a client initiates a request, the request first goes to the Server Load Balancer, passes through the authentication service, billing service, and finally the resource, and finally returns the result.
+The following figure shows an example of a distributed call. When the client initiates a request, the request is first sent to the load balancer. The request is processed by the authentication service and billing service. Then, the request is sent to the requested resources. Finally, the system returns a result.
 
 ![](http://aliware-images.oss-cn-hangzhou.aliyuncs.com/arms/xtrace_dg_distributed_call.png "Example of a distributed call")
 
-After the system collects and stores the data, the distributed tracing system can be used to generate a timing diagram that contains a timeline.
+After a distributed tracing system collects and stores data, the system typically uses a sequence diagram that contains a timeline to display a trace.
 
-![](http://aliware-images.oss-cn-hangzhou.aliyuncs.com/arms/xtrace_dg_trace_graph.png "Link diagram containing the timeline")
+![](http://aliware-images.oss-cn-hangzhou.aliyuncs.com/arms/xtrace_dg_trace_graph.png "Trace diagram that contains a timeline")
 
-## Data Model
+## OpenTracing data model
 
-**Overall concept**
+**Overview**
 
-In OpenTracing, a Trace is implicitly defined by the Span in this Trace. A trace can be considered as a directed acyclic graph \(DAG\) that consists of multiple spans. The relationship between spans is named References. The call chain in the following example consists of eight spans.
-
-```
-
-     Causal relationship between spans in A single Trace [Span A] ← ←(The root Span) | + ------ + ------ + | | [span B] [Span C] ← ←(Span C is A child node of Span A, ChildOf) | [Span D] + --- + ------- + | | [Span E] [Span F] |result> [Span G] |result> [Span H] // Trigger function (Span G is called after Span F, FollowsFrom) 
-   
-```
-
-In some cases, a timing diagram based on a timeline can be used to better display the call chain.
+In OpenTracing, a trace is implicitly defined by the spans that belong to the trace. A trace can be considered as a DAG that consists of multiple spans. The relationships among spans are called references. The trace in the following example consists of eight spans.
 
 ```
+Causal relationships among spans in a single trace
 
-     time relationship between spans in A single Trace -- | ------- | ------- | ------- | ------- | ------- | ------- | ------- |-> time [Span A&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip; ..&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip; ..] [Span C&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip; ..] [Span E&hellip;&hellip;&hellip;&hellip;] [Span F.] [span G ·] [Span H ·] 
-   
+
+        [Span A]  ←←←(The root span)
+            |
+     +------+------+
+     |             |
+ [Span B]      [Span C] ←←←(ChildOf: Span C is a child node of Span A.)
+     |             |
+ [Span D]      +---+-------+
+               |           |
+           [Span E]    [Span F] >>> [Span G] >>> [Span H]
+                                       ↑
+                                       ↑
+                                       ↑
+                         (FollowsFrom: Span G is called after Span F.)
 ```
 
-**Link**
+Sometimes, a sequence diagram that contains a timeline can better display a trace.
 
-You can call this operation to create tracers \( startSpan\), Extract \( Extract\), and Inject \(passthrough\). It has the following capabilities:
+```
+Time relationships among spans in a single trace
 
--   Create a new Span or set the Span property
+
+––|–––––––|–––––––|–––––––|–––––––|–––––––|–––––––|–––––––|–> time
+
+ [Span A···················································]
+   [Span B··············································]
+      [Span D··········································]
+    [Span C········································]
+         [Span E·······]        [Span F··] [Span G··] [Span H··]
+```
+
+**Trace**
+
+The Tracer interface provides the startSpan method for creating a span, the Extract method for extracting the context, and the Inject method for injecting the context. The Tracer interface provides the following capabilities:
+
+-   Create a span or set the properties of a span.
 
     ```
-    
-           /**Create and start a span. On the page that appears, specify the name of the operation and options. **For example,** create a Span: **sp := tracer. Without parentSpan. StartSpan(" GetFeed ") ** create a Span with parentSpan * sp := tracer.StartSpan("GetFeed",opentracing.ChildOf(parentSpan.Context())) example */ StartSpan(operationName string, opts ...StartSpanOption) Span 
-         
+    /** Create and start a span. Then, return the span. The span contains the operation name and specified options.
+    ** Examples: 
+    **    Create a span that does not have a parent span.
+    **    sp := tracer.StartSpan("GetFeed")
+    **    Create a span that has a parent span.
+    **    sp := tracer.StartSpan("GetFeed",opentracing.ChildOf(parentSpan.Context()))
+    **/
+    StartSpan(operationName string, opts ...StartSpanOption) Span
     ```
 
-    Each Span contains the following objects:
+    Each span contains the following objects:
 
-    -   Operation name: Operation name \(also known as Span name\).
-    -   Start timestamp: The Start time of the day period.
-    -   Finish timestamp: indicates the end time.
-    -   Span tag: a set of Span tags. It is composed of a set of key-value pairs. In a key-value pair, the key must be a String and the value can be a String, Boolean, or numeric value.
-    -   Span log: A Collection of Span logs. Each Log operation contains one key-value pair and one timestamp. In a key-value pair, the key must be a String and the value can be of any type.
-    -   SpanContext: The pan context object. Each SpanContext contains the following states:
-        -   To implement any OpenTracing service, it must rely on a unique Span to transmit the status of the current call chain across process boundaries \(for example, the Trace and Span ids\).
-        -   Baggage Items are the data accompanying a Trace and a collection of key-value pairs. They are stored in a Trace and must be transmitted across process boundaries.
-    -   References \(relationship between spans\): Zero or multiple related spans. Spans establish the relationship based on the SpanContext.
--   Pass-through data
+    -   An operation name, which is also called the span name.
+    -   A start timestamp.
+    -   A finish timestamp.
+    -   A collection of span tags. Each tag is a key-value pair. In the key-value pair, the key must be a string and the value can be a string, a Boolean value, or a numeric value.
+    -   A collection of span logs. Each log consists of a key-value pair and a timestamp. In the key-value pair, the key must be a string and the value can be of any type.
+    -   A SpanContext. Each SpanContext carries the following status data:
+        -   Status data that identifies a span, such as the trace ID and span ID. An OpenTracing implementation depends on a distinct span to transmit the status of the current trace across process boundaries.
+        -   Baggage items that are key-value pairs included in a trace. These key-value pairs must also be transmitted across process boundaries.
+    -   References that indicate relationships among spans. References may include zero or multiple related spans. The spans establish the relationships based on the SpanContext.
+-   Inject data.
 
-    Passthrough data is divided into two steps:
+    To inject data, perform the following steps:
 
-    1.  Parses the SpanContext object from the request.
-
-        ```
-        
-                 // Inject() takes the `sm` SpanContext instance and injects it for // propagation within `carrier`. The actual type of `carrier` depends on // the value of `format`. /**Parse the SpanContext (including traceId, spanId, and bagged) from the Carrier based on the format parameter. **Example:** carrier := opentracing.HTTPHeadersCarrier(httpReq.Header) // * clientContext, err := tracer.Extract(opentracing.HTTPHeaders, carrier) // */ Extract(format interface parameter parameter, carrier interface{}) (spanccontext, error) 
-               
-        ```
-
-    2.  Inject SpanContext to the request.
+    1.  Extract the SpanContext from a carrier.
 
         ```
-        
-                 /**Inject *** inject traceId,spanId, and Baggage in SpanContext to the request (Carrier) according to the format parameter. **e.g** carrier := opentracing.HTTPHeadersCarrier(httpReq.Header) then * err := tracer.Inject(span.Context(), opentracing.HTTPHeaders, carrier) producer */ Inject(sm SpanContext, format interface response parameter, carrier interface{}) error 
-               
+        // Inject() takes the `sm` SpanContext instance and injects it for
+        // propagation within `carrier`. The actual type of `carrier` depends on
+        // the value of `format`.
+        /** Extract the SpanContext, including the trace ID, span ID, and baggage items, from a carrier based on the format parameter.
+        ** Example: 
+        **  carrier := opentracing.HTTPHeadersCarrier(httpReq.Header)
+        **  clientContext, err := tracer.Extract(opentracing.HTTPHeaders, carrier)
+        **/
+        Extract(format interface{}, carrier interface{}) (SpanContext, error)
+        ```
+
+    2.  Inject the SpanContext into a carrier.
+
+        ```
+        /**
+        ** Inject the SpanContext, including the trace ID, span ID, and baggage items, into a carrier based on the format parameter.
+        ** Example: 
+        ** carrier := opentracing.HTTPHeadersCarrier(httpReq.Header)
+        ** err := tracer.Inject(span.Context(), opentracing.HTTPHeaders, carrier)
+        **/
+        Inject(sm SpanContext, format interface{}, carrier interface{}) error
         ```
 
 
 ## How is the data reported?
 
-The following figure shows how data is reported without an Agent.
+The following figure shows how data is reported without using an agent.
 
-![1](../images/p205549.png "Data Reporting")
+![](http://aliware-images.oss-cn-hangzhou.aliyuncs.com/arms/xtrace_dg_report_direct.png "Directly report data")
 
-The following figure shows how the data is reported by an Agent.
+The following figure shows how the data is reported by using an agent.
 
-![2](../images/p205550.png "Report data through Agent")
+![](http://aliware-images.oss-cn-hangzhou.aliyuncs.com/arms/xtrace_dg_report_by_agent.png "Report data by using an agent")
 
