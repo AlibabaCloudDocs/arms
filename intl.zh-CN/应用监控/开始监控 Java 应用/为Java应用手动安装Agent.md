@@ -191,10 +191,10 @@ java -javaagent:/{user.workspace}/ArmsAgent/arms-bootstrap-1.7.0-SNAPSHOT.jar -D
         ```
 <library-loader path="{user.workspace}/ArmsAgent/plugin"/> 
         ``` |
-        |Windows|启动Java进程时，在挂载Agent路径中使用反斜线（\\）作为分隔符。
+        |Windows|使用CMD启动Java进程时，在挂载Agent路径中使用反斜线（\\）作为分隔符。
 
         ```
-{CMD}} java -javaagent:\{user.workspace}\ArmsAgent\arms-bootstrap-1.7.0-SNAPSHOT.jar -Darms.licenseKey={LicenseKey} -Darms.appName={AppName} -jar {user.workspace}\demoApp.jar 
+java -javaagent:\{user.workspace}\ArmsAgent\arms-bootstrap-1.7.0-SNAPSHOT.jar -Darms.licenseKey={LicenseKey} -Darms.appName={AppName} -jar {user.workspace}\demoApp.jar 
         ``` |
 
         如需在一台服务器上部署同一应用的多个实例，可以通过-Darms.agentId参数（逻辑编号）来区分接入的JVM进程，例如：
