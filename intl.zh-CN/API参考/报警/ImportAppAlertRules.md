@@ -161,7 +161,7 @@
 |名称|类型|示例值|描述|
 |--|--|---|--|
 |Data|String|\[12174\*\*\]|报警规则ID |
-|RequestId|String|A5EC8221-08F2-4C95-9AF1-49FD998C\*\*\*\*|请求 ID |
+|RequestId|String|A5EC8221-08F2-4C95-9AF1-49FD998C\*\*\*\*|请求ID |
 
 ## 示例
 
@@ -181,10 +181,10 @@ http(s)://[Endpoint]/?Action=ImportAppAlertRules
 `XML` 格式
 
 ```
-<ImportAppAlertRules>
+<ImportAppAlertRulesResponse>
       <RequestId>A5EC8221-08F2-4C95-9AF1-49FD998C****</RequestId>
       <Data>[12174**]</Data>
-</ImportAppAlertRules>
+</ImportAppAlertRulesResponse>
 ```
 
 `JSON` 格式
