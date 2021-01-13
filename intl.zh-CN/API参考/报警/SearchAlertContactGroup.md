@@ -16,7 +16,9 @@
 |RegionId|String|是|cn-hangzhou|地域ID。默认为`cn-hangzhou`。 |
 |ContactGroupName|String|否|TestGroup|报警联系人分组名称。 |
 |ContactName|String|否|John Doe|报警联系人名称。 |
-|ContactId|Long|否|123|报警联系人ID。可调用SearchAlertContact接口来查询联系人ID，详情请参见[SearchAlertContact](~~130703~~)。 |
+|ContactId|Long|否|123|报警联系人ID。可调用SearchAlertContact接口来查询联系人ID，请参见[SearchAlertContact](~~130703~~)。 |
+|ContactGroupIds|String|否|746|报警联系人分组ID。可以同时查询多个联系人分组ID，联系人分组ID之间用英文逗号（,）分隔。 |
+|IsDetail|Boolean|否|true|是否返回联系人分组中包含的所有联系人。默认不返回所有联系人。 |
 
 ## 返回数据
 
@@ -49,8 +51,8 @@
 
 ```
 http(s)://[Endpoint]/?Action=SearchAlertContactGroup
-&ContactGroupName=TestGroup
 &RegionId=cn-hangzhou
+&ContactGroupName=TestGroup
 &<公共请求参数>
 ```
 
@@ -60,21 +62,27 @@ http(s)://[Endpoint]/?Action=SearchAlertContactGroup
 
 ```
 <SearchAlertContactGroupResponse>
-	  <ContactGroups>
-		    <ContactGroupId>746</ContactGroupId>
-		    <ContactGroupName>TestGroup</ContactGroupName>
-		    <UserId>113197164949****</UserId>
-		    <CreateTime>1529668855000</CreateTime>
-		    <UpdateTime>1529668855000</UpdateTime>
-	  </ContactGroups>
-	  <ContactGroups>
-		    <ContactGroupId>747</ContactGroupId>
-		    <ContactGroupName>TestGroup2</ContactGroupName>
-		    <UserId>113197164949****</UserId>
-		    <CreateTime>1595383179000</CreateTime>
-		    <UpdateTime>1595383179000</UpdateTime>
-	  </ContactGroups>
-	  <RequestId>4D6C358A-A58B-4F4B-94CE-F5AAF023****</RequestId>
+  <ContactGroups>
+        <ContactGroupId>746</ContactGroupId>
+        <UpdateTime>1529668855000</UpdateTime>
+        <ContactGroupName>TestGroup</ContactGroupName>
+        <UserId>113197164949****</UserId>
+        <CreateTime>1529668855000</CreateTime>
+  </ContactGroups>
+  <ContactGroups>
+        <Contacts>
+              <Email>someone@example.com</Email>
+              <UserId>113197164949****</UserId>
+              <Phone>1381111*****</Phone>
+              <CreateTime>1572349025000</CreateTime>
+              <UpdateTime>1580258717000</UpdateTime>
+              <ContactId>123</ContactId>
+              <DingRobot>https://oapi.dingtalk.com/robot/send?access_token=91f2f6****</DingRobot>
+              <SystemNoc>false</SystemNoc>
+              <ContactName>John Doe</ContactName>
+        </Contacts>
+  </ContactGroups>
+  <RequestId>4D6C358A-A58B-4F4B-94CE-F5AAF023****</RequestId>
 </SearchAlertContactGroupResponse>
 ```
 
@@ -82,23 +90,29 @@ http(s)://[Endpoint]/?Action=SearchAlertContactGroup
 
 ```
 {
-	"ContactGroups": [
-		{
-			"ContactGroupId": 746,
-			"ContactGroupName": "TestGroup",
-			"UserId": "113197164949****",
-			"CreateTime": 1529668855000,
-			"UpdateTime": 1529668855000
-		},
-		{
-			"ContactGroupId": 747,
-			"ContactGroupName": "TestGroup2",
-			"UserId": "113197164949****",
-			"CreateTime": 1595383179000,
-			"UpdateTime": 1595383179000
-		}
-	],
-	"RequestId": "4D6C358A-A58B-4F4B-94CE-F5AAF023****"
+    "ContactGroups": [
+        {
+            "ContactGroupId": 746,
+            "UpdateTime": 1529668855000,
+            "ContactGroupName": "TestGroup",
+            "UserId": "113197164949****",
+            "CreateTime": 1529668855000
+        },
+        {
+            "Contacts": {
+                "Email": "someone@example.com",
+                "UserId": "113197164949****",
+                "Phone": "1381111*****",
+                "CreateTime": 1572349025000,
+                "UpdateTime": 1580258717000,
+                "ContactId": 123,
+                "DingRobot": "https://oapi.dingtalk.com/robot/send?access_token=91f2f6****",
+                "SystemNoc": false,
+                "ContactName": "John Doe"
+            }
+        }
+    ],
+    "RequestId": "4D6C358A-A58B-4F4B-94CE-F5AAF023****"
 }
 ```
 
