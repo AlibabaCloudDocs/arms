@@ -12,7 +12,7 @@
 |--|--|----|---|--|
 |Action|String|是|GetMultipleTrace|系统规定参数，取值为`GetMultipleTrace`。 |
 |RegionId|String|是|cn-hangzhou|地域ID。 |
-|TraceIDs.N|RepeatList|否|ac1400a115951745017447033d\*\*\*\*|调用链ID，必填参数。可在[ARMS控制台](https://arms.console.aliyun.com/#/home)的调用链路查询页面或接口快照页面获取。 |
+|TraceIDs.N|RepeatList|是|ac1400a115951745017447033d\*\*\*\*|调用链ID，必填参数。可在[ARMS控制台](https://arms.console.aliyun.com/#/home)的调用链路查询页面或接口快照页面获取。 |
 
 ## 返回数据
 
