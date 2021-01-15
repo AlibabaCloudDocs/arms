@@ -10,6 +10,7 @@
 
 |字段名称|字段类型|是否必选|示例值|描述|
 |----|----|----|---|--|
+|Action|String|是|SaveTraceAppConfig|系统规定参数。取值：SaveTraceAppConfig。|
 |Pid|String|是|xxx@74xxx|应用的ID标识串。获取方式请参见[如何获取应用pid](/intl.zh-CN/API参考/应用监控/QueryMetricByPage（应用监控）.md)。 |
 |Settings.N.Key|String|否|sampling.enable|选择需要自定义的设置。-   [调用链路采样相关](#table_6hs_0c7_i8n)
 -   [总开关设置](#table_qib_r15_hya)
@@ -112,7 +113,7 @@
 |名称|示例值|描述|
 |--|---|--|
 |RequestId|78901766-3806-4E96-8E47-CFEF59E4\*\*\*\*|请求ID。|
-|data|success|操作是否成功。|
+|Data|success|操作是否成功。|
 
 ## 示例
 
@@ -120,7 +121,7 @@
 
 ```
 http(s)://[Endpoint]/?Action=SaveTraceAppConfig
-&Pid=12334xxxxxxx343
+&Pid=xxx@74xxx
 &<公共请求参数>
 ```
 
