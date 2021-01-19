@@ -20,6 +20,6 @@ To uninstall the ARMS agent, perform the following steps as needed:
 
 -   Uninstall the ARMS agent for Java applications on other platforms
 
-    Delete the parameters related to AppName and LicenseKey in the configuration file or startup script. For more information, see[t152228.md\#uninstall](/intl.en-US/Application monitoring/Start monitoring Java applications/Manually install the ARMS agent for a Java application.md) .
+    Delete the parameters related to AppName and LicenseKey in the configuration file or startup script. For more information, see [t152228.md\#uninstall](/intl.en-US/Application monitoring/Monitor Java applications/Manually install the ARMS agent for a Java application.md) .
 
 
