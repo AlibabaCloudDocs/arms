@@ -4,7 +4,7 @@ This topic describes how to use the browser monitoring feature of Application Re
 
 ## Background information
 
-For background information about the DingTalk mini program, see [DingTalk mini program](https://open-doc.dingtalk.com/microapp/dev/ed25rr)Migrate an instance across regions based on Global Replica.
+For background information about the DingTalk mini program, see [DingTalk mini program](https://open-doc.dingtalk.com/microapp/dev/ed25rr) Migrate an instance across regions based on Global Replica.
 
 ## Procedure
 
