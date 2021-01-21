@@ -19,7 +19,7 @@ ARMS browser monitoring can use the source map to find the real location of the 
 
 ## Step 1: Install the ARMS agent
 
-To comprehensively monitor frontend applications, you must install the ARMS agent for your frontend applications. Select a method to install the ARMS agent as needed. For more information, see [Access overview of browser monitoring](/intl.en-US/Browser monitoring/Get started with Browser Monitoring/Access overview of browser monitoring.md).
+To comprehensively monitor frontend applications, you must install the ARMS agent for your frontend applications. Select a method to install the ARMS agent as needed. For more information, see [Browser monitoring overview](/intl.en-US/Browser monitoring/Quick start/Browser monitoring overview.md).
 
 ## Step 2: View the error overview
 
@@ -29,7 +29,7 @@ To comprehensively monitor frontend applications, you must install the ARMS agen
 
 3.  In the left-side navigation pane, click **JS Error Diagnosis**.
 
-    ![JS Error Diagnosis](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3227278061/p60924.png)
+    ![JS Error Diagnosis](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/5502601161/p60924.png)
 
     -   View the total number of errors, error rate, number of affected users, and percentage of affected users in **Error Overview**.
     -   Determine the JS error trend based on the line chart.
