@@ -80,17 +80,19 @@ If the NGINX service is running on an Elastic Compute Service \(ECS\) instance, 
 
 ## Step 2: Install an NGINX exporter of the later version
 
-1.  Log on to the [Prometheus console](https://prometheus.console.aliyun.com/#/home).
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  In the upper-left corner, select the target region and click the name of the target Kubernetes cluster.
+2.  In the left-side navigation pane, click **Prometheus Monitoring**.
 
-3.  In the left-side navigation pane, click **Exporter access**.
+3.  In the upper-left corner, select the target region and click the name of the target Kubernetes cluster.
 
-4.  On the **Exporter access** page, click **add Exporter** in the upper-right corner.
+4.  In the left-side navigation pane, click **Exporter access**.
 
-5.  In the search box in the upper-right corner of the **Exporter list** dialog box, enter an Exporter name and click the target Exporter icon.
+5.  On the **Exporter access** page, click **add Exporter** in the upper-right corner.
 
-6.  In the Nginx\(V2\) Exporter configuration dialog box, configure the required parameters on the **Configuration** tab. Click **OK**.
+6.  In the search box in the upper-right corner of the **Exporter list** dialog box, enter an Exporter name and click the target Exporter icon.
+
+7.  In the Nginx\(V2\) Exporter configuration dialog box, configure the required parameters on the **Configuration** tab. Click **OK**.
 
     |Parameter|Description|
     |---------|-----------|
@@ -100,11 +102,11 @@ If you do not specify this parameter, the system uses the default name that cons
     |**Nginx\(v2\) Address**|The URL that is used to access the NGINX server.|
     |**Nginx\(v2\) Port**|The port number of the NGINX server. Example: 80.|
 
-7.  On the **Exporters** page, click the DASHBOARD link in the **dashboard** column to view the Prometheus dashboard.
+8.  On the **Exporters** page, click the DASHBOARD link in the **dashboard** column to view the Prometheus dashboard.
 
     ![pg_prom_dashboard_Nginx](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7307468061/p97649.png)
 
-8.  On the **Exporters** page, you can perform the following operations on the added Exporter:
+9.  On the **Exporters** page, you can perform the following operations on the added Exporter:
 
     -   Click **Delete** in the **Actions** column to delete the Exporter.
     -   Click **Log** in the **Actions** column to view the operational logs of the Exporter.
