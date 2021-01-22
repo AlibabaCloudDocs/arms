@@ -62,9 +62,11 @@ You can enable ARMS Prometheus monitoring by using the following three methods:
 
 ## Open a Prometheus dashboard
 
-1.  Log on to the [Prometheus console](https://prometheus.console.aliyun.com/#/home).
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  In the upper-left corner, select a region. Click a link in the **Installed Dashboards** column to open a monitoring dashboard in a new window.
+2.  In the left-side navigation pane, click **Prometheus Monitoring**.
+
+3.  In the upper-left corner, select a region. Click a link in the **Installed Dashboards** column to open a monitoring dashboard in a new window.
 
 
 ## Uninstall the Prometheus agent
