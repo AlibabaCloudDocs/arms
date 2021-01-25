@@ -112,11 +112,13 @@
 
 2.  为目标容器服务K8s集群开启阿里云Prometheus监控。具体操作，请参见[开始使用Prometheus监控]()。
 
-3.  登录[Prometheus控制台](https://prometheus.console.aliyun.com/#/home)。
+3.  登录[ARMS控制台](https://arms.console.aliyun.com/#/home)。
 
-4.  在**Prometheus监控**页面左上角选择容器服务K8s集群所在的地域，并在目标集群右侧的**操作**列单击**设置**。
+4.  在左侧导航栏单击**Prometheus监控**。
 
-5.  在**设置**页面单击**服务发现**页签，在**服务发现**页签上单击**添加ServiceMonitor**，在**添加ServiceMonitor**对话框中填写以下内容，然后单击**确定**。
+5.  在**Prometheus监控**页面左上角选择容器服务K8s集群所在的地域，并在目标集群右侧的**操作**列单击**设置**。
+
+6.  在**设置**页面单击**服务发现**页签，在**服务发现**页签上单击**添加ServiceMonitor**，在**添加ServiceMonitor**对话框中填写以下内容，然后单击**确定**。
 
     ```
     apiVersion: monitoring.coreos.com/v1
