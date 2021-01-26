@@ -1,121 +1,116 @@
 # Embed ARMS console pages in user-created web applications
 
-You can embed ARMS console pages in user-created web applications. This way, you can view the pages from the applications without the need to switch between systems or to log on to the ARMS console.
+You can embed Application Real-Time Monitoring Service \(ARMS\) console pages in user-created web applications. This way, you can view the pages from the applications without the need to switch between systems or to log on to the ARMS console.
 
-This tutorial applies only to ARMS application monitoring. To prepare for this tutorial, you must create a Resource Access Management \(RAM\) user, create a RAM role, and grant permissions to the RAM role. When you create a RAM role, grant permissions to the RAM role based on the following rules:
+The operation to embed ARMS console pages into user-created web applications brings the following benefits:
 
--   To grant the full permissions of ARMS, attach the AliyunARMSFullAccess policy to the role.
--   To grant the read-only permissions of ARMS, attach the AliyunARMSReadOnlyAccess policy to the role.
+-   Allows you to log on to your own system and browse the application list, application details, and call query pages of the embedded ARMS console pages.
+-   Hides the top navigation bar and left-side navigation pane of the ARMS console. For more information, see [Hide navigation pages](#step_ejt_0s8_cjt).
+-   Uses Resource Access Management \(RAM\) to manage permissions on the ARMS console. For example, you can change the full permissions to read-only permissions. For more information, see [Add permissions](#section_qcc_ejh_ix5).
 
-For a quick start, you can download and use the sample code. For more information, see [Sample code](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/demo/ARMS/embedPage.zip).
+## Sample code
 
-## Overview
+To embed ARMS console pages into a user-created web application, download and use the [sample code](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/demo/ARMS/Demo/embedPage.zip).
 
-**Expected results**
+## Step 1: Create a RAM user and grant it permissions
 
-After you perform the operations in this topic, you can obtain the following results:
-
--   You can log on to your own system and browse the embedded pages, such as the applications, application details, and invocation trace query pages. For more information, see the following sections in this topic.
--   You can hide the top navigation bar and left-side navigation pane of the ARMS console. For more information, see [Hide the navigation bar](#step_ejt_0s8_cjt).
--   You can use RAM to manage operation permissions on the ARMS console pages. For example, you can change the full permissions to read-only permissions. For more information, see the [Create a RAM role and grant permissions to the RAM role](#section_qcc_ejh_ix5) section in this topic.
-
-## Preparation: creating a RAM user and adding permissions
-
-Use an Alibaba Cloud account to create a RAM user and authorize the RAM user to call STS.
-
-1.  Log on to the [RAM console](http://ram.console.aliyun.com). In the left-side navigation pane, choose **Personnel management** \> **User**, and on the users page, click **New user**.
-
-2.  On the create user page, enter a logon **user account information** name in the **logon name** and **display name** columns. In the **access mode** section, select **programmatic access**, and click **OK**.
-
-    ![Create RAM User](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1744978061/p54440.png)
-
-    **Note:** RAM automatically creates an AccessKey pair for the RAM user. For security reasons, the RAM console only allows you to view or download the AccessKeySecret once. Therefore, you must record the AccessKeySecret in a safe place when creating the AccessKey.
-
-3.  Click phone verification in the **get verification** dialog box, enter the received verification code, and then click **OK**. The created RAM user is displayed on the users page but does not have any permissions.
-
-4.  On the users page, locate the created user and click **actions** in the **add permissions** column.
-
-5.  On the **add permissions** page, in the **select permissions** section, enter keywords to search for the policy AliyunSTSAssumeRoleAccess. Then click the policy to add it to the **selected** list on the right, and click **OK**.
-
-    ![Add Permission For User](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1744978061/p54441.png)
-
-6.  On the **permissions** page, view the **authorization result**, and click **complete**.
-
-
-## Preparations: creating RAM roles and adding permissions
-
-Next, create a RAM role and authorize it to access the console. The RAM User created in step 1 will assume the RAM role to access the console.
-
-1.  Log on to the [RAM console](http://ram.console.aliyun.com). In the left-side navigation pane, choose **RAM roles**. On the RAM roles page, click **create RAM role**.
-
-2.  On the **create RAM role** page, perform the following operations and then click **OK**.
-
-    1.  On the **select type** page, select **current trusted entity type** in the **Alibaba Cloud account** section, and click **next**.
-
-    2.  On the **configure role** page, enter a RAM role name in the **role name** field, and click **create**.
-
-    3.  On the **created** page, click **authorize role**.
-
-3.  On the **add permissions** tab, **select permissions** from the select permissions section. Enter keywords to search for the policy to be added. Click the policy to add the policy to the **selected** list on the right. Then click **OK**.
-
-    **Note:** Please search and add the permissions described in the background information.
-
-4.  On the **add permissions** page, view the **authorization result** and click **complete**.
-
-
-## Step 1: obtain the temporary AccessKey and Token
-
-After logging on to the self-built Web server, call the STS [AssumeRole](/intl.en-US/API Reference/API Reference (STS)/Operation interfaces/AssumeRole.md) API operation to obtain a temporary AccessKey and Token, which are temporary identities. Select a method to call the interface:
-
--   Call online through [OpenAPI](https://api.aliyun.com/#/?product=Sts&api=AssumeRole).
--   Through the [RAM SDK for Java](/intl.en-US/SDK Reference/RAM SDK Reference/RAM SDK for Java.md) call.
-
-This topic uses the Java SDK as an example.
-
-**Note:** In the [sample code](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/demo/ARMS/embedPage.zip), you need to replace the following parameters with real values.
-
-```
-
-     String akId = "<accessKeyId>"; String ak = "<accessKeySecret>"; String roleArn = "<roleArn>"; 
-   
-```
-
-```
-
-     String accessKey = "<accessKeyId>"; // AccessKeyId String accessSecret of the RAM User created in the preparation step="<accessKeySecret>"; // AccessKeySecret String roleArn of the RAM User created in the preparation step="<roleArn>"; // ARN of the RAM role created in the preparation step 
-   
-```
-
-Wherein the `<accessKeyId>`and `<accessKeySecret>`is that you created in preparations with the RAM user's AccessKeyId and AccessKeySecret.
-
-![Example AccessKey](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1744978061/p54442.png)
-
-`<roleArn> is`The ARN of the RAM role created in the preparation step. Follow these steps to obtain the ARN:
+Use your Alibaba Cloud account to create RAM users and grant them permissions to call Security Token Service \(STS\) to assume RAM roles.
 
 1.  Log on to the [RAM console](http://ram.console.aliyun.com).
 
-2.  In the left-side navigation pane, choose **RAM roles**.
+2.  In the left-side navigation pane, choose **Identities** \> **Users**.
 
-3.  On the RAM roles page, click [create RAM role and add permissions](https://www.alibabacloud.com/help/doc-detail/128573.htm?spm=a2o1z.12531199.0.0.13477e2c01mvaw#d7e1345).
+3.  On the Users page, click **Create User**.
 
-4.  On the RAM role details page, copy the **basic information** information in the **ARN** section.
+4.  On the Create User page, set **Logon Name** and **Display Name** in the **User Account Information** section, select **Programmatic Access** in the **Access Mode** section, and then click **OK**.
+
+    **Note:** RAM automatically generates an AccessKey pair for the RAM user. Then, the RAM user can access ARMS by calling the corresponding API operations. For security reasons, the RAM console allows you to view or download the AccessKey secret only once. Therefore, when you create an AccessKey pair, you must keep your AccessKey secret strictly confidential.
+
+5.  In the Verify by Phone Number dialog box, click **Get Verification Code**, enter the verification code sent to your mobile phone, and then click **OK**.
+
+6.  On the Users page, find the created RAM user and click **Add Permissions** in the **Actions** column.
+
+7.  In the **Select Policy** section of the **Add Permissions** panel, enter AliyunSTSAssumeRoleAccess in the search box. Click the displayed permission policy to add it to the **Selected** list on the right side. Then, click **OK**.
+
+    ![Add Permission For User](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1744978061/p54441.png)
+
+8.  In the **Add Permissions** panel, view the authorization information summary in the **Authorization** section and click **Complete**.
+
+
+## Step 2: Create a RAM role and grant it permissions
+
+Create a RAM role and grant it permissions to access the ARMS console. Then, the RAM user assumes the RAM role to access the ARMS console.
+
+1.  Log on to the [RAM console](http://ram.console.aliyun.com).
+
+2.  In the left-side navigation pane, click **RAM Roles**.
+
+3.  On the RAM Roles page, click **Create RAM Role**.
+
+4.  In the **Create RAM Role** panel, perform the following operations:
+
+    1.  In the **Select Role Type** step, select **Alibaba Cloud Account** for **Trusted entity type** and click **Next**.
+
+    2.  In the **Configure Role** step, enter a role name in the **RAM Role Name** field and click **OK**.
+
+    3.  In the **Finish** step click **Add Permissions to RAM Role**.
+
+5.  In the **Select Policy** section of the **Add Permissions** panel, click System Policy or Custom Policy and enter the keyword of the policy that you want to add in the search box. Click the displayed policy to add it to the **Selected** list on the right side. Then, click **OK**.
+
+    You can grant the following ARMS permissions to a RAM role as needed:
+
+    -   AliyunARMSFullAccess: the full access permissions on ARMS
+    -   AliyunARMSReadOnlyAccess: the read-only permissions on ARMS
+6.  In the **Add Permissions** panel, view the authorization information summary in the **Authorization** section and click **Complete**.
+
+
+## Step 3: Obtain the temporary AccessKey pair and STS token
+
+Log on to the user-created web application, and then call the AssumeRole operation of STS on the web server to obtain the temporary AccessKey pair and STS token. They are the temporary identity. For more information about the AssumeRole operation, see [AssumeRole](/intl.en-US/API Reference/API Reference (STS)/Operation interfaces/AssumeRole.md).
+
+You can call the AssumeRole operation by using one of the following methods:
+
+-   Use [OpenAPI Explorer](https://api.aliyun.com/#/?product=Sts&api=AssumeRole).
+-   Use [SDK for Java](/intl.en-US/SDK Reference/RAM SDK Reference/RAM SDK for Java.md).
+
+SDK for Java is used in the example.
+
+Set the following parameters when you use SDK for Java:
+
+```
+String accessId = "<yourAccessKeyId>"; // The AccessKey ID of the RAM user.
+String accessKey = "<yourAccessKeySecret>"; // The AccessKey secret of the RAM user.
+String roleArn = "<roleArn>"; // The Alibaba Cloud Resource Name (ARN) of the RAM role.
+```
+
+The AccessKey ID and AccessKey secret of the RAM user are obtained when the RAM user is created.
+
+Perform the following steps to obtain the ARN of the RAM role:
+
+1.  Log on to the [RAM console](http://ram.console.aliyun.com).
+
+2.  In the left-side navigation pane, click **RAM Roles**.
+
+3.  In the lower part of the RAM Roles page, click the name of the RAM role whose ARN you want to obtain.
+
+4.  On the page that appears, copy the value of **ARN** in the Basic Information section.
 
     ![Example ARN](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1744978061/p54443.png)
 
 
-## Step 2: obtain a logon Token
+## Step 2: Obtain the logon token
 
-After obtaining the temporary AccessKey and Token through the STS AssumeRole interface, call the logon service interface to obtain the logon Token.
+After you call the AssumeRole operation of STS to obtain the temporary AccessKey pair and STS token, call the GetSigninToken operation to obtain the logon token.
 
-**Note:** The security Token returned by STS may contain special characters. Therefore, encode the special characters before entering them.
+**Note:** The temporary STS token may contain special characters. Before you use the token, use the URL encoding method to encode the special characters.
 
-Sample request:
+Sample request
 
 ```
 http://signin.aliyun.com/federation?Action=GetSigninToken
-    &AccessKeyId=<Temporary AccessKeyId returned by TS>
-    &AccessKeySecret=<Temporary AccessKeySecret returned by STS>
-    &SecurityToken=<Temporary Token returned by STS>
+    &AccessKeyId=<The temporary AccessKey ID that is returned by STS>
+    &AccessKeySecret=<The temporary AccessKey secret that is returned by STS>
+    &SecurityToken=<The temporary token that is returned by STS>
     &TicketType=mini
 ```
 
@@ -125,7 +120,9 @@ Use the obtained logon token and URL of the ARMS console page that you want to e
 
 **Note:** The temporary token is valid for 3 hours. We recommend that you configure the URL in the user-created web application to generate a new logon token on each request.
 
-1.  In the ARMS console, obtain the URL of the console page that you want to embed. For example, the URL of the Applications page for the China \(Shanghai\) region is:
+1.  In the ARMS console, obtain the URL of the console page that you want to embed.
+
+    The following example is the URL of the Applications page for the China \(Hangzhou\) region:
 
     ```
     https://arms.console.aliyun.com/apm?iframeMode=true&demo=1&pid=ac346dab-419d-48f5-b06a-e1c331c5c93e&regionId=cn-shanghai#/ac346dab-419d-48f5-b06a-e1c331c5c93e/home
@@ -133,19 +130,17 @@ Use the obtained logon token and URL of the ARMS console page that you want to e
 
     **Note:**
 
-    -   The URLs must be the URLs of Application Monitoring pages in the ARMS console. The URLs of Browser Monitoring pages in the ARMS console are not supported.
+    -   The URL must be the console address of ARMS Application Monitoring. ARMS Browser Monitoring is not supported.
     -   To hide the top navigation bar and the left-side navigation pane of the ARMS console, set `iframeMode` to true in the search section of the URL.
-2.  Use the logon token obtained in [Step 2](#sc_step_2) and the URL of the ARMS console page to generate a logon-free URL for the page. Sample request
+2.  Use the logon token and the URL of the ARMS console page to generate a logon-free URL for the page.
+
+    Sample request
 
     ```
     http://signin.aliyun.com/federation?Action=Login
-        &LoginUrl=<A URL that returns HTTP status code 302 and takes you to the user-created website>
+        &LoginUrl=<A URL that returns HTTP status code 302 and redirects you to the user-created website>
         &Destination=<The URL of the ARMS console page>
         &SigninToken=<The obtained logon token>
     ```
 
-
-The sample code used in this topic is based on ARMS SDK for Java. The sample code is used to embed the applications page of the ARMS console.
-
-[Obtain sample code](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/demo/ARMS/embedPage.zip)
 
