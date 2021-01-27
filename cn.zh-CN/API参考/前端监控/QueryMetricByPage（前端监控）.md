@@ -25,7 +25,7 @@
 -   `ASC`：升序
 -   `DESC`：降序 |
 |RegionId|String|否|cn-hangzhou|地域ID。 |
-|CurrentPage|Integer|否|1|查询结果的页码。非必填参数，如果不填写则默认为`1`。 |
+|CurrentPage|Integer|否|1|查询结果的页码。如果不填写则默认为`1`。 |
 |PageSize|Integer|否|10|查询结果的每页项目数量。 |
 
 ## 如何获取前端应用pid
@@ -49,7 +49,7 @@
 |Page|Integer|1|查询结果的页码 |
 |PageSize|Integer|10|查询结果的每页项目数量 |
 |Total|Integer|0|查询结果的总项目数量 |
-|Message|String|message|返回的信息 |
+|Message|String|Measures is mandatory for this action.|请求参数错误时返回的信息 |
 |RequestId|String|626037F5-FDEB-45B0-804C-B3C92797\*\*\*\*|请求ID |
 |Success|Boolean|true|查询是否成功：
 
@@ -83,8 +83,10 @@
 |webstat.api.detail|API详情|-   api（API请求地址，不带参数）
 -   ct（网络制式）
 -   detector\_browser（浏览器）
+-   detector\_browser\_version（浏览器版本）
 -   detector\_device（设备）
 -   detector\_os（操作系统）
+-   detector\_os\_version（操作系统版本）
 -   domain（域名）
 -   ip\_country\_id（中国省市ID）
 -   ip\_isp（运营商）
@@ -364,7 +366,6 @@ http(s)://[Endpoint]/?Action=QueryMetricByPage
 ```
 <QueryMetricByPageResponse>
       <RequestId>626037F5-FDEB-45B0-804C-B3C92797****</RequestId>
-      <Message>message</Message>
       <Data>
             <PageSize>10</PageSize>
             <Total>0</Total>
@@ -381,7 +382,6 @@ http(s)://[Endpoint]/?Action=QueryMetricByPage
 ```
 {
     "RequestId": "626037F5-FDEB-45B0-804C-B3C92797****",
-    "Message": "message",
     "Data": {
         "PageSize": 10,
         "Total": 0,
