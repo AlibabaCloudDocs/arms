@@ -23,20 +23,23 @@
 -   `3XX`：重定向
 -   `4XX`：请求错误
 -   `5XX`：服务器错误 |
-|Message|String|true|返回信息 |
+|Message|String|Internal error. Please try again. Contact the DingTalk service account if the issue persists after multiple retries.|请求参数错误时返回的信息 |
 |RequestId|String|40B10E04-81E8-4643-970D-F1B38F2E\*\*\*\*|请求ID |
 |Success|Boolean|true|操作是否成功：
 
  -   `true`：操作成功
 -   `false`：操作失败 |
-|TraceApps|Array| |返回的应用监控列表信息 |
+|TraceApps|Array of TraceApp| |返回的应用监控列表信息 |
 |AppId|Long|123|应用ID |
 |AppName|String|test-app|应用名称 |
 |CreateTime|Long|1529667762000|创建时间的时间戳 |
 |Labels|List|prod|应用标签 |
 |Pid|String|atc889zkcf@d8deedfa9bfxxxx|应用的ID标识串 |
 |RegionId|String|cn-hangzhou|地域ID |
-|Show|Boolean|true|是否显示 |
+|Show|Boolean|true|ARMS控制台是否显示该应用：
+
+ -   `true`：显示
+-   `false`：不显示 |
 |Type|String|TRACE|监控任务类型：
 
  -   `TRACE`：应用监控
@@ -56,7 +59,7 @@ http(s)://[Endpoint]/?Action=ListTraceApps
 
 正常返回示例
 
-`XML` 格式
+`XML`格式
 
 ```
 <ListTraceAppsResponse>
@@ -99,7 +102,7 @@ http(s)://[Endpoint]/?Action=ListTraceApps
 </ListTraceAppsResponse>
 ```
 
-`JSON` 格式
+`JSON`格式
 
 ```
 {
