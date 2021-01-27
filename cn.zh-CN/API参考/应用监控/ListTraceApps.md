@@ -34,7 +34,7 @@
 |AppName|String|test-app|应用名称 |
 |CreateTime|Long|1529667762000|创建时间的时间戳 |
 |Labels|List|prod|应用标签 |
-|Pid|String|atc889zkcf@d8deedfa9bfxxxx|应用的ID标识串 |
+|Pid|String|a5f9bdeb-2627-4dbe-9247-\*\*\*\*|应用的ID标识串 |
 |RegionId|String|cn-hangzhou|地域ID |
 |Show|Boolean|true|ARMS控制台是否显示该应用：
 
@@ -69,7 +69,7 @@ http(s)://[Endpoint]/?Action=ListTraceApps
 		    <UserId>113197164949****</UserId>
 		    <CreateTime>1571865746000</CreateTime>
 		    <UpdateTime>1571865746000</UpdateTime>
-		    <Pid>b590lhguqs@50e2179afeb****</Pid>
+		    <Pid>a5f9bdeb-2627-4dbe-9247-****</Pid>
 		    <Show>true</Show>
 		    <RegionId>cn-hangzhou</RegionId>
 		    <AppName>test-app</AppName>
@@ -80,7 +80,7 @@ http(s)://[Endpoint]/?Action=ListTraceApps
 		    <UserId>113197164949****</UserId>
 		    <CreateTime>1572401289000</CreateTime>
 		    <UpdateTime>1572401289000</UpdateTime>
-		    <Pid>b590lhguqs@b0175fb5bda****</Pid>
+		    <Pid>be1f9a33-9c8e-445e-9115-****</Pid>
 		    <Show>true</Show>
 		    <RegionId>cn-hangzhou</RegionId>
 		    <AppName>test-app2</AppName>
@@ -91,7 +91,7 @@ http(s)://[Endpoint]/?Action=ListTraceApps
 		    <UserId>113197164949****</UserId>
 		    <CreateTime>1576338375000</CreateTime>
 		    <UpdateTime>1576338375000</UpdateTime>
-		    <Pid>b590lhguqs@3afb9343a31****</Pid>
+		    <Pid>e04391e2-a7e0-4fbe-9987****</Pid>
 		    <Show>true</Show>
 		    <RegionId>cn-hangzhou</RegionId>
 		    <AppName>test-app3</AppName>
@@ -113,7 +113,7 @@ http(s)://[Endpoint]/?Action=ListTraceApps
 				"UserId": "113197164949****",
 				"CreateTime": 1571865746000,
 				"UpdateTime": 1571865746000,
-				"Pid": "b590lhguqs@50e2179afeb****",
+				"Pid": "a5f9bdeb-2627-4dbe-9247-****",
 				"Show": true,
 				"RegionId": "cn-hangzhou",
 				"AppName": "test-app"
@@ -124,7 +124,7 @@ http(s)://[Endpoint]/?Action=ListTraceApps
 				"UserId": "113197164949****",
 				"CreateTime": 1572401289000,
 				"UpdateTime": 1572401289000,
-				"Pid": "b590lhguqs@b0175fb5bda****",
+				"Pid": "be1f9a33-9c8e-445e-9115-****",
 				"Show": true,
 				"RegionId": "cn-hangzhou",
 				"AppName": "test-app2"
@@ -135,7 +135,7 @@ http(s)://[Endpoint]/?Action=ListTraceApps
 				"UserId": "113197164949****",
 				"CreateTime": 1576338375000,
 				"UpdateTime": 1576338375000,
-				"Pid": "b590lhguqs@3afb9343a31****",
+				"Pid": "e04391e2-a7e0-4fbe-9987-****",
 				"Show": true,
 				"RegionId": "cn-hangzhou",
 				"AppName": "test-app3"
