@@ -1,31 +1,33 @@
 # Create an alert
 
-Alibaba Cloud Prometheus Service provides out-of-the-box alert rules. You can also customize alert rules for specific monitored objects. If a rule is triggered, the system will send alert messages to the specified contact group by using a specified notification method. This way, contacts can resolve issues at the earliest opportunity.
+Alibaba Cloud Prometheus Monitoring provides out-of-the-box alert rules. You can also customize alert rules for specific monitored objects. If a rule is triggered, the system sends alert messages to the specified contact group by using a specified notification method. This way, contacts can resolve issues at the earliest opportunity.
 
 -   A monitoring job is created. For more information, see [Get started with Prometheus Service]().
 -   Contacts are created. For more information, see [Create contacts](/intl.en-US/Dashboard and alerting/Create contacts.md).
 
 ## Procedure
 
-1.  Log on to the [Prometheus console](https://prometheus.console.aliyun.com/#/home).
+1.  Log on to the [ARMS console](https://arms.console.aliyun.com/#/home)[ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  In the top navigation bar, select a region. Then, click the name of the Kubernetes cluster that you want to manage.
+2.  In the left-side navigation pane, click **Prometheus Monitoring**.
 
-3.  In the left-side navigation pane, choose **Alarm configuration beta**, and then click **Create Alert** in the upper-right corner.
+3.  In the top navigation bar, select a region. Then, click the name of the required Kubernetes cluster.
 
-4.  In the **Create Alert** dialog box, set the following parameters, and then click **OK**.
+4.  In the left-side navigation pane, choose **Alarm configuration beta**. Then, click **Create Alert** in the upper-right corner.
+
+5.  In the **Create Alert** dialog box, configure the following parameters, and then click **OK**.
 
     **Note:** The **Time** parameter is not supported.
 
-    1.  Enter a name in the **Rule Name** field, for example, network receiving pressure alert.
+    1.  Enter a name in the **Rule Name** field. Example: alerts for inbound traffic.
 
-    2.  Enter an expression that uses a PromQL statement, for example, `(sum(rate(kube_state_metrics_list_total{job="kube-state-metrics",result="error"}[5m])) / sum(rate(kube_state_metrics_list_total{job="kube-state-metrics"}[5m]))) > 0.01`.
+    2.  Enter an expression that uses a PromQL statement. Example: `(sum(rate(kube_state_metrics_list_total{job="kube-state-metrics",result="error"}[5m])) / sum(rate(kube_state_metrics_list_total{job="kube-state-metrics"}[5m]))) > 0.01`.
 
-        **Note:** The dollar sign \(`"$"`\) in a PromQL statement can cause an error. You must remove the equal sign \(`=`\) and the parameters on both sides of the equal sign \(`=`\) from the statement that contains the dollar sign \($\). For example, change `sum (rate (container_network_receive_bytes_total{instance=~"^$HostIp.*"}[1m]))` to `sum (rate (container_network_receive_bytes_total[1m]))`.
+        **Note:** An error may be reported if a PromQL statement contains a dollar sign \(`$`\). You must remove the equal sign \(`=`\) and the parameters on both sides of the equal sign \(`=`\) from the statement that contains the dollar sign \($\). For example, change `sum (rate (container_network_receive_bytes_total{instance=~"^$HostIp.*"}[1m]))` to `sum (rate (container_network_receive_bytes_total[1m]))`.
 
     3.  In the Labels section, click **Create Tag** to specify alert tags. The specified tags can be used as options for a dispatch rule.
 
-    4.  In the Annotations section, you can specify a template for alert messages. Click **Create Annotation**, and then set Key to message and Value to \{\{variable name\}\} alert message. The specified annotation is in the format of message:\{\{variable name\}\} alert notification, for example, message:\{\{$labels.pod\_name\}\} restart.
+    4.  In the Annotations section, specify a template for alert messages. Click **Create Annotation**. Set Key to message and Value to \{\{variable name\}\} alert message. The specified annotation is in the format of message:\{\{variable name\}\} alert notification. Example: message:\{\{$labels.pod\_name\}\} restart.
 
         You can customize a variable name or select an existing tag as the variable name. Existing tags:
 
