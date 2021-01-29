@@ -1,92 +1,108 @@
 # View Prometheus Monitoring metrics
 
-The preset monitoring dashboards provided by Prometheus Monitoring of Application Real-Time Monitoring Service \(ARMS\) contain the Kubernetes cluster overview, Kubernetes deployment, pods, and host details. You can view a wide range of Prometheus metrics through these dashboards, and modify the attributes such as the time range and refresh frequency of the dashboard data as needed.
+The preset monitoring dashboards provided by Prometheus Monitoring show the statistics of Kubernetes clusters, Kubernetes deployment, pods, and hosts. You can view the Prometheus Monitoring metrics on these dashboards, and modify the dashboard settings such as the time range and refresh frequency to meet your business requirements.
 
 [t855956.md\#section\_cpd\_cg9\_vul]()
 
 ## Open a monitoring dashboard
 
-After installing the Prometheus agent, you can open the preset monitoring dashboards on the Prometheus monitoring page.
+After you install the Prometheus agent, you can open the preset monitoring dashboards on the Prometheus Monitoring page.
 
-1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
+1.  Log on to the [ARMS console](https://arms.console.aliyun.com/#/home)[ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
 2.  In the left-side navigation pane, click **Prometheus Monitoring**.
 
-    On the Prometheus monitoring page, all the Container Service Kubernetes clusters under your Alibaba Cloud account are displayed.
+3.  In the left-side navigation pane, click **Monitoring List**. All the Container Service for Kubernetes \(ACK\) clusters in your Alibaba Cloud account are displayed on the Prometheus Monitoring page.
 
-3.  On the Prometheus monitoring page, click a link in the **Has installation plugins** column to access the monitoring dashboard in a new browser window.
+4.  On the Prometheus Monitoring page, click a link in the **Installed Dashboards** column to view the monitoring dashboard in a new browser window.
 
 
-## View monitoring metrics
+## View metrics
 
-You can view monitoring metrics on the following preset monitoring dashboards:
+You can view metrics on the following preset monitoring dashboards:
 
 -   Kubernetes cluster overview dashboard
 
-    The dashboard displays the following monitoring metrics:
+    ![K8s Cluster Overview](../images/p49438.png)
 
-    -   Total Usage: Cluster CPU Usage, Cluster Memory Usage, and Cluster Filesystem Usage
-    -   CPU Usage: Pod CPU Usage and Processes CPU Usage
-    -   Memory Usage: Pod Memory Usage and Processes Memory Usage
-    -   Network Info: Network I/O Pressure, Pod Network I/O, and Processes Network I/O
+    The dashboard shows the following metrics:
+
+    -   Total usage metrics such as Cluster CPU usage, Cluster memory usage, and Cluster filesystem usage
+    -   CPU metrics such as Pods CPU usage and All processes CPU usage
+    -   Memory metrics such as Pods memory usage and All processes memory usage
+    -   Network metrics such as Network I/O pressure, Pods network I/O, and All processes network I/O
 -   Kubernetes deployment dashboard
 
-    The dashboard displays the following monitoring metrics:
+    ![K8s Deployment Dashboard](../images/p51317.png)
 
-    -   Overview: Deployment CPU usage, Deployment Memory Usage, and Unavailable Replicas
-    -   Detail: CPU Usage, Memory Usage, and Processes Network I/O
--   Pod dashboard
+    The dashboard shows the following metrics:
 
-    The dashboard displays the following monitoring metrics:
+    -   Deployment CPU usage, Deployment memory usage, and Unavailable Replicas in the Overview section
+    -   CPU usage, Memory usage, and All processes network I/O in the Detail section
+-   Pods dashboard
 
-    -   Pod Info: Pod IP Address, Pod Status, Pod Container, and Container restarts
-    -   Total Usage: Pod Memory Usage and Pod CPU Usage
-    -   CPU Usage: Pod CPU Usage and Processes CPU Usage
-    -   Memory Usage: Pod Memory Usage and Processes Memory Usage
-    -   Network Info: Network I/O Pressure, Pod Network I/O, and Processes Network I/O
+    ![K8s Pods Dashboard](../images/p51318.png)
+
+    The dashboard shows the following metrics:
+
+    -   Pod information: Pod IP Address, Pod Status, Pod Container, and Containers restarts
+    -   Total usage metrics such as Pod memory usage and Pod CPU usage
+    -   CPU metrics such as Pods CPU usage and All processes CPU usage
+    -   Memory metrics such as Pods memory usage and All processes memory usage
+    -   Network metrics such as Network I/O pressure, Pods network I/O, and All processes network I/O
 -   Host details dashboard
 
-    The dashboard displays the following monitoring metrics:
+    ![K8s Host Details Dashboard](../images/p49437.png)
 
-    -   CPU Info: CPU Cores, CPU Usage, and CPU Iowait
-    -   Memory Info: Total Memory and Memory Usage
-    -   Disk Info: Total Disk Space, Disk I/O Read/Write Time, and Disk Read/Write Rate
-    -   Network Info: Network Traffic and TCP Connections
+    The dashboard shows the following metrics:
 
-## Common operations on dashboards
+    -   CPU metrics such as CPU Cores, CPU Usage, and CPU I/O Waiting Time
+    -   Memory metrics such as Total Memory and Memory Usage
+    -   Disk metrics such as Total Disk Space, Disk I/O Read/Write Time, and Disk Read/Write Rate
+    -   Network metrics such as Network Traffic and TCP Connections
 
-The following figure shows the common operations on dashboards.
+## Common dashboard operations
+
+The following figure shows the common operations that you can perform on the dashboards.
+
+![](../images/p51325.png)
 
 1.  Switch dashboards
 
-    The drop-down list displays the name of the currently viewed dashboard and can be used to switch to another dashboard. You can enter a name in the search bar on the top to search for a dashboard, or use Filter to search for a dashboard with a specified tag from the drop-down list.
+    The drop-down list shows the name of the current dashboard. You can click the down arrow to switch to another dashboard. To search for dashboards, you can enter a name in the top search bar, or select a tag from the Filter drop-down list.
 
-2.  Set the time interval and refresh frequency
+    ![Switch Dashboard](../images/p51327.png)
 
-    After clicking the icon, you can select a predefined time interval for monitoring data, such as the last 5 minutes, last 12 hours, or last 30 days. You can also customize an absolute time interval by setting the start time and end time. In addition, you can set the dashboard refresh frequency.
+2.  Specify the time range and refresh frequency
 
-3.  Expand the time interval
+    After you click the clock icon, you can select a predefined time range from the drop-down panel. For example, you can select Last 5 minutes, Last 12 hours, or Last 30 days. You can also specify the start time and end time to define an absolute time range. In addition, you can set the refresh frequency for the dashboard.
 
-    When you click the expand button each time, the time interval is expanded twice, with the start time earlier and end time later equally. Assume that the selected time interval is the last 10 minutes. After you click the button, the start time is 5 minutes earlier while the end time is 5 minutes later.
+    ![Set Interval and Frequency](../images/p51326.png)
+
+3.  Extend the time range
+
+    Each time you click the magnifier icon, the time range is extended to twice the original length. The start time and end time are equally extended. For example, if the selected time range is Last 10 minutes and you click the magnifier icon, the start time is extended to 5 minutes earlier and the end time is extended to 5 minutes later.
 
 4.  Manually refresh the dashboard
 
-    Click this button to refresh the monitoring data of all panels on the current dashboard.
+    Click the refresh icon to refresh the monitoring data of all panels on the current dashboard.
 
 5.  Filter monitoring data
 
     Select an option from the drop-down list to filter the monitoring data displayed on the current dashboard.
 
 
-## Common operations on the dashboard panel
+## Common operations on a dashboard panel
 
-Click the drop-down menu at the top of the panel to perform the following operations:
+You can click the drop-down menu at the top of a panel to perform the following operations:
 
--   View the current panel in full screen: Click **View** or press the shortcut key V. Press the shortcut key V again or press Esc to exit the full screen.
--   Share the current panel: Click **Share** or press P and S in sequence to access the Share dialog box and acquire the sharing link, embedded link, or snapshot link of the current panel.
--   Acquire the JSON code of the current panel: Choose **More** \> **Panel JSON** and then copy the JSON code in the JSON dialog box.
--   Export data on the current panel into a CSV file: Choose **More** \> **Export CSV**. In the Export CSV dialog box, set the format and export the file.
--   Toggle legends: Choose **More** \> **Toggle legend** or press P and L in sequence to toggle the legends.
+![Panel Operation](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/5974461161/p51328.png)
+
+-   To view the panel in the full screen mode, click **View** or press the V key. Then, you can press the V key again or press the Esc key to exit the full screen mode.
+-   To share the panel, click **Share** or press the P and S keys in sequence. Then, in the Share dialog box, obtain the sharing link, embedded link, or snapshot link of the panel.
+-   To obtain the JSON code of the panel, choose **More** \> **Panel JSON**, and then copy the JSON code from the JSON dialog box.
+-   To export data as a CSV file from the panel, choose **More** \> **Export CSV**. In the Export CSV dialog box, configure the format in which to export the data and then export the data.
+-   To enable or disable the legend, choose **More** \> **Toggle legend** or press the P and L keys in sequence.
 
 [What is Prometheus Service?]()
 
