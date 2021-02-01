@@ -24,7 +24,7 @@
 
 ## 操作步骤
 
-1.  登录[云解析DNS控制台](https://dns.console.aliyun.com/#/dns/domainList)。
+1.  登录[云解析DNS控制台](https://dns.console.aliyun.com/#/dns/domainList)[云解析DNS控制台](https://partners-intl.console.aliyun.com/#/dns/domainList)。
 
 2.  在左侧导航栏中，单击**PrivateZone**后，在**PrivateZone**页面单击**添加Zone**。
 
@@ -41,8 +41,8 @@
 6.  在**添加记录**对话框中，完成以下设置后，单击**确定**。
 
     -   **记录类型**：选择**CNAME**。
-    -   **主机记录**：填写为@，可以解析@.exmaple.com域名。
-    -   **记录值**：设置为对应地域下的CNAME记录值，详情请参见[使用说明](#section_opq_9x8_52e)。
+    -   **主机记录**：填写为@，可以解析@.example.com域名。
+    -   **记录值**：设置为对应地域下的CNAME记录值，更多信息，请参见[使用说明](#section_opq_9x8_52e)。
     -   **TTL值**：递归DNS缓存域名解析结果的时间，本示例选择了**1分钟**。
     ![Add Record](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/4674358061/p68396.png)
 
@@ -55,7 +55,7 @@
 
 ## 执行结果
 
-为专有网络VPC关联了云解析PrivateZone后，您可以通过远程连接登录实例，在ECS实例内部测试是否能访问对应地域的接入地址，详情请参见[通过VNC远程连接登录Linux实例](/cn.zh-CN/实例/连接实例/连接Linux实例/通过VNC远程连接登录Linux实例.md)。
+为专有网络VPC关联了云解析PrivateZone后，您可以通过远程连接登录实例，在ECS实例内部测试是否能访问对应地域的接入地址。更多信息，请参见[通过VNC远程连接登录Linux实例](/cn.zh-CN/实例/连接实例/使用VNC连接实例/通过VNC远程连接登录Linux实例.md)。
 
 以下以arms.cn-hangzhou.aliyuncs.com为例，使用ping功能测试数据包收发状况。
 
