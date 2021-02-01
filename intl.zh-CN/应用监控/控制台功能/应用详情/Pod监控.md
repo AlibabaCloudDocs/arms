@@ -1,0 +1,84 @@
+# Pod监控
+
+本文说明如何查看Pod监控，从而了解应用的Pod情况，包括CPU、物理内存、网络流量、网络数据包等信息。
+
+[接入应用监控](/intl.zh-CN/应用监控/接入应用监控/应用监控接入概述.md)
+
+**说明：** 仅部署在Pod中的应用支持查看Pod监控。
+
+## 功能入口
+
+1.  登录[ARMS控制台](https://arms.console.aliyun.com/#/home)[ARMS控制台](https://arms-ap-southeast-1.console.aliyun.com/#/home)。
+
+2.  在左侧导航栏，选择**应用监控** \> **应用列表**。
+
+3.  在顶部菜单栏，选择地域。
+
+4.  在**应用列表**页面，单击应用名称。
+
+5.  在**左侧导航栏**，单击**应用详情**。
+
+6.  在**应用详情**页面，选择Pod实例，设置时间段，单击**Pod监控**页签。
+
+    ![pod监控](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/2080191161/p236424.png)
+
+
+## CPU
+
+**CPU**区域显示该应用在指定时间段的Pod的CPU情况，包括以下指标：
+
+-   累计CPU使用量
+-   CPU配额
+
+![CPU](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/2080191161/p236432.png)
+
+1.  在**CPU**区域，您可以执行以下操作：
+
+    -   将光标移到统计图上，查看统计情况。
+    -   单击图例，隐藏或显示数据。
+
+## 物理内存
+
+**物理内存**区域显示该应用在指定时间段的Pod的物理内存情况，包括以下指标：
+
+-   内存使用量
+-   内存配额
+
+![物理内存](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/2080191161/p236434.png)
+
+1.  在**物理内存**区域，您可以执行以下操作：
+
+    -   将光标移到统计图上，查看统计情况。
+    -   单击图例，隐藏或显示数据。
+
+## 网络流量
+
+**网络流量**区域显示该应用在指定时间段的Pod的网络流量情况，包括以下指标：
+
+-   网络接收的字节数
+-   网络发送的字节数
+
+![网络流量](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/2080191161/p236437.png)
+
+1.  在**网络流量**区域，您可以执行以下操作：
+
+    -   将光标移到统计图上，查看统计情况。
+    -   单击图例，隐藏或显示数据。
+
+## 网络数据包
+
+**网络数据包**区域显示该应用在指定时间段的Pod的网络数据包情况，包括以下指标：
+
+-   网络发送丢弃的报文数
+-   网络发送的报文数
+-   网络接收丢弃的报文数
+-   网络发送的错误数
+-   网络接收的错误数
+
+![网络数据包](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/3080191161/p236441.png)
+
+1.  在**网络数据包**区域，您可以执行以下操作：
+
+    -   将光标移到统计图上，查看统计情况。
+    -   单击图例，隐藏或显示数据。
+
