@@ -10,7 +10,13 @@
 
 ## 示例代码
 
-如需快速体验将将ARMS页面嵌入自建Web应用的效果，您可以下载并使用[示例代码](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/demo/ARMS/Demo/embedPage.zip)。
+如需快速体验将将ARMS页面嵌入自建Web应用的效果，您可以下载并使用[示例代码](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/demo/ARMS/embedPage.zip)。
+
+## 访问流程
+
+外部系统访问ARMS的流程如下图所示。
+
+![access_flow](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/0012768951/p54445.png)
 
 ## 步骤一：创建RAM用户并添加权限
 
@@ -122,7 +128,7 @@ http://signin.aliyun.com/federation?Action=GetSigninToken
 
 1.  在ARMS控制台获取待嵌入的控制台页面的URL链接。
 
-    例如杭州地域的应用列表页面的URL链接为：
+    例如上海地域的应用列表页面的URL链接为：
 
     ```
     https://arms.console.aliyun.com/apm?iframeMode=true&demo=1&pid=ac346dab-419d-48f5-b06a-e1c331c5c93e&regionId=cn-shanghai#/ac346dab-419d-48f5-b06a-e1c331c5c93e/home
@@ -134,13 +140,13 @@ http://signin.aliyun.com/federation?Action=GetSigninToken
     -   在URL链接的search部分添加`iframeMode=true`设置，可以隐藏ARMS控制台原有的顶部菜单栏和左侧导航栏。
 2.  利用登录Token与ARMS控制台页面链接生成免登录访问链接。
 
-    请求样例：
-
     ```
     http://signin.aliyun.com/federation?Action=Login
         &LoginUrl=<登录失效跳转的地址，一般配置为自建Web配置302跳转的URL>
         &Destination=<ARMS控制台页面链接>
         &SigninToken=<获取到的登录Token>
     ```
+
+3.  在浏览器访问该免登陆访问链接。
 
 
