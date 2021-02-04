@@ -17,7 +17,7 @@ After enabling the DingTalk chatbot alert, you can specify DingTalk groups to re
 
         ![Add Robot](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/2467758061/p43304.png)
 
-2.  On the Contact page of the console, add DingTalk chatbot as a contact. For more information on how to add a contact, see [Create a contact](/intl.en-US/Dashboard and alerting/Create contacts.md).
+2.  On the Contact page of the console, add DingTalk chatbot as a contact. For more information on how to add a contact, see [Create contacts](/intl.en-US/Dashboard and alerting/Create contacts.md).
 3.  Create a contact group, and choose the contact that you created in the previous step as the alert contact. For more information on how to create a contact group, see [Create a contact group](/intl.en-US/Dashboard and alerting/Create a contact group.md).
 4.  Set alert rules.
     -   If you have not created an alert notification yet, create one. Select **DingTalk chatbot** as the notification mode, and set the notification receiver to the contact group that you created in [Step 3](#step3). For more information, see [Create an alert](/intl.en-US/Dashboard and alerting/Create an alert.md).
