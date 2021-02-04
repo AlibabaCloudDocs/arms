@@ -147,6 +147,6 @@ http://signin.aliyun.com/federation?Action=GetSigninToken
         &SigninToken=<获取到的登录Token>
     ```
 
-3.  在浏览器访问该免登陆访问链接。
+3.  在浏览器访问该免登录访问链接。
 
 
