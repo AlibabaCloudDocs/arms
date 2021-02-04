@@ -25,7 +25,7 @@ The following figure shows the metrics in this section.
 
 **Note:**
 
--   The data in the line chart is displayed based on the average values of the metrics within the specified time range. The average value reflects the average performance over a period of time. However, this value is sensitive to extreme values and large fluctuations. For example, if the overall page loading speed is slow due to weak network connection during an access request, the average response time is high. You can click the ![Filter](../images/p67877.png) icon in the upper-right corner to remove extreme values. In this way, the impact of extreme values on the overall performance trend is avoided.
+-   The data in the line chart is displayed based on the average values of the metrics within the specified time range. The average value reflects the average performance over a period of time. However, this value is sensitive to extreme values and large fluctuations. For example, if the overall page loading speed is slow due to weak network connection during an access request, the average response time is high. You can click the ![Filter](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/6509242161/p67877.png) icon in the upper-right corner to remove extreme values. In this way, the impact of extreme values on the overall performance trend is avoided.
 -   If the data in the line chart increases sharply, you can use Performance Sample Distribution and Slow Page Session Trace sections to identify the issue.
 
 ## Page Load Waterfall Plot section
