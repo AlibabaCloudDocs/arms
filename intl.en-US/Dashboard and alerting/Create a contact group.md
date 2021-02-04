@@ -40,7 +40,7 @@ When you create an alert rule, you can specify a contact group as the receiver o
 **Related topics**  
 
 
-[Create a contact](/intl.en-US/Dashboard and alerting/Create contacts.md)
+[Create contacts](/intl.en-US/Dashboard and alerting/Create contacts.md)
 
 [Enable DingTalk chatbot alert](/intl.en-US/Dashboard and alerting/Enable DingTalk chatbot alert.md)
 
