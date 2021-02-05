@@ -4,7 +4,7 @@ This topic describes how to use Application Real-Time Monitoring Service \(ARMS\
 
 ## Prerequisites
 
--   An application monitoring task is created in the ARMS console, and the ARMS agent for application monitoring is installed and started in the Java program. For more information, see [Manually install the ARMS agent for a Java application](/intl.en-US/Application monitoring/Start monitoring Java applications/Manually install the ARMS agent for a Java application.md).
+-   An application monitoring task is created in the ARMS console, and the ARMS agent for application monitoring is installed and started in the Java program. For more information, see [Manually install the ARMS agent for a Java application](/intl.en-US/Application monitoring/Quick start/Monitor Java applications/Manually install the ARMS agent for a Java application.md).
 -   arms-sdk-1.7.3.jar is introduced to the program.
 
     ```
@@ -80,7 +80,7 @@ The span tags baggage and tag can be used to query traces by tag.
 -   Items on a baggage can be passed to the downstream and are generally used to color business data. We recommend that you do not set a large number of tag items.
 -   Items on a tag apply to only the current span. You can set multiple items.
 
-1.  Log on to the[ARMS console](https://arms-intl.console.aliyun.com/).
+1.  Log on to the [ARMS console](https://arms-intl.console.aliyun.com/).
 2.  In the left-side navigation pane, choose **Application Monitoring** \> **Invocation Trace Query** and select a region in the top navigation bar.
 3.  On the Invocation Trace Query page, select a **Parameter Name**, specify the custom tag in the **Parameter Value** field, and click **Query**.
 4.  In the **Invocation Trace Query** list, click the **TraceID** of the destination trace.
