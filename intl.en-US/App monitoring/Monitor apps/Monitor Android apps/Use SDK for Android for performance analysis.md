@@ -57,7 +57,7 @@ Add Maven dependencies.
         }
     ```
 
-    **Note:** You can obtain the key-secret pair of the app from the file downloaded in the [Step 4](/intl.en-US/App monitoring/Create an app monitoring task.mdstep_c3d_tna_qn1)[4](/intl.en-US/App monitoring/Create an app monitoring task.mdstep_c3d_tna_qn1) section of the [Create an app monitoring task](/intl.en-US/App monitoring/Create an app monitoring task.md) topic.
+    **Note:** You can obtain the key-secret pair of the app from the file downloaded in the [Step 4](/intl.en-US/App monitoring/Create an app monitoring task.mdstep_c3d_tna_qn1) section of the [Create an app monitoring task](/intl.en-US/App monitoring/Create an app monitoring task.md) topic.
 
 2.  Specify the custom application in AndroidManifest.xml.
 
