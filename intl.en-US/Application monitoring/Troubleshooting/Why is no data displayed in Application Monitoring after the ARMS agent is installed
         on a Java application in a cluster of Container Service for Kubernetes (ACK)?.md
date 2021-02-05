@@ -38,7 +38,7 @@ The pod of the application is not injected to arms-init-container, the YAML file
 
     -   If the pod logs of arms-pilot report an STS error, authorize the cluster of the application and restart the pod of the application. For more information, see [Install the ARMS agent for Java applications in Container Service for Kubernetes](/intl.en-US/Application monitoring/Quick start/Monitor Java applications/Install the ARMS agent for a Java application deployed in Container Service for Kubernetes.md)。
     -   If the pod logs of arms-pilot do not report an STS error, contact the ARMS DingTalk account arms160804.
-8.  On the Pods tab, click **Edit** next to the required pod. In the Edit YAML dialog box, check whether the YAML file contains the followingjavaagent parameter:
+8.  On the Pods tab, click **Edit** next to the required pod. In the Edit YAML dialog box, check whether the YAML file contains the following javaagent parameter:
 
     ```
     -javaagent:/home/admin/.opt/ArmsAgent/arms-bootstrap-1.7.0-SNAPSHOT.jar
