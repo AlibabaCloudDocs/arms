@@ -23,5 +23,5 @@ Before using ARMS to monitor mobile application, you must create a monitoring ta
     ![Add SDK tab](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9130758061/p102998.png)
 
 
-After you perform the preceding steps, you can test your app monitoring task and log on to the [ARMS console](https://arms-intl.console.aliyun.com/#/home)to view the data reports.
+After you perform the preceding steps, you can test your app monitoring task and log on to the [ARMS console](https://arms-intl.console.aliyun.com/#/home) to view the data reports.
 
