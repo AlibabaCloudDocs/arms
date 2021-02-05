@@ -27,8 +27,6 @@
 
 而链路追踪定位于分布式链路追踪解决方案工具，功能比较专一，面向专业解决分布式环境下的链路追踪问题。您可以通过接入链路追踪SDK来实现分布式链路追踪，SDK本身只负责链路监控，功能相对专注。
 
-![ARMS and xTrace Differences](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/5520496851/p65778.png)
-
 ## 接入方式对比
 
 定位于应用性能管理的ARMS的监控接入方式是业界商用APM工具中比较流行的无侵入式接入方案，您无需改动代码，即可接入。一般需要在应用程序中加载Agent，并且修改程序启动方式。以ARMS为例，在启动Java程序时需要增加-javaagent启动参数。
@@ -38,8 +36,6 @@
 -   已使用Jaeger、Zipkin或其他Opentracing标准SDK的应用可无缝迁移到链路追踪中，无需修改代码。
 -   由于链路追踪SDK是基于开源标准的，因此您无需担心Lock-in问题。
 -   借助社区力量，您可以一次性大量支持多种开发语言，使得面向异构环境的开发者在链路监控方面的接入门槛大幅降低。
-
-![Access Difference](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/5520496851/p65793.png)
 
 ## 计费模式对比
 
@@ -56,8 +52,6 @@
 
 **相关文档**  
 
-
-[链路追踪Tracing Analysis](https://www.aliyun.com/product/xtrace)
 
 [链路追踪Tracing Analysis](https://www.alibabacloud.com/zh/products/tracing-analysis)
 
