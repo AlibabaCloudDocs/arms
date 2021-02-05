@@ -6,7 +6,7 @@ ARMS Browser Monitoring defines all events on the page as user actions, includin
 
 ## Step 1: Install the ARMS agent
 
-After you install the ARMS agent, your frontend applications can be fully monitored. Select a method to install the ARMS agent as needed. For more information, see [Access overview of browser monitoring](/intl.en-US/Browser monitoring/Get started with Browser Monitoring/Access overview of browser monitoring.md).
+After you install the ARMS agent, your frontend applications can be fully monitored. Select a method to install the ARMS agent as needed. For more information, see [Browser monitoring overview](/intl.en-US/Browser monitoring/Quick start/Browser monitoring overview.md).
 
 ## Step 2: View frequent errors
 
@@ -18,7 +18,7 @@ After you install the ARMS agent, your frontend applications can be fully monito
 
 4.  On the JS Error Diagnosis page, click the **Frequent Errors** tab.
 
-    ![](../images/p60698.png)
+    ![](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7502601161/p60698.png)
 
 
 ## Step 3: Diagnose causes of the error
@@ -29,11 +29,11 @@ Use the user action backtracking feature to reproduce the situation in which the
 
 2.  On the **Error Detail** tab, analyze user behaviors in the **User Behavior Trace** section to determine which operation causes the error.
 
-    ![](../images/p60700.png)
+    ![](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/5502601161/p60700.png)
 
 
 **Related topics**  
 
 
-[Script error causes and solutions](/intl.en-US/Browser monitoring/Script error causes and solutions.md)
+[Causes and solutions for script errors](/intl.en-US/Browser monitoring/Causes and solutions for script errors.md)
 
