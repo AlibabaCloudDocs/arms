@@ -8,7 +8,7 @@ SkyWalking是一款广受欢迎的国产应用性能监控APM（Application Perf
 
 ## 准备工作
 
-1.  登录[链路追踪Tracing Analysis控制台](https://tracing.console.aliyun.com/)[链路追踪Tracing Analysis控制台](https://tracing-sg.console.aliyun.com/)。
+1.  登录[链路追踪Tracing Analysis控制台](https://tracing-sg.console.aliyun.com/)。
 
 2.  在左侧导航栏单击**集群配置**，并在顶部菜单栏选择目标地域。
 
@@ -191,7 +191,5 @@ SkyWalking是一款广受欢迎的国产应用性能监控APM（Application Perf
 
 ## 查看结果
 
-稍等片刻后到[链路追踪Tracing Analysis控制台](https://tracing.console.aliyun.com/)[链路追踪Tracing Analysis控制台](https://tracing-sg.console.aliyun.com/)查看，如果有监控数据则表示追踪成功。如有关于Nginx监控的疑问，欢迎通过钉钉账号osfriend交流。
-
-## 更多信息
+稍等片刻后到[链路追踪Tracing Analysis控制台](https://tracing-sg.console.aliyun.com/)查看，如果有监控数据则表示追踪成功。如有关于Nginx监控的疑问，欢迎通过钉钉账号osfriend交流。
 
