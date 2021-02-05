@@ -265,7 +265,7 @@ On the ECS instance, check whether the `/root/.arms/supervisor/logs/arms-supervi
 5.  At the top of the Pods tab, set Namespace to **arms-pilot**. Check whether any pods whose names contain the **arms-pilot** prefix exist in the Pod list.
 
     -   If pods whose names contain the prefix exist, perform [Step 6](#step_w3r_w45_eav).
-    -   If pods whose names contain the prefix do not exist, install arms-pilot from the application market. For more information, see [Install the ARMS agent for Java applications in Container Service for Kubernetes](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for a Java application deployed in Container Service for Kubernetes.md).
+    -   If pods whose names contain the prefix do not exist, install arms-pilot from the application market. For more information, see [Install the ARMS agent for Java applications in Container Service for Kubernetes](/intl.en-US/Application monitoring/Quick start/Monitor Java applications/Install the ARMS agent for a Java application deployed in Container Service for Kubernetes.md).
 6.  On the Deployments or StatefulSets tab, choose **More** \> **View in YAML** in the Actions column. In the Edit YAML dialog box, check whether the YAML file contains the following annotations.
 
     ```
@@ -278,7 +278,7 @@ On the ECS instance, check whether the `/root/.arms/supervisor/logs/arms-supervi
     -   If the YAML file does not contain the annotations, add the preceding annotations to the spec \> template \> metadata section in the Edit YAML dialog box, replace `<your-deployment-name>` with your application name. Then, click **Update**.
 7.  On the Pods tab, click **Logs** next to the required pod to check whether the pod logs of arms-pilot reports an STS error in the `"Message":"STS error"` format.
 
-    -   If the error is reported, authorize the cluster of the application and restart the pod of the application. For more information, see [Install the ARMS agent for Java applications in Container Service for Kubernetes](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for a Java application deployed in Container Service for Kubernetes.md).
+    -   If the error is reported, authorize the cluster of the application and restart the pod of the application. For more information, see [Install the ARMS agent for Java applications in Container Service for Kubernetes](/intl.en-US/Application monitoring/Quick start/Monitor Java applications/Install the ARMS agent for a Java application deployed in Container Service for Kubernetes.md).
     -   If the error is not reported, contact the DingTalk account arms160804 for support.
 8.  On the Pods tab, click **Edit** next to the required pod. In the Edit YAML dialog box, check whether the YAML file contains the following javaagent parameter:
 
@@ -319,9 +319,9 @@ Common Java applications indicate Java applications other than those deployed on
 You can check the version of the ARMS agent by viewing the Version file in the directory of the agent. For example, `2.5.8_cf020486_20190816150025` indicates that the version of the ARMS agent is 2.5.8 and was released on August 16, 2019.
 
 -   If the version of the ARMS agent is earlier than 2.5.8.1, uninstall the agent and install it again. You can specify a new application name when you reinstall the agent.
-    -   For more information about how to uninstall the ARMS agent that is manually installed, see[How do I uninstall the ARMS agent that is manually installed?](https://www.alibabacloud.com/help/doc-detail/162776.htm#section-2je-5ub-m2q)
-    -   For more information about how to uninstall the ARMS agent that is installed with one click, see[How do I uninstall the ARMS agent that is installed with one click?](https://www.alibabacloud.com/help/doc-detail/162776.htm#section-lcu-dvl-fyl)
-    -   For more information about how to uninstall the ARMS agent installed on applications in ECS instances, see[How do I uninstall the ARMS agent installed on applications in ECS instances?](https://www.alibabacloud.com/help/doc-detail/162776.htm#section-2f1-20j-xgy)
+    -   For more information about how to uninstall the ARMS agent that is manually installed, see [How do I uninstall the ARMS agent that is manually installed?](https://www.alibabacloud.com/help/doc-detail/162776.htm#section-2je-5ub-m2q)
+    -   For more information about how to uninstall the ARMS agent that is installed with one click, see [How do I uninstall the ARMS agent that is installed with one click?](https://www.alibabacloud.com/help/doc-detail/162776.htm#section-lcu-dvl-fyl)
+    -   For more information about how to uninstall the ARMS agent installed on applications in ECS instances, see [How do I uninstall the ARMS agent installed on applications in ECS instances?](https://www.alibabacloud.com/help/doc-detail/162776.htm#section-2f1-20j-xgy)
 -   If the version of the ARMS agent is 2.5.8.1 or later, you can perform the following steps to modify the name of the Java application without reinstalling the ARMS agent.
 
     **Note:** ARMS agents downloaded after August 20, 2019 support this feature.
@@ -357,7 +357,7 @@ You can check the version of the ARMS agent by viewing the Version file in the d
     -   <NewAppName\>: the new application name.
     -   <LicenseKey\>: the license key of the application monitored by ARMS, which can be obtained from the ARMS console.
 
-If the standard output shown in the following figure is displayed, it indicates that the application name is modified.
+If the standard output shown in the following figure is displayed.
 
 ![Name Change Success](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3565278061/p57403.png)
 
@@ -416,9 +416,9 @@ If the standard output shown in the following figure is displayed, it indicates 
 You can check the version of the ARMS agent by viewing the Version file in the directory of the agent. For example, `2.5.8_cf020486_20190816150025` indicates that the version of the ARMS agent is 2.5.8 and was released on August 16, 2019.
 
 -   If the version of the ARMS agent is earlier than 2.5.8.1, uninstall the agent and install it again. You can specify a new application name when you reinstall the agent.
-    -   For more information about how to uninstall the ARMS agent that is manually installed, see[How do I uninstall the ARMS agent that is manually installed?](https://www.alibabacloud.com/help/doc-detail/162776.htm#section-2je-5ub-m2q)
-    -   For more information about how to uninstall the ARMS agent that is installed with one click, see[How do I uninstall the ARMS agent that is installed with one click?](https://www.alibabacloud.com/help/doc-detail/162776.htm#section-lcu-dvl-fyl)
-    -   For more information about how to uninstall the ARMS agent installed on applications in ECS instances, see[How do I uninstall the ARMS agent installed on applications in ECS instances?](https://www.alibabacloud.com/help/doc-detail/162776.htm#section-2f1-20j-xgy)
+    -   For more information about how to uninstall the ARMS agent that is manually installed, see [How do I uninstall the ARMS agent that is manually installed?](https://www.alibabacloud.com/help/doc-detail/162776.htm#section-2je-5ub-m2q)
+    -   For more information about how to uninstall the ARMS agent that is installed with one click, see [How do I uninstall the ARMS agent that is installed with one click?](https://www.alibabacloud.com/help/doc-detail/162776.htm#section-lcu-dvl-fyl)
+    -   For more information about how to uninstall the ARMS agent installed on applications in ECS instances, see [How do I uninstall the ARMS agent installed on applications in ECS instances?](https://www.alibabacloud.com/help/doc-detail/162776.htm#section-2f1-20j-xgy)
 -   If the version of the ARMS agent is 2.5.8.1 or later, you can perform the following steps to modify the name of the Java application without reinstalling the ARMS agent.
 
     **Note:** ARMS agents downloaded after August 20, 2019 support this feature.
@@ -438,7 +438,7 @@ The names of Java applications deployed in EDAS cannot be modified.
 
 ## How do I uninstall the ARMS agent that is manually installed?
 
-For more information about how to manually install the ARMS agent on Java applications, see [Manually install the ARMS agent for a Java application](/intl.en-US/Application monitoring/Start monitoring Java applications/Manually install the ARMS agent for a Java application.md). You can perform the following steps to uninstall the ARMS agent that is manually installed:
+For more information about how to manually install the ARMS agent on Java applications, see [Manually install the ARMS agent for a Java application](/intl.en-US/Application monitoring/Quick start/Monitor Java applications/Manually install the ARMS agent for a Java application.md). You can perform the following steps to uninstall the ARMS agent that is manually installed:
 
 1.  If you no longer want to use ARMS to monitor your Java applications, delete all parametersrelated to AppName and LicenseKey, which are described in [Step 8](https://www.alibabacloud.com/help/zh/doc-detail/63797.htm#step-dv3-vvr-lxd).
 
@@ -449,7 +449,7 @@ For more information about how to manually install the ARMS agent on Java applic
 
 ## How do I uninstall the ARMS agent that is installed with one click?
 
-For more information about how to install the ARMS agent with one click, see [Install the ARMS agent for a Java application by using scripts](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for a Java application by using scripts.md). You can perform the following steps to uninstall the ARMS agent that is installed with one click:
+For more information about how to install the ARMS agent with one click, see [Install the ARMS agent for a Java application by using scripts](/intl.en-US/Application monitoring/Quick start/Monitor Java applications/Install the ARMS agent for a Java application by using scripts.md). You can perform the following steps to uninstall the ARMS agent that is installed with one click:
 
 1.  If you no longer want to use ARMS to monitor your Java applications, run the `jps -l` command to view all processes and find the process ID of `com.alibaba.mw.arms.apm.supervisor.daemon.Daemon` in the returned results.
 
@@ -521,7 +521,7 @@ If you no longer want to use ARMS to monitor your Java applications in an ACK cl
 
 ## How do I uninstall the ARMS agent installed on a Java application in Docker?
 
-1.  If you no longer want to use ARMS to monitor your Java applications in a Docker cluster, delete the Dockerfile content edited in [Step 1](/intl.en-US/Application monitoring/Start monitoring Java applications/Install the ARMS agent for a Java application deployed in a Docker cluster.md) in the "Install the ARMS agent for applications in Docker" topic.
+1.  If you no longer want to use ARMS to monitor your Java applications in a Docker cluster, delete the Dockerfile content edited in [Step 1](/intl.en-US/Application monitoring/Quick start/Monitor Java applications/Install the ARMS agent for a Java application deployed in a Docker cluster.md) in the "Install the ARMS agent for applications in Docker" topic.
 
 2.  Run the docker build command to construct the image.
 
