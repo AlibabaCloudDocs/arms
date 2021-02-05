@@ -8,7 +8,7 @@ Nginx是一款自由的、开源的、高性能的HTTP服务器和反向代理�
 
 ## 准备工作
 
-1.  登录[链路追踪Tracing Analysis控制台](https://tracing.console.aliyun.com/)[链路追踪Tracing Analysis控制台](https://tracing-sg.console.aliyun.com/)。
+1.  登录[链路追踪Tracing Analysis控制台](https://tracing-sg.console.aliyun.com/)。
 
 2.  在左侧导航栏单击**集群配置**。
 
@@ -51,7 +51,7 @@ Nginx是一款自由的、开源的、高性能的HTTP服务器和反向代理�
 
 4.  查看Nginx链路数据。
 
-    登录[链路追踪Tracing Analysis控制台](https://tracing.console.aliyun.com/)[链路追踪Tracing Analysis控制台](https://tracing-sg.console.aliyun.com/)可以查看应用nginx-jaeger的链路数据。
+    登录[链路追踪Tracing Analysis控制台](https://tracing-sg.console.aliyun.com/)可以查看应用nginx-jaeger的链路数据。
 
 
 ## 在Docker上部署和跟踪Nginx
@@ -191,8 +191,6 @@ Nginx是一款自由的、开源的、高性能的HTTP服务器和反向代理�
 ## 查看结果
 
 稍等片刻后到链路追踪控制台查看，如果有监控数据则表示追踪成功。如有关于Nginx监控的疑问，欢迎通过钉钉账号osfriend交流。
-
-## 更多信息
 
 [nginx-opentracing项目](https://github.com/opentracing-contrib/nginx-opentracing)
 
