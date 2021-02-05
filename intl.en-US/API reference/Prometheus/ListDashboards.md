@@ -1,6 +1,6 @@
 # ListDashboards
 
-QueirieqUERIEs the Grafana dashboard of a cluster in a specified region.
+Queries Grafana dashboards of a Container Service Kubernetes cluster.
 
 ********
 
@@ -13,8 +13,8 @@ QueirieqUERIEs the Grafana dashboard of a cluster in a specified region.
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
 |Action|String|Yes|ListDashboards|The operation that you want to perform. Set the value to `ListDashboards`. |
-|ClusterId|String|Yes|cc7a37ee31aea4ed1a059eff8034b\*\*\*\*|The ID of an Alibaba Cloud Container Service for Kubernetes cluster. |
-|RegionId|String|Yes|cn-hangzhou|The region ID of the instance. |
+|ClusterId|String|Yes|cc7a37ee31aea4ed1a059eff8034b\*\*\*\*|The ID of the Container Service Kubernetes cluster. |
+|RegionId|String|Yes|cn-hangzhou|The ID of the region. |
 
 ## Response parameters
 
@@ -39,14 +39,17 @@ QueirieqUERIEs the Grafana dashboard of a cluster in a specified region.
 -   Client Library
 -   ElasticSearch |
 |Id|String|1100\*\*|The ID of the Grafana dashboard. The value is unique only when you install the Grafana dashboard. |
-|IsArmsExporter|Boolean|false|Indicates whether the exporter is provided by ARMS. |
+|IsArmsExporter|Boolean|false|Indicates whether the exporter is provided by Application Real-Time Monitoring Service \(ARMS\).
+
+-   `true:` The exporter is provided by ARMS.
+-   `false:`: The exporter is not provided by ARMS. |
 |Tags|List|\["arms-k8s","ccc8ce1fe0c9543629e39ee657e34\*\*\*\*"\]|The tag of the Grafana dashboard. |
 |Time|String|1590136924|The timestamp when the Grafana dashboard was created. |
 |Title|String|ApiServer|The name of the Grafana dashboard. |
 |Type|String|dash-db|The type of the Grafana dashboard. Valid values:
 
--   `dash-db`: specifies a dashboard.
--   `dash-folder`: specifies a folder \(that can include a dashboard\). |
+-   `dash-db`: indicates a dashboard.
+-   `dash-folder`: indicates a folder that can include a dashboard. |
 |Uid|String|1131971649496228-\*\*\*\*\*-59|The unique identifier of a dashboard when multiple Grafana dashboards are installed. It is a unique business ID on the page. |
 |Url|String|http://g.console.aliyun.com/d/1131971649496228-\*\*\*\*\*-59/ApiServer?orgId=3\*\*&refresh=60s|The complete URL of the Grafana dashboard. |
 |RequestId|String|2A0CEDF1-06FE-44AC-8E21-21A5BE65\*\*\*\*|The ID of the request. |
