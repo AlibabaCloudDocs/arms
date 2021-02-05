@@ -14,9 +14,3 @@
 |.NET|https://github.com/jaegertracing/jaeger-client-csharp|https://github.com/openzipkin/zipkin4net|https://github.com/SkyAPM/SkyAPM-dotnet|
 |C++|https://github.com/jaegertracing/jaeger-client-cpp|https://github.com/flier/zipkin-cpp|无|
 
-请在下方根据您的应用语言或者使用的客户端查看相应的应用接入文档。
-
-## 按应用语言
-
-## 按客户端
-
