@@ -84,7 +84,7 @@ This topic applies to Android Studio projects that use Gradle to manage dependen
     ```
 
 
-## Step 3: Obtain the remote logs.
+## Step 3: Obtain the remote logs
 
 1.  Import the header file for the workflow to trigger the log information to be exported.
 
