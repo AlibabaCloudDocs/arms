@@ -68,9 +68,9 @@ In the following example, Jaeger is used to report data of a Java application. F
 
 After the application data is reported to Tracing Analysis, you can perform the following operations in the Tracing Analysis console:
 
--   [View key application performance metrics and topology](/intl.en-US/Console guide/Application management/View key application performance metrics and topology.md)
--   [View application details](/intl.en-US/Console guide/Application management/View application details.md)
--   [View API usage](/intl.en-US/Console guide/Application management/View API usage.md)
--   [View SQL performance analysis](/intl.en-US/Console guide/Application management/View SQL performance analysis.md)
--   [Manage apps and tags](/intl.en-US/Console guide/Application management/Manage applications and tags.md)
+-   [View the key performance metrics and topology of an application](/intl.en-US/Operations in the Console/Application management/View the key performance metrics and topology of an application.md)
+-   [View application details](/intl.en-US/Operations in the Console/Application management/View application details.md)
+-   [View the details of span calls](/intl.en-US/Operations in the Console/Application management/View the details of span calls.md)
+-   [View the analysis results of SQL performance](/intl.en-US/Operations in the Console/Application management/View the analysis results of SQL performance.md)
+-   [Manage applications and tags](/intl.en-US/Operations in the Console/Application management/Manage applications and tags.md)
 
