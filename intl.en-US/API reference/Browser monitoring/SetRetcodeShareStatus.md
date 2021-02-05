@@ -1,6 +1,6 @@
 # SetRetcodeShareStatus
 
-Sets the sharing switch at the browser monitoring site.
+Turns on or off the logon-free sharing switch for an application monitored by Browser Monitoring.
 
 ## Debugging
 
@@ -10,26 +10,31 @@ Sets the sharing switch at the browser monitoring site.
 
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
-|Action|String|Yes|SetRetcodeShareStatus|The operation that you want to perform. Set the value to **SetRetcodeShareStatus**. |
+|Action|String|Yes|SetRetcodeShareStatus|The operation that you want to perform. Set the value to `SetRetcodeShareStatus`. |
 |Pid|String|Yes|123123|The ID of the application. |
-|Status|Boolean|Yes|true|The status of the sharing switch at the browser monitoring site. Valid values:
+|Status|Boolean|Yes|true|Specifies whether to turn on or turn off the logon-free sharing switch. Valid values:
 
- -   true: The sharing switch is turned on.
--   false: The sharing switch is turned off. |
+ -   `true`: on
+-   `false`: off |
 
 ## Response parameters
 
 |Parameter|Type|Example|Description|
 |---------|----|-------|-----------|
-|IsSuccess|Boolean|true|Indicates whether the setting was successful or failed. |
-|RequestId|String|01FF8DD9-A09C-47A1-895A-B6E321BE77B6|The ID of the request. |
+|IsSuccess|Boolean|true|Indicates whether the call was successful.
+
+ -   `true`: The call was successful.
+-   `false`: The call failed. |
+|RequestId|String|40B10E04-81E8-4643-970D-F1B38F2E\*\*\*\*|The ID of the request. |
 
 ## Examples
 
 Sample requests
 
 ```
-http(s)://arms.cn-hangzhou.aliyun-inc.com:8099/retcode/SetRetcodeShareStatus.json? Pid=123123&Status=true
+http(s)://[Endpoint]/? Action=SetRetcodeShareStatus
+&Pid=123123
+&Status=true
 &<Common request parameters>
 ```
 
@@ -38,10 +43,10 @@ Sample success responses
 `XML` format
 
 ```
-<SetRetcodeShareStatus>
+<SetRetcodeShareStatusResponse>
       <IsSuccess>true</IsSuccess>
-      <RequestId>01FF8DD9-A09C-47A1-895A-B6E321BE77B6</RequestId>
-</SetRetcodeShareStatus>
+      <RequestId>40B10E04-81E8-4643-970D-F1B38F2E****</RequestId>
+</SetRetcodeShareStatusResponse>
 ```
 
 `JSON` format
@@ -49,7 +54,7 @@ Sample success responses
 ```
 {
     "IsSuccess": true,
-    "RequestId": "01FF8DD9-A09C-47A1-895A-B6E321BE77B6"
+    "RequestId": "40B10E04-81E8-4643-970D-F1B38F2E****"
 }
 ```
 
