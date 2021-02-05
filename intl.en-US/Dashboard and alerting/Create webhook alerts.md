@@ -29,7 +29,7 @@ After you configure a webhook alert, you can send alert notifications to a speci
 
 ## Step 2: Create a webhook alert
 
-1.  Log on to the[ARMS控制台](https://arms.console.aliyun.com/#/home)[ARMS console](https://arms-intl.console.aliyun.com/).
+1.  Log on to the [ARMS console](https://arms-intl.console.aliyun.com/).
 
 2.  In the left-side navigation pane, choose **Alerts** \> **Contacts**.
 
