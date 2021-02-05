@@ -2,7 +2,7 @@
 
 Before using ARMS to monitor mobile application, you must create a monitoring task to connect your applications to ARMS.
 
-1.  Log on to the[ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home). In the left-side navigation pane, click **App Monitoring**.
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home). In the left-side navigation pane, click **App Monitoring**.
 
 2.  On the APP monitoring page, click **Add APP monitoring** in the upper-right corner.
 
