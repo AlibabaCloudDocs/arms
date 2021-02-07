@@ -7,7 +7,7 @@
 
 本教程的操作流程如图所示。
 
-![How It Works](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/0530633061/p149087.png)
+![How It Works](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/4268762161/p149087.png)
 
 ## 步骤一：通过外部应用抓取MySQL数据
 
