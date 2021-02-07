@@ -30,7 +30,7 @@ Queries the metrics of Application Monitoring.
 
 ## Obtain the PID of an application
 
-Log on to the [Application Real-Time Monitoring Service console](https://arms-intl.console.aliyun.com/#/home).In the top navigation bar, select a region. In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. On the **Browser Monitoring**page, click the name of the application that you want to query to open the overview page of this application.
+Log on to the [Application Real-Time Monitoring Service console](https://arms-intl.console.aliyun.com/#/home).In the top navigation bar, select a region. In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. On the **Browser Monitoring** page, click the name of the application that you want to query to open the overview page of this application.
 
 The URL in the browser address bar contains the pid of this application in the format of `pid=xxx`. The browser is encoded. Therefore, you must modify the pid of all applications except for those in Enterprise Distributed Application Service \(EDAS\). For example, if the PID in the URL is `xxx%4074xxx`, you must replace `%40` with `@`. The PID is modified to `xxx@74xxx`.
 
