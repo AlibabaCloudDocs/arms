@@ -412,7 +412,7 @@ Sample success responses
         -   URL of the log source in the US \(Silicon Valley\) region: `https://retcode-us-west-1.arms.aliyuncs.com/r.png?`
 -   Why does an error occur when I call the simulator or API?
 
-    -   Check whether the regionId parameter is set and the value of the pid parameter is added to thefilters parameter.
+    -   Check whether the regionId parameter is set and the value of the pid parameter is added to the filters parameter.
     -   Check whether the value of the measures or dimensions parameter of a metric is valid. For more information, see [Queryable Browser Monitoring metrics](#section_2wv_zz8_zw7).
 -   Error messages and solutions
 
