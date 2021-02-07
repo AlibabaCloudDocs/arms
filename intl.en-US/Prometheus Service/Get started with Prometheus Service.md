@@ -5,17 +5,17 @@ To monitor a Container Service for Kubernetes \(ACK\) cluster, you can install t
 -   An ACK cluster is created. For more information, see [Create a managed Kubernetes cluster](/intl.en-US/Quick Start/Basic operations/Create a managed Kubernetes cluster.md).
 -   [Activate and upgrade ARMS](/intl.en-US/Quick start/Activate and upgrade ARMS.md)
 
-## Enable ARMS Prometheus monitoring
+## Enable ARMS Prometheus
 
-You can enable ARMS Prometheus monitoring by using the following three methods:
+You can enable ARMS Prometheus by using the following methods:
 
 **Configure cluster parameters.**
 
-1.  Log on to the [Container Service for Kubernetes \(ACK\) console](https://cs.console.aliyun.com).
+1.  Log on to the [ACK console](https://cs.console.aliyun.com).
 
-2.  In the left-side navigation pane, click **Clusters**.
+2.  In the left-side navigation pane of the ACK console, click **Clusters**.
 
-3.  In the upper-right corner of the Clusters page, click **Create Kubernetes cluster**.
+3.  In the upper-right corner of the Clusters page, click **Create Kubernetes Cluster**.
 
 4.  Select the cluster template that you want to use and configure parameters for the new cluster. On the **Component Configurations**page, select **Enable Prometheus Monitoring**.
 
@@ -23,16 +23,16 @@ You can enable ARMS Prometheus monitoring by using the following three methods:
 
     **Note:** By default, **Enable Prometheus Monitoring** is selected when you create a cluster.
 
-    After the cluster is created, the system automatically configures ARMS Prometheus monitoring.
+    After the cluster is created, the system automatically configures ARMS Prometheus.
 
 
-**Enable the feature on the Prometheus Monitoring page in the ACK console.**
+**Enable ARMS Prometheus on the Prometheus Monitoring page in the ACK console.**
 
-1.  Log on to the [Container Service for Kubernetes \(ACK\) console](https://cs.console.aliyun.com).
+1.  Log on to the [ACK console](https://cs.console.aliyun.com).
 
-2.  In the left-side navigation pane, click **Clusters**.
+2.  In the left-side navigation pane of the ACK console, click **Clusters**.
 
-3.  On the Clusters page, find the cluster that you want to manage and click **Details** in the **Actions** column.
+3.  On the Clusters page, find the cluster that you want to manage and click the name of the cluster, or click **Details** in the **Actions** column. The details page of the cluster appears.
 
 4.  In the left-side navigation pane of the cluster management page, choose **Operations** \> **Prometheus Monitoring**.
 
@@ -41,11 +41,11 @@ You can enable ARMS Prometheus monitoring by using the following three methods:
 
 **Enable the feature on the App Catalog page in the ACK console.**
 
-1.  Log on to the [Container Service for Kubernetes \(ACK\) console](https://cs.console.aliyun.com).
+1.  Log on to the [ACK console](https://cs.console.aliyun.com).
 
 2.  In the left-side navigation pane, choose **Marketplace** \> **App Catalog**.
 
-3.  On the App Catalog page, click the**Alibaba Cloud Apps** tab and click **ack-arms-prometheus**.
+3.  On the App Catalog page, click the **Alibaba Cloud Apps** tab and click **ack-arms-prometheus**.
 
 4.  On the App Catalog - ack-arms-prometheus page, click the **Parameters** tab.
 
@@ -53,9 +53,9 @@ You can enable ARMS Prometheus monitoring by using the following three methods:
 
     **Note:**
 
-    The system automatically sets the value to the ID of the cluster that you create. You can perform the following steps to view the cluster ID: In the left-side navigation pane of the ACK console, choose **Clusters** \> **Clusters**. On the page that appears, the string below each cluster name is the cluster ID.
+    The system automatically sets the value to the ID of the cluster that you create. You can perform the following steps to view the cluster ID: In the left-side navigation pane of the ACK console, choose **Clusters** \> **Clusters**. On the page that appears, the cluster ID is displayed below each cluster name.
 
-6.  In the **Deploy** section of the App Catalog - ack-arms-prometheus page, select the cluster for which you want to enable Prometheus monitoring, and click **Create**.
+6.  In the **Deploy** section of the App Catalog - ack-arms-prometheus page, select the cluster for which you want to enable ARMS Prometheus, and click **Create**.
 
     **Note:** By default, **Namespace** and **Release Name** are set to **arms-prom**.
 
@@ -81,7 +81,7 @@ To disable Prometheus monitoring for the ACK cluster, perform the following step
 
     After you uninstall the agent, the dashboards are no longer displayed in the **Installed Dashboards** column. Go to the Container Service for Kubernetes console to check whether the uninstallation is successful.
 
-4.  Log on to the [Container Service for Kubernetes \(ACK\) console](https://cs.console.aliyun.com).
+4.  Log on to the [ACK console](https://cs.console.aliyun.com).
 
 5.  In the left-side navigation pane, click **Clusters**, and then click the name of the cluster for which you want to disable Prometheus monitoring.
 
