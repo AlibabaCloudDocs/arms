@@ -5,6 +5,10 @@ ARMS Prometheus monitoring allows you to monitor MySQL databases by capturing da
 -   [Create a managed Kubernetes cluster](/intl.en-US/Quick Start/Basic operations/Create a managed Kubernetes cluster.md)
 -   [Create an application from a private image repository](/intl.en-US/Quick Start/Advanced operations/Create an application from a private image repository.md)
 
+The following figure shows the workflow.
+
+![How It Works](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0468762161/p149087.png)
+
 ## Step 1: Capture data from a MySQL database by using an external application
 
 Deploy the mysqld-exporter image provided by Prometheus to a Container Service for Kubernetes \(ACK\) cluster to capture MySQL data.
