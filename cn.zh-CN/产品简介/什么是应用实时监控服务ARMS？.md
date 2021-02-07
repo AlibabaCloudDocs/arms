@@ -1,5 +1,5 @@
 ---
-keyword: [ARMS, APM, Prometheus, 前端监控, 容器, App, 小程序, 监控, 观测]
+keyword: [ARMS, APM, Prometheus, 前端监控, 容器, App, 小程序, 监控]
 ---
 
 # 什么是应用实时监控服务ARMS？
@@ -14,7 +14,7 @@ ARMS包含以下子产品和功能模块，覆盖众多监控业务场景。
 
 ARMS应用监控是一款应用性能管理（Application Performance Management，简称 APM）产品。您无需修改代码，只需为应用安装一个探针，ARMS就能够对应用进行全方位监控，帮助您快速定位出错接口和慢接口、重现调用参数、发现系统瓶颈，从而大幅提升线上问题诊断的效率。
 
-**说明：** 标注星号（\*）的表示需要开通[链路追踪Tracing Analysis](/cn.zh-CN/产品简介/什么是链路追踪 Tracing Analysis.md)。
+**说明：** 标注星号（\*）的表示需要开通[链路追踪Tracing Analysis](/cn.zh-CN/产品简介/什么是链路追踪Tracing Analysis.md)。
 
 关于ARMS应用监控的详细信息，请参见[应用监控概述](/cn.zh-CN/应用监控/应用监控概述.md)。
 
