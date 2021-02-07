@@ -10,7 +10,7 @@ Before you begin, make sure that the following requirements are met:
 
 The following figure shows the workflow.
 
-![How It Works](../images/p63208.png)
+![How It Works](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/4689762161/p63208.png)
 
 ## Step 1: Instrument a Go application to expose the data to ARMS Prometheus Monitoring
 
@@ -118,7 +118,7 @@ The following figure shows the workflow.
 
 5.  In the upper-left corner of the **Prometheus Monitoring** page, select the region where the ACK cluster is deployed. Find the cluster and click **Settings** in the **Actions** column.
 
-6.  On the page that appears, click the **Service Discovery** tab. On the **Service Discovery** tab, click **Add ServiceMonitor**. In the **Add ServiceMonitor** dialog box, enter the following content and click **OK**:****
+6.  On the page that appears, click the **Service Discovery** tab. On the **Service Discovery** tab, click **Add ServiceMonitor**. In the **Add ServiceMonitor** dialog box, enter the following content and click **OK**.
 
     ```
     apiVersion: monitoring.coreos.com/v1
@@ -137,7 +137,8 @@ The following figure shows the workflow.
         path: /metrics
       namespaceSelector:
         any: true
-        # Demo namespace selector:
+        # Demo namespace.
+      selector:
         matchLabels:
           app: promethues-arms-aliyun-go-demo
     ```
