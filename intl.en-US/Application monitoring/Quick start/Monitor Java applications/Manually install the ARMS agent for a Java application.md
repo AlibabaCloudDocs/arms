@@ -12,7 +12,7 @@ After you install the Application Real-Time Monitoring Service \(ARMS\) agent fo
 
 ## Procedure
 
-1.  Log on to the [ARMS console](https://arms.console.aliyun.com/#/home)[ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
 2.  In the left-side navigation pane, choose **Application Monitoring** \> **Applications**. In the top navigation bar, select a region.
 
@@ -287,8 +287,6 @@ If you no longer need ARMS to monitor your Java application, perform the followi
 ## Change the application name
 
 If you forget to change the sample name Java-Demo to a custom name, you can change the application name by performing a few operations. You do not need to restart the application or reinstall the ARMS agent. For more information, see [How do I modify the name of a common Java application on which the ARMS agent is manually installed?](/intl.en-US/Application monitoring/FAQ.mdsection_sx9_df1_3pq).
-
-## References
 
 **Related topics**  
 
