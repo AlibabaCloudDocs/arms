@@ -62,7 +62,7 @@ You can call the QueryMetric operation to query the following metrics of Browser
 
 **Note:**
 
--   You must set the `pid`and `regionId` parameters in the filters parameter.
+-   You must set the `pid` and `regionId` parameters in the filters parameter.
 -   If you have obtained the values of the pid and regionId parameters, add the values to the filters parameter to define the range of query results. If you have not obtained the values of the pid and regionId parameters, add the dimensions in the following table to the dimensions parameter to obtain a list of all possible values.
 
 |Metric|Description|Dimension|Measurement data|
