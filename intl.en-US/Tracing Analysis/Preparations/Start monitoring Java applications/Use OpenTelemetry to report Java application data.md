@@ -140,7 +140,7 @@ Before you can view the trace data of your application in the Tracing Analysis c
 
 ## View data
 
-Log on to the[Tracing Analysis console](https://tracing-sg.console.aliyun.com/). On the Applications page, click the newly created application. In this example, click the otel-jaeger-example application. Then, view the trace data of the application.
+Log on to the [Tracing Analysis console](https://tracing-sg.console.aliyun.com/). On the Applications page, click the newly created application. In this example, click the otel-jaeger-example application. Then, view the trace data of the application.
 
 **Related topics**  
 
