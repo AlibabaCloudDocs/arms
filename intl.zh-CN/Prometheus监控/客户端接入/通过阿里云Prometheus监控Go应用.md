@@ -10,7 +10,7 @@
 
 本教程的操作流程如图所示。
 
-![How It Works](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/2040633061/p63208.png)
+![How It Works](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/3789762161/p63208.png)
 
 ## 步骤一：通过埋点暴露Go应用的数据
 
