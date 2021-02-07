@@ -12,7 +12,7 @@
 
 ## 操作步骤
 
-1.  登录[ARMS控制台](https://arms.console.aliyun.com/#/home)[ARMS控制台](https://arms-ap-southeast-1.console.aliyun.com/#/home)。
+1.  登录[ARMS控制台](https://arms-ap-southeast-1.console.aliyun.com/#/home)。
 
 2.  在左侧导航栏选择**应用监控** \> **应用列表**，并在顶部菜单栏选择目标地域。
 
@@ -235,8 +235,6 @@ java -javaagent:\{user.workspace}\ArmsAgent\arms-bootstrap-1.7.0-SNAPSHOT.jar -D
 ## 快速更改应用名称
 
 如需更改应用名称，例如忘记将示例应用名称Java-Demo修改为自定义名称，您可以在不重启应用、不重装Agent的情况下更改应用名称，具体操作，请参见[以通用方式安装Agent的普通Java应用如何更改应用名称？](/intl.zh-CN/应用监控/应用监控常见问题.mdsection_sx9_df1_3pq)。
-
-## 更多信息
 
 **相关文档**  
 
