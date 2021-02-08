@@ -60,7 +60,7 @@ Maven仓库依赖接入：
     }
     ```
 
-    **说明：** appKey和appSecret，可在[快速入门：创建监控任务](/cn.zh-CN/App监控/快速入门：创建监控任务.md)中[步骤](/cn.zh-CN/App监控/快速入门：创建监控任务.mdstep_c3d_tna_qn1)[4](/cn.zh-CN/App监控/快速入门：创建监控任务.mdstep_c3d_tna_qn1)下载的配置文件中获得。
+    **说明：** appKey和appSecret，可在[快速入门：创建监控任务](/cn.zh-CN/App监控/快速入门：创建监控任务.md)中下载的配置文件中获得。
 
 2.  AndroidManifest.xml里面指定自定义Application。
 
