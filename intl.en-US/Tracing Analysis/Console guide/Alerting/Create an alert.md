@@ -2,7 +2,7 @@
 
 By creating alerts, you can set alert rules for specific monitored objects. When a rule is triggered, the system will send an alert message to the specified contact group in the specified alerting mode. This reminds you to take necessary actions to solve the problem.
 
--   A monitoring job is created. For more information, see [Create an application monitoring job](/intl.en-US/Quick start/Create an application monitoring job.md) and [Create a custom monitoring job](/intl.en-US/Quick start/Create a custom monitoring job.md).
+-   A monitoring job is created. For more information, see [Create an application monitoring job](/intl.en-US/Quick start/Create an application monitoring job.md) and [Create a custom monitoring job]().
 -   You have created contacts. You can only set a contact group as the notification receiver of an alert.
 
 Default behaviors of alert notifications:
@@ -21,7 +21,7 @@ To create an alert for an application monitoring job on Java Virtual Machine-Gar
 
 1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  In the left-side navigation pane, choose**Alerts** \> **Alert Policies**.
+2.  In the left-side navigation pane, choose **Alerts** \> **Alert Policies**.
 
 3.  On the Alert Policies page, choose **Create Alert** \> **Application Monitoring Alert** in the upper-right corner.
 
@@ -161,7 +161,7 @@ The following table describes the basic fields of the **Create Alert** dialog bo
 -   When it is set to "=", you need to enter the specific content.
 -   When it is set to Traverse, the alert content shows the dimension content that actually triggers the alert. |
 |Last N Minutes|The system checks whether the data results in the last N minutes meet the trigger condition.|Range of N: 3 to 3600 minutes.|
-|Notification Mode|Email, SMS, and DingTalk chatbot are supported.|You can select multiple modes. If you want to set DingTalk chatbot alert, see [Enable DingTalk chatbot alert](/intl.en-US/Dashboard and alerting/Enable DingTalk chatbot alert.md).|
+|Notification Mode|Email, SMS, and DingTalk chatbot are supported.|You can select multiple modes. If you want to set DingTalk chatbot alert, see [Enable DingTalk chatbot alert](/intl.en-US/Dashboard and alerting/Configure a DingTalk chatbot to send alert notifications.md).|
 |Alert Quiet Period|You can enable or disable Alert Quiet Period. By default, it is enabled.|-   When it is enabled: if data remains in the triggered state, the second alert message will only be sent 24 hours after the first alert is triggered. When data recovers, you will receive a data recovery notification and the alert will be cleared. If the data triggers the alert one more time, the alert message is sent again.
 -   When it is disabled: if the alert is continually triggered, the system sends the alert message every minute. |
 |Alert Severity|Valid values include Warn, Error and Fatal.|None|
