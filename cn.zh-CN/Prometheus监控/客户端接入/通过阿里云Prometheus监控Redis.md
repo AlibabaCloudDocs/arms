@@ -7,7 +7,7 @@
 
 本教程的操作流程如图所示。
 
-![How It Works](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/7240633061/p63225.png)
+![How It Works](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/9955572161/p63225.png)
 
 ## 步骤一：通过外部应用抓取Redis数据
 
