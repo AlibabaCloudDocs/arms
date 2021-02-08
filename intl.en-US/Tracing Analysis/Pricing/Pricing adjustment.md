@@ -48,7 +48,7 @@ In the new pricing model, computing and storage are separately billed so that yo
 
         Example: Assume that one million metrics are generated per day on average, and the metrics are stored for 15 days. The total number of metrics is 15 million, which is calculated based on the following formula: 15 days × 1 million/day = 15 million. In this case, the storage fee for the metrics per day is CNY 0.15, which is calculated based on the following formula: 15 million × CNY 0.01/million = CNY 0.15.
 
-    -   Request trace definition: All spans with the same trace ID in an Alibaba Cloud account are considered to belong to the same request. A request can contain up to 10 spans. For more information about spans, see [Terms](/intl.en-US/Overview/Terms.md). For each additional span, you are charged for one-tenth of the price for each request. The size of each span cannot exceed 2 KB. Excessive data of a span is discarded.
+    -   Request trace definition: All spans with the same trace ID in an Alibaba Cloud account are considered to belong to the same request. A request can contain up to 10 spans. For more information about spans, see [Terms](/intl.en-US/Product Introduction/Terms.md). For each additional span, you are charged for one-tenth of the price for each request. The size of each span cannot exceed 2 KB. Excessive data of a span is discarded.
     -   Billing method:
         -   Tracing Analysis is billed daily. A bill for the previous day is generated at 00:00 every day.
         -   The computing fee for traces is calculated only for the number of request traces that are reported on a single day.
