@@ -29,7 +29,7 @@ To use Jaeger to report Java application data to the Tracing Analysis console, y
 
 To use Jaeger to report Java application data to the link tracking console, you must complete tracking. This example uses manual instrumentation.
 
-1.  [Download the Demo project](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/demo/jaegerTracingDemo.zip) in the left-side navigation pane.manualDemoAnd run the program according to the Readme instructions.
+1.  Download the[Demo project](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/demo/jaegerTracingDemo.zip) , enter pathmanualDemo, and run the program according to the Readme instructions.
 
 2.  Open the pom. xml file and add the dependency on the Jaeger client.
 
