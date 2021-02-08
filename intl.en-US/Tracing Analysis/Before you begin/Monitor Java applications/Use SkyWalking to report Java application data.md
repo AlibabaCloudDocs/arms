@@ -17,7 +17,7 @@ To use SkyWalking to report Java application data to the Tracing Analysis consol
 
 1.  Open the `config/agent.config` file and configure the endpoint and token.
 
-    **Note:** Please`<endpoint>`And`<auth-token>`Replace them with the consoleOverviewThe endpoint and authentication token of the SkyWalking client in the corresponding region are displayed on the page. For more information, see [How to get Endpoint and Security Token](#tab3).
+    **Note:** Replace `<endpoint>` and `<auth-token>` with the endpoint and authentication token of the SkyWalking client in the corresponding region that are displayed on the Overview page. For more information, see [How to get Endpoint and Security Token](#tab3).
 
     ```
     collector.backend_service=<endpoint>
@@ -88,7 +88,7 @@ Q: Why am I unable to create an application after SkyWalking is properly connect
 
 A: The data may not be reported to Tracing Analysis. You must check whether the data is reported to Tracing Analysis. For example, you can check the content in the \{skywalking agent path\}/logs/skywalking-api.log file. If the result in the following figure is returned, the data is reported.
 
-![pg_xtrace_skywalking](../images/p89094.png)
+![pg_xtrace_skywalking](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/5066672161/p89094.png)
 
 If no data is reported, check whether sampling is enabled, the data is filtered, or the request for using Tracing Analysis is not triggered.
 
