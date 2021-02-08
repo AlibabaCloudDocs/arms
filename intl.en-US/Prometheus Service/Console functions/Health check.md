@@ -6,7 +6,7 @@ The procedure of using Prometheus Monitoring to monitor your applications or com
 
 ## Procedure
 
-1.  Log on to the [ARMS console](https://arms.console.aliyun.com/#/home)[ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
 2.  In the left-side navigation pane, click **Prometheus Monitoring**.
 
