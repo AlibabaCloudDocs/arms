@@ -4,7 +4,7 @@ Prometheus Monitoring is integrated with Cloud Monitor. You can use Prometheus M
 
 Cloud Monitor is a service that monitors Alibaba Cloud resources and Internet applications. For more information, see [Cloud Monitor](https://www.aliyun.com/product/jiankong).
 
-After Prometheus Monitoring is integrated with Cloud Monitor, no additional fees are charged for using Cloud Monitor. You are charged based on the billing rules of Prometheus Monitoring. For more information about the billing rules of Prometheus Monitoring, see [Commercial release announcement regarding ARMS Prometheus Monitoring](/intl.en-US/Billing/Commercial release announcement regarding ARMS Prometheus Monitoring.md).
+After Prometheus Monitoring is integrated with Cloud Monitor, no additional fees are charged for using Cloud Monitor. You are charged based on the billing rules of Prometheus Monitoring. For more information about the billing rules of Prometheus Monitoring, see [Commercial release announcement regarding ARMS Prometheus Monitoring]().
 
 ## Procedure
 
@@ -23,11 +23,11 @@ After Prometheus Monitoring is integrated with Cloud Monitor, no additional fees
 
     You can select one or more of the following cloud services: ECS, ApsaraDB for MongoDB, ApsaraDB for Redis, OSS, ApsaraDB RDS for MySQL, NAT Gateway, SLB, Message Queue for Apache RocketMQ, Message Queue for Apache Kafka, EIP, Elasticsearch, and PolarDB-X.
 
-    ![Add Cloud Services](../images/p184987.png)
+    ![Add Cloud Services](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/6982672161/p184987.png)
 
     After you select the cloud services, go back to the **Cloud service collection list** page. Information of the selected services is displayed.
 
-    ![Cloud service collection list](../images/p184990.png)
+    ![Cloud service collection list](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/6982672161/p184990.png)
 
     If you need to adjust the selected cloud services, click **Edit** in the **Actions** column. In the **Add Cloud Services** dialog box, re-select cloud services and click **OK**.
 
