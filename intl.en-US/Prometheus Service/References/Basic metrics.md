@@ -25,12 +25,9 @@ The following table lists the jobs that can collect basic metrics from Prometheu
 
 You can view the jobs that collect basic metrics on the Health Check page of Prometheus Monitoring.
 
-1.  Log on to the [ARMS console](https://arms.console.aliyun.com/#/home)[ARMS console](https://arms-intl.console.aliyun.com/).
+1.  Log on to the [ARMS console](https://arms-intl.console.aliyun.com/).
 2.  In the left-side navigation pane, click **Prometheus Monitoring**.
 3.  In the upper-left corner of the Prometheus Monitoring page, select a region and click the name of the Kubernetes cluster that you want to view.
 4.  In the left-side navigation pane, click **Health Check**.
 5.  On the Health Check Result page, view the started jobs in Step 4 of the check result. To determine whether a job collects basic metrics, check whether the job is free of charge. If a job is free of charge, the job collects basic metrics.
-
-    ![Health Check](../images/p75078.png)
-
 
