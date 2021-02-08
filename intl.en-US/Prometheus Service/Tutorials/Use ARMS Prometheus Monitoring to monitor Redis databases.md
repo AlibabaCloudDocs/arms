@@ -7,7 +7,7 @@ ARMS Prometheus Monitoring allows you to monitor Redis databases by capturing da
 
 The following figure shows the workflow.
 
-![How It Works](../images/p63225.png)
+![How It Works](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8855572161/p63225.png)
 
 ## Step 1: Capture data from a Redis database by using an external application
 
