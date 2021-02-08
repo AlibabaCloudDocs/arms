@@ -18,7 +18,7 @@ Jaeger dependencies are added to the package of the Node.js project.
 
 1.  Set parameters for initialization.
 
-    **Note:** Please`<endpoint>`Replace with the trace consoleOverviewThe corresponding clients and access points in the corresponding regions are displayed on the page. For more information about how to obtain access point information, see [Obtain access point information](#tab2).
+    **Note:** Replace `<endpoint>` with the corresponding endpoint in the corresponding region that is displayed on the Overview page. For more information about how to obtain access point information, see [Obtain access point information](#tab2).
 
     ```
     const initTracer = require("jaeger-client").initTracer;
