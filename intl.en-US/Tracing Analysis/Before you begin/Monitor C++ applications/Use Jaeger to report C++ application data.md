@@ -27,7 +27,7 @@ Before you can view the trace data of your application in the Tracing Analysis c
 
 3.  Download the native Jaeger agent [jaeger-agent](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/tools/jaeger-agent). Then, set the following parameter to start the agent. This way, you can report data to Tracing Analysis.
 
-    **Note:** Please`<endpoint>`Replace with the trace consoleOverviewThe corresponding clients and access points in the corresponding regions are displayed on the page. For more information about how to obtain access point information, see [Obtain access point information](#tab2).
+    **Note:** Replace `<endpoint>` with the corresponding endpoint in the corresponding region that is displayed on the Overview page. For more information about how to obtain access point information, see [Obtain access point information](#tab2).
 
     ```
     // Reporter. grpc. host-port is used to set the gateway. The Gateway varies according to the region. Example:
@@ -97,7 +97,7 @@ Before you can view the trace data of your application in the Tracing Analysis c
 
 4.  Download the native Jaeger agent [jaeger-agent](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/tools/jaeger-agent). Then, set the following parameter to start the agent. This way, you can report data to Tracing Analysis.
 
-    **Note:** Please`<endpoint>`Replace with the trace consoleOverviewThe corresponding clients and access points in the corresponding regions are displayed on the page. For more information about how to obtain access point information, see [Obtain access point information](#tab2).
+    **Note:** Replace `<endpoint>` with the corresponding endpoint in the corresponding region that is displayed on the Overview page. For more information about how to obtain access point information, see [Obtain access point information](#tab2).
 
     ```
     // Reporter. grpc. host-port is used to set the gateway. The Gateway varies according to the region. Example:
