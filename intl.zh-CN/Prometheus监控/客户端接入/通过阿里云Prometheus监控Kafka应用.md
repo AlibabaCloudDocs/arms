@@ -4,7 +4,7 @@
 
 本教程的操作流程如图所示。
 
-![How It Works](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/9050633061/p64446.png)
+![How It Works](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/4796572161/p64446.png)
 
 ## 步骤一：启动JMX服务
 
