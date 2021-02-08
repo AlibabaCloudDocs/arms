@@ -4,7 +4,7 @@
 
 已成功为应用安装Prometheus监控插件，详情请参见[开始使用Prometheus监控]()。
 
-1.  登录[ARMS控制台](https://arms.console.aliyun.com/#/home)[ARMS控制台](https://arms-ap-southeast-1.console.aliyun.com/#/home)。
+1.  登录[ARMS控制台](https://arms-ap-southeast-1.console.aliyun.com/#/home)。
 
 2.  在左侧导航栏单击**Prometheus监控**。
 
