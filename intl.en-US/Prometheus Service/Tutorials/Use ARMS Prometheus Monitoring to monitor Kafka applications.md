@@ -4,7 +4,7 @@ This topic describes how to expose data by using instrumentation points in Kafka
 
 The following figure shows the procedure.
 
-![How It Works](../images/p64446.png)
+![How It Works](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/2896572161/p64446.png)
 
 ## Step 1: Start the JMX service
 
