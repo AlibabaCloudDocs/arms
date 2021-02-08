@@ -156,25 +156,25 @@ By default, after the Prometheus agent is installed, the agent monitors the CPU,
 
 2.  In the left-side navigation pane, choose **+** \> **Dashboard**. Click **Add Query** in the **New Panel** section.
 
-    ![Create Grafana DashBoard](../images/p62533.png)
+    ![Create Grafana DashBoard](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0206572161/p62533.png)
 
 3.  Select a cluster from the drop-down list next to **Query**. On the **A** collapse panel, select a metric from the **Metrics** drop-down list. Example: **go\_gc\_duration\_seconds**.
 
-    ![Grafana Add Query](../images/p62736.png)
+    ![Grafana Add Query](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0206572161/p62736.png)
 
 4.  Click the chart icon on the left side of the page to select the visualization type of the dashboard, such as a chart, table, or heatmap, and configure other parameters.
 
-    ![Create Dashboard Visualization](../images/p62560.png)
+    ![Create Dashboard Visualization](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0206572161/p62560.png)
 
 5.  Click the setting icon on the left side of the page and enter a chart name.
 
-    ![Set Visualization General](../images/p62566.png)
+    ![Set Visualization General](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0206572161/p62566.png)
 
 6.  Create an ARMS Prometheus Monitoring alert. For more information, see [Create an alert]().
 
 7.  Click the save icon in the upper-right corner. In the Save As... dialog box, enter the dashboard name, select a cluster, and then click **Save** to save the dashboard and chart. Create multiple dashboards and charts to suit your needs.
 
-    ![Save Grafana Dashboard](../images/p62581.png)
+    ![Save Grafana Dashboard](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0206572161/p62581.png)
 
 
 ## Step 5: Debug data and monitor complex metrics
@@ -187,14 +187,14 @@ To monitor metrics that involve complex operations, debug data in ARMS Prometheu
 
 3.  On the Explore page, enter the PromQL statement in the **Metrics** field for debugging.
 
-    ![Prometheus Data Debug](../images/p62734.png)
+    ![Prometheus Data Debug](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0206572161/p62734.png)
 
 4.  After debugging is successful, repeat the preceding steps to create more dashboards or charts. For more information, see [Step 4: Create a Grafana dashboard](#section_8t5_8w4_779).
 
 
 After the configuration is complete, the Prometheus Grafana dashboard appears, as shown in the following figure.
 
-![ARMS Prometheus Grafana Dashboard to Customize](../images/p62691.png)
+![ARMS Prometheus Grafana Dashboard to Customize](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1206572161/p62691.png)
 
 [View Prometheus Monitoring metrics]()
 
