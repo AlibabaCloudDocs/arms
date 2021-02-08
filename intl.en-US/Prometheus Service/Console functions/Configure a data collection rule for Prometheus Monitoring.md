@@ -4,7 +4,7 @@ You can edit the prometheus.yaml file or add ServiceMonitor to configure a data 
 
 The Prometheus agent is installed for an application. For more information, see [Get started with Prometheus Service]().
 
-1.  Log on to the [ARMS console](https://arms.console.aliyun.com/#/home)[ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
 2.  In the left-side navigation pane, click **Prometheus Monitoring**.
 
