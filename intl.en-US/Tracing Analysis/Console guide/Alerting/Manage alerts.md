@@ -8,7 +8,7 @@ The alert rules that you create in Application Monitoring, Browser Monitoring, a
 
 1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  In the left-side navigation pane, choose**Alerts** \> **Alert Policies**.
+2.  In the left-side navigation pane, choose **Alerts** \> **Alert Policies**.
 
 3.  On the **Alert Rules** tab, enter the alert name in the search box, then click **Search**.
 
