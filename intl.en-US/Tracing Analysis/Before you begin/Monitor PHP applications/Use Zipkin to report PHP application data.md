@@ -134,7 +134,7 @@ The following official Zipkin PHP example shows you how to use Zipkin to report 
 
 2.  Change the endpoint for data reporting in the functions.php file. Replace `$reporter = new Zipkin\Reporters\Http(\Zipkin\Reporters\Http\CurlFactory::create());` with the following code:
 
-    **Note:** Please`<endpoint>`Replace with the trace consoleOverviewThe corresponding clients and access points in the corresponding regions are displayed on the page. For more information about how to obtain access point information, see [Obtain access point information](#tab2).
+    **Note:** Replace `<endpoint>` with the corresponding endpoint in the corresponding region that is displayed on the Overview page. For more information about how to obtain access point information, see [Obtain access point information](#tab2).
 
     ```
     reporter = new Zipkin\Reporters\Http(\Zipkin\Reporters\Http\CurlFactory::create(), 
