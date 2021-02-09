@@ -11,8 +11,8 @@
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
 |Action|String|是|SetRetcodeShareStatus|系统规定参数，取值为`SetRetcodeShareStatus`。 |
-|Pid|String|是|123123|应用ID。 |
-|Status|Boolean|是|true|前端监控站点的免登录分享开关的状态：
+|Pid|String|是|atc889zkcf@d8deedfa9bf\*\*\*\*|应用的ID标识串。获取方式请参见[如何获取应用PID](https://www.alibabacloud.com/help/zh/doc-detail/186100.htm?spm=a2cdw.13409063.0.0.7a72281f0bkTfx#title-imy-7gj-qhr)。 |
+|Status|Boolean|是|true|设置前端监控站点的免登录分享开关的状态。取值：
 
  -   `true`：已打开
 -   `false`：已关闭 |
@@ -33,14 +33,14 @@
 
 ```
 http(s)://[Endpoint]/?Action=SetRetcodeShareStatus
-&Pid=123123
+&Pid=atc889zkcf@d8deedfa9bf****
 &Status=true
 &<公共请求参数>
 ```
 
 正常返回示例
 
-`XML` 格式
+`XML`格式
 
 ```
 <SetRetcodeShareStatusResponse>
@@ -49,7 +49,7 @@ http(s)://[Endpoint]/?Action=SetRetcodeShareStatus
 </SetRetcodeShareStatusResponse>
 ```
 
-`JSON` 格式
+`JSON`格式
 
 ```
 {
