@@ -13,7 +13,7 @@
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
 |Action|String|是|ConfigApp|系统规定参数，取值为`ConfigApp`。 |
-|AppIds|String|是|abc@def,ghi@jkl|应用的ID标识串（PID）。多个PID以半角逗号（,）分隔。 |
+|AppIds|String|是|iioe7jcnuk@582846f37\*\*\*\*\*\*,atc889zkcf@d8deedfa9bf\*\*\*\*\*\*|应用的ID标识串（PID）。多个PID以半角逗号（,）分隔。 |
 |Enable|String|是|true|打开或关闭一个或多个应用的Agent总开关。关闭开关后即停止监控。如果不填写该参数，则表示查询目标应用当前的Agent总开关状态。
 
  -   `true`：打开Agent总开关
@@ -24,7 +24,7 @@
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|Data|String|abc@def success\\nghi@jkl success\\n|操作是否成功或者目标应用的Agent总开关状态 |
+|Data|String|abc@def success\\nghi@jkl success\\n|操作是否成功或者目标应用的Agent总开关状态。 |
 |RequestId|String|16AF921B-8187-489F-9913-43C808B4\*\*\*\*|请求ID |
 
 ## 示例
@@ -33,7 +33,7 @@
 
 ```
 http(s)://[Endpoint]/?Action=ConfigApp
-&AppIds=abc@def,ghi@jkl
+&AppIds=iioe7jcnuk@582846f37******,atc889zkcf@d8deedfa9bf******
 &Enable=true
 &RegionId=cn-hangzhou
 &<公共请求参数>
@@ -41,23 +41,21 @@ http(s)://[Endpoint]/?Action=ConfigApp
 
 正常返回示例
 
-`XML` 格式
+`XML`格式
 
 ```
 <ConfigAppResponse>
-	  <RequestId>16AF921B-8187-489F-9913-43C808B4****</RequestId>
-	  <Data>abc@def success
-	ghi@jkl success
-	</Data>
+      <RequestId>16AF921B-8187-489F-9913-43C808B4****</RequestId>
+      <Data>abc@def success\nghi@jkl success\n</Data>
 </ConfigAppResponse>
 ```
 
-`JSON` 格式
+`JSON`格式
 
 ```
 {
     "RequestId": "16AF921B-8187-489F-9913-43C808B4****",
-    "Data": "abc@def success\nghi@jkl success\n"
+    "Data": "abc@def success\\nghi@jkl success\\n"
 }
 ```
 
