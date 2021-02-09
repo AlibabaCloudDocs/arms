@@ -14,8 +14,8 @@
 |Pid|String|是|atc889zkcf@d8deedfa9bf\*\*\*\*|应用的ID标识串。获取方式请参见[如何获取应用PID](https://help.aliyun.com/document_detail/186100.html?spm=a2c4g.11186623.6.792.1b50654cqcDPyk#title-imy-7gj-qhr)。 |
 |Status|Boolean|是|true|设置前端监控站点的免登录分享开关的状态。取值：
 
- -   `true`：已打开
--   `false`：已关闭 |
+ -   `true`：开启。
+-   `false`：关闭。 |
 
 ## 返回数据
 
