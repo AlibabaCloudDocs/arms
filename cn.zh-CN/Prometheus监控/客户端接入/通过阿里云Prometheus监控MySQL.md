@@ -107,7 +107,7 @@
         path: /metrics
       namespaceSelector:
         any: true
-        # Demo的命名空间selector:
+        # Demo的命名空间
         matchLabels:
           app: mysqld-exporter
     ```
@@ -186,7 +186,7 @@
 
 Prometheus Grafana MySQL大盘配置完毕后，您可以查看Prometheus监控指标和进一步自定义大盘，详见相关文档。
 
-[查看Prometheus监控指标]()
+[大盘列表]()
 
 [通过阿里云Prometheus自定义Grafana大盘]()
 
