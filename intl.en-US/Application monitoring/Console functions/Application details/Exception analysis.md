@@ -31,8 +31,8 @@ The **Exceptions** section displays the stacked column chart of the exception st
 
     -   Move the cursor over the statistics chart to view the statistics.
     -   Select a period of time to view the statistics for the specified period.
-    -   Click ![chart](../images/p230753.png)Icon to view the statistics of the metric in a certain time period or compare the statistics of the same time period on different dates.
-    -   Click ![code](../images/p230759.png)Icon to view the API details for this metric.
+    -   Click ![chart](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9624334161/p230753.png)Icon to view the statistics of the metric in a certain time period or compare the statistics of the same time period on different dates.
+    -   Click ![code](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9624334161/p230759.png)Icon to view the API details for this metric.
 
 ## Exception list
 
@@ -47,7 +47,7 @@ The exception list displays all exceptions of the application in the specified t
     -   To view the stacked column chart of an exception, click **Invocation Statistics** in the **Actions** column of the exception.
     -   To view the snapshots of the operations that are called when an exception occurs, click **Interface Snapshot** in the **Actions** column of the exception.
 
-        For more information, see [Operation snapshot]().
+        For more information, see [Operation snapshot](/intl.en-US/Application monitoring/Console functions/Application details/Operation snapshots.md).
 
     -   To view the details of an exception, click **Details** in the **Actions** column of the exception.
 
