@@ -31,6 +31,6 @@ The **Log** tab displays the latest logs of the pod where the application is dep
 
 ![Log](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0825424161/p236750.png)
 
-1.  On the **Log** tab, enter a keyword in the search box and click the ![Filter](../images/p236742.png) icon to filter logs.
+1.  On the **Log** tab, enter a keyword in the search box and click the ![Filter](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7654334161/p236742.png) icon to filter logs.
 
 
