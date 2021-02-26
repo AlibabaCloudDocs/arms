@@ -47,9 +47,9 @@ The **Requests** section displays the time series curve that indicates the numbe
 
     -   Move the cursor over the statistics chart to view the statistics.
     -   Select a period of time to view the statistics for the specified period.
-    -   Click ![chart](../images/p230753.png)Icon to view the statistics of the metric in a certain time period or compare the statistics of the same time period on different dates.
-    -   Click ![code](../images/p230759.png)Icon to view the API details for this metric.
-    -   Click ![alert](../images/p231972.png)Icon to create an alarm for the metric. For more information, see [Create an alert](/intl.en-US/Dashboard and alerting/Create an alert.md).
+    -   Click ![chart](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9624334161/p230753.png)Icon to view the statistics of the metric in a certain time period or compare the statistics of the same time period on different dates.
+    -   Click ![code](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9624334161/p230759.png)Icon to view the API details for this metric.
+    -   Click ![alert](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3134334161/p231972.png)Icon to create an alarm for the metric. For more information, see [Create an alert](/intl.en-US/Dashboard and alerting/Create an alert.md).
 
 ## Response time
 
@@ -65,9 +65,9 @@ The **Response Time** section displays the time series curve that indicates the 
 
         **Note:** Only the Pro Edition supports this feature.
 
-    -   Click ![chart](../images/p230753.png)Icon to view the statistics of the metric in a certain time period or compare the statistics of the same time period on different dates.
-    -   Click ![code](../images/p230759.png)Icon to view the API details for this metric.
-    -   Click ![alert](../images/p231972.png)Icon to create an alarm for the metric. For more information, see [Create an alert](/intl.en-US/Dashboard and alerting/Create an alert.md).
+    -   Click ![chart](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9624334161/p230753.png)Icon to view the statistics of the metric in a certain time period or compare the statistics of the same time period on different dates.
+    -   Click ![code](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9624334161/p230759.png)Icon to view the API details for this metric.
+    -   Click ![alert](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3134334161/p231972.png)Icon to create an alarm for the metric. For more information, see [Create an alert](/intl.en-US/Dashboard and alerting/Create an alert.md).
 
 ## Number of errors
 
@@ -83,9 +83,9 @@ The **Errors** section displays the time series curve that indicates the number 
 
         **Note:** Only the Pro Edition supports this feature.
 
-    -   Click ![chart](../images/p230753.png)Icon to view the statistics of the metric in a certain time period or compare the statistics of the same time period on different dates.
-    -   Click ![code](../images/p230759.png)Icon to view the API details for this metric.
-    -   Click ![alert](../images/p231972.png)Icon to create an alarm for the metric. For more information, see [Create an alert](/intl.en-US/Dashboard and alerting/Create an alert.md).
+    -   Click ![chart](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9624334161/p230753.png)Icon to view the statistics of the metric in a certain time period or compare the statistics of the same time period on different dates.
+    -   Click ![code](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9624334161/p230759.png)Icon to view the API details for this metric.
+    -   Click ![alert](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3134334161/p231972.png)Icon to create an alarm for the metric. For more information, see [Create an alert](/intl.en-US/Dashboard and alerting/Create an alert.md).
 
 ## HTTP status code
 
@@ -98,6 +98,6 @@ The **HTTP - Status Code** section displays the time series curve that indicates
     -   Move the cursor over the statistics chart to view the statistics.
     -   Select a period of time to view the statistics for the specified period.
     -   Click legend to hide or show the data.
-    -   Click ![chart](../images/p230753.png)Icon to view the statistics of the metric in a certain time period or compare the statistics of the same time period on different dates.
-    -   Click ![code](../images/p230759.png)Icon to view the API details for this metric.
+    -   Click ![chart](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9624334161/p230753.png)Icon to view the statistics of the metric in a certain time period or compare the statistics of the same time period on different dates.
+    -   Click ![code](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9624334161/p230759.png)Icon to view the API details for this metric.
 
