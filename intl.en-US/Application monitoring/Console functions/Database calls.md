@@ -45,9 +45,9 @@ The **Overview** tab displays the information about the database. You can view t
     -   Click the RESET icon to restore the application topology to the default size.
     -   Move the cursor over the statistics chart to view the statistics.
     -   Select a period of time to view the statistics for the specified period.
-    -   Click ![chart](../images/p230753.png)Icon to view the statistics of the metric in a certain time period or compare the statistics of the same time period on different dates.
-    -   Click ![code](../images/p230759.png)Icon to view the API details for this metric.
-    -   Click ![alert](../images/p231972.png)Icon to create an alarm for the metric. For more information, see [Create an alert](/intl.en-US/Dashboard and alerting/Create an alert.md).
+    -   Click ![chart](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9624334161/p230753.png)Icon to view the statistics of the metric in a certain time period or compare the statistics of the same time period on different dates.
+    -   Click ![code](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9624334161/p230759.png)Icon to view the API details for this metric.
+    -   Click ![alert](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3134334161/p231972.png)Icon to create an alarm for the metric. For more information, see [Create an alert](/intl.en-US/Dashboard and alerting/Create an alert.md).
 
 ## SQL analysis
 
@@ -59,8 +59,8 @@ The **SQL Analysis** tab displays the column chart of the number of SQL calls, t
 
     -   Move the cursor over the statistics chart to view the statistics.
     -   Select a period of time to view the statistics for the specified period.
-    -   Click ![chart](../images/p230753.png)Icon to view the statistics of the metric in a certain time period or compare the statistics of the same time period on different dates.
-    -   Click ![code](../images/p230759.png)Icon to view the API details for this metric.
+    -   Click ![chart](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9624334161/p230753.png)Icon to view the statistics of the metric in a certain time period or compare the statistics of the same time period on different dates.
+    -   Click ![code](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9624334161/p230759.png)Icon to view the API details for this metric.
     -   To view the SQL call statistics of an SQL statement, click **Invocation Statistics** in the **Actions** column of the SQL statement.
     -   To view the snapshots of the operation that is called by an SQL statement, click **Interface Snapshot** in the **Actions** column of the SQL statement.
 
@@ -76,8 +76,8 @@ The **Exception Analysis** tab displays the information about exceptions of the 
 
     -   Move the cursor over the statistics chart to view the statistics.
     -   Select a period of time to view the statistics for the specified period.
-    -   Click ![chart](../images/p230753.png)Icon to view the statistics of the metric in a certain time period or compare the statistics of the same time period on different dates.
-    -   Click ![code](../images/p230759.png)Icon to view the API details for this metric.
+    -   Click ![chart](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9624334161/p230753.png)Icon to view the statistics of the metric in a certain time period or compare the statistics of the same time period on different dates.
+    -   Click ![code](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9624334161/p230759.png)Icon to view the API details for this metric.
     -   To view the statistics of an exception, click **Invocation Statistics** in the **Actions** column of the exception.
     -   To view the details of an exception, click **Details** in the **Actions** column of the exception.
 
@@ -92,7 +92,7 @@ The **Call source** tab displays the information about the call sources of the d
     -   To view the information about an application that calls the database or information about a database operation that is called, enter the application or operation name in the search box and click the ![Search](../images/p236349.png) icon.
     -   To view the snapshots of a database operation that is called by a call source, click **view details** next to the operation.
     -   Move the cursor over the statistics chart to view the statistics.
-    -   Click ![chart](../images/p230753.png)Icon to view the statistics of the metric in a certain time period or compare the statistics of the same time period on different dates.
+    -   Click ![chart](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9624334161/p230753.png)Icon to view the statistics of the metric in a certain time period or compare the statistics of the same time period on different dates.
 
 ## Operation snapshot
 
