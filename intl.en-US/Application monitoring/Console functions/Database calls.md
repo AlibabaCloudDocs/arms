@@ -89,7 +89,7 @@ The **Call source** tab displays the information about the call sources of the d
 
 1.  On the **Call source** tab, perform the following operations as required:
 
-    -   To view the information about an application that calls the database or information about a database operation that is called, enter the application or operation name in the search box and click the ![Search](../images/p236349.png) icon.
+    -   To view the information about an application that calls the database or information about a database operation that is called, enter the application or operation name in the search box and click the ![Search](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/5964334161/p236349.png) icon.
     -   To view the snapshots of a database operation that is called by a call source, click **view details** next to the operation.
     -   Move the cursor over the statistics chart to view the statistics.
     -   Click ![chart](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9624334161/p230753.png)Icon to view the statistics of the metric in a certain time period or compare the statistics of the same time period on different dates.
@@ -102,7 +102,7 @@ The **Interface Snapshot** tab displays the snapshots of all operations that are
 
 1.  On the **Interface Snapshot** tab, perform the following operations as required:
 
-    -   To view the snapshots of an operation, enter the operation name in the search box and click the ![Search](../images/p236472.png) icon.
+    -   To view the snapshots of an operation, enter the operation name in the search box and click the ![Search](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/5964334161/p236472.png) icon.
     -   To view a trace of an operation, click the trace ID in the **TraceId** column of the operation.
     -   To view the logs of an operation, click **View Logs** in the **Actions column** of the operation.
 
