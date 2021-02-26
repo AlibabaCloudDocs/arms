@@ -31,8 +31,8 @@ The **SQL Calls** section displays the time series curve that indicates the NoSQ
 
     -   Move the cursor over the statistics chart to view the statistics.
     -   Select a period of time to view the statistics for the specified period.
-    -   Click ![chart](../images/p230753.png)Icon to view the statistics of the metric in a certain time period or compare the statistics of the same time period on different dates.
-    -   Click ![code](../images/p230759.png)Icon to view the API details for this metric.
+    -   Click ![chart](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9624334161/p230753.png)Icon to view the statistics of the metric in a certain time period or compare the statistics of the same time period on different dates.
+    -   Click ![code](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9624334161/p230759.png)Icon to view the API details for this metric.
 
 ## Operation command list
 
@@ -45,6 +45,6 @@ The operation command list displays all operation commands that are run in NoSQL
     -   To view the NoSQL call statistics of an operation command, click **Invocation Statistics** in the **Actions** column of the operation command.
     -   To view the snapshots of the operation that is called by an operation command, click **Interface Snapshot** in the **Actions** column of the operation command.
 
-        For more information, see [Operation snapshot]().
+        For more information, see [Operation snapshot](/intl.en-US/Application monitoring/Console functions/Application details/Operation snapshots.md).
 
 
