@@ -23,7 +23,7 @@ The **Call link**
 
 ![Tab Traces](../images/p53826.png "Trace tab")
 
-**Note:** **Status** The green icon in the column indicates that the time consumed is less than 500 milliseconds, the yellow icon indicates that the time consumed is between 500 milliseconds and 1000 milliseconds, the red icon indicates that the time consumed is greater than 1000 milliseconds, or the Tag Key is`Error`.
+**Note:** **Status** The green icon in the column indicates that the time consumed is less than 500 milliseconds, the yellow icon indicates that the time consumed is between 500 milliseconds and 1000 milliseconds, the red icon indicates that the time consumed is greater than 1000 milliseconds, or the Tag Key is `Error`.
 
 On the **Call link** tab page, you can perform the following operations as needed:
 
@@ -36,7 +36,7 @@ On the **Call link** tab page, you can perform the following operations as neede
 
 Onthe Call link page, you can check the log generation time, status, IP address/machine name, service name, and Timeline of the call link are displayed on the page.
 
-**Note:** **IP address**Whether the IP address or machine name is displayed depends on Application Settings the display configuration on the page. For more information, see manage applications and tags.
+**Note:** **IP address** Whether the IP address or machine name is displayed depends on Application Settings the display configuration on the page. For more information, see manage applications and tags.
 
 ![Page Traces](../images/p53827.png "Trace page")
 
