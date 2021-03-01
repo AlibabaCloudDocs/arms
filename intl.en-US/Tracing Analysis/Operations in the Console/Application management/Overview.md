@@ -16,13 +16,11 @@ The following key performance metrics are displayed on the **Overview analysis**
 -   The name, application, number of requests, response time, and number of errors of each entrance.
 -   The name, trigger status, trigger time, content, level, and rule of each alert.
 
-![pg_overview](../images/p102767.png)
+![pg_overview](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9320754161/p102767.png)
 
 ## Access procedure
 
 The access procedure and your access process are displayed on the **Access process** tab. In addition, you can view endpoint information.
-
-![sc_access_process](../images/p102777.png)
 
 **Related topics**  
 
