@@ -43,7 +43,7 @@
 -   `re`：匹配正则 |
 |Value|String|app|标签取值。 |
 |Name|String|Prometheus Alert|分派策略名称。 |
-|NotifyRules|Array of NotifyRule| |通知方式。 |
+|NotifyRules|Array of NotifyRule| |通知方式集合。 |
 |NotifyChannels|List|email|通知方式：
 
  -   `dingTalk`
@@ -54,7 +54,7 @@
 |NotifyObjects|Array of NotifyObject| |通知对象集合。 |
 |Name|String|JohnDoe|联系人或联系人组的名称。 |
 |NotifyObjectId|String|1|联系人或联系人组的ID。 |
-|NotifyType|String|CONTACT|通知方式：
+|NotifyType|String|CONTACT|通知对象类型：
 
  -   `CONTACT`：联系人
 -   `CONTACT_GROUP`：联系人组 |
