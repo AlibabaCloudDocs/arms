@@ -31,7 +31,7 @@ Perform the following steps to add a custom DingTalk chatbot and obtain the webh
 
 You can create a contact or add the address to the existing contact information. In this example, a contact is created.
 
-1.  Log on to the[Application Real-Time Monitoring Service \(ARMS\) console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
+1.  Log on to the [Application Real-Time Monitoring Service \(ARMS\) console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
 2.  In the left-side navigation pane, choose **Alerts** \> **Contacts**.
 
@@ -44,7 +44,7 @@ You can create a contact or add the address to the existing contact information.
 
 You must create a contact group, because alerts triggered by an alert rule can be sent to alert contact groups instead of alert contacts.
 
-1.  Log on to the[ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
 2.  In the left-side navigation pane, choose **Alerts** \> **Contacts**.
 
@@ -57,7 +57,7 @@ You must create a contact group, because alerts triggered by an alert rule can b
 
 If no alert is created, create an alert first. You can configure DingTalk chatbots to send notifications for browser monitoring, application monitoring, custom monitoring, and Prometheus monitoring alerts. In this example, an application monitoring alert is created.
 
-1.  Log on to the[ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
 2.  In the left-side navigation pane, choose **Alerts** \> **Alert Policies**.
 
@@ -89,7 +89,7 @@ If no alert is created, create an alert first. You can configure DingTalk chatbo
 
 Perform the following steps to edit an alert. In this example, an application monitoring alert is edited.
 
-1.  Log on to the[ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
 2.  In the left-side navigation pane, choose **Alerts** \> **Alert Policies**.
 
