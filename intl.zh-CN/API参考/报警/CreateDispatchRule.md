@@ -38,7 +38,7 @@
     ]
   },
   "dispatchType": "CREATE_ALERT/DISCARD_ALERT",    //告警处理方式。CREATE_ALERT：就是生成报警；DISCARD_ALERT：丢弃报警事件，即不告警。
-  "isRecover": true,               //是否发生恢复的告警。true：发生；false：不发送。
+  "isRecover": true,               //是否发送恢复的告警。true：发送；false：不发送。
   "groupRules": [                  //设置事件分组。
     {
       "groupId": 1,               //分组ID。
