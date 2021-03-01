@@ -22,8 +22,8 @@ The Overview module allows you to view the summary of and analyze the startup sp
     -   Analyzes the number of terminals and the trend of startup time of each app and displays the results in a chart.
     -   You can filter data by selecting values from the **App Version**, **Time**, **Device**, and **Region** drop-down lists.
 -   **Page Performance**
-    -   Click the **Loading Time — Average** tab. Then, the distribution of the loading time of each app page for each terminal is collected and the results are displayed in a table.
-    -   Click the **Sliding Frame Rate — Average** tab. Then, the distribution of the average frame rate of each app page for each terminal is collected and the results are displayed in a table.
+    -   Click the **Loading Time - Average** tab. Then, the distribution of the loading time of each app page for each terminal is collected and the results are displayed in a table.
+    -   Click the **Sliding Frame Rate - Average** tab. Then, the distribution of the average frame rate of each app page for each terminal is collected and the results are displayed in a table.
     -   You can filter data by selecting values from the **App Version**, **Time**, **Device**, and **Region** drop-down lists.
 
 ## Startup
