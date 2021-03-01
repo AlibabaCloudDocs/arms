@@ -32,11 +32,11 @@ The pod of the application is not injected to arms-init-container, the YAML file
       armsPilotCreateAppName: <your-deployment-name>                  
     ```
 
-    -   If the YAML file contains these annotations, perform [7](#step_6iy_617_3e6)。
-    -   If the YAML file does not contain these annotations, add the preceding annotations to the spec \> template \> metadata section in the Edit YAML dialog box, replace `<your-deployment-name>` with your application name, and then click **Update**。
+    -   If the YAML file contains these annotations, perform [7](#step_6iy_617_3e6).
+    -   If the YAML file does not contain these annotations, add the preceding annotations to the spec \> template \> metadata section in the Edit YAML dialog box, replace `<your-deployment-name>` with your application name, and then click **Update**.
 7.  On the Pods tab, click **Logs**，next to the required pod to check whether the pod logs of arms-pilot report an STS error in the `"Message":"STS error"`format.
 
-    -   If the pod logs of arms-pilot report an STS error, authorize the cluster of the application and restart the pod of the application. For more information, see [Install the ARMS agent for Java applications in Container Service for Kubernetes](/intl.en-US/Application monitoring/Quick start/Monitor Java applications/Install the ARMS agent for a Java application deployed in Container Service for Kubernetes.md)。
+    -   If the pod logs of arms-pilot report an STS error, authorize the cluster of the application and restart the pod of the application. For more information, see [Install the ARMS agent for Java applications in Container Service for Kubernetes](/intl.en-US/Application monitoring/Quick start/Monitor Java applications/Install the ARMS agent for a Java application deployed in Container Service for Kubernetes.md).
     -   If the pod logs of arms-pilot do not report an STS error, contact the ARMS DingTalk account arms160804.
 8.  On the Pods tab, click **Edit** next to the required pod. In the Edit YAML dialog box, check whether the YAML file contains the following javaagent parameter:
 
