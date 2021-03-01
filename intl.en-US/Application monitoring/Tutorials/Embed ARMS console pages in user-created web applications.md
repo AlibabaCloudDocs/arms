@@ -6,7 +6,7 @@ The operation to embed ARMS console pages into user-created web applications bri
 
 -   Allows you to log on to your own system and browse the application list, application details, and call query pages of the embedded ARMS console pages.
 -   Hides the top navigation bar and left-side navigation pane of the ARMS console. For more information, see [Hide navigation pages](#step_ejt_0s8_cjt).
--   Uses Resource Access Management \(RAM\) to manage permissions on the ARMS console. For example, you can change the full permissions to read-only permissions. For more information, see [Add permissions](#section_qcc_ejh_ix5).
+-   Uses Resource Access Management \(RAM\) to manage permissions on the ARMS console. For example, you can change the full permissions to read-only permissions. For more information, see [Grant different permissions to RAM users](/intl.en-US/Access control/Grant different permissions to RAM users.md).
 
 ## Sample code
 
