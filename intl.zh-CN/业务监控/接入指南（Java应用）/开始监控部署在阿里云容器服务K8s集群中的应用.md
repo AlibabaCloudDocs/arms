@@ -9,7 +9,7 @@ ARMS业务监控以代码无侵入的方式，可视化定义业务请求，并�
 
 ## 操作流程
 
-![dg_business_workflow](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/7067197951/p103004.png)
+![dg_business_workflow](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/0784574161/p103004.png)
 
 **说明：** 扫描以下二维码图片加入钉钉答疑群。
 
@@ -17,36 +17,41 @@ ARMS业务监控以代码无侵入的方式，可视化定义业务请求，并�
 
 ## 为容器服务Kubernetes版Java应用安装探针
 
-如果您是初次使用业务监控，并且未使用过应用监控的新用户，则按照应用监控的文档说明安装最新版本的探针，详情请参见[为容器服务Kubernetes版Java应用安装探针](/intl.zh-CN/应用监控/开始监控 Java 应用/为容器服务Kubernetes版Java应用安装探针.md)。
+如果您是初次使用业务监控，并且未使用过应用监控的新用户，则按照应用监控的文档说明安装最新版本的探针。具体操作，请参见[为容器服务Kubernetes版Java应用安装探针](/intl.zh-CN/应用监控/接入应用监控/开始监控Java应用/为容器服务Kubernetes版Java应用安装探针.md)。
 
 ## 为容器服务Kubernetes版Java应用升级探针
 
 如果您是初次使用业务监控，并且已使用过应用监控的老用户，则在使用业务监控前，需将应用探针版本升级至2.6.2+版本：
 
-1.  登录[容器服务管理控制台](https://partners-intl.console.aliyun.com/#/cs)，在左侧导航栏选择**应用** \> **发布**，在Helm页签查看ack-arms-pilot组件的更新时间。
+1.  登录[容器服务管理控制台](https://partners-intl.console.aliyun.com/#/cs)。
 
-    ![tab_business_helm](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/4067197951/p93070.png)
+2.  在左侧导航栏，单击**集群**。
 
-    -   如果更新时间在2019年12月之前，则需要先升级ack-arms-pilot组件后才能升级探针，请执行[步骤](#step_zth_q9r_1kt)[2](#step_zth_q9r_1kt)。
-    -   如果创建时间在2019年12月之后包括2019年12月，则直接执行[步骤](#step_ud6_l2w_izu)[4](#step_ud6_l2w_izu)。
-2.  在左侧导航栏选择**集群** \> **集群**，在集群列表页面上的目标集群右侧**操作**列，单击**控制台**。
+3.  在**集群列表**，单击目标集群ID。
 
-    ![pg_business_ack_cluster_list](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/4067197951/p91060.png)
+4.  在左侧导航栏，选择**应用** \> **Helm**。
 
-3.  在左侧导航栏从**命名空间**列表选择**arms-pilot**或**arms-pilot-system**，在概况页面的**容器组**区域，单击右下角的 图标，然后再单击**删除**，删除arms-pilot组件对应的容器组。
+    ![tab_business_helm](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/5874800161/p93070.png)
 
-    ![sc_business_delete_pods](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/4067197951/p91078.png)
+    -   如果arms-pilot组件的更新时间在2019年12月1日之前，则需要先升级arms-pilot组件后才能升级探针，请从[步骤5](#step_zth_q9r_1kt)开始执行。
+    -   如果arms-pilot组件的更新时间在2019年12月1日或之后，则无需升级arms-pilot组件就能升级探针，请从[步骤7](#step_ud6_l2w_izu)开始执行。
+5.  在左侧导航栏，单击**工作负载** \> **容器组**。
 
-
+6.  从**容器组**页面的**命名空间**列表，选择**arms-pilot**，在arms-pilot组件对应的容器组右侧，单击**删除**。
 
     删除容器组后，会自动创建新的容器组。
 
-4.  重启您的业务Pod。
+7.  重启您的业务Pod。
 
     应用探针自动升级。
 
-5.  在容器内执行`cat /home/admin/.opt/ArmsAgent/version`命令，查看应用探针的版本号。
+8.  在容器内执行`cat /home/admin/.opt/ArmsAgent/version`命令，查看应用探针的版本号。
 
-    若版本号以2.6.2开头，则表示应用探针版本已成功升级至2.6.2+ 版本，此时您可以创建业务监控任务监控您的应用。
+    版本号以2.6.2或以上开头，则表示应用探针版本已成功升级至2.6.2+版本，此时您可以创建业务监控任务监控您的应用。
 
+
+**相关文档**  
+
+
+[准备工作概述](/intl.zh-CN/业务监控/接入指南（Java应用）/准备工作概述.md)
 
