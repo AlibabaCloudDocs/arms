@@ -9,7 +9,7 @@ ARMS业务监控以代码无侵入的方式，可视化定义业务请求，并�
 
 ## 操作流程
 
-![dg_business_workflow](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/7067197951/p103004.png)
+![dg_business_workflow](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/0784574161/p103004.png)
 
 **说明：** 扫描以下二维码图片加入钉钉答疑群。
 
@@ -17,7 +17,7 @@ ARMS业务监控以代码无侵入的方式，可视化定义业务请求，并�
 
 ## 为开源Kubernetes环境中的应用安装探针
 
-如果您是初次使用业务监控，并且未使用过应用监控的新用户，则按照应用监控的文档说明安装最新版本的探针，详情请参见[为开源Kubernetes环境中的应用安装探针](/intl.zh-CN/应用监控/开始监控 Java 应用/为开源Kubernetes环境中的应用安装探针.md)。
+如果您是初次使用业务监控，并且未使用过应用监控的新用户，则按照应用监控的文档说明安装最新版本的探针。具体操作，请参见[为开源Kubernetes环境中的应用安装探针](/intl.zh-CN/应用监控/接入应用监控/开始监控Java应用/为开源Kubernetes环境中的应用安装探针.md)。
 
 ## 为开源Kubernetes环境中的应用升级探针
 
@@ -25,9 +25,13 @@ ARMS业务监控以代码无侵入的方式，可视化定义业务请求，并�
 
 具体步骤如下所示：
 
-1.  卸载探针，详情请参见[卸载探针](/intl.zh-CN/应用监控/开始监控 Java 应用/为开源Kubernetes环境中的应用安装探针.mdsection_anc_ksu_mmw)。
+1.  卸载探针。
 
-2.  重新安装探针，详情请参见[为开源Kubernetes环境中的应用安装探针](/intl.zh-CN/应用监控/开始监控 Java 应用/为开源Kubernetes环境中的应用安装探针.md)。
+    具体操作，请参见[卸载探针](/intl.zh-CN/应用监控/接入应用监控/开始监控Java应用/为开源Kubernetes环境中的应用安装探针.mdsection_anc_ksu_mmw)。
+
+2.  重新安装探针。
+
+    具体操作，请参见[为开源Kubernetes环境中的应用安装探针](/intl.zh-CN/应用监控/接入应用监控/开始监控Java应用/为开源Kubernetes环境中的应用安装探针.md)。
 
 3.  重启您的业务Pod。
 
@@ -35,6 +39,11 @@ ARMS业务监控以代码无侵入的方式，可视化定义业务请求，并�
 
 4.  在容器内执行`cat /home/admin/.opt/ArmsAgent/version`命令，查看应用探针的版本号。
 
-    若版本号以2.6.2开头，则表示应用探针版本已成功升级至2.6.2+ 版本，此时您可以创建业务监控任务监控您的应用。
+    版本号以2.6.2或以上开头，则表示应用探针版本已成功升级至2.6.2+版本，此时您可以创建业务监控任务监控您的应用。
 
+
+**相关文档**  
+
+
+[准备工作概述](/intl.zh-CN/业务监控/接入指南（Java应用）/准备工作概述.md)
 
