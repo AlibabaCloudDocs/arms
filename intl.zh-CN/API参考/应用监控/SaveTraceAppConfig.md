@@ -11,7 +11,7 @@
 |字段名称|字段类型|是否必选|示例值|描述|
 |----|----|----|---|--|
 |Action|String|是|SaveTraceAppConfig|系统规定参数。取值：SaveTraceAppConfig。|
-|Pid|String|是|xxx@74xxx|应用的ID标识串。获取方式请参见[如何获取应用pid](/intl.zh-CN/API参考/应用监控/QueryMetricByPage（应用监控）.md)。 |
+|Pid|String|是|a2n80plglh@745eddxxx|应用的ID标识串。获取方式，请参见[如何获取应用pid](/intl.zh-CN/API参考/应用监控/QueryMetricByPage（应用监控）.md)。 |
 |Settings.N.Key|String|否|sampling.enable|选择需要自定义的设置。-   [调用链路采样相关](#table_6hs_0c7_i8n)
 -   [总开关设置](#table_qib_r15_hya)
 -   [阈值设置](#table_2fd_pb3_j50)
@@ -22,7 +22,7 @@
 -   [业务日志关联设置](#table_rzf_ylz_h0d)
 -   [业务监控设置](#table_waq_hqt_0yq) |
 |Settings.N.Value|String|否|true|
-|RegionId|String|否|cn-hangzhou|区域的ID。|
+|RegionId|String|否|cn-hangzhou|地域ID。|
 
 **调用链路采样字段说明**
 
@@ -54,6 +54,8 @@
 |defined.excludeurl|无效接口调用过滤|支持以英文逗号（,）分隔多个接口调用。示例：/service/taobao,/service/status。|
 |callstack.maxLength|方法堆栈最大长度间阈值|默认为128，支持最大长度400条。|
 |callsql.maxLength|采集SQL最大长度|默认为1024个字符，最小长度为256个字符，最大长度为4096个字符。|
+|exception.whitelist|异常过滤|使用正则表达式匹配异常类全名，多个异常请使用英文逗号（,）分隔。例如：java.lang.InterrupetedException,java.lang.IndexOutOfBoundsException。此处输入的异常不会显示在应用详情和异常分析页面的图表中。 |
+|error.skip|错误数过滤|默认情况下，大于400的状态码会计入错误数，您可以设置需要忽略的状态码，多个错误码使用英文逗号（,）分隔，例如：429或429,512。**说明：** Agent 2.5.7.2以上版本支持。 |
 
 **线程字段说明**
 
@@ -85,7 +87,7 @@
 |convergence.enable|收敛URL|-   true
 -   false |
 |convergence.minServerSize|收敛阈值|大于此阈值即进行收敛。|
-|convergence.pattern|收敛规则正则|可使用正则表达式设置收敛规则，多个正则表达式之间以英文逗号（,）分隔，直接填写URL原文表示不收敛此URL，示例：/service/\(.\*?\)/demo。|
+|convergence.pattern|收敛规则正则|可使用正则表达式设置收敛规则，多个正则表达式之间以英文逗号（,）分隔，直接填写URL原文表示不收敛此URL，例如：/service/\(.\*?\)/demo。|
 
 **业务日志关联字段说明**
 
@@ -121,7 +123,7 @@
 
 ```
 http(s)://[Endpoint]/?Action=SaveTraceAppConfig
-&Pid=xxx@74xxx
+&Pid=a2n80plglh@745eddxxx
 &<公共请求参数>
 ```
 
