@@ -4,32 +4,32 @@ keyword: [business transaction, parse RESTful APIs]
 
 # Use the business transaction feature to configure monitoring rules by parsing RESTful APIs
 
-The business transaction feature allows you to parse RESTful APIs. When you configure business monitoring rules, you can parse HTTP methods and Uniform Resource Identifier \(URI\) paths.
+The business transaction feature can parse RESTful APIs. When you configure monitoring rules, this feature can parse HTTP methods and Uniform Resource Identifier \(URI\) paths.
 
-Your application has access to the business transaction feature. For more information, see [Overview](/intl.en-US/Application monitoring/Overview.md).
+The application monitoring feature is enabled for your application. For more information, see [Overview](/intl.en-US/Application monitoring/Overview.md).
 
-REST uses URIs to represent resources and uses HTTP methods such as GET, POST, PUT, and DELETE to describe operations on resources. RESTful APIs are APIs that follow the REST architectural style. As the REST architectural style gains popularity, more and more Internet applications are using RESTful APIs.
+REST uses URIs to represent resources and uses HTTP methods such as GET, POST, PUT, and DELETE to describe operations on resources. RESTful APIs are APIs that follow the REST architectural style. As the REST architectural style becomes popular, more and more Internet applications apply RESTful APIs.
 
-Compared with traditional APIs, RESTful APIs that separate operations from resources have the following differences:
+RESTful APIs can separate operations from resources. Compared with traditional APIs, RESTful APIs have the following features:
 
 -   HTTP Method
 
-    Resources are the core of REST architectures. HTTP methods are used in REST architectures to perform operations on resources.
+    Resources are the core of REST architectures. REST architectures use HTTP methods to perform operations on resources.
 
-    -   GET: used to obtain resources.
-    -   POST: used to create resources.
-    -   PUT: used to update resources.
-    -   DELETE: used to delete resources.
+    -   GET: obtains resources.
+    -   POST: creates resources.
+    -   PUT: updates resources.
+    -   DELETE: deletes resources.
 -   URI Path
 
-    A resource is an Internet entity, such as a text, an image, or an audio or video file. A URI is a uniform resource identifier that can identify a resource uniquely. Therefore, you only need to present resource information in a reasonable way when you design URIs. The following list provides some typical URI designs:
+    A resource is an entity on the Internet, such as a text file, an image, and an audio or video file. A URI is a uniform resource identifier that can uniquely identify a resource. Therefore, when you design URIs, you only need to present resource information in a reasonable way. The following list provides some typical URI designs:
 
     ```
     GET /orders: lists all orders.
     POST /orders: creates an order.
     GET /orders/ID: obtains information about a specific order.
-    PUT /orders/ID: updates information of a specific order (all information of the order is provided).
-    PATCH /orders/ID: updates information of a specific order (some information of the order is provided).
+    PUT /orders/ID: updates information about a specific order. All information about the order is provided.
+    PATCH /orders/ID: updates information of a specific order. Some information about the order is provided.
     DELETE /orders/ID: deletes a specific order.
     GET /orders/ID/goods: lists all products contained in a specific order.
     DELETE /zoos/ID/goods/ID: deletes a specific product contained in a specific order.
@@ -38,103 +38,138 @@ Compared with traditional APIs, RESTful APIs that separate operations from resou
 
 ## Use the business transaction feature to configure monitoring rules by parsing HTTP methods
 
-The business transaction feature allows you to parse HTTP methods such as GET, POST, PUT, DELETE, and PATCH. Perform the following steps to use the feature:
+The business transaction feature can parse HTTP methods such as GET, POST, PUT, DELETE, and PATCH. To use this feature, perform the following steps:
 
 1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
 2.  In the left-side navigation pane, choose **Scenario-based Traces** \> **Application Metric**.
 
-3.  On the **Application Metric** page, click **Create Business monitoring** in the upper-right corner.
+3.  In the top navigation bar, select a region.
 
-4.  On the New business monitoring page, set **Service type** to **HTTP entry** and select **Method** from the **Filter rules** or **Grouping Rules** drop-down list.
+4.  On the **Application Metric** page, click **Create Business monitoring** in the upper-right corner.
+
+5.  On the **New business monitoring** page, set the **Service type** parameter to **HTTP entry**and select **Method** from the **Filter rules** or **Grouping Rules** drop-down list.
 
     **Note:**
 
     -   If you select **Method** from the **Filter rules** drop-down list, you can enter common HTTP methods such as GET, POST, PUT, DELETE, and PATCH \(all in uppercase\) in the **Threshold** field. This indicates that data is filtered based on the specified method.
-    -   If you select **Method** from the **Grouping Rules** drop-down list, data displayed is grouped based on the specified method.
-    ![pg_business_create_task_http](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8564758061/p127993.png)
+    -   If you select **Method** from the **Grouping Rules** drop-down list, data is displayed in groups based on the specified method.
+    ![pg_business_create_task_http](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1148412161/p127993.png)
 
     The following table describes the configurations of other parameters.
 
-    |Parameter|Description|Example|
-    |---------|-----------|-------|
-    |**Business Name**|Required. The name of the business monitoring task.|Order portal|
-    |**Entry application**|Required. The **Entry application** drop-down list displays all Java applications that have application agents installed. After you select an application, ARMS automatically detects the version of the application agent. **Note:** You can use the business monitoring feature only when you upgrade the application agent to version 2.6.2 or later. If the version of the application agent is earlier than 2.6.2, you must upgrade the application agent first. For more information, see [FAQ about updating the ARMS agent for Java applications](/intl.en-US/Application monitoring/FAQ about updating the ARMS agent for Java applications.md).
+    |Parameter|Description|
+    |---------|-----------|
+    |**Business Name**|Required. The name of the business transaction task.|
+    |**Entry application**|Required. The **Entry application** drop-down list displays all the Java applications that have the ARMS agent installed. After you select the required application, ARMS automatically detects the version number of the agent. **Note:** You can use the business transaction feature only after you upgrade the ARMS agent to a version later than 2.6.2. If the detected agent version is not later than 2.6.2, upgrade the agent first. For more information, see [Update the ARMS agent for Java applications](/intl.en-US/Application monitoring/Update the ARMS agent for Java applications.md). |
+    |**Service type**|The type of the service. The value of **HTTP entry** is suitable for scenarios where business traces are dyed based on HTTP traffic features.|
+    |**Service name**|Required. The API name that is provided by the application. This parameter is displayed only when you set the **Service type** parameter to HTTP entry. ARMS automatically detects a list of APIs that are recently provided by this application based on the **entry application** you specify for your choices. If the recommended APIs do not meet your requirements, you can edit the APIs. The following four types of matching patterns of **Service name** are supported:
 
-|arms-k8s-demo|
-    |**Service type**|The type of the service.    -   **HTTP entry**: suitable for scenarios where business links are colored based on HTTP traffic characteristics.
-    -   **Kubernetes Pod Metadata**: suitable for scenarios where business links are colored based on the characteristics of the Kubernetes pod environment. This parameter is displayed only when you set **Entry application** to Kubernetes.
-|**HTTP entry**|
-    |**Service name**|Required. The name of the API provided by the application. This parameter is displayed only when you set **Service type** to HTTP entry. Based on the **entry application** that you select, ARMS automatically obtains a list of the latest APIs for the application. If the recommended APIs do not meet your requirements, you can modify the APIs. The **Service name** field supports the following matching modes:
+    -   **Equal**: matches the business API that uses the value of the **Service name** parameter as the API name. This pattern is the default matching pattern.
+    -   **Start equal**: matches the business APIs whose names are prefixed with the value of the **Service name** parameter. If you need to monitor the business APIs that have the same prefix, select this pattern.
+    -   **Contains**: matches the business APIs whose names contain the value of the **Service name** parameter. If your application provides a large number of business APIs, you can select this pattern to quickly monitor the business APIs that you need.
+    -   **End =**: matches the business APIs whose names are suffixed with the value of the **Service name** parameter. This pattern is suitable for typical web frameworks that end with the .do and .action configurations.
+    -   **Pattern matching**: matches dynamic URI paths and supports matching rules for Ant-style path patterns. This allows you to monitor and analyze the URIs of a specific type of patterns. |
+    |**Filter rule relationships**|You can select **Meet the following rules at the same time** or **Meet the following rule**.|
+    |**Filter rules**|Optional. Further filter the business APIs that you specify.Assume that the **Service type** parameter is set to HTTP entry. To specify **Filter rules**, you must specify a parameter to be matched \(**Parameter**, **Cookie**, **Method**, **PathVariable**, or **Header**\), a key value to be matched, a matching pattern \(**==**, **!=**, or **contains**\), and a threshold. Among the preceding information, the **PathVariable** option appears for the parameter to be matched only if you select **Pattern matching** for the **Service name** parameter and the input string includes braces \{\} as placeholders.
 
-    -   **Equal**: matches the APIs that are equal to the **Service name** value. By default, this matching mode is selected.
-    -   **Start equal**: matches the APIs prefixed with the **Service name** value. You can select this mode if you want to monitor APIs that have the same prefix.
-    -   **Contains**: matches the APIs that contain the **Service name** value. You can select this mode if your applications provides a large number of APIs.
-    -   **End equal**: matches the APIs suffixed with the **Service name** value. This mode is suitable for web frameworks that use the .do and .action extensions.
-    -   **Pattern matching**: matches dynamic URI path. This mode supports Ant-style path pattern matching rules and can be used to monitor and analyze URIs of a specified pattern.
-|**Equal** /api/buy|
-    |**Filter rule relationships**|You can select **Meet the following rules at the same time** or **Meet the following rule**.|**Meet the following rules at the same time**|
-    |**Filter rules**|Optional. Used to further filter the APIs.    -   When you set **Service type** to HTTP entry, a **filtering rule** contains matching parameters \(**Parameter**, **Cookie**, **Method**, **PathVariable**, and **Header**\), matching key values, matching method \(**==**, **! =**, and **contains**\), and thresholds. Only if you set **Service name** to **Pattern matching** and the input string contains braces \(\{\}\), the **PathVariable** option is displayed.
+You can set multiple filter rules. The logical relationship between multiple filter rules is determined by the **Filter rule relationships** parameter that you specify. |
+    |**Grouping Rules**|Required. Further group the business APIs that you specify.Assume that the **Service type** parameter is set to HTTP entry. To specify **Grouping Rules**, you must specify a parameter to be matched \(**Parameter**, **Cookie**, **Method**, **PathVariable**, or **Header**\) and a key value to be matched. Among the preceding information, the **PathVariable** option appears for the parameter to be matched only if you select **Pattern matching** for the **Service name** parameter and the input string includes braces \{\} as placeholders.
 
-    -   When you set **Service type** to **Kubernetes Pod Metadata**, a **filtering rule** contains matching parameters \(**podLabel**, **podAnnotation**, **podName**, **podNamespace**, **podUID**, **podIp**, **nodeName**, **hostIp**, and **podServiceAccount**\), matching method \(**==**, **! =**, and **contains**\), and thresholds.
-You can set multiple filter rules. The logical relationship between multiple filter rules is determined by the **Filter rule relationships** value that you specify.
+You can set only one grouping rule. This rule can be set together with filter rules.
 
-|If your application provides the /api/buy? brand=\*\*\* URL and you want to monitor the API calls of brand=Alibaba, you can set **Service name** to **Equal** /api/buy, and **Filtering rules** to **Parameter** brand **==** Alibaba.|
-    |**Grouping Rules**|Required. Used to further group the APIs.    -   When you set **Service type** to HTTP entry, a **filtering rule** contains matching parameters \(**Parameter**, **Cookie**, **Method**, **PathVariable**, and **Header**\) and matching key values. Only if you set **Service name** to **Pattern matching** and the input string contains braces \(\{\}\), the **PathVariable** option is displayed.
-    -   When you set **Service type** to **Kubernetes Pod Metadata**, a **filtering rule** contains matching parameters \(**podLabel**, **podAnnotation**, **podName**, **podNamespace**, **podUID**, **podIp**, **nodeName**, **hostIp**, and **podServiceAccount**\).
-Only a single **grouping rule** can be added. This rule can be configured together with **filter rules**.
+**Note:** The parameter specified in a grouping rule must be of an enumerated type. If the values of the parameter cannot be enumerated, the runtime memory usage will increase. The parameter that specifies the ID of a business model is a common example of a parameter whose values cannot be enumerated. |
 
-**Note:** The key values specified in a **grouping rule** must be of the enumerated type. If the key values cannot be enumerated, the runtime memory usage is increased. A common example of the key value that cannot be enumerated is the ID of a business model.
+6.  Click **Advanced Settings**. In the Advanced Settings section, set related parameters. Then, click **Save**.
 
-|If your application provides the /api/buy? brand=\*\*\* URL and you want to monitor the API calls of the /api/buy URL by brand, you can set **Service name** to **Equal** /api/buy, and **Grouping Rules** to **Parameter** brand.|
+    ![Advanced Settings section](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1662758061/p190117.png)
 
-5.  Click **Save**.
+    |Parameter|Description|
+    |---------|-----------|
+    |**Pass through to downstream**|Specifies whether to pass through dye labels in the traces to downstream application nodes.|
+    |**Dump business parameters**|Specifies whether to record business parameters in the traces that have dye labels.|
+    |**Whether full collection**|Specifies whether to collect all the traces that have dye labels.|
 
-6.  In the left-side navigation pane, choose **Scenario-based Traces** \> **Application Metric**. On the **Application Metric** page, click the name of the created monitoring task.
+    The business transaction task that you create appears on the **Application Metric** page.
 
-    On the Business monitoring details page, you can view the metrics of the monitoring task.
+7.  On the **Application Metric** page, click the name of the business transaction task that you create.
 
-    ![sc_business_detail_metric](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1363468061/p127998.png)
+    On the **Business monitoring details** page, you can view the metrics of the business transaction task.
 
 
 ## Use the business transaction feature to configure monitoring rules by parsing URI paths
 
-For dynamic URI paths, you cannot match the URIs accurately by using the **Equal**, **Start equal**, **Contains**, or **End =** mode. Therefore, the **Pattern matching** mode is added to the business transaction feature to support Ant-Style path patterns for monitoring and analyzing URIs of a specific mode.
+For dynamic URI paths, you cannot accurately match the URIs by using the **Equal**, **Start equal**, **Contains**, or **End =** matching pattern. Therefore, the **Pattern matching** option is added to the business transaction feature to support Ant-style path patterns for monitoring and analyzing URIs of a specific mode.
 
 |Character|Description|Example|
 |---------|-----------|-------|
-|?|Matches any single character.|com/t? st.jsp: indicates that com/test.jsp, com/tast.jsp, or com/txst.jsp is matched, excluding com/tst.jsp.|
-|\*|Matches none or multiple characters.|com/\*.jsp: indicates that files in the .jsp format under the com directory are matched.|
-|\*\*|Matches none or multiple directories in a path.|com/\*\*/test.jsp: indicates that com/test.jsp, com/foo/test.jsp, or com/foo/bar/test.jsp is matched. This means that all test.jsp files under the com directory are matched.|
-|\{example:\[a-z\]+\}|Matches characters that match the regular expression \[a-z\]+ and names the corresponding path variable as example. The colon \(:\) and the regular expression are optional.|com/\{filename:\\w+\}.jsp: indicates that com/test.jsp is matched and test is assigned to the path variable, which is filename in the example.|
+|?|Matches a single character.|com/t?st.jsp: matches com/test.jsp, com/tast.jsp, or com/txst.jsp, excluding com/tst.jsp.|
+|\*|Matches none or multiple characters.|com/\*.jsp: matches files in the .jsp format under the com directory.|
+|\*\*|Matches none or multiple directories in a path.|com/\*\*/test.jsp: matches all test.jsp files under the com directory, such as com/test.jsp, com/foo/test.jsp, or com/foo/bar/test.jsp.|
+|\{example:\[a-z\]+\}|Searches for a string that matches the regular expression \[a-z\]+ and assigns the string to the path variable example. The colon \(:\) and the regular expression are optional.|com/\{filename:\\w+\}.jsp: matches com/test.jsp. In this example, test is assigned to the path variable filename.|
 
 1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
 2.  In the left-side navigation pane, choose **Scenario-based Traces** \> **Application Metric**.
 
-3.  On the **Application Metric** page, click **Create Business monitoring** in the upper-right corner.
+3.  In the top navigation bar, select a region.
 
-4.  On the New business monitoring page, select **Pattern matching** from the **Service name** drop-down list. In the **Service name** field, enter a string that matches an Ant-style path pattern.
+4.  On the **Application Metric** page, click **Create Business monitoring** in the upper-right corner.
+
+5.  On the **New business monitoring** page, select **Pattern matching** from the **Service name** drop-down list. In the **Service name** field, enter a string that matches an Ant-style path pattern.
 
     **Note:**
 
-    -   When you select **Pattern matching** from the **Service name** drop-down list and enter a string that contains braces \(\{\}\), you can select **PathVariable** from the **Filter rules** and **Grouping Rules** drop-down lists.
-    -   When you select **PathVariable** from the **Filter rules** drop-down list, the system parses the path variables and present them in a drop-down list format in the **key value** field. After you select a specific path variable and enter the path parameter in the **Threshold** field, data is filtered based on the specified path variable.
-    -   When you select **PathVariable** from the **Grouping Rules** drop-down list, the system parses the path variables and presents them in a drop-down list format in the **key value** field. After you select a specific path variable, data displayed is grouped based on the specified path variable.
-    -   For more information about configurations of other parameters, see the [parameter table](#table_6v9_nfa_z0p) in the preceding section.
+    -   If you select **Pattern matching** from the **Service name** drop-down list and enter a string that contains braces \{\}, you can select **PathVariable** from the **Filter rules** and **Grouping Rules** drop-down lists.
+    -   If you select **PathVariable** from the **Filter rules** drop-down list, the path variables appear in the **key value** drop-down list. If you select a specific path variable and enter the path parameter in the **Threshold** field, data is filtered based on the specified path variable.
+    -   If you select **PathVariable** from the **Grouping Rules** drop-down list, the path variables appear in the **key value** drop-down list. If you select a specific path variable, data is displayed in groups based on the specified path variable.
     ![pg_business_create_task_uri](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8564758061/p128432.png)
 
-5.  Click **Save**.
+    The following table describes the configurations of other parameters.
 
-6.  In the left-side navigation pane, choose **Scenario-based Traces** \> **Application Metric**. On the **Application Metric** page, click the name of the created monitoring task.
+    |Parameter|Description|
+    |---------|-----------|
+    |**Business Name**|Required. The name of the business transaction task.|
+    |**Entry application**|Required. The **Entry application** drop-down list displays all the Java applications that have the ARMS agent installed. After you select the required application, ARMS automatically detects the version number of the agent. **Note:** You can use the business transaction feature only after you upgrade the ARMS agent to a version later than 2.6.2. If the detected agent version is not later than 2.6.2, upgrade the agent first. For more information, see [Update the ARMS agent for Java applications](/intl.en-US/Application monitoring/Update the ARMS agent for Java applications.md). |
+    |**Service type**|The type of the service. The value of **HTTP entry** is suitable for scenarios where business traces are dyed based on HTTP traffic features.|
+    |**Service name**|Required. The API name that is provided by the application. This parameter is displayed only when you set the **Service type** parameter to HTTP entry. ARMS automatically detects a list of APIs that are recently provided by this application based on the **entry application** you specify for your choices. If the recommended APIs do not meet your requirements, you can edit the APIs. The following four types of matching patterns of **Service name** are supported:
 
-    On the Business monitoring details page, you can view the metrics of the monitoring task.
+    -   **Equal**: matches the business API that uses the value of the **Service name** parameter as the API name. This pattern is the default matching pattern.
+    -   **Start equal**: matches the business APIs whose names are prefixed with the value of the **Service name** parameter. If you need to monitor the business APIs that have the same prefix, select this pattern.
+    -   **Contains**: matches the business APIs whose names contain the value of the **Service name** parameter. If your application provides a large number of business APIs, you can select this pattern to quickly monitor the business APIs that you need.
+    -   **End =**: matches the business APIs whose names are suffixed with the value of the **Service name** parameter. This pattern is suitable for typical web frameworks that end with the .do and .action configurations.
+    -   **Pattern matching**: matches dynamic URI paths and supports matching rules for Ant-style path patterns. This allows you to monitor and analyze the URIs of a specific type of patterns. |
+    |**Filter rule relationships**|You can select **Meet the following rules at the same time** or **Meet the following rule**.|
+    |**Filter rules**|Optional. Further filter the business APIs that you specify.Assume that the **Service type** parameter is set to HTTP entry. To specify **Filter rules**, you must specify a parameter to be matched \(**Parameter**, **Cookie**, **Method**, **PathVariable**, or **Header**\), a key value to be matched, a matching pattern \(**==**, **!=**, or **contains**\), and a threshold. Among the preceding information, the **PathVariable** option appears for the parameter to be matched only if you select **Pattern matching** for the **Service name** parameter and the input string includes braces \{\} as placeholders.
 
-    ![sc_business_detail_metric_uri](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/5173468061/p128433.png)
+You can set multiple filter rules. The logical relationship between multiple filter rules is determined by the **Filter rule relationships** parameter that you specify. |
+    |**Grouping Rules**|Required. Further group the business APIs that you specify.Assume that the **Service type** parameter is set to HTTP entry. To specify **Grouping Rules**, you must specify a parameter to be matched \(**Parameter**, **Cookie**, **Method**, **PathVariable**, or **Header**\) and a key value to be matched. Among the preceding information, the **PathVariable** option appears for the parameter to be matched only if you select **Pattern matching** for the **Service name** parameter and the input string includes braces \{\} as placeholders.
+
+You can set only one grouping rule. This rule can be set together with filter rules.
+
+**Note:** The parameter specified in a grouping rule must be of an enumerated type. If the values of the parameter cannot be enumerated, the runtime memory usage will increase. The parameter that specifies the ID of a business model is a common example of a parameter whose values cannot be enumerated. |
+
+6.  Click **Advanced Settings**. In the Advanced Settings section, set related parameters. Then, click **Save**.
+
+    ![Advanced Settings section](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1662758061/p190117.png)
+
+    |Parameter|Description|
+    |---------|-----------|
+    |**Pass through to downstream**|Specifies whether to pass through dye labels in the traces to downstream application nodes.|
+    |**Dump business parameters**|Specifies whether to record business parameters in the traces that have dye labels.|
+    |**Whether full collection**|Specifies whether to collect all the traces that have dye labels.|
+
+    The business transaction task that you create appears on the **Application Metric** page.
+
+7.  On the **Application Metric** page, click the name of the business transaction task that you create.
+
+    On the **Business monitoring details** page, you can view the metrics of the business transaction task.
 
 
 **Related topics**  
 
 
-[Get started with business transaction](/intl.en-US/Business monitoring/Quick Start/Get started with business transaction.md)
+[Preparations](/intl.en-US/Business monitoring/Monitor Java applications/Preparations.md)
+
+[Get started with business transaction](/intl.en-US/Business monitoring/Quick start/Get started with business transaction.md)
 
