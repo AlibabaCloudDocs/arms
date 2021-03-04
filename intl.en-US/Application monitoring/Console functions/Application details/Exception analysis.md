@@ -18,7 +18,7 @@ The Application Real-Time Monitoring Service \(ARMS\) agent is installed for an 
 
 6.  On the **Application Details** page, select an instance where the application is deployed, set the time period, and then click the **Exception Analysis** tab.
 
-    ![Exception Analysis](../images/p232939.png)
+    ![Exception Analysis](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0352684161/p232939.png)
 
 
 ## Exception statistics
