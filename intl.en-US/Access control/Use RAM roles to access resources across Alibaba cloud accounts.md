@@ -86,7 +86,7 @@ After completing the preceding operations, the RAM users of Enterprise B can log
     5.  Perform operations on the Alibaba Cloud resources of Enterprise A.
 -   Use A RAM user of Enterprise B to access the cloud resources of enterprise A through APIs
 
-    To use A RAM user of Enterprise B to access the cloud resources of Enterprise A by calling API operations, ensure that the code contains the RAM user's AccessKeyId, AccessKeySecret, and SecurityToken \(temporary security token\). For more information about how to use STS to obtain a temporary security token, see [get started with STS](https://www.alibabacloud.com/help/doc-detail/28788.htm).
+    To use A RAM user of Enterprise B to access the cloud resources of Enterprise A by calling API operations, ensure that the code contains the RAM user's AccessKeyId, AccessKeySecret, and SecurityToken \(temporary security token\).
 
 
 **Related topics**  
