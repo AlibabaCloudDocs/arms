@@ -29,7 +29,7 @@ The **Interface Snapshot** tab lists all operations that are called in the appli
 
 1.  On the **Interface Snapshot** tab, perform the following operations as required:
 
-    -   To view the snapshots of an operation, enter the operation name in the search box and click the ![Search](../images/p235841.png) icon.
+    -   To view the snapshots of an operation, enter the operation name in the search box and click the ![Search](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/5262684161/p235841.png) icon.
     -   To view a trace of an operation, click the trace ID in the **TraceId** column of the operation.
     -   To view the logs of an operation, click **View Logs** in the **Actions** column of the operation.
 
