@@ -18,13 +18,9 @@ For applications in the same region, you can add a tag after the token in the en
 
 Assume that the application name is `demo`. Add the `_prod` and `_test` tags after the token, as shown in the following figure.
 
-![Token and Label](../images/p53868.png)
-
 **Note:** On the Application Settings page, you can modify or delete a tag. For more information, see [Manage applications and tags](/intl.en-US/Operations in the Console/Application management/Manage applications and tags.md).
 
 A token is the red characters in the endpoint that is displayed on the Cluster Configuration page of the Tracing Analysis console.
-
-![Token Example](../images/p53870.png)
 
 The following example shows how to add the `test` tag after the token:
 
