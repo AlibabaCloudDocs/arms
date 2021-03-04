@@ -44,7 +44,7 @@ You can attach custom tags to applications and filter applications by tag.
 
 2.  In the Manage Application Labels dialog box, click the **plus icon** and enter a custom tag. You can click the **plus icon** to create more custom tags. Then, click **Determine**.
 
-    ![Manage Tabs](../images/p53838.png)
+    ![Manage Tabs](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1335284161/p53838.png)
 
     **Note:** If you delete a tag in the Manage Application Labels dialog box, the tag is detached from all applications to which the tag is previously attached.
 
@@ -53,7 +53,7 @@ You can attach custom tags to applications and filter applications by tag.
 
 On the Applications page, you can click one or more tags in the **Select Label** section to find out all applications that have at least one of the selected tags.
 
-![Example of Tags](../images/p53839.png)
+![Example of Tags](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1335284161/p53839.png)
 
 **Related topics**  
 
