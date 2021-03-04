@@ -18,7 +18,7 @@ If a slow response occurs in a microservice that uses NGINX as a proxy, you cann
 
 5.  In the Related Information column of the table in the lower part, click the copy icon next to the endpoint that you want to use.
 
-    ![Endpoints of Tracing Analysis](../images/p188451.png)
+    ![Endpoints of Tracing Analysis](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/5224484161/p188451.png)
 
     **Note:** If you deploy your application in an Alibaba Cloud production environment, select a private endpoint. Otherwise, select a public endpoint.
 
