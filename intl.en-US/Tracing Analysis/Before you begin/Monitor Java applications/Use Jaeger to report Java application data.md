@@ -2,8 +2,6 @@
 
 Before you can view the trace data of your application in the Tracing Analysis console, you must use a client to report the trace data to Tracing Analysis. This topic shows you how to use Jaeger to report Java application data.
 
-
-
 [Jaeger](https://www.jaegertracing.io/) is an open source distributed tracing system. It is compatible with the OpenTracing API and has joined the [Cloud Native Computing Foundation \(CNCF\)](https://www.cncf.io/blog/2017/09/13/cncf-hosts-jaeger/). Jaeger is used to aggregate real-time monitoring data that is collected from multiple heterogeneous systems. The OpenTracing community provides many components that support the following Java frameworks:
 
 -   [Apache HttpClient](https://github.com/opentracing-contrib/java-apache-httpclient)
@@ -23,13 +21,11 @@ To use Jaeger to report Java application data to the Tracing Analysis console, y
 -   Use Spring Cloud to instrument an application.
 -   Use gRPC to instrument an application.
 
-
-
 ## Manual tracking for Java applications
 
 To use Jaeger to report Java application data to the link tracking console, you must complete tracking. This example uses manual instrumentation.
 
-1.  Download the[Demo project](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/demo/jaegerTracingDemo.zip) , enter pathmanualDemo, and run the program according to the Readme instructions.
+1.  Download the [Demo project](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/demo/jaegerTracingDemo.zip) , enter path manualDemo, and run the program according to the Readme instructions.
 
 2.  Open the pom. xml file and add the dependency on the Jaeger client.
 
