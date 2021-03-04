@@ -36,7 +36,7 @@ The **Overview** tab displays the information about the database. You can view t
 
 1.  On the **Overview** tab, perform the following operations as required:
 
-    -   Click the ![Settings](../images/p232147.png) icon to configure the display settings of the application topology.
+    -   Click the ![Settings](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7194334161/p232147.png) icon to configure the display settings of the application topology.
 
         **Note:** The settings are stored in the browser and remain effective the next time you access the Overview tab.
 
