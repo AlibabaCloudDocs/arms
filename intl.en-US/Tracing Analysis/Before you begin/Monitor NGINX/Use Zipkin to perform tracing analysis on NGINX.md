@@ -18,7 +18,7 @@ If a slow response occurs in a microservice that uses NGINX as a proxy, you cann
 
 5.  In the Related Information column of the table in the lower part, click the copy icon next to the endpoint that you want to use.
 
-    ![Endpoint: Zipkin](../images/p188458.png)
+    ![Endpoint: Zipkin](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8324484161/p188458.png)
 
     **Note:** If you deploy your application in an Alibaba Cloud production environment, select a private endpoint. Otherwise, select a public endpoint.
 
