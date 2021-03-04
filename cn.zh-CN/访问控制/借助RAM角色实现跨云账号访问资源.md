@@ -86,7 +86,7 @@
     5.  对企业A的阿里云资源执行操作。
 -   使用企业B的RAM用户通过API访问企业A的云资源
 
-    要使用企业B的RAM用户通过API访问企业A的云资源，必须在代码中提供RAM用户的AccessKeyId、AccessKeySecret和SecurityToken（临时安全令牌）。使用STS获取临时安全令牌的方法参见[STS使用入门](https://help.aliyun.com/document_detail/28788.html)。
+    要使用企业B的RAM用户通过API访问企业A的云资源，必须在代码中提供RAM用户的AccessKeyId、AccessKeySecret和SecurityToken（临时安全令牌）。使用STS获取临时安全令牌的方法参见[AssumeRole](/cn.zh-CN/API参考/API 参考（STS）/操作接口/AssumeRole.md)。
 
 
 **相关文档**  
