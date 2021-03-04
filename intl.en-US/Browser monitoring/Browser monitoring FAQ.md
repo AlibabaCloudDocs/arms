@@ -227,7 +227,7 @@ requestStart
 responseStart
 ```
 
-Some time properties may be inaccurate or abnormal because the preceding parameters are used in the calculation. For example, in `connect download：responseEnd - responseStart`, the value of duration is less than the value of connect download because the timestamp of responseStart is 0.
+Some time properties may be inaccurate or abnormal because the preceding parameters are used in the calculation. For example, in `connect download: responseEnd - responseStart`, the value of duration is less than the value of connect download because the timestamp of responseStart is 0.
 
 -   To solve this problem, for the CDN resources, you can configure the response header Timing-Allow-Origin to specify the time to obtain the resource time.
 -   For third-party resources, we recommend that you take the value of the duration parameter as the major reference.
