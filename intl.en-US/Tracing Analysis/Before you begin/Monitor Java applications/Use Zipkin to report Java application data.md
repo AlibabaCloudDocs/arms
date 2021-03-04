@@ -2,8 +2,6 @@
 
 Zipkin is a distributed tracing system. It is an open source system that is developed by Twitter to trace real-time data. Zipkin is used to aggregate real-time monitoring data that is collected from multiple heterogeneous systems. You can use Zipkin to report Java application data to Tracing Analysis.
 
-
-
 Zipkin has been developed for many years and supports a comprehensive set of frameworks, such as the following Java frameworks. For more information, visit [brave-instrumentation](https://github.com/openzipkin/brave/tree/master/instrumentation).
 
 -   Apache HttpClient
@@ -150,7 +148,7 @@ You can use Spring 2.5 MVC or Spring 3.0 MVC to instrument the application.
 
 **Note:** Download the [demo project](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/demo/zipkinTracingDemo.zip). Go to the springMvcDemo\\webmvc3\|webmvc25 directory and run the program as instructed in the README.md file.
 
-1.  Configure the tracing object in theapplicationContext.xml file.
+1.  Configure the tracing object in the applicationContext.xml file.
 
     ```
     <bean class="zipkin2.reporter.beans.OkHttpSenderFactoryBean">
