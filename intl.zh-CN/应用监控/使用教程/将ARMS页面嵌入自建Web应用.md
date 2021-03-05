@@ -70,7 +70,7 @@
 
 您可以选择以下方式调用AssumeRole接口：
 
--   通过[OpenAPI](https://api.aliyun.com/#/?product=Sts&api=AssumeRole)调用。
+-   通过[OpenAPI开发者门户](https://next.api.aliyun.com/api/Sts/2015-04-01/AssumeRole)调用。
 -   通过[Java SDK](/intl.zh-CN/SDK参考/SDK参考（RAM）/Java示例.md)调用。
 
 本文以通过Java SDK调用为例。
