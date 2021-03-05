@@ -56,7 +56,7 @@ Create a RAM role and authorize the RAM role to access the Tracing Analysis cons
 
 Log on to the user-created web application. Call the [AssumeRole](/intl.en-US/API Reference/API Reference (STS)/Operation interfaces/AssumeRole.md) operation of STS from the application server to obtain the temporary AccessKey pair and STS token, which serve as the temporary identity. You can call the operation by using one of the following methods:
 
--   Use [OpenAPI Explorer](https://api.aliyun.com/#/?product=Sts&api=AssumeRole).
+-   Use [OpenAPI Explorer](https://next.api.aliyun.com/api/Sts/2015-04-01/AssumeRole).
 -   Use [RAM SDK for Java](/intl.en-US/SDK Reference/RAM SDK Reference/RAM SDK for Java.md).
 
 You must replace the values of the following parameters in the sample code with the required values:
