@@ -70,7 +70,7 @@ Log on to the user-created web application, and then call the AssumeRole operati
 
 You can call the AssumeRole operation by using one of the following methods:
 
--   Use [OpenAPI Explorer](https://api.aliyun.com/#/?product=Sts&api=AssumeRole).
+-   Use [OpenAPI Explorer](https://next.api.aliyun.com/api/Sts/2015-04-01/AssumeRole).
 -   Use [SDK for Java](/intl.en-US/SDK Reference/RAM SDK Reference/RAM SDK for Java.md).
 
 SDK for Java is used in the example.
