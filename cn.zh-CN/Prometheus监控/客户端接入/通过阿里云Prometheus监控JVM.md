@@ -4,25 +4,24 @@ keyword: [Prometheus监控, JVM监控]
 
 # 通过阿里云Prometheus监控JVM
 
-通过在应用中埋点来暴露JVM数据，使用阿里云Prometheus监控采集JVM数据，借助Prometheus Grafana大盘来展示JVM数据，并创建报警，即可实现利用Prometheus监控JVM的目的。本文档以安装在阿里云容器服务K8s集群上的应用为例，介绍如何通过Prometheus监控JVM。
+通过在应用中埋点来暴露JVM数据，使用阿里云Prometheus监控采集JVM数据，借助Prometheus Grafana大盘来展示JVM数据，并创建报警，即可实现利用Prometheus监控JVM的目的。本文以阿里云容器服务K8s集群和阿里云容器镜像服务为例，介绍如何通过Prometheus监控JVM。
 
-您已完成以下操作：
+-   阿里云容器服务K8s集群已接入阿里云Prometheus监控。如何接入，请参见[开始使用Prometheus监控]()。
+-   已创建阿里云容器镜像服务镜像仓库。如何创建，请参见[创建镜像仓库]()。
 
--   下载[Demo工程](https://github.com/liguozhong/prometheus-arms-aliyun-demo)
--   [快速创建Kubernetes集群](/cn.zh-CN/快速入门/基础入门/快速创建Kubernetes托管版集群.md)
--   [使用私有镜像仓库创建应用](/cn.zh-CN/快速入门/高阶入门/使用私有镜像仓库创建应用.md)
+## Demo
+
+如需快速体验如何通过Prometheus监控JVM，您可以使用已埋点的[Demo工程](https://github.com/liguozhong/prometheus-arms-aliyun-demo)。
 
 ## 操作流程
 
-本教程的操作流程如图所示。
+通过阿里云Prometheus监控JVM的操作流程如下图所示。
 
-![How it works](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/1230633061/p61773.png)
+![flow](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/9986584161/p245640.png)
 
-## 步骤一：通过埋点暴露JVM数据
+## 步骤一：为应用埋点
 
-您需要在应用中使用JVM Exporter暴露JVM数据。
-
-具体步骤如下：
+为应用埋点以暴露JVM数据的操作步骤如下：
 
 1.  在pom.xml文件中添加Maven依赖。
 
@@ -34,9 +33,7 @@ keyword: [Prometheus监控, JVM监控]
     </dependency>
     ```
 
-2.  在可以执行初始化的位置添加初始化JVM Exporter的方法。
-
-    例如Demo工程的/src/main/java/com/monitise/prometheus\_demo/DemoController.java文件。
+2.  在应用代码中添加初始化JVM Exporter的方法。
 
     ```
     @PostConstruct
@@ -45,14 +42,18 @@ keyword: [Prometheus监控, JVM监控]
         }
     ```
 
-3.  在/src/main/resources/application.properties文件中配置用于Prometheus监控的端口（Port）和路径（Path）。
+    您可以参考Demo工程的/src/main/java/com/monitise/prometheus\_demo/DemoController.java文件。
+
+3.  在application.properties文件中配置用于Prometheus监控的端口和路径。
 
     ```
     management.port: 8081
     endpoints.prometheus.path: prometheus-metrics
     ```
 
-4.  在/src/main/java/com/monitise/prometheus\_demo/PrometheusDemoApplication.java文件中打开HTTP端口。
+    您可以参考Demo工程的/src/main/resources/application.properties文件。
+
+4.  在应用代码中添加打开HTTP端口的方法。
 
     ```
     @SpringBootApplication
@@ -67,113 +68,194 @@ keyword: [Prometheus监控, JVM监控]
     }
     ```
 
+    您可以参考Demo工程的/src/main/java/com/monitise/prometheus\_demo/PrometheusDemoApplication.java文件。
 
-## 步骤二：将应用部署至阿里云容器服务K8s集群
 
-您需要将该应用部署至容器服务K8s集群，以便阿里云Prometheus监控采集JVM数据。
+## 步骤二：上传应用
 
-具体步骤如下：
+将完成埋点的应用制作成镜像并上传至阿里云容器镜像服务的镜像仓库的操作步骤如下：
 
-1.  逐行运行Demo工程中的buildDockerImage.sh中的以下命令，构建名为promethues-demo的Docker镜像，并将镜像推送至阿里云容器镜像服务ACR。
+1.  执行以下命令重新编译模块。
 
     ```
     mvn clean install -DskipTests
+    ```
+
+2.  执行以下命令构建镜像。
+
+    ```
     docker build -t <本地临时Docker镜像名称>:<本地临时Docker镜像版本号> . --no-cache
+    ```
+
+    示例命令：
+
+    ```
+    docker build -t promethues-demo:v0 . --no-cache
+    ```
+
+3.  执行以下命令为镜像打标。
+
+    ```
     sudo docker tag <本地临时Docker镜像名称>:<本地临时Docker镜像版本号> <Registry域名>/<命名空间>/<镜像名称>:<镜像版本号>
+    ```
+
+    示例命令：
+
+    ```
+    sudo docker tag promethues-demo:v0 registry.cn-hangzhou.aliyuncs.com/testnamespace/promethues-demo:v0
+    ```
+
+4.  执行以下命令将镜像推送至镜像仓库。
+
+    ```
     sudo docker push <Registry域名>/<命名空间>/<镜像名称>:<镜像版本号>
     ```
 
-    例如：
+    示例命令：
 
     ```
-    mvn clean install -DskipTests
-    docker build -t promethues-demo:v0 . --no-cache
-    sudo docker tag promethues-demo:v0 registry.cn-hangzhou.aliyuncs.com/testnamespace/promethues-demo:v0
     sudo docker push registry.cn-hangzhou.aliyuncs.com/testnamespace/promethues-demo:v0
     ```
 
-2.  登录[容器服务Kubernetes版控制台](https://cs.console.aliyun.com/#/k8s/overview)。
+    [容器镜像服务控制台](https://cr.console.aliyun.com)的**镜像版本**页面显示上传的应用镜像。
 
-3.  在左侧导航栏选择**集群**，在集群列表页面上的目标集群右侧**操作**列单击**应用管理**。
+    ![镜像](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/0962584161/p245561.png)
 
-    ![K8s Cluster Console Button](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/1230633061/p61754.png)
 
-4.  在**工作负载**页面单击**无状态**页签，在**无状态**页签中，单击**使用模板创建**。
+## 步骤三：部署应用
 
-5.  在**使用模板创建**页签中，选择示例模板为自定义，并在文本框中填写以下内容，然后单击**创建**，将步骤[1](#step_20d_hjh_aor)中创建的Docker镜像promethues-demo部署至容器服务K8s集群中。
+将应用部署至容器服务K8s集群的操作步骤如下：
 
-    **说明：** 以下配置文件中的prometheus.io/port和prometheus.io/path的值分别为[步骤一](#section_0mb_y17_d1o)中暴露的阿里云Prometheus监控端口和路径。
+1.  登录[容器服务管理控制台](https://cs.console.aliyun.com)。
 
-    ```
-    apiVersion: extensions/v1beta1
-    kind: Deployment
-    metadata:
-      name: prometheus-demo
-    spec:
-      replicas: 2
-      template:
+2.  在左侧导航栏，选择**集群**。
+
+3.  在集群列表页面，找到目标集群，在其右侧**操作**列单击**应用管理**。
+
+4.  创建容器组。
+
+    1.  在左侧导航栏，选择**工作负载** \> **无状态**。
+
+    2.  在**无状态**页面，单击**使用模板创建**。
+
+    3.  在**创建**页面的**模板**代码框输入以下内容，然后单击**创建**。
+
+        ```
+        apiVersion: apps/v1 # for versions before 1.8.0 use apps/v1beta1
+        kind: Deployment
         metadata:
-          annotations:
-            prometheus.io/scrape: 'true'
-            prometheus.io/path: '/prometheus-metrics'
-            prometheus.io/port: '8081'
+          name: prometheus-demo
+        spec:
+          replicas: 2
+          template:
+            metadata:
+              annotations:
+                prometheus.io/scrape: 'true'
+                prometheus.io/path: '/prometheus-metrics'
+                prometheus.io/port: '8081'
+              labels:
+                app: tomcat
+            spec:
+              containers:
+              - name: tomcat
+                imagePullPolicy: Always
+                image: <Registry域名>/<命名空间>/<镜像名称>:<镜像版本号>
+                ports:
+                - containerPort: 8080
+                  name: tomcat-normal
+                - containerPort: 8081
+                  name: tomcat-monitor
+        ```
+
+        示例代码：
+
+        ```
+        apiVersion: apps/v1 # for versions before 1.8.0 use apps/v1beta1
+        kind: Deployment
+        metadata:
+          name: prometheus-demo
           labels:
             app: tomcat
         spec:
-          containers:
-          - name: tomcat
-            imagePullPolicy: Always
-            image: registry.cn-hangzhou.aliyuncs.com/fuling/promethues-demo:v0
-            ports:
-            - containerPort: 8080
-              name: tomcat-normal
-            - containerPort: 8081
-              name: tomcat-monitor
-    ```
+          replicas: 2
+          selector:
+            matchLabels:
+              app: tomcat
+          template:
+            metadata:
+              annotations:
+                prometheus.io/scrape: 'true'
+                prometheus.io/path: '/prometheus-metrics'
+                prometheus.io/port: '8081'
+              labels:
+                app: tomcat
+            spec:
+              containers:
+              - name: tomcat
+                imagePullPolicy: Always
+                image: registry.cn-hangzhou.aliyuncs.com/peiyu-test/prometheus-demo:v0
+                ports:
+                - containerPort: 8080
+                  name: tomcat-normal
+                - containerPort: 8081
+                  name: tomcat-monitor
+        ```
 
-6.  在左侧导航栏选择**服务**，在页面右上角单击**使用YAML创建资源**。
+    **无状态**页面显示创建的容器组。
 
-7.  在**工作负载**对应页签中填写以下内容，然后单击**创建**。
+    ![容器组](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/0962584161/p245543.png)
 
-    ```
-    apiVersion: v1
-    kind: Service
-    metadata:
-      labels:
-        app: tomcat
-      name: tomcat
-      namespace: default
-    spec:
-      ports:
-      - name: tomcat-normal
-        port: 8080
-        protocol: TCP
-        targetPort: 8080
-      - name: tomcat-monitor
-        port: 8081
-        protocol: TCP
-        targetPort: 8081
-      type: NodePort
-      selector:
-        app: tomcat
-    ```
+5.  创建服务。
+
+    1.  在左侧导航栏，选择**服务与路由** \> **服务**。
+
+    2.  在**服务**页面，单击**使用YAML创建资源**。
+
+    3.  在**创建**页面的**模板**代码框输入以下内容，然后单击**创建**。
+
+        ```
+        apiVersion: v1
+        kind: Service
+        metadata:
+          labels:
+            app: tomcat
+          name: tomcat
+          namespace: default
+        spec:
+          ports:
+          - name: tomcat-normal
+            port: 8080
+            protocol: TCP
+            targetPort: 8080
+          - name: tomcat-monitor
+            port: 8081
+            protocol: TCP
+            targetPort: 8081
+          type: NodePort
+          selector:
+            app: tomcat
+        ```
+
+    **服务**页面显示创建的服务。
+
+    ![服务](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/1962584161/p245547.png)
 
 
-## 步骤三：配置阿里云Prometheus监控以采集JVM数据
+## 步骤四：配置服务发现
 
-具体步骤如下：
+配置阿里云Prometheus监控的服务发现以采集JVM数据的操作步骤如下：
 
-1.  登录[容器服务Kubernetes版控制台](https://cs.console.aliyun.com/#/k8s/overview)。
+1.  登录[ARMS控制台](https://arms.console.aliyun.com/#/home)。
 
-2.  为目标容器服务K8s集群开启阿里云Prometheus监控。具体操作，请参见[开始使用Prometheus监控]()。
+2.  在**左侧导航栏**，单击**Prometheus监控**。
 
-3.  登录[ARMS控制台](https://arms.console.aliyun.com/#/home)。
+3.  在**Prometheus监控**页面的顶部菜单栏，选择K8s集群所在的地域，并在目标集群右侧的**操作**列单击**设置**。
 
-4.  在左侧导航栏单击**Prometheus监控**。
+4.  在设置页面，单击**服务发现**页签，在**服务发现**页签下，单击**ServiceMonitor**页签。
 
-5.  在**Prometheus监控**页面左上角选择容器服务K8s集群所在的地域，并在目标集群右侧的**操作**列单击**设置**。
+5.  在**ServiceMonitor**页签下，单击**添加ServiceMonitor**。
 
-6.  在**设置**页面单击**服务发现**页签，在**服务发现**页签上单击**添加ServiceMonitor**，在**添加ServiceMonitor**对话框中填写以下内容，然后单击**确定**。
+6.  在**添加ServiceMonitor**对话框中输入以下内容，然后单击**确定**。
 
     ```
     apiVersion: monitoring.coreos.com/v1
@@ -199,55 +281,71 @@ keyword: [Prometheus监控, JVM监控]
           app: tomcat
     ```
 
+    **ServiceMonitor**页签下显示配置的服务发现。
 
-## 步骤四：通过Grafana大盘展示JVM数据
-
-您需要在Prometheus控制台导入Grafana大盘模板并指定Prometheus数据源所在的容器服务K8s集群。
-
-1.  打开[Prometheus Grafana大盘概览页](http://g.console.aliyun.com/)。
-
-2.  在左侧导航栏中选择**+** \> **Import**，并在**Grafana.com Dashboard**文本框输入10877，然后单击**Load**。
-
-    ![Import Grafana Dashboard](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/6247219951/p61709.png)
-
-3.  在Import页面输入以下信息，然后单击**Import**。
-
-    ![Import Grafana Dashboard with Options](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/3384298951/p61711.png)
-
-    1.  在**Name**文本框中输入自定义的大盘名称。
-
-    2.  在**Folder**列表中选择您的阿里云容器服务K8s集群。
-
-    3.  在**Select a Prometheus data source**下拉框中选择您的阿里云容器服务K8s集群。
-
-    配置完毕后的Prometheus Grafana JVM大盘如图所示。
-
-    ![ARMS Prometheus Grafana Dashboard for JVM](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/3384298951/p61723.png)
+    ![服务发现](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/1962584161/p245551.png)
 
 
-## 步骤五：创建Prometheus监控报警
+## 步骤四：配置大盘
+
+配置Grafana大盘以展示数据的操作步骤如下：
+
+1.  打开[Grafana大盘概览页](http://g.console.aliyun.com/)。
+
+2.  在左侧导航栏，选择**+** \> **Import**。
+
+3.  在**Import**页面的**Import via grafana.com**文本框，输入阿里云Prometheus监控提供的JVM大盘模板的ID10877，然后在其右侧，单击**Load**。
+
+    **说明：** 如需获取其他JVM大盘模板，请参见[Dashboards](https://grafana.com/grafana/dashboards)。
+
+    ![Import Grafana Dashboard](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/6316294161/p61709.png)
+
+4.  在Import页面，执行以下操作：
+
+    1.  从**Folder**下拉列表，选择您的阿里云容器服务K8s集群。
+
+    2.  在**arms-demo-fuling-zhuanyouban-emptyTest\_1084900439941126**下拉列表，选择您的阿里云容器服务K8s集群。
+
+    3.  单击**Import**。
+
+    ![Import Grafana Dashboard with Options](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/1962584161/p61711.png)
+
+    完成配置后的Grafana大盘如下图所示。
+
+    ![ARMS Prometheus Grafana Dashboard for JVM](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/1962584161/p61723.png)
+
+
+## 步骤六：创建报警
+
+为监控指标创建报警的操作步骤如下：
 
 1.  登录[ARMS控制台](https://arms.console.aliyun.com/#/home)。
 
-2.  在左侧导航栏单击**Prometheus监控**。
+2.  在左侧导航栏，选择**Prometheus监控**。
 
-3.  在顶部菜单栏选择目标地域，然后单击目标K8s集群名称。
+3.  在**Prometheus监控**页面的顶部菜单栏，选择K8s集群所在的地域，单击目标K8s集群的名称。
 
-4.  在左侧导航栏中选择**报警配置Beta**，然后在右上角单击**创建报警**。
+4.  在左侧导航栏，选择**报警配置**。
 
-5.  在**创建报警**对话框中输入以下信息，完成后单击**确认**。
+5.  在报警配置页面右上角，单击**创建报警**。
 
-    **说明：** **时间**设置功能暂不支持。
+6.  在**创建报警**面板，执行以下操作：
 
-    1.  填写**规则名称**，例如：网络接收压力报警。
+    1.  从**告警模板**下拉列表，选择模板。
 
-    2.  输入报警规则表达式，表达式需要使用PromQL语句。例如：`(sum(rate(kube_state_metrics_list_total{job="kube-state-metrics",result="error"}[5m])) / sum(rate(kube_state_metrics_list_total{job="kube-state-metrics"}[5m]))) > 0.01`。
+    2.  在**规则名称**文本框，输入规则名称，例如：网络接收压力报警。
+
+    3.  在**告警表达式**文本框，输入告警表达式需。例如：`(sum(rate(kube_state_metrics_list_total{job="kube-state-metrics",result="error"}[5m])) / sum(rate(kube_state_metrics_list_total{job="kube-state-metrics"}[5m]))) > 0.01`。
 
         **说明：** PromQL语句中包含的`$`符号会导致报错，您需要删除包含$符号的语句中`=`左右两边的参数及`=`。例如：将`sum (rate (container_network_receive_bytes_total{instance=~"^$HostIp.*"}[1m]))`修改为`sum (rate (container_network_receive_bytes_total[1m]))`。
 
-    3.  在标签区域单击**创建标签**可以设置报警标签，设置的标签可用作分派规则的选项。
+    4.  在**持续时间**文本框，输入时间，例如：1分钟。
 
-    4.  在注释区域可以编辑告警信息发送模板。单击**创建注释**，设置键为message，设置值为\{\{变量名\}\}告警信息。设置完成后的格式为：message:\{\{变量名\}\}告警信息，例如：message:\{\{$labels.pod\_name\}\}重启。
+    5.  在**告警消息**文本框，输入告警消息。
+
+    6.  在**高级配置**的**标签**区域，单击**创建标签**可以设置报警标签，设置的标签可用作分派规则的选项。
+
+    7.  在**高级配置**的**注释**区域，单击**创建注释**，设置键为message，设置值为\{\{变量名\}\}告警信息。设置完成后的格式为：`message:{{变量名}}告警信息`，例如：`message:{{$labels.pod_name}}重启`。
 
         您可以自定义变量名，也可以选择已有的标签作为变量名。已有的标签包括：
 
@@ -268,16 +366,14 @@ keyword: [Prometheus监控, JVM监控]
             |\_aliyun\_arms\_involvedObject\_id|关联对象ID。|
             |\_aliyun\_arms\_involvedObject\_name|关联对象名称。|
 
-    ![Prometheus-Create alarm](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/5347955061/p182018.png)
+    8.  从**通知策略**下拉列表，选择通知策略。
 
+        如何创建通知策略，请参见[设置报警通知策略]()。
 
-## 相关操作
+    9.  单击**确定**。
 
-Prometheus Grafana JVM大盘配置完毕后，您可以查看Prometheus监控指标和进一步自定义大盘，请参见以下文档：
+    报警配置页面显示创建的报警。
 
-[查看Prometheus监控指标]()
+    ![8](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/0242584161/p245624.png)
 
-[通过阿里云Prometheus自定义Grafana大盘]()
-
-[创建报警](/cn.zh-CN/大盘和报警/创建报警.md)
 
