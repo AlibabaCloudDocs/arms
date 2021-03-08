@@ -2,8 +2,6 @@
 
 Zipkin is a distributed tracing system. It is an open source system that is developed by Twitter to trace real-time data. Zipkin is used to aggregate real-time monitoring data that is collected from multiple heterogeneous systems. In Tracing Analysis, you can use Zipkin to report Go application data.
 
-
-
 ## Add instrumentation to the code
 
 To use Zipkin to report Go application data to the Tracing Analysis console, you must first add instrumentation to the code.
@@ -66,7 +64,7 @@ To use Zipkin to report Go application data to the Tracing Analysis console, you
     childSpan.Tag("http.status_code", statusCode)
     ```
 
-5.  In a distributed system, remote procedure call \(RPC\) requests are sent along with trace data. Trace data contains the values of the TraceId, ParentSpanId, SpanId, and Sampled parameters. You can call the Extract or Inject method to pass data in HTTP request headers. The following figure shows the overall process.
+5.  In a distributed system, remote procedure call \(RPC\) requests are sent along with trace data. Trace data contains the values of the TraceId, ParentSpanId, SpanId, and Sampled parameters. You can call the Extract or Inject method to pass data in HTTP request headers. The overall process is as follows.
 
     ```
        Client Span                                                Server Span
