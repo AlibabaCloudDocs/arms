@@ -411,6 +411,8 @@ Perform the following steps to modify your application name:
 
 If the standard output shown in the following figure is displayed, it indicates that the application name is modified.
 
+![Name Change Success](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3565278061/p57403.png)
+
 ## How do I modify the name of a Java application deployed in an ACK cluster?
 
 You can check the version of the ARMS agent by viewing the Version file in the directory of the agent. For example, `2.5.8_cf020486_20190816150025` indicates that the version of the ARMS agent is 2.5.8 and was released on August 16, 2019.
