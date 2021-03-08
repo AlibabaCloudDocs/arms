@@ -2,7 +2,7 @@
 
 An update of Application Real-Time Monitoring Service \(ARMS\) Prometheus Monitoring is released on March 20, 2020. The new version allows you to connect Redis, MySQL, Elasticsearch, and MangoDB databases to ARMS Prometheus Monitoring and then monitor these databases with a few clicks. Out-of-the-box dashboards are also provided.
 
-**Note:** You can use ARMS Prometheus Monitoring free of charge for 15 days. Click [here](https://common-buy.aliyun.com/?&commodityCode=arms#/open) to start your free trial. You can join the DingTalk group for free trial users: 23155358.
+**Note:** You can use ARMS Prometheus Monitoring free of charge for 15 days. Click to start your [free trail](https://common-buy.aliyun.com/?&commodityCode=arms#/open). You can join the DingTalk group for free trial users: 23155358.
 
 ## Overview of ARMS Prometheus Monitoring
 
