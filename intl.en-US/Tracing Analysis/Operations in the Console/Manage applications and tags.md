@@ -8,9 +8,9 @@ By default, the servers of an application are represented by IP addresses in the
 
 **Note:** The configuration applies only to data that is collected after the configuration takes effect. After you configure servers to be represented by server names, server names will be displayed to represent servers. However, IP addresses are retained in the data collected before the configuration change.
 
-![Machine IP](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/xtrace/ex_machine_ip.png "The following figure shows that servers are represented by IP addresses.")
+![ip](../images/p246530.png "The following figure shows that servers are represented by IP addresses.")
 
-![Machine Name](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/xtrace/ex_machine_name.png "The following figure shows that servers are represented by server names.")
+![name](../images/p246531.png "The following figure shows that servers are represented by server names.")
 
 To stop billing for an application, disable data collection.
 
@@ -72,7 +72,7 @@ To manage the tags of your account, such as adding tags for all applications or 
 
 3.  In the Manage Application Labels dialog box, perform the following operations as needed:
 
-    ![Manage Tags Dialog Box](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/xtrace/db_manage_tags_setting.png "Manage Application Labels dialog box")
+    ![manage](../images/p246532.png "Manage Application Labels dialog box")
 
     -   To create a tag, click the Plus icon and enter a tag in the field.
     -   To delete a tag, move the pointer over the tag and click the Delete icon on the left.
