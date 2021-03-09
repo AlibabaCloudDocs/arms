@@ -14,7 +14,7 @@ npm install alife-logger --save
 
 在/utils目录下创建monitor.js文件，并按照以下示例代码完成SDK初始化。
 
-**说明：** 在Weex应用入口调用singleton\(props\)静态方法获取实例时，需要在传入的props中设定相关配置，请参见：
+**说明：** 在Weex应用入口调用`singleton(props)`静态方法获取实例时，需要在传入的props中设定相关配置，请参见：
 
 -   [通用API：@static singleton\(\)](#section_mof_zn6_n9l)
 -   [通用API：setPage\(\)](#section_a9k_j3s_i38)
@@ -78,9 +78,9 @@ import wxLogger from '/utils/monitor';
 wxLogger.api('/search.do', true, 233, 'SUCCESS');
 ```
 
-## 通用API：@static singleton\(\)
+## 通用API：`@static singleton()`
 
-@static singleton\(\)为静态方法，作用是返回一个单例对象。props只在第一次调用时生效，用法如下表所示。
+`@static singleton()`为静态方法，作用是返回一个单例对象。props只在第一次调用时生效，用法如下表所示。
 
 此方法可用于在应用入口初始化SDK，请参见[初始化](#initialization)。
 
@@ -91,9 +91,9 @@ wxLogger.api('/search.do', true, 233, 'SUCCESS');
 |uid|String|用户ID|是|无|
 |imgUrl|String|日志上传地址，以英文问号（?）结尾。|否|无|
 
-## 通用API：setPage\(\)
+## 通用API：`setPage()`
 
-setPage\(\)的作用是设置当前页面的Page Name，并且默认上报一次PV日志。
+`setPage()`的作用是设置当前页面的Page Name，并且默认上报一次PV日志。
 
 ```
 import wxLogger from '/utils/monitor';
@@ -105,9 +105,9 @@ wxLogger.setPage(nextPage);
 |--|--|--|----|---|
 |nextPage|String|Page Name|是|无|
 
-## 通用API：setConfig\(\)
+## 通用API：`setConfig()`
 
-setConfig\(\)的作用是在SDK初始化完成后修改部分配置项，具体配置与singleton\(\)方法相同。配置项详情，请参见[setConfig\(\)](/cn.zh-CN/前端监控/API参考.md)。
+`setConfig()`的作用是在SDK初始化完成后修改部分配置项，具体配置与`singleton()`方法相同。配置项详情，请参见[setConfig\(\)](/cn.zh-CN/前端监控/API参考.md)。
 
 ```
 import wxLogger from '/utils/monitor';
@@ -141,7 +141,7 @@ ARMS前端监控提供一系列SDK配置项，让您能够通过设置参数来�
 -   local表示本地环境。
 
 |否|`prod`|
-|sample|Integer|日志采样配置，值为`1`、`10`或`100`。性能和成功API日志按照`1/sample`的比例采样。|否|`1`|
+|sample|Integer|日志采样配置，值为1~100的整数。对性能日志和成功API日志按照`1/sample`的比例采样，关于性能日志和成功API日志的指标说明，请参见[统计指标说明](/cn.zh-CN/前端监控/统计指标说明.md)。|否|`1`|
 
 ARMS前端监控还提供了更多SDK配置项，可满足进一步的需求。更多信息，请参见[SDK参考](/cn.zh-CN/前端监控/SDK参考.md)。
 
