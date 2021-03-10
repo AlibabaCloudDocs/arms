@@ -21,7 +21,7 @@
 
  -   `true`：自动启动报警规则
 -   `false`：不自动启动报警规则 |
-|TemplageAlertConfig|String|否|\[\{"contactGroupIds":"258","alertType":5,"alarmContext":\{"subTitle":"","content":"报警名称:$报警名称\\n筛选条件: $筛选\\n报警时间: $报警时间\\n报警内容: $报警内容\\n注意：该报警未收到恢复邮件之前，正在持续报警中，24小时后会再次提醒您！"\},"alertLevel":"WARN","metricParam":\{"appId":"7579","pid":"arms-console:arms-consolehost","type":"TXN","dimensions":\[\{"type":"DISABLED","key":"rpc"\}\]\},"alertWay":\["DING\_ROBOT"\],"alertRule":\{"rules":\[\{"measure":"appstat.txn.rt","alias":"调用响应时间\_ms","aggregates":"AVG","nValue":1,"value":1,"operator":"CURRENT\_GTE"\}\],"operator":"\|"\},"title":"这是个导入配置报警模板","config":"\{\\"continuous\\":false,\\"dataRevision\\":2,\\"ownerId\\":\\"1098370038733503\\"\}","notice":\{"noticeStartTime":1480521600000,"startTime":1480521600000,"endTime":1480607940000,"noticeEndTime":1480607940000\},"status":"NON"\}\]|ARMS报警规则的配置JSON串。**TemplateAlertId**和**TemplageAlertConfig**必须至少填写一个。如果两个参数都填写，则**TemplateAlertId**优先。关于此字段的详细说明参见下文**关于参数TemplageAlertConfig的补充说明**。 |
+|TemplageAlertConfig|String|否|\[ \{ "contactGroupIds": "381", "alertType": 5, "alarmContext": \{ "subTitle": "", "content": "报警名称：$报警名称\\n筛选条件：$筛选\\n报警时间：$报警时间\\n报警内容：$报警内容\\n注意：该报警未收到恢复邮件之前，正在持续报警中，24小时后会再次提醒您！" \}, "alertLevel": "WARN", "metricParam": \{ "appId": "70901", "pid": "atc889zkcf@d8deedfa9bf\*\*\*\*", "type": "TXN", "dimensions": \[ \{ "type": "STATIC", "value": "\\\\/hello\_test\_api\_address\\\\/test1", "key": "rpc" \} \] \}, "alertWay": \[ "SMS", "MAIL", "DING\_ROBOT" \], "alertRule": \{ "rules": \[ \{ "measure": "appstat.txn.rt", "alias": "入口调用响应时间\_ms", "aggregates": "AVG", "nValue": 1, "value": 1, "operator": "CURRENT\_GTE" \} \], "operator": "\|" \}, "title": "报警模板报警名", "config": "\{\\"continuous\\":false,\\"dataRevision\\":2,\\"ownerId\\":\\”123412341234\\"\}", "notice": \{ "noticeStartTime": 1480521600000, "startTime": 1480521600000, "endTime": 1480607940000, "noticeEndTime": 1480607940000 \}, "status": "NON” \} \]|ARMS报警规则的配置JSON串。**TemplateAlertId**和**TemplageAlertConfig**必须至少填写一个。如果两个参数都填写，则**TemplateAlertId**优先。关于此字段的详细说明参见下文**关于参数TemplageAlertConfig的补充说明**。 |
 
 ## 关于参数**TemplageAlertConfig**的补充说明
 
@@ -44,7 +44,7 @@
     "alertType": 5,                                   // 可选值为4和5。4表示前端监控报警，5表示应用监控报警。
     "alarmContext": {                                 // 报警通知内容模板。
       "subTitle": "",
-      "content": "报警名称:$报警名称\n筛选条件: $筛选\n报警时间: $报警时间\n报警内容: $报警内容\n注意：该报警未收到恢复邮件之前，正在持续报警中，24小时后会再次提醒您！"
+      "content": "报警名称：$报警名称\n筛选条件：$筛选\n报警时间：$报警时间\n报警内容：$报警内容\n注意：该报警未收到恢复邮件之前，正在持续报警中，24小时后会再次提醒您！"
     },
     "alertLevel": "WARN",                             // 报警等级：FATAL、ERROR、WARN。
     "metricParam": {
@@ -75,7 +75,7 @@
           "operator": "CURRENT_GTE"                       // CURRENT_GTE：大于或等于；CURRENT_LTE：小于或等于；PREVIOUS_UP：环比上升；PREVIOUS_DOWN：环比下降；HOH_UP：与上小时同比上升；HOH_DOWN：与上小时同比下降；DOD_UP：与昨日同比上升百分比；DOD_DOWN：与昨日同比下降百分比。
         }
       ],
-      "operator": "&"                                     // 表示多个判断条件的组合方式。&为与逻辑，|为或逻辑。
+      "operator": "|"                                     // 表示多个判断条件的组合方式。&为与逻辑，|为或逻辑。
     },
     "title": "报警模板报警名",                              // 模板报警名称。导入后，会生成新报警名称“{title}-应用名”。
     "config": "{\"continuous\":false,\"dataRevision\":2,\"ownerId\":\”123412341234\"}",          // continuous为true表示连续报警，continuous为false表示以24小时为静默期的静默报警策略。dataRevision字段为数据修订策略，0表示补零，1表示补1，2表示空值，即不处理。
@@ -178,7 +178,7 @@ http(s)://[Endpoint]/?Action=ImportAppAlertRules
 
 正常返回示例
 
-`XML` 格式
+`XML`格式
 
 ```
 <ImportAppAlertRulesResponse>
@@ -187,7 +187,7 @@ http(s)://[Endpoint]/?Action=ImportAppAlertRules
 </ImportAppAlertRulesResponse>
 ```
 
-`JSON` 格式
+`JSON`格式
 
 ```
 {
