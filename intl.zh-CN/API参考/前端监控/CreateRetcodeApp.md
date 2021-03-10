@@ -1,6 +1,6 @@
 # CreateRetcodeApp
 
-调用 CreateRetcodeApp 创建前端监控任务。
+调用CreateRetcodeApp创建前端监控任务。
 
 ## 调试
 
@@ -10,17 +10,18 @@
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|RegionId|String|是|cn-hangzhou|地域 ID。 |
+|Action|String|是|CreateRetcodeApp|系统规定参数。取值：CreateRetcodeApp。 |
+|RegionId|String|是|cn-hangzhou|地域ID。 |
 |RetcodeAppName|String|是|SdkTest|前端监控应用名称。 |
-|RetcodeAppType|String|是|web|前端监控应用类型，包括 web、weex、mini\_dd、mini\_alipay、mini\_wx 和 mini\_common。 |
+|RetcodeAppType|String|是|mini\_dd|前端监控应用类型，包括`web`、`weex`、`mini_dd`、`mini_alipay`、`mini_wx`和`mini_common`。 |
 
 ## 返回数据
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|RequestId|String|A5EC8221-08F2-4C95-9AF1-49FD998C647A|请求 ID。 |
+|RequestId|String|A5EC8221-08F2-4C95-9AF1-49FD998C647A|请求ID。 |
 |RetcodeAppDataBean|Struct| |返回前端监控创建信息。 |
-|AppId|Long|135143|应用 ID。 |
+|AppId|Long|135143|应用ID。 |
 |Pid|String|aokcdqn3ly@a195c6d6421\*\*\*\*|PID。 |
 
 ## 示例
@@ -28,33 +29,35 @@
 请求示例
 
 ```
-http://arms.cn-hangzhou.aliyun-inc.com:8099/retcode/CreateRetcodeApp.json?RegionId=cn-hangzhou
+http(s)://[Endpoint]/?Action=CreateRetcodeApp
+&RegionId=cn-hangzhou
 &RetcodeAppName=SdkTest
-&RetcodeAppType=web
+&RetcodeAppType=mini_dd
+&<公共请求参数>
 ```
 
 正常返回示例
 
-`XML` 格式
+`XML`格式
 
 ```
-<CreateRetcodeApp>
-       <requestId>A5EC8221-08F2-4C95-9AF1-49FD998C647A</requestId>
-       <retcodeAppDataBean>
-              <appId>135143</appId>
-              <pid>aokcdqn3ly@a195c6d6421****</pid>
-       </retcodeAppDataBean>
-</CreateRetcodeApp>
+<CreateRetcodeAppResponse>
+      <RequestId>A5EC8221-08F2-4C95-9AF1-49FD998C647A</RequestId>
+      <RetcodeAppDataBean>
+            <AppId>135143</AppId>
+            <Pid>aokcdqn3ly@a195c6d6421****</Pid>
+      </RetcodeAppDataBean>
+</CreateRetcodeAppResponse>
 ```
 
-`JSON` 格式
+`JSON`格式
 
 ```
 {
-    "requestId": "A5EC8221-08F2-4C95-9AF1-49FD998C647A",
-    "retcodeAppDataBean": {
-        "appId": 135143,
-        "pid": "aokcdqn3ly@a195c6d6421****"
+    "RequestId": "A5EC8221-08F2-4C95-9AF1-49FD998C647A",
+    "RetcodeAppDataBean": {
+        "AppId": 135143,
+        "Pid": "aokcdqn3ly@a195c6d6421****"
     }
 }
 ```
