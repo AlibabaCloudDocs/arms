@@ -24,10 +24,6 @@ Android SDK接入（本地集成）
 前提条件 
 -------------------------
 
-* 
-
-* 
-
 * 已获取AppKey、AppSecret，请参见[快速入门：创建监控任务](/cn.zh-CN/App监控/快速入门：创建监控任务.md)中下载的配置文件。
 
   
@@ -178,7 +174,7 @@ Android SDK接入（本地集成）
 
    
 
-   具体说明参见：[Android SDK接口说明]()
+   具体说明参见：[Android SDK接口说明](/cn.zh-CN/App监控/接入指南/崩溃分析/Android SDK接口说明.md)
    
 
 4. **混淆配置。** 
