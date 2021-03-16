@@ -24,10 +24,6 @@ This topic describes how to integrate the crash analysis SDK for Android by addi
 Prerequisites 
 ----------------------------------
 
-* 
-
-* 
-
 * The AppKey and AppSecret are obtained from the configuration file of the app. For more information, see [Create an app monitoring task](/intl.en-US/App Monitoring/Create an app monitoring task.md).
 
   
@@ -178,7 +174,7 @@ Procedure
 
    
 
-   For more information, see [Reference of the SDK for Android]().
+   For more information, see [Reference of the SDK for Android](/intl.en-US/App Monitoring/Monitor apps/Crash analysis/Reference of the SDK for Android.md).
    
 
 4. **Configure obfuscation rules.** 
