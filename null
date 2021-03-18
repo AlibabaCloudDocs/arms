@@ -4,7 +4,7 @@
 
 ## 步骤一：创建RemoteWrite并获取读写URL
 
-1.  登录[ARMS控制台](https://arms.console.aliyun.com/#/home)。
+1.  登录[ARMS控制台](https://arms-ap-southeast-1.console.aliyun.com/#/home)。
 
 2.  在左侧导航栏单击**Prometheus监控**。
 
@@ -36,7 +36,7 @@
     remote_write:
       - url: "http://ts-xxxxxxxxxxxx.hitsdb.rds.aliyuncs.com:3242/api/prom_write"
         basic_auth:   
-          //username和password需要遵循AK/SK的限制，且AK/SK需要能够调用[GetPrometheusApiToken](/cn.zh-CN/API参考/Prometheus监控/GetPrometheusApiToken.md)。
+          //username和password需要遵循AK/SK的限制，且AK/SK需要能够调用[GetPrometheusApiToken](/intl.zh-CN/API参考/Prometheus监控/GetPrometheusApiToken.md)。
           username: access-key-id
           password: access-key-secret
     remote_read:
