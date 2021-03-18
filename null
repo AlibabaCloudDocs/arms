@@ -1,71 +1,104 @@
-# 什么是Prometheus监控？
+# 开始使用Prometheus监控
 
-阿里云Prometheus监控全面对接开源Prometheus生态，支持类型丰富的组件监控，提供多种开箱即用的预置监控大盘，且提供全面托管的Prometheus服务。
+对于部署在阿里云容器服务Kubernetes版中的Kubernetes集群，您可以在ARMS中为其一键安装Prometheus监控插件，此后即可通过ARMS预定义的大盘监控主机和Kubernetes集群的众多性能指标。
 
-## Prometheus简介
+-   在阿里云容器服务Kubernetes版中创建Kubernetes集群，详情请参见[快速创建Kubernetes托管版集群](/cn.zh-CN/快速入门/基础入门/快速创建Kubernetes托管版集群.md)。
+-   [开通和升级ARMS](/cn.zh-CN/快速入门/开通和升级ARMS.md)
 
-Prometheus是一套开源的系统监控和报警框架，灵感源自Google的Borgmon监控系统。2012年，SoundCloud的Google前员工创造了Prometheus，并作为社区开源项目进行开发。2015年，该项目正式发布。2016年，Prometheus加入云原生计算基金会（[Cloud Native Computing Foundation](https://cncf.io/)），成为受欢迎度仅次于Kubernetes的项目。
+## 开启阿里云Prometheus监控
 
-Prometheus具有以下特性：
+您可以通过以下三种方式开启阿里云Prometheus监控：
 
--   多维的数据模型（基于时间序列的Key、Value键值对）
--   灵活的查询和聚合语言PromQL
--   提供本地存储和分布式存储
--   通过基于HTTP的Pull模型采集时间序列数据
--   可利用Pushgateway（Prometheus的可选中间件）实现Push模式
--   可通过动态服务发现或静态配置发现目标机器
--   支持多种图表和数据大盘
+**通过配置集群参数开启Prometheus监控。**
 
-## 阿里云Prometheus监控和开源Prometheus监控对比的优势
+1.  登录[容器服务管理控制台](https://cs.console.aliyun.com)。
 
-整体而言，与开源Prometheus监控相比，阿里云Prometheus监控的优势体现为：
+2.  在控制台左侧导航栏中，单击**集群**。
 
--   更轻量、更稳定、更准确
--   数据量无上限
--   完全兼容开源生态
--   节省成本
+3.  在集群列表页面中，单击页面右上角的**创建集群**。
 
-## 更轻量更稳定更准确
+4.  选择目标集群模板，然后配置创建集群参数。在**组件配置**页面，选中**使用Prometheus监控服务**。
 
--   与开源Prometheus监控相比，阿里云Prometheus监控的整体结构更加轻量化。您无需自行搭建Prometheus监控系统，仅需安装阿里云Prometheus监控探针PromAgent即可开始监控业务。
+    ![组件配置](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/5816545161/p248500.png)
 
-    ![dg_arms_prometheus_advantage](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/7095659951/p76745.png)
+    有关创建集群的具体步骤，请参见[创建Kubernetes托管版集群](/cn.zh-CN/Kubernetes集群用户指南/集群/创建集群/创建Kubernetes托管版集群.md)。
 
--   在系统稳定性方面，开源Prometheus监控一般会占用16GB~128GB的内存，而阿里云Prometheus监控仅占用200MB~1GB的内存和1核CPU。相比开源Prometheus监控，阿里云Prometheus监控更加稳定。
--   在抓取和写入数据的准确性方面，开源Prometheus监控仅抓取1次数据，并且瞬时写入存储组件时存在丢弃逻辑。而阿里云Prometheus监控抓取数据会重试多次，持续并发写入存储组件，不存在丢弃逻辑。
+    **说明：** 在创建集群时，系统默认选中**使用Prometheus监控服务**。
 
-## 数据量无上限
+    集群创建完成后，系统将自动配置阿里云Prometheus监控服务。
 
--   开源Prometheus监控的数据采集能力上限为百万条Metrics级别，而阿里云Prometheus监控的数据采集能力可以按照K8s副本数水平扩展，从而均衡分解采集任务。
--   开源Prometheus监控的数据存储能力上限受本地磁盘大小的限制，而阿里云Prometheus监控使用中心云存储服务，理论上存储能力无上限。
 
-## 完全兼容开源生态
+**通过ACK控制台Prometheus监控开启Prometheus监控。**
 
--   阿里云Prometheus监控完全兼容Prometheus监控开源生态链路中的客户端和查询语言部分，兼容并优化开源生态链路中的采集规则和使用价值部分。
+1.  登录[容器服务管理控制台](https://cs.console.aliyun.com)。
 
-    ![dg_arms_prometheus_ecology](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/7095659951/p76971.png)
+2.  在控制台左侧导航栏中，单击**集群**。
 
--   阿里云Prometheus监控兼容并提供三种主流采集规则的实现，包括标准开源prometheus.yaml采集规则配置文件、适合自定义K8s内监控的采集规则ServiceMonitor、以及默认采集规则Annotation。与开源Prometheus监控相比，阿里云Prometheus监控无需重启，即可使用prometheus.yaml配置文件动态更新采集规则。在Deployment文件里也无需编写多行代码，仅需增加以下3个Annotation注解即可。
+3.  在集群列表页面中，单击目标集群名称或者目标集群右侧**操作**列下的**详情**。
 
-    ```
-    prometheus.io/scrape: "true"
-    prometheus.io/port: "9090"
-    prometheus.io/path: "/metrics"
-    ```
+4.  在集群管理左侧导航栏中，选择**运维管理** \> **Prometheus监控**。
 
--   阿里云Prometheus监控兼容可视化Grafana。通过配置Prometheus HTTP API URL即可在Grafana中完成数据源的多租户隔离，以及Grafana大盘的多租户隔离。阿里云Prometheus监控还兼容Grafana的Explore数据调试模块。
--   阿里云Prometheus监控兼容开源Prometheus监控的HTTP API模块，完整支持query、query\_range和labelValues 3个标准数据查询接口，并通过在数据URL中添加/userId/clusterId/regionId/这组ID达到多租户隔离的效果。
--   阿里云Prometheus监控虽然使用ARMS已有的告警系统，但完全兼容开源Prometheus监控的告警规则PromQL。
+5.  在**Prometheus监控**页面中间，单击**开始安装**。
 
-## 节省成本
 
--   阿里云Prometheus监控支持默认K8s监控。在您安装默认K8s监控后，阿里云Prometheus监控会自动为您创建默认的Exporter、采集规则、Grafana大盘以及ARMS告警。您的时间成本可由原来使用开源Prometheus监控K8s的3天左右降低至10分钟左右。
+**通过ACK控制台应用目录开启阿里云Prometheus监控。**
 
-    ![监控大盘1](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/7095659951/p103080.png)
+1.  登录[容器服务管理控制台](https://cs.console.aliyun.com)。
 
--   阿里云Prometheus监控支持开源组件监控。您仅需输入阿里云账号的AccessKey ID和AccessKey Secret，以及RDS和Redis组件的账号和密码，阿里云Prometheus监控即可为您默认生成这些组件的Exporter，并为您创建默认的组件大盘。您的时间成本可由原来使用开源Prometheus监控开源组件的7天左右降低至3分钟左右。
+2.  在控制台左侧导航栏中，选择**市场** \> **应用目录**。
 
-    ![监控大盘2](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/7095659951/p103081.png)
+3.  在应用目录页面的**阿里云应用**页签中，搜索并单击**ack-arms-prometheus**。
 
--   阿里云Prometheus监控支持一键安装、一键卸载，以及通过健康检查功能调试Prometheus监控。您的时间成本可由原来使用开源Prometheus监控的1天左右降低至3分钟左右。
+4.  在应用目录 - ack-arms-prometheus页面，单击**参数**页签。
+
+5.  在应用目录 - ack-arms-prometheus右侧的**创建**区域中，选择目标集群，然后单击**创建**。
+
+    **说明：** **命名空间**和**发布名称**默认为**arms-prom**。
+
+
+**执行结果**
+
+安装完成后会自动跳转到应用arms-prom页面，可查看应用信息。
+
+![arm-prom](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/5816545161/p248613.png)
+
+## 打开Prometheus监控大盘
+
+1.  登录[ARMS控制台](https://arms.console.aliyun.com/#/home)。
+
+2.  在左侧导航栏单击**Prometheus监控**。
+
+3.  在左上角选择目标地域，并单击**已安装大盘**列中的链接，即可在浏览器新窗口中打开对应的监控大盘。
+
+
+## 卸载监控插件
+
+如需停止对Kubernetes集群的Prometheus监控，请按照以下步骤卸载Prometheus监控插件。
+
+1.  登录[ARMS控制台](https://arms.console.aliyun.com/#/home)。
+
+2.  在左侧导航栏单击**Prometheus监控**。
+
+3.  在左上角选择目标地域，单击**操作**列中的**卸载**，并在**确认**对话框中单击**确认**。
+
+    卸载插件完毕后，**已安装大盘**列中的大盘将会消失。接下来需要前往容器服务管理控制台确认卸载是否成功。
+
+4.  登录[容器服务管理控制台](https://cs.console.aliyun.com)。
+
+5.  在左侧导航栏单击**集群**，然后单击需停止监控的集群名称。
+
+    **说明：** 本文中关于容器服务管理控制台的步骤描述仅适用于新版控制台。如果您使用的是旧版控制台，请在左侧导航栏选择**集群** \> **集群**，然后在页面右上角单击**体验新版**。
+
+6.  在左侧导航栏单击**发布**，并根据情况采取以下任一操作：
+
+    -   如果**发布**页面没有`arms-prom-****`记录，则说明监控插件卸载成功，您无需采取任何操作。
+    -   如果**发布**页面有`arms-prom-****`记录，请在其右侧的**操作**列中单击**删除**。
+
+        ![ack_pg_release](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/4616183161/p143010.png)
+
+
+**相关文档**  
+
+
+[什么是Prometheus监控？]()
 
