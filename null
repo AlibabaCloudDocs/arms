@@ -1,102 +1,275 @@
-# Get started with Prometheus Service
+# 远程存储
 
-To monitor a Container Service for Kubernetes \(ACK\) cluster, you can install the Prometheus agent in the Application Real-Time Monitoring Service \(ARMS\) console. Then, you can monitor your hosts and ACK cluster on a predefined dashboard by using various performance metrics.
+阿里云Prometheus的RemoteWrite功能支持作为远程数据库存储Prometheus监控数据。本文将介绍如何使用阿里云Prometheus的RemoteWrite对接开源Prometheus，构建监控数据的高效存储方案。
 
--   An ACK cluster is created. For more information, see [Create a managed Kubernetes cluster](/intl.en-US/Quick Start/Basic operations/Create a managed Kubernetes cluster.md).
--   [Activate and upgrade ARMS](/intl.en-US/Quick Start/Activate and upgrade ARMS.md)
+## 步骤一：创建RemoteWrite并获取读写URL
 
-## Enable ARMS Prometheus
+1.  登录[ARMS控制台](https://arms.console.aliyun.com/#/home)。
 
-You can enable ARMS Prometheus by using the following methods:
+2.  在左侧导航栏单击**Prometheus监控**。
 
-**Configure cluster parameters.**
+3.  在页面左上角选择目标地域，在Prometheus监控页面单击**接入Prometheus监控**。
 
-1.  Log on to the [ACK console](https://cs.console.aliyun.com).
+4.  在接入Prometheus监控页面单击**Remote Write Prometheus**。
 
-2.  In the left-side navigation pane of the ACK console, click **Clusters**.
+5.  在第1步向导页输入**RemoteWrite 名字**，然后单击**下一步**。
 
-3.  In the upper-right corner of the Clusters page, click **Create Kubernetes Cluster**.
+6.  在步骤2向导页复制并保存生成的Prometheus Remote Write Url，然后单击**下一步**。
 
-4.  Select the cluster template that you want to use and configure parameters for the new cluster. On the **Component Configurations**page, select **Enable Prometheus Monitoring**.
-
-    For more information about how to create a cluster, see [Create a managed Kubernetes cluster](/intl.en-US/User Guide for Kubernetes Clusters/Cluster/Create Kubernetes clusters/Create a managed Kubernetes cluster.md).
-
-    **Note:** By default, **Enable Prometheus Monitoring** is selected when you create a cluster.
-
-    After the cluster is created, the system automatically configures ARMS Prometheus.
+7.  在步骤3向导页复制并保存生成的Prometheus Remote Read Url，然后关闭该向导页。
 
 
-**Enable ARMS Prometheus on the Prometheus Monitoring page in the ACK console.**
+## 步骤二：配置Prometheus
 
-1.  Log on to the [ACK console](https://cs.console.aliyun.com).
+1.  安装Prometheus，安装方法可以参考[官方文档](https://prometheus.io/download/)。
 
-2.  In the left-side navigation pane of the ACK console, click **Clusters**.
+2.  打开Prometheus.yaml配置文件，并在文件末尾增加以下内容，将`remote_write`和`remote_read`链接替换为[步骤一：创建RemoteWrite并获取读写URL](#section_fnr_zrt_2dg)中获取的URL，然后保存文件。
 
-3.  On the Clusters page, find the cluster that you want to manage and click the name of the cluster or click **Details** in the **Actions** column. The details page of the cluster appears.
-
-4.  In the left-side navigation pane of the cluster management page, choose **Operations** \> **Prometheus Monitoring**.
-
-5.  In the middle of the **Prometheus Monitoring** page, click **Install**.
-
-
-**Enable the feature on the App Catalog page in the ACK console.**
-
-1.  Log on to the [ACK console](https://cs.console.aliyun.com).
-
-2.  In the left-side navigation pane, choose **Marketplace** \> **App Catalog**.
-
-3.  On the App Catalog page, click the **Alibaba Cloud Apps** tab and click **ack-arms-prometheus**.
-
-4.  On the App Catalog - ack-arms-prometheus page, click the **Parameters** tab.
-
-5.  On the **Parameters** tab, set parameter cluster\_id.
-
-    **Note:**
-
-    The system automatically sets the value to the ID of the cluster that you create. You can perform the following steps to view the cluster ID: In the left-side navigation pane of the ACK console, choose **Clusters** \> **Clusters**. On the page that appears, the cluster ID is displayed below each cluster name.
-
-6.  In the **Deploy** section of the App Catalog - ack-arms-prometheus page, select the cluster for which you want to enable ARMS Prometheus, and click **Create**.
-
-    **Note:** By default, **Namespace** and **Release Name** are set to **arms-prom**.
+    ```
+    global:
+      scrape_interval:     15s
+      evaluation_interval: 15s
+    scrape_configs:
+      - job_name: 'prometheus'
+        static_configs:
+        - targets: ['localhost:9090']
+    remote_write:
+      - url: "http://ts-xxxxxxxxxxxx.hitsdb.rds.aliyuncs.com:3242/api/prom_write"
+        basic_auth:   
+          //username和password需要遵循AK/SK的限制，且AK/SK需要能够调用[GetPrometheusApiToken](/cn.zh-CN/API参考/Prometheus监控/GetPrometheusApiToken.md)。
+          username: access-key-id
+          password: access-key-secret
+    remote_read:
+      - url: "http://ts-xxxxxxxxxxxx.hitsdb.rds.aliyuncs.com:3242/api/prom_read"
+        read_recent: true
+    ```
 
 
-## Open a Prometheus dashboard
+## 使用远程存储对接OpenTelemetry
 
-1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
+1.  业务代码进行OpenTelemetry埋点。[\[Demo\]](https://github.com/liguozhong/prometheus-arms-aliyun-go-demo/blob/master/pkg/opentelemetry/buy_service.go)
 
-2.  In the left-side navigation pane, click **Prometheus Monitoring**.
+    ```
+    package stat
+    
+    import (
+        "context"
+        "fmt"
+        "go.opentelemetry.io/otel"
+        "go.opentelemetry.io/otel/metric"
+        "time"
+    )
+    
+    var buyCounter metric.Int64Counter
+    
+    func init() {
+        fmt.Println(time.Now(), " - initMetrics start......")
+        meter := otel.GetMeterProvider().Meter("github.com/liguozhong/prometheus-arms-aliyun-go-demo")
+        buyCounter = metric.Must(meter).NewInt64Counter(
+            "buy_total",
+            metric.WithDescription("Measures  buy"),
+        )
+    }
+    
+    func DoBuy() (string, error) {
+        buyCounter.Add(context.Background(), 1)
+        return "buy success", nil
+    }
+    ```
 
-3.  In the upper-left corner, select a region. Click a link in the **Installed Dashboards** column to open a monitoring dashboard in a new window.
+2.  OpenTelemetry对Meter进行初始化并和连接Prometheus。\[[Demo\]](https://github.com/liguozhong/prometheus-arms-aliyun-go-demo/blob/master/pkg/opentelemetry/meter_config.go)
+
+    ```
+    package stat
+    
+    import (
+        "context"
+        prometheusPushExporter "go.opentelemetry.io/contrib/exporters/metric/cortex"
+        prometheusExporter "go.opentelemetry.io/otel/exporters/metric/prometheus"
+    
+        "errors"
+        "fmt"
+        "go.opentelemetry.io/otel"
+        "go.opentelemetry.io/otel/exporters/otlp"
+        "go.opentelemetry.io/otel/label"
+        "go.opentelemetry.io/otel/sdk/metric/controller/pull"
+        "go.opentelemetry.io/otel/sdk/metric/controller/push"
+        "go.opentelemetry.io/otel/sdk/metric/processor/basic"
+        "go.opentelemetry.io/otel/sdk/metric/selector/simple"
+        "go.opentelemetry.io/otel/sdk/resource"
+        "net/http"
+        "time"
+    
+        _ "net/http/pprof"
+    )
+    
+    func InitMeter(app string, push bool) error {
+        fmt.Println(time.Now(), " - initMeter start......")
+        if push {
+            fmt.Println(time.Now(), " - initMeter opentelemetry push......")
+            remoteUrl := "http://region.arms.aliyuncs.com/prometheus/../../../../api/v3/write"
+            ak := "ak"
+            sk := "sk"
+            return initPushMeter(app, remoteUrl, ak, sk)
+        }
+        fmt.Println(time.Now(), " - initMeter opentelemetry pull......")
+        return initPullMeter(app)
+    }
+    
+    func initPushMeter(regionId string, remoteWriteUrl string, ak string, sk string) error {
+        fmt.Println(time.Now(), " - initPushMeter start......")
+        var validatedStandardConfig = prometheusPushExporter.Config{
+            Endpoint:      remoteWriteUrl,
+            Name:          "AliyunConfig",
+            RemoteTimeout: 30 * time.Second,
+            PushInterval:  10 * time.Second,
+            Quantiles:     []float64{0.5, 0.9, 0.95, 0.99},
+            BasicAuth: map[string]string{
+                "username": ak,
+                "password": sk,
+            },
+        }
+        if validatedStandardConfig.Endpoint == "" {
+            return errors.New(" validatedStandardConfig.Endpoint==empty.regionId:" + regionId)
+        }
+        fmt.Println("Success: Created Config struct")
+        r, err := resource.New(context.Background(),
+            resource.WithAttributes(
+                label.String("cluster", "test-otel"),
+                label.String("app", "buy")))
+        if err != nil {
+            fmt.Println("resource Error:", err)
+        }
+        pusher, err := prometheusPushExporter.InstallNewPipeline(validatedStandardConfig,
+            push.WithPeriod(30*time.Second), push.WithResource(r))
+        if err != nil {
+            fmt.Println("InstallNewPipeline Error:", err)
+        }
+        otel.SetMeterProvider(pusher.MeterProvider())
+        return nil
+    }
+    
+    func initPullMeter(app string) error {
+        fmt.Println(time.Now(), " - initPullMeter start......")
+        r, err := resource.New(context.Background(),
+            resource.WithAttributes(
+                label.String("cluster", "test-otel"),
+                label.String("app", app)))
+        if err != nil {
+            fmt.Println("resource Error:", err)
+        }
+        exporter, err := prometheusExporter.NewExportPipeline(
+            prometheusExporter.Config{
+                DefaultHistogramBoundaries: []float64{-0.5, 1},
+            },
+            pull.WithCachePeriod(0),
+            pull.WithResource(r),
+        )
+        if err != nil {
+            return err
+        }
+        http.HandleFunc("/opentelemetry", exporter.ServeHTTP)
+        otel.SetMeterProvider(exporter.MeterProvider())
+        return nil
+    }
+    
+    func initOtlpProvider(regionId string) (*push.Controller, error) {
+        exporter, err := otlp.NewExporter(
+            context.Background(),
+            otlp.WithInsecure(),
+            otlp.WithAddress(regionId+"-intranet.arms.aliyuncs.com:8000"),
+        )
+        if err != nil {
+            return nil, err
+        }
+    
+        pusher := push.New(
+            basic.New(
+                simple.NewWithExactDistribution(),
+                exporter,
+            ),
+            exporter,
+            push.WithPeriod(30*time.Second),
+        )
+    
+        otel.SetMeterProvider(pusher.MeterProvider())
+        pusher.Start()
+    
+        return pusher, err
+    }
+    ```
+
+3.  业务入口初始化，并启动OpenTelemetry功能。[\[Demo\]](https://github.com/liguozhong/prometheus-arms-aliyun-go-demo/blob/master/pkg/operator.go)
+
+    ```
+    package pkg
+    
+    import (
+        "fmt"
+        stat "github.com/liguozhong/prometheus-arms-aliyun-go-demo/pkg/opentelemetry"
+        "github.com/prometheus/client_golang/prometheus/promhttp"
+        "io"
+        "net/http"
+        "strconv"
+    )
+    
+    type Server struct {
+        port int
+    }
+    
+    func NewServer(port int) *Server {
+        return &Server{
+            port: port,
+        }
+    }
+    
+    func (s *Server) Run() error {
+        port := ":" + strconv.Itoa(s.port)
+        path := "/metrics"
+        service := "/buy"
+        http.Handle(path, promhttp.Handler()) //初始一个http handler
+        http.HandleFunc(service, func(writer http.ResponseWriter, request *http.Request) {
+            content, err := stat.DoBuy()
+            if err != nil {
+                io.WriteString(writer, err.Error())
+                return
+            }
+            io.WriteString(writer, content)
+        })
+        stat.InitMeter("buy2", true)
+        fmt.Println("http.url: http://localhost" + port + path)
+        fmt.Println("service.url: http://localhost" + port + service)
+        err := http.ListenAndServe(port, nil)
+        if err != nil {
+            return err
+        }
+        return nil
+    }
+    ```
+
+4.  查看Go module的依赖列表。[\[Demo\]](https://github.com/liguozhong/prometheus-arms-aliyun-go-demo/blob/master/go.mod)
+
+    ```
+    module github.com/liguozhong/prometheus-arms-aliyun-go-demo
+    
+    go 1.12
+    
+    require (
+        github.com/go-kit/kit v0.9.0
+        github.com/prometheus/client_golang v1.7.1
+        go.opentelemetry.io/contrib/exporters/metric/cortex v0.15.0
+        go.opentelemetry.io/otel v0.15.0
+        go.opentelemetry.io/otel/exporters/metric/prometheus v0.15.0
+        go.opentelemetry.io/otel/exporters/otlp v0.15.0
+        go.opentelemetry.io/otel/sdk v0.15.0
+        golang.org/x/text v0.3.3 // indirect
+    )
+    ```
+
+5.  在Grafana中查看数据。
+
+    ![OpenTelemetry展示数据](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/1118278061/p205546.png)
 
 
-## Uninstall the Prometheus agent
 
-To disable Prometheus monitoring for the ACK cluster, perform the following steps to uninstall the Prometheus agent:
-
-1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
-
-2.  In the left-side navigation pane, click **Prometheus Monitoring**.
-
-3.  In the upper-left corner, select a region. Click **Uninstall** in the **Actions** column. In the **Confirmation** dialog box, click **OK**.
-
-    After you uninstall the agent, the dashboards are no longer displayed in the **Installed Dashboards** column. Go to the Container Service for Kubernetes console to check whether the uninstallation is successful.
-
-4.  Log on to the [ACK console](https://cs.console.aliyun.com).
-
-5.  In the left-side navigation pane, click **Clusters**, and then click the name of the cluster for which you want to disable Prometheus monitoring.
-
-    **Note:** The steps described in this topic are only applicable to the new version of the Container Service for Kubernetes console. If you are using the previous version, choose **Clusters** \> **Clusters** in the left-side navigation pane, then click **New version** in the upper-right corner of the page.
-
-6.  In the left-side navigation pane, click **Releases**. Perform one of the following operations based on your needs:
-
-    -   If the `arms-prom-***` record is not displayed on the **Releases** page, the Prometheus agent is uninstalled. You do not need to perform further operations.
-    -   If the `arms-prom-***` record is displayed on the **Releases** page, click **Delete** in the **Actions** column.
-
-        ![ack_pg_release](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/8165893161/p143010.png)
-
-
-**Related topics**  
-
-
-[What is Prometheus Service?]()
 
