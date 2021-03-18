@@ -2,8 +2,8 @@
 
 对于部署在阿里云容器服务Kubernetes版中的Kubernetes集群，您可以在ARMS中为其一键安装Prometheus监控插件，此后即可通过ARMS预定义的大盘监控主机和Kubernetes集群的众多性能指标。
 
--   在阿里云容器服务Kubernetes版中创建Kubernetes集群，详情请参见[快速创建Kubernetes托管版集群](/cn.zh-CN/快速入门/基础入门/快速创建Kubernetes托管版集群.md)。
--   [开通和升级ARMS](/cn.zh-CN/快速入门/开通和升级ARMS.md)
+-   在阿里云容器服务Kubernetes版中创建Kubernetes集群，详情请参见[快速创建Kubernetes托管版集群](/intl.zh-CN/快速入门/基础入门/快速创建Kubernetes托管版集群.md)。
+-   [开通和升级ARMS](/intl.zh-CN/快速入门/开通和升级ARMS.md)
 
 ## 开启阿里云Prometheus监控
 
@@ -21,7 +21,7 @@
 
     ![组件配置](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/5816545161/p248500.png)
 
-    有关创建集群的具体步骤，请参见[创建Kubernetes托管版集群](/cn.zh-CN/Kubernetes集群用户指南/集群/创建集群/创建Kubernetes托管版集群.md)。
+    有关创建集群的具体步骤，请参见[创建Kubernetes托管版集群](/intl.zh-CN/Kubernetes集群用户指南/集群/创建集群/创建Kubernetes托管版集群.md)。
 
     **说明：** 在创建集群时，系统默认选中**使用Prometheus监控服务**。
 
@@ -64,7 +64,7 @@
 
 ## 打开Prometheus监控大盘
 
-1.  登录[ARMS控制台](https://arms.console.aliyun.com/#/home)。
+1.  登录[ARMS控制台](https://arms-ap-southeast-1.console.aliyun.com/#/home)。
 
 2.  在左侧导航栏单击**Prometheus监控**。
 
@@ -75,7 +75,7 @@
 
 如需停止对Kubernetes集群的Prometheus监控，请按照以下步骤卸载Prometheus监控插件。
 
-1.  登录[ARMS控制台](https://arms.console.aliyun.com/#/home)。
+1.  登录[ARMS控制台](https://arms-ap-southeast-1.console.aliyun.com/#/home)。
 
 2.  在左侧导航栏单击**Prometheus监控**。
 
