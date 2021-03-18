@@ -1,29 +1,29 @@
-# 远程存储
+# Remote storage
 
-阿里云Prometheus的RemoteWrite功能支持作为远程数据库存储Prometheus监控数据。本文将介绍如何使用阿里云Prometheus的RemoteWrite对接开源Prometheus，构建监控数据的高效存储方案。
+Alibaba Cloud Prometheus Service provides the RemoteWrite feature. You can use this feature to store the monitoring data of Prometheus Service to remote databases. This topic describes how to use the RemoteWrite feature to connect Alibaba Cloud Prometheus Service with the open source Prometheus. The feature provides an efficient solution to store monitoring data.
 
-## 步骤一：创建RemoteWrite并获取读写URL
+## Step 1: Create a RemoteWrite and obtain the read and write URLs
 
-1.  登录[ARMS控制台](https://arms-ap-southeast-1.console.aliyun.com/#/home)。
+1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
 
-2.  在左侧导航栏单击**Prometheus监控**。
+2.  In the left-side navigation pane, click **Prometheus Monitoring**.
 
-3.  在页面左上角选择目标地域，在Prometheus监控页面单击**接入Prometheus监控**。
+3.  In the upper-left corner of the page, select the destination region. On the Prometheus Monitoring page, click **Access prometheus monitoring**.
 
-4.  在接入Prometheus监控页面单击**Remote Write Prometheus**。
+4.  On the Access Prometheus monitoring page, click **Remote Write Prometheus**.
 
-5.  在第1步向导页输入**RemoteWrite 名字**，然后单击**下一步**。
+5.  In Step 1 of the wizard, specify the **RemoteWrite Name** parameter and click **Next**.
 
-6.  在步骤2向导页复制并保存生成的Prometheus Remote Write Url，然后单击**下一步**。
+6.  In Step 2, copy and save the generated value of the Prometheus Remote Write Url parameter, and then click **Next**.
 
-7.  在步骤3向导页复制并保存生成的Prometheus Remote Read Url，然后关闭该向导页。
+7.  In Step 3, copy and save the generated value of the Prometheus Remote Read Url parameter, and then close the wizard.
 
 
-## 步骤二：配置Prometheus
+## Step 2: Configure Prometheus
 
-1.  安装Prometheus，安装方法可以参考[官方文档](https://prometheus.io/download/)。
+1.  Install Prometheus. For information about how to install Prometheus, see [Official documentation](https://prometheus.io/download/).
 
-2.  打开Prometheus.yaml配置文件，并在文件末尾增加以下内容，将`remote_write`和`remote_read`链接替换为[步骤一：创建RemoteWrite并获取读写URL](#section_fnr_zrt_2dg)中获取的URL，然后保存文件。
+2.  Open the Prometheus.yaml configuration file and append the following content to the file. Replace the `remote_write` and `remote_read` URLs with the URLs that you obtained in [Step 1: Create a RemoteWrite and obtain the read and write URLs](#section_fnr_zrt_2dg). Then, save the file.
 
     ```
     global:
@@ -36,7 +36,7 @@
     remote_write:
       - url: "http://ts-xxxxxxxxxxxx.hitsdb.rds.aliyuncs.com:3242/api/prom_write"
         basic_auth:   
-          //username和password需要遵循AK/SK的限制，且AK/SK需要能够调用[GetPrometheusApiToken](/intl.zh-CN/API参考/Prometheus监控/GetPrometheusApiToken.md)。
+          // The username and password must conform to the naming conventions of an AK/SK pair. The AK/SK pair must be authorized to call the [GetPrometheusApiToken](/intl.en-US/API Reference/Prometheus/GetPrometheusApiToken.md) operation.
           username: access-key-id
           password: access-key-secret
     remote_read:
@@ -45,9 +45,9 @@
     ```
 
 
-## 使用远程存储对接OpenTelemetry
+## Use remote storage for OpenTelemetry
 
-1.  业务代码进行OpenTelemetry埋点。[\[Demo\]](https://github.com/liguozhong/prometheus-arms-aliyun-go-demo/blob/master/pkg/opentelemetry/buy_service.go)
+1.  Configure OpenTelemetry tracking in the business code. [\[Demo\]](https://github.com/liguozhong/prometheus-arms-aliyun-go-demo/blob/master/pkg/opentelemetry/buy_service.go)
 
     ```
     package stat
@@ -77,7 +77,7 @@
     }
     ```
 
-2.  OpenTelemetry对Meter进行初始化并和连接Prometheus。\[[Demo\]](https://github.com/liguozhong/prometheus-arms-aliyun-go-demo/blob/master/pkg/opentelemetry/meter_config.go)
+2.  OpenTelemetry initializes Meter and connects to Prometheus. [\[Demo\]](https://github.com/liguozhong/prometheus-arms-aliyun-go-demo/blob/master/pkg/opentelemetry/meter_config.go)
 
     ```
     package stat
@@ -107,7 +107,7 @@
         fmt.Println(time.Now(), " - initMeter start......")
         if push {
             fmt.Println(time.Now(), " - initMeter opentelemetry push......")
-            remoteUrl := "http://region.arms.aliyuncs.com/prometheus/../../../../api/v3/write"
+            remoteUrl := "http://region.arms.aliyuncs.com/prometheus/.. /.. /.. /../api/v3/write"
             ak := "ak"
             sk := "sk"
             return initPushMeter(app, remoteUrl, ak, sk)
@@ -137,12 +137,12 @@
             resource.WithAttributes(
                 label.String("cluster", "test-otel"),
                 label.String("app", "buy")))
-        if err != nil {
+        if err ! = nil {
             fmt.Println("resource Error:", err)
         }
         pusher, err := prometheusPushExporter.InstallNewPipeline(validatedStandardConfig,
             push.WithPeriod(30*time.Second), push.WithResource(r))
-        if err != nil {
+        if err ! = nil {
             fmt.Println("InstallNewPipeline Error:", err)
         }
         otel.SetMeterProvider(pusher.MeterProvider())
@@ -155,7 +155,7 @@
             resource.WithAttributes(
                 label.String("cluster", "test-otel"),
                 label.String("app", app)))
-        if err != nil {
+        if err ! = nil {
             fmt.Println("resource Error:", err)
         }
         exporter, err := prometheusExporter.NewExportPipeline(
@@ -165,7 +165,7 @@
             pull.WithCachePeriod(0),
             pull.WithResource(r),
         )
-        if err != nil {
+        if err ! = nil {
             return err
         }
         http.HandleFunc("/opentelemetry", exporter.ServeHTTP)
@@ -179,7 +179,7 @@
             otlp.WithInsecure(),
             otlp.WithAddress(regionId+"-intranet.arms.aliyuncs.com:8000"),
         )
-        if err != nil {
+        if err ! = nil {
             return nil, err
         }
     
@@ -199,7 +199,7 @@
     }
     ```
 
-3.  业务入口初始化，并启动OpenTelemetry功能。[\[Demo\]](https://github.com/liguozhong/prometheus-arms-aliyun-go-demo/blob/master/pkg/operator.go)
+3.  Initialize the business endpoint and start the OpenTelemetry function. [\[Demo\]](https://github.com/liguozhong/prometheus-arms-aliyun-go-demo/blob/master/pkg/operator.go)
 
     ```
     package pkg
@@ -227,10 +227,10 @@
         port := ":" + strconv.Itoa(s.port)
         path := "/metrics"
         service := "/buy"
-        http.Handle(path, promhttp.Handler()) //初始一个http handler
+        http.Handle(path, promhttp.Handler()) // Initializes an HTTP handler.
         http.HandleFunc(service, func(writer http.ResponseWriter, request *http.Request) {
             content, err := stat.DoBuy()
-            if err != nil {
+            if err ! = nil {
                 io.WriteString(writer, err.Error())
                 return
             }
@@ -240,14 +240,14 @@
         fmt.Println("http.url: http://localhost" + port + path)
         fmt.Println("service.url: http://localhost" + port + service)
         err := http.ListenAndServe(port, nil)
-        if err != nil {
+        if err ! = nil {
             return err
         }
         return nil
     }
     ```
 
-4.  查看Go module的依赖列表。[\[Demo\]](https://github.com/liguozhong/prometheus-arms-aliyun-go-demo/blob/master/go.mod)
+4.  View the dependencies of the Go module. [\[Demo\]](https://github.com/liguozhong/prometheus-arms-aliyun-go-demo/blob/master/go.mod)
 
     ```
     module github.com/liguozhong/prometheus-arms-aliyun-go-demo
@@ -266,9 +266,9 @@
     )
     ```
 
-5.  在Grafana中查看数据。
+5.  View the data in Grafana.
 
-    ![OpenTelemetry展示数据](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/1118278061/p205546.png)
+    ![View the data of OpenTelemetry](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0792088061/p205546.png)
 
 
 
