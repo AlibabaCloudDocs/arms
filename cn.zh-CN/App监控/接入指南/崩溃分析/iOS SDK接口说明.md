@@ -58,7 +58,7 @@ iOS SDK接口说明
 
 用于将自定义错误上报至控制台。
 
-接口定义:
+接口定义：
 
     /*!
     * @brief 用户自定义错误上报
@@ -69,7 +69,7 @@ iOS SDK接口说明
 
 
 
-使用示例:
+使用示例：
 
     NSError *error = [NSError errorWithDomain:@"customError" code:10001 userInfo:@{@"errorInfoKey":@"errorInfoValue"}];
     [AlicloudCrashProvider reportCustomError:error];//配置项：自定义错误信息（errorWithDomain/code/userInfo）
