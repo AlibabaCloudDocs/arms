@@ -112,12 +112,12 @@
 -   报警类型（metricParam.type）：TXN\_TYPE（应用监控调用类型统计）
     -   此类报警维度（dimensions.key）：rpcType（接口调用类型，如HTTP、DUBBO）
     -   此类报警数据请求指标（alertRule.rules.measure）：
-        -   appstat.inbound.rt：应用提供服务调用响应时间（毫秒）
-        -   appstat.inbound.count：应用提供服务调用次数
-        -   appstat.inbound.error：应用提供服务调用错误数
-        -   appstat.outbound.rt：应用依赖服务调用响应时间（毫秒）
-        -   appstat.outbound.count：应用依赖服务调用次数
-        -   appstat.outbound.error：应用依赖服务调用错误数
+        -   appstat.incall.rt：应用提供服务调用响应时间（毫秒）
+        -   appstat.incall.count：应用提供服务调用次数
+        -   appstat.incall.error：应用提供服务调用错误数
+        -   appstat.outcall.rt：应用依赖服务调用响应时间（毫秒）
+        -   appstat.outcall.count：应用依赖服务调用次数
+        -   appstat.outcall.error：应用依赖服务调用错误数
 -   报警类型（metricParam.type）：DB（数据库指标）
     -   此类报警维度（dimensions.key）：endpoint（数据库名称）
     -   此类报警数据请求指标（alertRule.rules.measure）：
