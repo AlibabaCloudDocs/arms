@@ -16,7 +16,7 @@ ARMS提供应用监控、前端监控、Prometheus监控、自定义监控和报
 |[GetTrace](/intl.zh-CN/API参考/应用监控/GetTrace.md)|获取调用链详情。|
 |[GetMultipleTrace](/intl.zh-CN/API参考/应用监控/GetMultipleTrace.md)|获取多个调用链的详情。|
 |[QueryMetricByPage（应用监控）](/intl.zh-CN/API参考/应用监控/QueryMetricByPage（应用监控）.md)|分页查询应用监控的相关监控指标。|
-|[SaveTraceAppConfig](/intl.zh-CN/API参考/应用监控/SaveTraceAppConfig.md)|进行应用监控的自定义设置（如调用链采样设置、Agent开关等）。|
+|[t1962822.md\#](/intl.zh-CN/API参考/应用监控/SaveTraceAppConfig.md)|进行应用监控的自定义设置（如调用链采样设置、Agent开关等）。|
 
 ## 前端监控
 
@@ -39,6 +39,14 @@ ARMS提供应用监控、前端监控、Prometheus监控、自定义监控和报
 |[GetPrometheusApiToken](/intl.zh-CN/API参考/Prometheus监控/GetPrometheusApiToken.md)|获取集成ARMS Prometheus监控所需的Token。|
 |[ListDashboards](/intl.zh-CN/API参考/Prometheus监控/ListDashboards.md)|获取集群的Grafana大盘的列表。|
 
+## 业务监控
+
+|API|描述|
+|---|--|
+|[ApplyScenario](/intl.zh-CN/API参考/业务监控/ApplyScenario.md)|创建或更新业务监控。|
+|[ListScenario](/intl.zh-CN/API参考/业务监控/ListScenario.md)|获取业务监控详细信息。|
+|[DeleteScenario](/intl.zh-CN/API参考/业务监控/DeleteScenario.md)|删除业务监控。|
+
 ## 报警
 
 |API|描述|
@@ -58,4 +66,8 @@ ARMS提供应用监控、前端监控、Prometheus监控、自定义监控和报
 |[SearchAlertContactGroup](/intl.zh-CN/API参考/报警/SearchAlertContactGroup.md)|查询报警联系人分组。|
 |[SearchAlertHistories](/intl.zh-CN/API参考/报警/SearchAlertHistories.md)|查询报警规则的报警发送记录。|
 |[SearchEvents](/intl.zh-CN/API参考/报警/SearchEvents.md)|查询报警事件记录。|
+|[CreateDispatchRule](/intl.zh-CN/API参考/报警/CreateDispatchRule.md)|创建分派策略。|
+|[DescribeDispatchRule](/intl.zh-CN/API参考/报警/DescribeDispatchRule.md)|查询分派策略信息。|
+|[UpdateDispatchRule](/intl.zh-CN/API参考/报警/UpdateDispatchRule.md)|修改分派策略。|
+|[DeleteDispatchRule](/intl.zh-CN/API参考/报警/DeleteDispatchRule.md)|删除指定ID的分派策略。|
 
