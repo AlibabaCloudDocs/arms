@@ -234,7 +234,7 @@ urlHelper的值可以是以下类型：
 如果需要在API中上报`?`后面的参数，例如：`https://arms.console.aliyun.com/apm?pid=fr6fbgbeot`中的pid参数，需要按照以下方法手动上报API数据：
 
 -   使用ignore方法，关闭自动上报。具体操作，请参见[ignore](#sc_ignore)。
--   使用api自行上报API数据。具体操作，请参见[api\(\)](/cn.zh-CN/前端监控/API参考.md)。
+-   使用api\(\)自行上报API数据。具体操作，请参见[api\(\)](/cn.zh-CN/前端监控/API参考.md)。
 
 [\[回到顶部\]](#sc_index)
 
