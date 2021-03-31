@@ -10,7 +10,7 @@ Android SDK接入（Maven集成）
 
   
 
-* 如需使用本地集成方式添加依赖，操作方法参见：[Android SDK接入（本地集成）]()
+* 如需使用本地集成方式添加依赖，操作方法参见：[Android SDK接入（本地集成）](/cn.zh-CN/App监控/接入指南/远程日志/Android SDK接入（本地集成）.md)
 
   
 
@@ -40,32 +40,32 @@ Android SDK接入（Maven集成）
 
 
 
+
+
 接入概述 
 -------------------------
 
-1. 
-
-2. [准备](#section-j9o-zby-llm)：获取公钥。
+1. [准备](#section-j9o-zby-llm)：获取公钥。
 
    
 
-3. [添加依赖](#section-02t-297-szf)：采用Maven集成方式。
+2. [添加依赖](#section-02t-297-szf)：采用Maven集成方式。
 
    
 
-4. [接入服务](#section-2k6-1na-37h)：添加自定义Application，以及初始化代码；配置ABI；设置日志拉入级别。
+3. [接入服务](#section-2k6-1na-37h)：添加自定义Application，以及初始化代码；配置ABI；设置日志拉入级别。
 
    
 
-5. [打印日志](#section-sur-n4a-0td)：引入头文件；在代码中打印日志信息。
+4. [打印日志](#section-sur-n4a-0td)：引入头文件；在代码中打印日志信息。
 
    
 
-6. [混淆配置](#section-nv9-gdo-ze9)：如App对代码进行乱序混淆，则修改混淆配置文件。
+5. [混淆配置](#section-nv9-gdo-ze9)：如App对代码进行乱序混淆，则修改混淆配置文件。
 
    
 
-7. [编译](#section-2jt-n88-hk9)。
+6. [编译](#section-2jt-n88-hk9)。
 
    
 
