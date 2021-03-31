@@ -43,29 +43,27 @@ Android SDK接入（本地集成）
 接入概述 
 -------------------------
 
-1. 
-
-2. [准备](#section-c4a-nbj-82v)：获取公钥；下载SDK包。
+1. [准备](#section-c4a-nbj-82v)：获取公钥；下载SDK包。
 
    
 
-3. [添加依赖](#section-igf-jrx-56h)：采用本地集成方式。
+2. [添加依赖](#section-igf-jrx-56h)：采用本地集成方式。
 
    
 
-4. [接入服务](#section-8bb-0y9-qyw)：添加自定义Application，以及初始化代码；配置ABI；设置日志拉入级别。
+3. [接入服务](#section-8bb-0y9-qyw)：添加自定义Application，以及初始化代码；配置ABI；设置日志拉入级别。
 
    
 
-5. [打印日志](#section-xjm-8ii-926)：引入头文件；在代码中打印日志信息。
+4. [打印日志](#section-xjm-8ii-926)：引入头文件；在代码中打印日志信息。
 
    
 
-6. [混淆配置](#section-jke-u6j-4cg)：如App对代码进行乱序混淆，则修改混淆配置文件。
+5. [混淆配置](#section-jke-u6j-4cg)：如App对代码进行乱序混淆，则修改混淆配置文件。
 
    
 
-7. [编译](#section-e0r-rf4-0tp)。
+6. [编译](#section-e0r-rf4-0tp)。
 
    
 
