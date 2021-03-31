@@ -44,5 +44,5 @@ At present, the ARMS 15-day free trial includes business monitoring, application
 
 **Note:** Scan the following QR code to join the DingTalk group.
 
-![dg__business_dingding](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7037258061/p92785.png)
+![dg__business_dingding](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/5000817161/p92785.png)
 
