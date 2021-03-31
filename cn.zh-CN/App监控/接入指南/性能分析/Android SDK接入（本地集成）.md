@@ -66,7 +66,7 @@ Android SDK接入（本地集成）
 
    
 
-3. [添加依赖](#section-rjc-6c4-fgb)：采用本地方式集成SDK。SDK功能变更历史参见：[SDK版本变更](#section-vxx-a3n-ffx)
+3. [添加依赖](#section-rjc-6c4-fgb)：采用本地方式集成SDK。
 
    
 
