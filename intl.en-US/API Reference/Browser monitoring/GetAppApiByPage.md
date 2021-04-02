@@ -13,7 +13,7 @@ Queries the interfaces of browser monitoring by page.
 |Action|String|Yes|GetAppApiByPage|The operation that you want to perform. Set the value to `GetAppApiByPage`. |
 |CurrentPage|Integer|Yes|1|The number of the page to return. |
 |EndTime|Long|Yes|1600066800000|The end of the time range to query. Unit: milliseconds. |
-|PId|String|Yes|xxx@74xxx|The unique identifier of the application.For information about how to obtain the `pid`, see [Obtain the PID of an application](/intl.en-US/API Reference/Browser monitoring/QueryMetricByPage (Browser Monitoring).md). |
+|PId|String|Yes|xxx@74xxx|The unique identifier of the application. For information about how to obtain the `pid`, see [Obtain the PID of an application](/intl.en-US/API Reference/Browser monitoring/QueryMetricByPage (Browser Monitoring).md). |
 |RegionId|String|Yes|cn-hangzhou|The ID of the region. |
 |StartTime|Long|Yes|1600063200000|The beginning of the time range to query. Unit: milliseconds. |
 |PageSize|Integer|No|10|The number of entries to return on each page. |
