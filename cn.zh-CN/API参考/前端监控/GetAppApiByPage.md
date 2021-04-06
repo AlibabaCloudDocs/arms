@@ -13,7 +13,7 @@
 |Action|String|是|GetAppApiByPage|系统规定参数。取值：`GetAppApiByPage`。 |
 |CurrentPage|Integer|是|1|查询结果的页码。 |
 |EndTime|Long|是|1600066800000|结束时间的时间戳，精确到毫秒。 |
-|PId|String|是|xxx@74xxx|应用的唯一识别码。`pid`获取方式请参见[如何获取前端应用PID](https://help.aliyun.com/document_detail/186822.html?spm=a2c4g.11186623.6.802.f22a29d7XCDrHf#title-ref-s31-44g)。 |
+|PId|String|是|xxx@74xxx|应用的唯一识别码。`pid`获取方式请参见[如何获取前端应用PID](https://help.aliyun.com/document_detail/183682.html?spm=a2c4g.11174283.6.976.56c9345cy0rf69#h2-url-3)。 |
 |RegionId|String|是|cn-hangzhou|地域ID。 |
 |StartTime|Long|是|1600063200000|开始时间的时间戳，精确到毫秒。 |
 |PageSize|Integer|否|10|查询结果的每页项目数量。 |
@@ -23,23 +23,23 @@
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|Code|Integer|200|接口状态，取值说明如下：
+|Code|Integer|200|接口状态。取值：
 
- -   2XX：成功
--   3XX：重定向
--   4XX：请求错误
--   5XX：服务器错误 |
-|Data|Struct| |返回结构体 |
-|Items|List|\[\]|返回应用接口数据的详细信息 |
-|Page|Integer|1|返回结果的页码 |
-|PageSize|Integer|10|返回结果的每页项目数量 |
-|Total|String|0|返回结果的总项目数量 |
-|Message|String|message|返回结果的提示信息 |
-|RequestId|String|B6A00968-82A8-4F14-9D1B-B53827DB\*\*\*\*|请求ID |
-|Success|Boolean|true|查询是否成功：
+ -   2XX：成功。
+-   3XX：重定向。
+-   4XX：请求错误。
+-   5XX：服务器错误。 |
+|Data|Struct| |返回结构体。 |
+|Items|List|\[\]|返回应用接口数据的详细信息。 |
+|Page|Integer|1|返回结果的页码。 |
+|PageSize|Integer|10|返回结果的每页项目数量。 |
+|Total|String|0|返回结果的总项目数量。 |
+|Message|String|message|返回结果的提示信息。 |
+|RequestId|String|B6A00968-82A8-4F14-9D1B-B53827DB\*\*\*\*|请求ID。 |
+|Success|Boolean|true|查询是否成功。取值：
 
- -   `true`：成功
--   `false`：失败 |
+ -   `true`：成功。
+-   `false`：失败。 |
 
 ## 示例
 
