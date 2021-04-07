@@ -3,13 +3,17 @@
 在使用链路追踪控制台追踪应用的链路数据之前，需要通过客户端将应用数据上报至链路追踪。本文介绍如何通过Skywalking客户端上报Java应用数据。
 
 -   打开[SkyWalking下载页面](http://skywalking.apache.org/downloads/)，下载SkyWalking 6.X.X、7.X.X或8.X.X版本（建议下载[SkyWalking 8.0.1](https://www.apache.org/dyn/closer.cgi/skywalking/8.0.1/apache-skywalking-apm-8.0.1.tar.gz)），并将解压后的Agent文件夹放至Java进程有访问权限的目录。
--   插件均放置在`/plugins`目录中。在启动阶段将新的插件放进该目录，即可令插件生效。将插件从该目录删除，即可令其失效。另外，日志文件默输出到`/logs`目录中。
+-   插件均放置在`/plugins`目录中。在启动阶段将新的插件放进该目录，即可令插件生效。将插件从该目录删除，即可令其失效。另外，日志文件默认输出到`/logs`目录中。
 
 **警告：** 日志、插件和配置文件都在Agent文件夹中，请不要改变文件夹结构。
+
+
 
 SkyWalking是一款广受欢迎的国产APM（Application Performance Monitoring，应用性能监控）产品，主要针对微服务、Cloud Native和容器化（Docker、Kubernetes、Mesos）架构的应用。SkyWalking的核心是一个分布式追踪系统，目前是Apache基金会的顶级项目。
 
 要通过SkyWalking将Java应用数据上报至链路追踪控制台，首先需要完成埋点工作。SkyWalking既支持自动探针（Dubbo、gRPC、JDBC、OkHttp、Spring、Tomcat、Struts、Jedis等），也支持手动埋点（OpenTracing）。本文介绍自动埋点方法。
+
+
 
 ## 用SkyWalking为Java应用自动埋点
 
