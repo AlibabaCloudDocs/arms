@@ -102,6 +102,8 @@ Python SDK依赖于一组第三方的Python库。您在使用该SDK前必须安�
         main()
     ```
 
+    示例程序中各参数说明如下：
+
     -   endpoint：各个地域的Endpoint如下表所示。
 
         |地域|Endpoint|
