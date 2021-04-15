@@ -1,6 +1,6 @@
 # Prometheus服务等级协议
 
-本服务等级协议（Service Level Agreement，简称“SLA”）规定了阿里云向客户提供的ARMS Prometheus服务（简称“Prometheus服务”）的服务可用性等级指标及赔偿方案。
+本服务等级协议（Service Level Agreement，简称“SLA”）规定了阿里云向客户提供的阿里云Prometheus服务（简称“Prometheus服务”）的服务可用性等级指标及赔偿方案。
 
 ## 1.定义
 
