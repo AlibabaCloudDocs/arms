@@ -50,7 +50,7 @@ To create a service for Prometheus Service in the PagerDuty console, perform the
 
     After the service is created, the details page of the service appears, as shown in the following figure.
 
-    ![service](../images/p249259.png)
+    ![service](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/5945188161/p249259.png)
 
 
 ## Step 3: Obtain the integration key
