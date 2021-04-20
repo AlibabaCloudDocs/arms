@@ -71,7 +71,7 @@
 -   通过 [OpenAPI开发者门户](https://next.api.aliyun.com/api/Sts/2015-04-01/AssumeRole)在线调用。
 -   通过 [Java示例](/cn.zh-CN/SDK参考/SDK参考（RAM）/Java示例.md) 调用。
 
-请注意，在\[示例代码\]\(https://arms-apm.oss-cn-hangzhou.aliyuncs.com/tools/embedPage.zip\)中，您首先需要将以下参数替换为真实的值。
+请注意，在[\[示例代码\]](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/tools/embedPage.zip)中，您首先需要将以下参数替换为真实的值。
 
 ```
 String akId = "<accessKeyId>";
