@@ -70,10 +70,10 @@ If you want to manually instrument the application, you must write instrumentati
     
         private void secondBiz() {
             tracing.tracer().startScopedSpanWithParent("childSpan", tracing.tracer().currentSpan().context());
-            Span chindSpan =  tracing.tracer().currentSpan();
-            chindSpan.tag("key", "secondBiz");
-            chindSpan.finish();
-            System.out.println("end tracing,id:" + chindSpan.context().traceIdString());
+            Span childSpan =  tracing.tracer().currentSpan();
+            childSpan.tag("key", "secondBiz");
+            childSpan.finish();
+            System.out.println("end tracing,id:" + childSpan.context().traceIdString());
         }
     ```
 
