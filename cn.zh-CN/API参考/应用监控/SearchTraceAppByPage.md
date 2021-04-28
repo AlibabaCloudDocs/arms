@@ -11,37 +11,37 @@
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
 |Action|String|是|SearchTraceAppByPage|系统规定参数，取值为`SearchTraceAppByPage`。 |
-|PageNumber|Integer|是|1|查询结果的页码。非必填参数，如果不填写则默认为`1`。 |
-|PageSize|Integer|是|10|查询结果的每页项目数量。非必填参数，如果不填写则默认为`10`。 |
 |RegionId|String|是|cn-hangzhou|地域ID。 |
-|TraceAppName|String|是|test-app|应用名称。非必填参数。 |
+|TraceAppName|String|否|test-app|应用名称。 |
+|PageNumber|Integer|否|1|查询结果的页码，如果不填写则默认为`1`。 |
+|PageSize|Integer|否|10|查询结果的每页项目数量，如果不填写则默认为`10`。 |
 
 ## 返回数据
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|PageBean|Struct| |返回的页面信息 |
-|PageNumber|Integer|1|返回结果的页码 |
-|PageSize|Integer|10|返回结果的每页项目数量 |
-|TotalCount|Integer|3|查询结果的总项目数量 |
-|TraceApps|Array| |应用监控任务信息 |
-|AppId|Long|123|应用ID |
-|AppName|String|test-app|应用名称 |
-|CreateTime|Long|1531291867000|创建时间的时间戳 |
-|Labels|List|prod|应用标签 |
-|Pid|String|atc889zkcf@d8deedfa9bf\*\*\*\*|应用的ID标识串 |
-|RegionId|String|cn-hangzhou|地域ID |
-|Show|Boolean|true|是否显示：
+|PageBean|Struct| |返回的页面信息。 |
+|PageNumber|Integer|1|返回结果的页码。 |
+|PageSize|Integer|10|返回结果的每页项目数量。 |
+|TotalCount|Integer|3|查询结果的总项目数量。 |
+|TraceApps|Array of TraceApp| |应用监控任务信息。 |
+|AppId|Long|123|应用ID。 |
+|AppName|String|test-app|应用名称。 |
+|CreateTime|Long|1531291867000|创建时间的时间戳。 |
+|Labels|List|prod|应用标签。 |
+|Pid|String|atc889zkcf@d8deedfa9bf\*\*\*\*|应用的ID标识串。 |
+|RegionId|String|cn-hangzhou|地域ID。 |
+|Show|Boolean|true|是否在ARMS控制台显示：
 
- -   `true`：显示
--   `false`：不显示 |
+ -   `true`：显示。
+-   `false`：不显示。 |
 |Type|String|TRACE|监控任务类型：
 
- -   `TRACE`：应用监控
--   `RETCODE`：前端监控 |
-|UpdateTime|Long|1531291867000|更新时间的时间戳 |
-|UserId|String|113197164949\*\*\*\*|用户ID |
-|RequestId|String|4B446DF2-3DDD-4B5B-8E3F-D5225120\*\*\*\*|请求ID |
+ -   `TRACE`：应用监控。
+-   `RETCODE`：前端监控。 |
+|UpdateTime|Long|1531291867000|更新时间的时间戳。 |
+|UserId|String|113197164949\*\*\*\*|用户ID。 |
+|RequestId|String|4B446DF2-3DDD-4B5B-8E3F-D5225120\*\*\*\*|请求ID。 |
 
 ## 示例
 
@@ -49,15 +49,13 @@
 
 ```
 http(s)://[Endpoint]/?Action=SearchTraceAppByPage
-&PageNumber=1
-&PageSize=10
 &RegionId=cn-hangzhou
 &<公共请求参数>
 ```
 
 正常返回示例
 
-`XML` 格式
+`XML`格式
 
 ```
 <SearchTraceAppByPageResponse>
@@ -103,7 +101,7 @@ http(s)://[Endpoint]/?Action=SearchTraceAppByPage
 </SearchTraceAppByPageResponse>
 ```
 
-`JSON` 格式
+`JSON`格式
 
 ```
 {
