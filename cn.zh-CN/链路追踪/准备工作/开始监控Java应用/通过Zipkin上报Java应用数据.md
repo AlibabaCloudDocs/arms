@@ -2,6 +2,8 @@
 
 Zipkin是一款开源的分布式实时数据追踪系统（Distributed Tracking System），由Twitter公司开发和贡献。其主要功能是聚合来自各个异构系统的实时监控数据。在链路追踪Tracing Analysis中，您可以通过Zipkin上报Java应用数据。
 
+
+
 Zipkin已经开发多年，对各种框架的支持比较齐全，例如[以下Java框架](https://github.com/openzipkin/brave/tree/master/instrumentation)。
 
 -   Apache HttpClient
@@ -20,6 +22,8 @@ Zipkin已经开发多年，对各种框架的支持比较齐全，例如[以下J
 -   Spring MVC
 
 要通过Zipkin将Java应用数据上报至链路追踪控制台，首先需要完成埋点工作。您可以手动埋点，也可以利用各种现有插件实现埋点的目的。
+
+
 
 ## 手动埋点
 
@@ -70,10 +74,10 @@ Zipkin已经开发多年，对各种框架的支持比较齐全，例如[以下J
     
         private void secondBiz() {
             tracing.tracer().startScopedSpanWithParent("childSpan", tracing.tracer().currentSpan().context());
-            Span chindSpan =  tracing.tracer().currentSpan();
-            chindSpan.tag("key", "secondBiz");
-            chindSpan.finish();
-            System.out.println("end tracing,id:" + chindSpan.context().traceIdString());
+            Span childSpan =  tracing.tracer().currentSpan();
+            childSpan.tag("key", "secondBiz");
+            childSpan.finish();
+            System.out.println("end tracing,id:" + childSpan.context().traceIdString());
         }
     ```
 
