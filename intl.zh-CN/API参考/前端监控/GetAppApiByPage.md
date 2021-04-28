@@ -11,11 +11,11 @@
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
 |Action|String|是|GetAppApiByPage|系统规定参数。取值：`GetAppApiByPage`。 |
-|CurrentPage|Integer|是|1|查询结果的页码。 |
 |EndTime|Long|是|1600066800000|结束时间的时间戳，精确到毫秒。 |
 |PId|String|是|xxx@74xxx|应用的唯一识别码。`pid`获取方式请参见[如何获取前端应用PID](https://www.alibabacloud.com/help/zh/doc-detail/183682.htm?spm=a2c63.l28256.b99.342.252412727XCKUD#h2-url-3)。 |
 |RegionId|String|是|cn-hangzhou|地域ID。 |
 |StartTime|Long|是|1600063200000|开始时间的时间戳，精确到毫秒。 |
+|CurrentPage|Integer|否|1|查询结果的页码。 |
 |PageSize|Integer|否|10|查询结果的每页项目数量。 |
 |IntervalMills|Integer|否|60000|数据片的时间间隔，单位为毫秒，最小值为60000。 |
 
@@ -47,7 +47,6 @@
 
 ```
 http(s)://[Endpoint]/?Action=GetAppApiByPage
-&CurrentPage=1
 &EndTime=1600066800000
 &PId=xxx@74xxx
 &RegionId=cn-hangzhou
