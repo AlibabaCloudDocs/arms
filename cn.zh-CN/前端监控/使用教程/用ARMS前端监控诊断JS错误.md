@@ -70,6 +70,8 @@ JS错误详情信息包括首次发现时间、首次发现版本（可选上报
 
 2.  在Source Map文件对话框中选择已有Source Map文件，或上传新的Source Map文件，并单击**确定**。
 
+    **说明：** 一次最多可以上传5个。一批一批上传
+
     ![Source Map文件](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/1148350161/p212641.png)
 
     ARMS前端监控将利用Source Map文件还原准确的JS错误位置，如果选择的Source Map能够匹配出源码的错误，则原始错误位置将以红色字体标注于**源代码**区域中。如下图所示，经过解析后就可以一目了然地看出是哪个文件里面的哪一行出现错误。除此之外，错误堆栈的每一行都可以使用Source Map做源码映射。
