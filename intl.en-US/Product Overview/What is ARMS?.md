@@ -12,7 +12,7 @@ ARMS provides the following sub-services and function modules for various monito
 
 ## Application Monitoring
 
-ARMS Application Monitoring is an application performance management \(APM\) service. To monitor an application, you only need to install the ARMS agent. You do not need to modify the code of the application. The ARMS agent helps you identify abnormal and slow API operations, view request parameters, and detect system bottlenecks. This improves the efficiency of online troubleshooting.
+ARMS Application Monitoring is an application performance management \(APM\) service. To monitor an application, you only need to install the ARMS agent. You do not need to modify the code of the application. The ARMS agent helps you identify abnormal or slow API operations, view request parameters, and detect system bottlenecks. This improves the efficiency of online troubleshooting.
 
 **Note:** The asterisk \(\*\) indicates that [Tracing Analysis](/intl.en-US/Product Introduction/What is Tracing Analysis?.md) must be activated.
 
@@ -26,15 +26,17 @@ For more information about ARMS Browser Monitoring, see [What is ARMS Browser Mo
 
 ## Prometheus Monitoring
 
-Prometheus Monitoring is a managed monitoring service of ARMS. Prometheus Monitoring is compatible with the open source Prometheus ecosystem. Prometheus Monitoring monitors a wide variety of components and provides various ready-to-use dashboards.
+Prometheus Monitoring is a managed monitoring service of ARMS that monitors a wide variety of components and provides various out-of-the-box dashboards. Prometheus Monitoring is compatible with the open source Prometheus ecosystem.
 
 For more information about ARMS Prometheus Monitoring, see [What is Prometheus Service?]()
 
-## Customer stories
+## Customer feedback
 
 The following figures show the comments of some ARMS customers.
 
 ## Activate ARMS
 
 Click the button below to go to the buy page of ARMS.
+
+
 
