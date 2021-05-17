@@ -15,7 +15,7 @@ The OpenTracing community provides multiple components that support the followin
 
 Use ASP.NET Core to instrument an application by performing the following steps:
 
-**Note:** You can click [here](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/demo/jaegerDotNetDemo.zip) to download the demo project. Then, you can go to the webapi.dotnetcore directory and perform the steps in the README.md file to run the program.
+**Note:** Download the [demo project](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/demo/jaegerDotNetDemo.zip). Go to the ManualDemo directory and run the program as instructed in the README.md file.
 
 1.  Install NuGet packages.
 
