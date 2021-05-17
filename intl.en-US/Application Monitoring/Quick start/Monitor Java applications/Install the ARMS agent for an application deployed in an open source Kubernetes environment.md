@@ -17,7 +17,7 @@ ARMS can monitor only the following two types of applications: Deployment and St
 
 1.  Download the arms-pilot installation package by using one of the following methods:
 
-    -   Method 1: Click [here](http://arms-apm-hangzhou.oss-cn-hangzhou.aliyuncs.com/arms-pilot/arms-pilot-0.1.1-community.tgz) to download the arms-pilot installation package of the latest version.
+    -   Method 1: Download [arms-pilot installation package](http://arms-apm-hangzhou.oss-cn-hangzhou.aliyuncs.com/arms-pilot/arms-pilot-0.1.1-community.tgz).
     -   Method 2: Run the following `wget` command to download the arms-pilot installation package:
 
         ```
