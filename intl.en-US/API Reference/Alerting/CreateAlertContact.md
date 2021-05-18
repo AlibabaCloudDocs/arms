@@ -20,12 +20,10 @@ Creates an alert contact.
 |DingRobotWebhookUrl|String|No|https://oapi.dingtalk.com/robot/send?access\_token=91f2f6\*\*\*\*|The webhook URL of the DingTalk chatbot. For more information about how to obtain the URL, see [Configure a DingTalk chatbot to send alert notifications](https://www.alibabacloud.com/help/zh/doc-detail/106247.htm). You must specify at least one of the following parameters: PhoneNum, Email, and DingRobotWebhookUrl.
 
  **Note:** Enter `alert` in the custom keyword field of DingTalk chatbot security settings. |
-|SystemNoc|Boolean|No|true|Specifies whether to receive system notifications. Valid values:
+|SystemNoc|Boolean|No|true|Specifies whether the alert contact receives system notifications. Valid values:
 
  -   `true`: receives system notifications.
 -   `false`: does not receive system notifications. |
-
-You must specify at least one of the Email, PhoneNum, and DingRobotWebhookUrl parameters.
 
 ## Response parameters
 
@@ -39,7 +37,7 @@ You must specify at least one of the Email, PhoneNum, and DingRobotWebhookUrl pa
 Sample requests
 
 ```
-http(s)://[Endpoint]/? Action=CreateAlertContact
+http(s)://[Endpoint]/?Action=CreateAlertContact
 &ContactName=JohnDoe
 &DingRobotWebhookUrl=https://oapi.dingtalk.com/robot/send?access_token=91f2f6****
 &Email=someone@example.com
