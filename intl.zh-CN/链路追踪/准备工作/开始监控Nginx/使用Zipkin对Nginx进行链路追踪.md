@@ -18,7 +18,7 @@ Nginx是一款自由的、开源的、高性能的HTTP服务器和反向代理�
 
 5.  在下方表格的相关信息列中，单击接入点信息末尾的复制图标。
 
-    ![接入点信息-zipkin](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/8470437061/p188458.png)
+    ![接入点信息-zipkin](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/7422345161/p188458.png)
 
     **说明：** 如果应用部署于阿里云生产环境，则选择私网接入点，否则选择公网接入点。
 
@@ -47,11 +47,11 @@ Nginx是一款自由的、开源的、高性能的HTTP服务器和反向代理�
 
 3.  访问Nginx页面。
 
-    在浏览器上访问localhost/nginx.conf或者curl "localhost/nginx.conf"。
+    在浏览器访问localhost/nginx.conf或者curl "localhost/nginx.conf"。
 
 4.  查看Nginx链路数据。
 
-    登录[链路追踪Tracing Analysis控制台](https://tracing-sg.console.aliyun.com/)可以查看应用nginx-jaeger的链路数据。
+    登录[链路追踪Tracing Analysis控制台](https://tracing-sg.console.aliyun.com/)可以查看应用nginx-zipkin的链路数据。
 
 
 ## 在Docker上部署和跟踪Nginx
@@ -63,7 +63,7 @@ Nginx是一款自由的、开源的、高性能的HTTP服务器和反向代理�
     tar -xzvf nginx-zipkin-docker.tgz
     cd nginx-zipkin
     // 编译docker
-    docker build --rm --tag nginx-jaeger:0.1 .
+    docker build --rm --tag nginx-zipkin:0.1
     ```
 
 2.  运行Docker。
