@@ -2,7 +2,11 @@
 
 在使用链路追踪控制台追踪应用的链路数据之前，需要通过客户端将应用数据上报至链路追踪。本文介绍如何通过Jaeger客户端上报C++ 应用数据。
 
-## 直接上报数据
+
+
+
+
+## 快速开始
 
 1.  运行以下命令，从官方网站获取[jaeger-client-cpp](https://github.com/jaegertracing/jaeger-client-cpp)。
 
@@ -21,7 +25,7 @@
         make
     ```
 
-3.  下载原生Jaeger Agent [jaeger-agent](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/tools/jaeger-agent)，并用以下参数启动Agent，以将数据上报至链路追踪Tracing Analysis。
+3.  下载原生[Jaeger Agent](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/tools/jaeger-agent)，并用以下参数启动Agent，以将数据上报至链路追踪Tracing Analysis。
 
     **说明：** 请将`<endpoint>`替换成链路追踪控制台概览页面上相应客户端和相应地域的接入点。关于获取接入点信息的方法，请参见前提条件中的[获取接入点信息](#tab2)。
 
@@ -91,7 +95,7 @@
     }
     ```
 
-4.  下载原生Jaeger Agent [jaeger-agent](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/tools/jaeger-agent)，并用以下参数启动Agent，以将数据上报至链路追踪Tracing Analysis。
+4.  下载原生[Jaeger Agent](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/tools/jaeger-agent)，并用以下参数启动Agent，以将数据上报至链路追踪Tracing Analysis。
 
     **说明：** 请将`<endpoint>`替换成链路追踪控制台概览页面上相应客户端和相应地域的接入点。关于获取接入点信息的方法，请参见前提条件中的[获取接入点信息](#tab2)。
 
