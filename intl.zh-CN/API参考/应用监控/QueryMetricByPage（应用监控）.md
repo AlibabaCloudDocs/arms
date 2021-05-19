@@ -19,7 +19,7 @@
 |OrderBy|String|否|rpc|排序依据，可设为任一测量数据。 |
 |Filters.N.Key|String|是|pid|筛选条件组合，必须添加`pid`和`regionId`条件，`pid`获取方式，请参见[如何获取应用pid](#section_bkl_3j6_ezg)。|
 |Filters.N.Value|String|是|atc889zkcf@d8deedfa9\*\*\*\*\*\*|筛选条件组合，必须添加`pid`和`regionId`条件，`pid`获取方式，请参见[如何获取应用pid](#section_bkl_3j6_ezg)。|
-|Dimensions.N|RepeatList|否|\["detector\_browser","detector\_device"\]|指标对应的维度，请参见[可查询的应用监控指标](#section_tq8_ysr_srb)。最多可添加5个。|
+|Dimensions.N|RepeatList|否|pid|指标对应的维度，请参见[可查询的应用监控指标](#section_tq8_ysr_srb)。最多可添加5个。|
 |Order|String|否|ASC|排序标准：
 
 -   `ASC`：升序
