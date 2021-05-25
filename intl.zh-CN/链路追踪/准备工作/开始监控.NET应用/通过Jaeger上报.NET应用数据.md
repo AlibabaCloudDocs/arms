@@ -2,6 +2,8 @@
 
 在使用链路追踪控制台追踪应用的链路数据之前，需要通过客户端将应用数据上报至链路追踪。本文介绍如何通过Jaeger客户端上报 .NET应用数据（此方法同样适用于使用C\#语言开发的应用）。
 
+
+
 [Jaeger](https://www.jaegertracing.io/)是Uber推出的一款开源分布式追踪系统，兼容OpenTracing API，已在Uber大规模使用，且已加入[CNCF开源组织](https://www.cncf.io/blog/2017/09/13/cncf-hosts-jaeger/)。其主要功能是聚合来自各个异构系统的实时监控数据。
 
 目前OpenTracing社区已有许多组件可支持各种 .NET框架，例如：
@@ -11,11 +13,15 @@
 -   [.NET Core BCL types \(HttpClient\)](https://github.com/opentracing-contrib/csharp-netcore)
 -   [gRPC](https://github.com/opentracing-contrib/csharp-netcore)
 
+
+
 ## 通过netcore组件自动埋点
 
 请按照以下步骤通过netcore组件埋点。
 
 **说明：** 下载[Demo源码](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/demo/jaegerDotNetDemo.zip)，并进入webapi.dotnetcore目录，按照Readme的说明运行程序。
+
+Demo源码的运行版本要求：Jaeger为0.2.2版本，Netcore.app为2.1.0版本。
 
 1.  安装NuGet包。
 
