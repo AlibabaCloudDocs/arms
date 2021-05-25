@@ -21,7 +21,6 @@ ARMS在业务日志中关联调用链TraceId的功能基于MDC（Mapped Diagnost
     **说明：**
 
     -   开启此开关后，会在业务日志中自动生成调用链的TraceId。
-    -   如果您还需要绑定Project和Logstore，实现精准定位业务异常问题，具体操作，请参见[通过调用链路和日志分析定位业务异常问题](/intl.zh-CN/应用监控/使用教程/通过调用链路和日志分析定位业务异常问题.md)。
 5.  在您业务日志的Layout的Pattern属性中添加`%X{EagleEye-TraceID}`配置。以Logback组件添加此配置为例，如下图所示。
 
     **说明：** 如何在业务代码中获取\{EagleEye-TraceID\}，请参见[ARMS SDK使用说明](/intl.zh-CN/应用监控/参考信息/ARMS SDK使用说明.md)。
