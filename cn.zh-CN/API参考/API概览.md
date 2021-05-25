@@ -1,14 +1,16 @@
 # API概览
 
-ARMS提供应用监控、前端监控、Prometheus监控、自定义监控和报警的API。本文列出了全部API文档链接及API功能说明。
+ARMS提供应用监控、前端监控、Prometheus监控、业务监控、自定义监控、访问控制和报警的API。本文列出了全部API文档链接及API功能说明。
 
 ## 应用监控
 
 |API|描述|
 |---|--|
-|[ListTraceApps](/cn.zh-CN/API参考/应用监控/ListTraceApps.md)|获取指定地域下全部应用监控任务的列表。|
 |[ConfigApp](/cn.zh-CN/API参考/应用监控/ConfigApp.md)|打开或关闭应用监控的Agent总开关，或者查询Agent总开关的状态。|
 |[DeleteTraceApp](/cn.zh-CN/API参考/应用监控/DeleteTraceApp.md)|删除应用。|
+|[ListTraceApps](/cn.zh-CN/API参考/应用监控/ListTraceApps.md)|获取指定地域下全部应用监控任务的列表。|
+|[GetTraceApp](/cn.zh-CN/API参考/应用监控/GetTraceApp.md)|获取应用监控任务详情。|
+|[GetAppApiByPage](/cn.zh-CN/API参考/应用监控/GetAppApiByPage.md)|分页查询前端应用接口数据。|
 |[SearchTraceAppByName](/cn.zh-CN/API参考/应用监控/SearchTraceAppByName.md)|按应用名称查询应用监控任务。|
 |[SearchTraceAppByPage](/cn.zh-CN/API参考/应用监控/SearchTraceAppByPage.md)|分页查询应用监控任务。|
 |[SearchTraces](/cn.zh-CN/API参考/应用监控/SearchTraces.md)|查询调用链列表信息，可根据时间、应用名称、IP地址、Span名称和Tag等信息筛选调用链。|
@@ -16,7 +18,9 @@ ARMS提供应用监控、前端监控、Prometheus监控、自定义监控和报
 |[GetTrace](/cn.zh-CN/API参考/应用监控/GetTrace.md)|获取调用链详情。|
 |[GetMultipleTrace](/cn.zh-CN/API参考/应用监控/GetMultipleTrace.md)|获取多个调用链的详情。|
 |[QueryMetricByPage（应用监控）](/cn.zh-CN/API参考/应用监控/QueryMetricByPage（应用监控）.md)|分页查询应用监控的相关监控指标。|
-|[t1962822.md\#](/cn.zh-CN/API参考/应用监控/SaveTraceAppConfig.md)|进行应用监控的自定义设置（如调用链采样设置、Agent开关等）。|
+|[SaveTraceAppConfig](/cn.zh-CN/API参考/应用监控/SaveTraceAppConfig.md)|进行应用监控的自定义设置（如调用链采样设置、Agent开关等）。|
+|[DescribeTraceLicenseKey](/cn.zh-CN/API参考/应用监控/DescribeTraceLicenseKey.md)|列出LicenseKey。|
+|[GetAgentDownloadUrl](/cn.zh-CN/API参考/应用监控/GetAgentDownloadUrl.md)|获取探针下载链接。|
 
 ## 前端监控
 
@@ -38,6 +42,13 @@ ARMS提供应用监控、前端监控、Prometheus监控、自定义监控和报
 |[AddIntegration](/cn.zh-CN/API参考/Prometheus监控/AddIntegration.md)|集成ARMS Prometheus监控的大盘以及采集规则。|
 |[GetPrometheusApiToken](/cn.zh-CN/API参考/Prometheus监控/GetPrometheusApiToken.md)|获取集成ARMS Prometheus监控所需的Token。|
 |[ListDashboards](/cn.zh-CN/API参考/Prometheus监控/ListDashboards.md)|获取集群的Grafana大盘的列表。|
+|[CreatePrometheusAlertRule](/cn.zh-CN/API参考/Prometheus监控/CreatePrometheusAlertRule.md)|创建告警规则。|
+|[UpdatePrometheusAlertRule](/cn.zh-CN/API参考/Prometheus监控/UpdatePrometheusAlertRule.md)|更新告警规则。|
+|[ListPrometheusAlertRules](/cn.zh-CN/API参考/Prometheus监控/ListPrometheusAlertRules.md)|查看Prometheus告警规则列表。|
+|[DescribePrometheusAlertRule](/cn.zh-CN/API参考/Prometheus监控/DescribePrometheusAlertRule.md)|查看Prometheus告警规则。|
+|[DeletePrometheusAlertRule](/cn.zh-CN/API参考/Prometheus监控/DeletePrometheusAlertRule.md)|删除Prometheus告警规则。|
+|[ListPrometheusAlertTemplates](/cn.zh-CN/API参考/Prometheus监控/ListPrometheusAlertTemplates.md)|查看Prometheus告警模板列表。|
+|[ListActivatedAlerts](/cn.zh-CN/API参考/Prometheus监控/ListActivatedAlerts.md)|查询已经触发的告警列表。|
 
 ## 业务监控
 
@@ -53,6 +64,13 @@ ARMS提供应用监控、前端监控、Prometheus监控、自定义监控和报
 |---|--|
 |[QueryDataset（通用数据集）](/cn.zh-CN/API参考/自定义监控/QueryDataset（通用数据集）.md)|查询通用数据集中的数据。|
 |[QueryDataset（下钻数据集）](/cn.zh-CN/API参考/自定义监控/QueryDataset（下钻数据集）.md)|查询下钻数据集中的数据。|
+
+## 访问控制
+
+|API|描述|
+|---|--|
+|[OpenXtraceDefaultSLR](/cn.zh-CN/API参考/访问控制/OpenXtraceDefaultSLR.md)|开通链路追踪服务关联角色AliyunServiceRoleForXtrace。|
+|[OpenArmsDefaultSLR](/cn.zh-CN/API参考/访问控制/OpenArmsDefaultSLR.md)|开通ARMS服务关联角色AliyunServiceRoleForARMS。|
 
 ## 报警
 
