@@ -249,7 +249,7 @@ This topic provides the release notes of Application Real-Time Monitoring Servic
 
 -   Application monitoring
     -   The Dubbo and MariaDB plug-ins are supported.
-    -   Custom configurations are supported to obtain the value that is bound by SQL. The variable value that is bound to the PrepareStatement parameter can be captured. The configurations take effect without the need to restart your application.For more information, see [Configure advanced settings](/intl.en-US/Application Monitoring/Console functions/Application Settings/Custom configuration.mdsc_advanced_options).
+    -   Custom configurations are supported to obtain the value that is bound by SQL. The variable value that is bound to the PrepareStatement parameter can be captured. The configurations take effect without the need to restart your application. For more information, see [Configure advanced settings](/intl.en-US/Application Monitoring/Console functions/Application Settings/Custom configuration.mdsc_advanced_options).
 
 **Optimized feature:**
 
@@ -335,7 +335,7 @@ This topic provides the release notes of Application Real-Time Monitoring Servic
 -   Application monitoring
     -   The traditional method to enable application monitoring for Java applications is optimized.For more information, see [Manually install the ARMS agent for a Java application](/intl.en-US/Application Monitoring/Quick start/Monitor Java applications/Manually install the ARMS agent for a Java application.md).
 -   Frontend monitoring
-    -   The feature of locating JavaScript errors is optimized. In most cases, online JavaScript code is compressed into one line. An error cannot be located based on the error line number that is reported by the browser. The frontend monitoring feature of ARMS can locate errors by using Source Map.For more information, see [Diagnose JS errors by using ARMS browser monitoring](/intl.en-US/Browser Monitoring/Tutorials/Diagnose JS errors by using ARMS browser monitoring.md).
+    -   The feature of locating JavaScript errors is optimized. In most cases, online JavaScript code is compressed into one line. An error cannot be located based on the error line number that is reported by the browser. The frontend monitoring feature of ARMS can locate errors by using Source Map.For more information, see [Diagnose JS errors by using the ARMS frontend monitoring feature](/intl.en-US/Browser Monitoring/Tutorials/Diagnose JS errors by using the ARMS frontend monitoring feature.md).
 
 ## V2.4.6
 
