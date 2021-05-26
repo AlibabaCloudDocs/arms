@@ -111,5 +111,5 @@ Use the obtained STS token for logons and the URL of a Tracing Analysis console 
 
 The sample code that is used in this topic is based on Tracing Analysis SDK for Java. The sample code is used to embed the Applications page of the Tracing Analysis console.
 
-Click [here](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/tools/embedPage.zip) to download the sample code.
+[Obtain sample code](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/tools/embedPage.zip)
 
