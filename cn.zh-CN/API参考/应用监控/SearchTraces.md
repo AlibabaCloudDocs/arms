@@ -2,7 +2,7 @@
 
 调用SearchTraces接口查询调用链列表信息，可根据时间、应用名称、IP地址、Span名称和Tag等信息筛选调用链。
 
-****
+**说明：** 该接口最多返回100条数据。如需查询全量数据，建议使用SearchTracesByPage。具体详情，请参见[SearchTracesByPage](~~175866~~)。
 
 ## 调试
 
@@ -34,7 +34,7 @@
 |名称|类型|示例值|描述|
 |--|--|---|--|
 |RequestId|String|4C518054-852F-4023-ABC1-4AF95FF7\*\*\*\*|请求ID |
-|TraceInfos|Array| |返回的调用链路详细信息 |
+|TraceInfos|Array of TraceInfo| |返回的调用链路详细信息 |
 |Duration|Long|6|调用链路耗时（毫秒） |
 |OperationName|String|get\*\*\*|埋点的接口名称 |
 |ServiceIp|String|172.20.\*\*.\*\*|应用所在机器的IP地址 |
@@ -57,7 +57,7 @@ http(s)://[Endpoint]/?Action=SearchTraces
 
 正常返回示例
 
-`XML` 格式
+`XML`格式
 
 ```
 <SearchTracesResponse>
@@ -89,7 +89,7 @@ http(s)://[Endpoint]/?Action=SearchTraces
 </SearchTracesResponse>
 ```
 
-`JSON` 格式
+`JSON`格式
 
 ```
 {
