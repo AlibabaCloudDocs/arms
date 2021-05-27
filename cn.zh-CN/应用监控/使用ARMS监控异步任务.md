@@ -119,3 +119,5 @@ ARMS默认支持监控使用Spring @Async标签实现的异步任务。对于下
 
 配置完成后，您可以在调用链路详情页查看异步任务的调用链详情。具体详情，请参见[调用链路查询](/cn.zh-CN/应用监控/控制台功能/调用链路查询.md)。
 
+![异步调用详情](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/5381012261/p278209.png)
+
