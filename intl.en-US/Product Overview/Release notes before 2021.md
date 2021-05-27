@@ -413,7 +413,7 @@ This topic provides the release notes of Application Real-Time Monitoring Servic
 
 -   Application monitoring
 
-    -   The JVM monitoring feature is added. This allows you to monitor important metrics of JVM, such as heap memory, non-heap memory, and the number of threads.For more information, see [JVM monitoring](/intl.en-US/Application Monitoring/Console functions/Application details/JVM monitoring.md).
+    -   The JVM monitoring feature is added. This allows you to monitor important metrics of JVM, such as heap memory, non-heap memory, and the number of threads. For more information, see [JVM monitoring](/intl.en-US/Application Monitoring/Console functions/Application details/JVM monitoring.md).
     -   The host monitoring feature is added. This allows you to monitor a series of host performance metrics, such as CPU, memory, disk, and network traffic.For more information, see [t152241.md\#](/intl.en-US/Application Monitoring/Console functions/Application details/Host monitoring.md).
     -   The custom configuration feature is added. This allows you to modify configurations on the user interface \(UI\), such as trace sampling, agent switch, and threshold settings.For more information, see [t152246.md\#](/intl.en-US/Application Monitoring/Console functions/Application Settings/Custom configuration.md).
 -   Frontend monitoring
