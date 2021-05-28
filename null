@@ -1,148 +1,234 @@
-# Use Prometheus Service to monitor a Kafka application
+# 通过阿里云Prometheus监控Redis
 
-To monitor a Kafka application by using Prometheus Service, you must instrument the Kafka application to expose data, use Prometheus Service to capture the data, configure a Grafana dashboard to display the data, and then create an alert.
+使用阿里云Prometheus监控抓取Redis数据，借助Prometheus Grafana大盘来展示Redis数据，并创建报警，即可实现利用Prometheus监控Redis的目的。本文以阿里云容器服务K8s集群和阿里云容器镜像服务为例，介绍如何通过Prometheus监控Redis。
 
-A Container Service for Kubernetes \(ACK\) cluster is connected to Prometheus Service. For more information, see [Connect an ACK cluster to Prometheus Service]().
+里云容器服务K8s集群已接入阿里云Prometheus监控。如何接入，请参见[容器服务Kubernetes版集群]()。
 
-## Procedure
+## 操作流程
 
-The following figure shows the process of using Prometheus Service to monitor a Kafka application.
+通过阿里云Prometheus监控Redis的操作流程如下图所示。
 
-![How It Works](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/1253455161/p64446.png)
+![How It Works](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/6467545161/p149087.png)
 
-## Step 1: Configure the port of the JMX service
+## 步骤一：部署应用
 
-To enable the Java Management Extensions \(JMX\) service in a Kafka application to obtain resource information, perform the following steps:
+将redis-exporter镜像部署至容器服务K8s集群，以便抓取Redis数据。操作步骤如下：
 
-1.  Add `export JMX_PORT="9999"` to the first line in the /opt/kafka/kafka\_2.11-0.8.2.1/bin/kafka-server-start.sh file.
+1.  登录[容器服务管理控制台](https://cs.console.aliyun.com)。
 
-2.  Restart the Kafka application.
+2.  在左侧导航栏，选择**集群**。
+
+3.  在集群列表页面，找到目标集群，在其右侧**操作**列单击**应用管理**。
+
+4.  创建容器组。
+
+    1.  在左侧导航栏，选择**工作负载** \> **无状态**。
+
+    2.  在**无状态**页面，单击**使用模板创建**。
+
+    3.  在**创建**页面的**模板**代码框输入以下内容，然后单击**创建**。
+
+        **说明：** 请将<地址\>和<密码\>替换为Redis的对应值。您也可以使用ARMS提供的示例值体验：
+
+        -   Redis地址：redis://r-bp167pgqkqh7h25coypd.redis.rds.aliyuncs.com:6379
+        -   Redis密码：Arms1234
+        ```
+        apiVersion: apps/v1 # for versions before 1.8.0 use apps/v1beta1
+        kind: Deployment
+        metadata:
+          name: redis-exporter
+          labels:
+            app: redis-exporter
+        spec:
+          replicas: 1
+          selector:
+            matchLabels:
+              app: redis-exporter
+          template:
+            metadata:
+              labels:
+                app: redis-exporter
+            spec:
+              containers:
+              - name: redis-exporter
+                imagePullPolicy: Always
+                env:
+                - name: REDIS_ADDR
+                  value: "<地址>"
+                - name: REDIS_PASSWORD
+                  value: "<密码>"
+                - name: REDIS_EXPORTER_DEBUG
+                  value: "1"
+                image: oliver006/redis_exporter
+                ports:
+                - containerPort: 9121
+                  name: redis-exporter
+        ```
+
+    **无状态**页面显示创建的容器组。
+
+    ![redis-exporter](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/7153455161/p249085.png)
+
+5.  创建服务。
+
+    1.  在左侧导航栏，选择**服务与路由** \> **服务**。
+
+    2.  在**服务**页面，单击**使用YAML创建资源**。
+
+    3.  在**创建**页面的**模板**代码框输入以下内容，然后单击**创建**。
+
+        ```
+        apiVersion: v1
+        kind: Service
+        metadata:
+          labels:
+            app: redis-exporter
+          name: redis-exporter
+        spec:
+          ports:
+          - name: redis-exporter
+            port: 9121
+            protocol: TCP
+            targetPort: 9121
+          type: NodePort
+          selector:
+            app: redis-exporter
+        ```
+
+    **服务**页面显示创建的服务。
+
+    ![redis-exporter服务](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/7153455161/p249091.png)
 
 
-## Step 2: Instrument the Kafka application
+## 步骤二：配置服务发现
 
-Enable jmx\_exporter to allow access to JMX information by using HTTP so that Prometheus Service can capture data.
+配置阿里云Prometheus监控的服务发现以接收Redis数据的操作步骤如下：
 
-1.  Download the [kafka.yml](https://raw.githubusercontent.com/prometheus/jmx_exporter/master/example_configs/kafka-0-8-2.yml) file to the /opt/exporter\_kafka/ directory.
+1.  登录[ARMS控制台](https://arms.console.aliyun.com/#/home)。
 
-2.  Add `hostPort: localhost:9999` to the first line in the downloaded /opt/exporter\_kafka/kafka-0.8.2.yml file.
+2.  在左侧导航栏单击**Prometheus监控**。
 
-    This operation exposes the port of the JMX service to jmx\_exporter.
+3.  在**Prometheus监控**页面的顶部菜单栏，选择K8s集群所在的地域，并在目标集群右侧的**操作**列单击**设置**。
 
-3.  Download the [executable file](https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_httpserver/0.12.0/jmx_prometheus_httpserver-0.12.0-jar-with-dependencies.jar) of jmx\_exporter to the /opt/exporter\_kafka/ directory.
+4.  在设置页面，单击**服务发现**页签，在**服务发现**页签下，单击**ServiceMonitor**页签。
 
-4.  Run the following command to enable jmx\_exporter:
+5.  在**ServiceMonitor**页签下，单击**添加ServiceMonitor**。
+
+6.  在**添加ServiceMonitor**对话框中输入以下内容，然后单击**确定**。
 
     ```
-    java -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=9998 -cp /opt/exporter_kafka/jmx_prometheus_httpserver-0.12.0-jar-with-dependencies.jar io.prometheus.jmx.WebServer 9997 /opt/exporter_kafka/kafka-0-8-2.yml &
+    apiVersion: monitoring.coreos.com/v1
+    kind: ServiceMonitor
+    metadata:
+      # 填写一个唯一名称
+      name: redis-exporter
+      # 填写目标命名空间
+      namespace: default
+    spec:
+      endpoints:
+      - interval: 30s
+        # Redis Grafana模版ID为763
+        # 填写service.yaml中prometheus exporter对应的Port的Name字段的值
+        port: redis-exporter
+        # 填写Prometheus Exporter代码中暴露的地址
+        path: /metrics
+      namespaceSelector:
+        any: true
+        # Demo的命名空间
+        matchLabels:
+          # 填写service.yaml的Label字段以定位目标service.yaml
+          app: redis-exporter
     ```
 
-    Run the following command to check whether jmx\_exporter works as expected:
+    **ServiceMonitor**页签下显示配置的服务发现。
 
-    ```
-    curl http://<IP address of the server where jmx_exporter is deployed>:9997/metrics
-    ```
-
-    For more information about Kafka metrics, see [Monitoring Kafka](https://docs.confluent.io/current/kafka/monitoring.html).
+    ![Redis服务发现](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/7153455161/p249103.png)
 
 
-## Step 3: Configure Prometheus Service
+## 步骤三：配置大盘
 
-To configure the Prometheus.yaml file to allow Prometheus Service to capture the data of the Kafka application, perform the following steps:
+配置Grafana大盘以展示数据的操作步骤如下：
 
-1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
+1.  打开[Grafana大盘概览页](http://g.console.aliyun.com/)。
 
-2.  In the left-side navigation pane, click **Prometheus Monitoring**.
+2.  在左侧导航栏选择**+** \> **Import**。
 
-3.  In the top navigation bar of the **Prometheus Monitoring** page, select the region where the ACK cluster resides. Find the cluster and click **Settings** in the **Actions** column.
+3.  在Import页面的**Import via grafna.com**文本框，输入Prometheus提供的Redis大盘模板的ID763，然后在其右侧单击**Load**。
 
-4.  On the Settings page, click the **Prometheus Settings** tab.
+    ![Import Grafana Dashboard](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/6316294161/p61709.png)
 
-5.  On the Prometheus Settings tab, enter the following code in the Prometheus.yaml code editor and click **Save**:
+4.  在Import页面输入以下信息，然后单击**Import**。
 
-    ```
-    global:
-      scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
-      evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
-    scrape_configs:
-      - job_name: 'kafka'
-        static_configs:
-        - targets: ['121.40.XX.XX:9997']
-    ```
+    ![Import Grafana Dashboard with Options](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/9055864161/p63219.png)
 
+    1.  在**Name**文本框中输入自定义的大盘名称。
 
-## Step 4: Configure a Grafana dashboard
+    2.  在**Folder**下拉框中选择您的阿里云容器服务K8s集群。
 
-To configure a Grafana dashboard to display data, perform the following steps:
+    3.  在**prom**下拉框中选择您的阿里云容器服务K8s集群。
 
-1.  Go to the [homepage of Grafana dashboards](http://g.console.aliyun.com/).
+    配置完毕后的Grafana大盘如图所示。
 
-2.  In the left-side navigation pane, choose **+** \> **Import**.
-
-3.  On the Import page, enter 10973, which is the ID of the Kafka Grafana template provided by Prometheus, in the **Import via grafna.com** field and click **Load** next to the field.
-
-    ![Import Grafana Dashboard](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/2116394161/p61709.png)
-
-4.  On the Import page, perform the following operations and click **Import**:
-
-    ![Prometheus-Kafka](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7224898161/p245115.png)
-
-    1.  Enter a dashboard name in the **Name** field.
-
-    2.  Select your ACK cluster from the **Folder** drop-down list.
-
-    3.  Select your ACK cluster from the **Select a Prometheus data source** drop-down list.
-
-    The following figure shows the configured Grafana dashboard.
-
-    ![prometheus_kafka_grafana](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7088468061/p63693.png)
+    ![ARMS Prometheus Grafana Redis](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/9384298951/p63223.png)
 
 
-## Step 5: Create an alert
+## 步骤四：创建Prometheus监控报警
 
-To create an alert to monitor metrics of Prometheus Service, perform the following steps:
+1.  登录[ARMS控制台](https://arms.console.aliyun.com/#/home)。
 
-1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
+2.  在左侧导航栏，选择**Prometheus监控**。
 
-2.  In the left-side navigation pane, click **Prometheus Monitoring**.
+3.  在**Prometheus监控**页面的顶部菜单栏，选择K8s集群所在的地域，单击目标K8s集群的名称。
 
-3.  In the top navigation bar, select a region. Then, click the name of the required Kubernetes cluster.
+4.  在左侧导航栏，选择**报警配置**。
 
-4.  In the left-side navigation pane, choose **Alarm configuration beta**. Then, click **Create Alert** in the upper-right corner.
+5.  在报警配置页面右上角，单击**创建报警**。
 
-5.  In the **Create Alert** dialog box, configure the following parameters, and then click **OK**.
+6.  在**创建报警**面板，执行以下操作：
 
-    **Note:** The **Time** parameter is not supported.
+    1.  从**告警模板**下拉列表，选择模板。
 
-    1.  Enter a name in the **Rule Name** field. Example: alerts for inbound traffic.
+    2.  在**规则名称**文本框，输入规则名称，例如：网络接收压力报警。
 
-    2.  Enter an expression that uses a PromQL statement. Example: `(sum(rate(kube_state_metrics_list_total{job="kube-state-metrics",result="error"}[5m])) / sum(rate(kube_state_metrics_list_total{job="kube-state-metrics"}[5m]))) > 0.01`.
+    3.  在**告警表达式**文本框，输入告警表达式。例如：`(sum(rate(kube_state_metrics_list_total{job="kube-state-metrics",result="error"}[5m])) / sum(rate(kube_state_metrics_list_total{job="kube-state-metrics"}[5m]))) > 0.01`。
 
-        **Note:** An error may be reported if a PromQL statement contains a dollar sign \(`$`\). You must remove the equal sign \(`=`\) and the parameters on both sides of the equal sign \(`=`\) from the statement that contains the dollar sign \($\). For example, change `sum (rate (container_network_receive_bytes_total{instance=~"^$HostIp.*"}[1m]))` to `sum (rate (container_network_receive_bytes_total[1m]))`.
+        **说明：** PromQL语句中包含的`$`符号会导致报错，您需要删除包含$符号的语句中`=`左右两边的参数及`=`。例如：将`sum (rate (container_network_receive_bytes_total{instance=~"^$HostIp.*"}[1m]))`修改为`sum (rate (container_network_receive_bytes_total[1m]))`。
 
-    3.  In the Labels section, click **Create Tag** to specify alert tags. The specified tags can be used as options for a dispatch rule.
+    4.  在**持续时间**文本框，输入时间，例如：1分钟，当告警条件连续1分组都满足时才会发送告警。
 
-    4.  In the Annotations section, specify a template for alert messages. Click **Create Annotation**. Set Key to message and Value to \{\{variable name\}\} alert message. The specified annotation is in the format of message:\{\{variable name\}\} alert notification. Example: message:\{\{$labels.pod\_name\}\} restart.
+    5.  在**告警消息**文本框，输入告警消息。
 
-        You can customize a variable name or select an existing tag as the variable name. Existing tags:
+    6.  在**高级配置**的**标签**区域，单击**创建标签**可以设置报警标签，设置的标签可用作分派规则的选项。
 
-        -   The tags that are carried in the metrics of an alert rule expression.
-        -   The tags that are created when you create an alert rule. For more information, see [Create an alert]().
-        -   The default tags provided by ARMS. The following table describes the default tags.
+    7.  在**高级配置**的**注释**区域，单击**创建注释**，设置键为message，设置值为\{\{变量名\}\}告警信息。设置完成后的格式为：`message:{{变量名}}告警信息`，例如：`message:{{$labels.pod_name}}重启`。
 
-            |Tag|Description|
-            |---|-----------|
-            |alertname|The name of the alert. The format is <Alert name\>\_<Cluster name\>.|
-            |\_aliyun\_arms\_alert\_level|The level of the alert.|
-            |\_aliyun\_arms\_alert\_type|The type of the alert.|
-            |\_aliyun\_arms\_alert\_rule\_id|The ID of the alert rule.|
-            |\_aliyun\_arms\_region\_id|The ID of the region.|
-            |\_aliyun\_arms\_userid|The ID of the user.|
-            |\_aliyun\_arms\_involvedObject\_type|The subtype of the associated object, for example, ManagedKubernetes or ServerlessKubernetes.|
-            |\_aliyun\_arms\_involvedObject\_kind|The type of the associated object, for example, app or cluster.|
-            |\_aliyun\_arms\_involvedObject\_id|The ID of the associated object.|
-            |\_aliyun\_arms\_involvedObject\_name|The name of the associated object.|
+        您可以自定义变量名，也可以选择已有的标签作为变量名。已有的标签包括：
 
-    ![Prometheus-Create alarm](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/2026378061/p182018.png)
+        -   报警规则表达式指标中携带的标签。
+        -   通过报警规则创建的标签，请参见[创建报警]()。
+        -   ARMS系统自带的默认标签，默认标签说明如下。
+
+            |标签|说明|
+            |--|--|
+            |alertname|告警名称，格式为：告警名称\_集群名称。|
+            |\_aliyun\_arms\_alert\_level|告警等级。|
+            |\_aliyun\_arms\_alert\_type|告警类型。|
+            |\_aliyun\_arms\_alert\_rule\_id|告警规则对应的ID。|
+            |\_aliyun\_arms\_region\_id|地域ID。|
+            |\_aliyun\_arms\_userid|用户ID。|
+            |\_aliyun\_arms\_involvedObject\_type|关联对象子类型，如ManagedKubernetes，ServerlessKubernetes。|
+            |\_aliyun\_arms\_involvedObject\_kind|关联对象分类，如app，cluster。|
+            |\_aliyun\_arms\_involvedObject\_id|关联对象ID。|
+            |\_aliyun\_arms\_involvedObject\_name|关联对象名称。|
+
+    8.  从**通知策略**下拉列表，选择通知策略。
+
+        如何创建通知策略，请参见[设置报警通知策略]()。
+
+    9.  单击**确定**。
+
+    报警配置页面显示创建的报警。
+
+    ![8](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/0242584161/p245624.png)
 
 
