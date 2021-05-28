@@ -68,7 +68,7 @@
 
 配置Prometheus.yaml文件以抓取ZooKeeper数据的操作步骤如下：
 
-1.  登录[ARMS控制台](https://arms.console.aliyun.com/#/home)。
+1.  登录[ARMS控制台](https://arms-ap-southeast-1.console.aliyun.com/#/home)。
 
 2.  在左侧导航栏单击**Prometheus监控**。
 
@@ -118,7 +118,7 @@
 
 ## 步骤五：创建Prometheus监控报警
 
-1.  登录[ARMS控制台](https://arms.console.aliyun.com/#/home)。
+1.  登录[ARMS控制台](https://arms-ap-southeast-1.console.aliyun.com/#/home)。
 
 2.  在左侧导航栏，选择**Prometheus监控**。
 
@@ -172,7 +172,5 @@
     9.  单击**确定**。
 
     报警配置页面显示创建的报警。
-
-    ![8](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/0242584161/p245624.png)
 
 
