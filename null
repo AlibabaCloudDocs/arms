@@ -1,18 +1,18 @@
-# 通过阿里云Prometheus监控Redis
+# 通过阿里云Prometheus监控MySQL
 
-使用阿里云Prometheus监控抓取Redis数据，借助Prometheus Grafana大盘来展示Redis数据，并创建报警，即可实现利用Prometheus监控Redis的目的。本文以阿里云容器服务K8s集群和阿里云容器镜像服务为例，介绍如何通过Prometheus监控Redis。
+使用阿里云Prometheus监控抓取MySQL数据，借助Prometheus Grafana大盘来展示MySQL数据，并创建报警，即可实现利用Prometheus监控MySQL的目的。本文以阿里云容器服务K8s集群和阿里云容器镜像服务为例，介绍如何通过Prometheus监控MySQL。
 
-里云容器服务K8s集群已接入阿里云Prometheus监控。如何接入，请参见[容器服务Kubernetes版集群]()。
+阿里云容器服务K8s集群已接入阿里云Prometheus监控。如何接入，请参见[容器服务Kubernetes版集群]()。
 
 ## 操作流程
 
-通过阿里云Prometheus监控Redis的操作流程如下图所示。
+通过阿里云Prometheus监控MySQL的操作流程如下图所示。
 
 ![How It Works](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/6467545161/p149087.png)
 
 ## 步骤一：部署应用
 
-将redis-exporter镜像部署至容器服务K8s集群，以便抓取Redis数据。操作步骤如下：
+将Prometheus官方提供的mysqld-exporter镜像部署至容器服务K8s集群，以便抓取MySQL数据。操作步骤如下：
 
 1.  登录[容器服务管理控制台](https://cs.console.aliyun.com)。
 
@@ -28,46 +28,40 @@
 
     3.  在**创建**页面的**模板**代码框输入以下内容，然后单击**创建**。
 
-        **说明：** 请将<地址\>和<密码\>替换为Redis的对应值。您也可以使用ARMS提供的示例值体验：
+        **说明：** 请将<yourMySQLUsername\>、<yourMySQLPassword\>、<IP\>、<port\>替换为MySQL的对应值。
 
-        -   Redis地址：redis://r-bp167pgqkqh7h25coypd.redis.rds.aliyuncs.com:6379
-        -   Redis密码：Arms1234
         ```
         apiVersion: apps/v1 # for versions before 1.8.0 use apps/v1beta1
         kind: Deployment
         metadata:
-          name: redis-exporter
+          name: mysqld-exporter
           labels:
-            app: redis-exporter
+            app: mysqld-exporter
         spec:
           replicas: 1
           selector:
             matchLabels:
-              app: redis-exporter
+              app: mysqld-exporter
           template:
             metadata:
               labels:
-                app: redis-exporter
+                app: mysqld-exporter
             spec:
               containers:
-              - name: redis-exporter
+              - name: mysqld-exporter
                 imagePullPolicy: Always
                 env:
-                - name: REDIS_ADDR
-                  value: "<地址>"
-                - name: REDIS_PASSWORD
-                  value: "<密码>"
-                - name: REDIS_EXPORTER_DEBUG
-                  value: "1"
-                image: oliver006/redis_exporter
+                  - name: DATA_SOURCE_NAME
+                    value: "<yourMySQLUsername>:<yourMySQLPassword>@(<IP>:<port>)/"
+                image: prom/mysqld-exporter
                 ports:
-                - containerPort: 9121
-                  name: redis-exporter
+                - containerPort: 9104
+                  name: mysqld-exporter
         ```
 
     **无状态**页面显示创建的容器组。
 
-    ![redis-exporter](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/7153455161/p249085.png)
+    ![mysqld-exporter应用](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/6467545161/p248753.png)
 
 5.  创建服务。
 
@@ -82,29 +76,29 @@
         kind: Service
         metadata:
           labels:
-            app: redis-exporter
-          name: redis-exporter
+            app: mysqld-exporter
+          name: mysqld-exporter
         spec:
           ports:
-          - name: redis-exporter
-            port: 9121
+          - name: mysqld-exporter
+            port: 9104
             protocol: TCP
-            targetPort: 9121
+            targetPort: 9104
           type: NodePort
           selector:
-            app: redis-exporter
+            app: mysqld-exporter
         ```
 
     **服务**页面显示创建的服务。
 
-    ![redis-exporter服务](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/7153455161/p249091.png)
+    ![mysqld-exporter服务](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/6467545161/p248756.png)
 
 
 ## 步骤二：配置服务发现
 
-配置阿里云Prometheus监控的服务发现以接收Redis数据的操作步骤如下：
+配置阿里云Prometheus监控的服务发现以接收MySQL数据的操作步骤如下：
 
-1.  登录[ARMS控制台](https://arms-ap-southeast-1.console.aliyun.com/#/home)。
+1.  登录[ARMS控制台](https://arms.console.aliyun.com/#/home)。
 
 2.  在左侧导航栏单击**Prometheus监控**。
 
@@ -120,29 +114,31 @@
     apiVersion: monitoring.coreos.com/v1
     kind: ServiceMonitor
     metadata:
+      labels:
+        app: mysqld-exporter
+        release: p
       # 填写一个唯一名称
-      name: redis-exporter
+      name: mysqld-exporter
       # 填写目标命名空间
       namespace: default
     spec:
       endpoints:
       - interval: 30s
-        # Redis Grafana模版ID为763
-        # 填写service.yaml中prometheus exporter对应的Port的Name字段的值
-        port: redis-exporter
+        # Mysqld Grafana模版ID为7362
+        # 填写service.yaml中Prometheus Exporter对应的Port的Name字段的值
+        port: mysqld-exporter
         # 填写Prometheus Exporter代码中暴露的地址
         path: /metrics
       namespaceSelector:
         any: true
         # Demo的命名空间
         matchLabels:
-          # 填写service.yaml的Label字段以定位目标service.yaml
-          app: redis-exporter
+          app: mysqld-exporter
     ```
 
     **ServiceMonitor**页签下显示配置的服务发现。
 
-    ![Redis服务发现](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/7153455161/p249103.png)
+    ![mysqld-exporter-ServiceMonitor](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/6467545161/p248763.png)
 
 
 ## 步骤三：配置大盘
@@ -153,28 +149,30 @@
 
 2.  在左侧导航栏选择**+** \> **Import**。
 
-3.  在Import页面的**Import via grafna.com**文本框，输入Prometheus提供的Redis大盘模板的ID763，然后在其右侧单击**Load**。
+3.  在Import页面的**Import via grafna.com**文本框，输入Prometheus提供的MySQL大盘模板的ID7362，然后在其右侧单击**Load**。
 
     ![Import Grafana Dashboard](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/6316294161/p61709.png)
 
-4.  在Import页面输入以下信息，然后单击**Import**。
+4.  在Import页面设置以下信息，然后单击**Import**。
 
-    ![Import Grafana Dashboard with Options](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/9055864161/p63219.png)
+    ![Import Grafana Dashboard with Options](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/8592975161/p62645.png)
 
     1.  在**Name**文本框中输入自定义的大盘名称。
 
-    2.  在**Folder**下拉框中选择您的阿里云容器服务K8s集群。
+    2.  在**Folder**下拉列表中选择您的阿里云容器服务K8s集群。
 
-    3.  在**prom**下拉框中选择您的阿里云容器服务K8s集群。
+    3.  在**prometheus**下拉列表中选择您的阿里云容器服务K8s集群。
 
     配置完毕后的Grafana大盘如图所示。
 
-    ![ARMS Prometheus Grafana Redis](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/9384298951/p63223.png)
+    ![ARMS Prometheus Grafana MySQL](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/1208873161/p62727.png)
 
 
 ## 步骤四：创建Prometheus监控报警
 
-1.  登录[ARMS控制台](https://arms-ap-southeast-1.console.aliyun.com/#/home)。
+为监控指标创建报警的操作步骤如下：
+
+1.  登录[ARMS控制台](https://arms.console.aliyun.com/#/home)。
 
 2.  在左侧导航栏，选择**Prometheus监控**。
 
@@ -228,5 +226,7 @@
     9.  单击**确定**。
 
     报警配置页面显示创建的报警。
+
+    ![8](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/0242584161/p245624.png)
 
 
