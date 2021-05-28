@@ -1,220 +1,230 @@
-# Use Prometheus Service to monitor a Redis database
+# 通过阿里云Prometheus监控MySQL
 
-To monitor a Redis database, you can use Prometheus Service to capture Redis data, configure a Grafana dashboard to display the captured data, and then create an alert. This topic describes how to use Prometheus Service to monitor a Redis database. In this example, Container Service for Kubernetes \(ACK\) and Container Registry are also used.
+使用阿里云Prometheus监控抓取MySQL数据，借助Prometheus Grafana大盘来展示MySQL数据，并创建报警，即可实现利用Prometheus监控MySQL的目的。本文以阿里云容器服务K8s集群和阿里云容器镜像服务为例，介绍如何通过Prometheus监控MySQL。
 
-An ACK cluster is connected to Prometheus Service. For more information, see [Connect an ACK cluster to Prometheus Service]().
+阿里云容器服务K8s集群已接入阿里云Prometheus监控。如何接入，请参见[容器服务Kubernetes版集群]()。
 
-## Procedure
+## 操作流程
 
-The following figure shows the process of using Prometheus Service to monitor a Redis database.
+通过阿里云Prometheus监控MySQL的操作流程如下图所示。
 
-![How It Works](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/4116155161/p149087.png)
+![How It Works](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/6467545161/p149087.png)
 
-## Step 1: Deploy an application
+## 步骤一：部署应用
 
-To deploy the redis-exporter image to an ACK cluster to capture Redis data, perform the following steps:
+将Prometheus官方提供的mysqld-exporter镜像部署至容器服务K8s集群，以便抓取MySQL数据。操作步骤如下：
 
-1.  Log on to the [Alibaba Cloud Container Service for Kubernetes console](https://cs.console.aliyun.com/#/k8s/overview).
+1.  登录[容器服务管理控制台](https://cs.console.aliyun.com)。
 
-2.  In the left-side navigation pane, click **Clusters**.
+2.  在左侧导航栏，选择**集群**。
 
-3.  On the Clusters page, find the cluster to which you want to deploy the image and click **Applications** in the **Actions** column.
+3.  在集群列表页面，找到目标集群，在其右侧**操作**列单击**应用管理**。
 
-4.  Create a container group.
+4.  创建容器组。
 
-    1.  In the left-side navigation pane, choose **Workloads** \> **Deployments**.
+    1.  在左侧导航栏，选择**工作负载** \> **无状态**。
 
-    2.  On the **Deployments** page, click **Create from YAML** in the upper-right corner.
+    2.  在**无状态**页面，单击**使用模板创建**。
 
-    3.  On the **Create** page, enter the following code in the **Template** code editor and click **Create**:
+    3.  在**创建**页面的**模板**代码框输入以下内容，然后单击**创建**。
 
-        **Note:** Replace <Address\> and <Password\> with the corresponding values of the Redis database. You can also use the following sample values that are provided by Application Real-Time Monitoring Service \(ARMS\):
+        **说明：** 请将<yourMySQLUsername\>、<yourMySQLPassword\>、<IP\>、<port\>替换为MySQL的对应值。
 
-        -   Redis address: redis://r-bp167pgqkqh7h25coypd.redis.rds.aliyuncs.com:6379
-        -   Redis password: Arms1234
         ```
         apiVersion: apps/v1 # for versions before 1.8.0 use apps/v1beta1
         kind: Deployment
         metadata:
-          name: redis-exporter
+          name: mysqld-exporter
           labels:
-            app: redis-exporter
+            app: mysqld-exporter
         spec:
           replicas: 1
           selector:
             matchLabels:
-              app: redis-exporter
+              app: mysqld-exporter
           template:
             metadata:
               labels:
-                app: redis-exporter
+                app: mysqld-exporter
             spec:
               containers:
-              - name: redis-exporter
+              - name: mysqld-exporter
                 imagePullPolicy: Always
                 env:
-                - name: REDIS_ADDR
-                  value: "<Address>"
-                - name: REDIS_PASSWORD
-                  value: "<Password>"
-                - name: REDIS_EXPORTER_DEBUG
-                  value: "1"
-                image: oliver006/redis_exporter
+                  - name: DATA_SOURCE_NAME
+                    value: "<yourMySQLUsername>:<yourMySQLPassword>@(<IP>:<port>)/"
+                image: prom/mysqld-exporter
                 ports:
-                - containerPort: 9121
-                  name: redis-exporter
+                - containerPort: 9104
+                  name: mysqld-exporter
         ```
 
-    The **Deployments** page displays the created container group.
+    **无状态**页面显示创建的容器组。
 
-    ![redis-exporter](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/6493898161/p249085.png)
+    ![mysqld-exporter应用](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/6467545161/p248753.png)
 
-5.  Create a service.
+5.  创建服务。
 
-    1.  In the left-side navigation pane, choose **Services and Ingresses** \> **Services**.
+    1.  在左侧导航栏，选择**服务与路由** \> **服务**。
 
-    2.  On the **Services** page, click **Create Resources in YAML**.
+    2.  在**服务**页面，单击**使用YAML创建资源**。
 
-    3.  On the **Create** page, enter the following code in the **Template** code editor and click **Create**:
+    3.  在**创建**页面的**模板**代码框输入以下内容，然后单击**创建**。
 
         ```
         apiVersion: v1
         kind: Service
         metadata:
           labels:
-            app: redis-exporter
-          name: redis-exporter
+            app: mysqld-exporter
+          name: mysqld-exporter
         spec:
           ports:
-          - name: redis-exporter
-            port: 9121
+          - name: mysqld-exporter
+            port: 9104
             protocol: TCP
-            targetPort: 9121
+            targetPort: 9104
           type: NodePort
           selector:
-            app: redis-exporter
+            app: mysqld-exporter
         ```
 
-    The **Services** page displays the created service.
+    **服务**页面显示创建的服务。
 
-    ![redis-exporter service](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7705419161/p249091.png)
+    ![mysqld-exporter服务](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/6467545161/p248756.png)
 
 
-## Step 2: Configure service discovery
+## 步骤二：配置服务发现
 
-To configure service discovery of Prometheus Service to receive data from the Redis database, perform the following steps:
+配置阿里云Prometheus监控的服务发现以接收MySQL数据的操作步骤如下：
 
-1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
+1.  登录[ARMS控制台](https://arms-ap-southeast-1.console.aliyun.com/#/home)。
 
-2.  In the left-side navigation pane, click **Prometheus Monitoring**.
+2.  在左侧导航栏单击**Prometheus监控**。
 
-3.  In the top navigation bar of the **Prometheus Monitoring** page, select the region where the ACK cluster resides. Find the cluster and click **Settings** in the **Actions** column.
+3.  在**Prometheus监控**页面的顶部菜单栏，选择K8s集群所在的地域，并在目标集群右侧的**操作**列单击**设置**。
 
-4.  On the Settings page, click the **Service Discovery** tab. On the **Service Discovery** tab, click the **ServiceMonitor** tab.
+4.  在设置页面，单击**服务发现**页签，在**服务发现**页签下，单击**ServiceMonitor**页签。
 
-5.  On the **ServiceMonitor** tab, click **Add ServiceMonitor**.
+5.  在**ServiceMonitor**页签下，单击**添加ServiceMonitor**。
 
-6.  In the **Add ServiceMonitor** dialog box, enter the following code and click **OK**:
+6.  在**添加ServiceMonitor**对话框中输入以下内容，然后单击**确定**。
 
     ```
     apiVersion: monitoring.coreos.com/v1
     kind: ServiceMonitor
     metadata:
-      # Enter a unique name.
-      name: redis-exporter
-      # Enter a namespace.
+      labels:
+        app: mysqld-exporter
+        release: p
+      # 填写一个唯一名称
+      name: mysqld-exporter
+      # 填写目标命名空间
       namespace: default
     spec:
       endpoints:
       - interval: 30s
-        # The Redis Grafana template ID is 763.
-        # Enter the value of the Name field for Port of Prometheus Exporter in the service.yaml file.
-        port: redis-exporter
-        # Enter the value of the Path field for Prometheus Exporter.
+        # Mysqld Grafana模版ID为7362
+        # 填写service.yaml中Prometheus Exporter对应的Port的Name字段的值
+        port: mysqld-exporter
+        # 填写Prometheus Exporter代码中暴露的地址
         path: /metrics
       namespaceSelector:
         any: true
-        # The namespace of demo.
+        # Demo的命名空间
         matchLabels:
-          # Enter the value of the Label field in the service.yaml file to find the service.yaml file.
-          app: redis-exporter
+          app: mysqld-exporter
     ```
 
-    The **ServiceMonitor** tab displays the configured service discovery task.
+    **ServiceMonitor**页签下显示配置的服务发现。
 
-    ![Redis service discovery](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/7493898161/p249103.png)
-
-
-## Step 3: Configure a Grafana dashboard
-
-To configure a Grafana dashboard to display data, perform the following steps:
-
-1.  Go to the [homepage of Grafana dashboards](http://g.console.aliyun.com/).
-
-2.  In the left-side navigation pane, choose **+** \> **Import**.
-
-3.  On the Import page, enter 763, which is the ID of the Redis Grafana template provided by Prometheus, in the **Import via grafna.com** field and click **Load** next to the field.
-
-    ![Import Grafana Dashboard](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/2116394161/p61709.png)
-
-4.  On the Import page, perform the following operations and click **Import**:
-
-    ![Import Grafana Dashboard with Options](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9116394161/p63219.png)
-
-    1.  Enter a dashboard name in the **Name** field.
-
-    2.  Select your ACK cluster from the **Folder** drop-down list.
-
-    3.  Select your ACK cluster from the **prom** drop-down list.
-
-    The following figure shows the configured Grafana dashboard.
-
-    ![ARMS Prometheus Grafana Redis](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/5248468061/p63223.png)
+    ![mysqld-exporter-ServiceMonitor](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/6467545161/p248763.png)
 
 
-## Step 4: Create an alert
+## 步骤三：配置大盘
 
-1.  Log on to the [ARMS console](https://arms-ap-southeast-1.console.aliyun.com/#/home).
+配置Grafana大盘以展示数据的操作步骤如下：
 
-2.  In the left-side navigation pane, click **Prometheus Monitoring**.
+1.  打开[Grafana大盘概览页](http://g.console.aliyun.com/)。
 
-3.  In the top navigation bar, select a region. Then, click the name of the required Kubernetes cluster.
+2.  在左侧导航栏选择**+** \> **Import**。
 
-4.  In the left-side navigation pane, choose **Alarm configuration beta**. Then, click **Create Alert** in the upper-right corner.
+3.  在Import页面的**Import via grafna.com**文本框，输入Prometheus提供的MySQL大盘模板的ID7362，然后在其右侧单击**Load**。
 
-5.  In the **Create Alert** dialog box, configure the following parameters, and then click **OK**.
+    ![Import Grafana Dashboard](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/6316294161/p61709.png)
 
-    **Note:** The **Time** parameter is not supported.
+4.  在Import页面设置以下信息，然后单击**Import**。
 
-    1.  Enter a name in the **Rule Name** field. Example: alerts for inbound traffic.
+    ![Import Grafana Dashboard with Options](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/8592975161/p62645.png)
 
-    2.  Enter an expression that uses a PromQL statement. Example: `(sum(rate(kube_state_metrics_list_total{job="kube-state-metrics",result="error"}[5m])) / sum(rate(kube_state_metrics_list_total{job="kube-state-metrics"}[5m]))) > 0.01`.
+    1.  在**Name**文本框中输入自定义的大盘名称。
 
-        **Note:** An error may be reported if a PromQL statement contains a dollar sign \(`$`\). You must remove the equal sign \(`=`\) and the parameters on both sides of the equal sign \(`=`\) from the statement that contains the dollar sign \($\). For example, change `sum (rate (container_network_receive_bytes_total{instance=~"^$HostIp.*"}[1m]))` to `sum (rate (container_network_receive_bytes_total[1m]))`.
+    2.  在**Folder**下拉列表中选择您的阿里云容器服务K8s集群。
 
-    3.  In the Labels section, click **Create Tag** to specify alert tags. The specified tags can be used as options for a dispatch rule.
+    3.  在**prometheus**下拉列表中选择您的阿里云容器服务K8s集群。
 
-    4.  In the Annotations section, specify a template for alert messages. Click **Create Annotation**. Set Key to message and Value to \{\{variable name\}\} alert message. The specified annotation is in the format of message:\{\{variable name\}\} alert notification. Example: message:\{\{$labels.pod\_name\}\} restart.
+    配置完毕后的Grafana大盘如图所示。
 
-        You can customize a variable name or select an existing tag as the variable name. Existing tags:
+    ![ARMS Prometheus Grafana MySQL](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/1208873161/p62727.png)
 
-        -   The tags that are carried in the metrics of an alert rule expression.
-        -   The tags that are created when you create an alert rule. For more information, see [Create an alert]().
-        -   The default tags provided by ARMS. The following table describes the default tags.
 
-            |Tag|Description|
-            |---|-----------|
-            |alertname|The name of the alert. The format is <Alert name\>\_<Cluster name\>.|
-            |\_aliyun\_arms\_alert\_level|The level of the alert.|
-            |\_aliyun\_arms\_alert\_type|The type of the alert.|
-            |\_aliyun\_arms\_alert\_rule\_id|The ID of the alert rule.|
-            |\_aliyun\_arms\_region\_id|The ID of the region.|
-            |\_aliyun\_arms\_userid|The ID of the user.|
-            |\_aliyun\_arms\_involvedObject\_type|The subtype of the associated object, for example, ManagedKubernetes or ServerlessKubernetes.|
-            |\_aliyun\_arms\_involvedObject\_kind|The type of the associated object, for example, app or cluster.|
-            |\_aliyun\_arms\_involvedObject\_id|The ID of the associated object.|
-            |\_aliyun\_arms\_involvedObject\_name|The name of the associated object.|
+## 步骤四：创建Prometheus监控报警
 
-    ![Prometheus-Create alarm](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/2026378061/p182018.png)
+为监控指标创建报警的操作步骤如下：
+
+1.  登录[ARMS控制台](https://arms-ap-southeast-1.console.aliyun.com/#/home)。
+
+2.  在左侧导航栏，选择**Prometheus监控**。
+
+3.  在**Prometheus监控**页面的顶部菜单栏，选择K8s集群所在的地域，单击目标K8s集群的名称。
+
+4.  在左侧导航栏，选择**报警配置**。
+
+5.  在报警配置页面右上角，单击**创建报警**。
+
+6.  在**创建报警**面板，执行以下操作：
+
+    1.  从**告警模板**下拉列表，选择模板。
+
+    2.  在**规则名称**文本框，输入规则名称，例如：网络接收压力报警。
+
+    3.  在**告警表达式**文本框，输入告警表达式。例如：`(sum(rate(kube_state_metrics_list_total{job="kube-state-metrics",result="error"}[5m])) / sum(rate(kube_state_metrics_list_total{job="kube-state-metrics"}[5m]))) > 0.01`。
+
+        **说明：** PromQL语句中包含的`$`符号会导致报错，您需要删除包含$符号的语句中`=`左右两边的参数及`=`。例如：将`sum (rate (container_network_receive_bytes_total{instance=~"^$HostIp.*"}[1m]))`修改为`sum (rate (container_network_receive_bytes_total[1m]))`。
+
+    4.  在**持续时间**文本框，输入时间，例如：1分钟，当告警条件连续1分组都满足时才会发送告警。
+
+    5.  在**告警消息**文本框，输入告警消息。
+
+    6.  在**高级配置**的**标签**区域，单击**创建标签**可以设置报警标签，设置的标签可用作分派规则的选项。
+
+    7.  在**高级配置**的**注释**区域，单击**创建注释**，设置键为message，设置值为\{\{变量名\}\}告警信息。设置完成后的格式为：`message:{{变量名}}告警信息`，例如：`message:{{$labels.pod_name}}重启`。
+
+        您可以自定义变量名，也可以选择已有的标签作为变量名。已有的标签包括：
+
+        -   报警规则表达式指标中携带的标签。
+        -   通过报警规则创建的标签，请参见[创建报警]()。
+        -   ARMS系统自带的默认标签，默认标签说明如下。
+
+            |标签|说明|
+            |--|--|
+            |alertname|告警名称，格式为：告警名称\_集群名称。|
+            |\_aliyun\_arms\_alert\_level|告警等级。|
+            |\_aliyun\_arms\_alert\_type|告警类型。|
+            |\_aliyun\_arms\_alert\_rule\_id|告警规则对应的ID。|
+            |\_aliyun\_arms\_region\_id|地域ID。|
+            |\_aliyun\_arms\_userid|用户ID。|
+            |\_aliyun\_arms\_involvedObject\_type|关联对象子类型，如ManagedKubernetes，ServerlessKubernetes。|
+            |\_aliyun\_arms\_involvedObject\_kind|关联对象分类，如app，cluster。|
+            |\_aliyun\_arms\_involvedObject\_id|关联对象ID。|
+            |\_aliyun\_arms\_involvedObject\_name|关联对象名称。|
+
+    8.  从**通知策略**下拉列表，选择通知策略。
+
+        如何创建通知策略，请参见[设置报警通知策略]()。
+
+    9.  单击**确定**。
+
+    报警配置页面显示创建的报警。
 
 
