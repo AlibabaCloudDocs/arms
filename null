@@ -1,150 +1,178 @@
-# 使用ARMS监控异步任务
+# 通过阿里云Prometheus监控ZooKeeper
 
-对于通过Spring @Async标签实现的异步任务，ARMS默认支持对其进行监控。此外，ARMS还支持通过添加异步透传扫描包和使用ARMS SDK进行手动透传对自定义异步任务实现监控。若您的异步任务出现接口超时等异常，可以通过调用链路查看异步任务上下游以便及时处理潜在问题。
+通过在ZooKeeper中埋点来暴露数据，使用阿里云Prometheus监控抓取数据，借助Prometheus Grafana大盘来展示数据，并创建报警，即可实现通过Prometheus监控ZooKeeper的目的。
 
-该功能要求ARMS探针版本为公测版本v2.7.1.3及以上。如果您是EDAS或者容器服务用户，请联系ARMS钉钉服务账号arms160804，为您进行探针新版本升级。
+容器服务K8s集群已接入阿里云Prometheus监控。如何接入，请参见[容器服务Kubernetes版集群]()。
 
-## 方式一：默认支持Spring @Async标签
+## 操作流程
 
-ARMS默认支持监控使用Spring @Async标签实现的异步任务。对于下列Spring框架中默认的Executor和Task，ARMS会自动完成增强：
+通过阿里云Prometheus监控ZooKeeper的操作流程如下图所示。
 
--   Executor：
-    -   org.springframework.scheduling.concurrent.ConcurrentTaskExecutor
-    -   org.springframework.core.task.SimpleAsyncTaskExecutor
-    -   org.springframework.scheduling.quartz.SimpleThreadPoolTaskExecutor
-    -   org.springframework.core.task.support.TaskExecutorAdapter
-    -   org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor
-    -   org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler
-    -   org.springframework.jca.work.WorkManagerTaskExecutor
-    -   org.springframework.scheduling.commonj.WorkManagerTaskExecutor
--   Task：
-    -   org.springframework.aop.interceptor.AsyncExecutionInterceptor$1
-    -   org.springframework.aop.interceptor.AsyncExecutionInterceptor$$Lambda$
+![How It Works](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/0253455161/p64446.png)
 
-## 方式二：添加异步透传扫描包
+## 步骤一：配置JMX端口
 
-您可以选择在应用设置中添加异步透传扫描包实现异步任务监控。异步透传扫描包中的Runnable、Callable和Supplier接口在创建新对象时会自动捕获当前线程调用链的上下文，并在异步线程中执行时使用该调用链上下文，完成串联。
+在ZooKeeper中启用JMX服务以获取资源信息，操作步骤如下：
 
-1.  登录[ARMS控制台](https://arms-ap-southeast-1.console.aliyun.com/#/home)。
+1.  修改/opt/zk/zookeeper-3.4.10/bin/zkServer.sh，在第44行添加`JMXPORT=8999`。
 
-2.  在左侧导航栏，选择**应用监控** \> **应用列表**。
-
-3.  在顶部菜单栏，选择地域。
-
-4.  在**应用列表**页面，单击应用名称。
-
-5.  在左侧导航栏，单击**应用设置**，然后单击**自定义配置**页签。
-
-6.  在高级设置区域的异步透传扫描包名对话框中，添加异步透传扫描包。
-
-    ![异步透传扫描包](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/6806012261/p278263.png)
-
-7.  在页面底部，单击**保存**。
-
-
-**说明：** 配置后需重启应用才能使功能生效。如需添加多个异步透传扫描包，可以使用半角逗号（,）分隔。
-
-例如，对于通过以下示例代码创建的异步任务，您可以使用添加异步透传扫描包的方式对此异步任务进行监控。此示例代码中，异步透传包名为com.alibaba.arms.brightroar.console.service。
-
-**说明：** 在配置时，您可以按需调整异步透传包名的范围。若需监控的异步任务过多，您可以缩小异步透传包名的范围。在本示例中，除了输入完整的异步透传包名com.alibaba.arms.brightroar.console.service以外，您还可以输入更短的前缀包名com.alibaba.arms来自动扫描此目录下的所有子透传包。但需注意的是，若前缀包名范围过大，会对性能产生影响，请谨慎操作。
-
-```
-package com.alibaba.arms.brightroar.console.service;
-
-@Service
-public class NameService {
-
-    private ExecutorService es = Executors.newFixedThreadPool(5);
-
-    public void name() {
-        es.submit(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println(System.currentTimeMillis()+ ": my name is john, " + Thread.currentThread().getId());
-            }
-        });
-    }
-}
-```
-
-## 方式三：使用ARMS SDK手动透传
-
-当您的使用方式比较复杂，上述场景无法满足需求时，您还可以选择使用ARMS SDK进行手动透传。通过手动增强Runnable接口、Callable接口和Executor，在异步线程中完成调用链串联，实现异步任务监控。
-
-1.  在Maven项目的pom.xml中添加以下依赖。
+    具体添加位置如下所示：
 
     ```
-    <dependency>
-     <groupId>com.alibaba.arms.apm</groupId>
-     <version>1.7.5</version>
-     <artifactId>arms-sdk</artifactId>
-    </dependency>
+    if [ "x$JMXLOCALONLY" = "x" ]
+    then
+        JMXLOCALONLY=false
+    fi
+    
+    JMXPORT=8999 ## 添加在此处第44行。
+    if [ "x$JMXDISABLE" = "x" ] || [ "$JMXDISABLE" = 'false' ]
+    then
+      echo "ZooKeeper JMX enabled by default $JMXPORT ..." >&2
+      if [ "x$JMXPORT" = "x" ]
+      then
     ```
 
-2.  增强Runnable接口、Callable接口和Executor。您可以按需选择以下任意一种增强方式。
+2.  执行以下命令重启ZooKeeper。
 
-    -   **方式一：增强Runnable接口和Callable接口**
-
-        使用`TraceRunnable.asyncEntry()`增强Runnable接口，使用`TraceCallable.asyncEntry()`增强Callable接口。示例代码如下：
-
-        ```
-        public class AsyncEntryExample {
-        
-            private final ExecutorService executor = Executors.newSingleThreadExecutor();
-        
-            @GetMapping(value = "/sdk-async-plugin/asyncEntry-propagation")
-            public String asyncEntryAndExecute() throws Exception {
-                CompletableFuture<String> future = new CompletableFuture<>();
-                Runnable command = TraceRunnable.asyncEntry(() -> future.complete("asyncEntry-execute"));
-                executor.execute(command);
-                Thread.sleep(1000);
-                return future.get();
-            }
-        }
-        ```
-
-    -   **方式二：增强Executor**
-
-        使用`TraceExecutors.wrapExecutorService(executr, true)`增强Executor。示例代码如下：
-
-        ```
-        public class AutoExample {
-        
-            private final ExecutorService contextPropagationExecutor
-                    = TraceExecutors.wrapExecutorService(Executors.newSingleThreadExecutor(), true);
-        
-            @GetMapping(value = "/sdk-async-plugin/auto-context-propagation")
-            public String autoWrapAndExecute() throws Exception {
-                CompletableFuture<String> future = new CompletableFuture<>();
-                contextPropagationExecutor.execute(() -> future.complete("auto-execute"));
-                Thread.sleep(1000);
-                return future.get();
-            }
-        }
-        ```
-
-    -   **方式三：同时增强Runnable接口、Callable接口和Executor**
-
-        示例代码如下：
-
-        ```
-        public class ManualExample {
-            private final ExecutorService traceExecutor
-                    = TraceExecutors.wrapExecutorService(Executors.newSingleThreadExecutor());
-        
-            @GetMapping(value = "/sdk-async-plugin/manual-context-propagation")
-            public String manualWrapAndExecute() throws Exception {
-                CompletableFuture<String> future = new CompletableFuture<>();
-                traceExecutor.execute(TraceRunnable.wrap(() -> future.complete("manual-execute")));
-                traceExecutor.execute(() -> "Not captured");
-                Thread.sleep(1000);
-                return future.get();
-            }
-        }
-        ```
+    ```
+    /opt/zk/zookeeper-3.4.10/bin/zkServer.sh start /opt/zk/zookeeper-3.4.10/conf/zoo_sample.cfg &
+    ```
 
 
-配置完成后，您可以在调用链路详情页查看异步任务的调用链详情。具体详情，请参见[调用链路查询](/intl.zh-CN/应用监控/控制台功能/调用链路查询.md)。
+## 步骤二：为应用埋点
 
-![异步调用详情](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/5381012261/p278209.png)
+启动jmx\_exporter，让JMX信息可以直接通过HTTP方式访问，以便Prometheus监控抓取。操作步骤如下：
+
+1.  下载[zookeeper.yaml](https://raw.githubusercontent.com/prometheus/jmx_exporter/master/example_configs/zookeeper.yaml)文件到/opt/exporter\_zookeeper/目录下。
+
+2.  修改下载的/opt/exporter\_zookeeper/zookeeper.yaml文件，在第一行添加`hostPort: localhost:8999`。
+
+    将JMX服务运行的端口暴露给jmx\_exporter。
+
+3.  下载jmx\_exporter的[可执行文件](https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_httpserver/0.12.0/jmx_prometheus_httpserver-0.12.0-jar-with-dependencies.jar)到opt/exporter\_zookeeper/目录下。
+
+4.  启动jmx\_exporter。
+
+    ```
+    java -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=8998 -cp /opt/exporter_zookeeper/jmx_prometheus_httpserver-0.12.0-jar-with-dependencies.jar io.prometheus.jmx.WebServer 8997 /opt/exporter_zookeeper/zookeeper_exporter.yaml &
+    ```
+
+    通过运行如下命令验证jmx\_exporter是否可以正常工作。
+
+    ```
+    curl http://<jmx_exporter所在机器的IP>:8997/metrics
+    ```
+
+
+## 步骤三：配置Prometheus
+
+配置Prometheus.yaml文件以抓取ZooKeeper数据的操作步骤如下：
+
+1.  登录[ARMS控制台](https://arms.console.aliyun.com/#/home)。
+
+2.  在左侧导航栏单击**Prometheus监控**。
+
+3.  在**Prometheus监控**页面的顶部菜单栏，选择K8s集群所在的地域，并在目标集群右侧的**操作**列单击**设置**。
+
+4.  在设置页面，单击**Prometheus设置**页签。
+
+5.  在Prometheus.yaml中输入以下内容，然后单击**保存**。
+
+    ```
+    global:
+      scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+      evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+    scrape_configs:
+      - job_name: 'zookeeper'
+        static_configs:
+        - targets: ['121.40.0.0:8997']
+    ```
+
+
+## 步骤四：配置大盘
+
+配置Grafana大盘以展示数据的操作步骤如下：
+
+1.  打开[Grafana大盘概览页](http://g.console.aliyun.com/)。
+
+2.  在左侧导航栏选择**+** \> **Import**。
+
+3.  在Import页面的**Import via grafna.com**文本框，输入Prometheus提供的Zookeeper大盘模板的ID10981，然后在其右侧单击**Load**。
+
+    ![Import Grafana Dashboard](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/6316294161/p61709.png)
+
+4.  在Import页面输入以下信息，然后单击**Import**。
+
+    ![Import Grafana Dashboard with Options](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/4155864161/p64454.png)
+
+    1.  在**Name**文本框中输入自定义的大盘名称。
+
+    2.  在**Folder**下拉框中选择您的阿里云容器服务K8s集群。
+
+    3.  在**Select a Prometheus data source**下拉框中选择您的阿里云容器服务K8s集群。
+
+    配置完毕后的Prometheus Grafana ZooKeeper大盘如图所示。
+
+    ![prom-zoo gra](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/4155864161/p63907.png)
+
+
+## 步骤五：创建Prometheus监控报警
+
+1.  登录[ARMS控制台](https://arms.console.aliyun.com/#/home)。
+
+2.  在左侧导航栏，选择**Prometheus监控**。
+
+3.  在**Prometheus监控**页面的顶部菜单栏，选择K8s集群所在的地域，单击目标K8s集群的名称。
+
+4.  在左侧导航栏，选择**报警配置**。
+
+5.  在报警配置页面右上角，单击**创建报警**。
+
+6.  在**创建报警**面板，执行以下操作：
+
+    1.  从**告警模板**下拉列表，选择模板。
+
+    2.  在**规则名称**文本框，输入规则名称，例如：网络接收压力报警。
+
+    3.  在**告警表达式**文本框，输入告警表达式。例如：`(sum(rate(kube_state_metrics_list_total{job="kube-state-metrics",result="error"}[5m])) / sum(rate(kube_state_metrics_list_total{job="kube-state-metrics"}[5m]))) > 0.01`。
+
+        **说明：** PromQL语句中包含的`$`符号会导致报错，您需要删除包含$符号的语句中`=`左右两边的参数及`=`。例如：将`sum (rate (container_network_receive_bytes_total{instance=~"^$HostIp.*"}[1m]))`修改为`sum (rate (container_network_receive_bytes_total[1m]))`。
+
+    4.  在**持续时间**文本框，输入时间，例如：1分钟，当告警条件连续1分组都满足时才会发送告警。
+
+    5.  在**告警消息**文本框，输入告警消息。
+
+    6.  在**高级配置**的**标签**区域，单击**创建标签**可以设置报警标签，设置的标签可用作分派规则的选项。
+
+    7.  在**高级配置**的**注释**区域，单击**创建注释**，设置键为message，设置值为\{\{变量名\}\}告警信息。设置完成后的格式为：`message:{{变量名}}告警信息`，例如：`message:{{$labels.pod_name}}重启`。
+
+        您可以自定义变量名，也可以选择已有的标签作为变量名。已有的标签包括：
+
+        -   报警规则表达式指标中携带的标签。
+        -   通过报警规则创建的标签，请参见[创建报警]()。
+        -   ARMS系统自带的默认标签，默认标签说明如下。
+
+            |标签|说明|
+            |--|--|
+            |alertname|告警名称，格式为：告警名称\_集群名称。|
+            |\_aliyun\_arms\_alert\_level|告警等级。|
+            |\_aliyun\_arms\_alert\_type|告警类型。|
+            |\_aliyun\_arms\_alert\_rule\_id|告警规则对应的ID。|
+            |\_aliyun\_arms\_region\_id|地域ID。|
+            |\_aliyun\_arms\_userid|用户ID。|
+            |\_aliyun\_arms\_involvedObject\_type|关联对象子类型，如ManagedKubernetes，ServerlessKubernetes。|
+            |\_aliyun\_arms\_involvedObject\_kind|关联对象分类，如app，cluster。|
+            |\_aliyun\_arms\_involvedObject\_id|关联对象ID。|
+            |\_aliyun\_arms\_involvedObject\_name|关联对象名称。|
+
+    8.  从**通知策略**下拉列表，选择通知策略。
+
+        如何创建通知策略，请参见[设置报警通知策略]()。
+
+    9.  单击**确定**。
+
+    报警配置页面显示创建的报警。
+
+    ![8](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/0242584161/p245624.png)
+
 
