@@ -1,15 +1,15 @@
-# 客户端接入概述
+# Overview
 
-本教程系列介绍如何使用阿里云Prometheus监控您的JVM、MySQL、Go、Redis等应用或组件，并以Grafana大盘展示监控数据。
+This tutorial describes how to use Prometheus Service to monitor applications and databases. For example, you can use Prometheus Service to monitor Java virtual machine \(JVM\) applications, Go applications, MySQL databases, and Redis databases. This tutorial also describes how to configure Grafana dashboards to display monitoring data.
 
-**相关文档**  
+**Related topics**  
 
 
-[通过阿里云Prometheus监控JVM]()
+[Use Prometheus Service to monitor a JVM application]()
 
-[通过阿里云Prometheus监控MySQL]()
+[Use Prometheus Service to monitor a MySQL database]()
 
-[通过阿里云Prometheus监控Go应用]()
+[Use Prometheus Service to monitor a Go application]()
 
-[通过阿里云Prometheus监控Redis]()
+[Use Prometheus Service to monitor a Redis database]()
 
