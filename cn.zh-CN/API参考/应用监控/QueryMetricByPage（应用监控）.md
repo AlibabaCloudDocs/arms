@@ -126,49 +126,81 @@
 
 |-   rt：响应时间
 -   count：请求数
--   error：错误数 |
+-   error：错误数
+-   resultsize：仅支持Mysql 5.X版本 |
 |appstat.txn|接口调用。|-   pid
 -   rpcType
 -   rpc：接口为`/demo/oracleTwo`
 
-|-   rt
--   count
--   error
--   errRate：错误率 |
+|-   rt：响应时间
+-   count：请求数
+-   error：错误数
+-   errCount：错误率 |
 |appstat.incall|应用详情。|-   pid
 -   rpcType
 -   rootIp
 -   rpc
 -   ppid
 
-|-   rt
--   count
--   error |
+|-   rt：响应时间
+-   count：请求数
+-   error：错误数 |
 |appstat.exception|异常。|-   pid
 -   rpc
 -   endpoint
 -   excepType
 -   excepInfo
 
-|-   rt
--   count |
+|-   rt：响应时间
+-   count：请求数 |
 |appstat.sql|慢SQL。|-   pid
 -   rpc
 -   endpoint
 -   sqlId
 
-|-   rt
--   count
--   error
+|-   rt：响应时间
+-   count：请求数
+-   error：错误数
 -   slow
+-   resultsize：仅支持Mysql 5.X版本
 
 **说明：** slow=true时，limit条件不生效。 |
-|appstat.mq.send|MQ发送。|无|-   rt
--   count
--   error |
-|appstat.mq.receive|MQ接收。|无|-   rt
--   count
--   error |
+|appstat.mq.send|MQ发送。|无|-   rt：响应时间
+-   count：请求数
+-   error：错误数 |
+|appstat.mq.receive|MQ接收。|无|-   rt：响应时间
+-   count：请求数
+-   error：错误数 |
+|appstat.schedulerx|SchedulerX的调用量。|-   pid
+-   rpcType
+-   rootIp
+-   rpc
+
+|-   rt：响应时间
+-   count：请求数
+-   error：错误数
+-   delay：调度延迟 |
+|appstat.elasticsearch|Elasticsearch的调用量。|-   pid
+-   rpc
+-   endpoint
+-   opType：操作类型。例如：index、search等。仅使用elasticsearch-rest-high-level-client时支持。
+
+|-   rt：响应时间
+-   count：请求数
+-   error：错误数
+-   requestsize：请求大小
+-   responsesize：响应大小，仅同步调用支持。 |
+|appstat.redis|Redis的调用量。|-   pid
+-   rpcType
+-   endpoint
+-   opType
+-   rpc
+
+|-   rt：响应时间
+-   count：请求数
+-   error：错误数
+-   hitrate：命中率，仅支持Jedis。
+-   resultsize：仅支持Jedis和Bytes。 |
 
 ## 示例
 
