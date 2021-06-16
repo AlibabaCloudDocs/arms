@@ -1,0 +1,8 @@
+# Exporter接入概述
+
+本教程介绍如何使用阿里云Prometheus通过Exporter接入您的MySQL、Redis、MongoDB等应用或组件，并以Grafana大盘展示监控数据。
+
+通过阿里云Prometheus安装的Exporter为开源Exporter，您可以通过Exporter接入自建或阿里云的应用和组件。例如，您可以通过Exporter接入自建的MySQL，也可以接入阿里云提供的RDS for MySQL。
+
+
+
