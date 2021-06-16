@@ -12,7 +12,6 @@ keyword: [ARMS, 应用监控, Java, 组件, 框架, Filter]
 
 |组件|JDK 1.7|JDK 1.8|JDK 11|
 |--|-------|-------|------|
-|Active MQ|5.13.X+|5.13.X+|5.13.X+|
 |Aliware MQ|4.1.X+|4.1.X+|4.1.X+|
 |Druid|1.0.0+|1.2.4+|1.2.4+|
 |DSF（Daojia Service Framework）|不支持|2.1.X+|2.1.X+|
