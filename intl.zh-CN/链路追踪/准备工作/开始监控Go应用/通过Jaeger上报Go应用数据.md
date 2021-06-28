@@ -14,7 +14,7 @@
 
 2.  创建Tracer对象。
 
-    **说明：** 请将`<endpoint>`替换成链路追踪控制台概览页面上相应客户端和相应地域的接入点。关于获取接入点信息的方法，请参见[步骤1](#step_dnn_poo_0li)。
+    **说明：** 请将`<endpoint>`替换成链路追踪控制台概览页面上相应客户端和相应地域的接入点。关于获取接入点信息的方法，请参见本文前提条件。
 
     ```
     func NewJaegerTracer(service string) (opentracing.Tracer, io.Closer) {
@@ -55,7 +55,7 @@
         defer  span.Finish()
         ```
 
-    详细使用方法，请参见[Go Doc](https://pkg.go.dev/github.com/jaegertracing/jaeger-client-go)。
+    更多详细使用方法，请参见[Go Doc](https://pkg.go.dev/github.com/jaegertracing/jaeger-client-go)。
 
 
 ## 方式二：通过Jaeger Agent上报数据
@@ -105,7 +105,7 @@
         defer  span.Finish()
         ```
 
-    详细使用方法，请参见[Go Doc](https://pkg.go.dev/github.com/jaegertracing/jaeger-client-go)。
+    更多详细使用方法，请参见[Go Doc](https://pkg.go.dev/github.com/jaegertracing/jaeger-client-go)。
 
 
 ## 使用示例
