@@ -24,7 +24,7 @@ AliyunServiceRoleForARMS具备以下云服务的访问权限：
 
 删除AliyunServiceRoleForARMS的操作步骤如下：
 
-**说明：** 如果当前账号下的K8s集群安装了ARMS Prometheus监控Agent，则需先删除Agent后才能删除AliyunServiceRoleForARMS，否则提示删除失败，详情请参见[卸载监控插件]()。
+**说明：** 如果当前账号下的K8s集群安装了ARMS Prometheus监控Agent，则需先删除Agent后才能删除AliyunServiceRoleForARMS，否则提示删除失败，详情请参见[卸载Prometheus监控插件]()。
 
 1.  登录[RAM控制台](http://ram.console.aliyun.com)，在左侧导航栏中单击**RAM角色管理**。
 
@@ -34,7 +34,7 @@ AliyunServiceRoleForARMS具备以下云服务的访问权限：
 
 4.  在删除RAM角色对话框，单击**确定**。
 
-    -   如果当前账号下的K8s集群安装了ARMS Prometheus监控Agent，则需先删除Agent后才能删除AliyunServiceRoleForARMS，否则提示删除失败，详情请参见[卸载监控插件]()。
+    -   如果当前账号下的K8s集群安装了ARMS Prometheus监控Agent，则需先删除Agent后才能删除AliyunServiceRoleForARMS，否则提示删除失败，详情请参见[卸载Prometheus监控插件]()。
     -   如果当前账号下的K8s集群已卸载ARMS Prometheus监控Agent，则可直接删除AliyunServiceRoleForARMS。
 
 ## 常见问题
