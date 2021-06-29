@@ -231,10 +231,11 @@
         2.  在Prometheus.yaml中输入以下内容，然后单击**保存**。
 
             ```
+            global:
+              scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+              evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
             scrape_configs:
               - job_name: 'prometheus'
-                scrage_interval: 15s
-                scrape_timeout: 15s
                 static_configs:
                 - targets: ['localhost:9090']
             ```
