@@ -6,8 +6,8 @@ keyword: [Prometheus, Grafana, local]
 
 You can use the dedicated API provided by Prometheus Monitoring to view the monitoring data in a local Grafana system. This topic describes how to import data from Prometheus Monitoring to a local Grafana system.
 
--   The Prometheus agent is installed. For more information, see [Get started with Prometheus Service]().
--   Grafana is installed on a local host. For more information, see [Grafana](https://grafana.com/docs/grafana/latest/getting-started/what-is-grafana/).
+-   The Prometheus agent is installed. For more information, see [Connect an ACK cluster to Prometheus Service]().
+-   Grafana is installed on a local host. For more information, see [Grafana](https://grafana.com/docs/grafana/latest/getting-started/).
 
 ## Step 1: Obtain the dedicated API provided by Prometheus Monitoring
 
