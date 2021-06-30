@@ -47,7 +47,7 @@ ARMS是一款面向分布式应用和容器的综合性监控产品，涵盖从�
 -   [开通应用监控专家版](https://common-buy.aliyun.com/?&commodityCode=arms_app_post#/buy)
 -   [购买应用监控资源包](https://common-buy.aliyun.com/?&commodityCode=arms_app_bag#/buy)
 
-**说明：** 免费试用结束后，您需要选择开通基础版或专家版。开通基础版后，也可随时升级为专家版。如需了解应用监控基础版与专家版的功能差异，请参见[应用监控（Java/PHP）](/cn.zh-CN/产品定价/产品版本对比.md)。 |
+**说明：** 免费试用结束后，您需要选择开通基础版或专家版。开通基础版后，也可随时升级为专家版。如需了解应用监控基础版与专家版的功能差异，请参见[应用监控（Java/PHP）](/cn.zh-CN/产品计费/产品版本对比.md)。 |
 |前端监控|2万次数据上报|-   开通前端监控基础版（目前仅可通过控制台开通）
 -   [开通前端监控专家版](https://common-buy.aliyun.com/?&commodityCode=arms_web_post#/buy)
 -   [购买前端监控资源包](https://common-buy.aliyun.com/?&commodityCode=arms_web_bag#/buy) |
@@ -59,13 +59,15 @@ ARMS是一款面向分布式应用和容器的综合性监控产品，涵盖从�
 
 -   应用监控：[创建应用监控任务](/cn.zh-CN/快速入门/创建应用监控任务.md)
 -   前端监控：[以CDN方式接入前端监控](/cn.zh-CN/前端监控/接入前端监控/Web场景/以CDN方式接入前端监控.md)
--   Prometheus监控：[开始使用Prometheus监控]()
+-   Prometheus监控：[容器服务Kubernetes版集群]()
 -   业务监控：[开始使用业务监控](/cn.zh-CN/业务监控/快速入门/开始使用业务监控.md)
 -   App监控：[快速入门：创建监控任务](/cn.zh-CN/App监控/快速入门：创建监控任务.md)
--   容器监控：[容器监控概述](/cn.zh-CN/容器监控/容器监控概述.md)
+-   容器监控：[接入容器监控](/cn.zh-CN/容器监控/容器监控接入/接入容器监控.md)
 -   自定义监控：[创建自定义监控任务](/cn.zh-CN/快速入门/创建自定义监控任务.md)
+-   云拨测：[创建云拨测任务](/cn.zh-CN/云拨测/快速入门/创建云拨测任务.md)
+-   链路追踪：[准备工作概述](/cn.zh-CN/准备工作/准备工作概述.md)
 -   交互大盘：[为应用监控创建交互大盘](/cn.zh-CN/快速入门/为应用监控创建交互大盘.md)
--   报警：[快速创建ARMS报警](/cn.zh-CN/快速入门/快速创建ARMS报警.md)
+-   报警：[快速创建ARMS报警（旧版）](/cn.zh-CN/快速入门/快速创建ARMS报警（旧版）.md)
 
 **相关文档**  
 
