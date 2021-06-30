@@ -5,7 +5,7 @@ To monitor a Go application by using Prometheus Service, you must instrument the
 Before you begin, make sure that the following requirements are met:
 
 -   An ACK cluster is connected to Prometheus Service. For more information, see [Connect an ACK cluster to Prometheus Service]().
--   An image repository is created by using Container Registry. For more information, see [Create a repository]().
+-   An image repository is created by using Container Registry. For more information, see [Create an image repository]().
 
 ## Demo
 
@@ -15,7 +15,7 @@ You can also use a demo project to learn how to monitor a Go application by usin
 
 The following figure shows the process of using Prometheus Service to monitor a Go application.
 
-![flow](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/3846798161/p245640.png)
+![flow](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/0117484261/p245640.png)
 
 ## Step 1: Instrument a Go application
 
