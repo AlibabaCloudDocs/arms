@@ -45,7 +45,7 @@ You can delete alerts only by using alert rules. If you delete an alert rule, al
 
 [Create an alert]()
 
-[Create contacts](/intl.en-US/Dashboard and alerting/Create contacts.md)
+[Create a contact](/intl.en-US/Dashboard and Alerting/Create a contact.md)
 
-[Create a contact group](/intl.en-US/Dashboard and alerting/Create a contact group.md)
+[Create a contact group](/intl.en-US/Dashboard and Alerting/Create a contact group.md)
 
