@@ -1,9 +1,9 @@
 # Create an alert
 
-Alibaba Cloud Prometheus Monitoring provides out-of-the-box alert rules. You can also customize alert rules for specific monitored objects. If a rule is triggered, the system sends alert messages to the specified contact group by using a specified notification method. This way, contacts can resolve issues at the earliest opportunity.
+Prometheus Service provides out-of-the-box alert rules. You can also customize alert rules for specific monitored objects. If a rule is triggered, the system sends alert messages to the specified contact group by using the specified notification method. This way, contacts can resolve issues at the earliest opportunity.
 
--   A monitoring job is created. For more information, see [Get started with Prometheus Service]().
--   Contacts are created. For more information, see [Create contacts](/intl.en-US/Dashboard and alerting/Create contacts.md).
+-   A monitoring task is created. For more information, see [Connect an ACK cluster to Prometheus Service]().
+-   Contacts are created. For more information, see [Create a contact](/intl.en-US/Dashboard and Alerting/Create a contact.md).
 
 ## Procedure
 
@@ -11,23 +11,29 @@ Alibaba Cloud Prometheus Monitoring provides out-of-the-box alert rules. You can
 
 2.  In the left-side navigation pane, click **Prometheus Monitoring**.
 
-3.  In the top navigation bar, select a region. Then, click the name of the required Kubernetes cluster.
+3.  In the top navigation bar of the **Prometheus Monitoring** page, select the region where the monitored Kubernetes cluster resides. Then, click the name of the Kubernetes cluster in the K8s column.
 
-4.  In the left-side navigation pane, choose **Alarm configuration beta**. Then, click **Create Alert** in the upper-right corner.
+4.  In the left-side navigation pane, click **Alarm configuration**.
 
-5.  In the **Create Alert** dialog box, configure the following parameters, and then click **OK**.
+5.  On the Alarm configuration page, click **Create Alert** in the upper-right corner.
 
-    **Note:** The **Time** parameter is not supported.
+6.  In the **Create Alert** panel, configure the parameters.
 
-    1.  Enter a name in the **Rule Name** field. Example: alerts for inbound traffic.
+    1.  Select a template from the **Alert Template** drop-down list.
 
-    2.  Enter an expression that uses a PromQL statement. Example: `(sum(rate(kube_state_metrics_list_total{job="kube-state-metrics",result="error"}[5m])) / sum(rate(kube_state_metrics_list_total{job="kube-state-metrics"}[5m]))) > 0.01`.
+    2.  Enter a rule name in the **Rule Name** field. Example: Alert for inbound traffic.
 
-        **Note:** An error may be reported if a PromQL statement contains a dollar sign \(`$`\). You must remove the equal sign \(`=`\) and the parameters on both sides of the equal sign \(`=`\) from the statement that contains the dollar sign \($\). For example, change `sum (rate (container_network_receive_bytes_total{instance=~"^$HostIp.*"}[1m]))` to `sum (rate (container_network_receive_bytes_total[1m]))`.
+    3.  Enter a PromQL statement as the expression in the **Alert Query** field. Example: `(sum(rate(kube_state_metrics_list_total{job="kube-state-metrics",result="error"}[5m])) / sum(rate(kube_state_metrics_list_total{job="kube-state-metrics"}[5m]))) > 0.01`.
 
-    3.  In the Labels section, click **Create Tag** to specify alert tags. The specified tags can be used as options for a dispatch rule.
+        **Note:** If a PromQL statement contains a dollar sign \(`$`\), an error is returned. You must delete the equal sign \(`=`\) and the parameters on both sides of the equal sign \(`=`\) from the statement that contains the dollar sign \($\). For example, change `sum (rate (container_network_receive_bytes_total{instance=~"^$HostIp.*"}[1m]))` to `sum (rate (container_network_receive_bytes_total[1m]))`.
 
-    4.  In the Annotations section, specify a template for alert messages. Click **Create Annotation**. Set Key to message and Value to \{\{variable name\}\} alert message. The specified annotation is in the format of message:\{\{variable name\}\} alert notification. Example: message:\{\{$labels.pod\_name\}\} restart.
+    4.  Enter a number in the **Duration** field. Example: 1.
+
+    5.  Enter an alert message in the **Alert Message** field.
+
+    6.  In the **Tag** section of **Advanced Settings**, click **Create Tag** to specify alert tags. The specified tags can be used as options for a dispatch rule.
+
+    7.  In the **Annotation** section of **Advanced Settings**, click **Create Annotation**. Then, enter message in the Key field, and enter \{\{variable name\}\} alert notification in the Value field. The specified annotation is in the format of `message:{{variable name}} alert notification`. Example: `message:{{$labels.pod_name}} restart`.
 
         You can customize a variable name or select an existing tag as the variable name. Existing tags:
 
@@ -48,6 +54,8 @@ Alibaba Cloud Prometheus Monitoring provides out-of-the-box alert rules. You can
             |\_aliyun\_arms\_involvedObject\_id|The ID of the associated object.|
             |\_aliyun\_arms\_involvedObject\_name|The name of the associated object.|
 
-    ![Prometheus-Create alarm](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/2026378061/p182018.png)
+    8.  Click **Confirm**.
+
+    After you create an alert, the Alarm configuration page displays the created alert, as shown in the following figure.
 
 
