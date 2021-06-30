@@ -2,7 +2,7 @@
 
 The health inspection feature can be used to periodically test the connectivity of your monitored services. This feature allows you to check the health status of the monitored services and handle detected exceptions at the earliest opportunity. You can import the data of an Alibaba Cloud service that is collected by Prometheus Service to create an inspection task for the Alibaba Cloud service.
 
-The services that you want to monitor are connected to Prometheus Service. For more information, see [Connect an ACK cluster to Prometheus Service]().
+The services that you want to monitor are connected to Prometheus Service. For more information, see [Access to Alibaba Cloud Prometheus Service]().
 
 ## Create an Alibaba Cloud service inspection task
 
