@@ -2,7 +2,7 @@
 
 PagerDuty is a software solution that helps IT departments of enterprises respond to events. You can integrate Prometheus Service with PagerDuty to enable automatic event notifications or track service changes.
 
--   Your Kubernetes cluster is monitored by Prometheus Service. For more information, see [Get started with Prometheus Service]().
+-   Your Kubernetes cluster is monitored by Prometheus Service. For more information, see [Connect an ACK cluster to Prometheus Service]().
 -   An alert rule is created and enabled. For more information, see [Create an alert]().
 
 PagerDuty is a software solution that helps IT departments of enterprises respond to events. When an event occurs, PagerDuty can alert IT departments by using phone calls, text messages, or emails. For more information about PagerDuty, visit the [official website of PagerDuty](https://www.pagerduty.com/company/).
