@@ -335,5 +335,8 @@ To create an alert to monitor metrics of Prometheus Service, perform the followi
     ![Prometheus-Create alarm](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/2026378061/p182018.png)
 
 
-[View monitoring dashboards]()
+**Related topics**  
+
+
+[View Grafana dashboards]()
 
