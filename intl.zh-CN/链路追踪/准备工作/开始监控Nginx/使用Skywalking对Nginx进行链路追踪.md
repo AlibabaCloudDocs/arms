@@ -172,8 +172,8 @@ SkyWalking是一款广受欢迎的国产应用性能监控APM（Application Perf
 
         ```
         cd /usr/local/skywalking-nginx-lua
-        wget https://mirrors.bfsu.edu.cn/apache/skywalking/nginx-lua/0.3.0/skywalking-nginx-lua-0.3.0-src.tgz
-        tar -xzvf skywalking-nginx-lua-0.3.0-src.tgz
+        wget https://mirrors.tuna.tsinghua.edu.cn/apache/skywalking/nginx-lua/0.5.0/skywalking-nginx-lua-0.5.0-src.tgz
+        tar -xzvf skywalking-nginx-lua-0.5.0-src.tgz
         ```
 
     2.  修改nginx.conf文件中的lua\_package\_path和startBackendTimer。
