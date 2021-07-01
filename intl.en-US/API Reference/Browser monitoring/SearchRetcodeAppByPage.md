@@ -1,6 +1,6 @@
 # SearchRetcodeAppByPage
 
-Queries browser monitoring jobs for applications by page.
+Queries frontend monitoring jobs for applications by page.
 
 ## Debugging
 
@@ -10,39 +10,42 @@ Queries browser monitoring jobs for applications by page.
 
 |Parameter|Type|Required|Example|Description|
 |---------|----|--------|-------|-----------|
-|PageNumber|Integer|Yes|1|The number of the page to return. |
-|PageSize|Integer|Yes|5|The number of entries to return on each page. |
+|Action|String|Yes|SearchRetcodeAppByPage|The operation that you want to perform. Set the value to SearchRetcodeAppByPage. |
 |RegionId|String|Yes|cn-hangzhou|The ID of the region. |
-|RetcodeAppName|String|Yes|App1|The name of the application that is monitored by Browser Monitoring. |
+|RetcodeAppName|String|No|App1|The name of the application that is monitored by the frontend monitoring feature. |
+|PageNumber|Integer|No|1|The number of the page to return. |
+|PageSize|Integer|No|5|The number of entries to return on each page. |
 
 ## Response parameters
 
 |Parameter|Type|Example|Description|
 |---------|----|-------|-----------|
-|RequestId|String|626037F5-FDEB-45B0-804C-B3C92797A64E|The ID of the request. |
-|PageBean|Struct| |The information returned on each page. |
-|TotalCount|Integer|8|The total number of entries returned. |
+|PageBean|Struct| |The information returned on the current page. |
 |PageNumber|Integer|1|The page number of the returned page. |
 |PageSize|Integer|2|The number of entries returned per page. |
-|RetcodeApps|Array| |The browser monitoring job information returned per page. |
-|AppId|Long|16064|The ID of the application. It is an auto-increment field of the database. |
-|Pid|String|aokcdqn3ly@741623b4e91\*\*\*\*|The string of the application ID. |
+|RetcodeApps|Array of RetcodeApp| |The information about the frontend monitoring job. |
+|AppId|Long|16064|The ID of the application. It is an auto-increment parameter of the database. |
 |AppName|String|a3|The name of the application. |
-|Type|String|RETCODE|The type of the monitoring job. Valid values: **TRACE:** application monitoring. **RETCODE:** browser monitoring. |
-|UserId|String|12341234|The ID of the user. |
+|CreateTime|Long|1545363321000|The timestamp when the application was created. |
+|Pid|String|aokcdqn3ly@741623b4e91\*\*\*\*|The process identifier \(PID\) of the application. |
 |RegionId|String|cn-hangzhou|The ID of the region. |
-|CreateTime|Long|1545363321000|The time when the monitoring job was created. |
-|UpdateTime|Long|1545363321000|The time when the monitoring job was updated. |
+|Type|String|RETCODE|The type of the monitoring job. Valid values:
+
+-   `TRACE`: application monitoring
+-   `RETCODE`: frontend monitoring |
+|UpdateTime|Long|1545363321000|The timestamp when the application was updated. |
+|UserId|String|12341234|The ID of the user. |
+|TotalCount|Integer|8|The total number of entries returned. |
+|RequestId|String|626037F5-FDEB-45B0-804C-B3C92797A64E|The ID of the request. |
 
 ## Examples
 
 Sample requests
 
 ```
-http://arms.cn-hangzhou.aliyun-inc.com:8099/retcode/SearchRetcodeAppByPage.json?PageNumber=1
-&PageSize=5
+http(s)://[Endpoint]/?Action=SearchRetcodeAppByPage
 &RegionId=cn-hangzhou
-&RetcodeAppName=App1
+&<Common request parameters>
 ```
 
 Sample success responses
@@ -50,70 +53,46 @@ Sample success responses
 `XML` format
 
 ```
-<SearchRetcodeAppByPage>
-       <requestId>626037F5-FDEB-45B0-804C-B3C92797A64E</requestId>
-       <pageBean>
-              <pageNumber>1</pageNumber>
-              <pageSize>2</pageSize>
-              <totalCount>8</totalCount>
-              <retcodeApps>
-                     <retcodeApp>
-                            <appId>16064</appId>
-                            <appName>a3</appName>
-                            <createTime>1545363321000</createTime>
-                            <pid>xxxxxxxxxxxxxxxxx</pid>
-                            <regionId>cn-hangzhou</regionId>
-                            <type>RETCODE</type>
-                            <updateTime>1545363321000</updateTime>
-                            <userId>xxxxxxxxxxxxxx</userId>
-                     </retcodeApp>
-                     <retcodeApp>
-                            <appId>38093</appId>
-                            <appName>TestApp</appName>
-                            <createTime>1553239261000</createTime>
-                            <pid>xxxxxxxxxxxxxxxxxxxxxxxxx</pid>
-                            <regionId>cn-hangzhou</regionId>
-                            <type>RETCODE</type>
-                            <updateTime>1553239261000</updateTime>
-                            <userId>xxxxxxxxxxxx</userId>
-                     </retcodeApp>
-              </retcodeApps>
-       </pageBean>
-</SearchRetcodeAppByPage>
+<SearchRetcodeAppByPageResponse>
+  <PageBean>
+        <TotalCount>8</TotalCount>
+        <PageSize>2</PageSize>
+        <PageNumber>1</PageNumber>
+        <RetcodeApps>
+              <Type>RETCODE</Type>
+              <AppId>16064</AppId>
+              <UserId>12341234</UserId>
+              <CreateTime>1545363321000</CreateTime>
+              <UpdateTime>1545363321000</UpdateTime>
+              <Pid>aokcdqn3ly@741623b4e91****</Pid>
+              <RegionId>cn-hangzhou</RegionId>
+              <AppName>a3</AppName>
+        </RetcodeApps>
+  </PageBean>
+  <RequestId>626037F5-FDEB-45B0-804C-B3C92797A64E</RequestId>
+</SearchRetcodeAppByPageResponse>
 ```
 
 `JSON` format
 
 ```
 {
-    "requestId": "626037F5-FDEB-45B0-804C-B3C92797A64E",
-    "pageBean": {
-        "totalCount": 8,
-        "pageNumber": 1,
-        "pageSize": 2,
-        "retcodeApps": [
-            {
-                "appId": 16064,
-                "pid": "xxxxxxxxxxxxxxxxx",
-                "appName": "a3",
-                "type": "RETCODE",
-                "userId": "xxxxxxxxxxxxxx",
-                "regionId": "cn-hangzhou",
-                "createTime": 1545363321000,
-                "updateTime": 1545363321000
-            },
-            {
-                "appId": 38093,
-                "pid": "xxxxxxxxxxxxxxxxxxxxxxxxx",
-                "appName": "TestApp",
-                "type": "RETCODE",
-                "userId": "xxxxxxxxxxxx",
-                "regionId": "cn-hangzhou",
-                "createTime": 1553239261000,
-                "updateTime": 1553239261000
-            }
-        ]
-    }
+    "PageBean": {
+        "TotalCount": 8,
+        "PageSize": 2,
+        "PageNumber": 1,
+        "RetcodeApps": {
+            "Type": "RETCODE",
+            "AppId": 16064,
+            "UserId": 12341234,
+            "CreateTime": 1545363321000,
+            "UpdateTime": 1545363321000,
+            "Pid": "aokcdqn3ly@741623b4e91****",
+            "RegionId": "cn-hangzhou",
+            "AppName": "a3"
+        }
+    },
+    "RequestId": "626037F5-FDEB-45B0-804C-B3C92797A64E"
 }
 ```
 
