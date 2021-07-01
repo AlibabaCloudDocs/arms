@@ -4,14 +4,14 @@ This topic describes how to use the frontend monitoring feature of Application R
 
 ## Background information
 
-For more information about DingTalk mini programs, see the [documentation of DingTalk mini programs](https://open-doc.dingtalk.com/microapp/dev/ed25rr).
+For more information about DingTalk mini programs, see [Documentation of DingTalk mini programs](https://open-doc.dingtalk.com/microapp/dev/ed25rr).
 
 ## Procedure
 
-To monitor a DingTalk mini program, install and initialize the npm package, report the monitoring data, and then configure security domains.
+To monitor a DingTalk mini program, import and initialize the npm package required for monitoring, instrument the mini program to report logs, and then configure the security domain.
 
-1.  Install and initialize the npm package.
-    1.  Install the npm package named alife-logger in the DingTalk mini program. This module can then be used to report logs.
+1.  Import and initialize the npm package.
+    1.  Import the npm package named alife-logger into the DingTalk mini program. This npm package can then be used to report logs.
 
         ```
         npm install alife-logger                      
@@ -19,7 +19,7 @@ To monitor a DingTalk mini program, install and initialize the npm package, repo
 
     2.  Add the following code to the monitor.js file in the /utils directory to initialize the npm package.
 
-        **Note:** You can specify the name and storage path of the JS file.
+        **Note:** You can customize the name and storage path of the JS file.
 
         ```
         import EAppLogger from 'alife-logger/eapp';
@@ -81,39 +81,40 @@ To monitor a DingTalk mini program, install and initialize the npm package, repo
         }));                        
         ```
 
-3.  Set security domains.
+3.  Configure the security domain.
     -   If the region parameter is set to `cn`, add arms-retcode.aliyuncs.com to the HTTP security domain.
     -   If the region parameter is set to `sg`, add arms-retcode-sg.aliyuncs.com to the HTTP security domain.
+    -   If the region parameter is set to `us`, add arms-retcode-us.aliyuncs.com to the HTTP security domain.
 
 ## Basic methods for automatic instrumentation
 
-|Method|Parameter|Description|Scenario|
-|------|---------|-----------|--------|
+|Method|Syntax|Description|Scenario|
+|------|------|-----------|--------|
 |hookApp|\{\}|Enter the source app parameters.|Perform automatic instrumentation during the lifecycle of the app.|
 |hookPage|\{\}|Enter the source page parameters.|Perform automatic instrumentation during the lifecycle of the page.|
 
-**Note:** If you want to call the hookApp or hookPage method for instrumentation in mini program monitoring projects, the projects must conform to the app and page regulations of standard mini programs. The projects must support the onError method for apps, and the onShow, onHide, and onUnload methods for pages. For examples of the methods, see [Procedure](#section_vgv_cp2_jhb).
+**Note:** If you want to call the hookApp or hookPage method to track and monitor mini programs, the code of the mini programs must conform to the app and page conventions for standard mini programs. The onError method must be included in the code of the application. The onShow, onHide, and onUnload methods must be included in the code of the page. For information about the examples of the methods, see [Procedure](#section_vgv_cp2_jhb).
 
 ## Methods for other settings
 
-|Method|Parameter|Description|
-|------|---------|-----------|
+|Method|Syntax|Description|
+|------|------|-----------|
 |setCommonInfo|\{\[key: string\]: string;\}|Set basic log fields for scenarios such as canary release.|
 |setConfig|\{\[key: string\]: string;\}|Set the config field. For more information about the operation, see [SDK configuration items parameters](https://www.alibabacloud.com/help/zh/doc-detail/58655.htm#title-ps9-1pa-qg5).|
 |pageShow|\{\}|Report the PV logs.|
 |pageHide|\{\}|Report the health logs.|
-|error|String/Object|Report error logs.|
+|error|String/Object|Report the error logs.|
 |api|For more information, see [API reference](/intl.en-US/Browser Monitoring/API reference.md).|Report the API request logs.|
 |sum/avg|String|Report the custom sum and average logs.|
 
 ## Advanced scenarios
 
-If the basic methods cannot meet your needs, see the following advanced scenarios:
+You can refer to the following advanced scenarios if the basic methods cannot meet your requirements:
 
--   Manually report the API request results. Automatic reporting is disabled.
+-   Manually report the API request logs. Automatic reporting is disabled.
 
     1.  Set the disableHook parameter to `true`. The logs of the dd.httpRequest method are not automatically reported.
-    2.  Manually call the `api` method to report the API request results.
+    2.  Manually call the `api` method to report the API request logs.
 -   Disable automatic reporting and enable manual instrumentation.
 
     1.  The `hookApp` and `hookPage` methods are no longer used in the app.js and page.js files.
@@ -133,7 +134,7 @@ If the basic methods cannot meet your needs, see the following advanced scenario
 
     3.  To report the health logs that indicate the health level and browsing time on the page, call the `pageHide` method in the `onHide` and `onUnload` methods.
 
-        **Note:** Do not call the pageHide method together with the `hookPage` method. Otherwise, the logs are repeatedly reported.
+        **Note:** Do not call the pageHide method together with the `hookPage` method. Otherwise, the health logs are repeatedly reported.
 
         ```
         import Monitor from '/util/monitor';
@@ -152,7 +153,7 @@ If the basic methods cannot meet your needs, see the following advanced scenario
 
 ## Common SDK parameters
 
-The frontend monitoring feature of ARMS allows you to configure a variety of SDK parameters to meet additional requirements. The following table describes the common parameters suitable for the scenarios described in this topic.
+The frontend monitoring feature of ARMS allows you to set a variety of SDK parameters to meet additional requirements. The following table describes the common parameters suitable for the scenarios described in this topic.
 
 |Parameter|Type|Description|Required|Default Value|
 |---------|----|-----------|--------|-------------|
