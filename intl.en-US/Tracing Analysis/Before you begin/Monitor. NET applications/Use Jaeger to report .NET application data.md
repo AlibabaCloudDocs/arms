@@ -1,10 +1,10 @@
 # Use Jaeger to report .NET application data
 
-Before you can view the trace data of your application in the Tracing Analysis console, use a client to report the trace data to Tracing Analysis. This topic describes how to use Jaeger to report the data of .NET applications. The method also applies to C\# applications.
+Before you can view the trace data of your application in the Tracing Analysis console, you must use a client to report the trace data to Tracing Analysis. This topic shows you how to use Jaeger to report the data of .NET applications. The method also applies to C\# applications.
 
-[Jaeger](https://www.jaegertracing.io/) is an open source distributed tracing system. This tracing system is created and used at Uber. It is compatible with the OpenTracing API and is a member of the [Cloud Native Computing Foundation \(CNCF\)](https://www.cncf.io/blog/2017/09/13/cncf-hosts-jaeger/). Jaeger is used to aggregate real-time monitoring data that is collected from multiple heterogeneous systems.
+[Jaeger](https://www.jaegertracing.io/) is an open source distributed tracing system, which is created and used at Uber. Jaeger is compatible with the OpenTracing API and is a member of the [Cloud Native Computing Foundation \(CNCF\)](https://www.cncf.io/blog/2017/09/13/cncf-hosts-jaeger/). Jaeger is used to aggregate real-time monitoring data that is collected from multiple heterogeneous systems.
 
-The OpenTracing community provides multiple components that support the following .NET Framework:
+The OpenTracing community provides multiple components that support the following .NET frameworks:
 
 -   [ASP.NET Core](https://github.com/opentracing-contrib/csharp-netcore)
 -   [Entity Framework Core](https://github.com/opentracing-contrib/csharp-netcore)
@@ -15,12 +15,14 @@ The OpenTracing community provides multiple components that support the followin
 
 Use ASP.NET Core to instrument an application by performing the following steps:
 
-**Note:** Download the [demo project](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/demo/jaegerDotNetDemo.zip). Go to the ManualDemo directory and run the program as instructed in the README.md file.
+**Note:** Download the [demo project](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/demo/jaegerDotNetDemo.zip). Go to the webapi.dotnetcore directory and run the program as instructed in the README.md file.
+
+Jaeger 0.2.2 and NETCore.App 2.1.0 are required to run the demo.
 
 1.  Install NuGet packages.
 
     ```
-    // Adds the following components: 
+    // Add the following components: 
     // OpenTracing.Contrib.NetCore: the ASP.NET Core middleware
     // Jaeger: an implementation component of OpenTracing
     // Microsoft.Extensions.Logging.Console: a log component
@@ -33,9 +35,9 @@ Use ASP.NET Core to instrument an application by performing the following steps:
 2.  Use the Configure method in the Startup.cs file of the project to register the middleware.
 
     ```
-    // Registers OpenTracing.Contrib.NetCore to instrument the application. 
+    // Register OpenTracing.Contrib.NetCore to instrument the application. 
     services.AddOpenTracing();
-    // Filters requests that are collected by HttpClient to obtain requests for using Jaeger to report data. 
+    // Filter requests that are collected by HttpClient to obtain requests for using Jaeger to report data. 
     var httpOption = new HttpHandlerDiagnosticOptions();
     httpOption.IgnorePatterns.Add(req => req.RequestUri.AbsolutePath.Contains("/api/traces"));
     services.AddSingleton(Options.Create(httpOption));
@@ -44,13 +46,13 @@ Use ASP.NET Core to instrument an application by performing the following steps:
 3.  Initialize and register Jaeger.
 
     ```
-    // Adds a Jaeger tracer. 
+    // Add a Jaeger tracer. 
     services.AddSingleton<ITracer>(serviceProvider =>
     {
         string serviceName = serviceProvider.GetRequiredService<IHostingEnvironment>().ApplicationName;
         ILoggerFactory loggerFactory = serviceProvider.GetRequiredService<ILoggerFactory>();
          Configuration.SenderConfiguration senderConfiguration = new Configuration.SenderConfiguration(loggerFactory)
-         // Obtains the Jaeger endpoint in the Tracing Analysis console. 
+         // Obtain the Jaeger endpoint in the Tracing Analysis console. 
               .WithEndpoint("http://tracing-analysis-dc-sz.aliyuncs.com/adapt_your_token/api/traces");
     
           // This will log to a default localhost installation of Jaeger.
@@ -76,7 +78,7 @@ Use gRPC to instrument an application by performing the following steps:
 1.  Install NuGet packages.
 
     ```
-    // Adds the following components: 
+    // Add the following components: 
     // OpenTracing.Contrib.Grpc: the gRPC middleware
     // Jaeger: an implementation component of OpenTracing
     // Microsoft.Extensions.Logging.Console: a log component
@@ -94,7 +96,7 @@ Use gRPC to instrument an application by performing the following steps:
                     .WithType(ConstSampler.Type)
                     .WithParam(1);
                 Configuration.SenderConfiguration senderConfiguration = new Configuration.SenderConfiguration(loggerFactory)
-                        // Obtains the Jaeger endpoint in the Tracing Analysis console. 
+                        // Obtain the Jaeger endpoint in the Tracing Analysis console. 
                        .WithEndpoint("http://tracing-analysis-dc-sz.aliyuncs.com/adapt_your_token/api/traces");
                 Configuration.ReporterConfiguration reporterConfiguration = new Configuration.ReporterConfiguration(loggerFactory)
                     .WithSender(senderConfiguration);
@@ -156,7 +158,7 @@ The preceding sections describe how to use existing components to instrument .NE
               .WithType(ConstSampler.Type)
               .WithParam(1);
         Configuration.SenderConfiguration senderConfiguration = new Configuration.SenderConfiguration(loggerFactory)
-               // Obtains the Jaeger endpoint in the Tracing Analysis console. 
+               // Obtain the Jaeger endpoint in the Tracing Analysis console. 
               .WithEndpoint("http://tracing-analysis-dc-sz.aliyuncs.com/adapt_your_token/api/traces");
     
        Configuration.ReporterConfiguration reporterConfiguration = new Configuration.ReporterConfiguration(loggerFactory)
@@ -185,7 +187,7 @@ The preceding sections describe how to use existing components to instrument .NE
     span.Finish();
     ```
 
-    **Note:** You can run the preceding code to record the root operation of a request. If you want to record the previous and next operations of the request, call the AsChildOf method.
+    **Note:** You can run the preceding code to record the root operation of a request. If you need to record the previous and next operations of the request, call the AsChildOf method.
 
     Sample code:
 
@@ -246,7 +248,7 @@ A: Check whether the endpoint in senderConfiguration is valid.
 
 ```
 Configuration.SenderConfiguration senderConfiguration = new Configuration.SenderConfiguration(loggerFactory)
-           // Obtains the Jaeger endpoint in the Tracing Analysis console. 
+           // Obtain the Jaeger endpoint in the Tracing Analysis console. 
           .WithEndpoint("http://tracing-analysis-dc-sz.aliyuncs.com/adapt_your_token/api/traces");
 ```
 
