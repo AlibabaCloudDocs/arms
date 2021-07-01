@@ -58,4 +58,6 @@ Prometheus Service provides out-of-the-box alert rules. You can also customize a
 
     After you create an alert, the Alarm configuration page displays the created alert, as shown in the following figure.
 
+    ![8](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/5006015261/p245624.png)
+
 
