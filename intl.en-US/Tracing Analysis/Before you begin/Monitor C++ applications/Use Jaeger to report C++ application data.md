@@ -2,11 +2,7 @@
 
 Before you can view the trace data of your application in the Tracing Analysis console, you must use a client to report the trace data to Tracing Analysis. This topic shows you how to use Jaeger to report the data of C++ applications.
 
-
-
-
-
-## Directly report data
+## Quick start
 
 1.  Run the following command to obtain [jaeger-client-cpp](https://github.com/jaegertracing/jaeger-client-cpp) from the official website:
 
@@ -25,7 +21,7 @@ Before you can view the trace data of your application in the Tracing Analysis c
         make
     ```
 
-3.  Download the native Jaeger agent [jaeger-agent](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/tools/jaeger-agent). Then, set the following parameter to start the agent. This way, you can report data to Tracing Analysis.
+3.  Download the native [Jaeger agent](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/tools/jaeger-agent) and set the reporter.grpc.host-port parameter to start the agent. This way, data can be reported to Tracing Analysis.
 
     **Note:** Replace `<endpoint>` with the corresponding endpoint in the corresponding region that is displayed on the Overview page. For more information about how to obtain access point information, see [Obtain access point information](#tab2).
 
@@ -45,7 +41,7 @@ Before you can view the trace data of your application in the Tracing Analysis c
 
 ## Use the Jaeger agent to report data
 
-1.  Install a Jaeger client. For more information about how to download a Jaeger client, visit [jaeger-client-cpp](https://github.com/jaegertracing/jaeger-client-cpp).
+1.  Install a Jaeger client. For more information about how to download a Jaeger client, see [jaeger-client-cpp](https://github.com/jaegertracing/jaeger-client-cpp).
 
 2.  Create a Tracer object.
 
@@ -55,12 +51,12 @@ Before you can view the trace data of your application in the Tracing Analysis c
     void setUpTracer(const char* configFilePath)
     {
         auto configYAML = YAML::LoadFile(configFilePath);
-        // Import the configuration from the YAML file.
+        // Import the configuration from the YAML file. 
         auto config = jaegertracing::Config::parse(configYAML);
-        // Set the service name and logger of the Tracer object.
+        // Set the service name and logger of the Tracer object. 
         auto tracer = jaegertracing::Tracer::make(
             "example-service", config, jaegertracing::logging::consoleLogger());
-        // Set the Tracer object as a global variable.
+        // Set the Tracer object as a global variable. 
         opentracing::Tracer::InitGlobal(
             std::static_pointer_cast<opentracing::Tracer>(tracer));
     }
@@ -80,14 +76,14 @@ Before you can view the trace data of your application in the Tracing Analysis c
 3.  Create a span.
 
     ```
-    // Create a span when a parent span exists.
+    // Create a span when a parent span exists. 
     void tracedSubroutine(const std::unique_ptr<opentracing::Span>& parentSpan)
     {
         auto span = opentracing::Tracer::Global()->StartSpan(
             "tracedSubroutine", { opentracing::ChildOf(&parentSpan->context()) });
     }
     
-    // Create a span when no parent span exists.
+    // Create a span when no parent span exists. 
     void tracedFunction()
     {
         auto span = opentracing::Tracer::Global()->StartSpan("tracedFunction");
@@ -95,7 +91,7 @@ Before you can view the trace data of your application in the Tracing Analysis c
     }
     ```
 
-4.  Download the native Jaeger agent [jaeger-agent](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/tools/jaeger-agent). Then, set the following parameter to start the agent. This way, you can report data to Tracing Analysis.
+4.  Download the native [Jaeger agent](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/tools/jaeger-agent) and set the reporter.grpc.host-port parameter to start the agent. This way, data can be reported to Tracing Analysis.
 
     **Note:** Replace `<endpoint>` with the corresponding endpoint in the corresponding region that is displayed on the Overview page. For more information about how to obtain access point information, see [Obtain access point information](#tab2).
 
