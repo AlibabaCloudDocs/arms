@@ -2,8 +2,6 @@
 
 Before you can view the trace data of your application in the Tracing Analysis console, you must use a client to report the trace data to Tracing Analysis. This topic shows you how to use OpenTelemetry SDK to instrument your application. This topic also shows you how to use a Jaeger exporter to report the trace data.
 
-
-
 ## Procedure
 
 1.  Open the pom.xml file and add JAR dependencies.
@@ -129,7 +127,7 @@ Before you can view the trace data of your application in the Tracing Analysis c
     }
     ```
 
-3.  Download the [demo](https://yuque.alibaba-inc.com/docs/share/78105bd6-a7a1-4476-85a1-9b896ac4cefe?#) project and replace the token in the project with the token that you obtain in the "Prerequisites" section of this topic.
+3.  Download the [demo project](https://arms-apm.oss-cn-hangzhou.aliyuncs.com/demo/openTelemetryDemo.zip) and replace the token in the project with the token that you obtain in the "Prerequisites" section of this topic.
 
 4.  Run the following command to run the demo:
 
@@ -140,7 +138,7 @@ Before you can view the trace data of your application in the Tracing Analysis c
 
 ## View data
 
-Log on to the [Tracing Analysis console](https://tracing-sg.console.aliyun.com/). On the Applications page, click the newly created application. In this example, click the otel-jaeger-example application. Then, view the trace data of the application.
+Log on to the [Application Real-Time Monitoring Service \(ARMS\) console](https://arms-ap-southeast-1.console.aliyun.com/#/home). In the left-side navigation pane, choose **Tracing Analysis** \> Applications. On the Applications page, click the newly created application. In this example, click the otel-jaeger-example application. Then, view the trace data of the application.
 
 **Related topics**  
 
