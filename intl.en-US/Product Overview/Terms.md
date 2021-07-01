@@ -2,13 +2,13 @@
 
 This topic lists the terms of Application Real-Time Monitoring Service \(ARMS\).
 
-[B](#B) \| [C](#C) \| [J](#J) \| [S](#S) \| [Y](#Y) \| [Z](#Z)
+[A](#B) \| [C](#C) \| [D](#S) \| [M](#Y)
 
-## B
+## A
 
 -   **alert rule**
 
-    An alert rule defines how to trigger alerts based on datasets and send alert notifications through a specific channel. The severity of an alert can be Warning, Error, or Critical.
+    An alert rule defines how to trigger alerts based on datasets and send alert notifications by using a specific method. The severity of an alert can be Warning, Error, or Critical.
 
 
 [\[Back to Top\]](#top)
@@ -19,23 +19,24 @@ This topic lists the terms of Application Real-Time Monitoring Service \(ARMS\).
 
     A collection rule defines how to collect data from data source instances in a custom monitoring job. You must define collection rules for custom monitoring jobs.
 
+-   **custom monitoring job**
+
+    A custom monitoring job is a process in which ARMS captures, processes, and stores data, and then presents and exports the results. Custom monitoring jobs can be classified into the following types:
+
+    -   Custom configuration-based monitoring job
+    -   Custom template-based monitoring job
 
 [\[Back to Top\]](#top)
 
-## J
+## D
 
 -   **dashboard**
 
-    A dashboard is a set of interactive monitoring data reports that are customized based on datasets in ARMS. The dashboard can display datasets by using different types of charts. The query time range of the dashboard is user-defined.
-
-
-[\[Back to Top\]](#top)
-
-## S
+    A dashboard is a set of interactive monitoring data reports that are customized based on datasets in ARMS. The dashboard displays datasets by using different types of charts. You can define the query time range for the dashboard.
 
 -   **dataset**
 
-    A dataset defines how to pre-aggregate and persistently store the logs that are collected in monitoring jobs. You can directly define a dataset, or indirectly define a dataset by using the dashboard and alert notification features.
+    A dataset defines how to pre-aggregate and persistently store the logs that are collected by monitoring jobs. You can directly define a dataset, or indirectly define a dataset by using the dashboard and alert notification features.
 
 -   **dataset dimension**
 
@@ -43,15 +44,15 @@ This topic lists the terms of Application Real-Time Monitoring Service \(ARMS\).
 
 -   **dataset metric**
 
-    A dataset metric is a specific monitoring metric stored in a dataset, which is typically of the NUMERIC type and similar to a value in multi-dimensional OLAP. ARMS metrics correspond to the values of Count, Max, Sum, and Count Distinct after real-time computing.
+    A dataset metric is a specific monitoring metric stored in a dataset, which is typically of the NUMERIC type and similar to a value in multi-dimensional OLAP. ARMS dataset metrics correspond to the values of Count, Max, Sum, and Count Distinct after real-time computing.
 
 -   **data cleansing**
 
-    Data cleansing is a process during which operations such as splitting and static join are performed on custom monitoring logs to convert them into standard key-value \(KV\) pairs.
+    Data cleansing is a process during which operations such as splitting and static join are performed on custom monitoring logs to convert them into standard key-value pairs.
 
 -   **data screening**
 
-    Data screening is used to filter the data in datasets for dataset calculation. Data that do not meet specific criteria is filtered out of the dataset.
+    Data screening is used to filter the data in datasets for dataset calculation. Data that does not meet specific criteria is filtered out of the dataset.
 
 -   **data source**
 
@@ -60,7 +61,7 @@ This topic lists the terms of Application Real-Time Monitoring Service \(ARMS\).
 
 [\[Back to Top\]](#top)
 
-## Y
+## M
 
 -   **mapping table**
 
@@ -69,17 +70,8 @@ This topic lists the terms of Application Real-Time Monitoring Service \(ARMS\).
 
 [\[Back to Top\]](#top)
 
-## Z
-
--   **custom monitoring job**
-
-    A custom monitoring job is a process in which ARMS captures, processes, and stores data, and then presents and exports the results. Custom monitoring jobs can be classified into the following types:
-
-
-[\[Back to Top\]](#top)
-
 ## Links to other terms
 
--   [Terms of Application Monitoring](/intl.en-US/Application Monitoring/References/Key statistical metrics.md)
--   [Terms of Browser Monitoring](/intl.en-US/Browser Monitoring/Statistical metrics.md)
+-   [Key statistical metrics](/intl.en-US/Application Monitoring/References/Key statistical metrics.md) of application monitoring
+-   [Statistical metrics](/intl.en-US/Browser Monitoring/Statistical metrics.md) of frontend monitoring
 
