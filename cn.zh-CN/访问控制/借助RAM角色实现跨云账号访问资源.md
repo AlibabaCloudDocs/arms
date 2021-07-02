@@ -102,9 +102,9 @@
 
 [创建可信实体为阿里云账号的RAM角色](/cn.zh-CN/角色管理/创建RAM角色/创建可信实体为阿里云账号的RAM角色.md)
 
-[创建RAM用户](/cn.zh-CN/用户管理/创建RAM用户.md)
+[创建RAM用户](/cn.zh-CN/用户管理/基本操作/创建RAM用户.md)
 
-[为RAM用户授权](/cn.zh-CN/用户管理/为RAM用户授权.md)
+[为RAM用户授权](/cn.zh-CN/用户管理/授权管理/为RAM用户授权.md)
 
-[RAM用户登录控制台](/cn.zh-CN/用户管理/RAM用户登录控制台.md)
+[RAM用户登录控制台](/cn.zh-CN/用户管理/登录管理/RAM用户登录控制台.md)
 
