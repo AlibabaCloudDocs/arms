@@ -13,7 +13,7 @@
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
 |Action|String|是|ListRetcodeApps|系统规定参数。取值：**ListRetcodeApps**。 |
-|RegionId|String|是|cn-hangzhou|地域ID |
+|RegionId|String|是|cn-hangzhou|地域ID。 |
 
 ## 返回数据
 
@@ -22,8 +22,16 @@
 |RequestId|String|99A663CB-8D7B-4B0D-A006-03C8EE38E7BB|请求ID。 |
 |RetcodeApps|Array of RetcodeApp| |前端监控应用列表信息。 |
 |AppId|Long|16064|应用ID，数据库自增字段。 |
-|AppName|String|a3|应用名称。 |
+|AppName|String|A1|前端应用名称。 |
 |Pid|String|atc889zkcf@d8deedfa9bf\*\*\*\*|应用的ID标识串。 |
+|RetcodeAppType|String|web|接入的前端类型。
+
+ -   `web`：Web端。
+-   `weex`：Weex端。
+-   `mini_dd`：钉钉E应用。
+-   `mini_alipay`：支付宝小程序。
+-   `mini_wx`：微信小程序。
+-   `mini_common`：其他类型小程序。 |
 
 ## 示例
 
@@ -43,9 +51,10 @@ http(s)://[Endpoint]/?Action=ListRetcodeApps
 <ListRetcodeAppsResponse>
   <RequestId>99A663CB-8D7B-4B0D-A006-03C8EE38E7BB</RequestId>
   <RetcodeApps>
-        <Pid>atc889zkcf@d8deedfa9bf****</Pid>
+        <RetcodeAppType>web</RetcodeAppType>
         <AppId>16064</AppId>
-        <AppName>a3</AppName>
+        <Pid>atc889zkcf@d8deedfa9bf****</Pid>
+        <AppName>A1</AppName>
   </RetcodeApps>
 </ListRetcodeAppsResponse>
 ```
@@ -56,9 +65,10 @@ http(s)://[Endpoint]/?Action=ListRetcodeApps
 {
     "RequestId": "99A663CB-8D7B-4B0D-A006-03C8EE38E7BB",
     "RetcodeApps": {
-        "Pid": "atc889zkcf@d8deedfa9bf****",
+        "RetcodeAppType": "web",
         "AppId": 16064,
-        "AppName": "a3"
+        "Pid": "atc889zkcf@d8deedfa9bf****",
+        "AppName": "A1"
     }
 }
 ```
