@@ -24,7 +24,7 @@ When an alert rule is triggered, notifications are sent to the contact group tha
 
 After you create contacts, you can search for, edit, and delete the contacts on the Contact Management page.
 
--   To search for contacts, on the Contact tab, select **Name**, **Cell phone number**, or **Email** from the drop-down list next to the search box. Enter a complete or partial contact name, mobile phone number, or email address in the search box, and then click the searchicon.
+-   To search for contacts, on the Contact tab, select **Name**, **Cell phone number**, or **Email** from the drop-down list next to the search box. Enter a complete or partial contact name, mobile phone number, or email address in the search box, and then click the search icon.
 -   To edit a contact, click **Editing** in the **Operation** column corresponding to the contact, edit the information in the Edit contacts dialog box, and then click **OK**.
 -   To delete a contact, click **Delete** in the **Operation** column corresponding to the contact. In the message that appears, click **OK**
 -   To delete multiple contacts at a time, select the contacts that you want to delete, and click **Batch delete**. In the message that appears, click **OK**.
