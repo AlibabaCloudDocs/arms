@@ -125,8 +125,8 @@ SkyWalking是一款广受欢迎的国产应用性能监控APM（Application Perf
     4.  在/etc/profile文件中添加以下内容。
 
         ```
-        export LUA_HOME=/data/software/lua_install/lua_5.3.5
-        export LUALOCKS_HOME=/data/software/lua_install/luarocks_2.2.2
+        export LUA_HOME=/usr/local/lua_5.3.5
+        export LUALOCKS_HOME=/usr/local/luarocks_2.2.2
         PATH=$PATH:$HOME/bin:$LUALOCKS_HOME/bin:$LUA_HOME/bin
         export PATH
         export LUA_PATH="$LUALOCKS_HOME/share/lua/5.3/?.lua;?.lua;;"
