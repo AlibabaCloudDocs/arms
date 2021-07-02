@@ -7,7 +7,7 @@ On the Overview page, you can view the key performance metrics of applications. 
 1.  Log on to the [ARMS console](https://arms-intl.console.aliyun.com/).
 2.  In the left-side navigation pane, choose **Tracing Analysis** \> **Applications**.
 3.  On the **Applications** page, click the name of the application that you want to check.
-4.  On the **Application Overview** page, click the ![Back icon](../images/p269216.png) icon at the top of the left-side navigation pane to go to the previous level.
+4.  On the **Application Overview** page, click the ![Back icon](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9417025261/p269216.png) icon at the top of the left-side navigation pane to go to the previous level.
 5.  In the left-side navigation pane, click **Overview**. Then, click the **Overview analysis** tab.
 
 ## Overview analysis
