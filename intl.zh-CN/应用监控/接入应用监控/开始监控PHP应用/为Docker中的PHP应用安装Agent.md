@@ -149,16 +149,18 @@ wget "http://arms-apm-gov.oss-cn-north-2-gov-1-internal.aliyuncs.com/arms-php-ag
     -   `arms-x.x.so`中的`x.x`为您的PHP应用的版本，目前支持5.4~7.3版本的PHP应用。
     -   若您的容器镜像是Alpine Linux系统，则将`arms-x.x.so`改为`arms-[x.y]-alpine.so`，其中`[x.y]`支持的版本值为5.5、5.6、7.0、7.1、7.2和7.3。
     -   自定义设置<yourAppName\>，您的PHP应用会以此名称显示在ARMS控制台中。
-    -   将<yourLicenseKey\>替换为[步骤](#step_2le_9mc_ckc)获取的LicenseKey。
-    -   <host\>和<port\>为容器访问主机的IP地址和端口号，端口号默认为11234，若[步骤](#step_lyt_uog_s4p)更新了端口号，此处请同步更新。
+    -   将<yourLicenseKey\>替换为[步骤7](#step_2le_9mc_ckc)获取的LicenseKey。
+    -   <host\>和<port\>为容器访问主机的IP地址和端口号，端口号默认为11234，若[步骤1](#step_lyt_uog_s4p)更新了端口号，此处请同步更新。
     -   如果您的PHP应用对应的版本配置了`with-config-file-scan-dir`，则可在/etc/php/7.2/php-fpm/conf.d目录下新建arms.ini文件，内容与以上在php.ini文件中添加的内容一致。
-9.  [步骤](#step_k2r_2sb_m0r)至[步骤](#step_2hh_ahv_0qw)的操作命令可以添加至dockerfile文件自动运行。
+9.  [步骤2](#step_k2r_2sb_m0r)至[步骤8](#step_2hh_ahv_0qw)的操作命令可以添加至dockerfile文件自动运行。
 
 10. 重启您的PHP应用。
 
 
 **相关文档**  
 
+
+[应用监控接入概述](/intl.zh-CN/应用监控/接入应用监控/应用监控接入概述.md)
 
 [为普通PHP应用安装探针](/intl.zh-CN/应用监控/接入应用监控/开始监控PHP应用/为普通PHP应用安装探针.md)
 
