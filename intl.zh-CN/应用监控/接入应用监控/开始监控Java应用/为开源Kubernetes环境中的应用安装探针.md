@@ -17,7 +17,7 @@ ARMS应用监控目前仅支持无状态（Deployment）和有状态（StatefulS
 
 1.  采用以下方法之一下载arms-pilot。
 
-    -   方法一：手动下载[最新安装包](http://arms-apm-hangzhou.oss-cn-hangzhou.aliyuncs.com/arms-pilot/arms-pilot-0.1.1-community.tgz)。
+    -   方法一：手动下载[最新安装包](https://arms-apm-hangzhou.oss-cn-hangzhou.aliyuncs.com/arms-pilot/arms-pilot-0.1.1-community.tgz)。
     -   方法二： 执行以下`Wget`命令下载arms-pilot安装包。
 
         ```
@@ -27,7 +27,7 @@ ARMS应用监控目前仅支持无状态（Deployment）和有状态（StatefulS
 2.  执行以下命令解压arms-pilot安装包。
 
     ```
-    tar zxvf arms-pilot-0.1.1.tgz                         
+    tar zxvf arms-pilot-0.1.1-community.tgz                   
     ```
 
 3.  编辑安装包下的values.yaml文件，根据实际情况修改`uid`和`region_id`，然后保存。
@@ -40,7 +40,7 @@ ARMS应用监控目前仅支持无状态（Deployment）和有状态（StatefulS
 4.  执行以下命令安装arms-pilot。
 
     ```
-    helm install ./arms-pilot --namespace arms-pilot-system                        
+    helm install ./arms-pilot-community --namespace arms-pilot-system                        
     ```
 
 
