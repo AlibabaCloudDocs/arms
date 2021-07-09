@@ -33,41 +33,13 @@
 
 单击**查看YAML**，查看StatefulSet的YAML文件内容。
 
-## 请求数
+## 请求数、响应时间、错误数和慢调用数
 
-在StatefulSet的请求数区域显示了StatefulSet请求数的时序曲线和Top接口列表。
+容器监控支持对多个协议的请求数、响应时间、错误数和慢调用数进行监控。
 
-![容器监控-Service详情的请求数和响应时间](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/5067093261/p275743.png)
+单击协议的名称，可以查看不同协议对应的请求数、响应时间、错误数和慢调用数。各协议可查看指标的详细信息，请参见[多协议指标详情]()。
 
-在请求数区域，您可以执行以下操作：
-
--   将鼠标悬浮于请求数的时序曲线上，可以查看对应时间点具体的数值。
--   使用光标选中一段时间，可以查看指定时间段的统计情况。
--   在Top列表区域可以选择查看StatefulSet请求数的Top 5、Top 10或Top 15接口，单击目标接口右侧的**查看列表**，可以查看目标接口关联的接口信息。更多信息，请参见[接口详情](#section_nr2_tn5_qr4)。
-
-## 响应时间
-
-在StatefulSet的响应时间区域显示了StatefulSet平均响应时间和P95响应时间的时序曲线，以及Top接口列表。
-
-![容器监控Service详情平均响应时间](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/5067093261/p284103.png)
-
-在响应时间区域，您可以执行以下操作：
-
--   将鼠标悬浮于响应时间的时序曲线上，可以查看对应时间点具体的数值。
--   使用光标选中一段时间，可以查看指定时间段的统计情况。
--   在Top列表区域可以选择查看StatefulSet响应时间的Top 5、Top 10或Top 15接口，单击目标接口右侧的**查看列表**，可以查看目标接口关联的接口信息。更多信息，请参见[接口详情](#section_nr2_tn5_qr4)。
-
-## 错误数和慢调用
-
-在StatefulSet的错误数和慢调用区域显示了StatefulSet错误数和慢调用的时序曲线，以及Top接口列表。
-
-![容器监控-Service详情的错误数和慢调用](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/7397912261/p275751.png)
-
-在错误数和慢调用区域，您可以执行以下操作：
-
--   将鼠标悬浮于错误数和慢调用的时序曲线上，可以查看对应时间点具体的数值。
--   使用光标选中一段时间，可以查看指定时间段的统计情况。
--   在Top列表区域可以选择查看StatefulSet错误数和慢调用的Top 5、Top 10或Top 15接口，单击目标接口右侧的**查看列表**，可以查看目标接口关联的接口信息。更多信息，请参见[接口详情](#section_nr2_tn5_qr4)。
+![容器监控HTTP协议指标](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/6200375261/p292619.png)
 
 ## Pod列表
 
@@ -94,17 +66,7 @@
 
 ![容器监控Deployment详情conditions](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/0048093261/p280271.png)
 
-## 接口详情
-
-在接口详情面板显示了接口被调用的记录，并显示调用的产生时间、耗时、状态码和Trace ID。
-
-![容器监控-service详情-接口详情](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/zh-CN/7397912261/p278370.png)
-
-在接口详情区域，您可以执行以下操作：
-
-单击调用记录右侧的**查看详情**，可以查看目标调用记录的请求URL、Hearders、Body，响应Headers、Body、StatusCode，调用拓扑，调用各阶段的执行结果、耗时和速度。
-
 ## 联系我们
 
-如果您在使用容器监控中有任何问题，请联系容器服务答疑群（群号：`31588365`）获取帮助。
+如果您在使用容器监控中有任何问题，请联系容器服务答疑钉钉群（群号：`31588365`）获取帮助。
 
