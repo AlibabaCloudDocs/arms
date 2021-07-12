@@ -45,7 +45,7 @@ If you cannot obtain the performance data of resources such as Services and Depl
     -   If the cmonitor-agent DaemonSet does not exist or not all the pods involved are ready, the agent for container monitoring fails to be installed. In this case, you can join the official DingTalk group for container monitoring \(group ID: `31588365`\) to seek help.
 6.  Click cmonitor-agent and then the Events tab.
 
-    If an event exists indicating that the readiness probe fails to be installed, container monitoring does not support the kernel version of the host. For more information about the supported kernel versions, see [Environment requirements and limits]().
+    If an event exists indicating that the readiness probe fails to be installed, container monitoring does not support the kernel version of the host. For more information about the supported kernel versions, see [Environment requirements and limits](/intl.en-US/Container Monitoring/Get started with container monitoring/Environment requirements and limits.md).
 
     ![Exception of the readiness probe](https://static-aliyun-doc.oss-accelerate.aliyuncs.com/assets/img/en-US/9157565261/p286842.png)
 
