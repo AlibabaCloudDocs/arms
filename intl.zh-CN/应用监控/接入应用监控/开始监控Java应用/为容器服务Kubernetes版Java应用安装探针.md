@@ -1,11 +1,10 @@
 # 为容器服务Kubernetes版Java应用安装探针
 
-只需安装ARMS应用监控组件（探针），即可对部署在容器服务Kubernetes版中的Java应用进行监控，查看应用拓扑、接口调用、异常事务和慢事务等方面的监控数据。本文介绍如何为容器服务Kubernetes版Java应用安装探针。
+只需安装ARMS应用监控组件（探针），即可监控部署在容器服务Kubernetes版中的Java应用，并查看应用拓扑、接口调用、异常事务和慢事务等相关监控数据。本文介绍如何为容器服务Kubernetes版Java应用安装探针。
 
--   [创建Kubernetes专有版集群](/intl.zh-CN/Kubernetes集群用户指南/集群/创建集群/创建Kubernetes专有版集群.md)
+-   创建Kubernetes集群。您可按需选择[创建Kubernetes专有版集群](/intl.zh-CN/Kubernetes集群用户指南/集群/创建集群/创建Kubernetes专有版集群.md)或[创建Kubernetes托管版集群](/intl.zh-CN/Kubernetes集群用户指南/集群/创建集群/创建Kubernetes托管版集群.md)。
 -   [管理命名空间](/intl.zh-CN/Kubernetes集群用户指南/命名空间与配额/管理命名空间.md)：本文示例中的命名空间名称为arms-demo。
--   如果JDK版本为1.8.0\_25或者1.8.0\_31，可能会出现无法安装探针的情况，请升级至1.8.X最新版本。
-
+-   如果JDK版本为1.8.0\_25或者1.8.0\_31，可能会出现无法安装探针的情况。若出现此情况，请将JDK版本升级至1.8.X版本。
 
 ## 步骤一：安装ARMS应用监控组件
 
